@@ -1231,10 +1231,12 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   overflow: auto;
-  box-sizing: border-box;
 }
 .spz_5001 .custom_modal::-webkit-scrollbar {
   display: none;
+}
+.spz_5001 .custom_modal {
+  box-sizing: border-box;
 }
 .spz_5001 .custom_modal * {
   box-sizing: border-box;

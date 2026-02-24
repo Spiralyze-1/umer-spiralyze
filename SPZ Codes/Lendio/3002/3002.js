@@ -15,19 +15,75 @@
         </g>
       </svg>`;
 
+      function otherPage() {
+        setTimeout(() => {
+          if (document.querySelector('.site-footer-disclaimer')) {
+            document.querySelector('.site-footer-disclaimer').innerHTML = `
+            <p>California loans made pursuant to the California Financing Law, Division 9 (commencing with Section 22000) of the Finance Code. All such
+            loans made through Lendio Partners, LLC, a wholly- owned subsidiary of Lendio, Inc. and a licensed finance lender/broker, California Financing Law License No. 60DBO-44694.</p>
+            <p>1. Time to fund depends upon the product that you select, and can be as little as 24 hours, but may be longer.</p>
+            <p>2. Filling out an application for business funding and submitting it to our funding partners will not impact your personal credit score. 
+             However, depending on the product and lender, accepting a funding offer may result in a hard credit inquiry, which could affect your personal credit score.</p>
+            `;
+
+          }
+        }, 1000);
+      }
+
+
       let sectionSelector;
       if (window.location.pathname.includes('/sba-loans') || window.location.pathname.includes('/partners-sf') || window.location.pathname.includes('/small-business-financing') || window.location.pathname.includes('/partners-lf')) {
         sectionSelector = document.querySelector('.spz_3002_v1 .main-content-div');
         formSelector = document.querySelector('.spz_3002_v1 .main-content-div .form-div');
       } else if (window.location.pathname.includes('/lp/direct/search-small-business-loans')) {
-        document.querySelector('body').classList.add("spz_3001_bussiness_loans");
+        document.querySelector('body').classList.add("spz_3002_bussiness_loans");
+        document.querySelector('.form-heading-lp-spec .code-embed-26').style.display = 'none';
         sectionSelector = document.querySelector('.spz_3002_v1 .lp-header-with-cta');
         formSelector = document.querySelector('.spz_3002_v1 .lp-pwf-cont .application-form-wrap-lp-spec');
+        setTimeout(() => {
+          const tootltipElement = document.querySelector('.form-heading-lp-spec .form-h6-lp-spec');
+          if (tootltipElement) {
+            tootltipElement.innerHTML = `LOAN QUALIFICATION  <div class="tooltips">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M8.125 15.625C12.2671 15.625 15.625 12.2671 15.625 8.125C15.625 3.98286 12.2671 0.625 8.125 0.625C3.98286 0.625 0.625 3.98286 0.625 8.125C0.625 12.2671 3.98286 15.625 8.125 15.625Z" stroke="#9C86BB" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 7.5C7.66576 7.5 7.82473 7.56585 7.94194 7.68306C8.05915 7.80027 8.125 7.95924 8.125 8.125V11.25C8.125 11.4158 8.19085 11.5747 8.30806 11.6919C8.42527 11.8092 8.58424 11.875 8.75 11.875" stroke="#9C86BB" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.8125 5.625C8.33027 5.625 8.75 5.20527 8.75 4.6875C8.75 4.16973 8.33027 3.75 7.8125 3.75C7.29473 3.75 6.875 4.16973 6.875 4.6875C6.875 5.20527 7.29473 5.625 7.8125 5.625Z" fill="#9C86BB"/>
+            </svg>
+            <div class="text">
+              Answer the basics about your business and what you're using your funding for. If you qualify, we'll match you with one of our 75+ lenders and find the right match for you.
+            </div>
+          </div>`;
+
+          }
+          if (document.querySelector('#footer-copyright-body')) {
+            document.querySelector('#footer-copyright-body').insertAdjacentHTML('afterend', `
+              <p class="copyright-body dark-24" style="margin-bottom: 0;">1. Time to fund depends upon the product that you select, and can be as little as 24 hours, but may be longer.</p>
+              <p class="copyright-body dark-24">2. Filling out an application for business funding and submitting it to our funding partners will not impact your personal credit score. 
+                However, depending on the product and lender, accepting a funding offer may result in a hard credit inquiry, which could affect your personal credit score.</p>
+            `);
+
+          }
+        }, 1000);
       } else if (window.location.pathname.includes('/simple-a')) {
-        document.querySelector('body').classList.add("spz_3001_simple_a");
+        document.querySelector('body').classList.add("spz_3002_simple_a");
         sectionSelector = document.querySelector('.spz_3002_v1 .main-content-div');
         formSelector = document.querySelector('.spz_3002_v1 .main-content-div .form-div');
+        document.querySelector('.main-content-div .form-div .hs_cos_wrapper').insertAdjacentHTML('beforebegin', `
+        <div class="form-div-header">
+          <span class="col-10 px-0">
+            <div id="hs_cos_wrapper_module_17050092700534" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+              <div id="hs_cos_wrapper_module_17050092700534_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_text" data-hs-cos-field="headline">LOAN QUALIFICATION 
+              </div>
+            </div>
+          </span>
+        </div>  
+        `)
       }
+
+
+
+
+
       let waitforForm = setInterval(function () {
         if (sectionSelector) {
           clearInterval(waitforForm);
@@ -41,7 +97,7 @@
             <div class="auto_container">
               <div class="form_inner">
                 <div class="form_heading">
-                  <h2>See how much your business is eligible for.</h2>
+                  <h2>Get funded in as little as 24 hours. <sup>1</sup></h2>
                   <p>See options from 75+ lenders. No hidden fees.</p>
                 </div>
                 <div class="spz_form">
@@ -78,6 +134,19 @@
         window.dispatchEvent(new Event('resize'));
         //form
         document.querySelector('.spz_form').insertAdjacentElement("afterbegin", formSelector);
+        if (window.location.pathname == '/sba-loans') {
+          document.body.classList.add("spz_3002_sba_loans");
+          document.querySelector('.form-div-header .infoIcon .tooltip-text').textContent = `Answer the basics about your business and what you're using your funding for. If you qualify, we'll match you with one of our lenders and find the right match for you.`;
+          document.querySelector('.form_heading h2').textContent = `Check eligibility & view offers in minutes.`;
+          document.querySelector('.form_heading p').textContent = `See options from multiple SBA-approved lenders. No hidden fees.`;
+
+        }
+        if (window.location.pathname.includes('/partners-sf') || window.location.pathname.includes('/simple-a')) {
+          otherPage();
+        }
+        if (window.location.pathname.includes('/partners-sf')) {
+          document.querySelector('.form-div-header .hs_cos_wrapper_type_inline_text').textContent = "LOAN QUALIFICATION";
+        }
       }
 
       function formEdits() {
@@ -156,7 +225,7 @@
                   width: calc(100% + 1px);
                   height: 3px;
                   border-radius: 999px;
-                  // background: rgba(229, 224, 221, 0.40);
+                  background: #F4F1F0;
                   position: relative;
                   overflow: hidden;
                   margin-left: -1px;
@@ -197,6 +266,7 @@
                   font-weight: 400;
                   line-height: 20.8px;
                   border: 0;
+                  border-radius: 8px;
                   box-shadow: none;
                 }
 
@@ -212,26 +282,102 @@
 
                 #pwf-1 input#email,
                 #pwf-1 input#primary_phone {
-                  padding-left: 58px !important;
+                  padding-left: 49px !important;
                 }
 
+                #pwf-1 .spz-wrapper:has(input#business_name),
+                #pwf-1 .carousel-item:has(input#business_name) .text-left,
+                #pwf-1 .spz-wrapper:has(input#email),
+                #pwf-1 .carousel-item:has(input#email) .text-left{
+                  max-width: 398px;
+                  margin: auto;
+                }
+                #pwf-1 .carousel-item.active.slide-11{
+                  max-width: 398px;
+                  margin: auto;
+                  float:none;
+                }
+                #pwf-1 .carousel-item.active.slide-11 .legal-box-shadow{
+                  display:none;
+                }
+                #pwf-1 .carousel-item.active.slide-11 #marketingSmsOptIn{
+                  appearance: none;
+                  -webkit-appearance: none;
+                  width: 18px;
+                  height: 18px;
+                  border-radius: 4.5px;
+                  border: 1.125px solid #E2DBD5;
+                  background: #FFF;
+                  cursor: pointer;
+                }
+                #marketingSmsOptIn:checked {
+                  background: #2468c7 !important;
+                  border-color: #2468C6 !important;
+                }
+
+                #marketingSmsOptIn:checked::after {
+                  content: '';
+                  position: absolute;
+                  width: 5px;
+                  height: 10px;
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  top: 2px;
+                  left: 5px;
+                  transform: rotate(45deg);
+                }
+                #pwf-1 .carousel-item.active.slide-11 .legal-box{
+                  height: auto;
+                  padding: 0;
+                  border: none;
+                  background: transparent;
+                  overflow: visible;
+                  color: #666;
+                  font-family: proxima-nova, sans-serif;
+                  font-size: 12px;
+                  font-weight: 400;
+                  line-height:  15.6px;
+                  margin: -2px 0 0 9px;
+                }
+                #pwf-1 .carousel-item.active.slide-11 .legal-consent{
+                  color: #666;
+                  font-family: proxima-nova, sans-serif;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 130%;
+                  padding-left: 4px;
+                  padding-top: 8.5px;
+                }
+                #pwf-1 .carousel-item.active.slide-11 .legal-consent span a{
+                  color: #2468C7;
+                  font-family: proxima-nova, sans-serif;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 130%;
+                  text-decoration: none;
+                }
+                #pwf-1 .carousel-item.active.slide-11 .col-12 > div > .flex.mb-3 {
+                  margin-bottom: 4px;
+                }
                 #pwf-1 input#email+label,
                 #pwf-1 input#primary_phone+label {
-                  left: 58px;
+                  left: 49px;
                 }
 
                 #pwf-1 input#email:focus~.spz-label,
                 #pwf-1 input#primary_phone:focus~.spz-label,
                 #pwf-1 input#email:not(:placeholder-shown)~.spz-label,
                 #pwf-1 input#primary_phone:not(:placeholder-shown)~.spz-label {
-                  left: 58px;
+                  left: 49px;
                 }
 
                 #pwf-1 input:not([type="checkbox"]) {
                   overflow: hidden;
                   text-overflow: ellipsis;
                   white-space: nowrap;
-                  padding-left: 24px !important;
+                  padding-left: 15px !important;
                 }
 
                 #pwf-1 .spz-wrapper:has(input:not([type="checkbox"]))~img {
@@ -268,7 +414,7 @@
 
                 #pwf-1 select+img,
                 #pwf-1 input:not([type="checkbox"])+img {
-                  left: 24px;
+                  left: 15px;
                 }
 
                 #pwf-1 select:focus,
@@ -286,7 +432,7 @@
                   position: absolute;
                   top: 50%;
                   transform: translateY(calc(-50% - 1.5px));
-                  left: 24px;
+                  left: 15px;
                   color: #78716C;
                   font-family: proxima-nova, sans-serif;
                   font-size: 16px;
@@ -308,7 +454,7 @@
                   font-size: 14px;
                   line-height: 18.2px;
                   top: 4.5px;
-                  left: 24px;
+                  left: 15px;
                   transform: none;
                   width: calc(100% - 55px);
                   overflow: hidden;
@@ -325,8 +471,8 @@
                 }
 
                 #pwf-1 .spz-wrapper>img[alt="Secure Lock"] {
-                  left: 26.5px;
-                  top: 7px;
+                  left: 17.5px;
+                  top: 7.5px;
                   width: 19px;
                   z-index: 3;
                 }
@@ -361,7 +507,9 @@
                   box-shadow: none;
                   transform: none;
                 }
-
+                #pwf-1:has(.carousel-item.slide-11.active) .btn-action {
+                  min-width: 166px;
+                }
                 #pwf-1 .btn-action>div {
                   color: #FEFDFD;
                   font-family: proxima-nova, sans-serif;
@@ -405,12 +553,12 @@
                   width: auto !important;
                 }
 
-                #pwf-1 .carousel-inner+div {
-                  margin-top: 13px
-                }
+                // #pwf-1 .carousel-inner+div {
+                //   margin-top: 13px
+                // }
 
                 #pwf-1 div:has(.disclosure-tooltip) {
-                  margin-top: 20px;
+                  margin-top: 6px;
                 }
 
                 #pwf-1 div:has(.disclosure-tooltip) small {
@@ -431,10 +579,11 @@
                   font-size: 12px;
                   font-weight: 500;
                   line-height: 15.6px;
-                  margin-left: -3px;
+                  margin-left: -1px;
                   text-decoration: underline;
                   text-underline-offset: 5px;
                   border: 0;
+                  z-index: 1;
                   transform: translate(0.5px, -1px);
                 }
 
@@ -451,6 +600,7 @@
                   padding: 14.5px 20px 18px;
                   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.10), 0 4px 6px -1px rgba(0, 0, 0, 0.10);
                   background: #192526;
+                  height: fit-content;
 
                 }
 
@@ -459,6 +609,7 @@
                   width: 14px;
                   height: 6px;
                   border: 0;
+                  top: -6px;
                   margin-left: -7px;
                 }
 
@@ -469,20 +620,43 @@
                 #pwf-1 .spz-wrapper:has(#business_name) {
                   margin-bottom: 12px;
                 }
-
+                #pwf-1:has(.carousel-inner .slide-10.active) .questions_wrap ~ .content-between{
+                  margin-top: 0;
+                }
+                .questions_wrap{
+                  padding: 38.5px 0 19px;
+                }
+                .questions_wrap:not(:has(.question_item[style="display: block;"])){
+                  padding:0 0 29px;
+                }
                 .question_heading {
                   padding-bottom: 30px;
                 }
 
                 .question_heading h2 {
-                  color: #181818;
+                  color: #171717;
                   font-family: proxima-nova, sans-serif;
                   font-size: 24px;
                   font-weight: 600;
                   line-height: 31.2px;
+                  text-align: center;
                   margin-bottom: 0;
                 }
-
+                .question_list{
+                  max-width: 780px;
+                  margin: auto;
+                }
+                .question_3 .question_list{
+                  max-width: 920px;
+                }
+                .question_4 .question_list{
+                  max-width: 720px;
+                }
+                .carousel-inner .slide-9 .grid{
+                  max-width: 508px;
+                  margin: auto;
+                  gap: 12px;
+                }
                 .question_list ul {
                   display: flex;
                   flex-wrap: wrap;
@@ -518,13 +692,17 @@
                 }
 
                 .question_data a:hover {
-                  border: 1px solid #2468C780;
-                  background: linear-gradient(0deg, rgba(36, 104, 199, 0.05) 0%, rgba(36, 104, 199, 0.05) 100%), #FFF;
+                  border: 1px solid rgba(175, 146, 125, 0.40);
+                  box-shadow: 0 4px 16px -1px rgba(0, 0, 0, 0.06);
+                }
+                .question_data a:focus {
+                  border: 2px solid #2468C7;
+                  box-shadow: 0 0 0 2px rgba(36, 104, 199, 0.25), 0 4px 16px -1px rgba(0, 0, 0, 0.06);
                 }
 
                 .question_data a strong {
                   display: block;
-                  color: #181818;
+                  color: #171717;
                   text-align: center;
                   font-family: proxima-nova, sans-serif;
                   font-size: 18px;
@@ -533,8 +711,8 @@
                 }
 
                 .question_data.active a {
-                  border: 1px solid #2468C780;
-                  background: linear-gradient(0deg, rgba(36, 104, 199, 0.05) 0%, rgba(36, 104, 199, 0.05) 100%), #FFF;
+                  border: 2px solid #2468C7;
+                  background: #FFF;
                 }
 
                 .questions_wrap .question_item {
@@ -545,15 +723,17 @@
                   display: block;
                 }
 
-
+                .question_6 .question_heading{
+                  padding-bottom: 26px;
+                }
                 .Accordions {
                   display: block;
                 }
 
-                .Accordion_item {
+                .accordion_item {
                   width: 100%;
                   height: auto;
-                  margin: 5px 0;
+                  margin: 5px 0 10px;
 
                   border-radius: 16px;
                   border: 1px solid rgba(25, 37, 38, 0.20);
@@ -561,9 +741,13 @@
 
                 }
 
-                .Accordion_item .title_tab {
+                .Accordions .accordion_item:last-child{
+                  margin-bottom: 9px;
+                }
+
+                .accordion_item .title_tab {
                   width: 100%;
-                  padding: 30px;
+                  padding: 29.5px 29px 30.5px;
                   display: flex;
                   justify-content: space-between;
                   align-items: flex-start;
@@ -571,9 +755,13 @@
                   transition: background-color 0.3s ease-in;
                 }
 
-                .Accordion_item .title_tab .title {
+                .accordion_item .title_tab.active {
+                  padding: 28.5px 29px 30px;
+                }
+
+                .accordion_item .title_tab .title {
                   width: 100%;
-                  color: #181818;
+                  color: #171717;
                   font-family: proxima-nova, sans-serif;
                   font-size: 20px;
                   font-weight: 600;
@@ -582,10 +770,10 @@
                   position: relative;
                 }
 
-                .Accordion_item .title_tab .title .icon {
+                .accordion_item .title_tab .title .icon {
                   position: absolute;
-                  right: 1%;
-                  top: calc(50% - 8px);
+                  right: 0;
+                  top: calc(50% - 5.5px);
                   width: 16px;
                   height: 16px;
                   background-color: transparent;
@@ -598,8 +786,8 @@
                   width: 100%;
                   height: auto;
                   display: none;
-                  overflow: hidden;
-                  padding: 0 30px 30px;
+                  overflow: visible;
+                  padding: 0 29px 19.5px;
                 }
 
                 .inner_content p {
@@ -611,8 +799,10 @@
                   letter-spacing: 1px;
                 }
 
-                .Accordion_item .title_tab.active .title .icon {
+                .accordion_item .title_tab.active .title .icon {
                   transform: rotate(0deg);
+                  top: calc(50% - 9.5px);
+                  right: 4px;
                   transition: transform 0.3s ease-in;
                 }
 
@@ -630,6 +820,13 @@
                   pointer-events: none;
                 }
 
+                .inner_content .question_list  {
+                  max-width: 880px;
+                }
+                .inner_content .question_list ul {
+                  justify-content: flex-start;
+                }
+
                 #pwf-1 .slide-1,
                 #pwf-1 .slide-2,
                 #pwf-1 .slide-3,
@@ -638,7 +835,138 @@
                 #pwf-1 .slide-6 {
                   display: none;
                 }
-
+                .questions_wrap ~ .content-between .flex-1:nth-of-type(1):has(a.invisible){
+                  display: none;
+                }
+                .questions_wrap ~ .content-between:has(.flex-1:nth-of-type(1) a.invisible){
+                  justify-content: center;
+                }
+                .questions_wrap ~ .content-between:not(:has(.flex-1:nth-of-type(1) a.invisible)){
+                  display: flex;
+                  justify-content: space-between;
+                }
+                .questions_wrap ~ .content-between .flex-1:nth-of-type(1){
+                  text-align: left;
+                }
+                .questions_wrap ~ .content-between .flex-1:nth-of-type(1){
+                  text-align: left;
+                  padding-left: 3.5px;
+                  margin-top: -8px;
+                }
+                .questions_wrap ~ .content-between .flex-1:nth-of-type(1) span.mr-2{
+                  margin-top: 8px;
+                  transform: translateY(3.5px) translateX(-3.5px);
+                  display: inline-block;
+                  margin-right: 2.5px;
+                }
+                #pwf-1 .back-link:hover>div svg g path{
+                  stroke: #121111;
+                }
+                .questions_wrap ~ .content-between .w-100 ~ .flex-1{
+                  display: none;
+                }
+                .slider_heading{
+                  padding: 38.5px 0 12.5px;
+                }
+                .slider_heading h3{
+                  color: #171717;
+                  font-family: proxima-nova, sans-serif;
+                  font-size: 24px;
+                  font-weight: 600;
+                  line-height: 31.2px;
+                  text-align: center;
+                  margin: 0;
+                }
+                .carousel-item  strong{
+                  display: none;
+                  text-align: center!important;
+                  color: #171717;
+                  font-family: proxima-nova, sans-serif;
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 26px;
+                  margin: 0 0 31.5px;
+                }
+                #pwf-1 .carousel-inner:has(.slide-1.active) .slider_heading,
+                #pwf-1 .carousel-inner:has(.slide-2.active) .slider_heading,
+                #pwf-1 .carousel-inner:has(.slide-3.active) .slider_heading,
+                #pwf-1 .carousel-inner:has(.slide-4.active) .slider_heading,
+                #pwf-1 .carousel-inner:has(.slide-5.active) .slider_heading,
+                #pwf-1 .carousel-inner:has(.slide-6.active) .slider_heading{
+                  display: none;
+                }
+                #pwf-1 .carousel-inner .slide-8.active > strong,
+                #pwf-1 .carousel-inner .slide-9.active > strong,
+                #pwf-1 .carousel-inner .slide-10.active > strong,
+                #pwf-1 .carousel-inner .slide-11.active > strong{
+                  display: block;
+                }
+                @media (min-width: 768px) and (max-width: 1023.98px) {
+                  .question_heading{
+                    padding-bottom: 30.5px;
+                  }
+                  .question_heading h2 {
+                    font-size: 20px;
+                    line-height: 26px;
+                  }
+                  .questions_wrap {
+                    padding: 39.5px 0 18px;
+                  }
+                  .questions_wrap:has(.question_6[style="display: block;"]) {
+                    padding-bottom: 19px;
+                  }
+                  .question_data{
+                    width: 152px;
+                  }
+                  .question_4 .question_list {
+                    max-width: 620px;
+                  }
+                  .question_6 .question_heading {
+                    padding-bottom: 25.5px;
+                  }
+                  .accordion_item .title_tab {
+                    width: 100%;
+                    padding: 22.5px 15px 23px;
+                  }
+                  .accordion_item .title_tab .title {
+                    font-size: 18px;
+                    line-height: 23.4px;
+                  }
+                  .accordion_item .title_tab.active {
+                    padding: 22.5px 15px 16px;
+                  }
+                  .inner_content .question_list ul{
+                    margin: 0;
+                  }
+                  .inner_content {
+                    width: 100%;
+                    height: auto;
+                    display: none;
+                    // overflow: hidden;
+                    padding: 0 15px 15px;
+                  }
+                  .inner_content .question_list ul li {
+                    width: 100%;
+                    padding: 0 0 10px;
+                  }
+                  .inner_content .question_data {
+                    width: 100%;
+                    height: auto;
+                  }
+                  .inner_content .question_data a {
+                    padding: 15px 15px;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    height: auto;
+                  }
+                  .inner_content .question_data a br{
+                    display: none;
+                  }
+                  .question_data a{
+                    padding: 24px 15px;
+                  }
+                }
                 @media (max-width: 767.98px) {
                   h6 {
                     margin-top: 22px;
@@ -653,27 +981,30 @@
                   }
 
                   #pwf-1 div:has(.disclosure-tooltip) {
-                    margin-top: 25.5px
+                    margin-top: 0;
                   }
 
                   #pwf-1 div:has(.disclosure-tooltip) small {
                     max-width: 270px;
-                    margin-left: auto;
-                    margin-right: auto;
                     display: block;
+                    text-align: left;
                   }
 
                   #pwf-1 div:has(.disclosure-tooltip) small .disclosure-tooltip {
                     transform: translate(1.5px, 2.5px);
                   }
+                  #pwf-1 div:has(.disclosure-tooltip) small sup {
+                    margin-left: 0.5px;
+                    top: -6px;
+                  }
 
                   #pwf-1 .btn-action {
-                    width: 100%;
+                    width: fit-content;
                   }
 
-                  #pwf-1 div:has(>.btn-action) {
-                    width: calc(100% + 2px);
-                  }
+                  // #pwf-1 div:has(>.btn-action) {
+                  //   width: calc(100% + 2px);
+                  // }
 
                   #pwf-1 .slide-9 .grid-cols-2 {
                     grid-template-columns: none;
@@ -694,588 +1025,791 @@
                   #pwf-1 input:not(:placeholder-shown)~.spz-label {
                     width: calc(100% - 65px);
                   }
+                  .questions_wrap {
+                    padding: 22px 0 8.5px;
+                  }
+                  .question_heading h2 {
+                    font-size: 20px;
+                    line-height: 28px;
+                    text-align: left;
+                  }
+                  .questions_wrap:has(.question_6[style="display: block;"]) {
+                    padding-bottom: 9px;
+                  }
+                  .question_data{
+                    width: 152px;
+                  }
+                  .question_4 .question_list {
+                    max-width: 620px;
+                  }
+                  .question_6 .question_heading {
+                    padding-bottom: 25.5px;
+                  }
+                  .accordion_item .title_tab {
+                    width: 100%;
+                    padding: 22.5px 15px 23px;
+                  }
+                  .accordion_item .title_tab .title {
+                    font-size: 18px;
+                    line-height: 23.4px;
+                  }
+                  .accordion_item .title_tab.active {
+                    padding: 22.5px 15px 16px;
+                  }
+                  .inner_content .question_list ul{
+                    margin: 0;
+                  }
+                  .inner_content {
+                    width: 100%;
+                    height: auto;
+                    display: none;
+                    // overflow: hidden;
+                    padding: 0 15px 15.5px;
+                  }
+                  .question_list ul {
+                    justify-content: center;
+                  }
+                  .inner_content .question_list ul li {
+                    width: 100%;
+                    padding: 0 0 10px;
+                  }
+                  .inner_content .question_data {
+                    width: 100%;
+                    height: auto;
+                  }
+                  .inner_content .question_data a {
+                    padding: 15px 15px;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    height: auto;
+                  }
+                  .inner_content .question_data a strong{
+                    text-align: left;
+                  }
+                  .question_data {
+                    width: 151px;
+                    height: 64px;
+                  }
+                  .question_data a strong {
+                    font-size: 16px;
+                    line-height: 20.8px;
+                  }
+                  .question_5 .question_heading h2 {
+                    margin-right: -4px;
+                  }
+                  #pwf-1 .back-link, #pwf-1 .back-link>div {
+                    display: flex;
+                    align-items: center;
+                  }
+                  #pwf-1 .back-link, #pwf-1 .back-link>div{
+                    display: flex;
+                    align-items: center;
+                    padding-top: 3px;
+                  }
+                  .questions_wrap ~ .content-between .flex-1:nth-of-type(1) span.mr-2 {
+                    transform: translateY(-2.5px);
+                  }
+                  .accordion_item .title_tab.active {
+                    padding: 22.5px 15px 15.5px 15px;
+                  }
+                  .accordion_item .title_tab .title {
+                    font-size: 18px;
+                    line-height: 23.4px;
+                    padding-right: 25px;
+                  }
+                  .disclosure-tooltip .disclosure-tooltiptext{
+                    right: -190px;
+                  }
+                  #pwf-1 .disclosure-tooltip .disclosure-tooltiptext:after {
+                    right: unset;
+                    left: 20%;
+                  }
+                  .slider_heading {
+                    padding: 35px 0 9px;
+                  }
+                  .slider_heading h3 {
+                    color: #181818;
+                    font-family: proxima-nova, sans-serif;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 28px;
+                    text-align: left;
+                    margin: 0;
+                  }
+                  #pwf-1 .carousel-inner .slide-8.active > strong, 
+                  #pwf-1 .carousel-inner .slide-9.active > strong, 
+                  #pwf-1 .carousel-inner .slide-10.active > strong, 
+                  #pwf-1 .carousel-inner .slide-11.active > strong {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 23.4px;
+                    text-align: left !important;
+                    margin-bottom: 32px;
+                  }
+                  #pwf-1 .carousel-inner .slide-8.active .spz-wrapper,
+                  #pwf-1 .carousel-inner .slide-9.active .spz-wrapper,
+                  #pwf-1 .carousel-inner .slide-10.active .spz-wrapper,
+                  #pwf-1 .carousel-inner .slide-11.active .spz-wrapper {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 23.4px;
+                    text-align: left !important;
+                    margin-bottom: 32px;
+                    padding: 0 1px;
+                  }
+                  #pwf-1 .carousel-inner .slide-11.active .spz-wrapper{
+                    margin-bottom: 0;
+                  }
+                  .questions_wrap:not(:has(.question_item[style="display: block;"])) {
+                    padding: 0 0 6px;
+                  }
+                  #pwf-1 .carousel-inner .slide-9.active .fullname-wrapper>div>.grid{
+                    gap: 10px;
+                  }
+                  #pwf-1 .carousel-inner .slide-9.active .spz-wrapper{
+                    margin-bottom: 0;
+                  }
+                  #pwf-1 .spz-wrapper:has(input#business_name), 
+                  #pwf-1 .spz-wrapper:has(input#email),
+                  .carousel-inner .slide-9 .grid,
+                  #pwf-1 .carousel-item.active.slide-11,
+                  #pwf-1 .carousel-item:has(input#business_name) .text-left,
+                  #pwf-1 .carousel-item:has(input#email) .text-left {
+                    max-width: 100%;
+                  }
+                  .inner_content .question_data a br{
+                    display: none;
+                  }
+                    #pwf-1 .carousel-item.active.slide-11 .legal-box{
+                      padding-right: 2px;
+                    }
                 }
                 `;
 
               shadowRoot.appendChild(style);
+
               shadowRoot.querySelector('.carousel-inner').insertAdjacentHTML("afterbegin", `
                   <div class="steps"></div>
+                  <div class="slider_heading">
+                    <h3>Enter your information to see your results.</h3>
+
+                  </div>
                 `)
+              shadowRoot.querySelector('.carousel-item.slide-8').insertAdjacentHTML('afterbegin', `<strong>What is your business’ name?</strong>`);
+              shadowRoot.querySelector('.carousel-item.slide-9').insertAdjacentHTML('afterbegin', `<strong>What is your  name?</strong>`);
+              shadowRoot.querySelector('.carousel-item.slide-10').insertAdjacentHTML('afterbegin', `<strong>What is your email address?</strong>`);
+              shadowRoot.querySelector('.carousel-item.slide-11').insertAdjacentHTML('afterbegin', `<strong>What is your phone number?</strong>`);
+
+              shadowRoot.querySelector('.carousel-inner').insertAdjacentHTML("afterend", `
+                  <div class="questions_wrap">
+                    <div class="question_item question_1">
+                      <div class="question_heading">
+                        <h2>How much money do you need?</h2>
+                      </div>
+                      <div class="question_list">
+                        <ul>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$1 - $5k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$5k - $25k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$25 - $50k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$50 - $100k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$100 - $250k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$250 - $500k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$500k - $1M</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>Over $1M</strong>
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="question_item question_2">
+                      <div class="question_heading">
+                        <h2>How long have you been in business?</h2>
+                      </div>
+                      <div class="question_list">
+                        <ul>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>0 - 2 Months</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>3 - 5 Months</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>6 - 11 Months</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>1 - 2 Years</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>2 - 3 Years</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>3 - 5 Years</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>5+ Years</strong>
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="question_item question_3">
+                      <div class="question_heading">
+                        <h2>On average, how much revenue does your business currently generate each month?</h2>
+                      </div>
+                      <div class="question_list">
+                        <ul>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$0, No Revenue</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$1 - $4k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$5k - $7k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$8k - $14k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$15k - $19k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$20k - $49k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$50k - $79k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$80k - $199k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>$200k - $399k</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>More than $400k</strong>
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="question_item question_4">
+                      <div class="question_heading">
+                        <h2>What is your personal credit score?</h2>
+                      </div>
+                      <div class="question_list">
+                        <ul>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>499 or Below</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>500-599</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>600-649</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>650-679</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>680-719</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>720 or Higher</strong>
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="question_item question_5">
+                      <div class="question_heading">
+                        <h2>What type of business do you own?</h2>
+                      </div>
+                      <div class="question_list">
+                        <ul>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>Corporation</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>Legal Partnership</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>LLC</strong>
+                              </a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="question_data">
+                              <a href="javascript:void(0)">
+                                <strong>Sole Proprietor</strong>
+                              </a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="question_item question_6">
+                      <div class="question_heading">
+                        <h2>What is your company’s industry?</h2>
+                      </div>
+                      
+                      <div class="container">
+                        <div class="Accordions">
+                          <div class="accordion_item">
+                            <div class="title_tab">
+                              <h3 class="title">
+                                Professional, Institutional & Public Services
+                                <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                </span>
+                              </h3>
+                            </div>
+                            <div class="inner_content">
+                              <div class="question_list">
+                                <ul>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Finance and Insurance</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Legal Services</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Real Estate</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Education</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>IT, Media, or Publishing</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Political, Governmental, or Public Organizations</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Religious Organizations</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Social Assistance</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Healthcare</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>All Other</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion_item">
+                            <div class="title_tab">
+                              <h3 class="title">Industrial, Energy & Trade 
+                                <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                </span>
+                              </h3>
+                            </div>
+                            <div class="inner_content">
+                              <div class="question_list">
+                                <ul>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Manufacturing</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Construction</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Mining (except Oil and Gas)</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Oil and Gas Extraction</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Utilities</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Agriculture, Forestry, Fishing and Hunting</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Wholesale Trade</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Gas Stations</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion_item">
+                            <div class="title_tab">
+                              <h3 class="title">Retail, Consumer & Hospitality
+                                <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                </span>
+                              </h3>
+                            </div>
+                            <div class="inner_content">
+                              <div class="question_list">
+                                <ul>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Retail Stores</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Restaurants and Food Services</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Travel Agencies</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Arts, Entertainment, <br> and Recreation</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Gambling</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Adult Entertainment</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Firearm Sales</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion_item">
+                            <div class="title_tab">
+                              <h3 class="title">
+                                Transportation, Logistics & Mobility
+                                <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                </span>
+                              </h3>
+                            </div>
+                            <div class="inner_content">
+                              <div class="question_list">
+                                <ul>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Automobile Dealers <br> & Parts</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Freight Trucking</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="question_data">
+                                      <a href="javascript:void(0)">
+                                        <strong>Transportation and Warehousing</strong>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                `)
+
               const disclosureElement = shadowRoot.querySelector('#pwf-1 div:has(.disclosure-tooltip)');
               if (disclosureElement) {
-                shadowRoot.insertAdjacentHTML("beforebegin", disclosureElement.outerHTML);
+                console.log(disclosureElement);
+                shadowRoot.querySelector('.carousel-inner').insertAdjacentElement("beforebegin", disclosureElement);
               }
-              shadowRoot.querySelector('.carousel-inner').insertAdjacentHTML("afterend", `
-<div class="questions_wrap">
-  <div class="question_item question_1">
-    <div class="question_heading">
-      <h2>How much money do you need?</h2>
-    </div>
-    <div class="question_list">
-      <ul>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$1 - $5k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$5k - $25k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$25 - $50k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$50 - $100k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$100 - $250k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$250 - $500k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$500k - $1M</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>Over $1M</strong>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="question_item question_2">
-    <div class="question_heading">
-      <h2>How long have you been in business?</h2>
-    </div>
-    <div class="question_list">
-      <ul>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>0 - 2 Months</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>3 - 5 Months</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>6 - 11 Months</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>1 - 2 Years</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>2 - 3 Years</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>3 - 5 Years</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>5+ Years</strong>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="question_item question_3">
-    <div class="question_heading">
-      <h2>On average, how much revenue does your business currently generate each month?</h2>
-    </div>
-    <div class="question_list">
-      <ul>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$0, No Revenue</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$1 - $4k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$5k - $7k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$8k - $14k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$15k - $19k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$20k - $49k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$50k - $79k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$80k - $199k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>$200k - $399k</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>More than $400k</strong>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="question_item question_4">
-    <div class="question_heading">
-      <h2>What is your personal credit score?</h2>
-    </div>
-    <div class="question_list">
-      <ul>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>499 or Below</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>500-599</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>600-649</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>650-679</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>680-719</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>720 or Higher</strong>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="question_item question_5">
-    <div class="question_heading">
-      <h2>What type of business do you own?</h2>
-    </div>
-    <div class="question_list">
-      <ul>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>Corporation</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>Legal Partnership</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>LLC</strong>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="question_data">
-            <a href="javascript:void(0)">
-              <strong>Sole Proprietor</strong>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="question_item question_6">
-    <div class="question_heading">
-      <h2>How much money do you need?</h2>
-    </div>
-    
-    <div class="container">
-      <div class="Accordions">
-        <div class="Accordion_item">
-          <div class="title_tab">
-            <h3 class="title">
-              Professional, Institutional & Public Services
-              <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </h3>
-          </div>
-          <div class="inner_content">
-            <div class="question_list">
-              <ul>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Finance and Insurance</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Legal Services</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Real Estate</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Education</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>IT, Media, or Publishing</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Political, Governmental,or Public Organizations</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Religious Organizations</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Social Assistance</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Healthcare</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>All Other</strong>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="Accordion_item">
-          <div class="title_tab">
-            <h3 class="title">Industrial, Energy & Trade 
-              <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </h3>
-          </div>
-          <div class="inner_content">
-            <div class="question_list">
-              <ul>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Manufacturing</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Construction</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Mining (except Oil and Gas)</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Oil and Gas Extraction</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Utilities</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Agriculture, Forestry, Fishing and Hunting</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Wholesale Trade</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Gas Stations</strong>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="Accordion_item">
-          <div class="title_tab">
-            <h3 class="title">Retail, Consumer & Hospitality
-              <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </h3>
-          </div>
-          <div class="inner_content">
-            <div class="question_list">
-              <ul>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Retail Stores</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Restaurants and Food Services</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Travel Agencies</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Arts, Entertainment, and Recreation</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Gambling</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Adult Entertainment</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Firearm Sales</strong>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="Accordion_item">
-          <div class="title_tab">
-            <h3 class="title">
-              Transportation, Logistics & Mobility
-              <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M16.25 12.5L10 6.25L3.75 12.5" stroke="#A7A19D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </h3>
-          </div>
-          <div class="inner_content">
-            <div class="question_list">
-              <ul>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Automobile Dealers & Parts</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Freight Trucking</strong>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="question_data">
-                    <a href="javascript:void(0)">
-                      <strong>Transportation and Warehousing</strong>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
-</div>
-                `)
+              const small = shadowRoot.querySelector('#pwf-1 div:has(.disclosure-tooltip) small');
+
+              // get current HTML
+              let smallHTML = small.innerHTML;
+
+              // replace "...credit<sup>1</sup>. " with "...credit.<sup>1</sup> "
+              if (window.location.pathname == '/sba-loans') {
+                smallHTML = smallHTML.replace(
+                  /credit<sup>1<\/sup>\.\s?/,
+                  'credit.<sup>1</sup> '
+                );
+              } else {
+                smallHTML = smallHTML.replace(
+                  /credit<sup>1<\/sup>\.\s?/,
+                  'credit.<sup>2</sup> '
+                );
+              }
+              // update the element
+              small.innerHTML = smallHTML;
+
+              if (shadowRoot.querySelector('.questions_wrap ~ .content-between .flex-1:nth-of-type(1) span.mr-2')) {
+                shadowRoot.querySelector('.questions_wrap ~ .content-between .flex-1:nth-of-type(1) span.mr-2').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <g clip-path="url(#clip0_28672_2616)">
+                    <path d="M10 12L5 7L10 2" stroke="#78716C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_28672_2616">
+                      <rect width="16" height="16" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>`;
+              }
 
               // Function to handle question item clicks
               function setupQuestionHandlers() {
@@ -1285,7 +1819,7 @@
                 // Helper function to sync active state based on select value
                 function syncActiveState(questionNum) {
                   let selectElement, items, selectedIndex, selectedText;
-                  
+
                   if (questionNum === 1) {
                     selectElement = shadowRoot.querySelector('#amountSeeking');
                     items = shadowRoot.querySelectorAll('.question_1 .question_data');
@@ -1323,11 +1857,11 @@
                       selectedText = selectElement.options[selectElement.selectedIndex].textContent.trim();
                     }
                   }
-                  
+
                   // Remove active class from all items in this question
                   if (items) {
                     items.forEach(item => item.classList.remove('active'));
-                    
+
                     // Add active class to matching item
                     if (questionNum === 6 && selectedText) {
                       items.forEach(item => {
@@ -1354,7 +1888,7 @@
                 function showQuestion(questionNum) {
                   // Remove any error messages when navigating
                   removeError();
-                  
+
                   for (let i = 1; i <= 6; i++) {
                     const question = shadowRoot.querySelector(`.question_${i}`);
                     if (question) {
@@ -1363,50 +1897,64 @@
                   }
                   // Sync active state when showing a question
                   syncActiveState(questionNum);
-                  
-                  // Special handling for question_6: open accordion with active item
+
+                  // Special handling for question_6: open accordion with active item (only run once; skip if already open)
                   if (questionNum === 6) {
-                    // Use requestAnimationFrame to ensure DOM is updated after syncActiveState
                     requestAnimationFrame(() => {
                       const activeItem = shadowRoot.querySelector('.question_6 .Accordions .question_data.active');
-                      if (activeItem) {
-                        // Find the parent Accordion_item
-                        const accordionItem = activeItem.closest('.Accordion_item');
-                        if (accordionItem) {
-                          // Close all accordion items first
-                          const allAccordionItems = shadowRoot.querySelectorAll('.question_6 .Accordion_item');
-                          allAccordionItems.forEach(item => {
-                            const titleTab = item.querySelector('.title_tab');
-                            const innerContent = item.querySelector('.inner_content');
-                            if (titleTab && innerContent) {
-                              titleTab.classList.remove('active');
-                              // Close if it's currently open
-                              if (innerContent.style.display === 'block' || 
-                                  innerContent.style.display === '' ||
-                                  window.getComputedStyle(innerContent).display !== 'none') {
-                                slideUp(innerContent);
-                              }
-                            }
-                          });
-                          
-                          // Open the accordion item containing the active item after closing animations complete
-                          // Wait for slideUp animation to finish (500ms duration) plus a small buffer
-                          setTimeout(() => {
-                            const titleTab = accordionItem.querySelector('.title_tab');
-                            const innerContent = accordionItem.querySelector('.inner_content');
-                            if (titleTab && innerContent) {
-                              // Reset any inline styles that might interfere
-                              innerContent.style.removeProperty('display');
-                              innerContent.style.removeProperty('height');
-                              innerContent.style.removeProperty('overflow');
-                              
-                              titleTab.classList.add('active');
-                              // Always use slideDown to ensure smooth animation
-                              slideDown(innerContent);
-                            }
-                          }, 550);
-                        }
+                      if (!activeItem) return;
+                      const accordionItem = activeItem.closest('.accordion_item');
+                      if (!accordionItem) return;
+
+                      const titleTab = accordionItem.querySelector('.title_tab');
+                      const innerContent = accordionItem.querySelector('.inner_content');
+                      if (!titleTab || !innerContent) return;
+
+                      const isTargetAlreadyOpen = titleTab.classList.contains('active') &&
+                        (innerContent.style.display === 'block' || innerContent.style.display === '' ||
+                          window.getComputedStyle(innerContent).display !== 'none');
+
+                      const allAccordionItems = shadowRoot.querySelectorAll('.question_6 .accordion_item');
+                      if (isTargetAlreadyOpen) {
+                        // Target is already open; close others without animation so repeated showQuestion(6) calls don't re-run
+                        allAccordionItems.forEach(item => {
+                          if (item === accordionItem) return;
+                          const t = item.querySelector('.title_tab');
+                          const c = item.querySelector('.inner_content');
+                          if (t && c) {
+                            t.classList.remove('active');
+                            c.style.display = 'none';
+                            c.style.height = '';
+                            c.style.overflow = '';
+                          }
+                        });
+                        return;
                       }
+
+                      // Close all accordion items first, then open the target once
+                      allAccordionItems.forEach(item => {
+                        const t = item.querySelector('.title_tab');
+                        const c = item.querySelector('.inner_content');
+                        if (t && c) {
+                          t.classList.remove('active');
+                          if (c.style.display === 'block' || c.style.display === '' ||
+                            window.getComputedStyle(c).display !== 'none') {
+                            slideUp(c);
+                          }
+                        }
+                      });
+
+                      setTimeout(() => {
+                        const tab = accordionItem.querySelector('.title_tab');
+                        const content = accordionItem.querySelector('.inner_content');
+                        if (tab && content) {
+                          content.style.removeProperty('display');
+                          content.style.removeProperty('height');
+                          content.style.removeProperty('overflow');
+                          tab.classList.add('active');
+                          slideDown(content);
+                        }
+                      }, 550);
                     });
                   }
                 }
@@ -1466,7 +2014,7 @@
                     shadowRoot.querySelectorAll('.question_1 .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#amountSeeking');
                     if (selectElement) {
                       // Map items to options: item 0 -> option 1, item 1 -> option 2, etc.
@@ -1487,7 +2035,7 @@
                     shadowRoot.querySelectorAll('.question_2 .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#timeInBusiness');
                     if (selectElement) {
                       // Ignoring index 0 as it's always disabled
@@ -1507,7 +2055,7 @@
                     shadowRoot.querySelectorAll('.question_3 .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#averageMonthlySales');
                     if (selectElement) {
                       // Ignoring index 0 as it's always disabled
@@ -1527,7 +2075,7 @@
                     shadowRoot.querySelectorAll('.question_4 .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#creditScore');
                     if (selectElement) {
                       // Ignoring index 0 as it's always disabled
@@ -1547,7 +2095,7 @@
                     shadowRoot.querySelectorAll('.question_5 .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#entityType');
                     if (selectElement) {
                       // Ignoring index 0 as it's always disabled
@@ -1565,14 +2113,14 @@
                   // Prevent duplicate event listeners
                   if (item.hasAttribute('data-question6-setup')) return;
                   item.setAttribute('data-question6-setup', 'true');
-                  
+
                   item.addEventListener('click', function (e) {
                     e.preventDefault();
                     // Remove active class from all items
                     shadowRoot.querySelectorAll('.question_6 .Accordions .question_data').forEach(q => q.classList.remove('active'));
                     // Add active class to clicked item
                     item.closest('.question_data').classList.add('active');
-                    
+
                     const selectElement = shadowRoot.querySelector('#industry');
                     if (selectElement) {
                       // Get the text from the clicked item and match it with option text
@@ -1590,6 +2138,19 @@
                 });
 
                 // Back button handler - show previous question
+                function getActiveSlideNumber() {
+                  const activeSlide = shadowRoot.querySelector('.carousel-item.active') ||
+                    Array.from(shadowRoot.querySelectorAll('.carousel-item')).find(el => el.classList.contains('active'));
+                  if (!activeSlide) return 0;
+                  const slideMatch = activeSlide.className.match(/slide-(\d+)/);
+                  return slideMatch ? parseInt(slideMatch[1], 10) : 0;
+                }
+
+                function isOnFormSlides() {
+                  const n = getActiveSlideNumber();
+                  return n === 8 || n === 9 || n === 10 || n === 11;
+                }
+
                 function getCurrentQuestion() {
                   for (let i = 1; i <= 6; i++) {
                     const question = shadowRoot.querySelector(`.question_${i}`);
@@ -1600,32 +2161,29 @@
                   return 1; // Default to question 1 if none found
                 }
 
+                function hideAllQuestions() {
+                  removeError();
+                  for (let i = 1; i <= 6; i++) {
+                    const question = shadowRoot.querySelector(`.question_${i}`);
+                    if (question) question.style.display = 'none';
+                  }
+                }
+
                 function setupBackButton() {
                   const backButton = shadowRoot.querySelector('#pwf-1 .back-link');
                   if (backButton && !backButton.hasAttribute('data-back-setup')) {
                     backButton.setAttribute('data-back-setup', 'true');
-                    backButton.addEventListener('click', function(e) {
-                      e.preventDefault();
-                      
-                      // Check if #business_name field is visible
-                      const businessNameField = shadowRoot.querySelector('#business_name');
-                      const isBusinessNameVisible = businessNameField && 
-                        (businessNameField.offsetParent !== null || 
-                         businessNameField.style.display !== 'none' ||
-                         window.getComputedStyle(businessNameField).display !== 'none');
-                      
-                      if (isBusinessNameVisible) {
-                        // Show question_6 if business_name is visible
-                        showQuestion(6);
-                      } else {
-                        // Normal back button behavior
-                        const currentQuestion = getCurrentQuestion();
-                        if (currentQuestion > 1) {
-                          // Show previous question
-                          showQuestion(currentQuestion - 1);
+                    backButton.addEventListener('click', function (e) {
+                      // Don't preventDefault - let the back link move the carousel. Observe when .active moves (transition can take time), then show matching question for slide 1-6
+                      const checkAfterTransition = () => {
+                        const activeNum = getActiveSlideNumber();
+                        if (activeNum >= 1 && activeNum <= 6) {
+                          showQuestion(activeNum);
+                        } else {
+                          hideAllQuestions();
                         }
-                        // If already on question 1, do nothing
-                      }
+                      };
+                      [100, 300, 500, 700, 1000].forEach(delay => setTimeout(checkAfterTransition, delay));
                     });
                   }
                 }
@@ -1639,12 +2197,18 @@
                   buttons.forEach(button => {
                     if (button.hasAttribute('data-validation-setup')) return;
                     button.setAttribute('data-validation-setup', 'true');
-                    
-                    button.addEventListener('click', function(e) {
+
+                    button.addEventListener('click', function (e) {
+                      // When any of slide-8, 9, 10, 11 has .active: don't run our logic, keep all 6 questions hidden
+                      if (isOnFormSlides()) {
+                        hideAllQuestions();
+                        return;
+                      }
+
                       const currentQuestion = getCurrentQuestion();
                       let selectElement;
                       let errorMessage = '';
-                      
+
                       // Get the corresponding select element based on current question
                       if (currentQuestion === 1) {
                         selectElement = shadowRoot.querySelector('#amountSeeking');
@@ -1665,16 +2229,16 @@
                         selectElement = shadowRoot.querySelector('#industry');
                         errorMessage = 'Industry is required';
                       }
-                      
+
                       // Check if select has a value (selectedIndex > 0, since 0 is disabled)
                       if (selectElement && (selectElement.selectedIndex === 0 || selectElement.selectedIndex === -1)) {
                         // No selection - show error
                         e.preventDefault();
                         e.stopPropagation();
-                        
+
                         // Remove existing error if any
                         removeError();
-                        
+
                         // Add error message after .questions_wrap
                         const questionsWrap = shadowRoot.querySelector('.questions_wrap');
                         if (questionsWrap) {
@@ -1686,7 +2250,7 @@
                       } else {
                         // Has selection - remove error and show next question
                         removeError();
-                        
+
                         // Show next question if not on last question
                         if (currentQuestion < 6) {
                           e.preventDefault();
@@ -1737,6 +2301,21 @@
               // Watch for slide changes
               const progressObserver = new MutationObserver(() => {
                 updateProgressBar();
+                // When active slide is 8-11 (e.g. after next from slide-6 to slide-8), remove error and hide all questions
+                const activeSlide = shadowRoot.querySelector('.carousel-item.active') ||
+                  Array.from(shadowRoot.querySelectorAll('.carousel-item')).find(el => el.classList.contains('active'));
+                if (activeSlide) {
+                  const slideMatch = activeSlide.className.match(/slide-(\d+)/);
+                  const slideNumber = slideMatch ? parseInt(slideMatch[1], 10) : 0;
+                  if (slideNumber >= 8 && slideNumber <= 11) {
+                    const existingError = shadowRoot.querySelector('.questions_wrap + .text-left');
+                    if (existingError) existingError.remove();
+                    for (let i = 1; i <= 6; i++) {
+                      const question = shadowRoot.querySelector(`.question_${i}`);
+                      if (question) question.style.display = 'none';
+                    }
+                  }
+                }
               });
 
               const carouselInner = shadowRoot.querySelector('.carousel-inner');
@@ -1781,7 +2360,7 @@
                 element.style.visibility = "hidden";
                 let height = element.scrollHeight;
                 element.style.visibility = "";
-                
+
                 // Now set it to 0 and animate
                 element.style.height = "0px";
                 element.style.transition = `height ${duration}ms ease-in-out`;
@@ -1808,7 +2387,7 @@
                 if (titleTab.length === 0) return;
 
                 // Open first item by default
-                const firstItem = shadowRoot.querySelector(".Accordion_item");
+                const firstItem = shadowRoot.querySelector(".accordion_item");
                 if (firstItem) {
                   const firstTitle = firstItem.querySelector(".title_tab");
                   const firstContent = firstTitle.nextElementSibling;
@@ -1824,7 +2403,7 @@
                 titleTab.forEach(tab => {
                   if (tab.hasAttribute('data-accordion-setup')) return;
                   tab.setAttribute('data-accordion-setup', 'true');
-                  
+
                   tab.addEventListener("click", (e) => {
                     e.preventDefault();
 
@@ -1845,7 +2424,7 @@
                       slideDown(content);
 
                       // Close all siblings
-                      const siblings = parentItem.parentElement.querySelectorAll(".Accordion_item");
+                      const siblings = parentItem.parentElement.querySelectorAll(".accordion_item");
 
                       siblings.forEach(sib => {
                         if (sib !== parentItem) {
@@ -1937,7 +2516,7 @@
                   wrapper.className = 'spz-wrapper';               // add class
                   input.parentNode.insertBefore(wrapper, input);
                   wrapper.appendChild(input);
-                  shadowRoot.querySelector('#business_name').insertAdjacentHTML("afterend", "<label class='spz-label business_name'>What is your business' name?</label>")
+                  shadowRoot.querySelector('#business_name').insertAdjacentHTML("afterend", "<label class='spz-label business_name'>Business Name</label>")
                 }
                 if (shadowRoot.querySelector('#first') && !shadowRoot.querySelector('.spz-label.first')) {
                   const input = shadowRoot.querySelector('#first');   // select your input
@@ -1945,7 +2524,7 @@
                   wrapper.className = 'spz-wrapper';               // add class
                   input.parentNode.insertBefore(wrapper, input);
                   wrapper.appendChild(input);
-                  shadowRoot.querySelector('#first').insertAdjacentHTML("afterend", "<label class='spz-label first'>What is your first name?</label>")
+                  shadowRoot.querySelector('#first').insertAdjacentHTML("afterend", "<label class='spz-label first'>First Name</label>")
                 }
                 if (shadowRoot.querySelector('#last') && !shadowRoot.querySelector('.spz-label.last')) {
                   const input = shadowRoot.querySelector('#last');   // select your input
@@ -1953,7 +2532,7 @@
                   wrapper.className = 'spz-wrapper';               // add class
                   input.parentNode.insertBefore(wrapper, input);
                   wrapper.appendChild(input);
-                  shadowRoot.querySelector('#last').insertAdjacentHTML("afterend", "<label class='spz-label last'>What is your last name?</label>")
+                  shadowRoot.querySelector('#last').insertAdjacentHTML("afterend", "<label class='spz-label last'>Last Name   </label>")
                 }
                 if (shadowRoot.querySelector('#email') && !shadowRoot.querySelector('.spz-label.email')) {
                   const input = shadowRoot.querySelector('#email');

@@ -10,11 +10,11 @@
   font-weight: normal;
   font-style: normal;
 }
-body.spz_1002 #___gatsby .hero-section-CTA {
-  padding-bottom: 12px;
-}
 body.spz_1002 #___gatsby .hero-section-CTA .form-spz {
   margin: 0;
+}
+body.spz_1002 #___gatsby .hero-section-CTA {
+  padding-bottom: 12px;
 }
 body.spz_1002 #___gatsby .hero-section-CTA .header__get-started {
   align-items: flex-start;

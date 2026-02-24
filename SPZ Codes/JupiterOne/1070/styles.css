@@ -1604,7 +1604,6 @@ body.spz_t1065 .demo_form .hs_error_rollup + .hs_submit .hs-button {
   justify-content: space-between;
   border-radius: 10px;
   background: #566b88;
-  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   padding: 15px 30px;
   height: 100%;

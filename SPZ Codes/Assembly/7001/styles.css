@@ -31,10 +31,6 @@ body:not(.spz_7001) .section4_7001 {
   display: none;
 }
 
-.spz_7001 {
-  /* section 2*/
-  /* section 3*/
-}
 .spz_7001 div[data-testid=hero-banner__container], .spz_7001 div[data-testid=standard-promo__container],
 .spz_7001 div #blt4148ca790afbb0db,
 .spz_7001 div #blt98459f14a5f4f4ed, .spz_7001 div[data-testid=feature-card_container] {
@@ -395,6 +391,9 @@ body:not(.spz_7001) .section4_7001 {
 .spz_7001 .fetaure_detail p:nth-of-type(2) {
   padding-top: 23px;
 }
+.spz_7001 {
+  /* section 2*/
+}
 .spz_7001 div.section2_7001 {
   display: block;
   background-color: #ffffff;
@@ -695,6 +694,9 @@ body:not(.spz_7001) .section4_7001 {
   width: 100%;
   height: auto;
   display: block;
+}
+.spz_7001 {
+  /* section 3*/
 }
 .spz_7001 .section3_7001 {
   display: block;

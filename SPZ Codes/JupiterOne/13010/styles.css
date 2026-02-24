@@ -1,7 +1,3 @@
-.spz_t13010 {
-  /* slider section */
-  /* slider section */
-}
 .spz_t13010 .section-secops-hero-texture,
 .spz_t13010 .section-secops-hero-texture_image,
 .spz_t13010 .section-vulnerabilty-management,
@@ -381,6 +377,9 @@
     margin: 0;
     padding: 0 4px;
   }
+}
+.spz_t13010 {
+  /* slider section */
 }
 .spz_t13010 .solutionSlider {
   width: 100%;
@@ -858,6 +857,9 @@
   .spz_t13010 .solutionSlider .section-subtitle {
     font-weight: 400;
   }
+}
+.spz_t13010 {
+  /* slider section */
 }
 .spz_t13010 .benifits {
   padding: 0 0 130px;

@@ -742,11 +742,6 @@
   }
 }
 /* Form CSS end */
-.spz_1003 {
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /*Inputs and labels states*/
-}
 .spz_1003 .spz-triage-wrap {
   display: flex;
   max-width: 576px;
@@ -1001,6 +996,9 @@
 .spz_1003 :root {
   --inputHeight: 48px;
 }
+.spz_1003 {
+  /*Form layout styling*/
+}
 .spz_1003 .spz-form-wrap form {
   display: flex;
   flex-wrap: wrap;
@@ -1010,8 +1008,14 @@
   max-width: calc(50% - 6px) !important;
   width: 100%;
 }
+.spz_1003 {
+  /*Form layout styling end*/
+}
 .spz_1003 .spz-input-wrap {
   position: relative;
+}
+.spz_1003 {
+  /*Inputs and labels states*/
 }
 .spz_1003 .logo_list {
   padding-top: 25px;

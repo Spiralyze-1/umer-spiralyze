@@ -3,15 +3,6 @@
   --inputHeight: 52px;
 }
 
-.spz_9005_v1 {
-  /*Background end */
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Style form wrapping div end*/
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /* Styling for label animation*/
-  /* Styling for label animation end*/
-}
 .spz_9005_v1 #main_cont:has(.thank-you-screen) {
   position: relative;
   z-index: 1111;
@@ -24,8 +15,7 @@
   bottom: 0;
   right: 0;
   background: linear-gradient(114deg, rgba(43, 83, 224, 0.6) 7.08%, rgba(38, 46, 106, 0.6) 100%);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   z-index: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -199,8 +189,7 @@
 .spz_9005_v1 .form_outer {
   padding: 50px 0;
   background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/netwrix/9001/bg-auditor-desktop.webp");
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -227,6 +216,10 @@
     position: relative;
     overflow: auto;
   }
+}
+.spz_9005_v1 {
+  /*Background end */
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
 }
 .spz_9005_v1 .spz-form-wrap {
   max-width: 554px;
@@ -264,6 +257,9 @@
     border-radius: 0;
   }
 }
+.spz_9005_v1 {
+  /*Style form wrapping div end*/
+}
 @media (max-width: 767px) {
   .spz_9005_v1 .spz-form-wrap {
     width: 100%;
@@ -288,6 +284,9 @@
   .spz_9005_v1 .spz-form-wrap .the-form {
     margin-top: 16px;
   }
+}
+.spz_9005_v1 {
+  /*Form layout styling*/
 }
 .spz_9005_v1 .spz-form-wrap form {
   display: flex;
@@ -336,6 +335,10 @@
 .spz_9005_v1 .spz-form-wrap .mktoFormRow {
   max-width: calc(50% - 8px) !important;
   width: 100%;
+}
+.spz_9005_v1 {
+  /*Form layout styling end*/
+  /* Styling for label animation*/
 }
 .spz_9005_v1 .inner-wrapper {
   width: 100%;
@@ -672,6 +675,9 @@
 .spz_9005_v1 .focused.error select option:first-child {
   color: transparent;
 }
+.spz_9005_v1 {
+  /* Styling for label animation end*/
+}
 .spz_9005_v1 .form_logo {
   width: 100%;
   text-align: center;
@@ -850,8 +856,7 @@
   flex-wrap: wrap;
   height: 100%;
   background: linear-gradient(114deg, rgba(43, 83, 224, 0.6) 7.08%, rgba(38, 46, 106, 0.6) 100%);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   -moz-backdrop-filter: blur(4px);
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {

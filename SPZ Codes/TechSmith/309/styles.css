@@ -372,10 +372,6 @@
 }
 .spz_309 .my_table table tr td {
   width: 35%;
-  padding: 24px 24px 23px;
-  border-right: 1px solid #DDD;
-  border-bottom: 1px solid #DDD;
-  background-color: #fff;
 }
 @media (max-width: 767.98px) {
   .spz_309 .my_table table tr td {
@@ -397,6 +393,12 @@
     width: 50%;
   }
 }
+.spz_309 .my_table table tr td {
+  padding: 24px 24px 23px;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  background-color: #fff;
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .spz_309 .my_table table tr td {
     padding: 22px 24px 19px;
@@ -411,16 +413,18 @@
 .spz_309 .my_table table tr td span {
   display: flex;
   align-items: center;
-  color: #1A1A1A;
-  font-family: "Montserrat";
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 22px;
 }
 .spz_309 .my_table table tr td span img {
   display: block;
   width: 24px;
   margin-right: 12px;
+}
+.spz_309 .my_table table tr td span {
+  color: #1A1A1A;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
 }
 @media (max-width: 767.98px) {
   .spz_309 .my_table table tr td span {

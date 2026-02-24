@@ -834,7 +834,7 @@
                 }
 
                 // Ensure sup element always has value '2' (check on every mutation)
-                ensureSupValueIsTwo();
+                // ensureSupValueIsTwo();
               })
               observer.observe(shadowRoot.querySelector("#pwf-1"), { childList: true, subtree: true, attributes: true });
               shadowRoot.querySelector('#pwf-1').insertAdjacentHTML("beforeend", `<div class="fake-div"></div>`)

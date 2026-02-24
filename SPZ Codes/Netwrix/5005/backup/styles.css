@@ -150,13 +150,6 @@
 }
 .spz_5005 #modalFormRequestContainer {
   /*Form layout styling*/
-  /*Form layout styling end*/
-  /*Input styling*/
-  /*Input styling end*/
-  /*Styling other elements*/
-  /*Styling other elements end*/
-  /* Styling for label animation*/
-  /* Styling for label animation end*/
 }
 .spz_5005 #modalFormRequestContainer .spz-form-wrap form {
   display: flex;
@@ -234,6 +227,10 @@
     max-width: 100%;
   }
 }
+.spz_5005 #modalFormRequestContainer {
+  /*Form layout styling end*/
+  /*Input styling*/
+}
 .spz_5005 #modalFormRequestContainer .spz-form-wrap input,
 .spz_5005 #modalFormRequestContainer .spz-form-wrap select {
   height: var(--inputHeight) !important;
@@ -273,6 +270,10 @@
 .spz_5005 #modalFormRequestContainer .spz-form-wrap select:focus {
   border: var(--input-border-focus) !important;
 }
+.spz_5005 #modalFormRequestContainer {
+  /*Input styling end*/
+  /*Styling other elements*/
+}
 .spz_5005 #modalFormRequestContainer .spz-company-logo {
   margin-bottom: 24px;
 }
@@ -304,6 +305,10 @@
   font-weight: 400;
   line-height: 150%;
   margin-bottom: 24px;
+}
+.spz_5005 #modalFormRequestContainer {
+  /*Styling other elements end*/
+  /* Styling for label animation*/
 }
 .spz_5005 #modalFormRequestContainer .spz-input-wrap label[class*=label-spz-] {
   position: absolute;
@@ -359,6 +364,9 @@
 }
 .spz_5005 #modalFormRequestContainer .spz-input-wrap.has-error input {
   border-color: #DF0000 !important;
+}
+.spz_5005 #modalFormRequestContainer {
+  /* Styling for label animation end*/
 }
 .spz_5005 #modalFormRequestContainer .spz-input-wrap .mktoError {
   bottom: unset;

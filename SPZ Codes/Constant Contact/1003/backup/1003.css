@@ -8,22 +8,17 @@
   --progress-bg: #1856ED;
   --cta-primary-bg: #1856ED;
   --cta-primary-hover: #1330BF;
-  --bg-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/1003/ui-background.webp");
+  --bg-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/constantcontact/1003/ui-background.webp');
   --box-shadow: 0 16px 24px rgba(25, 24, 84, 0.05), 0 10px 23px rgba(25, 24, 84, 0.07);
 }
 
-.spz_1003_v1,
-.spz_1003_v2 {
-  /* Social Proof Section */
-  /* Features Section */
-  /* Desktop Images Container */
-  /* ========================================
-     RESPONSIVE STYLES
-  ======================================== */
-}
 .spz_1003_v1 .main-grid #integrations-image,
 .spz_1003_v2 .main-grid #integrations-image {
   display: none;
+}
+.spz_1003_v1,
+.spz_1003_v2 {
+  /* Social Proof Section */
 }
 .spz_1003_v1 .spz-social-proof,
 .spz_1003_v2 .spz-social-proof {
@@ -51,6 +46,10 @@
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.spz_1003_v1,
+.spz_1003_v2 {
+  /* Features Section */
 }
 .spz_1003_v1 .spz-bg-wrap,
 .spz_1003_v2 .spz-bg-wrap {
@@ -99,6 +98,10 @@
     min-width: unset;
     max-width: 100%;
   }
+}
+.spz_1003_v1,
+.spz_1003_v2 {
+  /* Desktop Images Container */
 }
 .spz_1003_v1 .spz-features-accordion__images,
 .spz_1003_v2 .spz-features-accordion__images {
@@ -278,6 +281,12 @@
 .spz_1003_v1 .spz-features-accordion__contents > .content .solution__image,
 .spz_1003_v2 .spz-features-accordion__contents > .content .solution__image {
   display: none;
+}
+.spz_1003_v1,
+.spz_1003_v2 {
+  /* ========================================
+     RESPONSIVE STYLES
+  ======================================== */
 }
 @media (max-width: 1440px) {
   .spz_1003_v1 .spz-bg-wrap,

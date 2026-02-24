@@ -8,7 +8,7 @@
   --cta-font-size: 16px;
   --cta-font-size-mobile: 16px;
   --close-button-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1726048511/bill/7002/x-close.svg");
-  --close-button-hover-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1725965524/bill/7002/x-close-hover.svg");
+  --close-button-hover-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1725965524/bill/7002/x-close-hover.svg');
 }
 
 .spz_7002 > div:first-child {

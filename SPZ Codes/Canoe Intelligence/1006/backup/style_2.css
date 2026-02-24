@@ -665,11 +665,6 @@
   }
 }
 /* Form CSS end */
-.spz_1006_v1 {
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /*Inputs and labels states*/
-}
 .spz_1006_v1 .spz-triage-wrap {
   display: none;
   max-width: 576px;
@@ -924,6 +919,9 @@
 .spz_1006_v1 :root {
   --inputHeight: 48px;
 }
+.spz_1006_v1 {
+  /*Form layout styling*/
+}
 .spz_1006_v1 .spz-form-wrap form {
   display: flex;
   flex-wrap: wrap;
@@ -933,8 +931,14 @@
   max-width: calc(50% - 6px) !important;
   width: 100%;
 }
+.spz_1006_v1 {
+  /*Form layout styling end*/
+}
 .spz_1006_v1 .spz-input-wrap {
   position: relative;
+}
+.spz_1006_v1 {
+  /*Inputs and labels states*/
 }
 .spz_1006_v1 .logo_list {
   margin-top: auto;
@@ -995,11 +999,6 @@
 .spz_1006_v1 {
   background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/1006/1440.webp") no-repeat top center/cover;
   height: 100vh;
-  /*Background end */
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Styling other elements*/
-  /*Styling other elements end*/
-  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .spz_1006_v1 {
@@ -1010,6 +1009,9 @@
   .spz_1006_v1 {
     overflow: auto;
   }
+}
+.spz_1006_v1 {
+  /*Background end */
 }
 .spz_1006_v1 .footer-main {
   display: none;
@@ -1076,6 +1078,9 @@
     display: none;
   }
 }
+.spz_1006_v1 {
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
+}
 .spz_1006_v1 .spz-form-wrap {
   max-width: var(--container-width);
   width: 100%;
@@ -1122,6 +1127,9 @@
 .spz_1006_v1 .gfield:has(.ginput_container.hide) {
   display: none;
 }
+.spz_1006_v1 {
+  /*Styling other elements*/
+}
 .spz_1006_v1 .spz-superheading {
   color: #3620FF;
   text-align: center;
@@ -1151,6 +1159,9 @@
   line-height: 150%;
   margin-bottom: 24px;
 }
+.spz_1006_v1 {
+  /*Styling other elements end*/
+}
 .spz_1006_v1 .spz-input-wrap {
   position: relative;
   margin-bottom: 20px !important;
@@ -1158,6 +1169,9 @@
 .spz_1006_v1 .spz-input-wrap .mktoError {
   bottom: unset;
   top: var(--inputHeight);
+}
+.spz_1006_v1 {
+  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 .spz_1006_v1 your_selector_what_you_need_to_hide {
   display: none !important;

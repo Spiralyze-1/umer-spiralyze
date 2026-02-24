@@ -39,25 +39,21 @@
 
 .spz_3004_v1 {
   /* Hide original content in the target section */
-  /* Main Container */
-  /* Section Heading */
-  /* Accordion Wrapper */
-  /* Accordion Items */
-  /* Progress Bar */
-  /* Arrow Icons */
-  /* Accordion Content */
-  /* CTA Buttons */
-  /* Image Panel */
-  /* Media Queries */
 }
 .spz_3004_v1 .spz-features-accordion-host > *:not(.spz-bg-wrap) {
   display: none !important;
+}
+.spz_3004_v1 {
+  /* Main Container */
 }
 .spz_3004_v1 .spz-bg-wrap {
   background: #ffffff;
   padding: 72px 134px;
   max-width: 100%;
   box-sizing: border-box;
+}
+.spz_3004_v1 {
+  /* Section Heading */
 }
 .spz_3004_v1 .spz-bg-wrap .features-heading {
   font-family: "Aktiv Grotesk Corp";
@@ -67,6 +63,9 @@
   color: #190729;
   text-align: center;
   margin-bottom: 47.5px;
+}
+.spz_3004_v1 {
+  /* Accordion Wrapper */
 }
 .spz_3004_v1 .spz-features-accordion__wrapper {
   position: relative;
@@ -79,6 +78,9 @@
 .spz_3004_v1 .spz-features-accordion {
   flex: 0 0 464px;
   max-width: 464px;
+}
+.spz_3004_v1 {
+  /* Accordion Items */
 }
 .spz_3004_v1 .spz-features-accordion__item {
   display: block;
@@ -142,6 +144,9 @@
     margin-right: -1px;
   }
 }
+.spz_3004_v1 {
+  /* Progress Bar */
+}
 .spz_3004_v1 .spz-features-accordion__contents > .content.active .spz-features-accordion__item .progress_bar {
   position: absolute;
   width: 100%;
@@ -164,6 +169,9 @@
   background: var(--primary-color);
   border-radius: 12px 0 0 0;
   transition: width 0.2s linear;
+}
+.spz_3004_v1 {
+  /* Arrow Icons */
 }
 .spz_3004_v1 .accordion-arrow {
   position: absolute;
@@ -198,6 +206,9 @@
 .spz_3004_v1 .accordion-arrow svg path {
   stroke: #212121;
 }
+.spz_3004_v1 {
+  /* Accordion Content */
+}
 .spz_3004_v1 .spz-features-accordion__contents > .content .solution__content {
   max-height: 0px;
   overflow: hidden;
@@ -224,6 +235,9 @@
 }
 .spz_3004_v1 .spz-features-accordion__contents > .content .solution__content:has(p + p) p:nth-of-type(2) {
   margin-bottom: 19.5px;
+}
+.spz_3004_v1 {
+  /* CTA Buttons */
 }
 .spz_3004_v1 .spz-bg-wrap .spz-ctas-wrap {
   display: flex;
@@ -274,6 +288,9 @@
     opacity: 0;
   }
 }
+.spz_3004_v1 {
+  /* Image Panel */
+}
 .spz_3004_v1 .spz-features-accordion__image-panel {
   flex: 1;
   background: var(--surface-light);
@@ -323,12 +340,15 @@
 .spz_3004_v1 .solution__image-inline {
   display: none;
 }
+.spz_3004_v1 {
+  /* Media Queries */
+}
 @media (max-width: 1439px) {
-  .spz_3004_v1 {
-    /* Make both columns resize proportionally in this range */
-  }
   .spz_3004_v1 .spz-features-accordion__wrapper {
     gap: 24px;
+  }
+  .spz_3004_v1 {
+    /* Make both columns resize proportionally in this range */
   }
   .spz_3004_v1 .spz-features-accordion {
     flex: 0 0 42%;

@@ -690,8 +690,7 @@
   height: 64px;
   border-radius: 200px;
   background: #FFF;
-  -webkit-backdrop-filter: blur(7.5px);
-          backdrop-filter: blur(7.5px);
+  backdrop-filter: blur(7.5px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1012,7 +1011,6 @@
   border-radius: 200px;
   padding: 0;
   background: #FFF;
-  -webkit-backdrop-filter: blur(7.5px);
   backdrop-filter: blur(7.5px);
   display: flex;
   justify-content: center;

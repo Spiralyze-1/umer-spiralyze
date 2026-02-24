@@ -1183,8 +1183,7 @@
   border-radius: 30px;
   border: 2px solid rgba(204, 225, 229, 0.49);
   background: radial-gradient(84.63% 54.52% at 40.28% 44.35%, rgba(179, 225, 214, 0.2) 0%, rgba(180, 215, 234, 0) 100%), radial-gradient(34.52% 56.08% at 11.8% 91.72%, rgba(188, 221, 235, 0.6) 0%, rgba(177, 185, 213, 0) 100%), radial-gradient(123.5% 70.25% at 27.03% 33.61%, rgba(204, 225, 229, 0.49) 0%, rgba(164, 174, 229, 0.38) 62.09%, rgba(176, 195, 222, 0.47) 100%);
-  -webkit-backdrop-filter: blur(5.195734024px);
-          backdrop-filter: blur(5.195734024px);
+  backdrop-filter: blur(5.195734024px);
   margin-bottom: 63.5px;
 }
 .spz_t13011 .how_itWorks_data .iframe_outer iframe {

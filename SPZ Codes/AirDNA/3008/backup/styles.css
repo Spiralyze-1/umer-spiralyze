@@ -1,9 +1,3 @@
-.spz_3008 {
-  /* How effect */
-  /* Header CSS */
-  /* body:not(.spz_3007) .header-logo-color, */
-  /* Header CSS end */
-}
 .spz_3008 main > div:nth-of-type(2) {
   display: none;
 }
@@ -590,6 +584,9 @@
     margin-bottom: -32px;
   }
 }
+.spz_3008 {
+  /* How effect */
+}
 .spz_3008 .my_btn {
   overflow: hidden;
   position: relative;
@@ -636,6 +633,10 @@
     transform: scale(4);
     opacity: 0;
   }
+}
+.spz_3008 {
+  /* Header CSS */
+  /* body:not(.spz_3007) .header-logo-color, */
 }
 .spz_3008 .header-logo-color + img {
   display: none !important;
@@ -752,4 +753,7 @@
   .spz_3008 #header.normalHeader a[href*="https://app.airdna.co/data/login"] button:hover {
     color: #fff;
   }
+}
+.spz_3008 {
+  /* Header CSS end */
 }/*# sourceMappingURL=styles.css.map */

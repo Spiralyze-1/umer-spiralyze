@@ -14,9 +14,9 @@
   --cta-secondary-hover-border-color: #1300C1;
   --cta-font-size: 18px;
   --cta-font-size-mobile: 16px;
-  --close-button-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1747304924/netwrix/6011/icon-cross_1.svg");
-  --close-button-hover-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1747304936/netwrix/6011/icon-cross-hover_1.svg");
-  --close-button-focus-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1747304936/netwrix/6011/icon-cross-hover_1.svg");
+  --close-button-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1747304924/netwrix/6011/icon-cross_1.svg');
+  --close-button-hover-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1747304936/netwrix/6011/icon-cross-hover_1.svg');
+  --close-button-focus-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1747304936/netwrix/6011/icon-cross-hover_1.svg');
 }
 
 .spz_6011 img {
@@ -484,9 +484,6 @@
   position: relative;
 }
 
-.spz_6011 {
-  /*Dont use :root if you are working on Single page app. Multiple tests may conflict and override each other*/
-}
 .spz_6011 .buy_now {
   padding: 45px 0 40px;
   background: #F3F4F9;
@@ -764,6 +761,9 @@
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 0;
+}
+.spz_6011 {
+  /*Dont use :root if you are working on Single page app. Multiple tests may conflict and override each other*/
 }
 .spz_6011 .spz-sticky-footer {
   position: fixed;

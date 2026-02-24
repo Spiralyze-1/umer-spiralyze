@@ -14,8 +14,8 @@
   --cta-secondary-hover-border-color: #1300C1;
   --cta-font-size: 18px;
   --cta-font-size-mobile: 16px;
-  --close-button-image-url: url("//res.cloudinary.com/spiralyze/image/upload/Code_Templates_assets/Sticky_Footer/sticky_footer_close.svg");
-  --close-button-hover-image-url: url("//res.cloudinary.com/spiralyze/image/upload/Code_Templates_assets/Sticky_Footer/sticky_footer_close_hover.svg");
+  --close-button-image-url: url('//res.cloudinary.com/spiralyze/image/upload/Code_Templates_assets/Sticky_Footer/sticky_footer_close.svg');
+  --close-button-hover-image-url: url('//res.cloudinary.com/spiralyze/image/upload/Code_Templates_assets/Sticky_Footer/sticky_footer_close_hover.svg');
 }
 
 .spz_t7013 .section-bottom-stickybar {

@@ -3,26 +3,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  /*Background end */
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Style form wrapping div end*/
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /*Inputs and labels states*/
-  /*Default state*/
-  /*Hover state*/
-  /*Focus state*/
-  /*Active focused state empty value*/
-  /*Active focused state not empty value*/
-  /*Filled state*/
-  /*Hide placeholders*/
-  /*Inputs and labels states end*/
-  /*Styling other elements*/
-  /*Styling other elements end*/
-  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 .spz_10001 main {
   display: none;
+}
+.spz_10001 {
+  /*Background end */
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
 }
 .spz_10001 .spz-form-wrap {
   max-width: 500px;
@@ -45,6 +32,10 @@
     padding: 12px 24px 24px;
   }
 }
+.spz_10001 {
+  /*Style form wrapping div end*/
+  /*Form layout styling*/
+}
 .spz_10001 .spz-form-wrap form {
   display: flex;
   flex-wrap: wrap;
@@ -61,6 +52,11 @@
   .spz_10001 .spz-form-wrap .mktoFormRow {
     max-width: 100%;
   }
+}
+.spz_10001 {
+  /*Form layout styling end*/
+  /*Inputs and labels states*/
+  /*Default state*/
 }
 .spz_10001 .spz-input-wrap input,
 .spz_10001 .spz-input-wrap select {
@@ -109,9 +105,15 @@
   font-style: normal;
   font-weight: 400;
 }
+.spz_10001 {
+  /*Hover state*/
+}
 .spz_10001 .spz-form-wrap input:hover,
 .spz_10001 .spz-form-wrap select:hover {
   border: var(--input-border-hover);
+}
+.spz_10001 {
+  /*Focus state*/
 }
 .spz_10001 .spz-form-wrap input:focus,
 .spz_10001 .spz-form-wrap select:focus {
@@ -134,6 +136,9 @@
   transition: top 0.15s linear;
   padding: 0 3px;
   z-index: 1;
+}
+.spz_10001 {
+  /*Active focused state empty value*/
 }
 .spz_10001 .spz-input-wrap input:focus:-moz-placeholder + label {
   position: absolute;
@@ -162,6 +167,9 @@
   transition: top 0.15s linear;
   padding: 0 3px;
 }
+.spz_10001 {
+  /*Active focused state not empty value*/
+}
 .spz_10001 .spz-input-wrap input:focus:not(:-moz-placeholder) + label {
   position: absolute;
   left: 24px;
@@ -188,6 +196,9 @@
   line-height: normal;
   transition: top 0.15s linear;
   padding: 0 3px;
+}
+.spz_10001 {
+  /*Filled state*/
 }
 .spz_10001 .spz-input-wrap input:not(:-moz-placeholder) + label {
   position: absolute;
@@ -219,6 +230,9 @@
   padding: 0 3px;
   z-index: 1;
 }
+.spz_10001 {
+  /*Hide placeholders*/
+}
 .spz_10001 .spz-input-wrap input::-moz-placeholder {
   color: transparent;
   opacity: 0;
@@ -226,6 +240,10 @@
 .spz_10001 .spz-input-wrap input::placeholder {
   color: transparent;
   opacity: 0;
+}
+.spz_10001 {
+  /*Inputs and labels states end*/
+  /*Styling other elements*/
 }
 .spz_10001 .spz-company-logo {
   margin-bottom: 24px;
@@ -259,6 +277,9 @@
   line-height: 150%;
   margin-bottom: 24px;
 }
+.spz_10001 {
+  /*Styling other elements end*/
+}
 .spz_10001 .spz-input-wrap {
   position: relative;
   margin-bottom: 20px !important;
@@ -266,6 +287,9 @@
 .spz_10001 .spz-input-wrap .mktoError {
   bottom: unset;
   top: var(--inputHeight);
+}
+.spz_10001 {
+  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 .spz_10001 your_selector_what_you_need_to_hide {
   display: none !important;

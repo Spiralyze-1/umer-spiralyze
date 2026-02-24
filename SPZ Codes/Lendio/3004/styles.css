@@ -829,6 +829,8 @@
 .spz_3004_v2 > .dynamic-lp > .dynamic-lp-inner + .container {
   max-width: 1098px;
   margin-top: 39px !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .spz_3004_v1 > .dynamic-lp > .dynamic-lp-inner + .legalText p,

@@ -1,7 +1,7 @@
 (function () {
   const squeezePage = 'both';
   const expName = "8001";
-  const variantName = `variant1_#${expName}`;
+  const variantName = `variant_#${expName}`;
   const clientDomain = ".hellopebl.com";
 
   const formHiddenValue = variantName;
@@ -75,7 +75,7 @@ waitForElement("#self-signup-header", (docEl) => {
     body.classList.add(className);
   }
 
-  document.querySelector('#self-signup-header~div').insertAdjacentHTML('afterend', `
+  document.querySelector('#self-signup-header~div').insertAdjacentHTML('beforeend', `
       <div class="spz_logos_section">
         <div class="auto_container">
           <div class="spz_logoMain">
@@ -123,5 +123,23 @@ waitForElement("#self-signup-header", (docEl) => {
         </div>
       </div>
     `);
+
+  //browser detection
+  let userAgent = navigator.userAgent;
+  let browser;
+  if (userAgent.match(/edg/i)) {
+    browser = "edge";
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    browser = "firefox";
+  } else if (userAgent.match(/opr\//i)) {
+    browser = "opera";
+  } else if (userAgent.match(/chrome|chromium|crios/i)) {
+    browser = "chrome";
+  } else if (userAgent.match(/safari/i)) {
+    browser = "safari";
+  } else {
+    //alert("Other browser");
+  }
+  document.querySelector('body').classList.add(browser);
 
 });

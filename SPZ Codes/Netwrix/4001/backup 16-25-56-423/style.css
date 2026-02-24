@@ -5,13 +5,6 @@
 .spz_t2002 {
   height: 100vh;
   overflow: hidden;
-  /*Background end */
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Style form wrapping div end*/
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /* Styling for label animation*/
-  /* Styling for label animation end*/
 }
 @media (max-width: 767.98px) {
   .spz_t2002 {
@@ -66,6 +59,10 @@
     overflow: auto;
   }
 }
+.spz_t2002 {
+  /*Background end */
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
+}
 .spz_t2002 .spz-form-wrap {
   max-width: 651px;
   /*Set form container width*/
@@ -91,6 +88,9 @@
     padding: 28px 20px 28.5px;
   }
 }
+.spz_t2002 {
+  /*Style form wrapping div end*/
+}
 @media (max-width: 767px) {
   .spz_t2002 .spz-form-wrap {
     width: calc(100% - 30px);
@@ -103,6 +103,9 @@
 }
 .spz_t2002 .spz-form-wrap .the-form {
   margin-top: 14px;
+}
+.spz_t2002 {
+  /*Form layout styling*/
 }
 .spz_t2002 .spz-form-wrap form {
   display: flex;
@@ -144,6 +147,10 @@
 .spz_t2002 .spz-form-wrap .mktoFormRow {
   max-width: calc(50% - 8px) !important;
   width: 100%;
+}
+.spz_t2002 {
+  /*Form layout styling end*/
+  /* Styling for label animation*/
 }
 .spz_t2002 .spz-input-wrap {
   position: relative;
@@ -301,6 +308,9 @@
 .spz_t2002 .has-value select option:first-child,
 .spz_t2002 .focused select option:first-child {
   color: transparent;
+}
+.spz_t2002 {
+  /* Styling for label animation end*/
 }
 .spz_t2002 .spz-input-wrap .mktoError {
   bottom: unset;

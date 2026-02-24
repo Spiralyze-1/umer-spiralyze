@@ -2,15 +2,6 @@
   --inputHeight: 52px;
 }
 
-.spz_t4001 {
-  /*Background end */
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Style form wrapping div end*/
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /* Styling for label animation*/
-  /* Styling for label animation end*/
-}
 .spz_t4001 .contact-cont {
   padding-top: 0;
 }
@@ -56,6 +47,10 @@
     min-height: unset;
   }
 }
+.spz_t4001 {
+  /*Background end */
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
+}
 .spz_t4001 .spz-form-wrap {
   max-width: 649px;
   /*Set form container width*/
@@ -82,6 +77,9 @@
     transform: none;
   }
 }
+.spz_t4001 {
+  /*Style form wrapping div end*/
+}
 @media (max-width: 767px) {
   .spz_t4001 .spz-form-wrap {
     width: 100%;
@@ -94,6 +92,9 @@
 }
 .spz_t4001 .spz-form-wrap .the-form {
   margin-top: 14px;
+}
+.spz_t4001 {
+  /*Form layout styling*/
 }
 .spz_t4001 .spz-form-wrap form {
   display: flex;
@@ -137,6 +138,10 @@
 .spz_t4001 .spz-form-wrap .mktoFormRow {
   max-width: calc(50% - 8px) !important;
   width: 100%;
+}
+.spz_t4001 {
+  /*Form layout styling end*/
+  /* Styling for label animation*/
 }
 .spz_t4001 .inner-wrapper {
   width: 100%;
@@ -482,6 +487,9 @@
 .spz_t4001 .has-value.error select option:first-child,
 .spz_t4001 .focused.error select option:first-child {
   color: transparent;
+}
+.spz_t4001 {
+  /* Styling for label animation end*/
 }
 .spz_t4001 .form_logo {
   width: 100%;

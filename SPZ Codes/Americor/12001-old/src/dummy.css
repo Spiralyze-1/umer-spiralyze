@@ -1,6 +1,3 @@
-.spz_12001 {
-  /* Customize the label (the container) */
-}
 .spz_12001 > header > nav,
 .spz_12001 > main,
 .spz_12001 > footer {
@@ -842,6 +839,9 @@
   font-weight: 600;
   line-height: 26px;
   margin: 0;
+}
+.spz_12001 {
+  /* Customize the label (the container) */
 }
 .spz_12001 .checkbox {
   display: block;

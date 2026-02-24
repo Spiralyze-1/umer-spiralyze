@@ -50,8 +50,7 @@
 
 .spz_t2007 .form_outer {
   background: linear-gradient(180deg, rgba(2, 6, 127, 0.5) 0%, rgba(0, 0, 37, 0.5) 100%);
-  -webkit-backdrop-filter: blur(4.1500000954px);
-          backdrop-filter: blur(4.1500000954px);
+  backdrop-filter: blur(4.1500000954px);
   -moz-backdrop-filter: blur(4.1500000954px);
   height: 100vh;
   overflow: hidden;
@@ -70,29 +69,25 @@
 }
 @media only screen and (min-width: 2560px) {
   .spz_t2007 .form_outer {
-    -webkit-backdrop-filter: blur(6.1500000954px);
-            backdrop-filter: blur(6.1500000954px);
+    backdrop-filter: blur(6.1500000954px);
     -moz-backdrop-filter: blur(6.1500000954px);
   }
 }
 @media only screen and (min-width: 3000px) {
   .spz_t2007 .form_outer {
-    -webkit-backdrop-filter: blur(8.1500000954px);
-            backdrop-filter: blur(8.1500000954px);
+    backdrop-filter: blur(8.1500000954px);
     -moz-backdrop-filter: blur(8.1500000954px);
   }
 }
 @media only screen and (min-width: 3900px) {
   .spz_t2007 .form_outer {
-    -webkit-backdrop-filter: blur(12.1500000954px);
-            backdrop-filter: blur(12.1500000954px);
+    backdrop-filter: blur(12.1500000954px);
     -moz-backdrop-filter: blur(12.1500000954px);
   }
 }
 @media only screen and (min-width: 4500px) {
   .spz_t2007 .form_outer {
-    -webkit-backdrop-filter: blur(16.1500000954px);
-            backdrop-filter: blur(16.1500000954px);
+    backdrop-filter: blur(16.1500000954px);
     -moz-backdrop-filter: blur(16.1500000954px);
   }
 }

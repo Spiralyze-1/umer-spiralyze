@@ -13,26 +13,6 @@
 .spz_5003_v1 {
   background: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/5004/background-desktop-tablet.webp") no-repeat top left/cover;
   height: 100dvh;
-  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
-  /*Style form wrapping div end*/
-  /*Form layout styling*/
-  /*Form layout styling end*/
-  /*Inputs and labels states*/
-  /*Default state*/
-  /*Hover state*/
-  /*Focus state*/
-  /*Active focused state empty value*/
-  /*Active focused state not empty value*/
-  /*Filled state*/
-  /*Hide placeholders*/
-  /*.spz-input-wrap.has-value select:focus,*/
-  /*.spz-input-wrap.has-value select:focus + label {*/
-  /*    color: #024DBD;*/
-  /*}*/
-  /*Inputs and labels states end*/
-  /*Styling other elements*/
-  /*Styling other elements end*/
-  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 .spz_5003_v1 .embeddedMessagingFrame,
 .spz_5003_v1 .embeddedMessagingConversationButtonWrapper {
@@ -62,6 +42,9 @@
     align-items: flex-start;
   }
 }
+.spz_5003_v1 {
+  /*Style form wrapping div like shadows wrapper background border-radius etc...*/
+}
 .spz_5003_v1 .spz-form-wrap {
   max-width: var(--container-width);
   /*Set form container width*/
@@ -84,6 +67,10 @@
     /* Add padding to the overlay to create space */
   }
 }
+.spz_5003_v1 {
+  /*Style form wrapping div end*/
+  /*Form layout styling*/
+}
 .spz_5003_v1 .spz-form-wrap form {
   display: flex;
   flex-wrap: wrap;
@@ -100,6 +87,11 @@
   .spz_5003_v1 .spz-form-wrap .mktoFormRow {
     max-width: 100%;
   }
+}
+.spz_5003_v1 {
+  /*Form layout styling end*/
+  /*Inputs and labels states*/
+  /*Default state*/
 }
 .spz_5003_v1 .spz-input-wrap input,
 .spz_5003_v1 .spz-input-wrap select {
@@ -166,6 +158,9 @@
   font-style: normal;
   font-weight: 400;
 }
+.spz_5003_v1 {
+  /*Hover state*/
+}
 .spz_5003_v1 .spz-form-wrap input:hover,
 .spz_5003_v1 .spz-form-wrap select:hover,
 .spz_5003_v1 .spz-form-wrap select.select-field:hover {
@@ -174,6 +169,9 @@
 .spz_5003_v1 .spz-input-wrap:hover input,
 .spz_5003_v1 .spz-input-wrap:hover select {
   border: var(--input-border-hover);
+}
+.spz_5003_v1 {
+  /*Focus state*/
 }
 .spz_5003_v1 .spz-form-wrap input:focus,
 .spz_5003_v1 .spz-form-wrap select:focus {
@@ -199,6 +197,9 @@
   transition: top 0.15s linear;
   padding: 0 4px;
   z-index: 1;
+}
+.spz_5003_v1 {
+  /*Active focused state empty value*/
 }
 .spz_5003_v1 .spz-input-wrap input:focus:-moz-placeholder ~ label {
   position: absolute;
@@ -227,6 +228,9 @@
   transition: top 0.15s linear;
   padding: 0 4px;
 }
+.spz_5003_v1 {
+  /*Active focused state not empty value*/
+}
 .spz_5003_v1 .spz-input-wrap input:focus:not(:-moz-placeholder) ~ label {
   position: absolute;
   left: 8px;
@@ -253,6 +257,9 @@
   line-height: normal;
   transition: top 0.15s linear;
   padding: 0 4px;
+}
+.spz_5003_v1 {
+  /*Filled state*/
 }
 .spz_5003_v1 .spz-input-wrap input:not(:-moz-placeholder) ~ label {
   position: absolute;
@@ -284,6 +291,9 @@
   padding: 0 4px;
   z-index: 1;
 }
+.spz_5003_v1 {
+  /*Hide placeholders*/
+}
 .spz_5003_v1 .spz-input-wrap input::-moz-placeholder {
   color: transparent;
   opacity: 0;
@@ -294,6 +304,15 @@
 }
 .spz_5003_v1 .spz-input-wrap:not(.has-value) select:focus {
   color: transparent;
+}
+.spz_5003_v1 {
+  /*.spz-input-wrap.has-value select:focus,*/
+  /*.spz-input-wrap.has-value select:focus + label {*/
+  /*    color: #024DBD;*/
+  /*}*/
+  /*Inputs and labels states end*/
+  /*Styling other elements*/
+  /*Styling other elements end*/
 }
 .spz_5003_v1 .spz-input-wrap {
   position: relative;
@@ -308,6 +327,9 @@
 .spz_5003_v1 .spz-input-wrap .mktoError {
   bottom: unset;
   top: var(--inputHeight);
+}
+.spz_5003_v1 {
+  /*put selectors you need to hide .spz-form-wrap will be rendered before closing body tag. In some cases, you'll have to find a single selector to hide all inner content. For example, see below selector*/
 }
 .spz_5003_v1 #formjumplink,
 .spz_5003_v1 .spz-form-wrap .form-wrapper .header-stack-form,

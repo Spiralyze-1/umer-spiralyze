@@ -1,8 +1,6 @@
 .spz_12002_v1 {
   /* Netwrix Locked Hero Pattern */
   /* Hide content when locked */
-  /* Button Container */
-  /* Button */
 }
 .spz_12002_v1.spz-locked-12002 .spz-learn-more-btn-12002 ~ *, .spz_12002_v1.spz-locked-12002 footer, .spz_12002_v1.spz-locked-12002 .footer, .spz_12002_v1.spz-locked-12002 [class*=footer] {
   display: none !important;
@@ -19,6 +17,9 @@
 .spz_12002_v1 main > section.c--hero-b .c--hero-f__ft-items,
 .spz_12002_v1 main > section.c--hero-b .c--hero-b__bg-items {
   width: 100%;
+}
+.spz_12002_v1 {
+  /* Button Container */
 }
 .spz_12002_v1 .spz-learn-more-btn-12002 {
   display: flex;
@@ -47,6 +48,9 @@
   .spz_12002_v1 .spz-learn-more-btn-12002 {
     padding-top: 8px;
   }
+}
+.spz_12002_v1 {
+  /* Button */
 }
 .spz_12002_v1 .spz-btn-inner {
   display: flex;

@@ -1,0 +1,801 @@
+$desktop-lg: 1760px;
+$desktop: 1440px;
+$desktop-sm: 1366px;
+$tablet-lg: 1199.98px;
+$tablet-pro: 992px;
+$tablet: 991.98px;
+$tablet-sm: 768px;
+$mobile: 767.98px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: #{$tablet-pro}) and (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-sm}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+  /* ConnectWise Split Screen Styles */
+  :root {
+    --spz-dark: #0e0931;
+    --spz-blue: #29389a;
+    --spz-white: #ffffff;
+    --spz-text: #1a1d36;
+    --spz-grey: #6e7879;
+    --spz-border: #a2a2a2;
+    --spz-border-active: #29389a;
+    --spz-error: #ff0033;
+    --spz-green: #c5e655;
+    --spz-light-text: #dad9d7;
+    --spz-disclaimer: #6b6d86;
+  }
+
+.spz_2001_v {
+
+
+  /* Hide entire page content */
+  >*:not(.spz-split-wrap) {
+    display: none !important;
+  }
+
+  &.spz-form-submitted>*:not(.spz-split-wrap) {
+    display: block !important;
+  }
+
+  &.spz-form-submitted .spz-split-wrap {
+    display: none !important;
+  }
+
+  .spz-split-wrap {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--spz-dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    // z-index: 1;
+  }
+
+  /* ====================================
+   LEFT SIDE — FEATURES
+   ==================================== */
+  .spz-feature-side {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 0 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/desktop.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .spz-feature-content {
+    position: relative;
+    // z-index: 1;
+    width: 100%;
+    max-width: 592px;
+  }
+
+  .spz-eyebrow {
+    font-family: "Cera Pro", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: -0.16px;
+    color: var(--spz-white);
+    margin: 0 0 16px 0;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .spz-headline {
+    font-family: "Cera Pro", sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.48px;
+    color: var(--spz-white);
+    margin: 0 0 24px 0;
+    text-align: center;
+  }
+
+  .spz-headline .spz-highlight {
+    font-weight: 700;
+    color: var(--spz-green);
+  }
+
+  .spz-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .spz-bullet-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .spz-bullet-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 4px;
+    background: rgba(196, 230, 84, 0.1) url("https://res.cloudinary.com/spiralyze/image/upload/v1771491402/connectwise/2001/mingcutecheck-fill.svg") no-repeat center / 18px 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .spz-bullet-item p {
+    font-family: "Cera Pro", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.18px;
+    color: var(--spz-light-text);
+    margin: 0;
+  }
+
+  .spz-bullet-item p strong {
+    font-weight: 700;
+    color: var(--spz-white);
+  }
+
+  /* ====================================
+   RIGHT SIDE — FORM PANEL
+   ==================================== */
+  .spz-form-side {
+    flex: 0 0 50%;
+    /* 50/50 split matching Figma (720px on a 1440px screen) */
+    min-width: 400px;
+    background: var(--spz-white);
+    border-radius: 16px 0 0 16px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100%;
+  }
+
+  .spz-form-side::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spz-form-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: 64px 80px;
+    box-sizing: border-box;
+  }
+
+  .spz-logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .spz-form-content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .spz-form-heading {
+    font-family: "Cera Pro", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.72px;
+    color: var(--spz-text);
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .spz-form-wrap {
+    width: 100%;
+  }
+
+  #mktoForm_1227 {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    font-family: "Cera Pro", sans-serif !important;
+  }
+
+  .spz-form-row-pair {
+    display: flex !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .spz-form-row-pair>.mktoFormRow {
+    flex: 1 !important;
+    /* min-width: 0 !important; */
+  }
+
+  #mktoForm_1227 .mktoFormRowHidden {
+    display: none !important;
+  }
+
+  #mktoForm_1227 .mktoFormCol,
+  #mktoForm_1227 .mktoFieldDescriptor {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #mktoForm_1227 label:not(.spz-checkbox-label) {
+    display: none !important;
+  }
+
+  #mktoForm_1227 .mktoButtonRow,
+  #mktoForm_1227 .mktoButtonWrap {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .spz-disclaimer-row .mktoFieldWrap {
+    width: 100% !important;
+    margin-top: -8px !important;
+  }
+
+  .spz-field-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  #mktoForm_1227 input,
+  #mktoForm_1227 select,
+  #mktoForm_1227 .mktoField {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+    border: 1px solid var(--spz-border) !important;
+    border-radius: 5px !important;
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: var(--spz-text) !important;
+    background: var(--spz-white) !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: border-color 0.15s ease !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  #mktoForm_1227 input::placeholder,
+  #mktoForm_1227 textarea::placeholder {
+    color: transparent !important;
+    opacity: 0 !important;
+  }
+
+  #mktoForm_1227 input:focus,
+  #mktoForm_1227 select:focus {
+    border-color: var(--spz-border-active) !important;
+  }
+
+  .spz-field-wrap.spz-invalid input,
+  .spz-field-wrap.spz-invalid select,
+  #mktoForm_1227 input.mktoInvalid,
+  #mktoForm_1227 select.mktoInvalid {
+    border-color: var(--spz-error) !important;
+  }
+
+  .spz-float-label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-family: "Cera Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--spz-grey);
+    pointer-events: none;
+    transition:
+      top 0.15s ease,
+      font-size 0.15s ease,
+      color 0.15s ease,
+      left 0.15s ease;
+    background: transparent;
+    padding: 0;
+    // z-index: 1;
+    white-space: nowrap;
+  }
+
+  .spz-field-wrap.spz-active .spz-float-label,
+  .spz-field-wrap.spz-has-value .spz-float-label {
+    top: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    left: 10.5px;
+    background: var(--spz-white);
+    padding: 1px 5px;
+  }
+
+  .spz-field-wrap.spz-active .spz-float-label {
+    color: var(--spz-border-active);
+  }
+
+  .spz-field-wrap.spz-has-value:not(.spz-active):not(.spz-invalid) .spz-float-label {
+    color: var(--spz-grey);
+  }
+
+  .spz-field-wrap.spz-invalid.spz-has-value .spz-float-label {
+    color: var(--spz-error) !important;
+  }
+
+  #mktoForm_1227 .mktoError,
+  #mktoForm_1227 .mktoErrorMsg {
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--spz-error) !important;
+    margin-top: 4px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    bottom: -25px !important;
+  }
+
+  #mktoForm_1227 .mktoErrorArrow {
+    display: none !important;
+  }
+
+  .spz-phone-wrap .spz-float-label {
+    left: 76px;
+  }
+
+  .spz-phone-wrap.spz-active .spz-float-label,
+  .spz-phone-wrap.spz-has-value .spz-float-label {
+    left: 11px;
+  }
+
+  .spz-phone-prefix {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    // z-index: 2;
+  }
+
+  .spz-phone-prefix img {
+    width: 25px;
+    height: 18px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .spz-phone-prefix span {
+    font-family: "Cera Pro", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--spz-grey);
+  }
+
+  .spz-phone-prefix .spz-chevron {
+    font-size: 10px;
+    color: var(--spz-grey);
+    line-height: 1;
+    transform: scaleY(0.6);
+    display: inline-block;
+  }
+
+  .spz-phone-wrap input[type="tel"],
+  #mktoForm_1227 .spz-phone-wrap input[type="tel"] {
+    padding-left: 76px !important;
+  }
+
+  #mktoForm_1227 select {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%236E7879' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 14px center !important;
+    background-size: 24px 24px !important;
+    padding-right: 44px !important;
+    cursor: pointer !important;
+  }
+
+  #mktoForm_1227 select option[value=""],
+  #mktoForm_1227 select option:first-child {
+    color: var(--spz-grey) !important;
+  }
+
+  .spz-how-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: left;
+    font-family: "Cera Pro", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--spz-grey);
+    transition: color 0.2s ease;
+  }
+
+  .spz-how-trigger:hover {
+    color: var(--spz-text);
+  }
+
+  .spz-how-trigger-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    flex-shrink: 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%236e7879' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z'/%3E%3C/svg%3E");
+  }
+
+  .spz-how-trigger.spz-expanded .spz-how-trigger-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%236e7879' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m5 11H7v-2h10v2z'/%3E%3C/svg%3E");
+  }
+
+  #mktoForm_1227 textarea {
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 20px 16px 12px !important;
+    /* extra top padding so text doesn't sit under lifted label */
+    border: 1px solid var(--spz-border) !important;
+    border-radius: 5px !important;
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: var(--spz-text) !important;
+    background: var(--spz-white) !important;
+    resize: vertical !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    box-shadow: none !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  #mktoForm_1227 textarea:focus {
+    border-color: var(--spz-border-active) !important;
+  }
+
+  .spz-textarea-wrap .spz-float-label {
+    top: 14px;
+    transform: none;
+  }
+
+  .spz-textarea-wrap.spz-active .spz-float-label,
+  .spz-textarea-wrap.spz-has-value .spz-float-label {
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  #mktoForm_1227 .mktoFormRow.spz-how-field-wrap {
+    display: none !important;
+  }
+
+  #mktoForm_1227 .mktoFormRow.spz-how-field-wrap.spz-expanded {
+    display: block !important;
+  }
+
+  .spz-checkbox-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  #mktoForm_1227 input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    margin: 4px 0 0 0 !important;
+    padding: 0 !important;
+    border: 1px solid var(--spz-border) !important;
+    border-radius: 2px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    background: var(--spz-white) !important;
+    flex-shrink: 0 !important;
+    transition: all 0.2s ease !important;
+    float: none !important;
+  }
+
+  #mktoForm_1227 input[type="checkbox"]:checked {
+    background: var(--spz-blue) !important;
+    border-color: var(--spz-blue) !important;
+  }
+
+  #mktoForm_1227 input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -53%) rotate(45deg);
+    width: 4px;
+    height: 7px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  .spz-checkbox-label {
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--spz-grey) !important;
+    margin: 0 !important;
+    cursor: pointer;
+    display: block !important;
+  }
+
+  #mktoForm_1227 button[type="submit"],
+  #mktoForm_1227 .mktoButton {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 12px 10px !important;
+    background: var(--spz-blue) !important;
+    color: var(--spz-white) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 24px !important;
+    letter-spacing: -0.16px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  #mktoForm_1227 button[type="submit"]:hover,
+  #mktoForm_1227 .mktoButton:hover {
+    background: #1e2b80 !important;
+  }
+
+  .spz-disclaimer,
+  #mktoForm_1227 .mktoHtmlText {
+    font-family: "Cera Pro", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--spz-disclaimer) !important;
+    text-align: center !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .spz-disclaimer a,
+  #mktoForm_1227 .mktoHtmlText a {
+    color: var(--spz-blue) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+
+  .spz-disclaimer a:hover,
+  #mktoForm_1227 .mktoHtmlText a:hover {
+    text-decoration: underline !important;
+  }
+
+  .spz-social-proof {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .spz-social-proof-text {
+    font-family: "Cera Pro", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--spz-text);
+    text-align: center;
+    margin: 0;
+    position: relative;
+  }
+
+  .spz-social-proof-text .spz-highlight-bar {
+    position: relative;
+    display: inline-block;
+    color: var(--spz-white);
+    isolation: isolate;
+  }
+
+  .spz-social-proof-text .spz-highlight-bar::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: -3px;
+    right: -3px;
+    height: 20px;
+    background: var(--spz-green);
+    z-index: -1;
+  }
+
+  .spz-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 29px;
+  }
+
+  .spz-logos img {
+    width: auto;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .spz-logos img:nth-child(1) {
+    height: 30px;
+  }
+
+  .spz-logos img:nth-child(2) {
+    height: 22px;
+  }
+
+  .spz-logos img:nth-child(3) {
+    height: 30px;
+  }
+
+  .spz-logos img:nth-child(4) {
+    height: 23px;
+  }
+
+  /* ====================================
+   RESPONSIVE
+   ==================================== */
+  @media (max-width: 1199px) {
+    .spz-form-inner {
+      padding: 48px 56px;
+    }
+
+    .spz-feature-side {
+      padding: 0 48px 56px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .spz-split-wrap {
+      flex-direction: column-reverse;
+      position: relative;
+      height: auto;
+      overflow-y: auto;
+      background: var(--spz-dark);
+    }
+
+    .spz-feature-side {
+      width: 100%;
+      min-height: 900px;
+      overflow: hidden;
+      padding: 0 40px 80px;
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/tablet.webp");
+      background-position: center top;
+    }
+
+    .spz-form-side {
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      border-radius: 0 0 16px 16px;
+      height: auto;
+      overflow: visible;
+    }
+
+    .spz-form-inner {
+      padding: 64px 80px;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz-feature-side {
+      min-height: 820px;
+      padding: 0 16px 40px;
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/mobile.webp");
+    }
+
+    .spz-form-inner {
+      padding: 48px 16px;
+    }
+
+    .spz-form-heading {
+      font-size: 32px;
+    }
+
+    .spz-headline {
+      font-size: 36px;
+      /* text-[36px] from Figma */
+    }
+
+    /* Field pairs collapse to single column at mobile */
+    .spz-form-row-pair {
+      flex-direction: column !important;
+    }
+
+    /* Logos wrap to 2 rows of 2 — gap-[24px] between rows, gap-[29px] between items */
+    .spz-logos {
+      flex-wrap: wrap;
+      max-width: 300px;
+      gap: 24px 29px;
+    }
+  }
+
+}

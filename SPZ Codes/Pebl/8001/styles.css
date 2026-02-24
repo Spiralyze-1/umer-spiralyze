@@ -1,5 +1,5 @@
 .spz_8001_v1 .spz_logos_section {
-  padding: 0 0 52px;
+  padding: 20px 0 52px;
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .spz_8001_v1 .spz_logos_section {
@@ -41,6 +41,7 @@
 }
 .spz_8001_v1 .logo_main > figure img {
   display: block;
+  margin: auto;
 }
 @media (max-width: 767.98px) {
   .spz_8001_v1 .logo_main > figure {
@@ -125,7 +126,20 @@
   display: inline-block;
 }
 .spz_8001_v1 .auto_container {
-  max-width: 1134px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.spz_8001_v1.firefox .spz_logos_section {
+  padding-top: 32px;
+}
+@media only screen and (min-width: 1200px) {
+  .spz_8001_v1 .spz_logoMain {
+    padding-right: 4px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+  .spz_8001_v1 .spz_logoMain {
+    padding-right: 14px;
+  }
 }/*# sourceMappingURL=styles.css.map */

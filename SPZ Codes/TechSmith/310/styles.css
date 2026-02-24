@@ -313,8 +313,7 @@
   flex-wrap: wrap;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   -o-backdrop-filter: blur(8px);
   -moz-backdrop-filter: blur(8px);
   background: radial-gradient(143.85% 111.8% at 100% 0%, rgba(153, 229, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(114.07% 71.33% at 0.83% 0%, rgba(150, 115, 255, 0.1) 0%, rgba(150, 115, 255, 0) 100%), rgba(255, 255, 255, 0.1);

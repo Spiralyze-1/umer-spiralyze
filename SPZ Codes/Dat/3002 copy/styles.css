@@ -8,8 +8,8 @@
   --cta-primary-hover-border-color: #1300C1;
   --cta-font-size: 14px;
   --cta-font-size-mobile: 14px;
-  --close-button-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1729496565/dat/7004/cross-icon.svg");
-  --close-button-hover-image-url: url("//res.cloudinary.com/spiralyze/image/upload/v1729496565/dat/7004/cross-icon.svg");
+  --close-button-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1729496565/dat/7004/cross-icon.svg');
+  --close-button-hover-image-url: url('//res.cloudinary.com/spiralyze/image/upload/v1729496565/dat/7004/cross-icon.svg');
 }
 
 .spz_7004 .spz-sticky-footer {

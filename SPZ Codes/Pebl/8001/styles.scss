@@ -51,7 +51,7 @@ $mobile: 767.98px;
 
 .spz_8001_v1 {
   .spz_logos_section {
-    padding: 0 0 52px;
+    padding: 20px 0 52px;
     // margin-top: -48.5px;
 
     @include tablet() {
@@ -92,6 +92,7 @@ $mobile: 767.98px;
       display: none;
       img{
         display: block;
+        margin: auto;
       }
       @include mobile(){
         display: block;
@@ -179,8 +180,21 @@ $mobile: 767.98px;
   }
 
   .auto_container {
-    max-width: 1134px;
+    max-width: 1150px;
     margin: 0 auto;
     padding: 0 20px;
+  }
+  &.firefox{
+    .spz_logos_section{
+      padding-top: 32px;
+    }
+  }
+  .spz_logoMain{
+    @media only screen and (min-width: 1200px){
+      padding-right: 4px;
+    }
+    @include tablet-pro(){
+      padding-right: 14px;
+    }
   }
 }

@@ -207,8 +207,7 @@ html {
   width: 100%;
   background: rgba(4, 30, 66, 0.6);
   padding: 40px 20px;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .spz-tenable-204 .modal-exit-inner-cover {

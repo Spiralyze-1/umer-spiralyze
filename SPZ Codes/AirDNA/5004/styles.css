@@ -10,10 +10,6 @@ img {
   background-color: #fff !important;
 }
 
-.spz_5004 {
-  /* How effect */
-  /* How effect end */
-}
 .spz_5004 .main_container * {
   box-sizing: border-box;
 }
@@ -37,6 +33,9 @@ img {
 }
 .spz_5004 > div.MuiBox-root * {
   box-sizing: border-box;
+}
+.spz_5004 {
+  /* How effect */
 }
 .spz_5004 .custom_btn {
   font-size: 16px;
@@ -67,6 +66,9 @@ img {
     transform: scale(4);
     opacity: 0;
   }
+}
+.spz_5004 {
+  /* How effect end */
 }
 .spz_5004 .header img[alt=AirDNA] {
   cursor: pointer;

@@ -163,7 +163,6 @@
   height: 100%;
 }
 .spz_11002 .j1-modal {
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   overflow: hidden;
   height: 100%;
