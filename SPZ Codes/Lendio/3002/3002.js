@@ -1420,28 +1420,28 @@
                           <li>
                             <div class="question_data">
                               <a href="javascript:void(0)">
-                                <strong>500-599</strong>
+                                <strong>500 - 599</strong>
                               </a>
                             </div>
                           </li>
                           <li>
                             <div class="question_data">
                               <a href="javascript:void(0)">
-                                <strong>600-649</strong>
+                                <strong>600 - 649</strong>
                               </a>
                             </div>
                           </li>
                           <li>
                             <div class="question_data">
                               <a href="javascript:void(0)">
-                                <strong>650-679</strong>
+                                <strong>650 - 679</strong>
                               </a>
                             </div>
                           </li>
                           <li>
                             <div class="question_data">
                               <a href="javascript:void(0)">
-                                <strong>680-719</strong>
+                                <strong>680 - 719</strong>
                               </a>
                             </div>
                           </li>

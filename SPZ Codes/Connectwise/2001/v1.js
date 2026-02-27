@@ -2,11 +2,8 @@ function spz2001() {
   if (!document.querySelector('body').classList.contains('spz_2001_v')) {
     document.querySelector('body').classList.add('spz_2001_v');
 
-    //DEVELOPER - STEP 1 of 3 - Put your asana task URL here
-    const asana_URL = `https://app.asana.com/1/77217210692853/project/1212015714361211/task/1213098295414072`
-
-    //DEVELOPER - STEP 2 of 3 - Edit all page content and assets here
-    const template_content = {
+    // DEVELOPER - STEP 2 of 3 - Edit all page content and assets here
+    var template_content = {
 
       // ── LEFT SIDE ──────────────────────────────────────────────
       eyebrow: 'IT &amp; SECURITY MANAGEMENT SOFTWARE',
@@ -20,9 +17,9 @@ function spz2001() {
       ],
 
       // ── RIGHT SIDE ─────────────────────────────────────────────
-      logoSrc: 'https://res.cloudinary.com/spiralyze/image/upload/v1771491402/connectwise/2001/logo-headline.svg',
+      logoSrc: '//res.cloudinary.com/spiralyze/image/upload/v1771491402/connectwise/2001/logo-headline.svg',
       logoAlt: 'ConnectWise',
-      logoHref: 'https://www.connectwise.com/',
+      logoHref: 'javascript:void(0);',
 
       formHeading: 'Watch Demo',
 
@@ -31,279 +28,328 @@ function spz2001() {
       socialProofSuffix: 'MSP and IT professionals',
 
       logos: [
-        { src: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_1.webp', alt: 'Kinetics Group' },
-        { src: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo.webp', alt: 'GoodSuite' },
-        { src: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_3.webp', alt: 'ited' },
-        { src: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_2.webp', alt: 'TechMD' }
+        { src: '//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_1.webp', alt: 'Kinetics Group' },
+        { src: '//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo.webp', alt: 'GoodSuite' },
+        { src: '//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_3.webp', alt: 'ited' },
+        { src: '//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_2.webp', alt: 'TechMD' }
       ],
 
-      // ── PHONE FIELD ────────────────────────────────────────────
-      phoneFlagSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/flag-us.svg',
+      // Phone field code
       phoneCode: '+1'
-    }
+    };
 
-    //DEVELOPER - STEP 3 of 3 - Set form selector (inspect the control form element)
-    const template_formUniqueSelector = "#mktoForm_1227"
+    // DEVELOPER - STEP 3 of 3 - Set form selector
+    var template_formUniqueSelector = "#mktoForm_1227";
 
     // Initialize
     if (!checkFormSubmission()) {
-      addSplitScreen(template_formUniqueSelector);
+      addSplitScreen(template_formUniqueSelector, template_content);
     }
-
-
-    function addSplitScreen(formSelector) {
-      const c = template_content;
-
-      const bulletsHTML = c.bullets.map(b => `
-		<li class="spz-bullet-item">
-			<span class="spz-bullet-icon"></span>
-			<p><strong>${b.bold}</strong> ${b.text}</p>
-		</li>`).join('');
-
-      const logosHTML = c.logos.map(l => `<img src="${l.src}" alt="${l.alt}" />`).join('');
-
-      document.body.insertAdjacentHTML('afterbegin', `
-		<div class="spz-split-wrap">
-
-			<!-- LEFT: Feature Side -->
-			<div class="spz-feature-side">
-				<div class="spz-feature-content">
-					<p class="spz-eyebrow">${c.eyebrow}</p>
-					<h2 class="spz-headline">${c.headline} <span class="spz-highlight">${c.headlineHighlight}</span></h2>
-					<ul class="spz-bullets">${bulletsHTML}</ul>
-				</div>
-			</div>
-
-			<!-- RIGHT: Form Side -->
-			<div class="spz-form-side">
-				<div class="spz-form-inner">
-					<a href="${c.logoHref}" class="spz-logo-link">
-						<img src="${c.logoSrc}" alt="${c.logoAlt}" class="spz-logo" />
-					</a>
-					<div class="spz-form-content-wrap">
-						<h1 class="spz-form-heading">${c.formHeading}</h1>
-						<div class="spz-form-wrap"></div>
-					</div>
-					<div class="spz-social-proof">
-						<p class="spz-social-proof-text">
-							${c.socialProofText} <span class="spz-highlight-bar">${c.socialProofHighlight}</span> ${c.socialProofSuffix}
-						</p>
-						<div class="spz-logos">${logosHTML}</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	`);
-
-      // Sync logo href from the live page if a ConnectWise link exists there
-      const liveLogo = document.querySelector('a[href*="connectwise.com"]:not(.spz-logo-link)');
-      if (liveLogo) document.querySelector('.spz-logo-link').href = liveLogo.href;
-
-      const formEl = document.querySelector(formSelector);
-      if (!formEl) {
-        document.querySelector('.spz-form-wrap').innerHTML = `<div class="spz-form-error">Form not found. Update template_formUniqueSelector in STEP 3.</div>`;
-        return;
-      }
-
-      const formLoaded = setInterval(() => {
-        if (formEl.querySelectorAll('input').length > 0) {
-          clearInterval(formLoaded);
-          document.querySelector('.spz-form-wrap').appendChild(formEl);
-          initFormBehaviors(formEl);
-          formEl.addEventListener('submit', () => sessionStorage.setItem('spz_split_submitted', 'true'));
-        }
-      }, 50);
-    }
-
-
-    // ── Shared helper: wire up floating label on any field ───────────────────────
-    // Adds spz-field-wrap to the wrap, appends the label span, and attaches events.
-    function attachFloatLabel(wrap, field, labelText) {
-      wrap.classList.add('spz-field-wrap');
-
-      const label = document.createElement('span');
-      label.className = 'spz-float-label';
-      label.textContent = labelText;
-      wrap.appendChild(label);
-
-      const isSelect = field.tagName === 'SELECT';
-      if (!isSelect) field.setAttribute('placeholder', ' ');
-
-      const sync = () => wrap.classList.toggle('spz-has-value', isSelect ? !!field.value : field.value.trim().length > 0);
-      field.addEventListener('focus', () => { wrap.classList.add('spz-active'); sync(); });
-      field.addEventListener('blur', () => { wrap.classList.remove('spz-active'); sync(); });
-      field.addEventListener(isSelect ? 'change' : 'input', sync);
-      sync();
-    }
-
-    // Extract visible label text from a field wrap, stripping trailing : and *
-    function getLabelText(wrap, fallback) {
-      const label = wrap.querySelector('.mktoLabel, label');
-      return label ? label.textContent.replace(/[*:\s]+$/, '').trim() : fallback;
-    }
-
-
-    // ── Form behaviour orchestrator ──────────────────────────────────────────────
-    function initFormBehaviors(formEl) {
-      wrapFormRows(formEl);
-      initFloatingLabels(formEl);
-      initPhoneField(formEl);
-      initIndustrySelect(formEl);
-      initExpandableHowField(formEl);
-      initCheckboxLabel(formEl);
-      restyleDisclaimer(formEl);
-      watchValidationState(formEl);
-    }
-
-    // Pair single-column mktoFormRows into 2-column wrappers matching Figma layout
-    function wrapFormRows(formEl) {
-      [
-        ['FirstName', 'LastName'],
-        ['Email', 'Company'],
-        ['Phone', 'mKTOIndustry']
-      ].forEach(([id1, id2]) => {
-        const r1 = formEl.querySelector(`#${id1}`)?.closest('.mktoFormRow');
-        const r2 = formEl.querySelector(`#${id2}`)?.closest('.mktoFormRow');
-        if (!r1 || !r2 || r1 === r2) return;
-        const wrapper = document.createElement('div');
-        wrapper.className = 'spz-form-row-pair';
-        r1.parentNode.insertBefore(wrapper, r1);
-        wrapper.append(r1, r2);
-      });
-    }
-
-    // Floating labels for all standard text / email inputs
-    function initFloatingLabels(formEl) {
-      formEl.querySelectorAll('input[type="text"], input[type="email"]').forEach(input => {
-        const wrap = input.closest('.mktoFieldWrap') || input.parentElement;
-        attachFloatLabel(wrap, input, getLabelText(wrap, input.getAttribute('placeholder') || ''));
-      });
-    }
-
-    // Phone field: inject flag + country code prefix, then attach floating label
-    function initPhoneField(formEl) {
-      const input = formEl.querySelector('input[type="tel"], input[id*="Phone"], input[name*="Phone"]');
-      if (!input) return;
-
-      const wrap = input.closest('.mktoFieldWrap') || input.parentElement;
-      wrap.classList.add('spz-phone-wrap');
-
-      input.insertAdjacentHTML('beforebegin', `
-		<div class="spz-phone-prefix">
-			<img src="${template_content.phoneFlagSrc}" alt="US" />
-			<span>${template_content.phoneCode}</span>
-			<span class="spz-chevron">&#9660;</span>
-		</div>
-	`);
-
-      attachFloatLabel(wrap, input, getLabelText(wrap, 'Phone Number'));
-    }
-
-    // Industry select: clear built-in placeholder option, then attach floating label
-    function initIndustrySelect(formEl) {
-      const select = formEl.querySelector('select[id*="Industry"], select[name*="Industry"]');
-      if (!select) return;
-
-      const wrap = select.closest('.mktoFieldWrap') || select.parentElement;
-
-      const placeholderOpt = select.querySelector('option[value=""]');
-      if (placeholderOpt) placeholderOpt.textContent = '';
-
-      attachFloatLabel(wrap, select, getLabelText(wrap, 'Industry'));
-    }
-
-    // "How did you hear about us?" — floating label + collapsible row
-    function initExpandableHowField(formEl) {
-      const field = formEl.querySelector('#howdidyouhearaboutus, textarea[name="howdidyouhearaboutus"]');
-      if (!field) return;
-
-      const row = field.closest('.mktoFormRow');
-      if (!row) return;
-      row.classList.add('spz-how-field-wrap');
-
-      // Floating label on the textarea
-      const wrap = field.closest('.mktoFieldWrap') || field.parentElement;
-      if (wrap) {
-        wrap.classList.add('spz-textarea-wrap');
-        attachFloatLabel(wrap, field, 'How did you hear about us?');
-      }
-
-      // Expand / collapse trigger button
-      const trigger = document.createElement('button');
-      trigger.type = 'button';
-      trigger.className = 'spz-how-trigger';
-      trigger.innerHTML = `<span class="spz-how-trigger-icon" aria-hidden="true"></span><span>How did you hear about us?</span>`;
-      row.parentNode.insertBefore(trigger, row);
-
-      trigger.addEventListener('click', () => {
-        const expanded = row.classList.toggle('spz-expanded');
-        trigger.classList.toggle('spz-expanded', expanded);
-      });
-    }
-
-    // Checkbox: apply flex row class to the checkbox + label container
-    function initCheckboxLabel(formEl) {
-      formEl.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        const list = checkbox.closest('.mktoCheckboxList, .mktoLogicalField') || checkbox.parentElement;
-        if (list) list.classList.add('spz-checkbox-row');
-        const label = list?.querySelector('label.checkbox-label, label.mktoHtmlText');
-        if (label) label.classList.add('spz-checkbox-label');
-      });
-    }
-
-    // Disclaimer: move its mktoFormRow to after the submit button (matches Figma order)
-    function restyleDisclaimer(formEl) {
-      formEl.querySelectorAll('.mktoHtmlText, .mktoPrivacyText').forEach(el => {
-        if (/privacy|terms|submitting/i.test(el.textContent)) {
-          el.classList.add('spz-disclaimer');
-          const row = el.closest('.mktoFormRow');
-          const btnRow = formEl.querySelector('.mktoButtonRow');
-          if (row && btnRow && row !== btnRow) {
-            btnRow.after(row);
-            row.classList.add('spz-disclaimer-row');
-          }
-        }
-      });
-    }
-
-    // Mirror Marketo's mktoInvalid class onto our spz-invalid for CSS-driven error states
-    function watchValidationState(formEl) {
-      const syncInvalid = (field) => {
-        const wrap = field.closest('.spz-field-wrap');
-        if (!wrap) return;
-        const invalid = field.classList.contains('mktoInvalid');
-        wrap.classList.toggle('spz-invalid', invalid);
-        if (invalid) wrap.classList.remove('spz-active');
-      };
-
-      const observer = new MutationObserver(mutations =>
-        mutations.forEach(({ target }) => syncInvalid(target))
-      );
-
-      formEl.querySelectorAll('input, select').forEach(field => {
-        observer.observe(field, { attributes: true, attributeFilter: ['class'] });
-        const clearOnInput = () => { if (field.value.trim()) field.closest('.spz-field-wrap')?.classList.remove('spz-invalid'); };
-        field.addEventListener('input', clearOnInput);
-        field.addEventListener('change', clearOnInput);
-      });
-    }
-
-    // Check if form was already submitted this session
-    function checkFormSubmission() {
-      if (sessionStorage.getItem('spz_split_submitted') === 'true') {
-        document.body.classList.add('spz-form-submitted');
-        return true;
-      }
-      return false;
-    }
-
 
   }
 }
 
-spz2001();
+// Add split screen content
+function addSplitScreen(formSelector, template_content) {
+  var c = template_content;
 
+  var bulletsHTML = '';
+  for (var i = 0; i < c.bullets.length; i++) {
+    bulletsHTML += `<li class="spz-bullet-item">
+      <span class="spz-bullet-icon"></span>
+      <p><strong>${c.bullets[i].bold}</strong> ${c.bullets[i].text}</p>
+    </li>`;
+  }
+
+  var logosHTML = '';
+  for (var j = 0; j < c.logos.length; j++) {
+    logosHTML += `<img src="${c.logos[j].src}" alt="${c.logos[j].alt}" />`;
+  }
+
+  document.body.insertAdjacentHTML('afterbegin', `
+    <div class="spz-split-wrap">
+      <div class="spz-feature-side">
+        <div class="spz-feature-sideInner">
+          <div class="spz-feature-content">
+            <p class="spz-eyebrow">${c.eyebrow}</p>
+            <h2 class="spz-headline">${c.headline} <span class="spz-highlight">${c.headlineHighlight}</span></h2>
+            <ul class="spz-bullets">${bulletsHTML}</ul>
+          </div>
+        </div>
+      </div>
+      <div class="spz-form-side">
+        <div class="spz-form-sideInner">
+          <div class="spz-form-inner">
+            <a href="https://www.connectwise.com/" class="spz-logo-link">
+              <img src="${c.logoSrc}" alt="${c.logoAlt}" class="connectwise-logo" />
+            </a>
+            <div class="spz-form-content-wrap">
+              <h1 class="spz-form-heading">${c.formHeading}</h1>
+              <div class="spz-form-wrap"></div>
+            </div>
+            <div class="spz-social-proof">
+              <p class="spz-social-proof-text">${c.socialProofText} <span class="spz-highlight-bar">${c.socialProofHighlight}</span> ${c.socialProofSuffix}</p>
+              <div class="spz-logos">${logosHTML}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `);
+
+  // Get form
+  var formEl = document.querySelector(formSelector);
+  if (!formEl) {
+    var wrap = document.querySelector('.spz-form-wrap');
+    if (wrap) wrap.innerHTML = '<div class="spz-form-error">Form not found. Update template_formUniqueSelector in STEP 3.</div>';
+    return;
+  }
+
+  // Wait until form inputs load
+  var formLoaded = setInterval(function () {
+    if (formEl.querySelectorAll('input').length > 0) {
+      clearInterval(formLoaded);
+      var wrap = document.querySelector('.spz-form-wrap');
+      if (wrap) wrap.appendChild(formEl);
+      initFormBehaviors(formEl);
+      formEl.addEventListener('submit', function () {
+        sessionStorage.setItem('spz_split_submitted', 'true');
+      });
+
+      // Fix industry placeholder option
+      var industryEmptyOption = document.querySelector("#mKTOIndustry option[value='']");
+      var submitButtom = document.querySelector("#mktoForm_1227 .mktoButton");
+      if (industryEmptyOption) industryEmptyOption.textContent = '';
+      if (submitButtom) {
+        submitButtom.classList.add('spz2001_v');
+        submitButtom.textContent = 'Instant Access';
+      }
+
+    }
+  }, 50);
+}
+
+// Floating label helper
+function attachFloatLabel(wrap, field, labelText) {
+  wrap.className += ' spz-field-wrap';
+  var label = document.createElement('span');
+  label.className = 'spz-float-label';
+  label.textContent = labelText;
+  wrap.appendChild(label);
+
+  var isSelect = field.tagName === 'SELECT';
+  if (!isSelect) field.setAttribute('placeholder', ' ');
+
+  var sync = function () {
+    var value = isSelect ? field.value : field.value.trim();
+    if (value.length > 0) wrap.classList.add('spz-has-value');
+    else wrap.classList.remove('spz-has-value');
+  };
+
+  field.addEventListener('focus', function () { wrap.classList.add('spz-active'); sync(); });
+  field.addEventListener('blur', function () { wrap.classList.remove('spz-active'); sync(); });
+  field.addEventListener(isSelect ? 'change' : 'input', sync);
+  sync();
+}
+
+function getLabelText(wrap, fallback) {
+  var label = wrap.querySelector('.mktoLabel, label');
+  return label ? label.textContent.replace(/[*:\s]+$/, '').trim() : fallback;
+}
+
+// Form orchestrator
+function initFormBehaviors(formEl) {
+  setTimeout(() => {
+    wrapFormRows(formEl);
+    initFloatingLabels(formEl);
+    initPhoneField(formEl);
+    initIndustrySelect(formEl);
+    initExpandableHowField(formEl);
+    initCheckboxLabel(formEl);
+    restyleDisclaimer(formEl);
+    watchValidationState(formEl);
+  }, 150);
+}
+
+// Wrap form rows into pairs
+function wrapFormRows(formEl) {
+  var pairs = [
+    ['FirstName', 'LastName'],
+    ['Email', 'Company'],
+    ['Phone', 'mKTOIndustry']
+  ];
+
+  for (var i = 0; i < pairs.length; i++) {
+    var id1 = pairs[i][0];
+    var id2 = pairs[i][1];
+    var elem1 = formEl.querySelector('#' + id1);
+    var elem2 = formEl.querySelector('#' + id2);
+
+    var r1 = elem1 ? elem1.closest('.mktoFormRow') : null;
+    var r2 = elem2 ? elem2.closest('.mktoFormRow') : null;
+    if (!r1 || !r2 || r1 === r2) continue;
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'spz-form-row-pair';
+    r1.parentNode.insertBefore(wrapper, r1);
+    wrapper.appendChild(r1);
+    wrapper.appendChild(r2);
+  }
+}
+
+// Floating labels
+function initFloatingLabels(formEl) {
+  var inputs = formEl.querySelectorAll('input[type="text"], input[type="email"]');
+  for (var i = 0; i < inputs.length; i++) {
+    var input = inputs[i];
+    var wrap = input.closest('.mktoFieldWrap') || input.parentElement;
+    attachFloatLabel(wrap, input, getLabelText(wrap, input.getAttribute('placeholder') || ''));
+  }
+}
+
+// Phone field
+function initPhoneField(formEl) {
+  var input = formEl.querySelector('input[type="tel"], input[id*="Phone"], input[name*="Phone"]');
+  if (!input) return;
+  var wrap = input.closest('.mktoFieldWrap') || input.parentElement;
+  wrap.className += ' spz-phone-wrap';
+  attachFloatLabel(wrap, input, getLabelText(wrap, 'Phone Number'));
+}
+
+// Industry select
+function initIndustrySelect(formEl) {
+  var select = formEl.querySelector('select[id*="Industry"], select[name*="Industry"]');
+  if (!select) return;
+  var wrap = select.closest('.mktoFieldWrap') || select.parentElement;
+  var placeholderOpt = select.querySelector('option[value=""]');
+  if (placeholderOpt) placeholderOpt.textContent = '';
+  attachFloatLabel(wrap, select, getLabelText(wrap, 'Industry'));
+}
+
+// Expandable "How did you hear"
+function initExpandableHowField(formEl) {
+  var field = formEl.querySelector('#howdidyouhearaboutus, textarea[name="howdidyouhearaboutus"]');
+  if (!field) return;
+  var row = field.closest('.mktoFormRow');
+  if (!row || !row.parentNode) return;
+
+  row.className += ' spz-how-field-wrap';
+  var wrap = field.closest('.mktoFieldWrap') || field.parentElement;
+  if (wrap) {
+    wrap.className += ' spz-textarea-wrap';
+    attachFloatLabel(wrap, field, 'How did you hear about us?');
+  }
+
+  var trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'spz-how-trigger';
+  trigger.innerHTML = '<span class="spz-how-trigger-icon" aria-hidden="true"></span><span>How did you hear about us?</span>';
+  row.parentNode.insertBefore(trigger, row);
+
+  trigger.addEventListener('click', function () {
+    var expanded = row.className.indexOf('spz-expanded') === -1;
+    if (expanded) row.className += ' spz-expanded';
+    else row.className = row.className.replace(/ spz-expanded/g, '');
+    if (expanded) trigger.className += ' spz-expanded';
+    else trigger.className = trigger.className.replace(/ spz-expanded/g, '');
+  });
+}
+
+// Checkbox labels
+function initCheckboxLabel(formEl) {
+  var checkboxes = formEl.querySelectorAll('input[type="checkbox"]');
+  for (var i = 0; i < checkboxes.length; i++) {
+    var checkbox = checkboxes[i];
+    var list = checkbox.closest('.mktoCheckboxList, .mktoLogicalField') || checkbox.parentElement;
+    if (list) {
+      list.className += ' spz-checkbox-row';
+      var label = list.querySelector('label.checkbox-label, label.mktoHtmlText');
+      if (label) label.className += ' spz-checkbox-label';
+    }
+  }
+}
+
+// Disclaimer
+function restyleDisclaimer(formEl) {
+  var els = formEl.querySelectorAll('.mktoHtmlText, .mktoPrivacyText');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    if (/privacy|terms|submitting/i.test(el.textContent)) {
+      el.className += ' spz-disclaimer';
+      var row = el.closest('.mktoFormRow');
+      var btnRow = formEl.querySelector('.mktoButtonRow');
+      if (row && btnRow && row !== btnRow) {
+        btnRow.parentNode.insertBefore(row, btnRow.nextSibling);
+        row.className += ' spz-disclaimer-row';
+      }
+    }
+  }
+}
+
+// Validation state
+function watchValidationState(formEl) {
+  var observer = new MutationObserver(function (mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var target = mutations[i].target;
+      var wrap = target.closest('.spz-field-wrap');
+      if (!wrap) continue;
+      if (target.className.indexOf('mktoInvalid') !== -1) wrap.classList.add('spz-invalid');
+      else wrap.classList.remove('spz-invalid');
+    }
+  });
+
+  var fields = formEl.querySelectorAll('input, select');
+  for (var i = 0; i < fields.length; i++) {
+    var field = fields[i];
+    observer.observe(field, { attributes: true, attributeFilter: ['class'] });
+
+    (function (f) {
+      var clearOnInput = function () {
+        if (f.value && f.value.trim() !== '') {
+          var wrap = f.closest('.spz-field-wrap');
+          if (wrap) wrap.classList.remove('spz-invalid');
+        }
+      };
+      f.addEventListener('input', clearOnInput);
+      f.addEventListener('change', clearOnInput);
+    })(field);
+  }
+}
+
+// Check submission
+function checkFormSubmission() {
+  if (sessionStorage.getItem('spz_split_submitted') === 'true') {
+    document.body.className += ' spz-form-submitted';
+    return true;
+  }
+  return false;
+}
+
+(function () {
+  var nodes = document.body.childNodes;
+
+  for (var i = nodes.length - 1; i >= 0; i--) {
+    var node = nodes[i];
+
+    // Check if it's a text node
+    if (node.nodeType === 3) { // TEXT_NODE
+      var value = node.nodeValue;
+
+      // If it contains only spaces, line breaks, or semicolons
+      if (/^[\s;]+$/.test(value)) {
+        document.body.removeChild(node);
+      }
+    }
+  }
+})();
+
+// Body interval
+var bodyInterval2001 = setInterval(function () {
+  if (document.querySelectorAll("body").length > 0) {
+    clearInterval(bodyInterval2001);
+    spz2001();
+  }
+}, 100);
 
 // If you face any issues, please switch to the named-function version of this code and use that instead.
 (function () {
@@ -315,9 +361,9 @@ spz2001();
   // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
   const squeezePage = true; // true / false / 'both'
-  const expName = '1006'; //experiment name should be 1001, 1002, 1003 etc.
-  const variantName = `#` + expName + `_spz_var`; //variantName should be _spz_var, _spz_control etc.
-  const clientDomain = '.canoeintelligence.com'; //domain should be .spiralyze.com
+  const expName = '2001'; //experiment name should be 1001, 1002, 1003 etc.
+  const variantName = `spz_` + expName + `_variant`; //variantName should be _variant, _true_control etc.
+  const clientDomain = '.connectwise.com'; //domain should be .connectwise.com
 
 
   /***********************************
