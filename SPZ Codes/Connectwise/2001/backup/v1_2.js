@@ -1,24 +1,3 @@
-console.log('+++ 1');
-
-if (document.body){
-  document.body.classList.add('spz_2001_init');
-}
-
-function waitForForm(selector, callback, maxWait = 5000) {
-   const interval = 100;
-   let elapsed = 0;
-   const timer = setInterval(() => {
-      if (document.querySelector(selector)) {
-         clearInterval(timer);
-         callback();
-      } else if (elapsed >= maxWait) {
-         clearInterval(timer);
-         console.warn('Form not found after waiting:', selector);
-      }
-      elapsed += interval;
-   }, interval);
-}
-
 function spz2001() {
   if (!document.querySelector('body').classList.contains('spz_2001_v')) {
     document.querySelector('body').classList.add('spz_2001_v');
@@ -62,15 +41,9 @@ function spz2001() {
     var template_formUniqueSelector = "#mktoForm_1227";
 
     // Initialize
-      // if (!checkFormSubmission()) {
-      //    addSplitScreen(template_formUniqueSelector, template_content);
-      // }
-      // Replace your current initialization block with:
-      waitForForm(template_formUniqueSelector, () => {
-         if (!checkFormSubmission()) {
-            addSplitScreen(template_formUniqueSelector, template_content);
-         }
-      });
+    if (!checkFormSubmission()) {
+      addSplitScreen(template_formUniqueSelector, template_content);
+    }
 
   }
 }
@@ -366,23 +339,21 @@ function checkFormSubmission() {
 }
 
 (function () {
+  var nodes = document.body.childNodes;
 
-   if (!document.body) return; // 🚨 Prevent crash
+  for (var i = nodes.length - 1; i >= 0; i--) {
+    var node = nodes[i];
 
-   var nodes = document.body.childNodes;
+    // Check if it's a text node
+    if (node.nodeType === 3) { // TEXT_NODE
+      var value = node.nodeValue;
 
-   for (var i = nodes.length - 1; i >= 0; i--) {
-      var node = nodes[i];
-
-      if (node.nodeType === 3) {
-         var value = node.nodeValue;
-
-         if (/^[\s;]+$/.test(value)) {
-            document.body.removeChild(node);
-         }
+      // If it contains only spaces, line breaks, or semicolons
+      if (/^[\s;]+$/.test(value)) {
+        document.body.removeChild(node);
       }
-   }
-
+    }
+  }
 })();
 
 // Body interval

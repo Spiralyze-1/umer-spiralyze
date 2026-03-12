@@ -1,0 +1,258 @@
+$desktop-lg: 1760px;
+$desktop: 1440px;
+$desktop-sm: 1366px;
+$tablet-lg: 1199px;
+$tablet-pro: 1024px;
+$tablet: 1023.98px;
+$tablet-sm: 768px;
+$mobile: 767.98px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: #{$tablet-pro}) and (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-sm}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+.spz_10003_v {
+  .category-navigation {
+    display: none;
+  }
+
+  // .featured-articles-wrapper {
+  //   >.row {
+  //     >.large-4 {
+  //       @include tablet() {
+  //         display: none;
+  //       }
+
+  //       @include mobile() {
+  //         display: none;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .explorer_topics {
+    padding: 51px 0 16px;
+
+    @include tablet() {
+      padding: 41px 0 17px;
+    }
+
+    @include mobile() {
+      padding: 49px 0 41px;
+    }
+
+    @media only screen and (min-width: 641px) and (max-width: 767.98px) {
+      padding-top: 41px;
+    }
+  }
+
+  .auto_container {
+    max-width: 1210px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include tablet() {
+      padding: 0 16px;
+    }
+
+    @include mobile() {
+      padding: 0 16px;
+    }
+  }
+
+  .topics_heading {
+    padding-bottom: 48px;
+
+    h2 {
+      color: #1A1A1A;
+      font-family: proxima-nova;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      margin: 0 0 15px;
+    }
+
+    p {
+      color: #364447;
+      font-family: proxima-nova;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 0;
+    }
+
+    @include mobile() {
+      padding-bottom: 39.5px;
+
+      h2 {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .topics_list {
+    padding: 0 10px;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 -16px;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        padding: 0 16px 32px;
+        width: 33.33%;
+      }
+    }
+
+    @include tablet() {
+      padding: 0;
+
+      ul {
+        li {
+          width: 50%;
+        }
+      }
+    }
+
+    @include mobile() {
+      padding: 0;
+
+      ul {
+        margin: 0;
+
+        li {
+          width: 100%;
+          padding: 0 0 32px;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 641px) and (max-width: 767.98px) {
+      ul {
+        margin: 0 -16px;
+
+        li {
+          width: 50%;
+          padding: 0 16px 32px;
+        }
+      }
+    }
+  }
+
+  .topics_data {
+    a {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #FFF;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05), 0 8px 32px 0 rgba(96, 76, 191, 0.15);
+      transition: all 0.4s ease;
+
+      &:hover {
+        border-radius: 16.48px;
+        box-shadow: 0 0 8.24px 0 rgba(0, 0, 0, 0.05), 0 8.24px 32.96px 0 rgba(96, 76, 191, 0.15);
+        transform: scale(1.03012);
+      }
+
+      picture {
+        display: block;
+
+        img {
+          display: block;
+          border-radius: 16px 16px 0 0;
+        }
+      }
+
+      small {
+        height: 99px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        p {
+          color: #1A1A1A;
+          text-align: center;
+          font-family: proxima-nova;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 28px;
+        }
+      }
+    }
+
+    @include tablet() {
+      a {
+        small {
+          p {
+            max-width: 305px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    @include mobile() {
+
+      a {
+        small {
+          p {
+            max-width: 280px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

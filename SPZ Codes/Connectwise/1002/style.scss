@@ -1,0 +1,552 @@
+$desktop-lg: 1760px;
+$desktop: 1440px;
+$desktop-sm: 1366px;
+$tablet-lg: 1350.98px;
+$tablet-pro: 992px;
+$tablet: 1023.98px;
+$tablet-sm: 768px;
+$mobile: 767.98px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: #{$tablet-pro}) and (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-sm}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: 'Cera Pro-2';
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.eot");
+  src: url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.woff') format('woff'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.ttf') format('truetype'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Cera Pro-2';
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.eot");
+  src: url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.woff') format('woff'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.ttf') format('truetype'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Cera Pro-2';
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.eot");
+  src: url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.woff') format('woff'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.ttf') format('truetype'),
+    url('https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal
+}
+
+@charset "UTF-8";
+
+/* ── Variables ── */
+:root {
+  --spz-1002-lime: #C5E655;
+  --spz-1002-lime-light: #dcf098;
+  --spz-1002-midnight: #22326e;
+  --spz-1002-white: #ffffff;
+  --spz-1002-tile-bd: #6e7879;
+  --spz-1002-tile-bg: rgba(255, 255, 255, 0.05);
+}
+
+.spz_1002_v {
+
+  #video,
+  .marquee-scroller {
+    display: none;
+  }
+
+  /* ── Hide control hero ── */
+  .hero.hero--tall[data-spz-ctrl] {
+    display: none;
+  }
+
+  /* ============================================
+   HERO SECTION
+   ============================================ */
+  .spz-hero-1002 {
+    position: relative;
+    width: 100%;
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621142/connectwise/1002/desktop.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-family:
+      "Cera Pro",
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Helvetica,
+      Arial,
+      sans-serif;
+  }
+
+  /* ============================================
+   CONTENT WRAPPER
+   ============================================ */
+  .spz-content-1002 {
+    position: relative;
+    z-index: 1;
+    max-width: 1124px;
+    margin: 0 auto;
+    padding: 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ── Eyebrow ── */
+  .spz-eyebrow-1002 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.16px;
+    font-family: 'Cera Pro-2';
+    text-transform: uppercase;
+    color: rgba(255, 255, 255);
+    margin: 0 0 16.5px;
+    padding: 0;
+    line-height: normal;
+  }
+
+  /* ── Heading ── */
+  .spz-heading-1002 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: 0 0 24px;
+    padding: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 57.6px;
+    letter-spacing: -0.48px;
+    font-family: 'Cera Pro-2';
+  }
+
+  .spz-h1-white-1002 {
+    color: var(--spz-1002-white);
+    display: block;
+  }
+
+  .spz-h1-lime-1002 {
+    color: var(--spz-1002-lime);
+    display: block;
+    margin-top: -3.5px;
+  }
+
+  /* ── Subheading ── */
+  .spz-subhead-1002 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: 'Cera Pro-2';
+    color: #fff;
+    margin: 0 0 24px;
+    padding: 0;
+  }
+
+  /* ============================================
+   TILES
+   ============================================ */
+  .spz-tiles-1002 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  /* ── Single tile ── */
+  .spz-tile-1002 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 130px;
+    min-width: 130px;
+    height: 128px;
+    padding: 11px 12px;
+    background: var(--spz-1002-tile-bg);
+    border: 1px solid var(--spz-1002-tile-bd);
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+    user-select: none;
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .spz-tile-1002:hover {
+    border-color: var(--spz-1002-lime-light);
+    background: var(--spz-1002-tile-bg);
+  }
+
+  .spz-tile-1002.active {
+    border-color: #C5E654;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .spz-tile-1002:focus-visible {
+    outline: 2px solid #C5E654;
+    outline-offset: 2px;
+  }
+
+  /* ── Checkbox ── */
+  .spz-chk-wrap-1002 {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    line-height: 0;
+  }
+
+  .spz-chk-off-1002 {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #6e7879;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
+  .spz-chk-on-1002 {
+    display: none;
+    line-height: 0;
+  }
+
+  .spz-tile-1002.active .spz-chk-off-1002 {
+    display: none;
+  }
+
+  .spz-tile-1002.active .spz-chk-on-1002 {
+    display: block;
+  }
+
+  /* ── Tile icon (bg is baked into the SVG) ── */
+  .spz-icon-1002 {
+    display: block;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  .spz-icon-1002 img {
+    display: block;
+    width: 46px;
+    height: 46px;
+    pointer-events: none;
+  }
+
+  /* ── Tile label ── */
+  .spz-label-1002 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: 'Cera Pro-2';
+    color: var(--spz-1002-white);
+    text-align: center;
+    pointer-events: none;
+    width: 106px;
+  }
+
+  /* ============================================
+   CTA AREA
+   ============================================ */
+  .spz-cta-area-1002 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width:414px;
+    height: 48px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .spz-cta-area-1002:focus-within {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ── Email input ── */
+  .spz-email-1002 {
+    flex: 1;
+    min-width: 280px;
+    height: 100%;
+    padding: 0 15px;
+    border: 1px solid #A2A2A2;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: 'Cera Pro-2';
+    border-radius: 5px 0 0 5px;
+    color: #1A1D36;
+    caret-color: #1A1D36;
+    outline: none;
+    box-shadow: none;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    &:focus{
+      border-color: #29389A;
+    }
+    &::-webkit-input-placeholder {
+      color: #6E7879;
+    }
+  }
+
+  .spz-email-1002::placeholder {
+    color: #6E7879;
+  }
+
+  /* ── CTA button ── */
+  .spz-cta-btn-1002 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 134px;
+    height: 100%;
+    padding: 0 22px;
+    border-radius: 0 6px 6px 0;
+    border: 1px solid  #C5E655;
+    background: var(--spz-1002-lime);
+    color: var(--spz-1002-midnight);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height:24px;
+    font-family: 'Cera Pro-2';
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .spz-cta-btn-1002:hover {
+    background: var(--spz-1002-white);
+    color: var(--spz-1002-midnight);
+    border-color: #fff;
+    text-decoration: none;
+  }
+
+  .spz-cta-btn-1002:active {
+    background: var(--spz-1002-lime-light);
+    color: var(--spz-1002-midnight);
+  }
+
+  /* ============================================
+   DASHBOARD IMAGE
+   ============================================ */
+  .spz-dash-1002 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  .spz-dash-1002 picture {
+    display: block;
+    width: 100%;
+  }
+
+  .spz-dash-img-1002 {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============================================
+   TABLET  601px – 991px
+   ============================================ */
+  @include tablet() {
+    .spz-hero-1002 {
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621141/connectwise/1002/tablet.webp");
+    }
+
+    .spz-content-1002 {
+      padding: 60px 40px 0;
+    }
+
+    .spz-heading-1002 {
+      font-size: 48px;
+      margin-bottom: 23px;
+    }
+
+    .spz-tiles-1002 {
+      grid-template-columns: repeat(4, 130px);
+    }
+
+    .spz-dash-1002 {
+      margin-top: 41px;
+    }
+  }
+
+  /* ============================================
+   MOBILE  ≤ 600px
+   ============================================ */
+  @media (max-width: 767.98px) {
+    .spz-hero-1002 {
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772672768/connectwise/1002/mobile_1.webp");
+    }
+
+    .spz-content-1002 {
+      padding: 60px 16px 0;
+    }
+    .spz-eyebrow-1002{
+      margin-bottom: 15px;
+    }
+
+    .spz-heading-1002 {
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: -0.4px;
+      .spz-h1-lime-1002,
+      .spz-h1-white-1002{
+        display: contents;
+      }
+    }
+
+    /* Full-width horizontal tile list */
+    .spz-tiles-1002 {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .spz-tile-1002 {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+      height: 64px;
+      gap: 0;
+      padding: 12px;
+    }
+    .spz-subhead-1002{
+      margin-bottom: 24.5px;
+    }
+    /* Checkbox: pull out of absolute, inline at far left */
+    .spz-chk-wrap-1002 {
+      position: static;
+      flex-shrink: 0;
+      margin-right: 24px;
+      margin-top: -24px;
+      margin-left: -1px;
+    }
+
+    .spz-icon-1002 {
+      flex-shrink: 0;
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .spz-label-1002 {
+      width: auto;
+      text-align: left;
+    }
+
+    /* CTA stacked on mobile */
+    .spz-cta-area-1002 {
+      flex-direction: column;
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      gap: 12px;
+      overflow: visible;
+    }
+
+    .spz-cta-area-1002:focus-within {
+      border-color: transparent;
+    }
+
+    .spz-email-1002 {
+      width: 100%;
+      height: 48px;
+      border-radius: 6px;
+      padding: 13px 15px;
+    }
+
+    .spz-cta-btn-1002 {
+      width: 100%;
+      height: 48px;
+      border-radius: 6px;
+      padding: 7px 15px;
+    }
+
+    .spz-dash-1002 {
+      margin-top: 75px;
+    }
+  }
+
+}

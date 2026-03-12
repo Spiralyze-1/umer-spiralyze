@@ -1,0 +1,433 @@
+/* =============================================
+   #1002 | ConnectWise | Home | Hero Tiles
+   ============================================= */
+
+/* ── Variables ── */
+:root {
+  --spz-1002-lime: #c5e654;
+  --spz-1002-lime-light: #dcf098;
+  --spz-1002-midnight: #22326e;
+  --spz-1002-white: #ffffff;
+  --spz-1002-tile-bd: #6e7879;
+  --spz-1002-tile-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Hide control hero ── */
+.hero.hero--tall[data-spz-ctrl] {
+  display: none !important;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.spz-hero-1002 {
+  position: relative;
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621142/connectwise/1002/desktop.webp");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  font-family:
+    "Cera Pro",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+/* ============================================
+   CONTENT WRAPPER
+   ============================================ */
+.spz-content-1002 {
+  position: relative;
+  z-index: 1;
+  max-width: 1124px;
+  margin: 0 auto;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Eyebrow ── */
+.spz-eyebrow-1002 {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ── Heading ── */
+.spz-heading-1002 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 0 0 24px !important;
+  padding: 0 !important;
+  font-size: 64px !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -1.5px !important;
+}
+
+.spz-h1-white-1002 {
+  color: var(--spz-1002-white) !important;
+  display: block;
+}
+
+.spz-h1-lime-1002 {
+  color: var(--spz-1002-lime) !important;
+  display: block;
+}
+
+/* ── Subheading ── */
+.spz-subhead-1002 {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  margin: 0 0 24px !important;
+  padding: 0 !important;
+}
+
+/* ============================================
+   TILES
+   ============================================ */
+.spz-tiles-1002 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+/* ── Single tile ── */
+.spz-tile-1002 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 130px;
+  min-width: 130px;
+  height: 128px;
+  padding: 12px;
+  background: var(--spz-1002-tile-bg);
+  border: 1px solid var(--spz-1002-tile-bd);
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.spz-tile-1002:hover {
+  border-color: var(--spz-1002-lime-light);
+  background: var(--spz-1002-tile-bg);
+}
+
+.spz-tile-1002.active {
+  border-color: var(--spz-1002-lime);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.spz-tile-1002:focus-visible {
+  outline: 2px solid var(--spz-1002-lime);
+  outline-offset: 2px;
+}
+
+/* ── Checkbox ── */
+.spz-chk-wrap-1002 {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.spz-chk-off-1002 {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #6e7879;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.spz-chk-on-1002 {
+  display: none;
+  line-height: 0;
+}
+
+.spz-tile-1002.active .spz-chk-off-1002 {
+  display: none;
+}
+.spz-tile-1002.active .spz-chk-on-1002 {
+  display: block;
+}
+
+/* ── Tile icon (bg is baked into the SVG) ── */
+.spz-icon-1002 {
+  display: block;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.spz-icon-1002 img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  pointer-events: none;
+}
+
+/* ── Tile label ── */
+.spz-label-1002 {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--spz-1002-white) !important;
+  text-align: center;
+  pointer-events: none;
+  width: 106px;
+}
+
+/* ============================================
+   CTA AREA
+   ============================================ */
+.spz-cta-area-1002 {
+  display: flex;
+  align-items: center;
+  width: 414px;
+  max-width: 100%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.spz-cta-area-1002:focus-within {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Email input ── */
+.spz-email-1002 {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 14px !important;
+  border: #a2a2a2 !important;
+  background: white !important;
+  font-family: inherit !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: var(--spz-1002-white) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.spz-email-1002::placeholder {
+  color: #6e7879 !important;
+}
+
+/* ── CTA button ── */
+.spz-cta-btn-1002 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 0 22px;
+  background: var(--spz-1002-lime);
+  color: var(--spz-1002-midnight) !important;
+  font-family: inherit !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  white-space: nowrap;
+  text-decoration: none !important;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.spz-cta-btn-1002:hover {
+  background: var(--spz-1002-white) !important;
+  color: var(--spz-1002-midnight) !important;
+  text-decoration: none !important;
+}
+
+.spz-cta-btn-1002:active {
+  background: var(--spz-1002-lime-light) !important;
+  color: var(--spz-1002-midnight) !important;
+}
+
+/* ============================================
+   DASHBOARD IMAGE
+   ============================================ */
+.spz-dash-1002 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 40px;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.spz-dash-1002 picture {
+  display: block;
+  width: 100%;
+}
+
+.spz-dash-img-1002 {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================
+   TABLET  601px – 991px
+   ============================================ */
+@media (max-width: 991px) {
+  .spz-hero-1002 {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621141/connectwise/1002/tablet.webp");
+  }
+
+  .spz-content-1002 {
+    padding: 60px 40px 0;
+  }
+
+  .spz-heading-1002 {
+    font-size: 48px !important;
+    letter-spacing: -1px !important;
+  }
+
+  .spz-tiles-1002 {
+    grid-template-columns: repeat(4, 130px);
+  }
+
+  .spz-dash-1002 {
+    margin-top: 32px;
+  }
+}
+
+/* ============================================
+   MOBILE  ≤ 600px
+   ============================================ */
+@media (max-width: 600px) {
+  .spz-hero-1002 {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772672768/connectwise/1002/mobile_1.webp");
+  }
+
+  .spz-content-1002 {
+    padding: 60px 16px 0;
+  }
+
+  .spz-heading-1002 {
+    font-size: 34px !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .spz-subhead-1002 {
+    font-size: 16px !important;
+  }
+
+  /* Full-width horizontal tile list */
+  .spz-tiles-1002 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .spz-tile-1002 {
+    flex-direction: row;
+    align-items: center;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 70px;
+    gap: 0;
+    padding: 12px;
+  }
+
+  /* Checkbox: pull out of absolute, inline at far left */
+  .spz-chk-wrap-1002 {
+    position: static;
+    flex-shrink: 0;
+    margin-right: 24px;
+  }
+
+  .spz-icon-1002 {
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+
+  .spz-label-1002 {
+    width: auto;
+    text-align: left;
+  }
+
+  /* CTA stacked on mobile */
+  .spz-cta-area-1002 {
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    gap: 12px;
+    overflow: visible;
+  }
+
+  .spz-cta-area-1002:focus-within {
+    border-color: transparent;
+  }
+
+  .spz-email-1002 {
+    width: 100% !important;
+    height: 48px !important;
+    border-radius: 4px !important;
+    padding: 11px 16px !important;
+  }
+
+  .spz-cta-btn-1002 {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    padding: 7px 16px !important;
+  }
+
+  .spz-dash-1002 {
+    margin-top: 28px;
+  }
+}

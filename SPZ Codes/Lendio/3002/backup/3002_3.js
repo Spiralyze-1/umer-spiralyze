@@ -125,7 +125,7 @@
                 <div class="testimonial_data">
                   <div class="data_left">
                     <figure>
-                      <img src="//res.cloudinary.com/spiralyze/image/upload/f_svg/v1773056004/lendio/3002/reviews-v1_1.svg" alt="Trustpilot">
+                      <img src="//res.cloudinary.com/spiralyze/image/upload/v1763730993/lendio/3001/reviews-v1_1.svg" alt="Trustpilot">
                     </figure>
                   </div>
                   <div class="data_right">
@@ -439,7 +439,6 @@
                 #pwf-1 .carousel-item div:has(.error-text) .spz-wrapper input:not([type="checkbox"]) {
                   outline: 1px solid #BE3A3A;
                 }
-
                 #pwf-1 select~.spz-label,
                 #pwf-1 input:not([type="checkbox"])~.spz-label {
                   position: absolute;
