@@ -177,9 +177,9 @@ function addBaseline(formData, whereToPut, template_formSelector, template_heroS
                         <div class="customer_wrap">
                             <div class="customer_left">
                             <picture>
-                                <source media="(min-width:1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/2001/badges.webp">
-                                <source media="(min-width:320px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/2001/badges_mobile.webp">
-                                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/2001/badges.webp" alt="Awards" width="408" height="96">
+                                <source media="(min-width:1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/1001/badges_2.webp">
+                                <source media="(min-width:320px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/1001/badges_1.webp">
+                                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/stoneside/1001/badges_2.webp" alt="Awards" width="408" height="96">
                             </picture>
                             </div>
                             <div class="customer_right">#1 in Customer Service</div>

@@ -1,0 +1,4722 @@
+@charset "UTF-8";
+html:has(body.spz_5017_v),
+body.spz_5017_v {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html:has(body.spz_5017_v) {
+  overflow-x: clip;
+}
+
+.spz_5017_v {
+  /* Fields (Figma headings/price): Adobe Fonts — replace YOUR_TYPEKIT_ID with your project ID from fonts.adobe.com (Web Projects). If unused, comment out this line; Fira Sans will remain the fallback. */
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+  /* Fira Sans: fallback if Fields not loaded (e.g. Typekit ID not set) */
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap");
+}
+.spz_5017_v > img {
+  display: none;
+}
+.spz_5017_v .section.form-container {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+.spz_5017_v .section.form-container > span.bg,
+.spz_5017_v .section.form-container > .spacer-wrapper,
+.spz_5017_v .section.form-container .content-col {
+  display: none;
+}
+.spz_5017_v .section.form-container .form-col {
+  display: none;
+}
+.spz_5017_v .modal-fragment-wrapper {
+  display: none;
+}
+.spz_5017_v .modal-open {
+  overflow: inherit;
+}
+.spz_5017_v {
+  /* #BACKDROP — ELEMENT: Modal backdrop overlay (injected at body end)
+   DOM: .spz-5017-backdrop */
+}
+.spz_5017_v .spz-5017-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5.5px);
+  z-index: 999;
+}
+.spz_5017_v .spz_custom_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5.5px);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  display: none;
+}
+.spz_5017_v .spz_hero {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  background: none;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transition: all 0.2s ease;
+  max-width: unset;
+}
+.spz_5017_v .spz_hero .auto_container {
+  position: static;
+}
+.spz_5017_v .spz_hero .form {
+  max-width: 100%;
+}
+.spz_5017_v .spz_hero .form .form-col {
+  display: block;
+}
+.spz_5017_v .form_container {
+  border-radius: 20px;
+  box-shadow: 0 22px 32px 0 rgba(0, 51, 29, 0.12);
+  background: #fff;
+  border: none;
+  max-width: 480px;
+  position: relative;
+  margin: auto;
+}
+.spz_5017_v .form_container .close_icon {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  cursor: pointer;
+  z-index: 1;
+}
+.spz_5017_v .form_container .close_icon:hover svg path {
+  stroke: #599D15;
+}
+.spz_5017_v {
+  /* #MODAL_ACTIVE — ELEMENT: Modal open state (body lock); form-col becomes the modal
+   DOM: &.spz-5017-modal-active */
+}
+.spz_5017_v.spz-5017-modal-active {
+  overflow: hidden;
+  max-height: 100vh;
+  display: block;
+}
+.spz_5017_v.spz-5017-modal-active::-webkit-scrollbar {
+  display: none;
+}
+.spz_5017_v.spz-5017-modal-active .spz_hero {
+  width: 100%;
+  height: 100vh;
+  transform: translate(-50%, -28.78%);
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  transition: all 0.2s ease;
+}
+@media only screen and (max-height: 700px) {
+  .spz_5017_v.spz-5017-modal-active .spz_hero {
+    transform: translate(-50%, -50%);
+  }
+}
+.spz_5017_v.spz-5017-modal-active .spz_hero::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 767px) {
+  .spz_5017_v.spz-5017-modal-active .spz_hero {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 57px 0;
+    width: calc(100% - 40px);
+  }
+}
+.spz_5017_v.spz-5017-modal-active .spz_custom_overlay {
+  opacity: 1;
+  visibility: visible;
+  z-index: 201;
+  transition: all 0.2s ease;
+}
+.spz_5017_v {
+  /* Prevent 100vw full-bleed (section::before) from causing horizontal scroll / content shift on ALL breakpoints (desktop included) */
+}
+.spz_5017_v.spz-5017-modal-active .spz-5017-backdrop {
+  display: block;
+}
+.spz_5017_v.spz-5017-modal-active .section.form-container {
+  overflow: visible;
+}
+.spz_5017_v {
+  /* #MODAL_ACTIVE — ELEMENT: Form modal (white card, 32px padding, 20px radius). Figma 29056:1846
+   DOM: body.spz-5017-modal-active .section.form-container .form-col */
+}
+.spz_5017_v.spz-5017-modal-active .section.form-container .form-col.spz-5017-slide-out {
+  animation: spz5017SlideOut 0.4s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+@keyframes spz5017SlideIn {
+  from {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+@keyframes spz5017SlideOut {
+  from {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+}
+.spz_5017_v {
+  /* #MODAL_ACTIVE — ELEMENT: Form container inside modal (padding 32px, gap 24px). Figma 29056:1846
+   DOM: .form-col-container */
+}
+.spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container {
+  padding: 32.5px 32px 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  align-items: stretch;
+}
+.spz_5017_v {
+  /* "Get Pricing" title — Figma Headlines/H6-28-700: Fields Bold 28px/36px #02551d (production: <p><strong>Get Pricing</strong></p>) */
+}
+.spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container > p:first-of-type, .spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container > p:first-of-type strong {
+  color: #02551d;
+  text-align: center;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  margin: 0;
+}
+.spz_5017_v {
+  /* #MODAL_CLOSE — ELEMENT: Close button (×), hidden until modal open
+   DOM: .spz-5017-modal-close */
+}
+.spz_5017_v .spz-5017-modal-close {
+  display: none;
+}
+.spz_5017_v {
+  /* Close button — Figma 29056:1848: top-right, 56px hit area, icon 32px */
+}
+.spz_5017_v.spz-5017-modal-active .spz-5017-modal-close {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 0 20px 0 0;
+  border: none;
+  background: transparent;
+  color: #38312F;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
+.spz_5017_v.spz-5017-modal-active .spz-5017-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.spz_5017_v {
+  /* #MODAL_OVERLAY — ELEMENT: Preview/alt modal (preview.html). Same UI as production .form-col
+   DOM: .spz-5017-modal-overlay, .spz-5017-modal. Figma 29056:1846 */
+}
+.spz_5017_v .spz-5017-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99998;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.spz_5017_v .spz-5017-modal-overlay.spz-5017-modal-visible {
+  display: flex;
+}
+.spz_5017_v {
+  /* Modal height from content, no scrollbar */
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal.spz-5017-modal-slide-out {
+  animation: spz5017ModalSlideOut 0.25s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+@keyframes spz5017ModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes spz5017ModalSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal .spz-5017-modal-close {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 0 20px 0 0;
+  border: none;
+  background: transparent;
+  color: #38312F;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal .spz-5017-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal-title {
+  color: #02551d;
+  text-align: center;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  margin: 0;
+  order: -1;
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+.spz_5017_v .spz-5017-modal-overlay .spz-5017-modal-form-container {
+  width: 100%;
+  min-width: 0;
+}
+.spz_5017_v {
+  /* Form inside preview modal — Figma inputs, disclaimer, button */
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0;
+  padding: 0;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoFormRow {
+  margin-top: 16px;
+  max-width: calc(50% - 8px);
+  width: 100%;
+  box-sizing: border-box;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoFormRow:first-of-type {
+  margin-top: 0;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoFormRow.mktoButtonRow,
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoFormRow.mktoFormRow--disclaimer {
+  max-width: 100%;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoField {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #38312F;
+  border: 1px solid #a5a29f;
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 15px;
+  box-sizing: border-box;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoField::-moz-placeholder {
+  color: #95918f;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoField::placeholder {
+  color: #95918f;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoField::-webkit-input-placeholder {
+  color: #95918f;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .bhrForm__partnerDisclaimer,
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoHtmlText .bhrForm__partnerDisclaimer {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #676260;
+  margin-top: 16px;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .bhrForm__partnerDisclaimer a,
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoHtmlText .bhrForm__partnerDisclaimer a {
+  color: #2E7918;
+  text-decoration: underline;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoButtonRow {
+  margin-top: 16px;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoButton {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  background: #2E7918;
+  border-radius: 100px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 40px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s ease;
+  box-sizing: border-box;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoButton:hover {
+  background-color: #245f12;
+}
+.spz_5017_v .spz-5017-modal-overlay .mktoForm select.mktoField {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23A5A29F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  padding-right: 42px;
+}
+.spz_5017_v {
+  /* Preview modal — Tablet (Figma 29058:9097): same as desktop — 32px padding, 2-col */
+}
+@media (max-width: 1099.98px) {
+  .spz_5017_v .spz-5017-modal-overlay .spz-5017-modal {
+    padding: 32px;
+  }
+}
+.spz_5017_v {
+  /* Preview modal — Mobile (Figma 29058:9770): 30px 20px padding, single column */
+}
+@media (max-width: 767.98px) {
+  .spz_5017_v .spz-5017-modal-overlay .spz-5017-modal {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  .spz_5017_v .spz-5017-modal-overlay .spz-5017-modal-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .spz_5017_v .spz-5017-modal-overlay .mktoForm .mktoFormRow {
+    max-width: 100%;
+  }
+}
+.spz_5017_v {
+  /* #PRICING_HEADING — ELEMENT: "Pricing" heading (white on bg). Figma: Fields Bold 56/64, center
+   DOM: #plans-and-pricing-for-every-organization, .section.package-comparison .title-wrapper h2 */
+}
+.spz_5017_v #plans-and-pricing-for-every-organization,
+.spz_5017_v .section.package-comparison.table-container .title-wrapper h2,
+.spz_5017_v .section.package-comparison .title-wrapper h2,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .title-wrapper h2 {
+  color: #FFFFFF;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 0;
+  font-style: normal;
+}
+.spz_5017_v {
+  /* No bottom padding on title-container (heading section). */
+}
+.spz_5017_v .section.title-container:has(#plans-and-pricing-for-every-organization),
+.spz_5017_v .section.title-container:has([id*=plans-and-pricing]) {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v {
+  /* ============================================
+   PRICING CARDS — Live DOM: .section.package-comparison.table-container
+   Each card: .table-wrapper (contains .table.comparison block)
+   ============================================ */
+  /* #PRICING_SECTION — ELEMENT: Pricing section container + Cloudinary bg (::before). position relative, 54px padding
+   DOM: .section.package-comparison.table-container, .section.package-comparison.spz-5017-pricing-section */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+.spz_5017_v .section.package-comparison.table-container,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 54px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: visible;
+  /* allow Elite NEW banner (top: 0, 24px gap to heading) to show */
+  width: 100%;
+}
+.spz_5017_v {
+  /* Prevent main (or other wrappers) from clipping the section::before full-bleed background */
+}
+.spz_5017_v main {
+  overflow: visible;
+}
+.spz_5017_v {
+  /* White-gap fix (Option A): sections between hero and pricing show extended green behind them */
+}
+.spz_5017_v .title-container,
+.spz_5017_v .cards-container {
+  background: transparent;
+  position: relative;
+  z-index: 0;
+}
+.spz_5017_v {
+  /* Full viewport width background on section::before (scrolls with pricing block; not on body) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container::before,
+.spz_5017_v .section.package-comparison.table-container::before,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 1px;
+  height: calc(100% + 180px);
+  max-height: 968px;
+  z-index: -1;
+  background-color: #fff;
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/5017/bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.spz_5017_v {
+  /* -------------------------------------------------------------------------
+   Pricing section bg breakpoints (mobile-first, min-width)
+   ------------------------------------------------------------------------- */
+  /* Desktop (≥1100px): 1440 bg */
+}
+@media (min-width: 1920px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section::before {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773059385/bamboohr/5017/bg_2.webp");
+  }
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section::before {
+    height: calc(100% + 32px);
+    max-height: 967px;
+  }
+}
+.spz_5017_v {
+  /* Tablet (451–1099px): 768 bg */
+}
+@media (max-width: 767.98px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.table-container::before,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section::before {
+    height: calc(100% + 32px);
+    max-height: 796.5px;
+  }
+}
+.spz_5017_v {
+  /* #PRICING_CARDS — ELEMENT: Each pricing card (Core, Pro, Elite). Min-height so content not cropped.
+   DOM: .section.package-comparison .table-wrapper */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper {
+  flex: 1 0 0;
+  min-width: 0;
+  width: 100%;
+  min-height: 674px;
+  height: auto;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid rgba(56, 49, 47, 0.1);
+  border-radius: 22px;
+  z-index: 1;
+  padding: 39px 31px;
+  box-shadow: 0px 12px 12px 0px rgba(46, 121, 24, 0.06);
+  backdrop-filter: blur(20px);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.allow-overflow,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper > .table,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper > .table.allow-overflow {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table table thead tr th, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.allow-overflow table thead tr th,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper > .table table thead tr th,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper > .table.allow-overflow table thead tr th {
+  overflow: visible;
+}
+.spz_5017_v {
+  /* Wistia embed container inside button-container — make it inline */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .wistia.block {
+  display: inline;
+  position: static;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .wistia.block .wistia_embed {
+  display: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:hover {
+  box-shadow: 0px 16px 24px 0px rgba(46, 121, 24, 0.12);
+}
+.spz_5017_v {
+  /* #ELITE_CARD — ELEMENT: Elite card (706px, 56px 32px padding, 24px radius, 2px #599D15 border). design-values.json
+   DOM: .table-wrapper.spz-5017-elite-card */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
+  position: relative;
+  /* required for ::before NEW banner positioning */
+  min-height: 706px;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  /* prevent NEW banner from being cropped by card corners */
+  border: 2px solid #599D15;
+  border-radius: 24px;
+  padding: 54px 30px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
+    padding: 62px 22px !important;
+  }
+}
+.spz_5017_v {
+  /* Tablet (451–1099px) — Figma 29057:6543 / figma-tablet-29057-6543-design-spec.json: content 660px, cards 660×674 stacked, gap 16px; Elite 660×666. Section 768px max so padding 54px yields 660px content. */
+}
+@media (min-width: 451px) and (max-width: 1099.98px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section {
+    flex-direction: column;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper {
+    width: 660px;
+    max-width: 100%;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    height: 674px;
+    min-height: 674px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
+    height: 666px;
+    min-height: 666px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card::before {
+    left: -1px;
+    right: -1px;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+  .spz_5017_v {
+    /* Pricing heading — 48px bottom margin at tablet (760px) */
+  }
+  .spz_5017_v #plans-and-pricing-for-every-organization,
+  .spz_5017_v .section.package-comparison .title-wrapper h2,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .title-wrapper h2 {
+    margin-bottom: 48px;
+  }
+}
+.spz_5017_v {
+  /* Desktop ≥1100px — fluid cards so row fits viewport (no right gap); max card width 432px to avoid horizontal overflow */
+}
+@media (min-width: 1100px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section {
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 433.33px;
+    width: auto;
+  }
+  .spz_5017_v {
+    /* Core/Pro: min 674px; at 1440px fixed 674px (see below). Elite: design-values.json 706px */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    height: auto;
+    min-height: 696px;
+    overflow: visible;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
+    height: auto;
+    min-height: 706px;
+    /* design-values.json pricing.cards.elite.height */
+    overflow: visible;
+  }
+  .spz_5017_v {
+    /* Figma 29056:905 — lock CTA row to 60px so thead ≈250px and all content fits in card (no overflow) */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+    min-height: 60px;
+    max-height: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-filled,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-outlined,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-filled {
+    box-sizing: border-box;
+    height: 60px;
+    min-height: 60px;
+    padding: 18px 40px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spz_5017_v {
+    /* Line breaking (same as mobile): allow text to wrap so fluid cards don’t overflow */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table {
+    table-layout: fixed;
+    min-width: 0;
+    width: 100%;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody {
+    min-width: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr {
+    min-height: 40px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td {
+    min-height: 40px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 8px 0;
+    white-space: normal;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    line-height: 24px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody .icon-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper .icon-checkmark,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody .icon-wrapper .icon-checkmark {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .spz-5017-bullet-text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .spz-5017-bullet-text {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    text-wrap: balance;
+    line-height: 24px;
+    overflow: visible;
+    max-width: 100%;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody .spz-5017-badge-unit {
+    white-space: nowrap;
+    display: inline;
+  }
+}
+.spz_5017_v {
+  /* At 1440px: Core and Pro cards show exactly 674px height (design-values.json corePro.minHeight) */
+}
+@media (min-width: 1440px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    height: 674px;
+    min-height: 674px;
+  }
+}
+.spz_5017_v {
+  /* #ELITE_BANNER — ELEMENT: "NEW" banner on Elite card (green bar, 32px height). Full width of card. JS sets content 'NEW'
+   DOM: .table-wrapper.spz-5017-elite-card::before */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before,
+.spz_5017_v .section.package-comparison .table-wrapper.spz-5017-elite-card::before,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card::before,
+.spz_5017_v .section.package-comparison .table-wrapper.spz-5017-elite-card::before {
+  content: "NEW";
+  position: absolute;
+  top: -2px;
+  /* Banner flush with card border-box. Containing block = padding box; -1px each side to align with border edge. */
+  left: -1px;
+  right: -1px;
+  width: auto;
+  max-width: none;
+  transform: none;
+  height: 32px;
+  min-height: 32px;
+  box-sizing: border-box;
+  z-index: 10;
+  background: #599D15;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border-radius: 24px 24px 0 0;
+  /* match Elite card radius (24px) */
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  visibility: visible;
+  opacity: 1;
+}
+.spz_5017_v {
+  /* Do NOT hide the site's .table.callout-new::before — keep NEW banner visible (was removed by mistake) */
+  /* Override site's red .exclamation / callout-new borders on Elite card */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card .table.callout-new::after, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card .table.exclamation::before, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card .table.exclamation::after {
+  display: none;
+}
+.spz_5017_v {
+  /* Strip all site padding/margin from inner .table div and table element */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.callout-new, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.callout-new.exclamation {
+  border: none;
+  border-color: transparent;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.spz_5017_v {
+  /* Force-remove any red/brown border from site's callout/exclamation styling */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card .table[callout], .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card .table.callout-new.exclamation {
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+.spz_5017_v {
+  /* #CARD_TABLE — ELEMENT: Card inner table (flex column, gap 24px). thead = plan/price/CTA; tbody = feature rows. Figma 29056:904
+   DOM: .table-wrapper table, thead, tbody, thead th */
+  /* Table is forced to flex column; only 2 direct children: thead, tbody.
+   - table gap: 24px between CTA and feature list (below thead, above tbody).
+   - thead th: no min-height so header shrinks to content; spacing = margins on h2, h4, p.
+   - thead th grid: row-gap 0; column-gap 4px (price vs "per employee/month").
+   - tbody td padding: 8px 0 (Figma Row → Data py-[8px]).
+   ========== */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table {
+  display: flex;
+  flex-direction: column;
+  gap: 32.5px;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tr {
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-height: none;
+  overflow: visible;
+}
+.spz_5017_v {
+  /* Header cell: grid for plan/price/description/CTA; no min-height so spacing comes from element margins only */
+  /* Align to Figma: thead ~250px so bullet list starts at y=314; no extra top margin */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto auto;
+  align-items: start;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  row-gap: 0;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  min-height: 0;
+}
+.spz_5017_v {
+  /* Elite card: no extra top margin so content (plan name, price) starts at same height as Core/Pro */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card > .table.callout-new.exclamation, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card > .table.callout-new.exclamation.allow-overflow {
+  margin-top: 0;
+  padding-top: 0;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th {
+  margin-top: 0;
+  padding-top: 0;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th h2, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th [id=elite] {
+  margin-top: 0;
+  padding-top: 0;
+}
+.spz_5017_v {
+  /* Grid placement — Figma: row1=plan name, row2=price+per employee/month (same line), row3=description, row4=CTA */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2 {
+  grid-row: 1;
+  grid-column: 1/-1;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th > p:first-of-type {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+  grid-row: 3;
+  grid-column: 1/-1;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container {
+  grid-row: 4;
+  grid-column: 1/-1;
+}
+.spz_5017_v {
+  /* #PLAN_NAME — ELEMENT: Plan name (Core, Pro, Elite). Figma H-48-600 Fields Semi Bold 48px/56px #38312F
+   DOM: .table-wrapper thead th h2, [id="core"], [id="pro"], [id="elite"] */
+  /* ========== Figma typography (node 29056:904) ==========
+   Plan name:     Fields Semi Bold 48px/56px #38312F (H-48-600)
+   $ + number:   Fields Semi Bold + Bold 56px/64px #38312F (H2-56-600 / H2-56-700)
+   per emp/mo:   Inter Regular 18px/26px #777270 (P-18-R, GRAY 9)
+   Description:  Inter Bold 18px/26px #38312F (P-18-B)
+   CTA outlined: Inter Bold 16px/24px #2E7918 (P-16-B, Success Green)
+   CTA filled:   Inter Bold 16px/24px #FFFFFF
+   "Plan Includes:" etc: Inter Bold 16px/24px #48413F (P-16-B)
+   Feature items: Inter Regular 16px/24px #48413F (P4-16-R)
+   "New" pill:    Inter Regular 12px/18px #2E7918 (P-12-R)
+   NEW banner:   Inter Bold 12px/20px #FFFFFF (Quote & CAPS/C-12)
+   ========== */
+  /* Force typography to win over site: higher specificity + on all props */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody td {
+  font-family: "Inter", sans-serif;
+}
+.spz_5017_v {
+  /* Plan names (Core, Pro, Elite) — Figma: H-48-600 Fields Semi Bold 48px/56px #38312F; 8px gap to price */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2,
+.spz_5017_v .section.package-comparison .table-wrapper thead th h2,
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=core],
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=pro],
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=elite] {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: 0;
+  margin: 0 0 8.5px;
+  text-align: left;
+}
+.spz_5017_v {
+  /* Force plan name typography on any descendant (nested spans/divs) */
+}
+.spz_5017_v .section.package-comparison .table-wrapper thead th h2 *,
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=core] *,
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=pro] *,
+.spz_5017_v .section.package-comparison .table-wrapper thead th [id=elite] * {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.spz_5017_v {
+  /* #PRICE — ELEMENT: Price ($ + number). Figma: Fields Bold 56/64 #38312F. 4px gap to "per employee"; 12px below
+   DOM: .table-wrapper thead th h4, .spz-5017-price-symbol, .spz-5017-price-amount, strong */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  margin: 0 0 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 {
+    font-size: 0 !important;
+    margin-bottom: -2.5px !important;
+  }
+}
+.spz_5017_v {
+  /* Price: two elements ($ + amount) with 4px gap — Figma H2-56-700 Fields Bold 56px/64px #38312F */
+}
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-symbol,
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-amount {
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 0;
+  color: #38312F;
+  text-align: left;
+}
+.spz_5017_v {
+  /* Fallback: price number when still in strong (pre-JS or alternate DOM) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 strong, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 strong,
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 strong,
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 [id=usd],
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 [id=usd-1],
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 [id=usd-2] {
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 2px;
+  color: #38312F;
+  text-align: left;
+  margin-left: 0;
+}
+.spz_5017_v .spz-5017-pricing-section .table tbody tr:first-child {
+  min-height: unset !important;
+}
+.spz_5017_v .spz-5017-pricing-section .table tbody tr:first-child td:first-child {
+  min-height: unset !important;
+}
+.spz_5017_v .spz-5017-pricing-section .table tbody tr:first-child td:first-child strong {
+  font-weight: 700;
+  margin-bottom: 9.5px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table tbody tr:first-child td:first-child strong {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) {
+    min-height: 703px !important;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:first-child td:first-child strong {
+    margin-bottom: 21.5px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:nth-child(2) {
+    margin-bottom: 7px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:nth-child(2), .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:nth-child(3), .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:nth-child(7) {
+    min-height: 57px !important;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(2) .table tbody tr:nth-child(7) {
+    margin-top: 7.5px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:first-child td:first-child strong {
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(2) {
+    margin-bottom: 7px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(2), .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(3), .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(6) {
+    min-height: 57px !important;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(3) .icon-wrapper__text {
+    text-wrap: auto;
+    max-width: 200px;
+  }
+}
+.spz_5017_v .spz-5017-pricing-section .table-wrapper:nth-child(3) .table tbody tr:nth-child(6) {
+  margin-top: 7px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 {
+    font-size: 0;
+  }
+}
+.spz_5017_v .section.package-comparison .table-wrapper thead th h4 strong * {
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  color: #38312F;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 strong * {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+.spz_5017_v {
+  /* "per employee/month" — Figma: Inter Regular 18/26, #777270 (P-18-R, GRAY 9); 4px from amount (grid column-gap) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th > p:first-of-type, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th > p:first-of-type {
+  color: #777270;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+  margin-left: -10px;
+  padding-left: 0;
+  text-align: left;
+  align-self: center;
+}
+@media (max-width: 767px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th > p:first-of-type, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th > p:first-of-type {
+    margin-bottom: 11.5px;
+  }
+}
+.spz_5017_v {
+  /* #DESCRIPTION — ELEMENT: Card description line (e.g. "For small businesses"). 24px gap below to CTA. Figma 29056:904
+   DOM: .table-wrapper thead th p:not(.button-container):last-of-type */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+  color: #38312F;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0;
+  margin: 0 0 23.5px;
+  text-align: left;
+}
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+    margin-bottom: 14px;
+  }
+}
+.spz_5017_v {
+  /* Elite card: longer description above CTA — same 24px gap to CTA per Figma */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th p:not(.button-container):last-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.45;
+  margin-bottom: 23.5px;
+}
+.spz_5017_v {
+  /* #CTA_CONTAINER — ELEMENT: CTA row (60px height, flex center). Figma: fixed height so header fits
+   DOM: .table-wrapper thead th p.button-container */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+  margin: 0;
+  padding: 0;
+  min-height: 60px;
+  height: 60px;
+  max-height: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.spz_5017_v {
+  /* CTA inner strong wrapper — make it full width */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container strong {
+  display: block;
+  width: 100%;
+}
+.spz_5017_v {
+  /* Hide video overview buttons */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container.non-img-col {
+  display: none;
+}
+.spz_5017_v {
+  /* #CTA_OUTLINED — ELEMENT: Outlined CTA (Core/Pro). 60px height, 18/40 padding, 2px #2E7918 border, 100px radius
+   DOM: .table-wrapper a.spz-5017-cta-outlined */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-outlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+  min-height: 60px;
+  padding: 18px 40px;
+  border: 2px solid #2E7918;
+  border-radius: 100px;
+  background: #FFFFFF;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.25s ease;
+  gap: 10px;
+  box-shadow: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-outlined:hover, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-outlined:focus {
+  background: #ECFFC7;
+}
+.spz_5017_v {
+  /* Second card CTA — match first card (outlined): same 60×padding/border/radius */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+  min-height: 60px;
+  padding: 18px 40px;
+  border: 2px solid #2E7918;
+  border-radius: 100px;
+  background: #FFFFFF;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  margin: 0;
+  box-shadow: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:hover,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:hover, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:hover,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:hover {
+  background: #03551C;
+  border-color: #03551C;
+  color: #FFF;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:focus,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:focus, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:focus,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:focus {
+  border: 2px solid #03551C;
+  outline: 2px solid #AAE868;
+}
+.spz_5017_v {
+  /* #CTA_FILLED — ELEMENT: Filled CTA (Elite). 60px height, 18/40 padding, bg #2E7918, 100px radius
+   DOM: .table-wrapper a.spz-5017-cta-filled, .spz-5017-elite-card .button-container a.button.accent */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-filled, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-filled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 60px;
+  min-height: 60px;
+  padding: 18px 40px;
+  border: 2px solid #2E7918;
+  border-radius: 100px;
+  background: #2E7918;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.25s ease;
+  gap: 10px;
+  box-shadow: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-filled:hover {
+  background: #03551C !important;
+  border-color: #03551C !important;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-filled:focus {
+  border: 2px solid #AAE868 !important;
+  background: #2E7918 !important;
+}
+.spz_5017_v {
+  /* Elite card CTA — same dimensions: 60px height, 18/40 padding, 2px border, 100px radius */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card a.spz-5017-cta-filled {
+  height: 60px;
+  min-height: 60px;
+  padding: 18px 40px;
+  justify-content: center;
+  align-items: center;
+}
+.spz_5017_v {
+  /* Feature rows (tbody) — tightened vertical spacing */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody {
+  text-align: left;
+}
+.spz_5017_v {
+  /* Body (29056:1016): Row → Data; feature text Inter 16/24 #48413f; vertical center */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td {
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  white-space: nowrap;
+}
+.spz_5017_v {
+  /* Feature list heading — "Plan Includes:" / "Everything in Core/Pro, plus:" */
+  /* No extra top spacing so bullet list starts at Figma y=314; zero margin/padding-top on first row */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child td {
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #48413F;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v {
+  /* Hide 7th tr in table inside .table.comparison.block.allow-overflow, first card only */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7),
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7) {
+  display: none;
+}
+.spz_5017_v {
+  /* Hide 6th bullet in first card (Core) — ul/li structure only */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card:first-child .pricing-card-features-list li:nth-child(6),
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .pricing-card:first-child .pricing-card-features-list li:nth-child(6) {
+  display: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.spz_5017_v {
+  /* Checkmark icon — Cloudinary 5017 checkmark (pricing card bullets only). Live DOM: span.icon.icon-checkmark > svg */
+}
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark,
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper span.icon-checkmark, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper .icon-checkmark {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059771/bamboohr/5017/checkmark_1.svg") no-repeat center;
+  background-size: 18px 18px;
+}
+.spz_5017_v {
+  /* Hide site's inline SVG so Cloudinary checkmark shows (JS replaces with img; don't hide img) */
+}
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark svg,
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper span.icon-checkmark svg, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark svg,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper .icon-checkmark svg {
+  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.spz_5017_v {
+  /* Size the Cloudinary checkmark img injected by JS */
+}
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark img,
+.spz_5017_v .section.package-comparison .table-wrapper .icon-wrapper span.icon-checkmark img {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.spz_5017_v {
+  /* Feature item text — Figma: Inter Regular 16/24, #48413F; gap 6px between text and New pill (29056:1016) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.spz_5017_v {
+  /* Information icon (i) next to feature text — Cloudinary 5017 (pricing card bullets only) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td .icon-wrapper__text img,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody td .icon-wrapper__text img, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td .feature-text img,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody td .feature-text img {
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: -0.5px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.spz_5017_v {
+  /* Tooltip popup container — keep hidden by default, show on hover/click */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .table-tooltip-container {
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .table-tooltip-container {
+    white-space: normal;
+  }
+}
+.spz_5017_v {
+  /* Feature text wrapper — single line, no wrap (e.g. "Compliance Training: 300+ Courses") */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .feature-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .feature-text * {
+  white-space: nowrap;
+}
+.spz_5017_v {
+  /* "New" pill badge — Figma 29056:1016: bg #ECFFC7, px-[8px], rounded 32px, "New" 12/18 #2E7918. Nudge down so pill aligns vertically with feature text. */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new {
+  display: inline-flex;
+  align-self: center;
+  vertical-align: middle;
+  background: #ECFFC7;
+  border-radius: 32px;
+  padding: 0 8px;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  min-height: 18px;
+  transform: translateY(2px);
+  /* align pill with 16px text baseline */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new svg {
+  display: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new::after, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new::after {
+  content: "New";
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #2E7918;
+  white-space: nowrap;
+}
+.spz_5017_v {
+  /* #FEATURE_ROWS — ELEMENT: Bullet/feature rows in pricing cards (checkmark + text + New pill). Figma Inter 16/24 #48413F
+   DOM: .table-wrapper table tbody tr td, .icon-wrapper, .icon-wrapper__text, .feature-text */
+  /* ============================================
+   TABLE FEATURE ROWS — direct table tbody tr td targeting
+   Live DOM (from production): &.spz-5017-cards-ready
+     .section.package-comparison.table-container.spz-5017-pricing-section
+     .table-wrapper (or .table-wrapper.spz-5017-elite-card)
+       > .table.comparison.callout-new... (div)
+         > table > tbody > tr > td.has-popup-data
+           > span.feature-text > div.icon-wrapper > span.icon-checkmark + div.icon-wrapper__text
+   Figma: Inter 16px/24px #48413F, 8px row padding, single line per bullet (text + New + icon)
+   ONLY pricing card tables (inside .table-wrapper); do NOT affect Compare All table (tr.table-section-head).
+   ============================================ */
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody tr td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td.has-popup-data {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  border: none;
+  text-align: left;
+  overflow: visible;
+  max-height: none;
+}
+.spz_5017_v {
+  /* Bullet text content — left-aligned in all breakpoints */
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text,
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text,
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .spz-5017-bullet-text,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .spz-5017-bullet-text {
+  text-align: left;
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody tr:first-child td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr:first-child td {
+  font-weight: 700;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v {
+  /* Keep entire row (checkmark + text + New + icon) on one line — Figma 29056:1016 row content 24px */
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  align-items: center;
+  min-height: 24px;
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text *,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text * {
+  white-space: nowrap;
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: none;
+}
+.spz_5017_v {
+  /* Text + New badge on one line (Figma P4-16-R #48413F); gap 6px text–pill–icon (29056:1016) */
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: visible;
+  font-size: 16px;
+  line-height: 24px;
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
+}
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+  flex-shrink: 0;
+  white-space: nowrap;
+  align-self: center;
+  line-height: 18px;
+  min-height: 24px;
+  margin-left: 6px;
+  transform: none;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+    margin-left: 1px;
+    margin-top: 2.5px;
+  }
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+  /* align pill vertically with feature text */
+}
+.spz_5017_v {
+  /* No max-height so last bullet is never cropped — pricing card tables only (not Compare All table) */
+}
+.spz_5017_v .section.package-comparison .table-wrapper table,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table,
+.spz_5017_v .section.package-comparison .table-wrapper table tbody,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody,
+.spz_5017_v .section.package-comparison .table-wrapper table tbody tr,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+.spz_5017_v {
+  /* Row height 40px Hug (Figma 29056:1016 Row → Data) */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  background-color: #fff;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+.spz_5017_v .section.package-comparison .table-wrapper table,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table {
+  table-layout: auto;
+  width: 100%;
+}
+.spz_5017_v .section.package-comparison .table-wrapper table tbody tr td,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td {
+  overflow: visible;
+}
+.spz_5017_v {
+  /* Desktop: bullet line breaking (override global nowrap so text wraps like mobile) */
+}
+@media (min-width: 1100px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr {
+    height: auto;
+    min-height: 40px;
+    max-height: none;
+    background-color: #fff;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td.has-popup-data {
+    white-space: normal;
+    align-items: flex-start;
+    height: auto;
+    min-height: 40px;
+    max-height: none;
+    padding: 6.5px 0;
+    min-width: 0;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text {
+    flex-wrap: wrap;
+    white-space: normal;
+    align-items: flex-start;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text *,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text * {
+    white-space: normal;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text .spz-5017-badge-unit,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text .spz-5017-badge-unit,
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+    white-space: nowrap;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
+    align-items: flex-start;
+    white-space: normal;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    text-wrap: balance;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    text-align: left;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper {
+    white-space: normal;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper__text {
+    white-space: normal;
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    text-wrap: balance;
+    text-align: left;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .feature-text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .feature-text {
+    white-space: normal;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .feature-text *,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .feature-text * {
+    white-space: normal;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper .feature-text .spz-5017-badge-unit,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper .feature-text .spz-5017-badge-unit {
+    white-space: nowrap;
+  }
+}
+.spz_5017_v {
+  /* Hide duplicate mobile table when desktop table is shown */
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .table-mobile-container {
+  display: none;
+}
+.spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container > div:empty {
+  display: none;
+}
+.spz_5017_v {
+  /* Remove from layout so it takes no space (was hidden but still reserving space) */
+}
+.spz_5017_v .title.spacing-top-none.block.spacing-xl,
+.spz_5017_v .title.spacing-top-none.spacing-xl {
+  display: none;
+}
+.spz_5017_v {
+  /* Fallback selectors for other DOM versions */
+}
+.spz_5017_v .pricing-comparison-wrapper,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper {
+  max-width: 1332px;
+  margin: 0 auto;
+  padding: 0 54px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-comparison,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div {
+  background: #FFFFFF;
+  border: 1px solid rgba(56, 49, 47, 0.1);
+  border-radius: 22px;
+  padding: 39px 31px;
+  box-shadow: 0px 12px 12px 0px rgba(46, 121, 24, 0.06);
+  backdrop-filter: blur(20px);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card:hover,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div:hover {
+  box-shadow: 0px 16px 24px 0px rgba(46, 121, 24, 0.12);
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card.spz-5017-elite-card,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div.spz-5017-elite-card {
+  border: 2px solid #599D15;
+  border-radius: 24px;
+  /* design-values.json pricing.cards.elite.borderRadius */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card h2,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div h2 {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  margin: 0 0 8px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card h4,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div h4 {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+  margin: 0 0 4px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-per-employee-text,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div .pricing-card-per-employee-text {
+  color: #777270;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 12px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-description,
+.spz_5017_v .spz-5017-pricing-section .default-content-wrapper > div .pricing-card-description {
+  color: #38312F;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  margin-bottom: 32px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-outlined,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-outlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  border-radius: 100px;
+  padding: 18px 40px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border: 2px solid #2E7918;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background-color 0.25s ease;
+  gap: 10px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-outlined:hover,
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-outlined:focus,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-outlined:hover,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-outlined:focus {
+  background: #ECFFC7;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-filled,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-filled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2E7918;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  border-radius: 100px;
+  padding: 18px 40px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border: 2px solid #2E7918;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background-color 0.25s ease;
+  gap: 10px;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-filled:hover,
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-filled:focus,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-filled:hover,
+.spz_5017_v .spz-5017-pricing-section a.spz-5017-cta-filled:focus {
+  background: #245f12;
+  border-color: #245f12;
+}
+.spz_5017_v {
+  /* --- "NEW" banner removed per "no new elements" — Elite card styling only --- */
+  /* Figma: absolute, full-width, top -2px, bg #599D15, h 32px */
+  /* Inter Bold 12px, uppercase, white, centered */
+}
+.spz_5017_v .spz-5017-new-badge {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  background: #599D15;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 20px;
+  padding: 4px 12px;
+  text-align: center;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+.spz_5017_v {
+  /* Hide popup elements */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-popup {
+  display: none;
+}
+.spz_5017_v {
+  /* Feature list header — Figma: Inter Bold 16/24, #48413F; gap halved */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-features-header {
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 0;
+  padding: 4px 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.spz_5017_v {
+  /* Feature list */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.spz_5017_v {
+  /* Feature items — Figma 29056:1016: Inter Regular 16/24, #48413F, checkmark 18px, row py 8px */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-features-list li {
+  color: #48413F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 4px 0 4px 26px;
+  position: relative;
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card .pricing-card-features-list li::before {
+  content: "";
+  background-image: url("//res.cloudinary.com/spiralyze/image/upload/v1699261128/bamboohr/5008/checkmark.svg");
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.spz_5017_v {
+  /* Non-CTA links in cards */
+}
+.spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent:not([data-action]) {
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.spz_5017_v {
+  /* Inline "New" badges on feature items */
+  /* Figma: bg #ECFFC7, Inter Regular 12/18, #2E7918, radius 32px, pad 0 8px */
+}
+.spz_5017_v .spz-5017-inline-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ECFFC7;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 8px;
+  border-radius: 32px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.spz_5017_v {
+  /* Hide "*Volume and non-profit discounts are available" — only within pricing section; do not alter .title-container section. */
+}
+.spz_5017_v .section.package-comparison:has(a[href="#compare-all-features"]) .title-wrapper:first-child,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section:has(a[href="#compare-all-features"]) .title-wrapper:first-child {
+  display: none;
+}
+.spz_5017_v {
+  /* Remove 96px bottom margin from title containing Compare all features (host .spacing-bottom-xl) */
+}
+.spz_5017_v .section.title-container .title-wrapper .title.button-size-lg.spacing-top-none.spacing-bottom-xl.block,
+.spz_5017_v .section.title-container .title.button-size-lg.spacing-top-none.spacing-bottom-xl.block,
+.spz_5017_v .section.title-container .title.button-size-lg.spacing-top-none.spacing-bottom-xl,
+.spz_5017_v .section.package-comparison .title.button-size-lg.spacing-top-none.spacing-bottom-xl.block,
+.spz_5017_v .section.package-comparison .title.button-size-lg.spacing-top-none.spacing-bottom-xl,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .title.button-size-lg.spacing-top-none.spacing-bottom-xl.block,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .title.button-size-lg.spacing-top-none.spacing-bottom-xl,
+.spz_5017_v .default-content-wrapper .title.button-size-lg.spacing-top-none.spacing-bottom-xl.block,
+.spz_5017_v .default-content-wrapper .title.button-size-lg.spacing-top-none.spacing-bottom-xl {
+  margin-bottom: 0;
+}
+.spz_5017_v {
+  /* "Compare All Features" — Figma node 29056:901: text link only (no button). Inter Bold 16/20, #2E7918, center. */
+}
+.spz_5017_v .section.package-comparison a.button.accent[href*=all-plan-features],
+.spz_5017_v .section.package-comparison a.button.accent[href="#compare-all-features"],
+.spz_5017_v .section.package-comparison .pricing-comparison-wrapper + .default-content-wrapper a.button,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href*=all-plan-features],
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href="#compare-all-features"],
+.spz_5017_v a.button[href="#compare-all-features"],
+.spz_5017_v a.button.accent[href="#compare-all-features"],
+.spz_5017_v a.button.red-cta[href="#compare-all-features"],
+.spz_5017_v .default-content-wrapper a[href="#compare-all-features"] {
+  display: inline-block;
+  background: transparent;
+  background-color: transparent;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 36px;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: unset;
+  height: auto;
+}
+.spz_5017_v .section.package-comparison a.button.accent[href*=all-plan-features]:hover,
+.spz_5017_v .section.package-comparison a.button.accent[href="#compare-all-features"]:hover,
+.spz_5017_v .section.package-comparison .pricing-comparison-wrapper + .default-content-wrapper a.button:hover,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href*=all-plan-features]:hover,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href="#compare-all-features"]:hover,
+.spz_5017_v a.button[href="#compare-all-features"]:hover,
+.spz_5017_v a.button.accent[href="#compare-all-features"]:hover,
+.spz_5017_v a.button.red-cta[href="#compare-all-features"]:hover,
+.spz_5017_v .default-content-wrapper a[href="#compare-all-features"]:hover {
+  text-decoration: underline;
+  background: transparent;
+  background-color: transparent;
+  color: #2E7918;
+}
+.spz_5017_v {
+  /* #COMPARE_LINK — ELEMENT: Compare All Features link (below pricing cards). Tablet: top 48px, bottom 24px
+   DOM: .pricing-comparison-wrapper + .default-content-wrapper */
+}
+@media (min-width: 451px) and (max-width: 1099.98px) {
+  .spz_5017_v .section.package-comparison a.button.accent[href*=all-plan-features],
+  .spz_5017_v .section.package-comparison a.button.accent[href="#compare-all-features"],
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href*=all-plan-features],
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section a.button.accent[href="#compare-all-features"],
+  .spz_5017_v a.button[href="#compare-all-features"],
+  .spz_5017_v a.button.accent[href="#compare-all-features"],
+  .spz_5017_v .default-content-wrapper a[href="#compare-all-features"] {
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+}
+.spz_5017_v .section.package-comparison .pricing-comparison-wrapper + .default-content-wrapper,
+.spz_5017_v .section.package-comparison.spz-5017-pricing-section .pricing-comparison-wrapper + .default-content-wrapper {
+  text-align: center;
+  padding-bottom: 0;
+}
+.spz_5017_v {
+  /* #ADDON_SECTION — ELEMENT: Add-on solutions section (white bg, 96px py, gap 48px). Figma 29056:1201
+   DOM: .section:has(#add-on-solutions), .section:has([id*="add-on-solutions"]) */
+  /* ============================================
+   ADD-ON SOLUTIONS SECTION — Figma nodes 29056:1201 (desktop), 29057:7090 (tablet), 29057:7782 (mobile)
+   Spec: addon-cards-figma-design-data.json
+   JSON spec verification:
+   - designTokens.colors: #38312F #58524F #E8EBF2 #2E7918 #FFFFFF ✓
+   - typography: card_title 20/26 Fields #38312F minHeight 46px; card_description 14/20 Inter Bold #38312F; eor_subtitle 14/20 Inter #58524F; overview_link 16/24 Inter Bold #2E7918; feature_item 16/24 Inter #58524F; footnote 12/18 Inter #58524F ✓
+   - spacing: cardsContainer gap 16px; card padding 24/24/26/24 gap 16px; titleBlock 8px; overview 5px; items 8px; featureItem 12px + icon 3px top; footnote pt 8px ✓
+   - layout.desktop: flex row gap 16px alignItems flex-start; card 321px minHeight 438px overflow clip border 1px #E8EBF2 radius 16px ✓
+   - layout: desktop >1100px, tablet ≤1099px & >450px, mobile ≤450px; tablet 2 cols 16px gap; mobile 1 col 16px gap ✓
+   - cardInternalStructure: titleBlock gap 8px; overview gap 5px; playIcon 20px; items gap 8px; featureItem gap 12px checkmark 18px; footnote pt 8px (align left per request) ✓
+   - icons: overview_play 20px checkmark 18px Cloudinary ✓
+   ============================================ */
+  /* Section: flex col, gap 48px — white background. Figma 29056:1195: py 96px (96px top/bottom). */
+}
+.spz_5017_v .section:has(#add-on-solutions),
+.spz_5017_v .section:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg:has(#add-on-solutions),
+.spz_5017_v .section.has-bg:has([id*=add-on-solutions]),
+.spz_5017_v .section:has(#add-on-solutions),
+.spz_5017_v .section:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg:has(#add-on-solutions),
+.spz_5017_v .section.has-bg:has([id*=add-on-solutions]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 74px;
+  padding-bottom: 94.5px;
+  width: 100%;
+  background: #FFFFFF;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg:has([id*=add-on-solutions]),
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg:has([id*=add-on-solutions]) {
+    padding-bottom: 96.5px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg:has([id*=add-on-solutions]),
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+  .spz_5017_v .section.has-bg:has(#add-on-solutions),
+  .spz_5017_v .section.has-bg:has([id*=add-on-solutions]) {
+    padding-top: 31.5px;
+    padding-bottom: 61px;
+  }
+}
+.spz_5017_v {
+  /* Override inner .bg, .bg-solid-gray-0 and any .bg child so section shows white */
+}
+.spz_5017_v .section:has(#add-on-solutions) > .bg,
+.spz_5017_v .section:has(#add-on-solutions) > span.bg,
+.spz_5017_v .section:has(#add-on-solutions) > .bg-solid-gray-0,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .bg,
+.spz_5017_v .section:has([id*=add-on-solutions]) > span.bg,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .bg-solid-gray-0,
+.spz_5017_v .section.has-bg:has(#add-on-solutions) > .bg,
+.spz_5017_v .section.has-bg:has(#add-on-solutions) > span.bg,
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions) > .bg,
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions) > span.bg,
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]) > .bg,
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]) > span.bg {
+  background: #FFFFFF;
+  background-color: #FFFFFF;
+}
+.spz_5017_v {
+  /* Force section ::before/::after to white so host .has-bg / .bg-solid-gray-0 pseudo-elements don't show gray */
+}
+.spz_5017_v .section.has-bg:has(#add-on-solutions)::before,
+.spz_5017_v .section.has-bg:has(#add-on-solutions)::after,
+.spz_5017_v .section.has-bg:has([id*=add-on-solutions])::before,
+.spz_5017_v .section.has-bg:has([id*=add-on-solutions])::after,
+.spz_5017_v .section.bg-solid-gray-0:has(#add-on-solutions)::before,
+.spz_5017_v .section.bg-solid-gray-0:has(#add-on-solutions)::after,
+.spz_5017_v .section.bg-solid-gray-0:has([id*=add-on-solutions])::before,
+.spz_5017_v .section.bg-solid-gray-0:has([id*=add-on-solutions])::after {
+  background: #FFFFFF;
+  background-color: #FFFFFF;
+}
+.spz_5017_v {
+  /* Remove spacer blocks so they don't add unnecessary gaps */
+}
+.spz_5017_v .section:has(#add-on-solutions) .spacer-wrapper,
+.spz_5017_v .section:has(#add-on-solutions) .spacer.spacer-xl,
+.spz_5017_v .section:has([id*=add-on-solutions]) .spacer-wrapper,
+.spz_5017_v .section:has([id*=add-on-solutions]) .spacer {
+  display: none;
+}
+.spz_5017_v {
+  /* Collapse empty wrappers that might still take space */
+}
+.spz_5017_v .section:has(#add-on-solutions) > .spacer-wrapper,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .spacer-wrapper {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+.spz_5017_v {
+  /* Spacing below add-on cards — Figma 29056:1195. Use so these win over host. */
+}
+.spz_5017_v .section:has(#add-on-solutions),
+.spz_5017_v .section:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
+.spz_5017_v .section.has-bg.bg-solid-gray-0:has([id*=add-on-solutions]),
+.spz_5017_v .section.has-bg:has(#add-on-solutions),
+.spz_5017_v .section.has-bg:has([id*=add-on-solutions]) {
+  gap: 0;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:first-of-type,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:first-of-type {
+  margin: 0;
+  padding-bottom: 0;
+  /* 48px gap from subtext margin-bottom instead */
+}
+.spz_5017_v .section:has(#add-on-solutions) > .cards-wrapper,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .cards-wrapper {
+  margin: 0;
+  padding-bottom: 32px;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(2),
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(2) {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 16px;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(3),
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(3) {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(4),
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(4) {
+  margin: 0;
+  padding-top: 48px;
+  padding-bottom: 0;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(2) .title,
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(3) .title,
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:nth-of-type(4) .title,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(2) .title,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(3) .title,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:nth-of-type(4) .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v {
+  /* Bundle / disclaimer: spacing via padding; zero host .spacing-xl on disclaimer inner .title */
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:has(.title.green-cta),
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:has(.title.green-cta) {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 16px;
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:has(.title.spacing-none.spacing-xl),
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:has(.title.spacing-none.spacing-xl) {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.spacing-none.block.spacing-xl,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title.spacing-none.block.spacing-xl {
+  margin: 0;
+  padding: 0;
+}
+.spz_5017_v {
+  /* Title block (heading + subtitle): flex col, gap 16px, center; 48px gap from subtext margin-bottom */
+}
+.spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:first-of-type,
+.spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+.spz_5017_v {
+  /* Heading — Figma: Fields Bold 36/46, #38312F, center; 16px gap to subtitle below */
+}
+.spz_5017_v #add-on-solutions,
+.spz_5017_v [id*=add-on-solutions] {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  font-style: normal;
+  text-align: center;
+  margin: 0 0 16px;
+}
+.spz_5017_v {
+  /* Subtitle — Figma: Inter Regular 16/24, #58524F, center. Add-on section only. 48px bottom margin to cards. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title-wrapper:first-of-type p,
+.spz_5017_v .section:has(#add-on-solutions) [id*=add-on] + p,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .section-subtitle,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:first-of-type p,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .section-subtitle {
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 0 48px;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper:first-of-type p,
+  .spz_5017_v .section:has(#add-on-solutions) [id*=add-on] + p,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .section-subtitle,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:first-of-type p,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .section-subtitle {
+    margin-bottom: 47.5px;
+  }
+}
+.spz_5017_v {
+  /* Cards wrapper: px 54px, full width; inner gap 32px between cards row and bundle; cards row centered */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 54px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 54px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.spz_5017_v {
+  /* Cards row — centered; width fits content up to 100%. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.spz_5017_v {
+  /* Multi-cta grid — fluid columns (like pricing row); cards max 321px, row fills container. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  justify-content: stretch;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.spz_5017_v {
+  /* #ADDON_CARDS — ELEMENT: Add-on card layout (grid, min-height 438px). Desktop fluid; tablet 2col; mobile 1col
+   DOM: .section:has(#add-on-solutions) .cards-wrapper .cards .card, .multi-cta-cards-wrapper .multi-cta-card */
+  /* Add-on cards: tablet ≤1099px — 2 cols, 16px gap; card fills cell, fluid height (like pricing). */
+}
+@media (max-width: 1099.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+    width: 100%;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    flex: 1 0 calc(50% - 8px);
+    height: auto;
+    min-height: 438px;
+    overflow: visible;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-content: stretch;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 438px;
+    flex: none;
+    overflow: visible;
+  }
+}
+.spz_5017_v {
+  /* Add-on cards: desktop ≥1100px — fluid width/height (like pricing); row full width, cards flex to fit, height from content */
+}
+@media (min-width: 1100px) {
+  .spz_5017_v {
+    /* #EVENT_BUNDLE — ELEMENT: Event bundle bar (green CTA). Max width 1332px, section padding 54px. DOM: .title-wrapper:has(.title.green-cta), .bundle-save-bar */
+  }
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]) {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 54px;
+    padding-right: 54px;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:has(.title.green-cta) {
+    width: 100%;
+    max-width: 1332px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .section.bundle-bar,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .section.bundle-bar,
+  .spz_5017_v .section:has(#add-on-solutions) .bundle-save-bar,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .bundle-save-bar {
+    width: 100%;
+    max-width: 1332px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 321px;
+    width: auto;
+    height: auto;
+    min-height: 438px;
+    overflow: visible;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    justify-content: stretch;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 438px;
+    flex: none;
+    overflow: visible;
+  }
+}
+.spz_5017_v {
+  /* Add-on cards: mobile ≤450px — 1 col, 16px gap; cards block centered in container, max 321px */
+}
+@media (max-width: 767.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+    width: 100%;
+    max-width: 328px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: 1 0 100%;
+    min-height: 438px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+    width: 100%;
+    max-width: 321px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: 438px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block {
+    margin-top: 25px;
+  }
+  .spz_5017_v .section.has-bg.bg-solid-gray-0.spacer-container.title-container.cards-container,
+  .spz_5017_v .section:has(#add-on-solutions) {
+    padding-bottom: 64px;
+  }
+}
+.spz_5017_v {
+  /* Single card — Figma 321×438 nominal; fluid width, fixed min-height 438px; max-width 321px, height from content. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border: 1px solid #E8EBF2;
+  border-radius: 16px;
+  padding: 22.5px 24px 26px 23px;
+  width: 100%;
+  min-width: 0;
+  max-width: 321px;
+  height: auto;
+  min-height: 438px;
+  flex: 1 1 0;
+  overflow: visible;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    padding: 22.5px 10px 26px 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    min-height: 414px;
+    max-width: 322px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card:nth-child(3), .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card:nth-child(4),
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card:nth-child(3),
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card:nth-child(4),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(3),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(4),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card:nth-child(3),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card:nth-child(4) {
+    min-height: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card {
+    max-width: 328px;
+    min-height: 265px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card:nth-child(3),
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card:nth-child(3),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(3),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card:nth-child(3) {
+    min-height: 332px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card:nth-child(4),
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card:nth-child(4),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(4),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card:nth-child(4) {
+    min-height: 324px;
+  }
+}
+.spz_5017_v {
+  /* First card (Figma 29056:1202): internal spacing — title block gap 8px, card gap 16px between sections. */
+  /* Card title block: zero top/side margin; vertical spacing via h3/description (Figma 29056:1203 gap 8px). */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card > h3,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card > p:not(.button-container):not(:last-of-type),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card > h3,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card > p:not(.button-container):not(:last-of-type) {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+.spz_5017_v {
+  /* Card h3 — Figma 29056:1204: Fields Bold 20/26 #38312F; min-height 46px; title block 8px to description. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card h3,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card h3,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card h3,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card h3 {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0;
+  margin: 0 0 -8px;
+  min-height: 46px;
+}
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card h3,
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card h3,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card h3,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card h3 {
+    font-size: 18px;
+  }
+}
+.spz_5017_v {
+  /* EOR card subtitle "(powered by Remote)" — Figma: Inter Regular 14px/20px #58524F; 8px below title (spec) */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .addon-card-subtitle.spz-5017-eor-subtitle,
+.spz_5017_v .section:has(#add-on-solutions) .card:has(#employer-of-record-powered-by-remote) .addon-card-subtitle,
+.spz_5017_v .section:has(#add-on-solutions) .card h3#employer-of-record-powered-by-remote + .addon-card-subtitle,
+.spz_5017_v .section:has(#add-on-solutions) .card h3[id*=employer-of-record] + .addon-card-subtitle,
+.spz_5017_v .section:has([id*=add-on-solutions]) .card .addon-card-subtitle.spz-5017-eor-subtitle,
+.spz_5017_v .section:has([id*=add-on-solutions]) .card h3[id*=employer-of-record] + .addon-card-subtitle {
+  display: block;
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  margin: 0 0 -8px;
+  padding: 0;
+}
+.spz_5017_v {
+  /* Fourth card (EOR) — Figma 29056:1293–1298: title+subtitle tight (0 gap), then 8px to description. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) h3,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) h3 {
+  margin: 0 0 -16px;
+  /* 0px to subtitle (cancel card gap so title and subtitle touch) */
+  min-height: 0;
+  /* override 46px so EOR title doesn't get extra vertical space */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) .addon-card-subtitle.spz-5017-eor-subtitle,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) h3[id*=employer-of-record] + .addon-card-subtitle,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) .addon-card-subtitle.spz-5017-eor-subtitle,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) h3[id*=employer-of-record] + .addon-card-subtitle {
+  margin: 0 0 -8px;
+  /* 8px to "Hire employees worldwide." (Figma 29056:1294 gap) */
+  padding-top: 0;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) > h3:first-child,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) > h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.spz_5017_v {
+  /* EOR card: hide empty Overview row (button-container with .wistia but no link) so it doesn't add gap */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container:has(.wistia):not(:has(a)),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container:has(.wistia):not(:has(a)) {
+  display: none;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.spz_5017_v {
+  /* Card description — Figma: Inter Bold 14/20 #38312F, letterSpacing 0. No bottom margin so card gap 16px to Overview. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card > p:not(.button-container):first-of-type,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card .multi-cta-card-description,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card > p:not(.button-container):first-of-type,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card .multi-cta-card-description {
+  color: #38312F;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0;
+  margin: 0;
+}
+.spz_5017_v {
+  /* Add-on cards: hide button-container except the one with Overview (accent caret-link / wistia) */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container {
+  display: none;
+}
+.spz_5017_v {
+  /* Show Overview row only when it has an actual link (not empty wistia); show Learn More row on EOR card */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a.accent.caret-link.caret-link-theme-color),
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a.caret-link[title=Overview]),
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a[title=Overview]),
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(a.accent.caret-link.caret-link-theme-color),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(a.caret-link[title=Overview]),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(a[title=Overview]),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(.wistia a) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  visibility: visible;
+}
+.spz_5017_v {
+  /* 4th card (EOR): hide Learn More row (per request) */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a[title="Learn More"]),
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container:has(a.caret-link),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(a[title="Learn More"]),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container:has(a.caret-link) {
+  display: none;
+  visibility: hidden;
+}
+.spz_5017_v {
+  /* Ensure Wistia wrapper and its Overview link are visible when button-container has .wistia a */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a) .wistia,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(.wistia a) .wistia {
+  display: flex;
+  align-items: center;
+  visibility: visible;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a) .wistia a,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container:has(.wistia a) .wistia a {
+  display: inline-flex;
+  visibility: visible;
+}
+.spz_5017_v {
+  /* Overview link (caret-link) — Figma 29056:1209: flex gap 5px, Inter Bold 16/24 #2E7918; play icon + text visible. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title=Overview],
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title=Overview],
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container.non-img-col a.caret-link,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a[title=Overview],
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container .wistia a,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card p.button-container a[title=Overview],
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  visibility: visible;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color:hover,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link:hover,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title=Overview]:hover,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a:hover,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title=Overview]:hover,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container.non-img-col a.caret-link:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a[title=Overview]:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container .wistia a:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card p.button-container a[title=Overview]:hover,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card a.button:hover {
+  color: #73C41D;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color:hover::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link:hover::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title=Overview]:hover::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a:hover::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title=Overview]:hover::before,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container.non-img-col a.caret-link:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a[title=Overview]:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container .wistia a:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card p.button-container a[title=Overview]:hover::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card a.button:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18ZM9.555 7.168C9.4044 7.06752 9.22935 7.00981 9.04852 7.00103C8.86769 6.99224 8.68786 7.03272 8.52823 7.11813C8.3686 7.20354 8.23516 7.33068 8.14213 7.48599C8.04909 7.6413 7.99997 7.81896 8 8V12C7.99997 12.181 8.04909 12.3587 8.14213 12.514C8.23516 12.6693 8.3686 12.7965 8.52823 12.8819C8.68786 12.9673 8.86769 13.0078 9.04852 12.999C9.22935 12.9902 9.4044 12.9325 9.555 12.832L12.555 10.832C12.692 10.7407 12.8043 10.617 12.8819 10.4718C12.9596 10.3267 13.0002 10.1646 13.0002 10C13.0002 9.83539 12.9596 9.67332 12.8819 9.52818C12.8043 9.38304 12.692 9.25932 12.555 9.168L9.555 7.168Z' fill='%2373C41D'/%3E%3C/svg%3E");
+}
+.spz_5017_v {
+  /* Play icon before "Overview" — Cloudinary 5017 (add-on cards only); ensure icon shows for any Overview link */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title=Overview]::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a::before,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title=Overview]::before,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container.non-img-col a.caret-link::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a[title=Overview]::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container .wistia a::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card p.button-container a[title=Overview]::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card a.button::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/heroicons-solidplay.svg") no-repeat center;
+  background-size: 20px 20px;
+  transition: all 0.25s ease-in-out;
+}
+.spz_5017_v {
+  /* Hide host play icon (span.icon.icon-play with svg inside a[title="Overview"]) so Cloudinary ::before shows — add-on cards only */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .icon.icon-play,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container .icon.icon-play,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card a.caret-link .icon.icon-play,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card a[title=Overview] .icon.icon-play,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .wistia .icon.icon-play,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .icon.icon-play,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container .icon.icon-play,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card a.caret-link .icon.icon-play,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card a[title=Overview] .icon.icon-play,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .wistia .icon.icon-play {
+  display: none;
+  visibility: hidden;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.caret-link > img:first-child,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.caret-link > svg:first-child,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.caret-link > img:first-child,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a.caret-link > svg:first-child {
+  display: none;
+}
+.spz_5017_v {
+  /* EOR card (4th): Learn More link — match green CTA style; no extra margin so card gap 16px applies */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title="Learn More"],
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container a.caret-link,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card .button-container a[title="Learn More"],
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card:has(h3[id*=employer-of-record]) .button-container a.caret-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: #2E7918;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+}
+.spz_5017_v {
+  /* Card ul (Items) — Figma: flex col, gap 8px, width 100%. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.spz_5017_v {
+  /* Card li — Figma feature_item: Inter Regular 16/24 #58524F; flex gap 12px; checkmark 18px left, 3px from top (spec). */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0 0 0 30px;
+  position: relative;
+  text-align: left;
+}
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+.spz_5017_v {
+  /* Bullet text (any child after icon): enforce same typography so host styles don’t override */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li > *:not(:first-child),
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li span:not(:first-child),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li > *:not(:first-child),
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li span:not(:first-child) {
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  flex: 1 0 0;
+  min-width: 0;
+  text-align: left;
+}
+.spz_5017_v {
+  /* Add-on card list: checkmark via li::before so it always shows (18×18, 3px from top). Cloudinary 5017. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li::before,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  background: url("https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/checkmark.svg") no-repeat 0 0;
+  background-size: 18px 18px;
+}
+.spz_5017_v {
+  /* Hide host icon in first child so only our ::before checkmark shows; negative margin cancels flex gap so text sits at 30px */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li > *:first-child,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li > *:first-child {
+  width: 0;
+  min-width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0 -12px 0 0;
+  padding: 0;
+  visibility: hidden;
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li > *:first-child img,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card ul li > *:first-child svg,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li > *:first-child img,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card ul li > *:first-child svg {
+  display: none;
+}
+.spz_5017_v {
+  /* Footnote * US employees only — Figma 29056:1231: pt 8px, P6-12-R #58524F, left-aligned. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card > p:last-of-type,
+.spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card p sup,
+.spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card .addon-footnote,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card > p:last-of-type,
+.spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card p sup,
+.spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-card .addon-footnote {
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+  margin: -8px 0 0;
+  padding-top: 8px;
+  text-align: left;
+}
+.spz_5017_v {
+  /* ============================================
+   BUNDLE & SAVE BAR — Figma node 29056:1321
+   bg #2E7918, radius 16px, pad 12px 18px; text white (Bold + Regular 16/24)
+   Match width of .cards-wrapper above: same max-width, padding, and centering
+   ============================================ */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.green-cta,
+.spz_5017_v .section:has(#add-on-solutions) .title.green-cta.spacing-sm.block,
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper {
+  text-align: center;
+}
+.spz_5017_v {
+  /* Bundle bar — desktop: Figma 29056:1321 content width 1332px (1440−108), padding 12px vertical 18px horizontal, radius 16px */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
+.spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta.spacing-sm.block {
+  width: 100%;
+  max-width: 1332px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 18px;
+  box-sizing: border-box;
+  background: #2E7918;
+  border-radius: 16px;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.spz_5017_v {
+  /* Wrapper of green-cta: desktop 1332px max; 16px bottom padding; center the Bundle block. */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
+.spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:has(.title.green-cta) {
+  width: 100%;
+  max-width: 1332px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.green-cta.spacing-sm.block,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title.green-cta.spacing-sm.block {
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+}
+.spz_5017_v .section.bundle-bar,
+.spz_5017_v .bundle-save-bar {
+  background: #2E7918;
+  border-radius: 16px;
+  padding: 12px 18px;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.green-cta strong,
+.spz_5017_v .section.bundle-bar strong,
+.spz_5017_v .bundle-save-bar strong {
+  font-weight: 700;
+}
+.spz_5017_v {
+  /* Disclaimer below bundle — Figma: Inter Regular 12/18, #58524F, center */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.spacing-none,
+.spz_5017_v .section:has(#add-on-solutions) .title.spacing-none div,
+.spz_5017_v .section:has(#add-on-solutions) .title.spacing-none sup {
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+.spz_5017_v .bundle-disclaimer {
+  color: #58524F;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+.spz_5017_v {
+  /* Bottom CTA: center the button; section gap 48px places it below text — Figma 29056:1195 */
+}
+.spz_5017_v .section:has(#add-on-solutions) > *:has(> a.button[data-action=open-modal]) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.spz_5017_v {
+  /* When CTA is in the following section (bundle + button) — no padding-top so add-on margin is the only gap */
+  /* Section after bundle+CTA (e.g. Trusted by) — no top space so only previous section margin creates the gap */
+  /* Remove 48px bottom margin from red CTA wrapper (host .spacing-bottom-md) */
+}
+.spz_5017_v .section:has(#add-on-solutions) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
+.spz_5017_v .section:has([id*=add-on-solutions]) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
+.spz_5017_v .section:has(#add-on-solutions) + .section .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
+.spz_5017_v .section:has([id*=add-on-solutions]) + .section .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
+.spz_5017_v .title.red-cta.spacing-bottom-md {
+  margin-bottom: 0;
+}
+.spz_5017_v {
+  /* Remove 20px (right) margin from button-container wrapping "Get a Free Price Quote" */
+}
+.spz_5017_v .section:has(#add-on-solutions) + .section .button-container:has(a[data-action=open-modal]),
+.spz_5017_v .section:has(#add-on-solutions) + .section .button-container:has(a[title="Get a Free Price Quote"]),
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper.button-container,
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper .button-container,
+.spz_5017_v p.button-container:has(a[title="Get a Free Price Quote"]) {
+  margin: 0;
+  margin-right: 0;
+}
+.spz_5017_v {
+  /* "Get a Free Price Quote" — Figma node 29056:1326: 255×60, bg #CE4755, radius 100px, px 40px py 18px, Inter Bold 16/24. Top margin 18px. */
+}
+.spz_5017_v .section:has(#add-on-solutions) a.button[data-action=open-modal],
+.spz_5017_v .section:has(#add-on-solutions) + .section a.button[data-action=open-modal],
+.spz_5017_v a.button[href="#scroll-to-form"].spz5017_v,
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  margin-bottom: 0;
+  min-height: 60px;
+  padding: 18px 40px;
+  border-radius: 100px;
+  background: #CE4755;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+  box-sizing: border-box;
+}
+.spz_5017_v .section:has(#add-on-solutions) a.button[data-action=open-modal]:hover,
+.spz_5017_v .section:has(#add-on-solutions) a.button[data-action=open-modal]:focus,
+.spz_5017_v .section:has(#add-on-solutions) + .section a.button[data-action=open-modal]:hover,
+.spz_5017_v .section:has(#add-on-solutions) + .section a.button[data-action=open-modal]:focus,
+.spz_5017_v a.button[href="#scroll-to-form"].spz5017_v:hover,
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper a.button:hover,
+.spz_5017_v a.button[href="#scroll-to-form"].spz5017_v:focus,
+.spz_5017_v .bg-top-single-1 .multi-cta-cards-wrapper + .default-content-wrapper a.button:focus {
+  background: #b33d49;
+}
+.spz_5017_v {
+  /* #TRUSTED_BY — ELEMENT: Trusted by / social proof ("Trusted by 34,000+ companies"). Fields Bold 36/46 #2E7918 center
+   DOM: .carousel-wrapper, .bg-center-multi-1 .title-wrapper h2, .multi-element.logo-cards h2 */
+}
+.spz_5017_v .carousel-wrapper {
+  padding-bottom: 40px;
+}
+.spz_5017_v .bg-center-multi-1 .title-wrapper h2,
+.spz_5017_v .bg-center-multi-1 .title-wrapper h4 {
+  color: #2E7918;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  font-style: normal;
+  text-align: center;
+}
+.spz_5017_v .multi-element.logo-cards h2 {
+  color: #2E7918;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  font-style: normal;
+  text-align: center;
+}
+.spz_5017_v {
+  /* #FAQ — ELEMENT: FAQ section heading. Fields Bold 36/46 #38312F
+   DOM: .accordion-wrapper h2 */
+}
+.spz_5017_v .accordion-wrapper h2 {
+  color: #38312F;
+  font-family: "Fields", "Fira Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  font-style: normal;
+}
+.spz_5017_v {
+  /* #FORM_STYLES — ELEMENT: Get Pricing form (inputs, disclaimer, submit). Figma 29056:1846. 2-col rows, 48px input height
+   DOM: .section.form-container .form-col .mktoForm, .mktoFormRow, .mktoField, .mktoButton */
+  /* Form — Figma 29056:1851: flex row wrap, full width */
+}
+.spz_5017_v .section.form-container .form-col .form-element-container,
+.spz_5017_v .section.form-container .form-col .mktoForm {
+  width: 100%;
+  box-sizing: border-box;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0;
+  gap: 0;
+}
+.spz_5017_v {
+  /* Hide hidden and placeholder rows so layout counts only visible fields */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow:has(> input[type=hidden]),
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow:has(.mktoPlaceholder) {
+  display: none;
+}
+.spz_5017_v {
+  /* Two-column rows: each visible field row 50% minus gap (Figma: First|Last, Email|Job Title, Company|Phone, Employee Count|Country) */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow {
+  max-width: calc(50% - 8px);
+  width: 100%;
+  box-sizing: border-box;
+}
+.spz_5017_v {
+  /* Full width: disclaimer row and submit button row */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow:has(.bhrForm__partnerDisclaimer),
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoButtonRow {
+  max-width: 100%;
+  width: 100%;
+}
+.spz_5017_v {
+  /* Spacing between disclaimer (description) and CTA — Figma 29056:1864 gap 16px */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoButtonRow {
+  margin-top: 16px;
+}
+.spz_5017_v {
+  /* Figma 29056:1852 etc: 16px gap between rows */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .bhrForm__inputWrapper,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoForm__inputWrapper {
+  position: relative;
+  margin-top: 16px;
+}
+.spz_5017_v {
+  /* Inputs — Figma Inputs/Default/Text: border #a5a29f, 48px height, 4px radius, P-16-R */
+  /* Floating labels */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldDescriptor .mktoLabel#LblDisclaimer__c {
+  opacity: 1;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  transition: inherit;
+  color: #676260;
+  z-index: inherit;
+  pointer-events: inherit;
+  text-transform: inherit;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.hasError .mktoLabel,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.hasError select.mktoField {
+  color: #CE4755;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap input.mktoField:focus-visible,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap select.mktoField:focus-visible {
+  outline: none;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.typing .mktoLabel,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.typing select.mktoField {
+  color: #2E7918;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.focus input.mktoField,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.focus select.mktoField {
+  color: #38312F;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.typing input.mktoField,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.typing select.mktoField {
+  border-color: #2E7918;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.hasError input.mktoField,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.hasError select.mktoField {
+  color: #CE4755;
+  border-color: #CE4755;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.hasError .mktoField::-webkit-input-placeholder {
+  color: #CE4755;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap .mktoErrorMsg,
+.spz_5017_v .section.form-container .form-col .mktoForm div.form-msg {
+  margin-top: 2px;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm div.form-msg {
+  text-align: center;
+  width: 100%;
+  position: inherit;
+  margin-top: 8px;
+}
+.spz_5017_v {
+  /* Placeholders — Figma Neutrals/N-4, GRAYS/GRAY 7: #95918f */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField::-moz-placeholder,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-moz-placeholder {
+  color: #95918f;
+  opacity: 1;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField::-webkit-input-placeholder {
+  color: #95918f;
+  opacity: 1;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-ms-input-placeholder {
+  color: #95918f;
+  opacity: 1;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .focus .mktoField::-moz-placeholder,
+.spz_5017_v .section.form-container .form-col .mktoForm .focus .mktoField:-moz-placeholder,
+.spz_5017_v .section.form-container .form-col .mktoForm .focus .mktoField::-webkit-input-placeholder,
+.spz_5017_v .section.form-container .form-col .mktoForm .focus .mktoField:-ms-input-placeholder {
+  opacity: 0;
+}
+.spz_5017_v {
+  /* Email validation */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm #ValidMsgEmail {
+  position: relative;
+  text-align: left;
+}
+.spz_5017_v {
+  /* Privacy disclaimer — Figma P6-12-R, #676260, 18px line-height */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow .bhrForm__partnerDisclaimer {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #676260;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow .mktoHtmlText .bhrForm__partnerDisclaimer {
+  color: #676260;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.spz_5017_v {
+  /* Space above disclaimer row (between last field and description) */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow:has(.bhrForm__partnerDisclaimer) {
+  margin-top: 8px;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow .bhrForm__partnerDisclaimer a {
+  color: #2E7918;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration-line: underline;
+  text-underline-offset: 2.5px;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow .bhrForm__partnerDisclaimer a:is(:hover, :focus) {
+  color: #245f12;
+  text-decoration: none;
+}
+.spz_5017_v {
+  /* Autofill */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-webkit-autofill::first-line {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-webkit-autofill,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-webkit-autofill:hover,
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #38312F;
+  border: 1px solid #a5a29f;
+}
+.spz_5017_v {
+  /* Select dropdown arrow */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm select {
+  background-position: calc(100% - 9px) 50%;
+  padding: 12px 42px 12px 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23A5A29F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.spz_5017_v {
+  /* Submit row: full-width wrapper (production has .mktoButtonRow > .mktoButtonWrap > .mktoButton) */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoButtonRow .mktoButtonWrap {
+  width: 100%;
+  max-width: none;
+}
+.spz_5017_v {
+  /* Submit button — Figma 29056:1867: Success Green #2e7918, pill, full width, P-16-B */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoButton {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  text-transform: inherit;
+  background: #2E7918;
+  border-radius: 100px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  max-width: none;
+  margin: 0;
+  padding: 18px 40px;
+  border: none;
+  width: 100%;
+  justify-content: center;
+  transition: background-color 0.25s ease;
+  box-sizing: border-box;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoButton:is(:hover, :focus) {
+  background-color: #245f12;
+}
+.spz_5017_v {
+  /* Checkbox styling */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoField[type=checkbox] {
+  transition: none;
+  height: auto;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  visibility: hidden;
+}
+.spz_5017_v .section.form-container .form-col .form-checkbox-option > label:before,
+.spz_5017_v .section.form-container .form-col .form-checkbox-option input:checked + label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 17px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: inherit;
+  border: inherit;
+  cursor: pointer;
+}
+.spz_5017_v .section.form-container .form-col .form-checkbox-option > label:before {
+  background-image: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3002/form-checkmark_1.webp");
+}
+.spz_5017_v .section.form-container .form-col .form-checkbox-option input:checked + label:after {
+  background-image: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3002/form-checkmark.webp");
+  transform: inherit;
+  top: 0;
+  left: 0;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.form-checkbox-flex {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.spz_5017_v .section.form-container .form-col .mktoForm .mktoFieldWrap.form-checkbox-flex .form-checkbox-option {
+  display: flex;
+  align-items: flex-start;
+  width: 24px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.spz_5017_v {
+  /* Error message */
+}
+.spz_5017_v .section.form-container .form-col .mktoForm > .bhrForm__msg.js-bhrForm-errorMsg {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.spz_5017_v .section.form-container .form-col .form-checkbox-flex .mktoErrorMsg {
+  display: none;
+}
+.spz_5017_v .section.form-container .form-col .form-checkbox-option.mktoInvalid.hasError > label:before {
+  background-image: url("//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/5001/Checked-error.png");
+  width: 17px;
+}
+.spz_5017_v {
+  /* Hide sticky CTA when modal is active */
+}
+.spz_5017_v.spz-5017-modal-active .spz-sticky-footer, .spz_5017_v.spz-5017-modal-active [class*=sticky-footer], .spz_5017_v.spz-5017-modal-active [class*=stickyFooter], .spz_5017_v.spz-5017-modal-active .stickyfooter_test {
+  display: none;
+}
+.spz_5017_v {
+  /* ============================================
+   TABLET — max-width: 1099.98px (desktop ≥1100; tablet 451–1099.98; mobile ≤450)
+   Figma 29057:6543 — Pricing col gap 48px; Cards col gap 16px; Card px-32 py-40
+   ============================================ */
+}
+@media (max-width: 1099.98px) {
+  .spz_5017_v {
+    /* Prevent 100vw full-bleed from causing horizontal scroll / right gap (tablet + mobile) */
+  }
+  .spz_5017_v main,
+  .spz_5017_v .section.package-comparison {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .spz_5017_v {
+    /* Figma 29057:6543 tablet — heading 56/64; 48px to first card via title-wrapper 32px + gap 16px */
+  }
+  .spz_5017_v #plans-and-pricing-for-every-organization,
+  .spz_5017_v .section.package-comparison .title-wrapper h2,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .title-wrapper h2 {
+    font-size: 56px;
+    line-height: 64px;
+    margin-bottom: 48px;
+  }
+  .spz_5017_v {
+    /* Figma 29057:6741 — Pricing container: flex col, gap 16px, items center. Section 768px max so 54px padding yields 660px content (Figma tablet). */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.table-container.spz-5017-pricing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 768px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 54px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .spz_5017_v {
+    /* 48px from "Pricing" to first card — Figma Frame gap 48px; section gap 16px + title margin 32px = 48px */
+  }
+  .spz_5017_v .section.package-comparison.table-container > .title-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section > .title-wrapper {
+    margin-bottom: 32px;
+  }
+  .spz_5017_v {
+    /* Figma 29057:8155 — Cards: flex col, gap 16px, full width */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.table-container.spz-5017-pricing-section {
+    gap: 16px;
+  }
+  .spz_5017_v {
+    /* Figma 29057:8156 — Each card: height from content only. Base uses flex: 1 0 0 (equal growth) — override so cards don’t share height. */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    padding: 39px 31px;
+    gap: 0;
+    overflow: visible;
+  }
+  .spz_5017_v {
+    /* Tablet 451–1099: Elite content starts at 72px (32 banner + 40) — Figma paddingTopOffset 72 */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
+    position: relative;
+    padding-top: 70px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+  }
+  .spz_5017_v {
+    /* Inner .table = flex column with 24px gap; must grow to content (override base min-height:0) */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.allow-overflow {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: auto;
+    overflow: visible;
+    width: 100%;
+  }
+  .spz_5017_v {
+    /* table + thead th use min-height:0 in base — override so content drives height and cards expand vertically */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table {
+    gap: 29px;
+    min-height: auto;
+    flex: 0 1 auto;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody {
+    min-height: auto;
+    flex-shrink: 0;
+  }
+  .spz_5017_v {
+    /* Header: 8px under title, 12px under price row; 32px under description (description-to-CTA) */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2 {
+    margin-bottom: 8.5px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+    margin-bottom: 23.5px;
+  }
+  .spz_5017_v {
+    /* Body rows — no padding on text below CTA */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td {
+    padding: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child td {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .spz_5017_v {
+    /* Elite: NEW banner flush with card — same left/right -1px as desktop */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before {
+    left: -1px;
+    right: -1px;
+    width: auto;
+    max-width: none;
+    transform: none;
+    padding: 0 24px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper {
+    padding: 0 54px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-comparison {
+    grid-template-columns: 1fr;
+    max-width: 660px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+  .spz_5017_v {
+    /* Add-on section — Figma 29057:7084: 54px horizontal, heading y=96, cards y=230 (48px gap), 2 cols 322+16+322, card padding 24px */
+  }
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]) {
+    padding-left: 54px;
+    padding-right: 54px;
+    padding-top: 96px;
+    gap: 48px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper {
+    max-width: 660px;
+    width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spz_5017_v {
+    /* Grid on cards container — 2 cols 322+16+322=660, 16px gap (Figma 29057:7089) */
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .spz_5017_v {
+    /* When .cards-wrapper directly contains .card (no .cards), use grid on wrapper */
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper:not(:has(.cards)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper:not(:has(.cards)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card,
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card {
+    padding: 23px 23px 20px;
+  }
+  .spz_5017_v {
+    /* Tablet Bundle — Figma 29057:7210: 666px width, padding 12px 18px, radius 16px */
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:has(.title.green-cta) {
+    width: 100%;
+    max-width: 666px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta.spacing-sm.block {
+    width: 100%;
+    max-width: 666px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 18px;
+    border-radius: 16px;
+    text-align: center;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper {
+    padding: 0 54px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spz_5017_v {
+    /* Form modal — Figma 29058:9097 (Tablet): same as desktop — 32px padding, 20px radius, 2-col layout */
+  }
+  .spz_5017_v.spz-5017-modal-active .section.form-container .form-col {
+    border-radius: 20px;
+  }
+  .spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container > p:first-of-type {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .spz_5017_v .spz-5017-pricing-section .table tbody tr:first-child {
+    margin-bottom: -4.5px !important;
+  }
+}
+.spz_5017_v {
+  /* #MOBILE — ELEMENT: Mobile breakpoint overrides (≤450px). Figma 29057:7642. Heading 32/40; cards stacked; CTA 280px
+   DOM: same selectors; @media (max-width: 450px) */
+}
+@media (max-width: 767.98px) {
+  .spz_5017_v {
+    /* Pricing heading — Figma mobile 29057:7644: Fields Bold 32px/40px #FFFFFF (headingPricing) */
+  }
+  .spz_5017_v #plans-and-pricing-for-every-organization,
+  .spz_5017_v .section.package-comparison .title-wrapper h2,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .title-wrapper h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+  .spz_5017_v {
+    /* Card titles (Core, Pro, Elite) — Figma mobile: Fields Semi Bold 32px/40px #38312F (cardTitle) */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+  .spz_5017_v {
+    /* Price (symbol + amount) — Figma mobile: 48px/56px (priceSymbol 600, priceAmount 700) */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-symbol, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-amount, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 .spz-5017-price-symbol, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 .spz-5017-price-amount {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-symbol, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 .spz-5017-price-symbol {
+    font-weight: 600;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-amount, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 .spz-5017-price-amount {
+    font-weight: 700;
+  }
+  .spz_5017_v {
+    /* Legacy price (strong / [id=usd]) — same 48px/56px on mobile */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 strong, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 [id=usd], .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 [id=usd-1], .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 [id=usd-2], .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 strong, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 [id=usd], .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 [id=usd-1], .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th h4 [id=usd-2] {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .spz_5017_v {
+    /* Pricing card CTA — Figma mobile 29057:7644 ctaBlock: width 280px fill, height 60px, padding 18/40, border 2px #2e7918, radius 100px */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-filled, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-filled, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th .button-container a.button.accent {
+    box-sizing: border-box;
+    min-height: 60px;
+    height: 60px;
+    width: 280px;
+    max-width: 100%;
+    padding: 18px 40px;
+    border-radius: 100px;
+    border: 2px solid #2E7918;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-outlined, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent {
+    background: #FFFFFF;
+    color: #2E7918;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-filled, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th .button-container a.button.accent, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-filled, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card thead th .button-container a.button.accent {
+    background: #2E7918;
+    color: #FFFFFF;
+    border-color: #2E7918;
+  }
+  .spz_5017_v {
+    /* Figma 29057:7699 — Pricing container: 16px horizontal padding, flex col, gap 16px; title→cards 32px */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.table-container,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section.package-comparison.table-container > .title-wrapper,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section > .title-wrapper {
+    margin-bottom: 16px;
+  }
+  .spz_5017_v {
+    /* Cards — Figma mobile 29057:7644: width 328px, Core/Pro height 658px, Elite 724px; padding 32px 24px */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 328px;
+    min-width: 0;
+    padding: 32px 24px;
+    gap: 0;
+    overflow: visible;
+  }
+  .spz_5017_v {
+    /* tr/td: min 40px, grow for two-line items; no max-height clamp, no overflow hidden */
+    /*
+    * CSS-first bullet line breaks (mobile): .icon-wrapper__text as block with text-wrap: balance.
+    * [New] pill + info icon wrapped in .spz-5017-badge-unit (nowrap) via JS so they stay together.
+    */
+    /* td: 8px vertical padding; left-align bullet row like add-on cards (checkmark at left, text hanging indent) */
+    /* .icon-wrapper: checkmark at left + text (same left-aligned pattern as add-on card bullets) */
+    /* Checkmark: fixed 18px at left; 3px top margin to align with first line of text when content wraps */
+    /* .icon-wrapper__text / .spz-5017-bullet-text: block layout, text-wrap balance, left-align (hanging indent like add-on) */
+    /* .feature-text when nested inside bullet cell: inline so it flows with text */
+    /* [New] pill: inline so it flows with text */
+    /* Info icon img: inline so it flows with text */
+    /* Badge unit: [New] + (i) stay together, never break apart */
+    /* NEW banner on mobile — flush with card edges, same -1px approach */
+    /* Add-on — Figma 29057:7779 / 7781: 16px section padding, 1 column, 16px gap between cards */
+    /* Single column grid, 16px gap — overrides tablet 2-col */
+    /* Mobile Bundle — Figma 29057:7901/7902/7903: 328px, padding 12px 18px, min-height 120px, radius 16px */
+    /* Mobile disclaimer below bundle — Figma 29057:7905: 328x36, centered */
+    /* Content below add-on cards (bundle + CTA) — Figma 29057:7901 container 18px, link 29057:7906 x=31 width=266; content 328 */
+    /* Wrapper for bundle text + button: max 328px, 18px horizontal (Figma 29057:7903) */
+    /* Button at 31px inset (18+13), width 266px — Figma 29057:7906 */
+    /* Compare All Features (below pricing cards) — same 328px content width, 16px from section */
+    /* Form modal — Figma 29058:9770 (Mobile): px 20px py 30px, rounded 20px, single column, title 28px/36px; height from content */
+    /* Single column: all form rows full width, 16px gap — Figma 29058:10624 flex-col gap-16 */
+    /* Center-align contents inside .cards.background.highlight.style-4-columns on mobile */
+  }
+}
+@media (max-width: 767.98px) and (max-width: 767px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper {
+    padding: 31px 23px;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card), .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    height: 658px;
+    min-height: 658px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
+    height: 724px;
+    min-height: 724px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper > .table.allow-overflow {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: auto;
+    overflow: visible;
+    width: 100%;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table {
+    gap: 34px;
+    min-height: auto;
+    flex: 0 1 auto;
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody {
+    min-height: auto;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2 {
+    margin-bottom: 8px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+    margin-bottom: 23.5px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr {
+    min-height: 40px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td {
+    min-height: 40px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody td, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper tbody td {
+    padding: 8px 0;
+    white-space: normal;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    line-height: 24px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody tr:first-child td {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper .icon-checkmark, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper .icon-checkmark, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper .icon-checkmark {
+    flex-shrink: 0;
+    margin-top: 3px;
+    margin-left: 0;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .spz-5017-bullet-text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper .spz-5017-bullet-text {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: normal;
+    text-wrap: balance;
+    line-height: 24px;
+    overflow: visible;
+    max-width: 100%;
+    text-align: left;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper .feature-text:not(.spz-5017-bullet-text), .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper .feature-text:not(.spz-5017-bullet-text), .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text .feature-text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .spz-5017-bullet-text .feature-text {
+    display: inline;
+    white-space: normal;
+    line-height: 24px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text .icon-new, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text .icon-new, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit .icon-new {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text img, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text img, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit img {
+    display: inline;
+    vertical-align: middle;
+  }
+  .spz_5017_v .spz-5017-badge-unit {
+    white-space: nowrap;
+    display: inline;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
+    position: relative;
+    padding-top: 56px;
+    /* 32px banner + 24px gap to heading */
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before {
+    left: -1px;
+    right: -1px;
+    width: auto;
+    max-width: none;
+    transform: none;
+    padding: 0 16px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-symbol,
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-amount {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper {
+    padding: 0 16px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-comparison {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 16px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card {
+    padding: 32px 24px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card.spz-5017-elite-card {
+    padding-top: 48px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card h4 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-symbol,
+  .spz_5017_v .section.package-comparison .table-wrapper thead th h4 .spz-5017-price-amount {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions),
+  .spz_5017_v .section:has([id*=add-on-solutions]) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper:not(:has(.cards)),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper:not(:has(.cards)) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .card,
+  .spz_5017_v .section:has(#add-on-solutions) .cards-wrapper .cards .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .card,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .cards-wrapper .cards .card {
+    padding: 23px 23px 20.5px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper:has(.title.green-cta) {
+    width: 100%;
+    max-width: 328px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
+  .spz_5017_v .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .title-wrapper .title.green-cta.spacing-sm.block {
+    width: 100%;
+    max-width: 328px;
+    min-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 18px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) > .title-wrapper:has(.title.spacing-none.spacing-xl),
+  .spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper:has(.title.spacing-none.spacing-xl) {
+    width: 100%;
+    max-width: 328px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) > .title-wrapper .title.spacing-none.spacing-xl,
+  .spz_5017_v .section:has(#add-on-solutions) > .title-wrapper .title.spacing-none.block.spacing-xl,
+  .spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper .title.spacing-none.spacing-xl,
+  .spz_5017_v .section:has([id*=add-on-solutions]) > .title-wrapper .title.spacing-none.block.spacing-xl {
+    width: 328px;
+    max-width: 328px;
+    min-height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper {
+    padding: 0 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
+  .spz_5017_v .section:has([id*=add-on-solutions]) .multi-cta-cards-wrapper .multi-cta-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) + .section,
+  .spz_5017_v .section:has([id*=add-on-solutions]) + .section {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) > *:has(a.button[data-action=open-modal]),
+  .spz_5017_v .section:has(#add-on-solutions) .default-content-wrapper,
+  .spz_5017_v .section:has(#add-on-solutions) + .section > * {
+    max-width: 371px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .spz_5017_v .section:has(#add-on-solutions) a.button[data-action=open-modal],
+  .spz_5017_v .section:has(#add-on-solutions) + .section a.button[data-action=open-modal] {
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 266px;
+    min-height: 56px;
+    box-sizing: border-box;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+  .spz_5017_v .section.package-comparison.table-container > *:last-of-type {
+    max-width: 328px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  .spz_5017_v.spz-5017-modal-active .section.form-container .form-col {
+    width: 95%;
+    border-radius: 20px;
+  }
+  .spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container {
+    padding: 0;
+    gap: 7.5px;
+  }
+  .spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container > p:first-of-type, .spz_5017_v.spz-5017-modal-active .section.form-container .form-col-container > p:first-of-type strong {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 0;
+  }
+  .spz_5017_v .section.form-container .form-col .mktoForm .mktoFormRow {
+    max-width: 100%;
+  }
+  .spz_5017_v .section.form-container .form-col .mktoForm .mktoButton {
+    max-width: 100%;
+  }
+  .spz_5017_v #add-on-solutions,
+  .spz_5017_v [id*=add-on] {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .spz_5017_v .bg-center-multi-1 .title-wrapper h2,
+  .spz_5017_v .bg-center-multi-1 .title-wrapper h4,
+  .spz_5017_v .multi-element.logo-cards h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-outlined,
+  .spz_5017_v .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-filled {
+    padding: 16px 32px;
+  }
+  .spz_5017_v .cards.background.highlight.spacing-top-md.block.style-4-columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+.spz_5017_v .form-container + .title-container .title {
+  margin-top: 98.5px;
+  margin-bottom: -0.5px;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .form-container + .title-container .title {
+    margin-top: 97.5px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form-container + .title-container .title {
+    margin-top: 40px;
+    margin-bottom: 0.5px;
+  }
+}
+.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after {
+  margin-left: 10px;
+  transform: translateY(3px);
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after {
+    margin-left: 4px;
+    transform: translateY(4px);
+  }
+}
+.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text:has(.icon)::after {
+  margin-left: 6.5px;
+  transform: none;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text:has(.icon)::after {
+    margin-left: -1px;
+    transform: translateY(1px);
+  }
+}
+.spz_5017_v #main-content {
+  position: relative;
+}
+.spz_5017_v .spz-5017-pricing-section {
+  position: static;
+}
+.spz_5017_v .spz-5017-pricing-section .table-wrapper:has(.has-popup-data.table-tooltip-show) {
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:first-child table tbody tr:nth-child(8) {
+    margin-top: 7px;
+    margin-bottom: 7px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section .table-wrapper:first-child table tbody tr:nth-child(2) td:first-child strong {
+    margin-bottom: 22px;
+  }
+}
+.spz_5017_v .spz-5017-pricing-section #usd strong,
+.spz_5017_v .spz-5017-pricing-section #usd-1 strong,
+.spz_5017_v .spz-5017-pricing-section #usd-2 strong {
+  letter-spacing: -0.1px;
+  margin-right: 6px;
+}
+.spz_5017_v .spz-5017-pricing-section #usd strong b,
+.spz_5017_v .spz-5017-pricing-section #usd-1 strong b,
+.spz_5017_v .spz-5017-pricing-section #usd-2 strong b {
+  font-style: normal;
+  margin-right: 5px;
+  font-weight: 600;
+}
+.spz_5017_v .spz-5017-pricing-section + .title-container .button-container a.accent {
+  margin-top: 0;
+  padding-top: 12.5px;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .spz-5017-pricing-section + .title-container .button-container a.accent {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section + .title-container .button-container a.accent {
+    padding-top: 28.5px;
+  }
+}
+.spz_5017_v .spz-5017-pricing-section + .title-container + .cards-container {
+  padding-top: 74px;
+}
+.spz_5017_v .spz-5017-pricing-section + .title-container + .cards-container .cards-wrapper {
+  padding-bottom: 31.5px !important;
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .spz-5017-pricing-section + .title-container + .cards-container .cards-wrapper {
+    padding-bottom: 32px !important;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz-5017-pricing-section + .title-container + .cards-container .cards-wrapper {
+    padding-bottom: 32px !important;
+  }
+}
+.spz_5017_v .spz-5017-pricing-section + .title-container + .cards-container .title-wrapper .red-cta {
+  margin-top: 25.5px;
+}
+.spz_5017_v .package-comparison td.has-popup-data .feature-text .icon-wrapper__text {
+  max-height: 26.13px;
+}
+@media only screen and (min-width: 1100px) and (max-width: 1279.98px) {
+  .spz_5017_v .package-comparison td.has-popup-data .feature-text .icon-wrapper__text {
+    max-height: unset;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .spz_5017_v .package-comparison td.has-popup-data .feature-text .icon-wrapper__text {
+    max-height: unset;
+  }
+}
+@media (max-width: 767px) {
+  .spz_5017_v .package-comparison td.has-popup-data .feature-text .icon-wrapper__text {
+    max-height: unset;
+  }
+}
+.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after {
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/informationsvg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  width: 16px;
+  height: 24px;
+}
+.spz_5017_v.spz_show_form {
+  overflow: hidden;
+}
+.spz_5017_v .form_container .form {
+  width: 100%;
+  max-width: 100%;
+}
+.spz_5017_v .form_container .form .form-col {
+  margin: auto;
+}
+.spz_5017_v .form_container .form .form-col-container > p + p {
+  display: none;
+}
+.spz_5017_v .form_container .form .form-col-container > p:nth-of-type(1) {
+  margin: 0 0 8px;
+}
+.spz_5017_v .form_container .form .form-col-container > p:nth-of-type(1) strong {
+  display: block;
+  margin-bottom: 0;
+  color: #599D15;
+  text-align: center;
+  font-family: Fields;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form .form-col-container > p:nth-of-type(1) {
+    margin-bottom: 3.5px;
+  }
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFormRow.width50,
+.spz_5017_v .form_container .form .mktoForm .mktoFormRow.form-input-width50 {
+  width: calc(50% - 8px);
+  order: unset;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.width50,
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.form-input-width50 {
+    width: 100%;
+  }
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFormRow .mktoFieldWrap {
+  margin-top: 16px;
+}
+.spz_5017_v .form_container .form input,
+.spz_5017_v .form_container .form select {
+  height: 48px;
+  color: var(--color-gray-13);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border-color: var(--color-gray-6);
+  padding: 9px 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spz_5017_v .form_container .form select:focus {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 15L12 9L18 15" stroke="%23A5A29F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>') no-repeat;
+  background-position: right 9px center;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form input,
+  .spz_5017_v .form_container .form select {
+    height: 44px;
+    padding: 9px 11px;
+  }
+}
+.spz_5017_v .form_container .form select {
+  padding-right: 32px;
+}
+.spz_5017_v .form_container .form .privacy-policy input {
+  height: auto;
+}
+.spz_5017_v .form_container .form form select:has(option[value=""]:checked) {
+  color: var(--color-gray-13);
+}
+.spz_5017_v .form_container .form .privacy-policy .mktoFormCol {
+  margin-bottom: 0 !important;
+}
+.spz_5017_v .form_container .form select:focus,
+.spz_5017_v .form_container .form textarea:focus,
+.spz_5017_v .form_container .form input:focus,
+.spz_5017_v .form_container .form .mktoForm .mktoInvalid:focus {
+  outline: none;
+  border-color: var(--color-green-5);
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
+  color: var(--color-gray-7);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  top: 24.5px;
+  z-index: 4;
+  padding-left: 16px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
+    padding-left: 12px;
+    top: 22.5px;
+  }
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.active,
+.spz_5017_v .form_container .form label#Lbltemptextm,
+.spz_5017_v .form_container .form label#Lbltemptext2m,
+.spz_5017_v .form_container .form label#LblNotes__c_account {
+  font-size: 12px;
+  line-height: 18px;
+  top: 1px;
+  padding: 0 5px;
+  color: var(--color-gray-7);
+  left: 12px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.active,
+  .spz_5017_v .form_container .form label#Lbltemptextm,
+  .spz_5017_v .form_container .form label#Lbltemptext2m,
+  .spz_5017_v .form_container .form label#LblNotes__c_account {
+    left: 8px;
+  }
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.focus {
+  color: var(--color-green-5);
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.error {
+  color: var(--color-rose-4);
+}
+.spz_5017_v .form_container .form .error select,
+.spz_5017_v .form_container .form .error textarea,
+.spz_5017_v .form_container .form .error input,
+.spz_5017_v .form_container .form .mktoForm .mktoInvalid,
+.spz_5017_v .form_container .form .mktoForm .mktoInvalid.form-checkbox-option label::before {
+  border-color: var(--color-rose-4);
+}
+.spz_5017_v .form_container .form .form-col-container .form-element-container {
+  min-height: 0;
+}
+.spz_5017_v .form_container .form .mktoForm .mktoErrorMsg {
+  margin-left: 16px;
+  margin-top: 2px;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .form_container .form .mktoForm .mktoErrorMsg {
+    margin-left: 13px;
+  }
+}
+.spz_5017_v .form_container .form .mktoForm .mktoFormRow.form-input-width50.has-value label.active,
+.spz_5017_v .form_container .form .mktoForm .mktoFormRow.width50.has-value label.active {
+  font-size: 12px !important;
+  line-height: 18px !important;
+  top: 1px !important;
+}
+@media (max-width: 767px) {
+  .spz_5017_v .spz_hero {
+    transform: none;
+    left: 20px;
+    top: 0;
+  }
+  .spz_5017_v.spz_show_form .spz_hero {
+    top: 0;
+    transform: none;
+    width: calc(100% - 40px);
+    overflow: scroll;
+    padding: 57px 0;
+    scrollbar-width: none;
+  }
+  .spz_5017_v .form_container .form .form-col-container > p:nth-of-type(1) strong {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  .spz_5017_v .spz_show_form .spz_hero::-webkit-scrollbar {
+    display: none;
+  }
+  .spz_5017_v .form_container {
+    max-width: 100%;
+    padding: 30.5px 12.5px 20px;
+  }
+  .spz_5017_v .hero_imageContainer {
+    max-width: 100%;
+  }
+  .spz_5017_v .form_container .form .form-col-container > p:nth-of-type(1) {
+    margin-bottom: 7px;
+  }
+  .spz_5017_v .form_container .form input,
+  .spz_5017_v .form_container .form select {
+    height: 48px;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
+    padding-left: 17px;
+    top: 24.5px;
+  }
+  .spz_5017_v .form_container .form .job-parent {
+    order: 4;
+  }
+  .spz_5017_v .form_container .form .phone-parent {
+    order: 9;
+  }
+  .spz_5017_v .form_container .form .mktoButtonRow {
+    order: 10;
+  }
+  .spz_5017_v .form_container .form .disclaimer-parent-1 {
+    order: 11;
+  }
+  .spz_5017_v .form_container .form .mktoButton {
+    margin: 24px auto 0;
+    max-width: 100%;
+    height: 60px;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active {
+    font-size: 12px;
+    line-height: 18px;
+    top: 1px;
+    left: 8px;
+    padding: 0 5px 0 5px;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.employee_c-parent label {
+    padding-left: 10px !important;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.country-parent label {
+    padding-left: 10px !important;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.employee_c-parent select,
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.country-parent select {
+    padding-left: 16px;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.employee_c-parent.has-value select,
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.country-parent.has-value select {
+    padding-left: 11px;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.employee_c-parent.has-value label {
+    padding-left: 5px !important;
+  }
+  .spz_5017_v .form_container .form .mktoForm .mktoFormRow.country-parent.has-value label {
+    padding-left: 5px !important;
+  }
+  .spz_5017_v .form_container .form .disclaimer-parent-1 .bhrForm__partnerDisclaimer {
+    text-align: left;
+  }
+}
+@media only screen and (orientation: landscape) and (max-width: 767px) {
+  .spz_5017_v.spz_show_form .spz_hero {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .spz_5017_v .spz_hero {
+    padding: 40px 0;
+    overflow-y: scroll;
+  }
+  .spz_5017_v.spz_show_form .spz_hero {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}/*# sourceMappingURL=5017_v1.css.map */
