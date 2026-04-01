@@ -18,11 +18,11 @@ function loadTestCode() {
 
     var arrowIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
       <g clip-path="url(#clip0_122_1569)">
-        <path d="M10 5L5.88739 10H4.12071L7.57878 5.80162H0V4.19839H7.57878L4.12071 0H5.88739L10 5Z" fill="#5851DB"/>
+        <path d="M10 5L5.88739 10H4.12071L7.57878 5.80162H0V4.19839H7.57878L4.12071 0H5.88739L10 5Z" fill="#5851DB"></path>
       </g>
       <defs>
         <clipPath id="clip0_122_1569">
-          <rect width="10" height="10" fill="white"/>
+          <rect width="10" height="10" fill="white"></rect>
         </clipPath>
       </defs>
     </svg>`;
@@ -325,6 +325,49 @@ function loadTestCode() {
       </div>
       `);
       
+    (function lockLayoutSectionImage() {
+      var selector = 'main > section:nth-of-type(2) figure.c--layout-d__media-wrapper img';
+      var targetSrc = '//res.cloudinary.com/spiralyze/image/upload/f_auto/netwrix/1024/image.webp';
+      var targetResolved = new URL(targetSrc, location.href).href;
+      var observeMs = 20000;
+
+      function srcMatches(img) {
+        try {
+          return new URL(img.src, document.baseURI).href === targetResolved;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      waitForElement(selector, function (img) {
+        var applying = false;
+
+        function enforce() {
+          if (!img.isConnected) return;
+          if (applying || srcMatches(img)) return;
+          applying = true;
+          img.src = targetSrc;
+          applying = false;
+        }
+
+        enforce();
+
+        var mo;
+        var stopTimer = setTimeout(function () {
+          if (mo) mo.disconnect();
+        }, observeMs);
+
+        mo = new MutationObserver(function () {
+          if (!img.isConnected) {
+            clearTimeout(stopTimer);
+            mo.disconnect();
+            return;
+          }
+          enforce();
+        });
+        mo.observe(img, { attributes: true, attributeFilter: ['src'] });
+      });
+    })();
 
     const heroSection = document.querySelector("body > main > section.c--hero-a");
     if (heroSection) {
@@ -376,68 +419,79 @@ function loadTestCode() {
       }
     });
 
+    
+    (function() {
+      //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+      
+      // Set the value of the squeezePage variable as needed:
+      // true  – if you are using a squeeze page (i.e., the page contains a form)
+      // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+      // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-    //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
-    //exptName should be #1001, #1002, #1003 etc.
-    const expName = '1024';
-    //variantName should be _V1, _V2, _TC etc.
-    const variantName = `variant_` + expName;
+      const squeezePage = false; // true / false / 'both'
+      const expName = '1024'; //experiment name should be 1001, 1002, 1003 etc.
+      const variantName = `variant_` + expName; //variantName should be variant_, true_control_ etc.
+      const clientDomain = '.netwrix.com'; //domain should be .spiralyze.com
 
-    hiddenValue(expName, variantName);
 
-    /***********************************
-    ************************************
-    DO NOT TOUCH
-    BEYOND THIS LINE
-    ******************************
-    ************************/
-    function hiddenValue(currentExperimentName, currentExperimentValue) {
-      function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-          var date = new Date();
-          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-          expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      /***********************************
+      ************************************
+      DO NOT TOUCH
+      BEYOND THIS LINE
+      ******************************
+      ******************************/
+      const formHiddenValue = variantName;
+      if (squeezePage === true) {
+          window.squeezePageValue = formHiddenValue;
+      } else if (squeezePage === false) {
+          hiddenValue(expName, variantName);
+      } else if (squeezePage === 'both') {
+          hiddenValue(expName, variantName);
+          window.squeezePageValue = formHiddenValue;
       }
+      function hiddenValue(currentExperimentName, currentExperimentValue) {
+          function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
+          }
 
-      function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
+          function getCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for (var i = 0; i < ca.length; i++) {
+                  var c = ca[i];
+                  while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+              }
+              return null;
+          }
+
+          var ExistingExperimentName = getCookie('ExperimentName');
+          var ExistingExperimentValue = getCookie('ExperimentValue');
+          var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+
+          if (!ExistingExperimentName) {
+              setCookie('ExperimentName', currentExperimentName, 1);
+              setCookie('ExperimentValue', currentExperimentValue, 1);
+          } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+              setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+              setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+          } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+              var existingNames = ExistingExperimentName.split(',');
+              var existingValues = ExistingExperimentValue.split(',');
+              var index = existingNames.indexOf(currentExperimentName);
+              existingValues[index] = currentExperimentValue;
+              setCookie('ExperimentName', existingNames.join(','), 1);
+              setCookie('ExperimentValue', existingValues.join(','), 1);
+          }
       }
+  }());
 
-      var ExistingExperimentName = getCookie('ExperimentName');
-      var ExistingExperimentValue = getCookie('ExperimentValue');
-
-      if (!ExistingExperimentName) {
-
-        setCookie('ExperimentName', currentExperimentName, 1);
-        setCookie('ExperimentValue', currentExperimentValue, 1);
-
-      } else if (ExistingExperimentName && !ExistingExperimentName.includes(currentExperimentName)) {
-
-        setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-        setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-
-      } else if (ExistingExperimentName && ExistingExperimentName.includes(currentExperimentName)) {
-
-        var existingNames = ExistingExperimentName.split(',');
-        var existingValues = ExistingExperimentValue.split(',');
-
-        var index = existingNames.indexOf(currentExperimentName);
-        existingValues[index] = currentExperimentValue;
-
-        setCookie('ExperimentName', existingNames.join(','), 1);
-        setCookie('ExperimentValue', existingValues.join(','), 1);
-      }
-    }
   }
 }
 
@@ -447,4 +501,3 @@ var bodyInterval = setInterval(() => {
     loadTestCode();
   }
 }, 100);
-

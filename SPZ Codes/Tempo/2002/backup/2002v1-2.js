@@ -19,17 +19,14 @@ if (window.location.pathname == "/") {
           if ((!document.querySelector('.spz_2002_v') && window.location.pathname == "/")
           ) {
             document.querySelector('body').classList.add("spz_2002_v")
-
           }
           // page modification
           if (document.querySelector('.spz_2002_v') && document.querySelector('.spz_2002_v main > div.light') && !document.querySelector('.spz_2002_v .section-1-2002')) {
             const loadJS = (url, implementationCode, location) => {
               var scriptTag = document.createElement('script');
               scriptTag.src = url;
-
               scriptTag.onload = implementationCode;
               scriptTag.onreadystatechange = implementationCode;
-
               location.appendChild(scriptTag);
             };
             document.querySelector('.spz_2002_v main > div.light').insertAdjacentHTML("beforebegin", `
@@ -45,11 +42,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -59,7 +56,7 @@ if (window.location.pathname == "/") {
                         <p>Track progress across Jira projects, teams, and epics. Get a single dashboard for comparing initiatives, portfolios, and more. </p>
                         <p>Identify bottlenecks and adjust timelines in real time. Easily align projects to strategy.  </p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Project management" class="spz2002_v spz2002_accordion_project_management_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Project management" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -79,11 +76,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -93,7 +90,7 @@ if (window.location.pathname == "/") {
                         <p>Plan schedules by dragging and dropping tickets inside of Jira. Generate recurring schedules. Auto-assign resources based on resource availability and team skills.</p>
                         <p>2-way sync with Jira, Timesheets, Structure, and more. </p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Capacity planning" class="spz2002_v spz2002_capacity_planning_management_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Capacity planning" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -113,11 +110,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -127,7 +124,7 @@ if (window.location.pathname == "/") {
                         <p>Let team members log time for specific Jira tasks and issues. Billable and non-billable hours. Track time by day, issue, etc. Monitor productivity and resource utilization.</p>
                         <p>Sync with Google Calendar, Office 365, and more. </p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Time management" class="spz2002_v spz2002_accordion_time_management_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Time management" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -147,11 +144,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -161,7 +158,7 @@ if (window.location.pathname == "/") {
                         <p>Create visual plans and roadmaps in minutes with pre-built templates. Drag and drop items. Add external links. Easily separate work by team, department, status, etc. </p>
                         <p>Roll multiple roadmaps into one shareable view. Streamline idea management and optimize strategy. </p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Roadmapping" class="spz2002_v spz2002_accordion_roadmapping_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Roadmapping" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -181,11 +178,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -195,7 +192,7 @@ if (window.location.pathname == "/") {
                         <p>Track labor costs, time spent, costs vs. budget, and more. Generate budgets and forecast expenses. Compare projected and actual revenue. Automatically calculate CapEx and OpEx. </p>
                         <p>Reduce accounting tasks, prevent overruns, and increase profits. </p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Financial management" class="spz2002_v spz2002_accordion_financial_management_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Financial management" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -215,11 +212,11 @@ if (window.location.pathname == "/") {
                         <div class="svg-wrapper">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                             <g clip-path="url(#clip0_24038_1184)">
-                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"/>
+                              <path d="M6.58023 9.54801L5.52023 8.48701L11.2972 2.70801C11.3898 2.61486 11.4999 2.54093 11.6211 2.49048C11.7424 2.44003 11.8724 2.41406 12.0037 2.41406C12.1351 2.41406 12.2651 2.44003 12.3863 2.49048C12.5076 2.54093 12.6177 2.61486 12.7102 2.70801L18.4902 8.48701L17.4302 9.54701L12.0052 4.12301L6.58023 9.54801Z" fill="currentColor"></path>
                             </g>
                             <defs>
                               <clipPath id="clip0_24038_1184">
-                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"/>
+                                <rect width="12" height="24" fill="white" transform="translate(0 12) rotate(-90)"></rect>
                               </clipPath>
                             </defs>
                           </svg>
@@ -228,7 +225,7 @@ if (window.location.pathname == "/") {
                       <div class="content">
                         <p>Generate detailed charts and dashboards. No code. Track productivity, sprint progress, velocity, time in status, blockers, and other project data. Share in a couple of clicks. Sync with JWM, JSM, and more.</p>
                         <div class="button-wrapper">
-                          <a href="https://www.tempo.io/demo" data-section="Reporting & forecasting" class="spz2002_v spz2002_accordion_reporting_&_forecasting_cta">
+                          <a href="https://www.tempo.io/demo" data-section="Reporting & forecasting" class="spz2002_v">
                             <span>Get a Demo</span>
                             <div class="arrow"></div>
                           </a>
@@ -275,10 +272,8 @@ if (window.location.pathname == "/") {
             const isSectionTopAt50Percent = (section) => {
               const rect = section.getBoundingClientRect();
               const viewportHeight = window.innerHeight;
-
               const bandStart = viewportHeight * 0; // 40%
               const bandEnd = viewportHeight * 0.5;   // 50%
-
               return rect.top >= bandStart && rect.top <= bandEnd;
             };
             const closedCarouselAnimation = (curActiveElement) => {
@@ -299,7 +294,6 @@ if (window.location.pathname == "/") {
               const curActiveElement = parseInt(document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .text .active').getAttribute("data-index"));
               // to add animation when closed
               closedCarouselAnimation(curActiveElement)
-
               if (curActiveElement < 6) {
                 nextActive = curActiveElement + 1;
               } else {
@@ -308,7 +302,6 @@ if (window.location.pathname == "/") {
               document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child[data-index="' + nextActive + '"]').classList.add("active")
               document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .hero[data-index="' + nextActive + '"]').classList.add("active")
               playCarousel()
-
             }
             const adjustContentHeight = () => {
               const curActiveElementIndex = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .text .active').getAttribute("data-index");
@@ -322,7 +315,6 @@ if (window.location.pathname == "/") {
                 curActiveElement.style.height = fullHeight + "px";
               }, 1)
             }
-
             const setHeightOnResize = () => {
               const curActiveElementIndex = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .text .active').getAttribute("data-index");
               const curActiveElement = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child[data-index="' + curActiveElementIndex + '"]');
@@ -361,7 +353,6 @@ if (window.location.pathname == "/") {
                 }
               }, 50)
             }
-
             //event listener 
             document.querySelector('.spz_2002_v .section-1-2002 .carousel-section').addEventListener('mouseenter', function () {
               if (!navigator.maxTouchPoints) {
@@ -374,13 +365,11 @@ if (window.location.pathname == "/") {
             });
             //event listener 
             const myDiv = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section');
-
             // Function to check if mouse is inside the div
             function isMouseInDiv(event) {
               const rect = myDiv.getBoundingClientRect();
               const mouseX = event.clientX;
               const mouseY = event.clientY;
-
               // Check if mouse position is inside the div's bounding box
               if (mouseX >= rect.left && mouseX <= rect.right &&
                 mouseY >= rect.top && mouseY <= rect.bottom && !navigator.maxTouchPoints) {
@@ -388,10 +377,8 @@ if (window.location.pathname == "/") {
                 clearTimeout(mouseLeaveTimeout)
               }
             }
-
             // Listen for mousemove event to track mouse position
             myDiv.addEventListener('mousemove', isMouseInDiv);
-
             document.querySelector('.spz_2002_v .section-1-2002 .carousel-section').addEventListener('mouseleave', function () {
               if (!navigator.maxTouchPoints && !document.querySelector('.spz_2002_v .section-1-2002 .clicked')) {
                 mouseLeaveTimeout = setTimeout(function () {
@@ -407,7 +394,6 @@ if (window.location.pathname == "/") {
                 }, 0)
               }
             });
-
             document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .text').addEventListener('click', function (e) {
               if (e.target.closest(".carousel-title") && !e.target.closest(".clicked")) {
                 clearInterval(carouselInterval);
@@ -418,12 +404,10 @@ if (window.location.pathname == "/") {
                   document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child[data-index="' + curActiveElement + '"] .bar .line').style.width = "0px";
                 }
                 document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child[data-index="' + curActiveElement + '"]').classList.remove("clicked");
-
                 // to add animation when closed
                 if (curActiveElement != e.target.closest('.child').getAttribute("data-index")) {
                   closedCarouselAnimation(curActiveElement)
                 }
-
                 // add active
                 e.target.closest(".child").classList.add("clicked", "active")
                 e.target.closest(".child").querySelector('.bar .line').style.opacity = 1;
@@ -432,7 +416,6 @@ if (window.location.pathname == "/") {
                 if (curActiveElement != e.target.closest('.active').getAttribute("data-index")) {
                   adjustContentHeight();
                 }
-
                 // auto scroll on mobile
                 if (window.matchMedia("(max-width: 1024.98px)").matches && document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child.clicked')) {
                   document.querySelector('.spz_2002_v .section-1-2002 .carousel-section').classList.add("mobile-clicked")
@@ -466,12 +449,10 @@ if (window.location.pathname == "/") {
                 playNextCarousel()
               }
             })
-
             window.addEventListener("resize", function () {
               if (document.querySelector('.spz_2002_v .section-1-2002')) {
                 setHeightOnResize()
               }
-
             })
             window.addEventListener('scroll', function () {
               if (document.querySelector('.spz_2002_v .section-1-2002')) {
@@ -489,7 +470,6 @@ if (window.location.pathname == "/") {
                         playCarousel();
                       }
                     }
-
                   } if (!isSectionInView(document.querySelector('.spz_2002_v .section-1-2002 .carousel-section'))) {
                     clearInterval(carouselInterval);
                     clearTimeout(mouseLeaveTimeout)
@@ -508,7 +488,6 @@ if (window.location.pathname == "/") {
               }
             }, 100)
           }
-
           // check another page and remove unecessary
           if (window.location.pathname != "/" && document.querySelector('body.spz_2002_v')) {
             if (document.querySelector('.spz_2002_v .section-1-2002')) {
@@ -531,12 +510,9 @@ if (window.location.pathname == "/") {
           if (i == 5) {
             clearInterval(bodyTriggerInterval)
           }
-
         }, 1000)
         document.querySelector('body').insertAdjacentHTML("beforeend", `<div class="fake-div"></div>`)
         document.querySelector('.fake-div').remove();
-
-
         function hiddenValue(currentExperimentName, currentExperimentValue) {
           function setCookie(name, value, days) {
             var expires = ''
@@ -547,7 +523,6 @@ if (window.location.pathname == "/") {
             }
             document.cookie = name + '=' + (value || '') + expires + '; path=/'
           }
-
           function getCookie(name) {
             var nameEQ = name + '='
             var ca = document.cookie.split(';')
@@ -558,10 +533,8 @@ if (window.location.pathname == "/") {
             }
             return null
           }
-
           var ExistingExperimentName = getCookie('ExperimentName')
           var ExistingExperimentValue = getCookie('ExperimentValue')
-
           if (!ExistingExperimentName) {
             setCookie('ExperimentName', currentExperimentName, 1)
             setCookie('ExperimentValue', currentExperimentValue, 1)

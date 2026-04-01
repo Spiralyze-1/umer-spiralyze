@@ -1,0 +1,14 @@
+.lp-sliding-form .form-heading-lp-spec {
+  display: none;
+}
+.lp-sliding-form .application-form-wrap-lp-spec {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+.lp-sliding-form .pwf-form-cont-lp-spec {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=style.css.map */

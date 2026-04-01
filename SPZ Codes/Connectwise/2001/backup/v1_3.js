@@ -1,22 +1,23 @@
+console.log('SPZ 2001 V1');
 console.log('+++ 1');
 
-if (document.body) {
+if (document.body){
   document.body.classList.add('spz_2001_init');
 }
 
 function waitForForm(selector, callback, maxWait = 5000) {
-  const interval = 100;
-  let elapsed = 0;
-  const timer = setInterval(() => {
-    if (document.querySelector(selector)) {
-      clearInterval(timer);
-      callback();
-    } else if (elapsed >= maxWait) {
-      clearInterval(timer);
-      console.warn('Form not found after waiting:', selector);
-    }
-    elapsed += interval;
-  }, interval);
+   const interval = 100;
+   let elapsed = 0;
+   const timer = setInterval(() => {
+      if (document.querySelector(selector)) {
+         clearInterval(timer);
+         callback();
+      } else if (elapsed >= maxWait) {
+         clearInterval(timer);
+         console.warn('Form not found after waiting:', selector);
+      }
+      elapsed += interval;
+   }, interval);
 }
 
 function spz2001() {
@@ -37,7 +38,7 @@ function spz2001() {
       ],
 
       // ── RIGHT SIDE ─────────────────────────────────────────────
-      logoSrc: '//res.cloudinary.com/spiralyze/image/upload/f_svg/v1774615779/connectwise/2001/logo-headline_1.svg',
+      logoSrc: '//res.cloudinary.com/spiralyze/image/upload/v1771491402/connectwise/2001/logo-headline.svg',
       logoAlt: 'ConnectWise',
       logoHref: 'javascript:void(0);',
 
@@ -62,15 +63,15 @@ function spz2001() {
     var template_formUniqueSelector = "#mktoForm_1227";
 
     // Initialize
-    // if (!checkFormSubmission()) {
-    //    addSplitScreen(template_formUniqueSelector, template_content);
-    // }
-    // Replace your current initialization block with:
-    waitForForm(template_formUniqueSelector, () => {
-      if (!checkFormSubmission()) {
-        addSplitScreen(template_formUniqueSelector, template_content);
-      }
-    });
+      // if (!checkFormSubmission()) {
+      //    addSplitScreen(template_formUniqueSelector, template_content);
+      // }
+      // Replace your current initialization block with:
+      waitForForm(template_formUniqueSelector, () => {
+         if (!checkFormSubmission()) {
+            addSplitScreen(template_formUniqueSelector, template_content);
+         }
+      });
 
   }
 }
@@ -122,14 +123,14 @@ function addSplitScreen(formSelector, template_content) {
       </div>
     </div>
   `);
-  if (window.location.pathname.indexOf('/platform/rmm/demo') === 0) {
+  if(window.location.pathname.indexOf('/platform/rmm/demo') === 0){
     document.querySelector('body').classList.add('spz_2001_rmmDemo');
     document.querySelector('.spz-feature-content .spz-eyebrow').textContent = 'REMOTE MONITORING AND MANAGEMENT (RMM) SOFTWARE';
     document.querySelector('.spz-feature-content .spz-headline').innerHTML = 'Streamline work by managing IT remotely';
     document.querySelector('.spz-feature-content .spz-bullets li:first-child p').innerHTML = `<strong>Endpoints and networks:</strong>  Automate patching. Access devices remotely. Get prioritized alerts & remediate. Manage networks.`;
     document.querySelector('.spz-feature-content .spz-bullets li:nth-child(2) p').innerHTML = `<strong>Automations:</strong>   Automate remediation & maintenance with pre-built tasks. Disk cleanup, configuration, accounts, etc. Custom scripts. `;
     document.querySelector('.spz-feature-content .spz-bullets li:last-child p').innerHTML = `<strong>Expert services:</strong>   Leverage our dedicated techs to augment <br> project work, help desk services, or network ops. 24/7/365.`;
-  } else if (window.location.pathname.indexOf('/platform/psa/demo') === 0) {
+  } else if(window.location.pathname.indexOf('/platform/psa/demo') === 0){
     document.querySelector('body').classList.add('spz_2001_psaDemo');
     document.querySelector('.spz-feature-content .spz-eyebrow').textContent = 'PROFESSIONAL SERVICES AUTOMATION (PSA) SOFTWARE';
     document.querySelector('.spz-feature-content .spz-headline').innerHTML = 'Streamline MSP client management';
@@ -365,25 +366,25 @@ function checkFormSubmission() {
   return false;
 }
 
-setTimeout(function () {
-  (function () {
-    if (!document.body) return; // 🚨 Prevent crash
-    var nodes = document.body.childNodes;
+(function () {
 
-    for (var i = nodes.length - 1; i >= 0; i--) {
+   if (!document.body) return; // 🚨 Prevent crash
+
+   var nodes = document.body.childNodes;
+
+   for (var i = nodes.length - 1; i >= 0; i--) {
       var node = nodes[i];
 
       if (node.nodeType === 3) {
-        var value = node.nodeValue;
+         var value = node.nodeValue;
 
-        if (/^[\s;]+$/.test(value)) {
-          document.body.removeChild(node);
-        }
+         if (/^[\s;]+$/.test(value)) {
+            document.body.removeChild(node);
+         }
       }
-    }
+   }
 
-  })();
-}, 4000);
+})();
 
 // Body interval
 var bodyInterval2001 = setInterval(function () {

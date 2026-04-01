@@ -305,9 +305,9 @@ function loadTestCode() {
         closeModal();
         return;
       }
-      if (e.target.classList && e.target.classList.contains('spz-5017-backdrop')) {
-        closeModal();
-      }
+      // if (e.target.classList && e.target.classList.contains('spz-5017-backdrop')) {
+      //   closeModal();
+      // }
 
     });
     document.addEventListener('keydown', function (e) {
@@ -316,8 +316,20 @@ function loadTestCode() {
       }
     });
 
-    document.querySelector('#add-on-solutions').textContent = 'Add on Solutions';
-
+    document.querySelector('#add-on-solutions').textContent = 'Add-on Solutions';
+    document.addEventListener('mouseover', function (e) {
+      var el = e.target.closest('.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after');
+      if (el) {
+        el.closest('.has-popup-data').classList.add('table-tooltip-show');
+      }
+    });
+    
+    document.addEventListener('mouseout', function (e) {
+      var el = e.target.closest('.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after');
+      if (el) {
+        el.closest('.has-popup-data').classList.remove('table-tooltip-show');
+      }
+    });
 
     setTimeout(() => {
       if (document.querySelector('.section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(3)> ul >li:first-child')) {
@@ -408,9 +420,9 @@ function loadTestCode() {
           document.querySelector('#LblDisclaimer__c').closest('.mktoFormRow').classList.add('disclaimer-parent-2',"privacy-policy")
           */
 
-          if(document.querySelector('.bhrForm__partnerDisclaimer')){
-            document.querySelector('.bhrForm__partnerDisclaimer a').textContent = 'Privacy Policy'
-          }
+          // if(document.querySelector('.bhrForm__partnerDisclaimer')){
+          //   document.querySelector('.bhrForm__partnerDisclaimer a').textContent = 'Privacy Policy'
+          // }
           document.querySelector('.form_container .mktoButton').textContent = "Submit"
           document.querySelector('.form_container .mktoButton').classList.add("spz5017_v1")
         }

@@ -33,8 +33,7 @@
   --spz-1002-tile-bg: rgba(255, 255, 255, 0.05);
 }
 
-.spz_1002_v #video,
-.spz_1002_v .marquee-scroller {
+.spz_1002_v #video {
   display: none;
 }
 .spz_1002_v {
@@ -68,11 +67,16 @@
   z-index: 1;
   max-width: 1124px;
   margin: 0 auto;
-  padding: 60px 0 0;
+  padding: 70px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .spz_1002_v .spz-content-1002 {
+    padding: 60px 20px 0;
+  }
 }
 .spz_1002_v {
   /* ── Eyebrow ── */
@@ -386,6 +390,7 @@
     font-size: 40px;
     line-height: 48px;
     letter-spacing: -0.4px;
+    margin-bottom: 24.5px;
   }
   .spz_1002_v .spz-heading-1002 .spz-h1-lime-1002,
   .spz_1002_v .spz-heading-1002 .spz-h1-white-1002 {
@@ -411,7 +416,9 @@
     padding: 12px;
   }
   .spz_1002_v .spz-subhead-1002 {
-    margin-bottom: 24.5px;
+    margin-bottom: 23.5px;
+    font-size: 18px;
+    line-height: 25.2px;
   }
   .spz_1002_v {
     /* Checkbox: pull out of absolute, inline at far left */
@@ -467,6 +474,52 @@
     padding: 7px 15px;
   }
   .spz_1002_v .spz-dash-1002 {
-    margin-top: 75px;
+    margin-top: 43px;
+  }
+}
+.spz_1002_v .logo_heading {
+  padding: 48px 20px 2px;
+}
+.spz_1002_v .logo_heading h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Cera Pro-2";
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: unset;
+}
+.spz_1002_v .logo_heading h2 strong {
+  display: inline-block;
+  color: #C5E654;
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .spz_1002_v .logo_heading {
+    padding-top: 28px;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_1002_v .logo_heading {
+    padding-top: 9px;
+  }
+  .spz_1002_v .logo_heading h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+.spz_1002_v .marquee-scroller {
+  height: 14.72em;
+}
+@media (max-width: 767.98px) {
+  .spz_1002_v .marquee-scroller {
+    height: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_1002_v .marquee-wrapper {
+    display: block;
+  }
+  .spz_1002_v .marquee-wrapper .marquee--inner {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

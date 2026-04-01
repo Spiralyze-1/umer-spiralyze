@@ -128,59 +128,24 @@ function persistSelectedTiles() {
   } catch (e) {}
 }
 
-function getTileOptionValue(tile) {
-  if (!tile || !tile.classList || !tile.classList.contains('spz-tile-1002')) return '';
-  var slug = (tile.getAttribute('data-value') || '').trim();
-  var label = getTileLabelText(tile);
-  return slug || label || '';
-}
-
-function trackHeroTileClick(tile) {
-  try {
-    if (typeof window._sz === 'undefined' || !window._sz || typeof window._sz.push !== 'function') return;
-    var tileVal = getTileOptionValue(tile);
-    if (!tileVal) return;
-    window._sz.push(['event', 'SPZ 1002 Hero Tile Click', 'Hero Tile Click', tileVal]);
-  } catch (e) {}
-}
-
-function getHeroCTAText(el) {
-  if (!el) return '';
-  return el.textContent.replace(/\s+/g, ' ').trim();
-}
-
-function trackHeroCTAClick(el) {
-  try {
-    if (typeof window._sz === 'undefined' || !window._sz || typeof window._sz.push !== 'function') return;
-    var ctaText = getHeroCTAText(el);
-    if (!ctaText) return;
-    window._sz.push(['event', 'SPZ 1002 Hero CTA Click', 'Hero CTA Click', ctaText]);
-  } catch (e) {}
-}
-
 function toggleTile(tile) {
   var active = tile.classList.toggle('active');
   tile.setAttribute('aria-checked', active ? 'true' : 'false');
   persistSelectedTiles();
-  trackHeroTileClick(tile);
 }
 
 function bindTiles() {
-  var container = document.querySelector('.spz-tiles-1002');
-  if (!container) return;
+  document.querySelectorAll('.spz-tile-1002').forEach(function(tile) {
+    tile.addEventListener('click', function() {
+      toggleTile(tile);
+    });
 
-  container.addEventListener('click', function (e) {
-    var tile = e.target.closest('.spz-tile-1002');
-    if (!tile || !container.contains(tile)) return;
-    toggleTile(tile);
-  });
-
-  container.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    var tile = e.target.closest('.spz-tile-1002');
-    if (!tile || !container.contains(tile)) return;
-    e.preventDefault();
-    toggleTile(tile);
+    tile.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleTile(tile);
+      }
+    });
   });
 }
 
@@ -208,7 +173,6 @@ function bindCTA() {
 
   if (ctaBtn) {
     ctaBtn.addEventListener('click', function(e) {
-      trackHeroCTAClick(e.currentTarget);
       e.preventDefault();
       var email = emailInput ? emailInput.value.trim() : '';
 

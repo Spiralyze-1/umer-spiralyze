@@ -48,6 +48,30 @@ $mobile: 767.98px;
     @content;
   }
 }
+@font-face {
+  font-family: "Cera Pro-2";
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.eot");
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.woff") format("woff"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.ttf") format("truetype"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cera Pro-2";
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.eot");
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.woff") format("woff"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.ttf") format("truetype"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cera Pro-2";
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.eot");
+  src: url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.woff") format("woff"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.ttf") format("truetype"), url("https://res.cloudinary.com/spiralyze/raw/upload/connectwise/font-family/cera-pro/cera-pro-bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 /*.spz_2001_v #chromeperfectpixel-panel-container,
 .spz_2001_v .chromeperfectpixel-portal,
 .spz_2001_v .chromeperfectpixel-portal:last-child{
@@ -205,7 +229,7 @@ $mobile: 767.98px;
   }
 }
 .spz_2001_v .spz-eyebrow {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-weight: 700;
   font-size: 16px;
   line-height: normal;
@@ -216,7 +240,7 @@ $mobile: 767.98px;
   text-align: center;
 }
 .spz_2001_v .spz-headline {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-weight: 500;
   font-size: 48px;
   line-height: 1.2;
@@ -259,7 +283,7 @@ $mobile: 767.98px;
   margin-top: 2px;
 }
 .spz_2001_v .spz-bullet-item p {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
@@ -372,7 +396,7 @@ $mobile: 767.98px;
   }
 }
 .spz_2001_v .spz-form-heading {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
@@ -393,7 +417,7 @@ $mobile: 767.98px;
   display: flex !important;
   flex-direction: column !important;
   gap: 16px !important;
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   padding: 0;
 }
 .spz_2001_v .spz-form-row-pair {
@@ -470,10 +494,10 @@ $mobile: 767.98px;
   padding: 0 16px !important;
   border: 1px solid var(--spz-border) !important;
   border-radius: 5px !important;
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 16px !important;
   line-height: 1.5 !important;
-  color: var(--spz-text) !important;
+  color: #22326E !important;
   background: var(--spz-white) !important;
   box-shadow: none !important;
   outline: none !important;
@@ -523,7 +547,7 @@ $mobile: 767.98px;
   -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.986) inset !important;
   -webkit-transition: background-color 5000s ease-in-out 0s !important;
   transition: background-color 5000s ease-in-out 0s !important;
-  -webkit-text-fill-color: #1a1d36 !important;
+  -webkit-text-fill-color: #22326E !important;
   z-index: 2;
   position: relative;
 }
@@ -535,7 +559,7 @@ $mobile: 767.98px;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -584,7 +608,7 @@ $mobile: 767.98px;
 .spz_2001_v #mktoForm_1227 .mktoError,
 .spz_2001_v #mktoForm_1227 .mktoErrorMsg,
 .spz_2001_v #mktoForm_1227 .error-placeholder label {
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 12px !important;
   font-weight: 300 !important;
   line-height: 1.5 !important;
@@ -641,7 +665,7 @@ $mobile: 767.98px;
   display: block;
 }
 .spz_2001_v .spz-phone-prefix span {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-size: 16px;
   line-height: 1.5;
   color: var(--spz-grey);
@@ -672,7 +696,7 @@ $mobile: 767.98px;
   background: none;
   padding: 0;
   text-align: left;
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-size: 16px;
   line-height: 1.5;
   color: var(--spz-grey);
@@ -708,7 +732,7 @@ $mobile: 767.98px;
   /* extra top padding so text doesn't sit under lifted label */
   border: 1px solid var(--spz-border) !important;
   border-radius: 5px !important;
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 16px !important;
   line-height: 1.5 !important;
   color: var(--spz-text) !important;
@@ -779,7 +803,7 @@ $mobile: 767.98px;
   border-bottom: 2px solid white;
 }
 .spz_2001_v .spz-checkbox-label {
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
@@ -797,7 +821,7 @@ $mobile: 767.98px;
   color: var(--spz-white) !important;
   border: none !important;
   border-radius: 6px !important;
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 16px !important;
   font-weight: 700 !important;
   line-height: 24px !important;
@@ -817,7 +841,7 @@ $mobile: 767.98px;
   background: #24326a !important;
 }
 .spz_2001_v .spz-disclaimer {
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
@@ -827,7 +851,7 @@ $mobile: 767.98px;
   width: 100% !important;
 }
 .spz_2001_v #mktoForm_1227 .mktoHtmlText {
-  font-family: "Cera Pro" !important;
+  font-family: "Cera Pro-2" !important;
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
@@ -867,7 +891,7 @@ $mobile: 767.98px;
   margin: 0 auto;
 }
 .spz_2001_v .spz-social-proof-text {
-  font-family: "Cera Pro";
+  font-family: "Cera Pro-2";
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;

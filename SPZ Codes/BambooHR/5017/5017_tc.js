@@ -1,7 +1,7 @@
 (function () {
   //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
   const expName = '5017'; //experiment name should be #1001, #1002, #1003 etc.
-  const variantName = `#` + expName + `_control`; //variantName should be _TrueControl, _Variant etc.
+  const variantName = `#` + expName + `_true_control`; //variantName should be _TrueControl, _Variant etc.
   const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com
 
   hiddenValue(expName, variantName);
