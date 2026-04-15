@@ -1989,7 +1989,9 @@ html:has(body.spz_5017_v) {
       padding: 6.5px 0;
       min-width: 0;
       &:hover{
-        color: var(--color-green-4);
+        .icon-wrapper__text{
+          color: var(--color-green-4);
+        }
       }
     }
 

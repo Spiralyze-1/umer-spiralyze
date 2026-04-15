@@ -32,6 +32,22 @@ formInterval = setInterval(function () {
               align-items: flex-start;
               margin-top: 32.5px;
             }  
+            #pwf-1:has(#results.active) {
+              flex-wrap: wrap;
+              justify-content: center;
+            }
+            #pwf-1:has(#results.active) #results h4{
+              display:block;
+            }
+            #pwf-1:has(#results.active) .flex:has(.btn-action){
+              margin-left: 0;
+              margin-top: 20px;
+              margin-bottom: 16px;
+              display:block!important;
+            }
+            #pwf-1:has(#results.active) .flex:has(.btn-action) a.back-link{
+              display:none;
+            }
             #pwf-1:has(.back-link:not(.invisible)){
               margin-top: 65px;
             }
@@ -213,8 +229,12 @@ formInterval = setInterval(function () {
               width: 160px;
               margin-left: 12px;
             }
+            #pwf-1:has(.carousel-inner[style="display: none;"]) {
+              --flex-w: 100%;
+              --flex-ml: 0;
+            }
             #pwf-1:has(.carousel-inner[style="display: none;"]) .flex:has(.btn-action){
-              width: 100%;
+              width:100%;
               margin-left: 0;
             }
             #pwf-1 div:has(>.back-link){
@@ -300,9 +320,8 @@ formInterval = setInterval(function () {
             }
             #pwf-1 div:has(.disclosure-tooltip){
               margin-top: 0;
-              margin-left: 24px;
               position: absolute;
-              bottom: -20px;
+              bottom: -23px;
               left: 0;
             }
             #pwf-1 div:has(.disclosure-tooltip) small{
@@ -420,6 +439,9 @@ formInterval = setInterval(function () {
               }
               #pwf-1 .carousel-inner{
                 width: calc(100% - 172px);
+              }
+              #pwf-1:has(#results.active) .carousel-inner{
+                width: 100%;
               }
             }
             @media (max-width: 767.98px) {  

@@ -1,6 +1,10 @@
 .spz_2002_v main > .section-1-2002 + div.light + section{
   display: none;
 }
+
+.spz_2002_v main section:nth-of-type(7) {
+  overflow: hidden;
+}
 .spz_2002_v .section-1-2002 .wrapper-2002{
   padding-top: 92.5px;
   padding-left: 40px;

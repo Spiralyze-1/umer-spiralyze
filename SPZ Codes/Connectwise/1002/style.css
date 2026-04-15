@@ -33,6 +33,11 @@
   --spz-1002-tile-bg: rgba(255, 255, 255, 0.05);
 }
 
+@media (max-width: 767.98px) {
+  .spz_1002_v section.uop {
+    padding-top: 20px;
+  }
+}
 .spz_1002_v #video {
   display: none;
 }
@@ -50,7 +55,7 @@
 .spz_1002_v .spz-hero-1002 {
   position: relative;
   width: 100%;
-  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621142/connectwise/1002/desktop.webp");
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/desktop_1.webp");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -75,7 +80,7 @@
 }
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .spz_1002_v .spz-content-1002 {
-    padding: 60px 20px 0;
+    padding: 60px 20px 20px;
   }
 }
 .spz_1002_v {
@@ -213,17 +218,24 @@
   /* ── Tile icon (bg is baked into the SVG) ── */
 }
 .spz_1002_v .spz-icon-1002 {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 46px;
   height: 46px;
   flex-shrink: 0;
+  background: rgba(239, 245, 245, 0.05);
+  border-radius: 4px;
   pointer-events: none;
 }
-.spz_1002_v .spz-icon-1002 img {
+.spz_1002_v .spz-icon-1002 img,
+.spz_1002_v .spz-icon-1002 svg {
   display: block;
-  width: 46px;
-  height: 46px;
+  width: auto;
   pointer-events: none;
+}
+.spz_1002_v .spz-tile-1002.active .spz-icon-1002 {
+  background: rgba(239, 245, 245, 0.1);
 }
 .spz_1002_v {
   /* ── Tile label ── */
@@ -338,6 +350,13 @@
 .spz_1002_v .spz-dash-1002 picture {
   display: block;
   width: 100%;
+  max-width: 1216px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1440px) {
+  .spz_1002_v .spz-dash-1002 picture {
+    max-width: 1440px;
+  }
 }
 .spz_1002_v .spz-dash-img-1002 {
   display: block;
@@ -355,7 +374,7 @@
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .spz_1002_v .spz-hero-1002 {
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621141/connectwise/1002/tablet.webp");
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/tablet_1.webp");
   }
   .spz_1002_v .spz-content-1002 {
     padding: 60px 40px 0;
@@ -378,7 +397,7 @@
 }
 @media (max-width: 767.98px) {
   .spz_1002_v .spz-hero-1002 {
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772672768/connectwise/1002/mobile_1.webp");
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/mobile_2.webp");
   }
   .spz_1002_v .spz-content-1002 {
     padding: 60px 16px 0;
@@ -436,13 +455,12 @@
     width: 40px;
     height: 40px;
   }
-  .spz_1002_v .spz-icon-1002 img {
-    width: 40px;
-    height: 40px;
-  }
   .spz_1002_v .spz-label-1002 {
     width: auto;
     text-align: left;
+  }
+  .spz_1002_v .spz-label-1002 br {
+    display: none;
   }
   .spz_1002_v {
     /* CTA stacked on mobile */
@@ -478,7 +496,7 @@
   }
 }
 .spz_1002_v .logo_heading {
-  padding: 48px 20px 2px;
+  padding: 48px 20px 18px;
 }
 .spz_1002_v .logo_heading h2 {
   color: #FFF;
@@ -508,7 +526,12 @@
   }
 }
 .spz_1002_v .marquee-scroller {
-  height: 14.72em;
+  height: 15.5em;
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .spz_1002_v .marquee-scroller {
+    height: 14.4em;
+  }
 }
 @media (max-width: 767.98px) {
   .spz_1002_v .marquee-scroller {
@@ -517,9 +540,6 @@
 }
 @media (max-width: 767.98px) {
   .spz_1002_v .marquee-wrapper {
-    display: block;
-  }
-  .spz_1002_v .marquee-wrapper .marquee--inner {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */

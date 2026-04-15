@@ -95,7 +95,11 @@ $mobile: 767.98px;
 }
 
 .spz_1002_v {
-
+  section.uop{
+    @include mobile(){
+      padding-top: 20px;
+    }
+  }
   #video {
     display: none;
   }
@@ -111,7 +115,7 @@ $mobile: 767.98px;
   .spz-hero-1002 {
     position: relative;
     width: 100%;
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621142/connectwise/1002/desktop.webp");
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/desktop_1.webp");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -140,8 +144,9 @@ $mobile: 767.98px;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     @media only screen and (min-width: 1024px) and (max-width: 1366px) {
-      padding: 60px 20px 0;
+      padding: 60px 20px 20px;
     }
   }
 
@@ -281,18 +286,26 @@ $mobile: 767.98px;
 
   /* ── Tile icon (bg is baked into the SVG) ── */
   .spz-icon-1002 {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 46px;
     height: 46px;
     flex-shrink: 0;
+    background: rgba(239, 245, 245, 0.05);
+    border-radius: 4px;
     pointer-events: none;
   }
 
-  .spz-icon-1002 img {
+  .spz-icon-1002 img,
+  .spz-icon-1002 svg {
     display: block;
-    width: 46px;
-    height: 46px;
+    width: auto;
     pointer-events: none;
+  }
+
+  .spz-tile-1002.active .spz-icon-1002 {
+    background: rgba(239, 245, 245, 0.10);
   }
 
   /* ── Tile label ── */
@@ -410,6 +423,11 @@ $mobile: 767.98px;
   .spz-dash-1002 picture {
     display: block;
     width: 100%;
+    max-width: 1216px;
+    margin: 0 auto;
+    @media only screen and (min-width: 1440px){
+      max-width: 1440px;
+    }
   }
 
   .spz-dash-img-1002 {
@@ -425,7 +443,7 @@ $mobile: 767.98px;
    ============================================ */
   @include tablet() {
     .spz-hero-1002 {
-      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772621141/connectwise/1002/tablet.webp");
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/tablet_1.webp");
     }
 
     .spz-content-1002 {
@@ -451,7 +469,7 @@ $mobile: 767.98px;
    ============================================ */
   @media (max-width: 767.98px) {
     .spz-hero-1002 {
-      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1772672768/connectwise/1002/mobile_1.webp");
+      background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/1002/mobile_2.webp");
     }
 
     .spz-content-1002 {
@@ -513,16 +531,14 @@ $mobile: 767.98px;
       margin-right: 16px;
       width: 40px;
       height: 40px;
-
-      img {
-        width: 40px;
-        height: 40px;
-      }
     }
 
     .spz-label-1002 {
       width: auto;
       text-align: left;
+      br{
+        display: none;
+      }
     }
 
     /* CTA stacked on mobile */
@@ -562,45 +578,50 @@ $mobile: 767.98px;
   }
 
   .logo_heading {
-    padding: 48px 20px 2px;
+    padding: 48px 20px 18px;
 
     h2 {
-      color:  #FFF;
+      color: #FFF;
       text-align: center;
       font-family: 'Cera Pro-2';
       font-size: 32px;
       font-weight: 700;
       line-height: 24px;
       letter-spacing: unset;
-      strong{
+
+      strong {
         display: inline-block;
         color: #C5E654;
       }
     }
-    @include tablet(){
+
+    @include tablet() {
       padding-top: 28px;
     }
-    @include mobile(){
+
+    @include mobile() {
       padding-top: 9px;
 
-      h2{
+      h2 {
         font-size: 24px;
         line-height: 30px;
       }
     }
   }
-  .marquee-scroller{
-    height: 14.72em;
-    @include mobile(){
+
+  .marquee-scroller {
+    height: 15.5em;
+    @include tablet(){
+      height: 14.4em
+    }
+    @include mobile() {
       height: auto;
     }
   }
-  @include mobile(){
-    .marquee-wrapper{
-      display: block;
-      .marquee--inner{
-        display: none;
-      }
+
+  @include mobile() {
+    .marquee-wrapper {
+      display: none;
     }
   }
 }

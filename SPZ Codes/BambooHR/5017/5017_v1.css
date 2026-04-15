@@ -1812,9 +1812,9 @@ html:has(body.spz_5017_v) {
     padding: 6.5px 0;
     min-width: 0;
   }
-  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td:hover, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td:hover,
-  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td:hover,
-  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td.has-popup-data:hover {
+  .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td:hover .icon-wrapper__text, .spz_5017_v.spz-5017-cards-ready .section.package-comparison .table-wrapper table tbody tr td:hover .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody tr td:hover .icon-wrapper__text,
+  .spz_5017_v .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td.has-popup-data:hover .icon-wrapper__text {
     color: var(--color-green-4);
   }
   .spz_5017_v .section.package-comparison .table-wrapper table tbody td .feature-text,

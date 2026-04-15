@@ -204,6 +204,9 @@ function init() {
 
             // Add loaded class to prevent re-running
             document.querySelector("main .form-container__form").classList.add('spz_4005_form_loaded');
+            document.querySelector("main .form-container__form").insertAdjacentHTML('afterbegin', '<div class="spz_formInner"></div>');
+            document.querySelector("main .spz_formInner").insertAdjacentElement('afterbegin', document.querySelector(".spz-logo-wrap"));
+            document.querySelector("main .spz_formInner").insertAdjacentElement('beforeend', document.querySelector(".form-container__form > div.marketo-form "));
             document.querySelector('main .form-container__form .mktoForm').classList.remove('has_loader');
           }
         });

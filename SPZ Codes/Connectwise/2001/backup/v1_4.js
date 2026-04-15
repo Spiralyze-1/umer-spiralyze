@@ -387,10 +387,8 @@ setTimeout(function () {
 
 // Body interval
 var bodyInterval2001 = setInterval(function () {
-  if (document.querySelectorAll("body").length > 0 && document.querySelector(".form-container__form")) {
-    setTimeout(function () {
-      clearInterval(bodyInterval2001);
-    }, 5000);
+  if (document.querySelectorAll("body").length > 0) {
+    clearInterval(bodyInterval2001);
     spz2001();
   }
 }, 100);

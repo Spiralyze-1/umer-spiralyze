@@ -27,6 +27,18 @@
 .spz_4005_v {
   overflow: hidden;
 }
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .spz_4005_v > div[data-q-focus-relay=entry],
+  .spz_4005_v > div[data-q-focus-relay=exit] {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_4005_v > div[data-q-focus-relay=entry],
+  .spz_4005_v > div[data-q-focus-relay=exit] {
+    display: none;
+  }
+}
 
 .spz_4005_v form:empty {
   display: none;
@@ -76,6 +88,45 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  position: relative;
+}
+.spz_4005_v section.form-container.blockpadding-top--default .container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 556px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 20px;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='23' viewBox='0 0 16 23' fill='none'%3E%3Cpath d='M14.333 8.29759C15.9956 9.87493 15.9956 12.5239 14.333 14.1012L6.75308 21.2926C4.20447 23.7106 0 21.9039 0 18.3908L0 4.00798C0 0.494857 4.20447 -1.31181 6.75308 1.10617L14.333 8.29759Z' fill='white'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 2560px) {
+  .spz_4005_v section.form-container.blockpadding-top--default .container::after {
+    left: 796px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .spz_4005_v section.form-container.blockpadding-top--default .container::after {
+    transform: translateX(-50%) rotate(90deg);
+    bottom: -13px;
+    left: 50%;
+    top: unset;
+    width: 15px;
+    height: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_4005_v section.form-container.blockpadding-top--default .container::after {
+    transform: translateX(-50%) rotate(90deg);
+    bottom: -13px;
+    left: 50%;
+    top: unset;
+    width: 15px;
+    height: 20px;
+  }
 }
 
 .spz_4005_v section.form-container.blockpadding-top--default .container .row {
@@ -112,6 +163,16 @@
 .spz_4005_v .form-container__form::-webkit-scrollbar {
   display: none;
 }
+.spz_4005_v .form-container__form .spz_formInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 2560px) {
+  .spz_4005_v .form-container__form .spz_formInner {
+    max-width: 600px;
+  }
+}
 
 /* Thank you message */
 .spz_4005_v .form-container__form .mktoTemplateBox {
@@ -120,21 +181,51 @@
 }
 
 /* Inner div: flex column, gap drives logo→heading and heading→form spacing */
-.spz_4005_v .form-container__form > div {
+.spz_4005_v .form-container__form div.marketo-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 35px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 66.5px);
+}
+@media only screen and (min-width: 992px) and (max-height: 600px) {
+  .spz_4005_v .form-container__form div.marketo-form {
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  .spz_4005_v .form-container__form div.marketo-form {
+    min-height: calc(94.4vh - 66.5px);
+  }
+}
+@media only screen and (min-width: 1920px) and (max-width: 2559px) {
+  .spz_4005_v .form-container__form div.marketo-form {
+    min-height: calc(92.6vh - 66.5px);
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1919px) {
+  .spz_4005_v .form-container__form div.marketo-form {
+    min-height: calc(91.1vh - 66.5px);
+  }
 }
 
 /* ============ LOGO ============ */
 .spz_4005_v .spz-logo-wrap {
   display: block;
   flex-shrink: 0;
-  margin-bottom: 56px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .spz_4005_v .spz-logo-wrap {
+    margin-bottom: 56.5px;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_4005_v .spz-logo-wrap {
+    margin-bottom: 56.5px;
+  }
 }
 
 .spz_4005_v .spz-logo-wrap img {
@@ -162,6 +253,16 @@
   gap: 14px 6px;
 }
 
+@media only screen and (min-width: 991px) {
+  .spz_formInner {
+    min-height: 750px;
+  }
+}
+@media only screen and (min-width: 991px) {
+  .spz_4005_v .form-container__form.spz_4005_form_loaded {
+    overflow: auto;
+  }
+}
 .spz_4005_v .form-container__form.spz_4005_form_loaded .mktoForm {
   display: flex;
 }
@@ -206,8 +307,8 @@
 }
 
 .spz_4005_v .form-container__form .mktoForm .mktoButtonWrap.mktoNative .mktoButton:hover {
-  background-color: #1F2A74;
-  border-color: #1F2A74;
+  background-color: #24326a;
+  border-color: #24326a;
 }
 
 .spz_4005_v .form-container__form .mktoForm .mktoFormCol {
@@ -233,6 +334,9 @@
 
 .spz_4005_v .form-container__form .mktoForm .mktoFormRow .mktoField#howdidyouhearaboutus {
   overflow: auto;
+}
+.spz_4005_v .form-container__form .mktoForm .mktoFormRow .mktoField#howdidyouhearaboutus::-webkit-scrollbar {
+  display: none;
 }
 
 .spz_4005_v .form-container__form .mktoForm .mktoFormRow .mktoField:-webkit-autofill,
@@ -328,6 +432,13 @@
   color: #29389A;
   white-space: nowrap;
 }
+@media (max-width: 767.98px) {
+  .spz_4005_v .form-container__form .mktoForm .mktoHtmlText a {
+    padding: 0;
+    display: contents;
+    white-space: pre-wrap;
+  }
+}
 
 .spz_4005_v .form-container__form .mktoForm .mktoHtmlText a:hover {
   text-decoration: underline;
@@ -359,6 +470,11 @@
   border: 1px solid #A2A2A2;
   cursor: pointer;
 }
+@media (max-width: 767.98px) {
+  .spz_4005_v .form-container__form .mktoForm .mktoFormRow .mktoField[type=checkbox] {
+    margin-top: 2px;
+  }
+}
 
 .spz_4005_v .form-container__form .mktoForm .mktoFormRow .mktoField[type=checkbox]:checked {
   border: 0;
@@ -369,6 +485,15 @@
 
 .spz_4005_v .form-container__form .mktoForm .mktoCheckboxList {
   padding-left: 0.5px !important;
+  cursor: pointer;
+}
+.spz_4005_v .form-container__form .mktoForm .mktoCheckboxList label {
+  cursor: pointer;
+}
+@media (max-width: 767.98px) {
+  .spz_4005_v .form-container__form .mktoForm .mktoCheckboxList {
+    align-items: flex-start;
+  }
 }
 
 /* ============ EXPAND TEXTAREA ============ */
@@ -471,7 +596,7 @@
   }
   /* Wider panel at 2560px — form inner expands to 600px */
   .spz_4005_v .form-container__form {
-    width: 680px;
+    width: 800px;
   }
 }
 /* ============ TABLET (≤991.98px) ============ */
@@ -486,13 +611,18 @@
   }
   .spz_4005_v section.form-container.blockpadding-top--default {
     display: block;
-    min-height: 100vh;
+    min-height: 1297px;
     position: relative;
+  }
+  .spz_4005_v section.form-container.blockpadding-top--default:has(#expandTextarea[style*="display: none"]) {
+    min-height: 1440px;
   }
   /* Background: absolute within section (not fixed) so it shows below the form */
   .spz_4005_v section.form-container.blockpadding-top--default::before {
     position: absolute;
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/4005/tablet.webp");
+    background-size: 100% auto;
+    background-position: center bottom;
   }
   .spz_4005_v section.form-container.blockpadding-top--default .container {
     position: relative;
@@ -505,19 +635,19 @@
     height: auto;
     overflow: visible;
     box-shadow: none;
-    padding: 40px 40px 80px;
+    padding: 40px 40px 75px;
     z-index: 1;
     max-width: 100%;
     box-sizing: border-box;
   }
-  .spz_4005_v .form-container__form > div {
-    gap: 56px;
-    max-width: 480px;
+  .spz_4005_v .form-container__form div.marketo-form {
+    gap: 35px;
+    max-width: 481px;
     margin: 0 auto;
   }
   /* Fields still 2 columns on tablet */
   .spz_4005_v .form-container__form .mktoForm .mktoFormRow {
-    max-width: calc((100% - 12px) / 2);
+    max-width: calc((100% - 11px) / 2);
   }
 }
 /* ============ MOBILE (≤767.98px) ============ */
@@ -526,10 +656,10 @@
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/4005/mobile.webp");
   }
   .spz_4005_v .form-container__form {
-    padding: 40px 16px;
+    padding: 40px 15.5px 39px;
   }
-  .spz_4005_v .form-container__form > div {
-    gap: 36px;
+  .spz_4005_v .form-container__form div.marketo-form {
+    gap: 35px;
     max-width: 100%;
   }
   .spz_4005_v .form-container__form .heading-title {
@@ -542,9 +672,15 @@
     max-width: 100%;
   }
   .spz_4005_v .form-container__form .mktoForm {
-    gap: 16px;
+    gap: 14px;
   }
   .spz_4005_v .form-container__form .mktoForm .mktoButtonRow {
     margin: 9px 0 0;
+  }
+  .spz_4005_v section.form-container.blockpadding-top--default {
+    min-height: 1163px;
+  }
+  .spz_4005_v section.form-container.blockpadding-top--default:has(#expandTextarea[style*="display: none"]) {
+    min-height: 1311px;
   }
 }/*# sourceMappingURL=style.css.map */

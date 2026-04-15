@@ -196,6 +196,34 @@ function loadTestCode() {
           }
         }
       }
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(2) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>Performance Reviews</strong> <br> Customize reviews by department, location, job title, and more. Set custom cycles. </p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(3) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>360º Feedback</strong> <br> Gather peer, self, and manager feedback for employees.</p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(4) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>Goal Tracking</strong> <br> Create, track, and share individual and team goals and growth paths.</p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(5) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>Internal Announcements</strong> <br> Send updates, event invites, and other announcements via community portals.</p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(6) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>Interest Groups</strong> <br> Engage employees with portals to talk about hobbies, shoutout peers, and more. </p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(7) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>15 Compliance Training Courses</strong> <br> Get courses for key topics, like cyber security, workplace safety, and harassment prevention.</p>
+      `;
+      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(8) .table-tooltip-container').innerHTML = `
+        <a class="close-button">x</a>
+        <p><strong>AI Assistant</strong> <br> Get answers about your policies, handbooks, benefits, and more.</p>
+      `;
     }
 
     var pricingApplied = false;

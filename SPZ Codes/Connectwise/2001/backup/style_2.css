@@ -47,7 +47,7 @@
   /* Hide entire page content */
 }
 
-.spz_2001_v > *:not(.spz-split-wrap):not(#onetrust-consent-sdk):not(.qlfd-not-mobile) {
+.spz_2001_v > *:not(.spz-split-wrap) {
   display: none !important;
 }
 
@@ -116,12 +116,12 @@
   background-position: center top;
   background-repeat: no-repeat;
 }
-
 @media only screen and (min-height: 940px) and (min-width: 1200px) {
   .spz_2001_v .spz-feature-sideInner {
     justify-content: center;
   }
 }
+
 .spz_2001_v .spz-feature-sideInner:before {
   content: "";
   width: 100%;
@@ -185,12 +185,12 @@
   width: 100%;
   max-width: 590px;
 }
-
 @media only screen and (min-height: 940px) and (min-width: 1200px) {
   .spz_2001_v .spz-feature-content {
     padding-top: 400px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024.98px) {
   .spz_2001_v .spz-feature-content {
     max-width: 620px;
@@ -832,10 +832,20 @@
 }
 
 .spz_2001_v #mktoForm_1227 input[type=checkbox]:checked {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0ZM6.22222 12.4444L1.77778 8.17094L3.02222 6.97436L6.22222 10.0513L12.9778 3.55556L14.2222 4.75214L6.22222 12.4444Z' fill='%2329389A'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-size: contain !important;
-  border: none !important;
+  background: var(--spz-blue) !important;
+  border-color: var(--spz-blue) !important;
+}
+
+.spz_2001_v #mktoForm_1227 input[type=checkbox]:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -53%) rotate(45deg);
+  width: 4px;
+  height: 7px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 .spz_2001_v .spz-checkbox-label {
@@ -1084,4 +1094,4 @@
 }
 .spz_2001_v #q-messenger-frame.qlfd-disable-pointer-events {
   pointer-events: all !important;
-} /*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style_2.css.map */
