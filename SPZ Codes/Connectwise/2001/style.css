@@ -219,6 +219,11 @@
   text-align: center;
 }
 
+@media (min-width: 1351px) and (max-width: 1430px) {
+  .spz_2001_v .spz-headline {
+    font-size: 44px;
+  }
+}
 @media (min-width: 992px) and (max-width: 1350.98px) {
   .spz_2001_v .spz-headline {
     font-size: 36px;
@@ -406,6 +411,9 @@
   gap: 16px !important;
   font-family: "Cera Pro-2" !important;
   padding: 0;
+}
+.spz_2001_v #mktoForm_1227 > .mktoFormRow:not(.spz-how-field-wrap, .mktoFormRowLogical, .spz-disclaimer-row) {
+  display: none;
 }
 
 .spz_2001_v .spz-form-row-pair {

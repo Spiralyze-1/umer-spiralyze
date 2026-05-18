@@ -1,0 +1,940 @@
+/* ============ #3002 | Tempo | Get Started | Qualifying Questions ============ */
+
+/* ============ BASE RESET ============ */
+.spz-qq-wrap, body.spz_3002_v div.flex.min-h-screen.w-full.flex-col.items-center.justify-center.bg-black {
+    display: none;
+}
+
+body.spz_3002_v {
+    overflow: hidden !important;
+}
+
+/* ============ OVERLAY ============ */
+body.spz_3002_v .spz-qq-wrap {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    overflow-y: auto;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+body.spz_3002_v .spz-qq-wrap::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    /* background-color: rgba(29, 22, 50, 1); */
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/1920_bg.webp');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* ============ CARD ============ */
+body.spz_3002_v .spz-qq-card {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0px 12px 40px 0px rgba(0, 0, 0, 0.12);
+    padding: 24px 48px 48px;
+    width: 560px;
+    max-width: 100%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+/* ============ LOGO ============ */
+body.spz_3002_v .spz-qq-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+body.spz_3002_v .spz-qq-logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    line-height: 0;
+}
+
+body.spz_3002_v .spz-qq-logo a:hover {
+    opacity: 0.92;
+}
+
+body.spz_3002_v .spz-qq-logo a:focus-visible {
+    outline: 2px solid #702bff;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+body.spz_3002_v .spz-qq-logo img {
+    width: 148px;
+    height: 35px;
+    display: block;
+    user-select: none;
+}
+
+/* ============ PROGRESS DOTS ============ */
+body.spz_3002_v .spz-progress {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+body.spz_3002_v .spz-progress-dot {
+    width: 8px;
+    height: 8px;
+    background: #d9d9d9;
+    flex-shrink: 0;
+}
+
+body.spz_3002_v .spz-progress-dot--active {
+    background: #702bff;
+}
+
+/* ============ STEP ============ */
+body.spz_3002_v .spz-step {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.spz_3002_v .spz-step-hidden {
+    display: none !important;
+}
+
+/* ============ TYPOGRAPHY ============ */
+body.spz_3002_v .spz-heading {
+    font-family: 'messinaSans', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1d1d1b;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+body.spz_3002_v .spz-heading em {
+    font-family: 'messinaSerifItalic', 'messinaSerif', 'Messina Serif', serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+body.spz_3002_v .spz-subheading {
+    font-family: 'messinaSans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1d1d1b;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 20px;
+}
+
+/* ============ TILES LAYOUT ============ */
+body.spz_3002_v .spz-tiles-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+body.spz_3002_v .spz-tiles-row {
+    display: flex;
+    gap: 8px;
+}
+
+/* ============ TILE ============ */
+body.spz_3002_v .spz-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1 0 0;
+    min-width: 0;
+    height: 110px;
+    padding: 16px 8px 12px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ============ STEP 1 — PER-TILE HOVER ============ */
+body.spz_3002_v .spz-tile--q1[data-val="agile-leadership"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="agile-leadership"]:hover .spz-cb-inner {
+    border-color: #00dae8;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="engineer-management"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="engineer-management"]:hover .spz-cb-inner {
+    border-color: #00cdae;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="it-management"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="it-management"]:hover .spz-cb-inner {
+    border-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="product-management"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="product-management"]:hover .spz-cb-inner {
+    border-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="executive"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="executive"]:hover .spz-cb-inner {
+    border-color: #a3a28a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="project-management"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="project-management"]:hover .spz-cb-inner {
+    border-color: #f54d42;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="cross-functional"]:hover,
+body.spz_3002_v .spz-tile--q1[data-val="cross-functional"]:hover .spz-cb-inner {
+    border-color: #ffcc26;
+}
+
+/* ============ STEP 1 — PER-TILE SELECTED ============ */
+body.spz_3002_v .spz-tile--q1[data-val="agile-leadership"].active {
+    border-color: #00dae8;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="agile-leadership"].active .spz-cb-inner {
+    border-color: #00dae8;
+    background-color: #00dae8;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="engineer-management"].active {
+    border-color: #00cdae;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="engineer-management"].active .spz-cb-inner {
+    border-color: #00cdae;
+    background-color: #00cdae;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="it-management"].active {
+    border-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="it-management"].active .spz-cb-inner {
+    border-color: #02b78a;
+    background-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="product-management"].active {
+    border-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="product-management"].active .spz-cb-inner {
+    border-color: #9664fe;
+    background-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="executive"].active {
+    border-color: #a3a28a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="executive"].active .spz-cb-inner {
+    border-color: #a3a28a;
+    background-color: #a3a28a;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="project-management"].active {
+    border-color: #f54d42;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="project-management"].active .spz-cb-inner {
+    border-color: #f54d42;
+    background-color: #f54d42;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="cross-functional"].active {
+    border-color: #ffcc26;
+}
+
+body.spz_3002_v .spz-tile--q1[data-val="cross-functional"].active .spz-cb-inner {
+    border-color: #ffcc26;
+    background-color: #ffcc26;
+}
+
+/* ============ STEP 2 — PER-TILE HOVER ============ */
+body.spz_3002_v .spz-tile--q2[data-val="single-team"]:hover,
+body.spz_3002_v .spz-tile--q2[data-val="single-team"]:hover .spz-cb-inner {
+    border-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="multiple-teams"]:hover,
+body.spz_3002_v .spz-tile--q2[data-val="multiple-teams"]:hover .spz-cb-inner {
+    border-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="portfolio-level"]:hover,
+body.spz_3002_v .spz-tile--q2[data-val="portfolio-level"]:hover .spz-cb-inner {
+    border-color: #f54d42;
+}
+
+/* ============ STEP 2 — PER-TILE SELECTED ============ */
+body.spz_3002_v .spz-tile--q2[data-val="single-team"].active {
+    border-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="single-team"].active .spz-cb-inner {
+    border-color: #02b78a;
+    background-color: #02b78a;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="multiple-teams"].active {
+    border-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="multiple-teams"].active .spz-cb-inner {
+    border-color: #9664fe;
+    background-color: #9664fe;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="portfolio-level"].active {
+    border-color: #f54d42;
+}
+
+body.spz_3002_v .spz-tile--q2[data-val="portfolio-level"].active .spz-cb-inner {
+    border-color: #f54d42;
+    background-color: #f54d42;
+}
+
+/* ============ TILE ICON ============ */
+body.spz_3002_v .spz-tile-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+body.spz_3002_v .spz-tile-icon-wrap img {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+/* ============ TILE LABEL ============ */
+body.spz_3002_v .spz-tile-label {
+    font-family: 'messinaSans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1d1d1b;
+    text-align: center;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    min-height: 42px;
+}
+
+/* ============ CHECKBOX / RADIO INDICATOR ============ */
+body.spz_3002_v .spz-cb {
+    position: absolute;
+    top: 7.5px;
+    left: 7.5px;
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+body.spz_3002_v .spz-cb-inner {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 1.5px solid rgba(29, 29, 27, 0.2);
+    transition: border-color 0.2s ease;
+}
+
+body.spz_3002_v .spz-cb--radio .spz-cb-inner {
+    border-radius: 50%;
+}
+
+/* Radio selected — white inner dot */
+body.spz_3002_v .spz-tile--q1.active .spz-cb-inner::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Checkbox selected — checkmark */
+body.spz_3002_v .spz-tile--q2.active .spz-cb-inner {
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1775809009/tempo/3002/checkmark.svg');
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ============ ERROR MESSAGE ============ */
+body.spz_3002_v .spz-error {
+    display: none;
+    margin: 20px 0 32px;
+    color: #d0021b;
+    font-family: 'messinaSans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+body.spz_3002_v .spz-error.spz-error--show {
+    display: block;
+}
+
+body.spz_3002_v .spz-error.spz-error--show + .spz-btn-next {
+    margin-top: 8px;
+}
+
+/* ============ NEXT BUTTON ============ */
+body.spz_3002_v .spz-btn-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 56px;
+    padding: 10px 32px;
+    background: #1d1d1b;
+    color: #fff;
+    font-family: 'messinaSans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+    margin-top: 32px;
+}
+
+body.spz_3002_v .spz-btn-next:hover {
+    background: linear-gradient(0deg, #343434 0%, #343434 100%), #1d1d1b;
+}
+
+body.spz_3002_v .spz-btn-arrow {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    overflow: hidden;
+    color: #fff;
+}
+
+body.spz_3002_v .spz-btn-arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+body.spz_3002_v .spz-btn-arrow svg:first-child {
+    transform: translateX(0);
+}
+
+body.spz_3002_v .spz-btn-arrow svg:last-child {
+    transform: translateX(-100%);
+}
+
+body.spz_3002_v .spz-btn-next:hover .spz-btn-arrow svg:first-child {
+    transform: translateX(100%);
+}
+
+body.spz_3002_v .spz-btn-next:hover .spz-btn-arrow svg:last-child {
+    transform: translateX(0);
+}
+
+/* ============ STEP 2 — BACK + NEXT (Figma desktop row / mobile stack) ============ */
+body.spz_3002_v .spz-step2-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+    width: 100%;
+    margin-top: 32px;
+}
+
+body.spz_3002_v .spz-step2-btns .spz-btn-next,
+body.spz_3002_v .spz-step2-btns .spz-btn-back {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-top: 0;
+}
+
+body.spz_3002_v .spz-btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 56px;
+    padding: 10px 32px;
+    background: #fff;
+    color: #1D1D1B;
+    border: 1px solid #1D1D1B;
+    font-family: 'messinaSans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+body.spz_3002_v .spz-btn-back:hover {
+    background: #EBEBEB;
+}
+
+body.spz_3002_v .spz-btn-back:focus-visible {
+    outline: 2px solid #702bff;
+    outline-offset: 2px;
+}
+
+body.spz_3002_v .spz-btn-arrow--back {
+    transform: scaleX(-1);
+    color: #1d1d1b;
+}
+
+body.spz_3002_v .spz-btn-back:hover .spz-btn-arrow--back svg:first-child {
+    transform: translateX(100%);
+}
+
+body.spz_3002_v .spz-btn-back:hover .spz-btn-arrow--back svg:last-child {
+    transform: translateX(0);
+}
+
+/* ============ STEP 3 — FORM ============ */
+body.spz_3002_v .spz-form-area {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body.spz_3002_v .spz-form-area>.mb-8:first-child {
+    display: none;
+}
+
+body.spz_3002_v .spz-form-area form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+}
+
+/* ============ FORM SECTIONS ============ */
+body.spz_3002_v .spz-3002-focus {
+    display: none !important;
+}
+
+body.spz_3002_v .spz-3002-fields,
+body.spz_3002_v .spz-3002-submit {
+    border: none !important;
+    padding: 0 !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+}
+
+body.spz_3002_v .spz-3002-fields>div:first-child,
+body.spz_3002_v .spz-3002-submit>div:first-child {
+    display: none !important;
+}
+
+body.spz_3002_v .spz-3002-fields>div:last-child,
+body.spz_3002_v .spz-3002-submit>div:last-child {
+    width: 100% !important;
+}
+
+/* ============ FIELDS GRID ============ */
+body.spz_3002_v .spz-3002-fields>div:last-child {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+body.spz_3002_v .spz-3002-fields fieldset {
+    grid-column: 1 / -1;
+    display: flex !important;
+    gap: 16px !important;
+    flex-wrap: nowrap !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    min-width: 0 !important;
+}
+
+body.spz_3002_v .spz-form-area .border-grey-light {
+    padding-left: 0;
+    padding-right: 0;
+    border: none !important;
+}
+
+body.spz_3002_v .spz-form-area .border-grey-light>.mb-8:first-child {
+    display: none;
+}
+
+body.spz_3002_v .spz-form-area .border-grey-light>.w-full {
+    width: 100%;
+    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body.spz_3002_v .spz-form-area .border-grey-light>.w-full fieldset {
+    width: 100%;
+}
+
+/* ============ FIELD WRAPPERS ============ */
+body.spz_3002_v .spz-form-area .relative {
+    position: relative !important;
+    padding-bottom: 0 !important;
+    min-width: 0 !important;
+}
+
+/* ============ INPUT STYLING ============ */
+body.spz_3002_v .spz-form-area input:not([type="hidden"]):not([type="radio"]) {
+    height: 48px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(29, 29, 27, 0.5) !important;
+    background: #fff !important;
+    color: #1d1d1b !important;
+    font-family: 'messinaSans', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 350 !important;
+    line-height: 1.5 !important;
+    padding: 10px 14px !important;
+    transition: border-color 0.3s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+body.spz_3002_v .spz-form-area input:not([type="hidden"]):not([type="radio"]):hover {
+    border-color: #1d1d1b !important;
+}
+
+body.spz_3002_v .spz-form-area input:not([type="hidden"]):not([type="radio"]):focus {
+    border-color: #1d1d1b !important;
+    outline: none !important;
+}
+
+body.spz_3002_v .spz-form-area input:not([type="hidden"]):not([type="radio"]):focus-visible {
+    outline: none !important;
+}
+
+/* ============ AUTOFILL FIX ============ */
+body.spz_3002_v .spz-form-area input:-webkit-autofill,
+body.spz_3002_v .spz-form-area input:-webkit-autofill:hover,
+body.spz_3002_v .spz-form-area input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    -webkit-text-fill-color: #1d1d1b !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    border-color: rgba(29, 29, 27, 0.5) !important;
+}
+
+body.spz_3002_v .spz-form-area .relative:has(input:-webkit-autofill)>label {
+    top: -10px;
+    left: 10px;
+    font-size: 13px;
+    color: #1d1d1b;
+    background: #fff;
+    padding: 0 4px !important;
+    line-height: 1.5;
+}
+
+/* ============ FLOATING LABELS ============ */
+body.spz_3002_v .spz-form-area .relative>label {
+    position: absolute !important;
+    top: 13px;
+    left: 14px;
+    color: rgba(29, 29, 27, 0.7);
+    font-family: 'messinaSans', sans-serif;
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 1.5;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    padding: 0 !important;
+    z-index: 1;
+    background: transparent;
+    margin: 0 !important;
+    text-transform: capitalize;
+}
+
+body.spz_3002_v .spz-form-area .relative.focused>label,
+body.spz_3002_v .spz-form-area .relative.filled>label {
+    top: -10px;
+    left: 10px;
+    font-size: 13px;
+    color: #1d1d1b;
+    background: #fff;
+    padding: 0 4px !important;
+    line-height: 1.5;
+}
+
+/* ============ FIELD ERROR STATES ============ */
+body.spz_3002_v .spz-form-area .relative:has(.custom-error-message)>label,
+body.spz_3002_v .spz-form-area .relative:has(.text-vermillion)>label,
+body.spz_3002_v .spz-form-area .relative.filled:has(.custom-error-message)>label,
+body.spz_3002_v .spz-form-area .relative.filled:has(.text-vermillion)>label,
+body.spz_3002_v .spz-form-area .relative.focused:has(.custom-error-message)>label,
+body.spz_3002_v .spz-form-area .relative.focused:has(.text-vermillion)>label {
+    color: #f54d42 !important;
+}
+
+body.spz_3002_v .spz-form-area .relative:has(.custom-error-message) input,
+body.spz_3002_v .spz-form-area .relative:has(.text-vermillion) input,
+body.spz_3002_v .spz-form-area .relative:has(.custom-error-message) input:hover,
+body.spz_3002_v .spz-form-area .relative:has(.text-vermillion) input:hover,
+body.spz_3002_v .spz-form-area .relative:has(.custom-error-message) input:focus,
+body.spz_3002_v .spz-form-area .relative:has(.text-vermillion) input:focus {
+    border-color: #f54d42 !important;
+}
+
+body.spz_3002_v .spz-form-area .relative .text-vermillion{
+    color: #F54D42;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 6px;
+    gap: 5px;
+}
+
+body.spz_3002_v .spz-form-area .relative .text-vermillion svg {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin-top: 1px;
+}
+
+body.spz_3002_v .spz-form-area .relative .custom-error-message {
+    gap: 5px;
+    color: #f54d42;
+    font-family: 'messinaSans', sans-serif;
+    font-size: 13px;
+    font-weight: 350;
+    line-height: 1.5;
+    margin-top: 6px;
+    display: flex;
+    align-items: flex-start;
+}
+
+body.spz_3002_v .spz-form-area .relative .custom-error-message svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ============ SUBMIT SECTION ============ */
+body.spz_3002_v .spz-3002-submit>div:last-child>div {
+    margin-left: 0 !important;
+    width: 100% !important;
+    align-items: center !important;
+    gap: 0 !important;
+}
+
+/* ============ SUBMIT BUTTON ============ */
+body.spz_3002_v .spz-submit-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 56px !important;
+    background: #1d1d1b !important;
+    color: #fff !important;
+    font-family: 'messinaSans', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 350 !important;
+    line-height: 1.5 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    padding: 10px 32px !important;
+    transition: background 0.2s ease !important;
+    margin: 32px 0;
+}
+
+body.spz_3002_v .spz-submit-btn:hover {
+    background: linear-gradient(0deg, #343434 0%, #343434 100%), #1d1d1b !important;
+}
+
+body.spz_3002_v .spz-submit-btn:focus-visible {
+    outline: none;
+}
+
+body.spz_3002_v .spz-submit-btn span {
+    display: none !important;
+}
+
+/* ============ DISCLAIMER ============ */
+body.spz_3002_v .spz-3002-submit button[type="submit"]+div {
+    color: #1d1d1b !important;
+    font-family: 'messinaSans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    letter-spacing: 0;
+    margin-top: 0;
+    width: 100%;
+}
+
+body.spz_3002_v .spz-3002-submit button[type="submit"]+div a {
+    color: #1d1d1b !important;
+    font-weight: 350 !important;
+    text-underline-offset: 3px;
+    text-decoration: underline !important;
+    transition: all 0.3s ease;
+}
+
+body.spz_3002_v .spz-3002-submit button[type="submit"]+div a:hover {
+    text-decoration: none !important;
+}
+
+/* ============ UTILITY ============ */
+body.spz_3002_v #recaptcha-container .grecaptcha-badge {
+    z-index: 9999999 !important;
+}
+
+body.spz_3002_v [data-lastpass-icon-root] {
+    display: none !important;
+}
+
+/* ============ RESPONSIVE — BACKGROUND IMAGES ============ */
+@media (max-width: 1440.98px) {
+    body.spz_3002_v .spz-qq-wrap::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/1440_bg.webp');
+    }
+}
+
+@media (min-width: 1921px) {
+    body.spz_3002_v .spz-qq-wrap::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/2560_bg.webp');
+    }
+}
+
+@media (min-width: 2561px) {
+    body.spz_3002_v .spz-qq-wrap::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/3840_bg.webp');
+    }
+}
+
+/* ============ RESPONSIVE — TABLET ============ */
+@media (max-width: 991.98px) {
+    body.spz_3002_v .spz-qq-wrap::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/768_bg.webp');
+    }
+}
+
+/* ============ RESPONSIVE — MOBILE ============ */
+@media (max-width: 767.98px) {
+    body.spz_3002_v .spz-qq-card {
+        padding: 24px 16px 32px;
+    }
+
+    /* body.spz_3002_v .spz-heading {
+        font-size: 32px;
+        line-height: 1.2;
+    } */
+
+    body.spz_3002_v .spz-qq-wrap::before {
+        background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/3002/360_bg.webp');
+    }
+
+    /* Step 1: flatten flex rows into 2-col grid */
+    body.spz_3002_v .spz-tiles-wrap--q1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    body.spz_3002_v .spz-tiles-wrap--q1 .spz-tiles-row {
+        display: contents;
+    }
+
+    body.spz_3002_v .spz-tiles-wrap--q1 .spz-tiles-row:last-child > .spz-tile--q1:last-child {
+        grid-column: 1 / -1;
+    }
+
+    body.spz_3002_v .spz-tiles-wrap--q1 .spz-tiles-row:last-child > .spz-tile--q1:last-child .spz-tile-label br {
+        display: none;
+    }
+
+    /* Step 2: 2-col grid */
+    body.spz_3002_v .spz-tiles-wrap--q2 .spz-tiles-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    body.spz_3002_v .spz-tiles-wrap--q2 .spz-tile--q2:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    /* Form fields stacking */
+    body.spz_3002_v .spz-3002-fields>div:last-child {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.spz_3002_v .spz-3002-fields fieldset {
+        flex-direction: column !important;
+    }
+
+    body.spz_3002_v .spz-qq-wrap {
+        padding: 20px;
+    }
+
+    body.spz_3002_v .spz-tile {
+        height: 100px;
+        padding: 4px 8px 0px;
+    }
+
+    /* Step 2: Next full width, then Back (Figma mobile) */
+    body.spz_3002_v .spz-step2-btns {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    body.spz_3002_v .spz-step2-btns .spz-btn-next {
+        order: 1;
+        width: 100%;
+        flex: auto;
+    }
+
+    body.spz_3002_v .spz-step2-btns .spz-btn-back {
+        order: 2;
+        width: 100%;
+        flex: auto;
+    }
+}

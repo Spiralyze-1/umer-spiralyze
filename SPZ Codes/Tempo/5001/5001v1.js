@@ -58,204 +58,259 @@ function waitForElement(cssSelector, callback) {
 		});
 	}
 
+	var spz5001MarqueeDeb = null;
+	var spz5001MarqueeRo = null;
+	function spz5001MarqueeSync() {
+		var track = document.querySelector('.spz_logosSlider .animate-marquee');
+		if (!track) return;
+		var mq = window.matchMedia('(max-width: 767.98px)');
+		if (!mq.matches) {
+			track.style.removeProperty('--spz5001-loop');
+			track.style.removeProperty('animation');
+			track.style.removeProperty('-webkit-animation');
+			delete track.dataset.spz5001LoopPx;
+			delete track.dataset.spz5001MarqueeArmed;
+			return;
+		}
+		var cells = track.querySelectorAll(':scope > .box-content');
+		if (cells.length < 12) return;
+		var w = cells[6].offsetLeft - cells[0].offsetLeft;
+		if (!(w > 0)) return;
+
+		var armed = track.dataset.spz5001MarqueeArmed === '1';
+		var prev = armed && track.dataset.spz5001LoopPx ? parseFloat(track.dataset.spz5001LoopPx, 10) : null;
+		/* Avoid animation:none restarts when width already stable (stops load/RO/resize “jerks”). */
+		if (prev !== null && Math.abs(w - prev) < 2) {
+			return;
+		}
+		/* Only hard-reset transform when we must change loop distance after marquee was already running. */
+		if (armed && prev !== null && Math.abs(w - prev) >= 2) {
+			track.style.animation = 'none';
+			track.style.webkitAnimation = 'none';
+			void track.offsetWidth;
+		}
+
+		track.dataset.spz5001LoopPx = String(w);
+		track.style.setProperty('--spz5001-loop', w + 'px');
+		var anim = 'spz5001-marquee-px 40s linear infinite';
+		track.style.animation = anim;
+		track.style.webkitAnimation = anim;
+		track.dataset.spz5001MarqueeArmed = '1';
+	}
+	function spz5001MarqueeBind() {
+		clearTimeout(spz5001MarqueeDeb);
+		spz5001MarqueeDeb = setTimeout(function () {
+			var track = document.querySelector('.spz_logosSlider .animate-marquee');
+			if (!track) return;
+			var mq = window.matchMedia('(max-width: 767.98px)');
+			if (!mq.matches) {
+				spz5001MarqueeSync();
+				return;
+			}
+			var imgs = track.querySelectorAll('img');
+			var waitImgs = Promise.all(
+				Array.prototype.map.call(imgs, function (img) {
+					if (img.complete) return Promise.resolve();
+					return new Promise(function (resolve) {
+						img.addEventListener('load', resolve, { once: true });
+						img.addEventListener('error', resolve, { once: true });
+					});
+				})
+			);
+			var waitFonts =
+				document.fonts && document.fonts.ready
+					? document.fonts.ready.catch(function () {})
+					: Promise.resolve();
+			Promise.all([waitImgs, waitFonts]).then(function () {
+				requestAnimationFrame(function () {
+					requestAnimationFrame(spz5001MarqueeSync);
+				});
+			});
+		}, 120);
+	}
+	function spz5001MarqueeObserveShell() {
+		if (spz5001MarqueeRo) return;
+		var shell = document.querySelector('.spz_logosSlider > .relative');
+		if (!shell) return;
+		try {
+			spz5001MarqueeRo = new ResizeObserver(function () {
+				spz5001MarqueeBind();
+			});
+			spz5001MarqueeRo.observe(shell);
+		} catch (e) {}
+	}
+	(function spz5001MarqueeMq() {
+		var mql = window.matchMedia && window.matchMedia('(max-width: 767.98px)');
+		if (!mql) return;
+		function onMq() {
+			spz5001MarqueeBind();
+		}
+		if (mql.addEventListener) mql.addEventListener('change', onMq);
+		else if (mql.addListener) mql.addListener(onMq);
+		if (!window.spz5001MarqueeResizeHooked) {
+			window.spz5001MarqueeResizeHooked = true;
+			window.addEventListener('resize', spz5001MarqueeBind, { passive: true });
+		}
+	})();
 
 	function spzHero() {
 		document.querySelector('main>section:nth-of-type(1)').insertAdjacentHTML('afterend', `
 			<section class="spz_hero">
-  <div class="auto_container">
-    <div class="spz_herInner">
-      <div class="spz_heroMain">
-        <div class="spz_heroLeft">
-          <h4>Project Collection</h4>
-          <h1>Streamline Jira <strong>Project Management</strong></h1>
-          <ul>
-            <li>
-              <p><strong>Capacity planning.</strong> Plan schedules by dragging-and-dropping issues. Auto-assign
-                resources based on skills, availability, etc.</p>
-            </li>
-            <li>
-              <p><strong>Time tracking.</strong> Log billable and non-billable hours. Track CapEx and OpEx. Generate
-                suggested time entries with AI. </p>
-            </li>
-            <li>
-              <p><strong>Reporting.</strong> Monitor costs, revenue, billing, budgets etc. Generate audit-ready reports.
-                Optimize resources. Stay compliant.</p>
-            </li>
-          </ul>
-        </div>
-        <div class="spz_heroRight">
-          <div class="spz_form">
+				<div class="spz_heroInner">
+					<div class="auto_container">
+						<div class="spz_herInner">
+							<div class="spz_heroMain">
+								<div class="spz_heroLeft">
+									<h4>Project Collection</h4>
+									<h1>Streamline Jira <strong>Project Management</strong></h1>
+									<ul>
+										<li>
+											<p><strong>Capacity planning.</strong> Plan schedules by dragging-and-dropping issues. Auto-assign
+												resources based on skills, availability, etc.</p>
+										</li>
+										<li>
+											<p><strong>Time tracking.</strong> Log billable and non-billable hours. Track CapEx and OpEx. Generate
+												suggested time entries with AI. </p>
+										</li>
+										<li>
+											<p><strong>Reporting.</strong> Monitor costs, revenue, billing, budgets etc. Generate audit-ready reports.
+												Optimize resources. Stay compliant.</p>
+										</li>
+									</ul>
+								</div>
+								<div class="spz_heroRight">
+									<div class="spz_form">
 
-          </div>
-        </div>
-      </div>
-      <div class="spz_logos">
-        <h3>Trusted by 30,000+ global companies</h3>
-        <div class="spz_logosSlider">
-          <div class="relative mt-10 w-full overflow-x-hidden grayscale md:mt-0">
-            <div class="absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-white to-white/0 md:w-24"></div>
-            <div class="absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-white to-white/0 md:w-24"></div>
-            <div class="flex w-max animate-marquee will-change-transform">
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974686/tempo/5001/logo_airbnb-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974632/tempo/5001/logo_airbnb-desktop-and-tablet_1.svg" alt="airbnb logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974694/tempo/5001/logo_airbus-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974643/tempo/5001/logo_airbus-desktop-and-tablet_2.svg" alt="airbus logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974702/tempo/5001/logo_netflix-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974651/tempo/5001/logo_netflix-desktop-and-tablet_1.svg" alt="netflix logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974712/tempo/5001/logo_cisco-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974658/tempo/5001/logo_cisco-desktop-and-tablet.svg" alt="cisco logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974719/tempo/5001/logo_slack-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974667/tempo/5001/logo_slack-desktop-and-tablet.svg" alt="slack logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974728/tempo/5001/logo_oracle-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974674/tempo/5001/logo_oracle-desktop-and-tablet.svg" alt="oracle logo">
-                  </picture>
-                </div>
-              </div>
-							
-							<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974686/tempo/5001/logo_airbnb-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974632/tempo/5001/logo_airbnb-desktop-and-tablet_1.svg" alt="airbnb logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974694/tempo/5001/logo_airbus-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974643/tempo/5001/logo_airbus-desktop-and-tablet_2.svg" alt="airbus logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974702/tempo/5001/logo_netflix-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974651/tempo/5001/logo_netflix-desktop-and-tablet_1.svg" alt="netflix logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974712/tempo/5001/logo_cisco-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974658/tempo/5001/logo_cisco-desktop-and-tablet.svg" alt="cisco logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974719/tempo/5001/logo_slack-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974667/tempo/5001/logo_slack-desktop-and-tablet.svg" alt="slack logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974728/tempo/5001/logo_oracle-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974674/tempo/5001/logo_oracle-desktop-and-tablet.svg" alt="oracle logo">
-                  </picture>
-                </div>
-              </div>
-							<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974686/tempo/5001/logo_airbnb-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974632/tempo/5001/logo_airbnb-desktop-and-tablet_1.svg" alt="airbnb logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974694/tempo/5001/logo_airbus-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974643/tempo/5001/logo_airbus-desktop-and-tablet_2.svg" alt="airbus logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974702/tempo/5001/logo_netflix-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974651/tempo/5001/logo_netflix-desktop-and-tablet_1.svg" alt="netflix logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974712/tempo/5001/logo_cisco-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974658/tempo/5001/logo_cisco-desktop-and-tablet.svg" alt="cisco logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974719/tempo/5001/logo_slack-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974667/tempo/5001/logo_slack-desktop-and-tablet.svg" alt="slack logo">
-                  </picture>
-                </div>
-              </div>
-              <div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
-                <div class="spz_logoMain">
-                  <picture>
-                    <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974728/tempo/5001/logo_oracle-mobile.svg" type="image/webp">
-                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974674/tempo/5001/logo_oracle-desktop-and-tablet.svg" alt="oracle logo">
-                  </picture>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>	
+									</div>
+								</div>
+							</div>
+							<div class="spz_logos">
+								<h3>Trusted by 30,000+ global companies</h3>
+								<div class="spz_logosSlider">
+									<div class="relative mt-10 w-full overflow-x-hidden grayscale md:mt-0">
+										<div class="absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-white to-white/0 md:w-24"></div>
+										<div class="absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-white to-white/0 md:w-24"></div>
+										<div class="flex w-max animate-marquee will-change-transform">
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974686/tempo/5001/logo_airbnb-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974632/tempo/5001/logo_airbnb-desktop-and-tablet_1.svg" alt="airbnb logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974694/tempo/5001/logo_airbus-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974643/tempo/5001/logo_airbus-desktop-and-tablet_2.svg" alt="airbus logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974702/tempo/5001/logo_netflix-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974651/tempo/5001/logo_netflix-desktop-and-tablet_1.svg" alt="netflix logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974712/tempo/5001/logo_cisco-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974658/tempo/5001/logo_cisco-desktop-and-tablet.svg" alt="cisco logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974719/tempo/5001/logo_slack-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974667/tempo/5001/logo_slack-desktop-and-tablet.svg" alt="slack logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974728/tempo/5001/logo_oracle-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974674/tempo/5001/logo_oracle-desktop-and-tablet.svg" alt="oracle logo">
+													</picture>
+												</div>
+											</div>
+											
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974686/tempo/5001/logo_airbnb-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974632/tempo/5001/logo_airbnb-desktop-and-tablet_1.svg" alt="airbnb logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974694/tempo/5001/logo_airbus-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974643/tempo/5001/logo_airbus-desktop-and-tablet_2.svg" alt="airbus logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974702/tempo/5001/logo_netflix-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974651/tempo/5001/logo_netflix-desktop-and-tablet_1.svg" alt="netflix logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974712/tempo/5001/logo_cisco-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974658/tempo/5001/logo_cisco-desktop-and-tablet.svg" alt="cisco logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974719/tempo/5001/logo_slack-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974667/tempo/5001/logo_slack-desktop-and-tablet.svg" alt="slack logo">
+													</picture>
+												</div>
+											</div>
+											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
+												<div class="spz_logoMain">
+													<picture>
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974728/tempo/5001/logo_oracle-mobile.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774974674/tempo/5001/logo_oracle-desktop-and-tablet.svg" alt="oracle logo">
+													</picture>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
 		`);
-		document.querySelector('a[href="https://www.tempo.io/collections/project#form-collection-save"]').href = '#form-collection-save';
-		document.querySelector('a[href="#form-collection-save"]').addEventListener('click', function (e) {
-			e.preventDefault();
-			const formSection = document.querySelector('#form-collection-save');
-			if (formSection) {
-				formSection.scrollIntoView({ behavior: 'smooth' });
-			}
+		document.querySelectorAll('a[href^="https://www.tempo.io/collections/project"]').forEach(function(link) {
+			link.href = '#form-collection-save';
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+
+				const formSection = document.querySelector('#form-collection-save');
+		
+				if (formSection) {
+					formSection.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			});
 		});
 	}
 
@@ -281,7 +336,7 @@ function waitForElement(cssSelector, callback) {
 		if (formDiv) $('.spz_form').insertAdjacentElement('afterbegin', formDiv);
 		// ── 4. Update form title ──────────────────────────────────────────
 		const formHeader = $(`.spz_form header`);
-		if (formHeader) formHeader.textContent = 'Get Started Free';
+		if (formHeader) formHeader.textContent = 'Get Started';
 		// ── 5. Clear phone input value ────────────────────────────────────
 		const phoneInput = $(`.spz_form .phone-input-container .PhoneInputInput`);
 		if (phoneInput) {
@@ -427,6 +482,7 @@ function waitForElement(cssSelector, callback) {
 			removeError();
 		}
 	}
+
 	function showError(message) {
 		let errorMsg = document.querySelector('.spz-error-message');
 		const svgIcon = `
@@ -463,86 +519,90 @@ function waitForElement(cssSelector, callback) {
 		// document.querySelector('body.spz_5001_v main section > div').classList.add('spz_main_wrapper');
 		if (!document.querySelector('.spz_hero')) {
 			spzHero();
-		}
-		waitForElement("#form-collection-save form.w-full", (spzForm) => {
-			formElemChanges();
-		});
-		const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-		if (isSafari) {
-			document.body.classList.add('is-safari');
-		}
-		// If you face any issues, please switch to the named-function version of this code and use that instead.
-		(function () {
-			//Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+			spz5001MarqueeObserveShell();
+			spz5001MarqueeBind();
+			window.addEventListener('load', spz5001MarqueeBind);
 
-			// Set the value of the squeezePage variable as needed:
-			// true  – if you are using a squeeze page (i.e., the page contains a form)
-			// false – if you are not using a squeeze page (i.e., the page does not contain a form)
-			// 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
-
-			const squeezePage = true; // true / false / 'both'
-			const expName = '5001'; //experiment name should be 1001, 1002, 1003 etc.
-			const variantName = `spz_` + expName + `_variant`; //variantName should be _variant, _true_control etc.
-			const clientDomain = '.tempo.io'; //domain should be .spiralyze.com
-
-
-			/***********************************
-			************************************
-			DO NOT TOUCH
-			BEYOND THIS LINE
-			******************************
-			******************************/
-			const formHiddenValue = variantName;
-			if (squeezePage === true) {
-				window.squeezePageValue = formHiddenValue;
-			} else if (squeezePage === false) {
-				hiddenValue(expName, variantName);
-			} else if (squeezePage === 'both') {
-				hiddenValue(expName, variantName);
-				window.squeezePageValue = formHiddenValue;
+			waitForElement("#form-collection-save form", () => {
+				formElemChanges();
+			});
+			const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+			if (isSafari) {
+				document.body.classList.add('is-safari');
 			}
-			function hiddenValue(currentExperimentName, currentExperimentValue) {
-				function setCookie(name, value, days) {
-					var expires = "";
-					if (days) {
-						var date = new Date();
-						date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-						expires = "; expires=" + date.toUTCString();
+			// If you face any issues, please switch to the named-function version of this code and use that instead.
+			(function () {
+				//Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+
+				// Set the value of the squeezePage variable as needed:
+				// true  – if you are using a squeeze page (i.e., the page contains a form)
+				// false – if you are not using a squeeze page (i.e., the page does not contain a form)
+				// 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
+				const squeezePage = true; // true / false / 'both'
+				const expName = '5001'; //experiment name should be 1001, 1002, 1003 etc.
+				const variantName = `spz_` + expName + `_variant_R`; //variantName should be _variant, _true_control etc.
+				const clientDomain = '.tempo.io'; //domain should be .spiralyze.com
+
+
+				/***********************************
+				************************************
+				DO NOT TOUCH
+				BEYOND THIS LINE
+				******************************
+				******************************/
+				const formHiddenValue = variantName;
+				if (squeezePage === true) {
+					window.squeezePageValue = formHiddenValue;
+				} else if (squeezePage === false) {
+					hiddenValue(expName, variantName);
+				} else if (squeezePage === 'both') {
+					hiddenValue(expName, variantName);
+					window.squeezePageValue = formHiddenValue;
+				}
+				function hiddenValue(currentExperimentName, currentExperimentValue) {
+					function setCookie(name, value, days) {
+						var expires = "";
+						if (days) {
+							var date = new Date();
+							date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+							expires = "; expires=" + date.toUTCString();
+						}
+						document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
 					}
-					document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
-				}
 
-				function getCookie(name) {
-					var nameEQ = name + "=";
-					var ca = document.cookie.split(';');
-					for (var i = 0; i < ca.length; i++) {
-						var c = ca[i];
-						while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-						if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+					function getCookie(name) {
+						var nameEQ = name + "=";
+						var ca = document.cookie.split(';');
+						for (var i = 0; i < ca.length; i++) {
+							var c = ca[i];
+							while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+							if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+						}
+						return null;
 					}
-					return null;
-				}
 
-				var ExistingExperimentName = getCookie('ExperimentName');
-				var ExistingExperimentValue = getCookie('ExperimentValue');
-				var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+					var ExistingExperimentName = getCookie('ExperimentName');
+					var ExistingExperimentValue = getCookie('ExperimentValue');
+					var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
 
-				if (!ExistingExperimentName) {
-					setCookie('ExperimentName', currentExperimentName, 1);
-					setCookie('ExperimentValue', currentExperimentValue, 1);
-				} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
-					setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-					setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-				} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
-					var existingNames = ExistingExperimentName.split(',');
-					var existingValues = ExistingExperimentValue.split(',');
-					var index = existingNames.indexOf(currentExperimentName);
-					existingValues[index] = currentExperimentValue;
-					setCookie('ExperimentName', existingNames.join(','), 1);
-					setCookie('ExperimentValue', existingValues.join(','), 1);
+					if (!ExistingExperimentName) {
+						setCookie('ExperimentName', currentExperimentName, 1);
+						setCookie('ExperimentValue', currentExperimentValue, 1);
+					} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+						setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+						setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+					} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+						var existingNames = ExistingExperimentName.split(',');
+						var existingValues = ExistingExperimentValue.split(',');
+						var index = existingNames.indexOf(currentExperimentName);
+						existingValues[index] = currentExperimentValue;
+						setCookie('ExperimentName', existingNames.join(','), 1);
+						setCookie('ExperimentValue', existingValues.join(','), 1);
+					}
 				}
-			}
-		}());
+			}());
+		}
 	}
 	// ============================================================
 	// Listen for route changes and re-run your check
@@ -553,34 +613,6 @@ function waitForElement(cssSelector, callback) {
 		}
 		waitForProjectPage();
 	});
-	function spz5001ScrollPageToTop() {
-		window.scrollTo(0, 0);
-		var scrollRoot = document.scrollingElement || document.documentElement;
-		if (scrollRoot) {
-			scrollRoot.scrollTop = 0;
-			scrollRoot.scrollLeft = 0;
-		}
-		if (document.body) {
-			document.body.scrollTop = 0;
-			document.body.scrollLeft = 0;
-		}
-		var topHeader = document.querySelector('.top-header');
-		if (topHeader) {
-			topHeader.scrollTop = 0;
-			topHeader.scrollLeft = 0;
-		}
-		var mainInTop = document.querySelector('.top-header main');
-		if (mainInTop) {
-			mainInTop.scrollTop = 0;
-			mainInTop.scrollLeft = 0;
-		}
-	}
-	var mobileScrollLock = setInterval(function () {
-		spz5001ScrollPageToTop();
-	}, 420);
-	setTimeout(function () {
-		clearInterval(mobileScrollLock);
-	}, 3000);
 
 	waitForProjectPage();
 })();

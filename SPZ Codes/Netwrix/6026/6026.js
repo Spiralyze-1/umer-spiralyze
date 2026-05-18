@@ -70,7 +70,7 @@ function hiddenValue6026() {
     // false – if you are not using a squeeze page (i.e., the page does not contain a form)
     // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-    const squeezePage = true; // true / false / 'both'
+    const squeezePage = false; // true / false / 'both'
     const expName = '6026'; //experiment name should be 1001, 1002, 1003 etc.
     const variantName = `Variant_` + expName; //variantName should be variant_, true_control_ etc.
     const clientDomain = '.netwrix.com'; //domain should be .spiralyze.com

@@ -40,7 +40,9 @@ function loadTestCode() {
       }
       if (headingEl) {
         var target = headingEl.tagName === 'H2' ? headingEl : headingEl.querySelector('h2');
-        if (target && target.textContent.trim() !== 'Pricing') target.innerHTML = 'Pricing';
+        if (target && target.innerHTML.trim() !== `Get BambooHR <sup>®</sup> <strong>Plans and Pricing</strong> `) {
+          target.innerHTML = `Get BambooHR <sup>®</sup> <strong>Plans and Pricing</strong> `;
+        }
       }
     }
 
@@ -61,7 +63,7 @@ function loadTestCode() {
       section.classList.add('spz-5017-pricing-section');
 
       // 3. Get Quote CTAs — apply text and classes so our UI always wins over late-loaded content
-      var getQuoteLinks = document.querySelectorAll('.section.package-comparison .table-wrapper thead th .button-container a.button.accent');
+      var getQuoteLinks = document.querySelectorAll('.section.package-comparison .table-wrapper thead th .button-container:not(.non-img-col) a.button.accent');
       if (!getQuoteLinks.length) {
         getQuoteLinks = document.querySelectorAll('.spz-5017-pricing-section .table-wrapper thead th a.button.accent');
       }
@@ -71,7 +73,7 @@ function loadTestCode() {
       var cardIndex = 0;
       getQuoteLinks.forEach(function (link) {
         if (link.closest('.table-mobile-container')) return;
-        link.innerHTML = 'Get a Demo &amp; Current Promos';
+        // link.innerHTML = 'Get a Demo &amp; Current Promos';
         link.setAttribute('href', '#');
         link.setAttribute('data-action', 'open-modal');
         link.classList.add('spz5017_v');
@@ -97,11 +99,11 @@ function loadTestCode() {
 
       // 5. Cards: set description by plan name (Core/Pro/Elite); re-applying overwrites any restored content
       var tableWrappers = document.querySelectorAll('.section.package-comparison .table-wrapper');
-      var descriptionByPlan = {
-        core: 'For small businesses',
-        pro: 'For mid-sized businesses',
-        elite: 'For large businesses and enterprises'
-      };
+      // var descriptionByPlan = {
+      //   core: 'For small businesses',
+      //   pro: 'For mid-sized businesses',
+      //   elite: 'For large businesses and enterprises'
+      // };
       tableWrappers.forEach(function (wrapper) {
         if (wrapper.closest('.table-mobile-container')) return;
         var th = wrapper.querySelector('thead th');
@@ -109,8 +111,8 @@ function loadTestCode() {
         var planName = '';
         var h2 = th.querySelector('h2');
         if (h2) planName = (h2.textContent || '').trim().toLowerCase();
-        var description = descriptionByPlan[planName] || null;
-        if (!description) return;
+        // var description = descriptionByPlan[planName] || null;
+        // if (!description) return;
         var paras = th.querySelectorAll('p:not(.button-container)');
         var descP = null;
         for (var i = 0; i < paras.length; i++) {
@@ -122,7 +124,7 @@ function loadTestCode() {
         }
         if (!descP && paras.length > 1) descP = paras[1];
         if (!descP && paras.length > 0) descP = paras[0];
-        if (descP) descP.innerHTML = description;
+        // if (descP) descP.innerHTML = description;
         if (planName === 'elite') wrapper.classList.add('spz-5017-elite-card');
       });
 
@@ -147,15 +149,6 @@ function loadTestCode() {
       }
 
       // 7. Replace second card (Pro) feature list with Figma 29056:1016 points
-      var proCardFeatures = [
-        'Custom Performance Review Cycles',
-        '360° Feedback for Performance',
-        'Goal Tracking',
-        'Internal Announcements',
-        'Employee Interest Groups',
-        'Compliance Training: 15 Courses',
-        'Upgraded AI Assistant'
-      ];
       var tableWrappersList = document.querySelectorAll('.section.package-comparison .table-wrapper');
       var proWrapper = null;
       for (var pw = 0; pw < tableWrappersList.length; pw++) {
@@ -166,64 +159,6 @@ function loadTestCode() {
           break;
         }
       }
-      if (proWrapper) {
-        var tableBlock = proWrapper.querySelector('.table.comparison.block');
-        var tbody = tableBlock ? tableBlock.querySelector('tbody') : null;
-        if (tbody) {
-          var trs = tbody.querySelectorAll('tr');
-          if (trs.length >= 2) {
-            var templateTr = trs[1].cloneNode(true);
-            while (tbody.rows.length > 1) tbody.removeChild(tbody.lastChild);
-            for (var f = 0; f < proCardFeatures.length; f++) {
-              var newTr = templateTr.cloneNode(true);
-              var textEl = newTr.querySelector('.icon-wrapper__text') || newTr.querySelector('.feature-text') || newTr.querySelector('td');
-              var wrapperText = newTr.querySelector('.icon-wrapper__text');
-              if (textEl) {
-                var target = textEl.classList && (textEl.classList.contains('icon-wrapper__text') || textEl.classList.contains('feature-text')) ? textEl : textEl.querySelector('.icon-wrapper__text, .feature-text') || textEl;
-                target.textContent = proCardFeatures[f];
-              }
-              var hasNew = (f === 5 || f === 6);
-              var newPill = newTr.querySelector('.icon-new');
-              if (newPill) {
-                if (!hasNew) newPill.remove();
-              } else if (hasNew && wrapperText) {
-                var pill = document.createElement('span');
-                pill.className = 'icon icon-new';
-                wrapperText.appendChild(pill);
-              }
-              tbody.appendChild(newTr);
-            }
-          }
-        }
-      }
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(2) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>Performance Reviews</strong> <br> Customize reviews by department, location, job title, and more. Set custom cycles. </p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(3) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>360º Feedback</strong> <br> Gather peer, self, and manager feedback for employees.</p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(4) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>Goal Tracking</strong> <br> Create, track, and share individual and team goals and growth paths.</p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(5) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>Internal Announcements</strong> <br> Send updates, event invites, and other announcements via community portals.</p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(6) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>Interest Groups</strong> <br> Engage employees with portals to talk about hobbies, shoutout peers, and more. </p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(7) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>15 Compliance Training Courses</strong> <br> Get courses for key topics, like cyber security, workplace safety, and harassment prevention.</p>
-      `;
-      document.querySelector('.package-comparison > .table-wrapper:nth-child(2) table tr:nth-child(8) .table-tooltip-container').innerHTML = `
-        <a class="close-button">x</a>
-        <p><strong>AI Assistant</strong> <br> Get answers about your policies, handbooks, benefits, and more.</p>
-      `;
     }
 
     var pricingApplied = false;
@@ -243,57 +178,6 @@ function loadTestCode() {
       }, 250);
     }, 150);
 
-    // Add-on card: Employer of Record — split title per Figma (only within add-on section)
-    function applyAddonEorCardTitle() {
-      var addonSection = document.querySelector('#add-on-solutions') ? document.querySelector('#add-on-solutions').closest('.section') : null;
-      if (!addonSection) addonSection = document.querySelector('[id*="add-on-solutions"]') ? document.querySelector('[id*="add-on-solutions"]').closest('.section') : null;
-      if (!addonSection) return false;
-      var eorH3 = addonSection.querySelector('.cards-wrapper .card h3#employer-of-record-powered-by-remote') ||
-        addonSection.querySelector('#employer-of-record-powered-by-remote') ||
-        addonSection.querySelector('.card h3[id*="employer-of-record"]');
-      if (!eorH3 || eorH3.classList.contains('spz-5017-eor-split')) return true;
-      var text = (eorH3.textContent || '').trim();
-      if (text.indexOf('Employer of Record') === -1) return false;
-      eorH3.innerHTML = 'Employer of Record';
-      var subtitle = document.createElement('span');
-      subtitle.className = 'addon-card-subtitle spz-5017-eor-subtitle';
-      subtitle.setAttribute('aria-hidden', 'true');
-      subtitle.textContent = '(powered by Remote)';
-      eorH3.parentNode.insertBefore(subtitle, eorH3.nextSibling);
-      eorH3.classList.add('spz-5017-eor-split');
-      return true;
-    }
-    var addonEorInterval = setInterval(function () {
-      if (applyAddonEorCardTitle()) clearInterval(addonEorInterval);
-    }, 150);
-    setTimeout(applyAddonEorCardTitle, 800);
-    setTimeout(applyAddonEorCardTitle, 2000);
-
-    // Remove "Explore ROI Calculator" CTA (only within add-on section)
-    function removeAddonLearnMoreAndRoiCta() {
-      var addonSection = document.querySelector('#add-on-solutions') ? document.querySelector('#add-on-solutions').closest('.section') : null;
-      if (!addonSection) addonSection = document.querySelector('[id*="add-on-solutions"]') ? document.querySelector('[id*="add-on-solutions"]').closest('.section') : null;
-      if (!addonSection) return true;
-      var removed = false;
-      var links = addonSection.querySelectorAll('a');
-      links.forEach(function (link) {
-        var text = (link.textContent || '').trim();
-        if (text.indexOf('ROI Calculator') !== -1 || text.indexOf('Explore ROI') !== -1) {
-          var container = link.closest('.button-container');
-          if (container) {
-            container.remove();
-          } else {
-            link.remove();
-          }
-          removed = true;
-        }
-      });
-      return !removed;
-    }
-    var removeAddonInterval = setInterval(function () {
-      if (removeAddonLearnMoreAndRoiCta()) clearInterval(removeAddonInterval);
-    }, 200);
-
     // Modal: minimal overlay (backdrop + close) — required for modal UX
     // Backdrop overlay (only new element injected at body end)
     document.body.insertAdjacentHTML('beforeend', '<div class="spz-5017-backdrop"></div>');
@@ -301,10 +185,66 @@ function loadTestCode() {
     // 6. Modal open/close — form stays in place, CSS makes .form-col act as the modal
     var savedScrollY = 0;
 
+    function getModalHero() {
+      return document.querySelector('body.spz_5017_v .spz_hero');
+    }
+
+    function getFocusableInModalHero() {
+      var hero = getModalHero();
+      if (!hero) return [];
+      var sel = 'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+      var nodes = Array.prototype.slice.call(hero.querySelectorAll(sel));
+      return nodes.filter(function (el) {
+        if (!el || el.getAttribute('aria-hidden') === 'true') return false;
+        var ti = el.getAttribute('tabindex');
+        if (ti === '-1') return false;
+        var rect = el.getBoundingClientRect();
+        return rect.width > 0 || rect.height > 0;
+      });
+    }
+
+    function focusFirstInModalHero() {
+      var list = getFocusableInModalHero();
+      if (list.length) list[0].focus();
+    }
+
+    function onModalFocusIn(e) {
+      if (!document.body.classList.contains('spz-5017-modal-active')) return;
+      var hero = getModalHero();
+      if (!hero || !e.target || hero.contains(e.target)) return;
+      focusFirstInModalHero();
+    }
+
+    document.addEventListener('focusin', onModalFocusIn);
+    document.addEventListener('keydown', function (e) {
+      if (!document.body.classList.contains('spz-5017-modal-active')) return;
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      var list = getFocusableInModalHero();
+      if (list.length < 1) return;
+      var first = list[0];
+      var last = list[list.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
     function openModal() {
       savedScrollY = window.scrollY || window.pageYOffset || 0;
       document.body.style.top = '-' + savedScrollY + 'px';
       document.body.classList.add('spz-5017-modal-active');
+      window.requestAnimationFrame(function () {
+        focusFirstInModalHero();
+      });
     }
 
     function closeModal() {
@@ -338,12 +278,6 @@ function loadTestCode() {
       // }
 
     });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && document.body.classList.contains('spz-5017-modal-active')) {
-        closeModal();
-      }
-    });
-
     document.querySelector('#add-on-solutions').textContent = 'Add-on Solutions';
     document.addEventListener('mouseover', function (e) {
       var el = e.target.closest('.spz_5017_v .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after');
@@ -360,9 +294,6 @@ function loadTestCode() {
     });
 
     setTimeout(() => {
-      if (document.querySelector('.section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(3)> ul >li:first-child')) {
-        document.querySelector('.section:has([id*=add-on-solutions]) .cards-wrapper .cards .card:nth-child(3)> ul >li:first-child').textContent = 'View & Edit Time Sheets';
-      }
       if (document.querySelector('.spz-5017-pricing-section #usd')) {
         document.querySelectorAll(
           '.spz-5017-pricing-section #usd, \
@@ -412,45 +343,6 @@ function loadTestCode() {
         mainFormChanges();
 
         function mainFormChanges() {
-          // document.querySelector('.form_container .form-col-container > p:nth-of-type(1) strong').innerHTML = "Get Pricing";
-          // document.querySelector('#LblEmail').closest('.mktoFormRow').classList.add('width50', 'email-parent')
-          // document.querySelector('#LblEmail').textContent = "Email*";
-          // document.querySelector('#LblFirstName').closest('.mktoFormRow').classList.add('fname-parent')
-          // document.querySelector('#LblLastName').closest('.mktoFormRow').classList.add('lname-parent')
-          // document.querySelector('#LblPhone').closest('.mktoFormRow').classList.add('phone-parent')
-          // document.querySelector('#LblTitle').closest('.mktoFormRow').classList.add('job-parent', 'width50')
-          // document.querySelector('#LblCompany').closest('.mktoFormRow').classList.add('company-parent', 'width50')
-          // document.querySelector('#LblCountry').closest('.mktoFormRow').classList.add('country-parent', 'width50')
-          // document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').classList.add('employee_c-parent');
-          // setTimeout(() => {
-          //   document.querySelector('[name="Phone"]').tabIndex = 4;
-          //   document.querySelector('.job-parent input').tabIndex = 5;
-          //   document.querySelector('.company-parent input').tabIndex = 6;
-          //   document.querySelector('.employee_c-parent select').tabIndex = 7;
-          //   document.querySelector('.country-parent select').tabIndex = 8;
-          //   document.querySelector('.privacy-policy a').tabIndex = 9;
-          //   document.querySelector('.form_container .mktoButton').tabIndex = 10;
-          // }, 500);
-
-
-          // if (document.querySelector('.bhrForm__partnerDisclaimer').parentNode.parentNode.classList.contains("form-checkbox-flex")) {
-          //   document.querySelector('.bhrForm__partnerDisclaimer').closest('.mktoFormRow').classList.add('disclaimer-parent-2', "privacy-policy")
-          //   document.querySelector('.mktoPlaceholder').closest('.mktoFormRow').classList.add('disclaimer-parent-1', "privacy-policy")
-          // } else {
-          //   document.querySelector('.bhrForm__partnerDisclaimer').closest('.mktoFormRow').classList.add('disclaimer-parent-1', "privacy-policy")
-          //   document.querySelector('.mktoPlaceholder').closest('.mktoFormRow').classList.add('disclaimer-parent-2', "privacy-policy")
-          // }
-
-          /*
-          document.querySelector('.mktoPlaceholderDisclaimer__c').closest('.mktoFormRow').classList.add('disclaimer-parent-1',"privacy-policy")
-          document.querySelector('.mktoPlaceholder').closest('.mktoFormRow').classList.add('disclaimer-parent-1',"privacy-policy")
-          document.querySelector('.bhrForm__partnerDisclaimer').closest('.mktoFormRow').classList.add('disclaimer-parent-2',"privacy-policy")
-          document.querySelector('#LblDisclaimer__c').closest('.mktoFormRow').classList.add('disclaimer-parent-2',"privacy-policy")
-          */
-
-          // if(document.querySelector('.bhrForm__partnerDisclaimer')){
-          //   document.querySelector('.bhrForm__partnerDisclaimer a').textContent = 'Privacy Policy'
-          // }
           document.querySelector('.form_container .mktoButton').textContent = "Submit"
           document.querySelector('.form_container .mktoButton').classList.add("spz5017_v1")
         }

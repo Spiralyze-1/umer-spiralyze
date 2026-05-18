@@ -2,14 +2,6 @@ if (window.location.pathname == "/") {
   const bodyInterval2002 = setInterval(function () {
     if (document.querySelector("body")) {
       clearInterval(bodyInterval2002)
-      function findByText(type, text) {
-        for (let i = 0; i < document.querySelectorAll(type).length; i++) {
-          if (document.querySelectorAll(type)[i].textContent == text) {
-            return document.querySelectorAll(type)[i];
-          }
-        }
-        return;
-      }
       let carouselInterval;
       let mouseLeaveTimeout;
       let i = 0;
@@ -22,18 +14,9 @@ if (window.location.pathname == "/") {
 
           }
           // page modification
-          if (document.querySelector('.spz_2002_v') && document.querySelector('.spz_2002_v main > div.light') && !document.querySelector('.spz_2002_v .section-1-2002')) {
-            const loadJS = (url, implementationCode, location) => {
-              var scriptTag = document.createElement('script');
-              scriptTag.src = url;
-
-              scriptTag.onload = implementationCode;
-              scriptTag.onreadystatechange = implementationCode;
-
-              location.appendChild(scriptTag);
-            };
-            document.querySelector('.spz_2002_v main > div.light').insertAdjacentHTML("beforebegin", `
-            <div class="section-1-2002">
+          if (document.querySelector('.spz_2002_v') && document.querySelector('.spz_2002_v main > section:nth-of-type(3)') && !document.querySelector('.spz_2002_v .section-1-2002')) {
+            document.querySelector('.spz_2002_v main > section:nth-of-type(3)').insertAdjacentHTML("afterend", `
+            <section class="section-1-2002">
               <div class="wrapper-2002">
                 <div class="title">Solutions</div>
                 <div class="carousel-section">
@@ -66,8 +49,8 @@ if (window.location.pathname == "/") {
                         </div>
                         <div class="mobile-image">
                           <picture>
-                          <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_mobile.webp">
-                          <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_tablet.webp" title="Project management" width="688" height="572" loading="lazy">
+                          <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_361.webp">
+                          <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_768.webp" title="Project management" width="688" height="572" loading="lazy">
                         </picture> 
                         </div>
                       </div>
@@ -100,8 +83,8 @@ if (window.location.pathname == "/") {
                         </div>
                         <div class="mobile-image">
                           <picture>
-                          <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_mobile.webp">
-                          <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_tablet.webp" alt="Capacity planning" title="Capacity planning" width="688" height="572" loading="lazy">
+                          <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_362.webp">
+                          <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_769.webp" alt="Capacity planning" title="Capacity planning" width="688" height="572" loading="lazy">
                         </picture> 
                         </div>
                       </div>
@@ -134,8 +117,8 @@ if (window.location.pathname == "/") {
                         </div>
                           <div class="mobile-image">
                           <picture>
-                            <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_mobile.webp">
-                            <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_tablet.webp" alt="Time management" title="Time management" width="688" height="572" loading="lazy">
+                            <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_361.webp">
+                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_768.webp" alt="Time management" title="Time management" width="688" height="572" loading="lazy">
                           </picture> 
                           </div>
                       </div>
@@ -168,9 +151,9 @@ if (window.location.pathname == "/") {
                         </div>
                           <div class="mobile-image">
                             <picture>
-                            <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_mobile.webp">
-                            <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_tablet.webp" alt="Roadmapping" title="Roadmapping" width="688" height="572" loading="lazy">
-                          </picture> 
+                              <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_363.webp">
+                              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_770.webp" alt="Roadmapping" title="Roadmapping" width="688" height="572" loading="lazy">
+                            </picture> 
                         </div>
                       </div>
                     </div>
@@ -202,8 +185,8 @@ if (window.location.pathname == "/") {
                         </div>
                           <div class="mobile-image">
                             <picture>
-                            <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_mobile.webp">
-                            <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_tablet.webp" alt="Financial management" title="Financial management" width="688" height="572" loading="lazy">
+                            <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_361.webp">
+                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_769.webp" alt="Financial management" title="Financial management" width="688" height="572" loading="lazy">
                           </picture>
                         </div>
                       </div>
@@ -235,27 +218,26 @@ if (window.location.pathname == "/") {
                         </div>
                           <div class="mobile-image">
                             <picture>
-                            <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_mobile_1.webp">
-                            <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_tablet_1.webp" alt="Reporting & forecasting" title="Reporting & forecasting" width="688" height="572" loading="lazy">
+                            <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/reporting__forecasting_362.webp">
+                            <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/reporting__forecasting_768.webp" alt="Reporting & forecasting" title="Reporting & forecasting" width="688" height="572" loading="lazy">
                           </picture>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="image">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_desktop.webp" class="reference" alt="Project management" title="Project management" width="780" height="649">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_desktop.webp" class="hero active" data-index="1" alt="Project management" title="Project management" width="780" height="649" loading="lazy">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_desktop.webp" class="hero" data-index="2" alt="Capacity planning" title="Capacity planning" width="780" height="649" loading="lazy">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_desktop.webp" class="hero" data-index="3" alt="Time management" title="Time management" width="780" height="649" loading="lazy">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_desktop.webp" class="hero" data-index="4" alt="Roadmapping" title="Roadmapping" width="780" height="649" loading="lazy">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_desktop.webp" class="hero" data-index="5" alt="Financial management" title="Financial management" width="780" height="649" loading="lazy">
-                    <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_desktop_1.webp" class="hero" data-index="6" alt="Reporting & forecasting" title="Reporting & forecasting" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_1440.webp" class="reference" alt="Project management" title="Project management" width="780" height="649">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/project_management_1440.webp" class="hero active" data-index="1" alt="Project management" title="Project management" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/capacity_planning_1441.webp" class="hero" data-index="2" alt="Capacity planning" title="Capacity planning" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/time_management_1440.webp" class="hero" data-index="3" alt="Time management" title="Time management" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/roadmapping_1442.webp" class="hero" data-index="4" alt="Roadmapping" title="Roadmapping" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/financial_management_1441.webp" class="hero" data-index="5" alt="Financial management" title="Financial management" width="780" height="649" loading="lazy">
+                    <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/2002/reporting__forecasting_1440.webp" class="hero" data-index="6" alt="Reporting & forecasting" title="Reporting & forecasting" width="780" height="649" loading="lazy">
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
             `)
-            //loadJS('//res.cloudinary.com/spiralyze/raw/upload/v1773298930/tempo/script/smooth-scroll.min.js', function(){}, document.body);
             const carouselTimer = 8000;
             let time = carouselTimer;
             let initialPlay = true;
@@ -333,6 +315,13 @@ if (window.location.pathname == "/") {
             const playCarousel = () => {
               const curActiveElement = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .text .active').getAttribute("data-index");
               const lineEl = document.querySelector('.spz_2002_v .section-1-2002 .carousel-section .child[data-index="' + curActiveElement + '"] .bar .line');
+              var resumingFromPause = barElapsedWhenPaused != null;
+              if (!resumingFromPause) {
+                lineEl.style.transition = "none";
+                lineEl.style.width = "0px";
+                void lineEl.offsetHeight;
+                lineEl.style.removeProperty("transition");
+              }
               lineEl.style.opacity = 1;
               if (initialPlay == false) {
                 adjustContentHeight();
@@ -473,6 +462,22 @@ if (window.location.pathname == "/") {
               }
 
             })
+            window.addEventListener("pageshow", function (ev) {
+              if (!ev.persisted || !document.querySelector(".spz_2002_v .section-1-2002")) return;
+              clearInterval(carouselInterval);
+              clearTimeout(mouseLeaveTimeout);
+              barStartTimeRef = null;
+              barElapsedWhenPaused = null;
+              document.querySelectorAll(".spz_2002_v .section-1-2002 .carousel-section .child .bar .line").forEach(function (line) {
+                line.style.transition = "none";
+                line.style.width = "0px";
+                void line.offsetHeight;
+                line.style.removeProperty("transition");
+              });
+              var carouselSec = document.querySelector(".spz_2002_v .section-1-2002 .carousel-section");
+              if (carouselSec) carouselSec.classList.remove("in-view");
+              window.dispatchEvent(new Event("scroll"));
+            });
             window.addEventListener('scroll', function () {
               if (document.querySelector('.spz_2002_v .section-1-2002')) {
                 if (!document.querySelector('.mobile-clicked') && !document.querySelector('.spz_2002_v .section-1-2002 .clicked')) {
@@ -538,77 +543,77 @@ if (window.location.pathname == "/") {
 
 
         // If you face any issues, please switch to the named-function version of this code and use that instead.
-        (function () {
-          //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+        // (function () {
+        //   //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
-          // Set the value of the squeezePage variable as needed:
-          // true  – if you are using a squeeze page (i.e., the page contains a form)
-          // false – if you are not using a squeeze page (i.e., the page does not contain a form)
-          // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+        //   // Set the value of the squeezePage variable as needed:
+        //   // true  – if you are using a squeeze page (i.e., the page contains a form)
+        //   // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+        //   // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-          const squeezePage = false; // true / false / 'both'
-          const expName = '2002'; //experiment name should be 1001, 1002, 1003 etc.
-          const variantName = `spz_` + expName + `_variant`; //variantName should be _variant, _true_control etc.
-          const clientDomain = '.tempo.io'; //domain should be .spiralyze.com
+        //   const squeezePage = false; // true / false / 'both'
+        //   const expName = '2002'; //experiment name should be 1001, 1002, 1003 etc.
+        //   const variantName = `spz_` + expName + `_variant`; //variantName should be _variant, _true_control etc.
+        //   const clientDomain = '.tempo.io'; //domain should be .spiralyze.com
 
 
-          /***********************************
-          ************************************
-          DO NOT TOUCH
-          BEYOND THIS LINE
-          ******************************
-          ******************************/
-          const formHiddenValue = variantName;
-          if (squeezePage === true) {
-            window.squeezePageValue = formHiddenValue;
-          } else if (squeezePage === false) {
-            hiddenValue(expName, variantName);
-          } else if (squeezePage === 'both') {
-            hiddenValue(expName, variantName);
-            window.squeezePageValue = formHiddenValue;
-          }
-          function hiddenValue(currentExperimentName, currentExperimentValue) {
-            function setCookie(name, value, days) {
-              var expires = "";
-              if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-              }
-              document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
-            }
+        //   /***********************************
+        //   ************************************
+        //   DO NOT TOUCH
+        //   BEYOND THIS LINE
+        //   ******************************
+        //   ******************************/
+        //   const formHiddenValue = variantName;
+        //   if (squeezePage === true) {
+        //     window.squeezePageValue = formHiddenValue;
+        //   } else if (squeezePage === false) {
+        //     hiddenValue(expName, variantName);
+        //   } else if (squeezePage === 'both') {
+        //     hiddenValue(expName, variantName);
+        //     window.squeezePageValue = formHiddenValue;
+        //   }
+        //   function hiddenValue(currentExperimentName, currentExperimentValue) {
+        //     function setCookie(name, value, days) {
+        //       var expires = "";
+        //       if (days) {
+        //         var date = new Date();
+        //         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        //         expires = "; expires=" + date.toUTCString();
+        //       }
+        //       document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
+        //     }
 
-            function getCookie(name) {
-              var nameEQ = name + "=";
-              var ca = document.cookie.split(';');
-              for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-              }
-              return null;
-            }
+        //     function getCookie(name) {
+        //       var nameEQ = name + "=";
+        //       var ca = document.cookie.split(';');
+        //       for (var i = 0; i < ca.length; i++) {
+        //         var c = ca[i];
+        //         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        //       }
+        //       return null;
+        //     }
 
-            var ExistingExperimentName = getCookie('ExperimentName');
-            var ExistingExperimentValue = getCookie('ExperimentValue');
-            var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+        //     var ExistingExperimentName = getCookie('ExperimentName');
+        //     var ExistingExperimentValue = getCookie('ExperimentValue');
+        //     var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
 
-            if (!ExistingExperimentName) {
-              setCookie('ExperimentName', currentExperimentName, 1);
-              setCookie('ExperimentValue', currentExperimentValue, 1);
-            } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
-              setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-              setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-            } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
-              var existingNames = ExistingExperimentName.split(',');
-              var existingValues = ExistingExperimentValue.split(',');
-              var index = existingNames.indexOf(currentExperimentName);
-              existingValues[index] = currentExperimentValue;
-              setCookie('ExperimentName', existingNames.join(','), 1);
-              setCookie('ExperimentValue', existingValues.join(','), 1);
-            }
-          }
-        }());
+        //     if (!ExistingExperimentName) {
+        //       setCookie('ExperimentName', currentExperimentName, 1);
+        //       setCookie('ExperimentValue', currentExperimentValue, 1);
+        //     } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+        //       setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+        //       setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+        //     } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+        //       var existingNames = ExistingExperimentName.split(',');
+        //       var existingValues = ExistingExperimentValue.split(',');
+        //       var index = existingNames.indexOf(currentExperimentName);
+        //       existingValues[index] = currentExperimentValue;
+        //       setCookie('ExperimentName', existingNames.join(','), 1);
+        //       setCookie('ExperimentValue', existingValues.join(','), 1);
+        //     }
+        //   }
+        // }());
       }
     }
   }, 20)

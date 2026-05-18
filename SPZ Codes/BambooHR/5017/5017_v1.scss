@@ -59,22 +59,27 @@ body.spz_5017_v {
 
 html:has(body.spz_5017_v) {
   overflow-x: clip;
+
+  &:has(.modal-wrapper[open]),
+  &:has(.nav[aria-expanded="true"]) {
+    overflow: unset;
+  }
 }
-
-
 
 .spz_5017_v {
   /* Fields (Figma headings/price): Adobe Fonts — replace YOUR_TYPEKIT_ID with your project ID from fonts.adobe.com (Web Projects). If unused, comment out this line; Fira Sans will remain the fallback. */
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   /* Fira Sans: fallback if Fields not loaded (e.g. Typekit ID not set) */
   @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap');
-  >img{
+
+  >img {
     display: none;
   }
+
   //  DOM: .section.form-container 
   .section.form-container {
     height: 0;
-    min-height: 0;
+    min-height: 0 !important;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -98,9 +103,11 @@ html:has(body.spz_5017_v) {
   .modal-open {
     overflow: inherit;
   }
-  #q-messenger-frame{
+
+  #q-messenger-frame {
     z-index: 2147483642 !important;
   }
+
   /* #BACKDROP — ELEMENT: Modal backdrop overlay (injected at body end)
    DOM: .spz-5017-backdrop */
   .spz-5017-backdrop {
@@ -173,7 +180,7 @@ html:has(body.spz_5017_v) {
       z-index: 1;
 
       &:hover svg path {
-        stroke: #599D15;
+        stroke: #676260;
       }
     }
 
@@ -185,13 +192,19 @@ html:has(body.spz_5017_v) {
     overflow: hidden;
     max-height: 100vh;
     display: block;
-    @include mobile(){
+
+    #main-content>*:not(:has(.spz_hero)) {
+      pointer-events: none;
+    }
+
+    @include mobile() {
       position: fixed;
       left: 0;
       top: 0;
       width: 100%;
       min-height: 100%;
     }
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -208,14 +221,15 @@ html:has(body.spz_5017_v) {
       align-items: center;
       justify-content: center;
 
-      @media only screen and (max-height: 625px) and (min-width: 768px){
+      @media only screen and (max-height: 625px) and (min-width: 768px) {
         transform: translate(-50%, -50%);
       }
 
       &::-webkit-scrollbar {
         display: none;
       }
-      @include mobile{
+
+      @include mobile {
         transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
@@ -605,6 +619,31 @@ html:has(body.spz_5017_v) {
     margin: 0;
     padding-bottom: 0;
     font-style: normal;
+
+    strong {
+      display: contents;
+      color: #73C41D;
+    }
+
+    sup {
+      margin-left: -12px;
+      font-size: 56px;
+      transform: translate(-0.5px, 19px);
+      display: inline-block;
+      line-height: 0;
+
+      @include tablet() {
+        margin-left: 0px;
+        font-size: 49px;
+        transform: translate(-11px, 17px);
+      }
+
+      @include mobile() {
+        margin-left: -8px;
+        font-size: 34px;
+        transform: translate(0.5px, 12px);
+      }
+    }
   }
 
   /* No bottom padding on title-container (heading section). */
@@ -629,7 +668,7 @@ html:has(body.spz_5017_v) {
     margin: 0 auto;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0 54px 0;
+    padding: 48px 54px 0;
     display: flex;
     gap: 16px;
     align-items: center;
@@ -646,8 +685,7 @@ html:has(body.spz_5017_v) {
   }
 
   /* White-gap fix (Option A): sections between hero and pricing show extended green behind them */
-  .title-container,
-  .cards-container {
+  .form-container+.title-container {
     background: transparent;
     position: relative;
     z-index: 0;
@@ -663,10 +701,10 @@ html:has(body.spz_5017_v) {
     width: 100%;
     top: 1px;
     height: calc(100% + 180px);
-    max-height: 968px;
+    max-height: 1031px;
     z-index: -1;
     background-color: #fff;
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/5017/bg.webp');
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/5017/bg_3.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -693,7 +731,9 @@ html:has(body.spz_5017_v) {
     .section.package-comparison.table-container::before,
     .section.package-comparison.spz-5017-pricing-section::before {
       height: calc(100% + 32px);
-      max-height: 967px;
+      max-height: 962px;
+      background-position: -2000px 0;
+      background-size: 3840px;
     }
   }
 
@@ -704,7 +744,9 @@ html:has(body.spz_5017_v) {
     .section.package-comparison.table-container::before,
     .section.package-comparison.spz-5017-pricing-section::before {
       height: calc(100% + 32px);
-      max-height: 796.5px;
+      max-height: 1031px;
+      background-position: -2000px -50px;
+      background-size: 3840px;
     }
   }
 
@@ -731,7 +773,9 @@ html:has(body.spz_5017_v) {
     position: relative;
     overflow: visible;
     box-sizing: border-box;
-    @media only screen and (min-width: 1100px) and (max-width: 1399.98px){
+    margin: 0;
+
+    @media only screen and (min-width: 1100px) and (max-width: 1399.98px) {
       padding: 39px 20px;
     }
   }
@@ -776,19 +820,49 @@ html:has(body.spz_5017_v) {
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card {
     position: relative;
     /* required for ::before NEW banner positioning */
-    min-height: 706px;
+    min-height: 776px;
     height: auto;
     max-height: none;
     overflow: visible;
     /* prevent NEW banner from being cropped by card corners */
     border: 2px solid #599D15;
     border-radius: 24px;
-    padding: 54px 30px;
-    @media only screen and (min-width: 1100px) and (max-width: 1399.98px){
+    padding: 70px 30px;
+    transform: translateY(-16px);
+
+    @media only screen and (min-width: 1100px) and (max-width: 1399.98px) {
       padding: 54px 20px;
     }
+
     @include mobile {
-      padding: 62px 22px !important;
+      padding: 62px 22px 28.5px !important;
+      transform: none;
+    }
+  }
+
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container.non-img-col {
+    margin-top: 0;
+
+    a {
+      gap: 5px;
+      width: fit-content;
+      .icon-play {
+        width: 20px;
+        height: 20px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    @include tablet() {
+      margin-top: 1.5px;
+    }
+
+    @include mobile() {
+      margin-top: 2px;
     }
   }
 
@@ -814,16 +888,15 @@ html:has(body.spz_5017_v) {
       min-width: 0;
     }
 
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
-    .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
-      height: 674px;
-      min-height: 674px;
-    }
+    // &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
+    // .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    //   height: 674px;
+    //   min-height: 674px;
+    // }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
     .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
-      height: 666px;
-      min-height: 666px;
+      transform: translateY(-1px);
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before,
@@ -842,6 +915,7 @@ html:has(body.spz_5017_v) {
       margin-bottom: 48px;
     }
   }
+
 
   /* Desktop ≥1100px — fluid cards so row fits viewport (no right gap); max card width 432px to avoid horizontal overflow */
   @media (min-width: 1100px) {
@@ -865,21 +939,23 @@ html:has(body.spz_5017_v) {
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
     .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
       height: auto;
-      min-height: 696px;
+      min-height: 778px;
       overflow: visible;
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
     .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
       height: auto;
-      min-height: 706px;
+      min-height: 808px;
+      // transform: none;
       /* design-values.json pricing.cards.elite.height */
       overflow: visible;
     }
 
     /* Figma 29056:905 — lock CTA row to 60px so thead ≈250px and all content fits in card (no overflow) */
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container,
-    .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container:not(.non-img-col),
+    .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container:not(.non-img-col) {
       min-height: 60px;
       max-height: 60px;
       height: 60px;
@@ -901,7 +977,8 @@ html:has(body.spz_5017_v) {
       display: flex;
       align-items: center;
       justify-content: center;
-      @media only screen and (min-width: 1100px) and (max-width: 1399.98px){
+
+      @media only screen and (min-width: 1100px) and (max-width: 1399.98px) {
         padding: 18px 20px;
       }
     }
@@ -992,8 +1069,14 @@ html:has(body.spz_5017_v) {
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
     .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
-      height: 674px;
-      min-height: 674px;
+      height: 776px;
+      min-height: 776px;
+    }
+
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
+    .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
+      min-height: 808px;
+      transform: translateY(-16px);
     }
   }
 
@@ -1005,7 +1088,7 @@ html:has(body.spz_5017_v) {
   .section.package-comparison .table-wrapper.spz-5017-elite-card::before {
     content: 'NEW';
     position: absolute;
-    top: -2px;
+    top: 0;
     /* Banner flush with card border-box. Containing block = padding box; -1px each side to align with border edge. */
     left: -1px;
     right: -1px;
@@ -1024,9 +1107,9 @@ html:has(body.spz_5017_v) {
     line-height: 20px;
     letter-spacing: 0;
     text-transform: uppercase;
-    border-radius: 24px 24px 0 0;
+    border-radius: 22px 22px 0 0;
     /* match Elite card radius (24px) */
-    padding: 0 32px;
+    padding: 8px 32px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1165,13 +1248,19 @@ html:has(body.spz_5017_v) {
     align-self: center;
   }
 
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container.non-img-col {
     grid-row: 3;
     grid-column: 1 / -1;
   }
 
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
     grid-row: 4;
+    grid-column: 1 / -1;
+  }
+
+
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container:not(.non-img-col) {
+    grid-row: 5;
     grid-column: 1 / -1;
   }
 
@@ -1229,7 +1318,6 @@ html:has(body.spz_5017_v) {
 
   /* #PRICE — ELEMENT: Price ($ + number). Figma: Fields Bold 56/64 #38312F. 4px gap to "per employee"; 12px below
    DOM: .table-wrapper thead th h4, .spz-5017-price-symbol, .spz-5017-price-amount, strong */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4,
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th h4 {
     font-size: 0;
     line-height: 0;
@@ -1241,6 +1329,7 @@ html:has(body.spz_5017_v) {
     justify-content: flex-start;
     gap: 4px;
     text-align: left;
+    width: fit-content;
 
     @include mobile {
       font-size: 0 !important;
@@ -1298,31 +1387,29 @@ html:has(body.spz_5017_v) {
     }
 
     .table-wrapper:nth-child(2) {
-      @include mobile {
-        min-height: 703px !important;
-      }
+      // @include mobile {
+      //   min-height: 703px !important;
+      // }
 
       .table {
         tbody tr {
-          &:first-child {
-            td:first-child {
-              strong {
-                @include mobile {
-                  margin-bottom: 21.5px;
-                }
-              }
-            }
-          }
+          // &:first-child {
+          //   td:first-child {
+          //     strong {
+          //       @include mobile {
+          //         margin-bottom: 21.5px;
+          //       }
+          //     }
+          //   }
+          // }
 
-          &:nth-child(2) {
+          &:nth-child(3) {
             @include mobile {
               margin-bottom: 7px;
             }
           }
 
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(7) {
+          &:nth-child(4) {
             @include mobile {
               min-height: 57px !important;
             }
@@ -1374,7 +1461,7 @@ html:has(body.spz_5017_v) {
           }
 
           &:nth-child(6) {
-            @include mobile{
+            @include mobile {
               margin-top: 7px;
             }
           }
@@ -1416,9 +1503,11 @@ html:has(body.spz_5017_v) {
     padding-left: 0;
     text-align: left;
     align-self: center;
-    @media only screen and (min-width: 1100px) and (max-width: 1399.98px){
+
+    @media only screen and (min-width: 1100px) and (max-width: 1399.98px) {
       font-size: 17px;
     }
+
     @include mobile {
       margin-bottom: 11.5px;
     }
@@ -1426,22 +1515,23 @@ html:has(body.spz_5017_v) {
 
   /* #DESCRIPTION — ELEMENT: Card description line (e.g. "For small businesses"). 24px gap below to CTA. Figma 29056:904
    DOM: .table-wrapper thead th p:not(.button-container):last-of-type */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type,
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
     color: #38312F;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 26px;
     letter-spacing: 0;
-    margin: 0 0 23.5px;
+    margin: 12px 0 23.5px;
     text-align: left;
 
+    strong {
+      font-weight: 700;
+    }
   }
 
   @media (min-width: 1100px) and (max-width: 1399.98px) {
 
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type,
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
       margin-bottom: 14px;
       font-size: 15px;
@@ -1450,16 +1540,20 @@ html:has(body.spz_5017_v) {
 
   /* Elite card: longer description above CTA — same 24px gap to CTA per Figma */
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th p:not(.button-container):last-of-type {
-    margin-top: 0;
+    margin-top: 12px;
     padding-top: 0;
     line-height: 1.45;
     margin-bottom: 23.5px;
+
+    @include mobile() {
+      margin-bottom: 23px;
+    }
   }
 
   /* #CTA_CONTAINER — ELEMENT: CTA row (60px height, flex center). Figma: fixed height so header fits
    DOM: .table-wrapper thead th p.button-container */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container,
-  &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container:not(.non-img-col),
+  &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container:not(.non-img-col) {
     margin: 0;
     padding: 0;
     min-height: 60px;
@@ -1471,14 +1565,9 @@ html:has(body.spz_5017_v) {
   }
 
   /* CTA inner strong wrapper — make it full width */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container strong {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container:not(.non-img-col) strong {
     display: block;
     width: 100%;
-  }
-
-  /* Hide video overview buttons */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container.non-img-col {
-    display: none;
   }
 
   /* #CTA_OUTLINED — ELEMENT: Outlined CTA (Core/Pro). 60px height, 18/40 padding, 2px #2E7918 border, 100px radius
@@ -1517,10 +1606,10 @@ html:has(body.spz_5017_v) {
   }
 
   /* Second card CTA — match first card (outlined): same 60×padding/border/radius */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent,
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1542,24 +1631,25 @@ html:has(body.spz_5017_v) {
     width: 100%;
     margin: 0;
     box-shadow: none;
-    @media only screen and (min-width: 1100px) and (max-width: 1399.98px){
+
+    @media only screen and (min-width: 1100px) and (max-width: 1399.98px) {
       padding: 18px 20px;
     }
   }
 
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:hover,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:hover,
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:hover,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:hover {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent:hover,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent:hover,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent:hover,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent:hover {
     background: #03551C;
     border-color: #03551C;
     color: #FFF;
   }
 
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:focus,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent:focus,
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:focus,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent:focus {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent:focus,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent:focus,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent:focus,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent:focus {
     border: 2px solid #03551C;
     outline: 2px solid #AAE868;
   }
@@ -1602,6 +1692,7 @@ html:has(body.spz_5017_v) {
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper a.spz-5017-cta-filled:focus {
     border: 2px solid #AAE868 !important;
     background: #2E7918 !important;
+    color: #fff !important;
   }
 
   /* Elite card CTA — same dimensions: 60px height, 18/40 padding, 2px border, 100px radius */
@@ -1658,10 +1749,10 @@ html:has(body.spz_5017_v) {
   }
 
   /* Hide 7th tr in table inside .table.comparison.block.allow-overflow, first card only */
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7),
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7) {
-    display: none;
-  }
+  // &.spz-5017-cards-ready .section.package-comparison .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7),
+  // .section.package-comparison.spz-5017-pricing-section .table-wrapper:first-of-type .table.comparison.block.allow-overflow table tr:nth-child(7) {
+  //   display: none;
+  // }
 
   /* Hide 6th bullet in first card (Core) — ul/li structure only */
   .pricing-comparison-wrapper .pricing-card:first-child .pricing-card-features-list li:nth-child(6),
@@ -1745,13 +1836,16 @@ html:has(body.spz_5017_v) {
   /* Tooltip popup container — keep hidden by default, show on hover/click */
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper .table-tooltip-container {
     text-align: left;
-    // min-width: 252px !important;
+    min-width: 252.4px!important;
     @include tablet {
       white-space: normal;
       max-width: 215px;
+      min-width: unset!important;
     }
+
     @include mobile {
       white-space: normal;
+      min-width: 215px!important;
     }
   }
 
@@ -1769,7 +1863,9 @@ html:has(body.spz_5017_v) {
 
   /* "New" pill badge — Figma 29056:1016: bg #ECFFC7, px-[8px], rounded 32px, "New" 12/18 #2E7918. Nudge down so pill aligns vertically with feature text. */
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new,
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green {
     display: inline-flex;
     align-self: center;
     vertical-align: middle;
@@ -1784,12 +1880,15 @@ html:has(body.spz_5017_v) {
     /* align pill with 16px text baseline */
   }
 
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new svg {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new svg,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green svg {
     display: none;
   }
 
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new::after,
-  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new::after {
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new::after,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green::after,
+  &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green::after {
     content: 'New';
     font-family: 'Inter', sans-serif;
     font-size: 12px;
@@ -1830,8 +1929,9 @@ html:has(body.spz_5017_v) {
     text-align: left;
     overflow: visible;
     max-height: none;
-    &:hover{
-      .icon-wrapper__text{
+
+    &:hover {
+      .icon-wrapper__text {
         color: var(--color-green-4);
       }
     }
@@ -1867,6 +1967,25 @@ html:has(body.spz_5017_v) {
   .section.package-comparison .table-wrapper table tbody td .feature-text *,
   .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text * {
     white-space: nowrap;
+  }
+
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text {
+    >.icon-wrapper {
+      >.icon {
+        margin: 2.5px 1px 0px;
+        transform: translateX(-1px);
+
+        >svg {
+          width: 18px !important;
+          height: 18px !important;
+        }
+
+        @include tablet() {
+          margin-top: 3.5px;
+        }
+      }
+
+    }
   }
 
   .section.package-comparison .table-wrapper table tbody td .icon-wrapper,
@@ -1906,7 +2025,9 @@ html:has(body.spz_5017_v) {
   }
 
   .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
-  .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+  .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new-green,
+  .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new-green {
     flex-shrink: 0;
     white-space: nowrap;
     align-self: center;
@@ -1988,8 +2109,9 @@ html:has(body.spz_5017_v) {
       max-height: none;
       padding: 6.5px 0;
       min-width: 0;
-      &:hover{
-        .icon-wrapper__text{
+
+      &:hover {
+        .icon-wrapper__text {
           color: var(--color-green-4);
         }
       }
@@ -2012,7 +2134,9 @@ html:has(body.spz_5017_v) {
     .section.package-comparison .table-wrapper table tbody td .feature-text .spz-5017-badge-unit,
     .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .feature-text .spz-5017-badge-unit,
     .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new,
-    .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new {
+    .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new,
+    .section.package-comparison .table-wrapper table tbody td .icon-wrapper__text .icon-new-green,
+    .section.package-comparison.spz-5017-pricing-section .table-wrapper table tbody td .icon-wrapper__text .icon-new-green {
       white-space: nowrap;
     }
 
@@ -2035,6 +2159,7 @@ html:has(body.spz_5017_v) {
       flex-wrap: wrap;
       flex-shrink: 1;
       text-align: left;
+      min-width: fit-content;
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper,
@@ -2383,6 +2508,13 @@ html:has(body.spz_5017_v) {
     height: auto;
   }
 
+  a.button.accent[href="#compare-all-features"],
+  a.button[href="#compare-all-features"] {
+    @include mobile() {
+      margin-bottom: 25px;
+    }
+  }
+
   .section.package-comparison a.button.accent[href*="all-plan-features"]:hover,
   .section.package-comparison a.button.accent[href="#compare-all-features"]:hover,
   .section.package-comparison .pricing-comparison-wrapper+.default-content-wrapper a.button:hover,
@@ -2400,6 +2532,15 @@ html:has(body.spz_5017_v) {
 
   /* #COMPARE_LINK — ELEMENT: Compare All Features link (below pricing cards). Tablet: top 48px, bottom 24px
    DOM: .pricing-comparison-wrapper + .default-content-wrapper */
+  @media (min-width: 1100px) and (max-width: 1299.98px) {
+
+    &.spz-5017-cards-ready .section.package-comparison.table-container,
+    .section.package-comparison.table-container,
+    .section.package-comparison.spz-5017-pricing-section {
+      padding: 41px 24px 0;
+    }
+  }
+
   @media (min-width: 451px) and (max-width: 1099.98px) {
 
     .section.package-comparison a.button.accent[href*="all-plan-features"],
@@ -2420,913 +2561,13 @@ html:has(body.spz_5017_v) {
     padding-bottom: 0;
   }
 
-  /* #ADDON_SECTION — ELEMENT: Add-on solutions section (white bg, 96px py, gap 48px). Figma 29056:1201
-   DOM: .section:has(#add-on-solutions), .section:has([id*="add-on-solutions"]) */
-  /* ============================================
-   ADD-ON SOLUTIONS SECTION — Figma nodes 29056:1201 (desktop), 29057:7090 (tablet), 29057:7782 (mobile)
-   Spec: addon-cards-figma-design-data.json
-   JSON spec verification:
-   - designTokens.colors: #38312F #58524F #E8EBF2 #2E7918 #FFFFFF ✓
-   - typography: card_title 20/26 Fields #38312F minHeight 46px; card_description 14/20 Inter Bold #38312F; eor_subtitle 14/20 Inter #58524F; overview_link 16/24 Inter Bold #2E7918; feature_item 16/24 Inter #58524F; footnote 12/18 Inter #58524F ✓
-   - spacing: cardsContainer gap 16px; card padding 24/24/26/24 gap 16px; titleBlock 8px; overview 5px; items 8px; featureItem 12px + icon 3px top; footnote pt 8px ✓
-   - layout.desktop: flex row gap 16px alignItems flex-start; card 321px minHeight 438px overflow clip border 1px #E8EBF2 radius 16px ✓
-   - layout: desktop >1100px, tablet ≤1099px & >450px, mobile ≤450px; tablet 2 cols 16px gap; mobile 1 col 16px gap ✓
-   - cardInternalStructure: titleBlock gap 8px; overview gap 5px; playIcon 20px; items gap 8px; featureItem gap 12px checkmark 18px; footnote pt 8px (align left per request) ✓
-   - icons: overview_play 20px checkmark 18px Cloudinary ✓
-   ============================================ */
-
-  /* Section: flex col, gap 48px — white background. Figma 29056:1195: py 96px (96px top/bottom). */
-  .section:has(#add-on-solutions),
-  .section:has([id*="add-on-solutions"]),
-  .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
-  .section.has-bg.bg-solid-gray-0:has([id*="add-on-solutions"]),
-  .section.has-bg:has(#add-on-solutions),
-  .section.has-bg:has([id*="add-on-solutions"]),
-  .section:has(#add-on-solutions),
-  .section:has([id*="add-on-solutions"]),
-  .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
-  .section.has-bg.bg-solid-gray-0:has([id*="add-on-solutions"]),
-  .section.has-bg:has(#add-on-solutions),
-  .section.has-bg:has([id*="add-on-solutions"]) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 74px;
-    padding-bottom: 94.5px;
-    width: 100%;
-    background: #FFFFFF;
-    background-color: #FFFFFF;
-    box-sizing: border-box;
-
-    @include tablet() {
-      padding-bottom: 96.5px;
-    }
-
-    @include mobile() {
-      padding-top: 31.5px;
-      padding-bottom: 61px;
-    }
-  }
-
-  /* Override inner .bg, .bg-solid-gray-0 and any .bg child so section shows white */
-  .section:has(#add-on-solutions)>.bg,
-  .section:has(#add-on-solutions)>span.bg,
-  .section:has(#add-on-solutions)>.bg-solid-gray-0,
-  .section:has([id*="add-on-solutions"])>.bg,
-  .section:has([id*="add-on-solutions"])>span.bg,
-  .section:has([id*="add-on-solutions"])>.bg-solid-gray-0,
-  .section.has-bg:has(#add-on-solutions)>.bg,
-  .section.has-bg:has(#add-on-solutions)>span.bg,
-  .section.has-bg.bg-solid-gray-0:has(#add-on-solutions)>.bg,
-  .section.has-bg.bg-solid-gray-0:has(#add-on-solutions)>span.bg,
-  .section.has-bg.bg-solid-gray-0:has([id*="add-on-solutions"])>.bg,
-  .section.has-bg.bg-solid-gray-0:has([id*="add-on-solutions"])>span.bg {
-    background: #FFFFFF;
-    background-color: #FFFFFF;
-  }
-
-  /* Force section ::before/::after to white so host .has-bg / .bg-solid-gray-0 pseudo-elements don't show gray */
-  .section.has-bg:has(#add-on-solutions)::before,
-  .section.has-bg:has(#add-on-solutions)::after,
-  .section.has-bg:has([id*="add-on-solutions"])::before,
-  .section.has-bg:has([id*="add-on-solutions"])::after,
-  .section.bg-solid-gray-0:has(#add-on-solutions)::before,
-  .section.bg-solid-gray-0:has(#add-on-solutions)::after,
-  .section.bg-solid-gray-0:has([id*="add-on-solutions"])::before,
-  .section.bg-solid-gray-0:has([id*="add-on-solutions"])::after {
-    background: #FFFFFF;
-    background-color: #FFFFFF;
-  }
-
-  /* Remove spacer blocks so they don't add unnecessary gaps */
-  .section:has(#add-on-solutions) .spacer-wrapper,
-  .section:has(#add-on-solutions) .spacer.spacer-xl,
-  .section:has([id*="add-on-solutions"]) .spacer-wrapper,
-  .section:has([id*="add-on-solutions"]) .spacer {
-    display: none;
-  }
-
-  /* Collapse empty wrappers that might still take space */
-  .section:has(#add-on-solutions)>.spacer-wrapper,
-  .section:has([id*="add-on-solutions"])>.spacer-wrapper {
-    margin: 0;
-    padding: 0;
-    min-height: 0;
-  }
-
-  /* Spacing below add-on cards — Figma 29056:1195. Use so these win over host. */
-  .section:has(#add-on-solutions),
-  .section:has([id*="add-on-solutions"]),
-  .section.has-bg.bg-solid-gray-0:has(#add-on-solutions),
-  .section.has-bg.bg-solid-gray-0:has([id*="add-on-solutions"]),
-  .section.has-bg:has(#add-on-solutions),
-  .section.has-bg:has([id*="add-on-solutions"]) {
-    gap: 0;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:first-of-type,
-  .section:has([id*="add-on-solutions"])>.title-wrapper:first-of-type {
-    margin: 0;
-    padding-bottom: 0;
-    /* 48px gap from subtext margin-bottom instead */
-  }
-
-  .section:has(#add-on-solutions)>.cards-wrapper,
-  .section:has([id*="add-on-solutions"])>.cards-wrapper {
-    margin: 0;
-    padding-bottom: 32px;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(2),
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(2) {
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 16px;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(3),
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(3) {
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(4),
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(4) {
-    margin: 0;
-    padding-top: 48px;
-    padding-bottom: 0;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(2) .title,
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(3) .title,
-  .section:has(#add-on-solutions)>.title-wrapper:nth-of-type(4) .title,
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(2) .title,
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(3) .title,
-  .section:has([id*="add-on-solutions"])>.title-wrapper:nth-of-type(4) .title {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  /* Bundle / disclaimer: spacing via padding; zero host .spacing-xl on disclaimer inner .title */
-  .section:has(#add-on-solutions)>.title-wrapper:has(.title.green-cta),
-  .section:has([id*="add-on-solutions"])>.title-wrapper:has(.title.green-cta) {
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 16px;
-  }
-
-  .section:has(#add-on-solutions)>.title-wrapper:has(.title.spacing-none.spacing-xl),
-  .section:has([id*="add-on-solutions"])>.title-wrapper:has(.title.spacing-none.spacing-xl) {
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .section:has(#add-on-solutions) .title.spacing-none.block.spacing-xl,
-  .section:has([id*="add-on-solutions"]) .title.spacing-none.block.spacing-xl {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Title block (heading + subtitle): flex col, gap 16px, center; 48px gap from subtext margin-bottom */
-  .section:has(#add-on-solutions)>.title-wrapper:first-of-type,
-  .section:has([id*="add-on-solutions"])>.title-wrapper:first-of-type {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Heading — Figma: Fields Bold 36/46, #38312F, center; 16px gap to subtitle below */
-  #add-on-solutions,
-  [id*="add-on-solutions"] {
-    color: #38312F;
-    font-family: 'Fields', 'Fira Sans', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 46px;
-    font-style: normal;
-    text-align: center;
-    margin: 0 0 16px;
-  }
-
-  /* Subtitle — Figma: Inter Regular 16/24, #58524F, center. Add-on section only. 48px bottom margin to cards. */
-  .section:has(#add-on-solutions) .title-wrapper:first-of-type p,
-  .section:has(#add-on-solutions) [id*="add-on"]+p,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .section-subtitle,
-  .section:has([id*="add-on-solutions"]) .title-wrapper:first-of-type p,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .section-subtitle {
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-    margin: 0 0 48px;
-
-    @include tablet {
-      margin-bottom: 47.5px;
-    }
-  }
-
-  /* Cards wrapper: px 54px, full width; inner gap 32px between cards row and bundle; cards row centered */
-  .section:has(#add-on-solutions) .cards-wrapper,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 54px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 54px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Cards row — centered; width fits content up to 100%. */
-  .section:has(#add-on-solutions) .cards-wrapper .cards,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    align-items: flex-start;
-    width: fit-content;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-  }
-
-  /* Multi-cta grid — fluid columns (like pricing row); cards max 321px, row fills container. */
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    justify-content: stretch;
-    align-items: start;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   /* #ADDON_CARDS — ELEMENT: Add-on card layout (grid, min-height 438px). Desktop fluid; tablet 2col; mobile 1col
    DOM: .section:has(#add-on-solutions) .cards-wrapper .cards .card, .multi-cta-cards-wrapper .multi-cta-card */
   /* Add-on cards: tablet ≤1099px — 2 cols, 16px gap; card fills cell, fluid height (like pricing). */
   @media (max-width: 1099.98px) {
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-      width: 100%;
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th p:not(.button-container):last-of-type {
+      margin-top: 14px;
     }
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card {
-      width: auto;
-      min-width: 0;
-      max-width: none;
-      flex: 1 0 calc(50% - 8px);
-      height: auto;
-      min-height: 438px;
-      overflow: visible;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-      width: 100%;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      justify-content: stretch;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card {
-      width: 100%;
-      min-width: 0;
-      max-width: none;
-      height: auto;
-      min-height: 438px;
-      flex: none;
-      overflow: visible;
-    }
-  }
-
-  /* Add-on cards: desktop ≥1100px — fluid width/height (like pricing); row full width, cards flex to fit, height from content */
-  @media (min-width: 1100px) {
-
-    /* #EVENT_BUNDLE — ELEMENT: Event bundle bar (green CTA). Max width 1332px, section padding 54px. DOM: .title-wrapper:has(.title.green-cta), .bundle-save-bar */
-    .section:has(#add-on-solutions),
-    .section:has([id*="add-on-solutions"]) {
-      max-width: 1440px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 54px;
-      padding-right: 54px;
-      box-sizing: border-box;
-    }
-
-    .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
-    .section:has([id*="add-on-solutions"]) .title-wrapper:has(.title.green-cta) {
-      width: 100%;
-      max-width: 1332px;
-    }
-
-    .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
-    .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta {
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper,
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .section:has(#add-on-solutions) .section.bundle-bar,
-    .section:has([id*="add-on-solutions"]) .section.bundle-bar,
-    .section:has(#add-on-solutions) .bundle-save-bar,
-    .section:has([id*="add-on-solutions"]) .bundle-save-bar {
-      width: 100%;
-      max-width: 1332px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-      width: 100%;
-      flex-wrap: nowrap;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card {
-      flex: 1 1 0;
-      min-width: 0;
-      max-width: 321px;
-      width: auto;
-      height: auto;
-      min-height: 438px;
-      overflow: visible;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-      width: 100%;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      justify-content: stretch;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card {
-      width: 100%;
-      min-width: 0;
-      max-width: none;
-      height: auto;
-      min-height: 438px;
-      flex: none;
-      overflow: visible;
-    }
-  }
-
-  /* Add-on cards: mobile ≤450px — 1 col, 16px gap; cards block centered in container, max 321px */
-  @media (max-width: 767.98px) {
-
-    .section:has(#add-on-solutions) .cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper,
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-      width: 100%;
-      max-width: 328px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card {
-      width: 100%;
-      min-width: 0;
-      max-width: none;
-      flex: 1 0 100%;
-      min-height: 438px;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-      width: 100%;
-      max-width: 321px;
-      margin-left: auto;
-      margin-right: auto;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card {
-      width: 100%;
-      min-width: 0;
-      max-width: none;
-      min-height: 438px;
-    }
-
-    .section:has(#add-on-solutions) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
-    .section:has([id*="add-on-solutions"]) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block {
-      margin-top: 25px;
-    }
-
-    .section.has-bg.bg-solid-gray-0.spacer-container.title-container.cards-container,
-    .section:has(#add-on-solutions) {
-      padding-bottom: 64px;
-    }
-  }
-
-  /* Single card — Figma 321×438 nominal; fluid width, fixed min-height 438px; max-width 321px, height from content. */
-  .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    background: #FFFFFF;
-    border: 1px solid #E8EBF2;
-    border-radius: 16px;
-    padding: 22.5px 24px 26px 23px;
-    width: 100%;
-    min-width: 0;
-    max-width: 321px;
-    height: auto;
-    min-height: 438px;
-    flex: 1 1 0;
-    overflow: visible;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
-
-    @media (min-width: 1100px) and (max-width: 1399.98px) {
-      padding: 22.5px 10px 26px 10px;
-    }
-
-    @include tablet {
-      min-height: 414px;
-      max-width: 322px;
-
-      &:nth-child(3),
-      &:nth-child(4) {
-        min-height: 380px;
-      }
-    }
-
-    @include mobile {
-      max-width: 328px;
-      min-height: 265px;
-
-      &:nth-child(3) {
-        min-height: 332px;
-      }
-
-      &:nth-child(4) {
-        min-height: 324px;
-      }
-    }
-  }
-
-  // .section:has(#add-on-solutions) .cards-wrapper .cards .card:hover,
-  // .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card:hover,
-  // .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card:hover,
-  // .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card:hover {
-  //   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  // }
-
-  /* First card (Figma 29056:1202): internal spacing — title block gap 8px, card gap 16px between sections. */
-
-  /* Card title block: zero top/side margin; vertical spacing via h3/description (Figma 29056:1203 gap 8px). */
-  .section:has(#add-on-solutions) .cards-wrapper .card>h3,
-  .section:has(#add-on-solutions) .cards-wrapper .card>p:not(.button-container):not(:last-of-type),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card>h3,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card>p:not(.button-container):not(:last-of-type) {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-  }
-
-  /* Card h3 — Figma 29056:1204: Fields Bold 20/26 #38312F; min-height 46px; title block 8px to description. */
-  .section:has(#add-on-solutions) .cards-wrapper .card h3,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card h3,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card h3,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card h3 {
-    color: #38312F;
-    font-family: 'Fields', 'Fira Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 26px;
-    letter-spacing: 0;
-    margin: 0 0 -8px;
-    min-height: 46px;
-
-    @media (min-width: 1100px) and (max-width: 1399.98px) {
-      font-size: 18px;
-    }
-  }
-
-  /* EOR card subtitle "(powered by Remote)" — Figma: Inter Regular 14px/20px #58524F; 8px below title (spec) */
-  .section:has(#add-on-solutions) .cards-wrapper .card .addon-card-subtitle.spz-5017-eor-subtitle,
-  .section:has(#add-on-solutions) .card:has(#employer-of-record-powered-by-remote) .addon-card-subtitle,
-  .section:has(#add-on-solutions) .card h3#employer-of-record-powered-by-remote+.addon-card-subtitle,
-  .section:has(#add-on-solutions) .card h3[id*="employer-of-record"]+.addon-card-subtitle,
-  .section:has([id*="add-on-solutions"]) .card .addon-card-subtitle.spz-5017-eor-subtitle,
-  .section:has([id*="add-on-solutions"]) .card h3[id*="employer-of-record"]+.addon-card-subtitle {
-    display: block;
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0;
-    margin: 0 0 -8px;
-    padding: 0;
-  }
-
-  /* Fourth card (EOR) — Figma 29056:1293–1298: title+subtitle tight (0 gap), then 8px to description. */
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) h3,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) h3 {
-    margin: 0 0 -16px;
-    /* 0px to subtitle (cancel card gap so title and subtitle touch) */
-    min-height: 0;
-    /* override 46px so EOR title doesn't get extra vertical space */
-  }
-
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .addon-card-subtitle.spz-5017-eor-subtitle,
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) h3[id*="employer-of-record"]+.addon-card-subtitle,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .addon-card-subtitle.spz-5017-eor-subtitle,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) h3[id*="employer-of-record"]+.addon-card-subtitle {
-    margin: 0 0 -8px;
-    /* 8px to "Hire employees worldwide." (Figma 29056:1294 gap) */
-    padding-top: 0;
-  }
-
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"])>h3:first-child,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"])>h3:first-child {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  /* EOR card: hide empty Overview row (button-container with .wistia but no link) so it doesn't add gap */
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container:has(.wistia):not(:has(a)),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container:has(.wistia):not(:has(a)) {
-    display: none;
-    margin: 0;
-    padding: 0;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  /* Card description — Figma: Inter Bold 14/20 #38312F, letterSpacing 0. No bottom margin so card gap 16px to Overview. */
-  .section:has(#add-on-solutions) .cards-wrapper .card>p:not(.button-container):first-of-type,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card .multi-cta-card-description,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card>p:not(.button-container):first-of-type,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card .multi-cta-card-description {
-    color: #38312F;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0;
-    margin: 0;
-  }
-
-  /* Add-on cards: hide button-container except the one with Overview (accent caret-link / wistia) */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container {
-    display: none;
-  }
-
-  /* Show Overview row only when it has an actual link (not empty wistia); show Learn More row on EOR card */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a.accent.caret-link.caret-link-theme-color),
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a.caret-link[title="Overview"]),
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a[title="Overview"]),
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(a.accent.caret-link.caret-link-theme-color),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(a.caret-link[title="Overview"]),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(a[title="Overview"]),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(.wistia a) {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-    padding: 0;
-    visibility: visible;
-  }
-
-  /* 4th card (EOR): hide Learn More row (per request) */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(a[title="Learn More"]),
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container:has(a.caret-link),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(a[title="Learn More"]),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container:has(a.caret-link) {
-    display: none;
-    visibility: hidden;
-  }
-
-  /* Ensure Wistia wrapper and its Overview link are visible when button-container has .wistia a */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a) .wistia,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(.wistia a) .wistia {
-    display: flex;
-    align-items: center;
-    visibility: visible;
-  }
-
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container:has(.wistia a) .wistia a,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container:has(.wistia a) .wistia a {
-    display: inline-flex;
-    visibility: visible;
-  }
-
-  /* Overview link (caret-link) — Figma 29056:1209: flex gap 5px, Inter Bold 16/24 #2E7918; play icon + text visible. */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title="Overview"],
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a,
-  .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title="Overview"],
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container.non-img-col a.caret-link,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a[title="Overview"],
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container .wistia a,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card p.button-container a[title="Overview"],
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card a.button {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    visibility: visible;
-    color: #2E7918;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0;
-    text-decoration: none;
-    &:hover{
-      color: #73C41D;
-      &::before{
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18ZM9.555 7.168C9.4044 7.06752 9.22935 7.00981 9.04852 7.00103C8.86769 6.99224 8.68786 7.03272 8.52823 7.11813C8.3686 7.20354 8.23516 7.33068 8.14213 7.48599C8.04909 7.6413 7.99997 7.81896 8 8V12C7.99997 12.181 8.04909 12.3587 8.14213 12.514C8.23516 12.6693 8.3686 12.7965 8.52823 12.8819C8.68786 12.9673 8.86769 13.0078 9.04852 12.999C9.22935 12.9902 9.4044 12.9325 9.555 12.832L12.555 10.832C12.692 10.7407 12.8043 10.617 12.8819 10.4718C12.9596 10.3267 13.0002 10.1646 13.0002 10C13.0002 9.83539 12.9596 9.67332 12.8819 9.52818C12.8043 9.38304 12.692 9.25932 12.555 9.168L9.555 7.168Z' fill='%2373C41D'/%3E%3C/svg%3E");
-      }
-    }
-  }
-
-  /* Play icon before "Overview" — Cloudinary 5017 (add-on cards only); ensure icon shows for any Overview link */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color::before,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container.non-img-col a.caret-link::before,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title="Overview"]::before,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container .wistia a::before,
-  .section:has(#add-on-solutions) .cards-wrapper .card p.button-container a[title="Overview"]::before,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card a.button::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a.accent.caret-link.caret-link-theme-color::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container.non-img-col a.caret-link::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a[title="Overview"]::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container .wistia a::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card p.button-container a[title="Overview"]::before,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card a.button::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    background: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/heroicons-solidplay.svg') no-repeat center;
-    background-size: 20px 20px;
-    transition: all .25s ease-in-out;
-  }
-
-  /* Hide host play icon (span.icon.icon-play with svg inside a[title="Overview"]) so Cloudinary ::before shows — add-on cards only */
-  .section:has(#add-on-solutions) .cards-wrapper .card .icon.icon-play,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container .icon.icon-play,
-  .section:has(#add-on-solutions) .cards-wrapper .card a.caret-link .icon.icon-play,
-  .section:has(#add-on-solutions) .cards-wrapper .card a[title="Overview"] .icon.icon-play,
-  .section:has(#add-on-solutions) .cards-wrapper .card .wistia .icon.icon-play,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .icon.icon-play,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container .icon.icon-play,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card a.caret-link .icon.icon-play,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card a[title="Overview"] .icon.icon-play,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .wistia .icon.icon-play {
-    display: none;
-    visibility: hidden;
-  }
-
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.caret-link>img:first-child,
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a.caret-link>svg:first-child,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a.caret-link>img:first-child,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a.caret-link>svg:first-child {
-    display: none;
-  }
-
-  /* EOR card (4th): Learn More link — match green CTA style; no extra margin so card gap 16px applies */
-  .section:has(#add-on-solutions) .cards-wrapper .card .button-container a[title="Learn More"],
-  .section:has(#add-on-solutions) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container a.caret-link,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card .button-container a[title="Learn More"],
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card:has(h3[id*="employer-of-record"]) .button-container a.caret-link {
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    color: #2E7918;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    text-decoration: none;
-  }
-
-  /* Card ul (Items) — Figma: flex col, gap 8px, width 100%. */
-  .section:has(#add-on-solutions) .cards-wrapper .card ul,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Card li — Figma feature_item: Inter Regular 16/24 #58524F; flex gap 12px; checkmark 18px left, 3px from top (spec). */
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0;
-    margin: 0;
-    padding: 0 0 0 30px;
-    position: relative;
-    text-align: left;
-
-    @media (min-width: 1100px) and (max-width: 1399.98px) {
-      font-size: 13px;
-      line-height: 20px;
-    }
-  }
-
-  /* Bullet text (any child after icon): enforce same typography so host styles don’t override */
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li>*:not(:first-child),
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li span:not(:first-child),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li>*:not(:first-child),
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li span:not(:first-child) {
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0;
-    flex: 1 0 0;
-    min-width: 0;
-    text-align: left;
-  }
-
-  /* Add-on card list: checkmark via li::before so it always shows (18×18, 3px from top). Cloudinary 5017. */
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li::before,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    background: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/checkmark.svg') no-repeat 0 0;
-    background-size: 18px 18px;
-  }
-
-  /* Hide host icon in first child so only our ::before checkmark shows; negative margin cancels flex gap so text sits at 30px */
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li>*:first-child,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li>*:first-child {
-    width: 0;
-    min-width: 0;
-    height: 0;
-    overflow: hidden;
-    margin: 0 -12px 0 0;
-    padding: 0;
-    visibility: hidden;
-  }
-
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li>*:first-child img,
-  .section:has(#add-on-solutions) .cards-wrapper .card ul li>*:first-child svg,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li>*:first-child img,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card ul li>*:first-child svg {
-    display: none;
-  }
-
-  /* Footnote * US employees only — Figma 29056:1231: pt 8px, P6-12-R #58524F, left-aligned. */
-  .section:has(#add-on-solutions) .cards-wrapper .card>p:last-of-type,
-  .section:has(#add-on-solutions) .cards-wrapper .card p sup,
-  .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-card .addon-footnote,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card>p:last-of-type,
-  .section:has([id*="add-on-solutions"]) .cards-wrapper .card p sup,
-  .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-card .addon-footnote {
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0;
-    margin: -8px 0 0;
-    padding-top: 8px;
-    text-align: left;
-  }
-
-  /* ============================================
-   BUNDLE & SAVE BAR — Figma node 29056:1321
-   bg #2E7918, radius 16px, pad 12px 18px; text white (Bold + Regular 16/24)
-   Match width of .cards-wrapper above: same max-width, padding, and centering
-   ============================================ */
-  .section:has(#add-on-solutions) .title.green-cta,
-  .section:has(#add-on-solutions) .title.green-cta.spacing-sm.block,
-  .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper {
-    text-align: center;
-  }
-
-  /* Bundle bar — desktop: Figma 29056:1321 content width 1332px (1440−108), padding 12px vertical 18px horizontal, radius 16px */
-  .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
-  .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
-  .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta,
-  .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta.spacing-sm.block {
-    width: 100%;
-    max-width: 1332px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 12px 18px;
-    box-sizing: border-box;
-    background: #2E7918;
-    border-radius: 16px;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  /* Wrapper of green-cta: desktop 1332px max; 16px bottom padding; center the Bundle block. */
-  .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
-  .section:has([id*="add-on-solutions"]) .title-wrapper:has(.title.green-cta) {
-    width: 100%;
-    max-width: 1332px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 16px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-  }
-
-  .section:has(#add-on-solutions) .title.green-cta.spacing-sm.block,
-  .section:has([id*="add-on-solutions"]) .title.green-cta.spacing-sm.block {
-    display: block;
-    text-align: center;
-    box-sizing: border-box;
   }
 
   .section.bundle-bar,
@@ -3341,22 +2582,9 @@ html:has(body.spz_5017_v) {
     line-height: 24px;
   }
 
-  .section:has(#add-on-solutions) .title.green-cta strong,
   .section.bundle-bar strong,
   .bundle-save-bar strong {
     font-weight: 700;
-  }
-
-  /* Disclaimer below bundle — Figma: Inter Regular 12/18, #58524F, center */
-  .section:has(#add-on-solutions) .title.spacing-none,
-  .section:has(#add-on-solutions) .title.spacing-none div,
-  .section:has(#add-on-solutions) .title.spacing-none sup {
-    color: #58524F;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: center;
   }
 
   .bundle-disclaimer {
@@ -3368,55 +2596,14 @@ html:has(body.spz_5017_v) {
     text-align: center;
   }
 
-  /* Bottom CTA: center the button; section gap 48px places it below text — Figma 29056:1195 */
-  .section:has(#add-on-solutions)>*:has(> a.button[data-action="open-modal"]) {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* When CTA is in the following section (bundle + button) — no padding-top so add-on margin is the only gap */
-  // .section:has(#add-on-solutions)+.section {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   gap: 48px;
-  //   padding-top: 0;
-  //   padding-bottom: 96px;
-  //   margin-top: 0;
-  //   margin-bottom: 96px;
-  //   box-sizing: border-box;
-  // }
-
-  /* Section after bundle+CTA (e.g. Trusted by) — no top space so only previous section margin creates the gap */
-  // .section:has(#add-on-solutions)+.section+.section {
-  //   margin-top: 0;
-  //   padding-top: 0;
-  // }
-
-  /* Remove 48px bottom margin from red CTA wrapper (host .spacing-bottom-md) */
-  .section:has(#add-on-solutions) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
-  .section:has([id*="add-on-solutions"]) .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
-  .section:has(#add-on-solutions)+.section .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
-  .section:has([id*="add-on-solutions"])+.section .title.button-inline.button-size-lg.spacing-top-sm.spacing-bottom-md.red-cta.block,
-  .title.red-cta.spacing-bottom-md {
-    margin-bottom: 0;
-  }
 
   /* Remove 20px (right) margin from button-container wrapping "Get a Free Price Quote" */
-  .section:has(#add-on-solutions)+.section .button-container:has(a[data-action="open-modal"]),
-  .section:has(#add-on-solutions)+.section .button-container:has(a[title="Get a Free Price Quote"]),
   .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper.button-container,
-  .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper .button-container,
-  p.button-container:has(a[title="Get a Free Price Quote"]) {
+  .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper .button-container {
     margin: 0;
     margin-right: 0;
   }
 
-  /* "Get a Free Price Quote" — Figma node 29056:1326: 255×60, bg #CE4755, radius 100px, px 40px py 18px, Inter Bold 16/24. Top margin 18px. */
-  .section:has(#add-on-solutions) a.button[data-action="open-modal"],
-  .section:has(#add-on-solutions)+.section a.button[data-action="open-modal"],
   a.button[href="#scroll-to-form"].spz5017_v,
   .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper a.button {
     display: inline-flex;
@@ -3440,10 +2627,6 @@ html:has(body.spz_5017_v) {
     box-sizing: border-box;
   }
 
-  .section:has(#add-on-solutions) a.button[data-action="open-modal"]:hover,
-  .section:has(#add-on-solutions) a.button[data-action="open-modal"]:focus,
-  .section:has(#add-on-solutions)+.section a.button[data-action="open-modal"]:hover,
-  .section:has(#add-on-solutions)+.section a.button[data-action="open-modal"]:focus,
   a.button[href="#scroll-to-form"].spz5017_v:hover,
   .bg-top-single-1 .multi-cta-cards-wrapper+.default-content-wrapper a.button:hover,
   a.button[href="#scroll-to-form"].spz5017_v:focus,
@@ -3624,8 +2807,9 @@ html:has(body.spz_5017_v) {
     width: 100%;
     position: inherit;
     margin-top: 8px;
-    @include mobile{
-      order: 11; 
+
+    @include mobile {
+      order: 11;
     }
   }
 
@@ -3787,10 +2971,12 @@ html:has(body.spz_5017_v) {
   .section.form-container .form-col .form-checkbox-option>label:before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Crect x='0.5' y='0.5' width='15' height='15' rx='1.5' stroke='%2303551C'/%3E%3C/svg%3E");
   }
-  .section.form-container .form-col .form-checkbox-option input:checked+label:before{
+
+  .section.form-container .form-col .form-checkbox-option input:checked+label:before {
     background: transparent;
   }
-    .section.form-container .form-col .form-checkbox-option input:checked+label:after {
+
+  .section.form-container .form-col .form-checkbox-option input:checked+label:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='18' viewBox='0 0 16 18' fill='none'%3E%3Crect y='1' width='16' height='16' rx='2' fill='%232E7918'/%3E%3Cpath d='M4.66699 9.2421L6.75033 11.6663L11.3337 6.33301' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     transform: inherit;
     top: 0;
@@ -3855,9 +3041,10 @@ html:has(body.spz_5017_v) {
     #plans-and-pricing-for-every-organization,
     .section.package-comparison .title-wrapper h2,
     .section.package-comparison.spz-5017-pricing-section .title-wrapper h2 {
-      font-size: 56px;
-      line-height: 64px;
-      margin-bottom: 48px;
+      font-size: 48px;
+      line-height: 56px;
+      margin: 0 auto 32.5px;
+      max-width: 500px;
     }
 
     /* Figma 29057:6741 — Pricing container: flex col, gap 16px, items center. Section 768px max so 54px padding yields 660px content (Figma tablet). */
@@ -3899,6 +3086,7 @@ html:has(body.spz_5017_v) {
       min-width: 0;
       padding: 39px 31px;
       gap: 0;
+      min-height: unset;
       overflow: visible;
     }
 
@@ -3907,7 +3095,7 @@ html:has(body.spz_5017_v) {
       position: relative;
       padding-top: 70px;
       padding-left: 30px;
-      padding-bottom: 40px;
+      padding-bottom: 38px;
     }
 
     /* Inner .table = flex column with 24px gap; must grow to content (override base min-height:0) */
@@ -3941,7 +3129,7 @@ html:has(body.spz_5017_v) {
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p:not(.button-container):last-of-type {
-      margin-bottom: 23.5px;
+      margin: 14px 0 24px;
     }
 
     /* Body rows — no padding on text below CTA */
@@ -3956,6 +3144,7 @@ html:has(body.spz_5017_v) {
 
     /* Elite: NEW banner flush with card — same left/right -1px as desktop */
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card::before {
+      top: -2px;
       left: -1px;
       right: -1px;
       width: auto;
@@ -3977,88 +3166,6 @@ html:has(body.spz_5017_v) {
       gap: 16px;
     }
 
-    /* Add-on section — Figma 29057:7084: 54px horizontal, heading y=96, cards y=230 (48px gap), 2 cols 322+16+322, card padding 24px */
-    .section:has(#add-on-solutions),
-    .section:has([id*="add-on-solutions"]) {
-      padding-left: 54px;
-      padding-right: 54px;
-      padding-top: 96px;
-      gap: 48px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper {
-      max-width: 660px;
-      width: 100%;
-      padding: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Grid on cards container — 2 cols 322+16+322=660, 16px gap (Figma 29057:7089) */
-    .section:has(#add-on-solutions) .cards-wrapper .cards,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    /* When .cards-wrapper directly contains .card (no .cards), use grid on wrapper */
-    .section:has(#add-on-solutions) .cards-wrapper:not(:has(.cards)) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .section:has([id*="add-on-solutions"]) .cards-wrapper:not(:has(.cards)) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .card,
-    .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card {
-      padding: 23px 23px 20px;
-    }
-
-    /* Tablet Bundle — Figma 29057:7210: 666px width, padding 12px 18px, radius 16px */
-    .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
-    .section:has([id*="add-on-solutions"]) .title-wrapper:has(.title.green-cta) {
-      width: 100%;
-      max-width: 666px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
-    .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
-    .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta,
-    .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta.spacing-sm.block {
-      width: 100%;
-      max-width: 666px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 12px 18px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper {
-      padding: 0 54px;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      max-width: 660px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     /* Form modal — Figma 29058:9097 (Tablet): same as desktop — 32px padding, 20px radius, 2-col layout */
     &.spz-5017-modal-active .section.form-container .form-col {
       border-radius: 20px;
@@ -4077,6 +3184,15 @@ html:has(body.spz_5017_v) {
   /* #MOBILE — ELEMENT: Mobile breakpoint overrides (≤450px). Figma 29057:7642. Heading 32/40; cards stacked; CTA 280px
    DOM: same selectors; @media (max-width: 450px) */
   @media (max-width: 767.98px) {
+    #main-content {
+      >div {
+        &:nth-child(2) {
+          .title-wrapper {
+            padding: 0 16px;
+          }
+        }
+      }
+    }
 
     /* Pricing heading — Figma mobile 29057:7644: Fields Bold 32px/40px #FFFFFF (headingPricing) */
     #plans-and-pricing-for-every-organization,
@@ -4130,8 +3246,8 @@ html:has(body.spz_5017_v) {
     }
 
     /* Pricing card CTA — Figma mobile 29057:7644 ctaBlock: width 280px fill, height 60px, padding 18/40, border 2px #2e7918, radius 100px */
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container {
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container:not(.non-img-col),
+    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container:not(.non-img-col) {
       min-height: 60px;
       display: flex;
       align-items: center;
@@ -4145,10 +3261,10 @@ html:has(body.spz_5017_v) {
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-outlined,
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-filled,
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th .button-container a.button.accent,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th .button-container:not(.non-img-col) a.button.accent,
     &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-outlined,
     &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-filled,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th .button-container a.button.accent {
+    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th .button-container:not(.non-img-col) a.button.accent {
       box-sizing: border-box;
       min-height: 60px;
       height: 60px;
@@ -4169,19 +3285,19 @@ html:has(body.spz_5017_v) {
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-outlined,
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent,
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent,
     &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-outlined,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container a.button.accent,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container a.button.accent {
+    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(1) thead th .button-container:not(.non-img-col) a.button.accent,
+    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:nth-of-type(2) thead th .button-container:not(.non-img-col) a.button.accent {
       background: #FFFFFF;
       color: #2E7918;
     }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper thead th p.button-container a.spz-5017-cta-filled,
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th .button-container a.button.accent,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card thead th .button-container:not(.non-img-col) a.button.accent,
     &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper thead th p.button-container a.spz-5017-cta-filled,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card thead th .button-container a.button.accent {
+    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card thead th .button-container:not(.non-img-col) a.button.accent {
       background: #2E7918;
       color: #FFFFFF;
       border-color: #2E7918;
@@ -4224,21 +3340,21 @@ html:has(body.spz_5017_v) {
       overflow: visible;
 
       @include mobile {
-        padding: 31px 23px;
+        padding: 31px 23px 29.5px;
       }
     }
 
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
-      height: 658px;
-      min-height: 658px;
-    }
+    // &.spz-5017-cards-ready .section.package-comparison .table-wrapper:not(.spz-5017-elite-card),
+    // &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper:not(.spz-5017-elite-card) {
+    //   height: 658px;
+    //   min-height: 658px;
+    // }
 
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
-    &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
-      height: 724px;
-      min-height: 724px;
-    }
+    // &.spz-5017-cards-ready .section.package-comparison .table-wrapper.spz-5017-elite-card,
+    // &.spz-5017-cards-ready .section.package-comparison.spz-5017-pricing-section .table-wrapper.spz-5017-elite-card {
+    //   height: 724px;
+    //   min-height: 724px;
+    // }
 
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper>.table,
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper>.table.allow-overflow {
@@ -4378,7 +3494,11 @@ html:has(body.spz_5017_v) {
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text .icon-new,
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new,
     &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text .icon-new,
-    &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit .icon-new {
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit .icon-new,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .icon-wrapper__text .icon-new-green,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper .icon-wrapper__text .icon-new-green,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-bullet-text .icon-new-green,
+    &.spz-5017-cards-ready .section.package-comparison .table-wrapper tbody .spz-5017-badge-unit .icon-new-green {
       display: inline-flex;
       vertical-align: middle;
     }
@@ -4465,146 +3585,6 @@ html:has(body.spz_5017_v) {
       line-height: 48px;
     }
 
-    /* Add-on — Figma 29057:7779 / 7781: 16px section padding, 1 column, 16px gap between cards */
-    .section:has(#add-on-solutions),
-    .section:has([id*="add-on-solutions"]) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper {
-      max-width: 100%;
-      width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Single column grid, 16px gap — overrides tablet 2-col */
-    .section:has(#add-on-solutions) .cards-wrapper .cards,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper:not(:has(.cards)),
-    .section:has([id*="add-on-solutions"]) .cards-wrapper:not(:has(.cards)) {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .section:has(#add-on-solutions) .cards-wrapper .card,
-    .section:has(#add-on-solutions) .cards-wrapper .cards .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .card,
-    .section:has([id*="add-on-solutions"]) .cards-wrapper .cards .card {
-      padding: 23px 23px 20.5px;
-    }
-
-    /* Mobile Bundle — Figma 29057:7901/7902/7903: 328px, padding 12px 18px, min-height 120px, radius 16px */
-    .section:has(#add-on-solutions) .title-wrapper:has(.title.green-cta),
-    .section:has([id*="add-on-solutions"]) .title-wrapper:has(.title.green-cta) {
-      width: 100%;
-      max-width: 328px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-      padding-bottom: 16px;
-      box-sizing: border-box;
-    }
-
-    .section:has(#add-on-solutions) .title-wrapper .title.green-cta,
-    .section:has(#add-on-solutions) .title-wrapper .title.green-cta.spacing-sm.block,
-    .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta,
-    .section:has([id*="add-on-solutions"]) .title-wrapper .title.green-cta.spacing-sm.block {
-      width: 100%;
-      max-width: 328px;
-      min-height: 120px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 12px 18px;
-      border-radius: 16px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    /* Mobile disclaimer below bundle — Figma 29057:7905: 328x36, centered */
-    .section:has(#add-on-solutions)>.title-wrapper:has(.title.spacing-none.spacing-xl),
-    .section:has([id*="add-on-solutions"])>.title-wrapper:has(.title.spacing-none.spacing-xl) {
-      width: 100%;
-      max-width: 328px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-      box-sizing: border-box;
-    }
-
-    .section:has(#add-on-solutions)>.title-wrapper .title.spacing-none.spacing-xl,
-    .section:has(#add-on-solutions)>.title-wrapper .title.spacing-none.block.spacing-xl,
-    .section:has([id*="add-on-solutions"])>.title-wrapper .title.spacing-none.spacing-xl,
-    .section:has([id*="add-on-solutions"])>.title-wrapper .title.spacing-none.block.spacing-xl {
-      width: 328px;
-      max-width: 328px;
-      min-height: 36px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper {
-      padding: 0 16px;
-    }
-
-    .section:has(#add-on-solutions) .multi-cta-cards-wrapper .multi-cta-cards,
-    .section:has([id*="add-on-solutions"]) .multi-cta-cards-wrapper .multi-cta-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    /* Content below add-on cards (bundle + CTA) — Figma 29057:7901 container 18px, link 29057:7906 x=31 width=266; content 328 */
-    .section:has(#add-on-solutions)+.section,
-    .section:has([id*="add-on-solutions"])+.section {
-      padding-left: 16px;
-      padding-right: 16px;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Wrapper for bundle text + button: max 328px, 18px horizontal (Figma 29057:7903) */
-    .section:has(#add-on-solutions)>*:has(a.button[data-action="open-modal"]),
-    .section:has(#add-on-solutions) .default-content-wrapper,
-    .section:has(#add-on-solutions)+.section>* {
-      max-width: 371px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-      box-sizing: border-box;
-    }
-
-    /* Button at 31px inset (18+13), width 266px — Figma 29057:7906 */
-    .section:has(#add-on-solutions) a.button[data-action="open-modal"],
-    .section:has(#add-on-solutions)+.section a.button[data-action="open-modal"] {
-      margin-left: 0;
-      margin-right: 0;
-      min-width: 266px;
-      min-height: 56px;
-      box-sizing: border-box;
-      color: #FFF;
-      font-size: 16px;
-      line-height: 20px;
-      letter-spacing: 0.5px;
-    }
 
     /* Compare All Features (below pricing cards) — same 328px content width, 16px from section */
     .section.package-comparison.table-container>*:last-of-type {
@@ -4641,12 +3621,6 @@ html:has(body.spz_5017_v) {
       max-width: 100%;
     }
 
-    #add-on-solutions,
-    [id*="add-on"] {
-      font-size: 32px;
-      line-height: 40px;
-    }
-
     .bg-center-multi-1 .title-wrapper h2,
     .bg-center-multi-1 .title-wrapper h4,
     .multi-element.logo-cards h2 {
@@ -4658,29 +3632,20 @@ html:has(body.spz_5017_v) {
     .pricing-comparison-wrapper .pricing-card a.button.accent.spz-5017-cta-filled {
       padding: 16px 32px;
     }
-
-    /* Center-align contents inside .cards.background.highlight.style-4-columns on mobile */
-    .cards.background.highlight.spacing-top-md.block.style-4-columns {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      text-align: center;
-    }
   }
 
   .form-container {
     +.title-container {
       .title {
-        margin-top: 98.5px;
+        margin-top: 97.5px;
         margin-bottom: -0.5px;
 
         @include tablet() {
-          margin-top: 97.5px;
+          margin-top: 73px;
         }
 
         @include mobile() {
-          margin-top: 40px;
+          margin-top: 49px;
           margin-bottom: 0.5px;
         }
       }
@@ -4761,39 +3726,61 @@ html:has(body.spz_5017_v) {
     }
 
     +.title-container {
+      padding-bottom: 40px;
+
+      @include tablet() {
+        padding-bottom: 26px;
+      }
+
+      @include mobile() {
+        padding-bottom: 0;
+      }
+
+      .title-wrapper {
+        .title.block.spacing-xl {
+          display: block;
+          margin: 24px 0;
+
+          strong {
+            color: #38312F;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+
+          @include tablet {
+            margin: 31px 0 0;
+          }
+
+          @include mobile {
+            margin: 32px 0 0;
+          }
+        }
+
+        @include mobile {
+          padding: 0 16px;
+
+          .title.block.spacing-xl {
+            strong {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+
       .button-container {
         a.accent {
           margin-top: 0;
           padding-top: 12.5px;
 
           @include tablet {
-            margin-top: 32px;
+            margin-top: 16px;
           }
 
           @include mobile {
             padding-top: 28.5px;
-          }
-        }
-      }
-
-      +.cards-container {
-        padding-top: 74px;
-
-        .cards-wrapper {
-          padding-bottom: 31.5px !important;
-
-          @include tablet {
-            padding-bottom: 32px !important;
-          }
-
-          @include mobile {
-            padding-bottom: 32px !important;
-          }
-        }
-
-        .title-wrapper {
-          .red-cta {
-            margin-top: 25.5px;
           }
         }
       }
@@ -4816,13 +3803,21 @@ html:has(body.spz_5017_v) {
     }
   }
 
-  .package-comparison .table-wrapper .table td.has-popup-data .icon-wrapper__text::after {
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/informationsvg.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    width: 16px;
-    height: 24px;
+  .package-comparison .table-wrapper .table td.has-popup-data {
+    .icon-wrapper__text::after {
+      background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1773059769/bamboohr/5017/informationsvg.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      width: 16px;
+      height: 24px;
+    }
+
+    &:hover {
+      .icon-wrapper__text::after {
+        background-image: url('https://www.bamboohr.com/icons/information-green.svg');
+      }
+    }
   }
 
   // form css
@@ -4870,7 +3865,8 @@ html:has(body.spz_5017_v) {
   .form_container .form .mktoForm .mktoFormRow.form-input-width50 {
     width: calc(50% - 8px);
     order: unset;
-    @include mobile{
+
+    @include mobile {
       width: 100%;
     }
   }
@@ -4903,7 +3899,7 @@ html:has(body.spz_5017_v) {
     .form_container .form input,
     .form_container .form select {
       height: 44px;
-      padding: 9px 11px!important;
+      padding: 9px 11px !important;
     }
   }
 
@@ -4977,15 +3973,19 @@ html:has(body.spz_5017_v) {
   .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.error {
     color: var(--color-rose-4);
   }
+
   .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.error:not(.active) {
     color: var(--color-gray-7);
   }
-  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.error:not(:has(.active)){
-    color: var(--color-gray-7); 
+
+  .spz_5017_v .form_container .form .mktoForm .mktoFieldWrap:not(.form-checkbox-flex) .mktoLabel.error:not(:has(.active)) {
+    color: var(--color-gray-7);
   }
+
   .form_container .form .mktoForm .mktoFieldWrap:has(select.mktoInvalid):not(:has(select.mktoInvalid:focus)) label {
     color: var(--color-rose-4);
   }
+
   .form_container .form .mktoForm .mktoFieldWrap:has(select.mktoValid:not(:focus)) label.focus.active {
     color: var(--color-gray-7);
   }
@@ -5149,6 +4149,18 @@ html:has(body.spz_5017_v) {
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
+    }
+  }
+
+  &.spz-5017-cards-ready.spz-5017-modal-active .section.package-comparison.table-container::before,
+  &.spz-5017-modal-active .section.package-comparison.table-container::before,
+  &.spz-5017-modal-active .section.package-comparison.spz-5017-pricing-section::before {
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+      top: -100px;
+    }
+
+    @include mobile() {
+      top: -35px;
     }
   }
 

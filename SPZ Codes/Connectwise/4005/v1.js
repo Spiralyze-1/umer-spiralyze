@@ -14,12 +14,12 @@ const template_selector = `main .form-container__form`;
 
 // DEV 3/4. Content
 const template_content = {
-  formTitle: 'RMM Free trial'
+  formTitle: 'RMM Free Trial'
 };
 
 // DEV 4/4. Assets (full Cloudinary URLs)
 const assets = {
-  logo: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1774576184/connectwise/4005/logo.svg`
+  logo: `//res.cloudinary.com/spiralyze/image/upload/f_svg/v1776267759/connectwise/4005/logo_1.svg`
 };
 
 // ============ DOWNFUNNEL TRACKING ============
@@ -112,7 +112,7 @@ function init() {
 
     // Logo insertion — not clickable per spec (span, not <a>)
     document.querySelector("main .form-container__form").insertAdjacentHTML('afterbegin', `
-            <span class="spz-logo-wrap"><img src="${assets.logo}" width="221" height="36" alt="ConnectWise Logo"></span>
+            <a href="https://www.connectwise.com/" class="spz-logo-wrap"><img src="${assets.logo}" width="221" height="36" alt="ConnectWise Logo"></a>
         `);
     document.querySelector("main .form-container__form .heading-title").insertAdjacentHTML('afterend', ` <div class="lds-dual-ring"></div>`);
 
@@ -208,6 +208,9 @@ function init() {
             document.querySelector("main .spz_formInner").insertAdjacentElement('afterbegin', document.querySelector(".spz-logo-wrap"));
             document.querySelector("main .spz_formInner").insertAdjacentElement('beforeend', document.querySelector(".form-container__form > div.marketo-form "));
             document.querySelector('main .form-container__form .mktoForm').classList.remove('has_loader');
+
+            document.querySelector('main .spz_4005_form_loaded').insertAdjacentHTML('beforebegin', `<div class="spz_formOuter"></div>`);
+            document.querySelector('.spz_formOuter').insertAdjacentElement('afterbegin', document.querySelector('.spz_4005_form_loaded'));
           }
         });
       }

@@ -1,0 +1,1169 @@
+.spz_12002_v .header-minimal,
+.spz_12002_v #formjumplink,
+.spz_12002_v img[width="0"][border="0"] {
+  display: none;
+}
+
+/* Header CSS */
+.spz_12002_v header {
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  transition-property: background-color, padding;
+  transition-duration: .25s;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.spz_12002_v header.sticky {
+  padding: 11px 0;
+}
+
+.spz_12002_v header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spz_12002_v header .wrapper .left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.spz_12002_v header .wrapper .left .rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -1px;
+}
+
+.spz_12002_v header .wrapper .left .rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.spz_12002_v header .wrapper .left .rating-stars span {
+  color: #2D2725;
+  font-family: 'Soehne Kraftig', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.spz_12002_v header .wrapper .left .rating-text {
+  color: #584F4B;
+  font-family: 'Soehne Buch', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.spz_12002_v header .wrapper .left .border {
+  width: 1px;
+  height: 32px;
+  background: rgba(45, 39, 37, 0.10);
+}
+
+.spz_12002_v header .wrapper .right {
+  display: none;
+}
+
+.spz_12002_v header .wrapper .right .cta {
+  font-family: Soehne Kraftig, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 40px;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v header {
+    padding: 15px 0;
+  }
+
+  .spz_12002_v header .container-large {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .spz_12002_v header .wrapper .left {
+    gap: 12px;
+  }
+
+  .spz_12002_v header .wrapper .left a img {
+    width: 37px;
+    height: auto;
+  }
+
+  .spz_12002_v header .wrapper .left .rating img[alt="G2 Logo"] {
+    width: 24px;
+    height: auto;
+  }
+
+  .spz_12002_v header .wrapper .left .rating-stars span {
+    font-size: 13px;
+    line-height: 20.8px;
+  }
+
+  .spz_12002_v header .wrapper .left .rating-text {
+    font-size: 13px;
+    line-height: 20.8px;
+  }
+
+  .spz_12002_v header .wrapper .left .rating-stars {
+    margin-bottom: 0;
+  }
+
+  .spz_12002_v header .wrapper .left .rating-stars img {
+    align-self: center;
+  }
+}
+
+/* Hero section */
+.spz_12002_v .hero_section {
+  background-color: #fff;
+  padding-top: 112px;
+}
+
+.spz_12002_v .hero_section .container-large {
+  padding: 0;
+}
+
+.spz_12002_v .hero_section .hero_background {
+  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-1440.webp');
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  padding: 80px 80px 0;
+}
+
+.spz_12002_v .hero_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 49px;
+}
+
+.spz_12002_v .hero_content .hero_left .eyeBroText {
+  color: #161412;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  font-family: 'Soehne Kraftig';
+  margin-bottom: 16px;
+}
+
+.spz_12002_v .hero_content .hero_left h1 {
+  color: #161412;
+  font-size: 68px;
+  line-height: 68px;
+  letter-spacing: -1.36px;
+  font-weight: 500;
+  font-family: 'Soehne Kraftig';
+}
+
+.spz_12002_v .hero_content .hero_left ul {
+  list-style: none;
+  max-width: 515px;
+  width: 100%;
+  padding: 0;
+  margin: 32px 0 0;
+}
+
+.spz_12002_v .hero_content .hero_left ul li {
+  font-family: 'Soehne Buch';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #2D2725;
+  padding-left: 28px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.spz_12002_v .hero_content .hero_left ul li:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/bill/12001/check-icon.svg');
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.spz_12002_v .hero_content .hero_left ul li strong {
+  font-family: 'Soehne Kraftig';
+  font-weight: 500;
+}
+
+.spz_12002_v .hero_content .hero_right {
+  max-width: 530px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup {
+  width: 100%;
+  max-width: 100%;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 16px;
+  border: 0;
+  gap: 0;
+  box-shadow: 0 4px 20px -2px rgba(45, 39, 37, 0.10), 0 2px 4px -2px rgba(45, 39, 37, 0.06);
+  padding: 32px 40px;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form h2 {
+  font-family: 'Soehne Kraftig';
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.64px;
+  font-weight: 500;
+  color: #2D2725;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+.spz_12002_v .hero_content .hero_right .form-signup form h2 + .spacer-small {
+  display: none;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form p {
+  font-family: 'Soehne Buch';
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #2D2725;
+  width: 100%;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-field-columns {
+  max-width: calc(50% - 8px);
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-field-columns,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-options,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-dropdown {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-field-columns label,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-options label,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-dropdown label {
+  font-family: 'Soehne Buch';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: #2D2725;
+  opacity: 0.6;
+  pointer-events: none;
+  margin: 0;
+  z-index: 1;
+  transition: all 0.2s ease-in-out 0s;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .focused>label,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-field-columns:has(:-webkit-autofill)>label,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-options:has(:-webkit-autofill)>label,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-dropdown:has(:-webkit-autofill)>label {
+  top: -9px;
+  left: 8px;
+  font-size: 12px;
+  line-height: 19px;
+  background-color: #ffffff;
+  padding: 0 4px;
+  opacity: 1;
+  color: #5D5F6D;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-field,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-options select,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-dropdown select {
+  font-family: 'Soehne Buch';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #2D2725;
+  border: 1px solid rgba(34, 30, 28, 0.10);
+  border-radius: 8px;
+  background-color: #FDFCFC;
+  min-height: auto;
+  height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px 11px 6px;
+  margin-bottom: 16px;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-options select,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-dropdown select {
+  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1775718065/bill/12001/dropdown-icon.svg');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right 11px top 9px;
+  padding-right: 33px;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form select:has(option:first-child:checked) {
+  color: transparent;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form select option {
+  color: #2D2725;
+}
+
+
+.spz_12002_v .hero_content .hero_right .form-signup form .submit-button {
+  font-family: 'Soehne Kraftig';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.64px;
+  border-radius: 12px;
+  height: 50px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .button-disclaimer {
+  color: rgba(88, 79, 75, 0.75);
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 400;
+  font-family: 'Soehne Buch';
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .button-disclaimer a {
+  color: #2D2725;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .button-disclaimer a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: var(--_font-styles---weight--weight-regular);
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form .form-fields-hide {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.spz_12002_v .hero_content .hero_right .form-signup form>.button.is-form-small,
+.spz_12002_v .hero_content .hero_right .form-signup form #form-panel-3>div,
+.spz_12002_v .hero_content .hero_right .form-signup form .form-option-fields:has(select.hide) {
+  display: none;
+}
+
+.spz_12002_v .hero_image_wrapper {
+  margin: 0 -23px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .spz_12002_v .hero_section .hero_background {
+    padding: 40px 40px 0;
+  }
+
+  .spz_12002_v .hero_content .hero_left h1 {
+    font-size: 52px;
+    line-height: 52px;
+  }
+
+  .spz_12002_v .hero_content .hero_right .form-signup form {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .spz_12002_v .hero_content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 33px;
+  }
+
+  .spz_12002_v .hero_section .container-large {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .spz_12002_v .hero_section .hero_background {
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-800.webp');
+    padding: 64px 40px 0;
+  }
+
+  .spz_12002_v .hero_content .hero_left h1 {
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -1.12px;
+  }
+
+  .spz_12002_v .hero_content .hero_left ul {
+    max-width: 98%;
+  }
+
+  .spz_12002_v .hero_content .hero_right {
+    max-width: 100%;
+  }
+
+  .spz_12002_v .hero_image_wrapper {
+    margin: 0 -15px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v .hero_section {
+    padding-top: 88px;
+  }
+
+  .spz_12002_v .hero_section .hero_background {
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-360.webp');
+    padding: 48px 16px 0;
+  }
+
+  .spz_12002_v .hero_content {
+    margin-bottom: 25px;
+  }
+
+  .spz_12002_v .hero_content .hero_left h1 {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.64px;
+  }
+
+  .spz_12002_v .hero_content .hero_left ul {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  .spz_12002_v .hero_content .hero_right .form-signup form {
+    padding: 20px;
+  }
+
+  .spz_12002_v .hero_content .hero_right .form-signup form p {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 4px;
+  }
+
+  .spz_12002_v .hero_content .hero_right .form-signup form .form-field-columns {
+    max-width: 100%;
+  }
+}
+
+
+/* logo section */
+.spz_12002_v .logo-section img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.spz_12002_v .logo-section {
+  padding: 48px 0px 7px;
+}
+
+.spz_12002_v .logo-section .wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.spz_12002_v .logo-section .title {
+  color: #2D2725;
+  font-family: Soehne Kraftig, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  width: 265px;
+}
+
+.spz_12002_v .logo-section .splide {
+  position: relative;
+  mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 5%, #FFF 95%, rgba(255, 255, 255, 0.00) 100%);
+  -webkit-mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 5%, #FFF 95%, rgba(255, 255, 255, 0.00) 100%);
+  width: calc(100% - 265px - 80px);
+  transform: translateY(-0.5px);
+}
+
+.spz_12002_v .logo-section .img-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.spz_12002_v .logo-section img {
+  margin: 0 36px;
+  display: block;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .spz_12002_v .logo-section .wrapper {
+    padding: 0 40px;
+  }
+
+  .spz_12002_v .logo-section .title {
+    text-align: center;
+    text-indent: 1px;
+    width: auto;
+  }
+
+  .spz_12002_v .logo-section .splide {
+    margin-top: 23.5px;
+    width: 100%;
+    transform: none;
+  }
+
+  .spz_12002_v .logo-section .wrapper {
+    flex-direction: column;
+    gap: 0px
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v .logo-section {
+    padding-top: 33px;
+    padding-bottom: 8px;
+  }
+
+  .spz_12002_v .logo-section .wrapper {
+    padding: 0 16px;
+  }
+
+  .spz_12002_v .logo-section img {
+    margin: 0 16px;
+  }
+
+  .spz_12002_v .logo-section .splide {
+    margin-top: 16px;
+    mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 15%, #FFF 85%, rgba(255, 255, 255, 0.00) 100%);
+    -webkit-mask-image: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 15%, #FFF 85%, rgba(255, 255, 255, 0.00) 100%);
+  }
+}
+
+
+/* Features section */
+.spz_12002_v .features-section .title-wrapper h2 {
+  font-family: 'Soehne Kraftig';
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: -0.96px;
+  color: #2D2725;
+  text-align: center;
+  font-style: normal;
+  margin-bottom: 25px;
+}
+
+.spz_12002_v .features-section .title-wrapper p {
+  font-family: 'Soehne Buch';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #584F4B;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.spz_12002_v .features-section .features-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.spz_12002_v .features-section .feature-card {
+  display: flex;
+  flex-direction: column;
+  background: #F6F6F3;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.spz_12002_v .features-section .feature-card-header {
+  flex: 1 0 auto;
+  padding: 32px 32px 0;
+  margin-bottom: -2px;
+}
+
+.spz_12002_v .features-section .feature-card h3 {
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.48px;
+  color: #2D2725;
+  margin-bottom: 10px;
+}
+
+.spz_12002_v .features-section .feature-card p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #584F4B;
+}
+
+.spz_12002_v .features-section .feature-card img {
+  align-self: auto;
+}
+
+.spz_12002_v .features-section .expand-feature-card-wrapper {
+  text-align: center;
+}
+
+.spz_12002_v .features-section .expand-feature-card {
+  font-family: 'Soehne Kraftig';
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: #024DBD;
+  text-decoration: none;
+  text-align: center;
+  display: none;
+}
+
+.spz_12002_v .features-section .expand-feature-card:hover {
+  color: #053791;
+}
+
+.spz_12002_v .features-section .cta-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 991.98px) {
+  .spz_12002_v .features-section .container-large {
+    padding: 81px 0 80px;
+  }
+
+  .spz_12002_v .features-section .title-wrapper h2 {
+    margin-bottom: 24px;
+  }
+
+  .spz_12002_v .features-section .features-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .spz_12002_v .features-section .container-large {
+    width: 100%;
+    padding: 56px 16px 64px;
+  }
+
+  .spz_12002_v .features-section .title-wrapper h2 {
+    margin-bottom: 16px;
+  }
+
+  .spz_12002_v .features-section .title-wrapper p {
+    padding: 0 10px;
+    margin-bottom: 32px;
+  }
+
+  .spz_12002_v .features-section .features-wrapper {
+    grid-template-columns: 1fr;
+    margin-bottom: 26px;
+  }
+
+  .spz_12002_v .features-section .features-wrapper:not(.expanded) .feature-card:nth-child(n+4) {
+    display: none;
+  }
+
+  .spz_12002_v .features-section .feature-card-header {
+    padding: 24px 24px 0;
+  }
+
+  .spz_12002_v .features-section .expand-feature-card-wrapper {
+    margin-bottom: -15px;
+  }
+
+  .spz_12002_v .features-section .expand-feature-card {
+    display: inline-block;
+  }
+
+  .spz_12002_v .features-section .cta-wrapper {
+    margin-top: 32px;
+  }
+
+  .spz_12002_v .features-section .cta-wrapper .button {
+    width: 100%;
+  }
+}
+
+
+/* bottom form */
+.spz_12002_v .bottom_form {
+  border-radius: 40px 40px 0 0;
+  background-color: #FDFCFC;
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-footer-background.webp");
+  background-size: 1440px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.spz_12002_v .bottom_form .container-large {
+  padding-top: 96px;
+  padding-bottom: 64px;
+}
+
+.spz_12002_v .bottom_form .title {
+  color: #2D2725;
+  text-align: center;
+  font-family: 'Soehne Kraftig', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.96px;
+  padding: 0 5px;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper {
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0 0 0 1px rgba(45, 39, 37, 0.15);
+  border: none;
+  padding: 3px;
+  display: flex;
+  margin-top: 33px;
+  max-width: 519px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input {
+  height: 48px;
+  color: #2D2725;
+  font-family: 'Soehne Buch', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 15px 17px;
+  text-overflow: ellipsis;
+  overflow: hidden !important;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 12px;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input::-webkit-input-placeholder {
+  color: #2D2725;
+  opacity: 0.6;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:-moz-placeholder {
+  color: #2D2725;
+  opacity: 0.6;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:-ms-input-placeholder {
+  color: #2D2725;
+  opacity: 0.6;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input::-moz-placeholder {
+  color: #2D2725;
+  opacity: 0.6;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:-webkit-autofill,
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:-webkit-autofill:hover,
+.spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(126, 126, 126, 0) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  -webkit-text-fill-color: #2D2725 !important;
+}
+
+.spz_12002_v .bottom_form .cta {
+  cursor: pointer;
+  color: #FFF;
+  ;
+  font-family: Soehne Kraftig, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 137px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  padding: 0 0 1px 0;
+}
+
+.spz_12002_v .bottom_form .fake-email-form-wrapper:has(.fake-email-input:focus) {
+  box-shadow: 0 0 0 1px #2D2725;
+}
+
+.spz_12002_v .bottom_form .text-size-tiny {
+  color: #584F4B;
+  font-family: Sohne Font, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.spz_12002_v .bottom_form .text-size-tiny a {
+  color: #2D2725;
+  text-decoration: underline;
+}
+
+.spz_12002_v .bottom_form .text-size-tiny a:hover {
+  font-weight: bold;
+  font-family: var(--_font-styles---weight--weight-regular);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 991.98px) {
+  .spz_12002_v .bottom_form .container-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v .bottom_form .container-large {
+    width: 100%;
+    max-width: 100%;
+    padding: 64px 16px 60px;
+  }
+
+  .spz_12002_v .bottom_form .fake-email-form-wrapper {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 32px;
+    outline: 0;
+    max-width: 100%;
+    box-sizing: none;
+  }
+
+  .spz_12002_v .bottom_form .fake-email-form-wrapper:has(.fake-email-input:focus) {
+    box-shadow: none;
+  }
+
+  .spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input {
+    border: 1px solid rgba(45, 39, 37, 0.15);
+    padding: 5px 15px;
+  }
+
+  .spz_12002_v .bottom_form .fake-email-form-wrapper .fake-email-input:focus {
+    border: 1px solid #2D2725;
+  }
+
+  .spz_12002_v .bottom_form .cta {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .spz_12002_v .bottom_form .text-size-tiny {
+    padding: 0 24px;
+    margin-top: 14px;
+  }
+}
+
+
+/* case study slider */
+.spz_12002_v .case-study-slider {
+  margin-top: 62px;
+}
+
+
+.spz_12002_v .case-study-slider:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0.00) 5%, rgba(255, 255, 255, 0.00) 95%, #fff 100%);
+  pointer-events: none;
+}
+
+.spz_12002_v .case-study-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 48px;
+  position: relative;
+}
+
+.spz_12002_v .case-study-item:before {
+  content: '';
+  width: 1px;
+  height: 80px;
+  background-color: rgba(45, 39, 37, 0.10);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.spz_12002_v .case-study-item img {
+  width: 100%;
+  max-width: 106px;
+}
+
+.spz_12002_v .case-study-item span {
+  color: #FF5A0A;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  font-family: 'Soehne Buch';
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.spz_12002_v .case-study-item small {
+  color: #2D2725;
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 500;
+  font-family: 'Soehne Kraftig';
+  text-align: center;
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v .case-study-slider {
+    margin-top: 46px;
+  }
+
+  .spz_12002_v .case-study-item {
+    padding: 0 32px;
+  }
+
+  .spz_12002_v .case-study-item img {
+    max-width: 84px;
+    margin: 0 auto;
+  }
+
+  .spz_12002_v .case-study-item span {
+    margin-top: 8px;
+  }
+}
+
+
+/* Footer section */
+.spz_12002_v .footer_black {
+  background: #2D2725;
+  box-shadow: 0px 1px 0px 0px #2D2725;
+}
+
+.spz_12002_v .footer_black .wrapper {
+  padding: 8px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px 38px;
+  flex-wrap: wrap;
+}
+
+.spz_12002_v .footer_black .wrapper .left {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 8px 26px;
+  flex-wrap: wrap;
+}
+
+.spz_12002_v .footer_black .wrapper .left .first,
+.spz_12002_v .footer_black .wrapper .left .second {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spz_12002_v .footer_black .wrapper .left strong {
+  color: #FFF;
+  font-family: Soehne Kraftig, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px
+}
+
+.spz_12002_v .footer_black .wrapper .left a,
+.spz_12002_v .footer_black .wrapper .right a {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: Sohne Font, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+.spz_12002_v .footer_black .wrapper .left a:hover,
+.spz_12002_v .footer_black .wrapper .left a:active,
+.spz_12002_v .footer_black .wrapper .right a:hover,
+.spz_12002_v .footer_black .wrapper .right a:active {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  font-weight: 400;
+}
+
+.spz_12002_v .footer_black .wrapper .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  gap: 4px 12.4px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .spz_12002_v .footer_black .wrapper {
+    padding: 16px 40px
+  }
+
+  .spz_12002_v .footer_black .wrapper .right {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .spz_12002_v .footer_black .wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* V2 CSS */
+.spz_12002_v .hero_section .hero_background {
+  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-1440_1.webp');
+  background-size: cover;
+  background-position: center bottom;
+  overflow: hidden;
+}
+
+.spz_12002_v.spz_12002_v2 .hero_content {
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.spz_12002_v.spz_12002_v2 .hero_left_image {
+  margin-top: 72px;
+  margin-left: -24px;
+  margin-bottom: -20px;
+}
+
+.spz_12002_v.spz_12002_v2 .hero_left_image img {
+  max-width: 543px;
+  width: 100%;
+}
+
+.spz_12002_v.spz_12002_v2 .logo-section {
+  padding-top: 48px;
+}
+
+@media (min-width: 992px) {
+  .spz_12002_v.spz_12002_v2 .hero_content .hero_right {
+    margin-bottom: 50px;
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_mobile_image {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .spz_12002_v .hero_section .hero_background {
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-800_1.webp');
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_left_image {
+    display: none;
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_content .hero_left h1 {
+    margin-bottom: 40px;
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_mobile_image {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .spz_12002_v .hero_section .hero_background {
+    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-hero-background-360_1.webp');
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_content .hero_left h1 {
+    margin-bottom: 24px;
+  }
+
+  .spz_12002_v.spz_12002_v2 .hero_mobile_image {
+    margin-top: 9px;
+  }
+
+  .spz_12002_v.spz_12002_v2 .logo-section {
+    padding-top: 33px;
+  }
+}
