@@ -403,6 +403,9 @@ body.spz_13003_v.spz_threat-prevention-page .spz_form_wrapper {
 .spz_13003_v .spz_form_wrapper_inner form.spz_form1310 .mktoFormRow[data-wrapper=Email] + .mktoFormRow {
   order: 1;
 }
+.spz_13003_v .spz_form_wrapper_inner form.spz_form1310 .mktoFormRow[data-wrapper=Email] + .mktoFormRow[data-wrapper=RL_HQ_Company_Name__c] {
+  order: unset;
+}
 .spz_13003_v .spz_form_wrapper_inner form.spz_form1310 .mktoFieldWrap .mktoHtmlText.mktoHasWidth {
   width: 100% !important;
 }
@@ -441,6 +444,9 @@ body.spz_13003_v.spz_threat-prevention-page .spz_form_wrapper {
   gap: 16px;
   justify-content: space-between;
   margin-bottom: 17px;
+}
+.spz_13003_v form.spz_form1310 [data-wrapper=RL_HQ_Company_Name__c] {
+  margin-top: 17px;
 }
 .spz_13003_v .spz_form_wrapper_inner form.spz_form1310 [data-wrapper="FirstName LastName"] > .mktoFormCol {
   width: 50%;

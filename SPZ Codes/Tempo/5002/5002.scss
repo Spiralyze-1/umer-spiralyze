@@ -80,6 +80,10 @@ html {
 .scroll-hidden body {
   overflow: hidden;
 }
+.scroll-hidden-2,
+.scroll-hidden-2 body {
+  overflow: hidden;
+}
 
 .scroll-hidden body {
   position: fixed;
@@ -132,6 +136,7 @@ body.spz_5002_v {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top right;
+    background-color: #fff;
     overflow-x: hidden;
 
     +section.max-w-container {
@@ -153,25 +158,33 @@ body.spz_5002_v {
 
   .spz_heroInner {
     padding: 52px 0 50px;
-    background-color: #1D1D1B;
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1440_bg.webp');
+    background-color: #fff;
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1440_bg.webp");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom left;
+    background-size: 1440px;
+    background-position: top right;
     margin-top: 0;
 
     @media only screen and (min-width: 3840px) {
       background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/3840_bg.webp');
+      background-size: 3840px;
     }
 
     @media only screen and (min-width: 2560px) and (max-width: 3839px) {
       background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/2560_bg.webp');
+      background-size: 2560px;
     }
 
     @media only screen and (min-width: 1920px) and (max-width: 2559px) {
       background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1920_bg.webp');
+      background-size: 1920px;
     }
-
+    @include tablet-pro(){
+      background: #fff;
+      .auto_container{
+        padding: 0 64px;
+      }
+    }
     @include tablet() {
       background: #FFF;
     }
@@ -198,16 +211,15 @@ body.spz_5002_v {
 
   .spz_heroMain {
     display: flex;
-    gap: 0 120px;
+    gap: 0 108px;
     padding-bottom: 72px;
 
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1400px) {
       align-items: flex-start;
     }
 
     @include tablet-pro() {
-      gap: 0 30px;
-      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     @include tablet() {
@@ -246,8 +258,7 @@ body.spz_5002_v {
         display: block;
         color: #1D1D1B;
         font-weight: 300;
-        font-family: 'Messina Serif italic';
-        letter-spacing: 0.7px;
+        font-family: "messinaSerifItalic","messinaSerifItalic Fallback";
       }
     }
 
@@ -290,8 +301,13 @@ body.spz_5002_v {
     }
 
     @include tablet-pro() {
-      width: 50%;
-
+      width: 100%;
+      padding-bottom: 56px;
+      h1{
+        strong{
+        letter-spacing: unset;
+        }
+      }
       ul {
         max-width: 100%;
       }
@@ -366,14 +382,14 @@ body.spz_5002_v {
       picture {
         img {
           min-width: 740px;
-          transform: translateX(-13px)translateY(0.5px);
         }
       }
     }
 
     @include tablet-pro() {
-      max-width: 442.8px;
-      width: auto;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
     @include tablet() {
@@ -387,6 +403,7 @@ body.spz_5002_v {
       picture{
         img{
           border-radius: 8px;
+          box-shadow: 0 0 20px 0 rgba(29, 29, 27, 0.10);
         }
       }
     }
@@ -421,10 +438,6 @@ body.spz_5002_v {
 
       &:has(.phone-input-container) {
         min-width: 484px;
-
-        @include tablet-pro() {
-          min-width: 346.8px;
-        }
 
         @include mobile() {
           min-width: unset;
@@ -520,6 +533,7 @@ body.spz_5002_v {
     line-height: 24px;
     padding-left: 13px;
     padding-right: 14px;
+    text-overflow: ellipsis;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -732,7 +746,7 @@ body.spz_5002_v {
   .spz_logosSlider {
     >.relative {
       .animate-marquee {
-        @media only screen and (min-width: 1024px) {
+        @media only screen and (min-width: 1400px) {
           // min-width: 2725px;
           width: 100%;
           justify-content: space-between;
@@ -764,6 +778,11 @@ body.spz_5002_v {
           }
         }
 
+        @include tablet-pro() {
+          >.box-content {
+            padding-right: 48px !important;
+          }
+        }
         @include tablet() {
           min-width: 2136px;
           justify-content: space-between;
@@ -822,7 +841,7 @@ body.spz_5002_v {
         }
       }
 
-      @media (min-width: 1024px) {
+      @media (min-width: 1400px) {
         >div {
 
           &:first-child,
@@ -889,7 +908,7 @@ body.spz_5002_v {
     background: #FFF;
     border: none;
     outline: none;
-    padding: 12px 14px;
+    padding: 12px 0 12px 14px;
     height: 56px;
     max-width: 309px;
     overflow: hidden;
@@ -900,6 +919,9 @@ body.spz_5002_v {
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
+    @include mobile(){
+      max-width: 100%;
+    }
   }
 
   .spz__hero-section__content__email-cta form .spz__input-wrap input::placeholder {
@@ -935,7 +957,7 @@ body.spz_5002_v {
     font-weight: 400;
     line-height: 19.5px;
     position: absolute;
-    left: 14px;
+    left: 10px;
     padding: 0 4px;
     background-color: #fff;
     top: -5px;
@@ -1029,6 +1051,7 @@ body.spz_5002_v {
     background: rgba(29, 29, 27, 0.55);
     backdrop-filter: blur(3px);
     -moz-backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     transition: opacity 0.5s ease;
     opacity: 0;
     pointer-events: none;
@@ -1109,6 +1132,7 @@ body.spz_5002_v {
         font-weight: 400;
         line-height: 19.5px;
         text-decoration: none;
+        max-width: fit-content;
 
         span {
           margin-left: 0;

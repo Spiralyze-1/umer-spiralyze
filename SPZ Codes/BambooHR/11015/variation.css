@@ -1,0 +1,136 @@
+.spz_11015_v .spz_11015_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.33);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    z-index: 201;
+    display: none;
+}
+
+.spz_11015_v .spz_11015_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 590px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 56px;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.12);
+    z-index: 202;
+    display: none;
+}
+
+.spz_11015_v .spz_11015_popup button.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.spz_11015_v .spz_11015_popup button.close-btn:hover svg path {
+    stroke: #38312F;
+}
+
+.spz_11015_v .spz_11015_popup #modal-title {
+    color: #38312F;
+    text-align: center;
+    font-family: Fields;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+    margin: 0 0 16px;
+}
+
+.spz_11015_v .spz_11015_popup  .modal-subtitle {
+    color: #38312F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+}
+
+.spz_11015_v .spz_11015_popup  .grid-wrapper {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .flex-row-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card {
+    border-radius: 8px;
+    border: 1px solid #D4D2D0;
+    background:#FFF;
+    padding: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.18s, background 0.18s, transform 0.15s, box-shadow 0.18s;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 156px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card.selected {
+    border-radius: 8px;
+    border: 1px solid #03551C;
+    background: linear-gradient(0deg, rgba(46, 121, 24, 0.10) 0%, rgba(46, 121, 24, 0.10) 100%), #FFF;
+    box-shadow: 0 6px 6px 0 rgba(8, 15, 1, 0.06);
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card:hover {
+    border-radius: 8px;
+    border: 1px solid #03551C;
+    background: linear-gradient(0deg, rgba(46, 121, 24, 0.10) 0%, rgba(46, 121, 24, 0.10) 100%), #FFF;
+    box-shadow: 0 6px 6px 0 rgba(8, 15, 1, 0.06);
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card:hover svg path {
+    stroke: #03551C;
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card[data-industry="healthcare"]:hover svg path {
+    fill: #03551C;
+    stroke: none;
+}
+
+.spz_11015_v .spz_11015_popup .grid-wrapper .card .card-label {
+    color: #38312F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}

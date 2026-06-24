@@ -183,11 +183,11 @@ if (window.location.pathname == "/" || window.location.pathname == "/demo") {
             if(document.querySelector('.dual_cta > div .btn-primary')){
               document.querySelector('.dual_cta > div .btn-primary').innerHTML = `Get a Demo <span class="shrink-0  dark:invert size-6 overflow-hidden"><span class="bg-[url('/images/icons/arrow-white.svg')] custom-arrow flex h-6 w-12 -translate-x-6 bg-contain bg-left bg-repeat-x transition-all duration-300 group-hover:translate-x-0 group-disabled:transform-none group-hover/undefined:translate-x-0"></span></span>`
               document.querySelector('.dual_cta > div .btn-primary').href = "https://www.tempo.io/demo";
-              document.querySelector('.dual_cta > div .btn-primary').insertAdjacentHTML('afterend', `
-                <a href="/get-started" class="btn-secondary items-center justify-center lg:justify-between group flex w-fit max-sm:w-full">
-                  Get Started Free
-                </a>  
-              `)
+              // document.querySelector('.dual_cta > div .btn-primary').insertAdjacentHTML('afterend', `
+              //   <a href="/get-started" class="btn-secondary items-center justify-center lg:justify-between group flex w-fit max-sm:w-full">
+              //     Get Started Free
+              //   </a>  
+              // `)
             }
 
             document.querySelector('.spz_2001_v .section-1-2001 .multiple-section .cards').addEventListener("click", function (e) {

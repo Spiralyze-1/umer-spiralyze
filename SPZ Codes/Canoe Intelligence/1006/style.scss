@@ -854,6 +854,11 @@ $mobile: 767.98px;
       &.hide {
         display: none;
       }
+      &.hs_country_region_2.hide{
+        + .hs_state_region_2{
+          display: none;
+        }
+      }
     }
 
     @include mobile() {

@@ -846,6 +846,7 @@ html:has(body.spz_5017_v) {
     a {
       gap: 5px;
       width: fit-content;
+
       .icon-play {
         width: 20px;
         height: 20px;
@@ -1836,16 +1837,17 @@ html:has(body.spz_5017_v) {
   /* Tooltip popup container — keep hidden by default, show on hover/click */
   &.spz-5017-cards-ready .section.package-comparison .table-wrapper .table-tooltip-container {
     text-align: left;
-    min-width: 252.4px!important;
+    min-width: 252.4px !important;
+
     @include tablet {
       white-space: normal;
       max-width: 215px;
-      min-width: unset!important;
+      min-width: unset !important;
     }
 
     @include mobile {
       white-space: normal;
-      min-width: 215px!important;
+      min-width: 215px !important;
     }
   }
 

@@ -1,0 +1,309 @@
+<!-- Add this code after begining of "body" element. Please refer to the given screenshot: 'https://app.screencast.com/p7ykwHSZjC0YE'-->
+<div class="spz-split-wrap">
+  <div class="spz-feature-side">
+    <div class="spz-feature-sideInner">
+      <div class="spz-feature-content">
+        <p class="spz-eyebrow">IT &amp; SECURITY MANAGEMENT SOFTWARE</p>
+        <h2 class="spz-headline">Streamline MSP &amp; IT ops. <span class="spz-highlight">Boost growth &amp;
+            efficiency.</span></h2>
+        <ul class="spz-bullets">
+          <li class="spz-bullet-item">
+            <span class="spz-bullet-icon"></span>
+            <p><strong>Management:</strong> Track tickets, projects, SLAs, policies, and billing. Quote new clients in
+              minutes. Boost efficiency.</p>
+          </li>
+          <li class="spz-bullet-item">
+            <span class="spz-bullet-icon"></span>
+            <p><strong>Operations:</strong> Automate threat detection, alerts, patching, and back up. Boost compliance.
+              Access devices remotely.</p>
+          </li>
+          <li class="spz-bullet-item">
+            <span class="spz-bullet-icon"></span>
+            <p><strong>Reporting:</strong> Measure utilization, margins, technician efficiency, and service performance.
+              Generate reports. Optimize services.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="spz-form-side">
+    <div class="spz-form-sideInner">
+      <div class="spz-form-inner">
+        <a href="https://www.connectwise.com/" class="spz-logo-link">
+          <img src="//res.cloudinary.com/spiralyze/image/upload/f_svg/v1774615779/connectwise/2001/logo-headline_1.svg"
+            alt="ConnectWise" class="connectwise-logo">
+        </a>
+        <div class="spz-form-content-wrap">
+          <h1 class="spz-form-heading">Watch Demo</h1>
+          <div class="spz-form-wrap">
+          </div>
+        </div>
+        <div class="spz-social-proof">
+          <p class="spz-social-proof-text">Trusted by <span class="spz-highlight-bar">100,000+</span> MSP and IT
+            professionals</p>
+          <div class="spz-logos"><img
+              src="//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_1.webp"
+              alt="Kinetics Group"><img
+              src="//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo.webp" alt="GoodSuite"><img
+              src="//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_3.webp" alt="ited"><img
+              src="//res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/2001/logo_2.webp" alt="TechMD"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add form with ID "#mktoForm_1227" in ".spz-form-wrap" element that we added using above HTML. Refering the screenshot: "https://app.screencast.com/pdMjBsZhv1NBj". It should look like this "https://app.screencast.com/798dy9gw6u34I" after adding the form. -->
+
+
+<!-- This code requires some JavaScript, which is provided below. -->
+<script>
+
+var template_formUniqueSelector = "#mktoForm_1026";
+
+// Get form
+var formEl = document.querySelector(template_formUniqueSelector);
+
+// Wait until form inputs load
+var formLoaded = setInterval(function () {
+  if (formEl.querySelectorAll('input').length > 0) {
+    clearInterval(formLoaded);
+
+    initFormBehaviors(formEl);
+    formEl.addEventListener('submit', function () {
+      sessionStorage.setItem('spz_split_submitted', 'true');
+    });
+
+    // Fix industry placeholder option
+    var industryEmptyOption = document.querySelector("#mKTOIndustry option[value='']");
+    var submitButtom = document.querySelector("#mktoForm_1026 .mktoButton");
+    if (industryEmptyOption) industryEmptyOption.textContent = '';
+    if (submitButtom) {
+      submitButtom.textContent = 'Submit';
+    }
+
+  }
+}, 50);
+
+
+// Floating label helper
+function attachFloatLabel(wrap, field, labelText) {
+  wrap.className += ' spz-field-wrap';
+  var label = document.createElement('span');
+  label.className = 'spz-float-label';
+  label.textContent = labelText;
+  wrap.appendChild(label);
+
+  var isSelect = field.tagName === 'SELECT';
+  if (!isSelect) field.setAttribute('placeholder', ' ');
+
+  var sync = function () {
+    var value = isSelect ? field.value : field.value.trim();
+    if (value.length > 0) wrap.classList.add('spz-has-value');
+    else wrap.classList.remove('spz-has-value');
+  };
+
+  field.addEventListener('focus', function () { wrap.classList.add('spz-active'); sync(); });
+  field.addEventListener('blur', function () { wrap.classList.remove('spz-active'); sync(); });
+  field.addEventListener(isSelect ? 'change' : 'input', sync);
+  sync();
+}
+
+function getLabelText(wrap, fallback) {
+  var label = wrap.querySelector('.mktoLabel, label');
+  return label ? label.textContent.replace(/[*:\s]+$/, '').trim() : fallback;
+}
+
+// Form orchestrator
+function initFormBehaviors(formEl) {
+  setTimeout(() => {
+    wrapFormRows(formEl);
+    initFloatingLabels(formEl);
+    initPhoneField(formEl);
+    initIndustrySelect(formEl);
+    initExpandableHowField(formEl);
+    initCheckboxLabel(formEl);
+    restyleDisclaimer(formEl);
+    watchValidationState(formEl);
+  }, 150);
+}
+
+// Wrap form rows into pairs
+function wrapFormRows(formEl) {
+  var pairs = [
+    ['FirstName', 'LastName'],
+    ['Email'],
+    ['Company', 'Phone']
+  ];
+
+  for (var i = 0; i < pairs.length; i++) {
+    var id1 = pairs[i][0];
+    var id2 = pairs[i][1];
+    var elem1 = formEl.querySelector('#' + id1);
+    var elem2 = formEl.querySelector('#' + id2);
+
+    var r1 = elem1 ? elem1.closest('.mktoFormRow') : null;
+    var r2 = elem2 ? elem2.closest('.mktoFormRow') : null;
+    if (!r1 || !r2 || r1 === r2) continue;
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'spz-form-row-pair';
+    r1.parentNode.insertBefore(wrapper, r1);
+    wrapper.appendChild(r1);
+    wrapper.appendChild(r2);
+  }
+}
+
+// Floating labels
+function initFloatingLabels(formEl) {
+  var inputs = formEl.querySelectorAll('input[type="text"], input[type="email"]');
+  for (var i = 0; i < inputs.length; i++) {
+    var input = inputs[i];
+    var wrap = input.closest('.mktoFieldWrap') || input.parentElement;
+    attachFloatLabel(wrap, input, getLabelText(wrap, input.getAttribute('placeholder') || ''));
+  }
+}
+
+// Phone field
+function initPhoneField(formEl) {
+  var input = formEl.querySelector('input[type="tel"], input[id*="Phone"], input[name*="Phone"]');
+  if (!input) return;
+  var wrap = input.closest('.mktoFieldWrap') || input.parentElement;
+  wrap.className += ' spz-phone-wrap';
+  attachFloatLabel(wrap, input, getLabelText(wrap, 'Phone Number'));
+}
+
+// Industry select
+function initIndustrySelect(formEl) {
+  var select = formEl.querySelector('select[id*="Industry"], select[name*="Industry"]');
+  if (!select) return;
+  var wrap = select.closest('.mktoFieldWrap') || select.parentElement;
+  var placeholderOpt = select.querySelector('option[value=""]');
+  if (placeholderOpt) placeholderOpt.textContent = '';
+  attachFloatLabel(wrap, select, getLabelText(wrap, 'Industry'));
+}
+
+// Expandable "How did you hear"
+function initExpandableHowField(formEl) {
+  var field = formEl.querySelector('#howdidyouhearaboutus, textarea[name="howdidyouhearaboutus"]');
+  if (!field) return;
+  var row = field.closest('.mktoFormRow');
+  if (!row || !row.parentNode) return;
+
+  row.className += ' spz-how-field-wrap';
+  var wrap = field.closest('.mktoFieldWrap') || field.parentElement;
+  if (wrap) {
+    wrap.className += ' spz-textarea-wrap';
+    attachFloatLabel(wrap, field, 'How did you hear about us?');
+  }
+
+  var trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'spz-how-trigger';
+  trigger.innerHTML = '<span class="spz-how-trigger-icon" aria-hidden="true"></span><span>How did you hear about us?</span>';
+  row.parentNode.insertBefore(trigger, row);
+
+  trigger.addEventListener('click', function () {
+    var expanded = row.className.indexOf('spz-expanded') === -1;
+    if (expanded) {
+      row.className += ' spz-expanded';
+      field.focus();
+    } else {
+      row.className = row.className.replace(/ spz-expanded/g, '');
+    }
+    if (expanded) trigger.className += ' spz-expanded';
+    else trigger.className = trigger.className.replace(/ spz-expanded/g, '');
+  });
+}
+
+// Checkbox labels
+function initCheckboxLabel(formEl) {
+  var checkboxes = formEl.querySelectorAll('input[type="checkbox"]');
+  for (var i = 0; i < checkboxes.length; i++) {
+    var checkbox = checkboxes[i];
+    var list = checkbox.closest('.mktoCheckboxList, .mktoLogicalField') || checkbox.parentElement;
+    if (list) {
+      list.className += ' spz-checkbox-row';
+      var label = list.querySelector('label.checkbox-label, label.mktoHtmlText');
+      if (label) label.className += ' spz-checkbox-label';
+    }
+  }
+}
+
+// Disclaimer
+function restyleDisclaimer(formEl) {
+  var els = formEl.querySelectorAll('.mktoHtmlText, .mktoPrivacyText');
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    if (/privacy|terms|submitting/i.test(el.textContent)) {
+      el.className += ' spz-disclaimer';
+      var row = el.closest('.mktoFormRow');
+      var btnRow = formEl.querySelector('.mktoButtonRow');
+      if (row && btnRow && row !== btnRow) {
+        btnRow.parentNode.insertBefore(row, btnRow.nextSibling);
+        row.className += ' spz-disclaimer-row';
+      }
+    }
+  }
+}
+
+// Validation state
+function watchValidationState(formEl) {
+  var observer = new MutationObserver(function (mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var target = mutations[i].target;
+      var wrap = target.closest('.spz-field-wrap');
+      if (!wrap) continue;
+      if (target.className.indexOf('mktoInvalid') !== -1) wrap.classList.add('spz-invalid');
+      else wrap.classList.remove('spz-invalid');
+    }
+  });
+
+  var fields = formEl.querySelectorAll('input, select');
+  for (var i = 0; i < fields.length; i++) {
+    var field = fields[i];
+    observer.observe(field, { attributes: true, attributeFilter: ['class'] });
+
+    (function (f) {
+      var clearOnInput = function () {
+        if (f.value && f.value.trim() !== '') {
+          var wrap = f.closest('.spz-field-wrap');
+          if (wrap) wrap.classList.remove('spz-invalid');
+        }
+      };
+      f.addEventListener('input', clearOnInput);
+      f.addEventListener('change', clearOnInput);
+    })(field);
+  }
+}
+
+// Check submission
+function checkFormSubmission() {
+  if (sessionStorage.getItem('spz_split_submitted') === 'true') {
+    document.body.className += ' spz-form-submitted';
+    return true;
+  }
+  return false;
+}
+
+setTimeout(function () {
+  (function () {
+    if (!document.body) return; // 🚨 Prevent crash
+    var nodes = document.body.childNodes;
+
+    for (var i = nodes.length - 1; i >= 0; i--) {
+      var node = nodes[i];
+
+      if (node.nodeType === 3) {
+        var value = node.nodeValue;
+
+        if (/^[\s;]+$/.test(value)) {
+          document.body.removeChild(node);
+        }
+      }
+    }
+
+  })();
+}, 4000);
+
+</script>

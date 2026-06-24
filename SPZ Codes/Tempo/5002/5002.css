@@ -23,6 +23,11 @@ html {
   overflow: hidden;
 }
 
+.scroll-hidden-2,
+.scroll-hidden-2 body {
+  overflow: hidden;
+}
+
 .scroll-hidden body {
   position: fixed;
   left: 0;
@@ -43,6 +48,7 @@ body.spz_5002_v .spz_hero {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
+  background-color: #fff;
   overflow-x: hidden;
 }
 body.spz_5002_v .spz_hero + section.max-w-container {
@@ -63,26 +69,37 @@ body.spz_5002_v .spz_hero + section.max-w-container + section {
 }
 body.spz_5002_v .spz_heroInner {
   padding: 52px 0 50px;
-  background-color: #1D1D1B;
+  background-color: #fff;
   background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1440_bg.webp");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom left;
+  background-size: 1440px;
+  background-position: top right;
   margin-top: 0;
 }
 @media only screen and (min-width: 3840px) {
   body.spz_5002_v .spz_heroInner {
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/3840_bg.webp");
+    background-size: 3840px;
   }
 }
 @media only screen and (min-width: 2560px) and (max-width: 3839px) {
   body.spz_5002_v .spz_heroInner {
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/2560_bg.webp");
+    background-size: 2560px;
   }
 }
 @media only screen and (min-width: 1920px) and (max-width: 2559px) {
   body.spz_5002_v .spz_heroInner {
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1920_bg.webp");
+    background-size: 1920px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1399px) {
+  body.spz_5002_v .spz_heroInner {
+    background: #fff;
+  }
+  body.spz_5002_v .spz_heroInner .auto_container {
+    padding: 0 64px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -113,18 +130,17 @@ body.spz_5002_v .auto_container {
 }
 body.spz_5002_v .spz_heroMain {
   display: flex;
-  gap: 0 120px;
+  gap: 0 108px;
   padding-bottom: 72px;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1400px) {
   body.spz_5002_v .spz_heroMain {
     align-items: flex-start;
   }
 }
 @media (min-width: 1024px) and (max-width: 1399px) {
   body.spz_5002_v .spz_heroMain {
-    gap: 0 30px;
-    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -163,8 +179,7 @@ body.spz_5002_v .spz_heroLeft h1 strong {
   display: block;
   color: #1D1D1B;
   font-weight: 300;
-  font-family: "Messina Serif italic";
-  letter-spacing: 0.7px;
+  font-family: "messinaSerifItalic", "messinaSerifItalic Fallback";
 }
 body.spz_5002_v .spz_heroLeft ul {
   max-width: 590px;
@@ -200,7 +215,11 @@ body.spz_5002_v .spz_heroLeft ul li p strong {
 }
 @media (min-width: 1024px) and (max-width: 1399px) {
   body.spz_5002_v .spz_heroLeft {
-    width: 50%;
+    width: 100%;
+    padding-bottom: 56px;
+  }
+  body.spz_5002_v .spz_heroLeft h1 strong {
+    letter-spacing: unset;
   }
   body.spz_5002_v .spz_heroLeft ul {
     max-width: 100%;
@@ -264,13 +283,13 @@ body.spz_5002_v .spz_heroRight picture img {
 @media (min-width: 1024px) {
   body.spz_5002_v .spz_heroRight picture img {
     min-width: 740px;
-    transform: translateX(-13px) translateY(0.5px);
   }
 }
 @media (min-width: 1024px) and (max-width: 1399px) {
   body.spz_5002_v .spz_heroRight {
-    max-width: 442.8px;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -286,6 +305,7 @@ body.spz_5002_v .spz_heroRight picture img {
   }
   body.spz_5002_v .spz_heroRight picture img {
     border-radius: 8px;
+    box-shadow: 0 0 20px 0 rgba(29, 29, 27, 0.1);
   }
 }
 body.spz_5002_v .spz_form {
@@ -311,11 +331,6 @@ body.spz_5002_v .spz_form .form-field-cell.hide {
 }
 body.spz_5002_v .spz_form .form-field-cell:has(.phone-input-container) {
   min-width: 484px;
-}
-@media (min-width: 1024px) and (max-width: 1399px) {
-  body.spz_5002_v .spz_form .form-field-cell:has(.phone-input-container) {
-    min-width: 346.8px;
-  }
 }
 @media (max-width: 767.98px) {
   body.spz_5002_v .spz_form .form-field-cell:has(.phone-input-container) {
@@ -398,6 +413,7 @@ body.spz_5002_v .spz_form .relative.flex-col > input {
   line-height: 24px;
   padding-left: 13px;
   padding-right: 14px;
+  text-overflow: ellipsis;
   transition: all 0.3s ease;
 }
 body.spz_5002_v .spz_form .PhoneInputinput {
@@ -567,7 +583,7 @@ body.spz_5002_v .spz_logos h3 {
     line-height: 27px;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1400px) {
   body.spz_5002_v .spz_logosSlider > .relative .animate-marquee {
     width: 100%;
     justify-content: space-between;
@@ -586,6 +602,11 @@ body.spz_5002_v .spz_logosSlider > .relative .animate-marquee .box-content .spz_
 body.spz_5002_v .spz_logosSlider > .relative .animate-marquee .box-content .spz_logoMain picture img {
   display: block;
   max-width: 134px;
+}
+@media (min-width: 1024px) and (max-width: 1399px) {
+  body.spz_5002_v .spz_logosSlider > .relative .animate-marquee > .box-content {
+    padding-right: 48px !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   body.spz_5002_v .spz_logosSlider > .relative .animate-marquee {
@@ -631,7 +652,7 @@ body.spz_5002_v .spz_logosSlider > .relative > div:first-child {
 body.spz_5002_v .spz_logosSlider > .relative > div:nth-child(2) {
   background: linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0) 100%);
 }
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   body.spz_5002_v .spz_logosSlider > .relative > div:first-child, body.spz_5002_v .spz_logosSlider > .relative > div:nth-child(2) {
     display: none;
   }
@@ -690,7 +711,7 @@ body.spz_5002_v .spz__hero-section__content__email-cta form .spz__input-wrap inp
   background: #FFF;
   border: none;
   outline: none;
-  padding: 12px 14px;
+  padding: 12px 0 12px 14px;
   height: 56px;
   max-width: 309px;
   overflow: hidden;
@@ -700,6 +721,11 @@ body.spz_5002_v .spz__hero-section__content__email-cta form .spz__input-wrap inp
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
+}
+@media (max-width: 767.98px) {
+  body.spz_5002_v .spz__hero-section__content__email-cta form .spz__input-wrap input {
+    max-width: 100%;
+  }
 }
 body.spz_5002_v .spz__hero-section__content__email-cta form .spz__input-wrap input::-moz-placeholder {
   color: transparent;
@@ -755,7 +781,7 @@ body.spz_5002_v .spz__hero-section__content__email-cta form .spz__input-wrap inp
   font-weight: 400;
   line-height: 19.5px;
   position: absolute;
-  left: 14px;
+  left: 10px;
   padding: 0 4px;
   background-color: #fff;
   top: -5px;
@@ -843,6 +869,7 @@ body.spz_5002_v .popup-wrapper {
   background: rgba(29, 29, 27, 0.55);
   backdrop-filter: blur(3px);
   -moz-backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   transition: opacity 0.5s ease;
   opacity: 0;
   pointer-events: none;
@@ -915,6 +942,8 @@ body.spz_5002_v .spz_form details summary {
   font-weight: 400;
   line-height: 19.5px;
   text-decoration: none;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 body.spz_5002_v .spz_detail details summary span,
 body.spz_5002_v .spz_form details summary span {

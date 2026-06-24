@@ -1,0 +1,36 @@
+#########################################################################
+####################### SPIRALYZE DEV PACKAGE ###########################
+#########################################################################
+
+
+############################## DISCLAIMER ###############################
+# This guide outlines the code and implementation steps for running     #
+# #1016 via your A/B testing platform. Although we have thoroughly      #
+# tested and validated this implementation to ensure smooth execution,  #
+# we strongly recommend that your development team review and adapt the #                                                                  
+# code as needed to align with your site's specific requirements. The   #
+# code dynamically modifies the page during loading, and in some cases, #
+# rewriting parts of it may offer better integration with your existing #
+# codebase.                                                             #
+#########################################################################
+
+
+################################ DETAILS ################################
+# Client: ConnectWise
+# Experiment: #2001 | ConnectWise | Demos | Split Screen
+# Experiment Plan Link: https://app.asana.com/1/77217210692853/project/1206002187116436/task/1213139539263175?focus=true
+# Design Link: https://www.figma.com/design/e0i5UH5BfllBEVuwfjYwB0/-2001-%7C-Demos-%7C-Split-Screen
+# Devices: Responsive (Mobile and Desktop)
+#########################################################################
+
+
+############################ DOCUMENT CHANGES ###########################
+# Describe the document changes in dev-package.html file
+
+In this experiment:
+
+############################### NOTES ###################################
+
+1. All assets used in this variation have been added to the provided assets folder.
+
+2. Variation.js file is A/B test javascript code for your reference.

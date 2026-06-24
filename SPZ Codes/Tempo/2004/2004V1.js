@@ -24,8 +24,7 @@ if (window.location.href.startsWith("https://www.tempo.io/")) {
           console.log("running")
         })
         observer.observe(document.querySelector("body"), { childList: true, subtree: true });
-        document.querySelector('body').classList.add("observed2004")
-
+        document.querySelector('body').classList.add("observed2004");
         // If you face any issues, please switch to the named-function version of this code and use that instead.
         (function () {
           //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.

@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap");
+/* Hide control hero on the variant only */
+body.spz_4001_v .mint-component.hero,
+body.spz_4001_v .mint-component.static-logos {
+  display: none !important;
+}
+
+/* ============================ HERO ============================ */
+.spz-4001-section {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 64px 120px 0;
+  background: linear-gradient(161deg, #EAF0EF 0%, #E7E4FB 80%);
+  overflow: hidden;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.spz-4001-section *,
+.spz-4001-logos * {
+  box-sizing: border-box;
+}
+
+/* faint grid background */
+.spz-4001-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0.6px, transparent 0.6px), linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0.6px, transparent 0.6px);
+  background-size: 256px 256px;
+  background-position: center top;
+}
+
+.spz-4001-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.spz-4001-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ---------- Title ---------- */
+.spz-4001-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.spz-4001-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.spz-4001-g2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spz-4001-g2-logo {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.spz-4001-stars {
+  width: 98px;
+  height: 18px;
+  display: block;
+}
+
+.spz-4001-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  line-height: 22.5px;
+  color: #171717;
+}
+
+.spz-4001-rating b {
+  font-weight: 600;
+}
+
+.spz-4001-reviews {
+  font-weight: 400;
+  opacity: 0.72;
+}
+
+.spz-4001-heading {
+  margin: 0;
+  max-width: 800px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: -3.6px;
+  color: #171717;
+}
+
+.spz-4001-subtitle {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28.8px;
+  letter-spacing: -0.96px;
+  color: #171717;
+}
+
+/* ---------- Tiles ---------- */
+.spz-4001-tiles {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.spz-4001-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 141px;
+  padding: 20px 0;
+  margin: 0;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.spz-4001-card:hover {
+  box-shadow: 0 8px 24px rgba(35, 41, 40, 0.12);
+}
+
+.spz-4001-card:focus-visible {
+  outline: 2px solid #2ACFA6;
+  outline-offset: 2px;
+}
+
+.spz-4001-card.is-selected {
+  background: #171717;
+}
+
+.spz-4001-card-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex: none;
+}
+
+.spz-4001-card-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: -0.36px;
+  color: #171717;
+}
+
+.spz-4001-card.is-selected .spz-4001-card-label {
+  color: #FCFCFC;
+}
+
+.spz-4001-checkbox {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spz-4001-card.is-selected .spz-4001-checkbox {
+  border-color: #FFFFFF;
+}
+
+.spz-4001-check {
+  display: none;
+}
+
+.spz-4001-card.is-selected .spz-4001-check {
+  display: block;
+}
+
+/* ---------- CTAs ---------- */
+.spz-4001-cta-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spz-4001-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05px;
+  text-decoration: none;
+  border-radius: 80px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.spz-4001-cta--demo {
+  gap: 7px;
+  height: 43px;
+  padding: 0 7px 0 24px;
+  background: #314944;
+  color: #FFFFFF;
+}
+
+.spz-4001-cta--demo .spz-4001-cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 31px;
+  border-radius: 24px;
+  background: #2ACFA6;
+  color: #000000;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.spz-4001-cta--demo:hover {
+  background: #26352F;
+}
+
+.spz-4001-cta--try {
+  height: 45px;
+  padding: 0 25px;
+  background: #587970;
+  color: #FCFCFC;
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+
+.spz-4001-cta--try:hover {
+  background: #4C685F;
+}
+
+.spz-4001-cta:active {
+  transform: translateY(1px);
+}
+
+/* ---------- UI Hero image ---------- */
+.spz-4001-ui {
+  width: 100%;
+  line-height: 0;
+}
+
+.spz-4001-ui picture {
+  display: block;
+}
+
+.spz-4001-ui img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================ LOGOS ============================ */
+.spz-4001-logos {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  padding: 48px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.spz-4001-logos-title {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22.5px;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  color: #171717;
+  text-align: center;
+}
+
+.spz-4001-logos-img {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  line-height: 0;
+}
+
+.spz-4001-logos-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================ TABLET ============================ */
+@media (max-width: 1023.98px) {
+  .spz-4001-section {
+    padding: 64px 48px 0;
+  }
+  .spz-4001-hero-inner {
+    max-width: 672px;
+  }
+  .spz-4001-heading {
+    font-size: 48px;
+    line-height: 57.6px;
+    letter-spacing: -0.96px;
+    max-width: 589px;
+  }
+  .spz-4001-tiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .spz-4001-logos {
+    padding: 48px;
+  }
+  .spz-4001-logos-img {
+    max-width: 672px;
+  }
+}
+/* ============================ MOBILE ============================ */
+@media (max-width: 767.98px) {
+  .spz-4001-section {
+    padding: 64px 24px 0;
+  }
+  .spz-4001-hero-inner {
+    max-width: 312px;
+  }
+  .spz-4001-heading {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.96px;
+    max-width: none;
+  }
+  .spz-4001-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .spz-4001-card {
+    min-height: 122px;
+  }
+  .spz-4001-cta-block {
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+  }
+  .spz-4001-logos {
+    padding: 48px 36px;
+    gap: 24px;
+  }
+  .spz-4001-logos-img {
+    max-width: 288px;
+  }
+}/*# sourceMappingURL=8005.css.map */

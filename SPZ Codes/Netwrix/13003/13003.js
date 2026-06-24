@@ -272,13 +272,17 @@ function injectVariant6012(currentPageData) {
 
 				// Move email field below the first & last name
 				const moveFieldsInterval = setInterval(function () {
-					if (document.querySelector('form.spz_form1310 [data-wrapper="Email"] + [data-wrapper="FirstName LastName"]')) {
+					console.log('Checking for fields to move...');
+					// debugger;
+					if (document.querySelector('form.spz_form1310 .mktoFormRow[data-wrapper="Email"]')) {
 						clearInterval(moveFieldsInterval);
-						const emailField = document.querySelector('form.spz_form1310 [data-wrapper="Email"]');
-						const firstLastName = document.querySelector('form.spz_form1310 [data-wrapper="FirstName LastName"]');
+						const emailField = document.querySelector('form.spz_form1310 .mktoFormRow[data-wrapper="Email"]');
+						const firstLastName = document.querySelector('form.spz_form1310 .mktoFormRow[data-wrapper="FirstName LastName"]');
+						const comapnyField = document.querySelector('form.spz_form1310 .mktoFormRow[data-wrapper="RL_HQ_Company_Name__c"]');
 
 						if (emailField && firstLastName) {
 							emailField.insertAdjacentElement('beforebegin', firstLastName);
+							emailField.insertAdjacentElement('afterend', comapnyField);
 						}
 						
 						if(document.querySelector('form.spz_form1310 #privacy')){

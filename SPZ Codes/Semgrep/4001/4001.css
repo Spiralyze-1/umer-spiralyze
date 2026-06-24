@@ -1,0 +1,1053 @@
+@charset "UTF-8";
+/* ============ BASE FORM STYLES (from #8001 → #8005) ============ */
+.spz_8005_v1 .main-wrapper.is-dashboard-background {
+  background: transparent;
+}
+.spz_8005_v1 #accountingSoftwareContainer select {
+  color: transparent !important;
+}
+.spz_8005_v1 #accountingSoftwareContainer select:focus {
+  color: #2D2725 !important;
+}
+.spz_8005_v1 .page-wrapper .main-wrapper {
+  padding: 30px 0;
+}
+@media (max-height: 600px) {
+  .spz_8005_v1 .page-wrapper .main-wrapper {
+    align-items: flex-start;
+    overflow: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1 .section_form-content {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+body.spz_8005_v1 {
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/bill/8005/background-desktop-tablet.png);
+  background-position: left top;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 10;
+}
+@media (max-width: 767.98px) {
+  body.spz_8005_v1 {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/bill/8005/background-mobile.png");
+  }
+}
+
+.spz_8005_v1 .section_form-content .padding-global {
+  padding: 0;
+}
+.spz_8005_v1 .section_form-content .padding-global .form-signup.is-simple {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 0;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1 .section_form-content .padding-global {
+    padding: 0 18px !important;
+  }
+}
+.spz_8005_v1 form.form-wrapper {
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0 4px 20px -2px rgba(45, 39, 37, 0.1), 0 2px 4px -2px rgba(45, 39, 37, 0.06);
+  padding: 31px 39px;
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+  width: 528px;
+}
+.spz_8005_v1.spz-qq-step-1 form.form-wrapper {
+  width: 640px;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1.spz-qq-step-1 form.form-wrapper {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+.spz_8005_v1.spz-qq-step-1 .spz-qq-tiles {
+  gap: 12px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles {
+    justify-content: center;
+  }
+}
+.spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile {
+  flex: unset;
+  max-width: 178.6px;
+  width: 100%;
+  height: 112px;
+  padding: 23px 11px 20px;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile {
+    max-width: 136px;
+  }
+  .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile:nth-child(3), .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile:nth-child(4) {
+    height: 136px;
+  }
+}
+.spz_8005_v1.spz-qq-step-2 .spz-qq-tiles {
+  gap: 12px;
+}
+.spz_8005_v1.spz-qq-step-2 .spz-qq-tiles .spz-qq-tile {
+  flex: unset;
+  max-width: 218px;
+  width: 100%;
+  height: 162px;
+  padding: 23px 11px 20px;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1.spz-qq-step-2 .spz-qq-tiles .spz-qq-tile {
+    max-width: 284px;
+  }
+}
+.spz_8005_v1.spz-qq-step-2 .spz-qq-tile-title {
+  font-family: Soehne kraftig, sans-serif;
+}
+.spz_8005_v1.spz-qq-step-2 .spz-qq-tile.is-selected .spz-qq-tile-title {
+  font-family: Soehne kraftig, sans-serif;
+}
+.spz_8005_v1.spz-qq-step-3 .form-fields-hide {
+  display: block;
+}
+.spz_8005_v1.spz-qq-step-3 .form-fields-hide + .is-form-small {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper h2.heading-style-h4 {
+  color: #2D2725;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 38.4px;
+  letter-spacing: -0.64px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.spz_8005_v1 form.form-wrapper .spacer-small {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper .form-options.hasValue select#signupType,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select#signupType {
+  color: #2D2725;
+}
+
+.spz_8005_v1 form.form-wrapper #form-panel-3.hasValue select#signupType ~ label {
+  overflow: hidden;
+  color: #5D5F6D;
+  background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.spz_8005_v1 form.form-wrapper h2.heading-style-h4 + .spacer-xsmall {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap {
+  width: calc((100% - 16px) / 2);
+  position: relative;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input {
+  border-radius: 8px;
+  border: 1px solid rgba(34, 30, 28, 0.1);
+  background: #FDFCFC;
+  height: 40px;
+  min-height: unset;
+  padding: 8px 11px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  color: #2D2725;
+  text-overflow: ellipsis;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  width: 100%;
+  display: block;
+  -webkit-appearance: none;
+  outline: 0;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:-webkit-autofill ~ label {
+  color: transparent;
+}
+
+.spz_8005_v1 form.form-wrapper label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  overflow: hidden;
+  color: rgba(45, 39, 37, 0.6);
+  background: transparent;
+  text-overflow: ellipsis;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin: 0;
+  padding: 0 4px;
+  transition-property: font-size, top, left;
+  transition-duration: 0.3s;
+  z-index: 4;
+  pointer-events: none;
+  max-width: 84%;
+  white-space: nowrap;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.spz_8005_v1 form.form-wrapper a.button {
+  width: 100%;
+  margin: 8px 0 12px;
+  height: 50px;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  border-width: 1px;
+}
+
+.spz_8005_v1 form.form-wrapper a.button:hover,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:hover {
+  background: #2C73DD;
+  border-color: #145AB8;
+}
+
+.spz_8005_v1 form.form-wrapper a.button:focus-visible,
+.spz_8005_v1 form.form-wrapper a.button:active,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus-visible,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:active {
+  border: 1px solid #0C366E;
+  background: #0242A1;
+}
+
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.spz_8005_v1 form.form-wrapper .form-options select:focus option,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select:focus option {
+  color: #2D2725;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus,
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer select#accountingSoftware:focus {
+  color: #2D2725;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input::-moz-placeholder, .spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select::-moz-placeholder {
+  color: transparent;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input::placeholder,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select::placeholder {
+  color: transparent;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label {
+  color: #2D2725 !important;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus ~ label {
+  overflow: hidden;
+  color: #2D2725;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  top: -10px;
+  font-family: "Soehne Buch", sans-serif;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue select ~ label {
+  font-size: 12px;
+  line-height: 19.2px;
+  background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
+  top: -10px;
+  left: 8px;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper select.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select ~ label {
+  overflow: hidden;
+  color: #5D5F6D;
+  background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  top: -10px;
+}
+
+.spz_8005_v1 form.form-wrapper input:focus ~ label,
+.spz_8005_v1 form.form-wrapper select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue select ~ label,
+.spz_8005_v1 form.form-wrapper #form-panel-3.hasValue select ~ label {
+  font-size: 12px;
+  line-height: 19.2px;
+  background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
+  top: -10px;
+  left: 8px;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus {
+  border-color: #584F4B;
+}
+
+.spz_8005_v1 form.form-wrapper .button-disclaimer {
+  margin: 0;
+  color: #2D2725;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.spz_8005_v1 form.form-wrapper .button-disclaimer a {
+  color: #024DBD;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-decoration: none;
+  transition: all 0.4s ease-in;
+}
+
+.spz_8005_v1 form.form-wrapper .button-disclaimer a:hover {
+  text-decoration: underline;
+  transition: all 0.4s ease-in;
+}
+
+.spz_8005_v1 form.form-wrapper .form-fields-hide[style="display: block;"] {
+  width: 100%;
+  display: flex !important;
+  flex-wrap: wrap;
+  grid-column-gap: 16px;
+}
+
+.spz_8005_v1 form.form-wrapper #form-panel-3 .flex-horizontal {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper #form-panel-3 {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  grid-row-gap: 0;
+}
+
+.spz_8005_v1 form.form-wrapper select#signupType {
+  border-radius: 8px;
+  border: 1px solid rgba(34, 30, 28, 0.1);
+  background: #FDFCFC;
+  height: 40px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  color: transparent;
+  text-overflow: ellipsis;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer {
+  width: 100%;
+  margin: 0;
+  margin-left: 0;
+}
+
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer .form-field-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer select#accountingSoftware {
+  border-radius: 8px;
+  border: 1px solid rgba(34, 30, 28, 0.1);
+  background: #FDFCFC;
+  height: 40px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  color: transparent;
+  text-overflow: ellipsis;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding-right: 50px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.spz_8005_v1 form.form-wrapper select#signupType ~ .arrow,
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer select#accountingSoftware ~ .arrow,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption ~ .arrow {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="%2378797B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat;
+  transition: all 0.2s ease;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.spz_8005_v1 #accountingSoftwareContainer .form-field-wrap.hasValue select#accountingSoftware {
+  color: #2D2725 !important;
+}
+
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill {
+  color: #2D2725 !important;
+  -webkit-text-fill-color: #2D2725 !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill:focus,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill:focus,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill:focus {
+  background-color: #FDFCFC !important;
+  -webkit-box-shadow: 0 0 0 1000px #FDFCFC inset !important;
+  -webkit-text-fill-color: #2D2725 !important;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
+  border-radius: 12px;
+  border: 1px solid #114A97;
+  background: #024DBD;
+  box-shadow: 0 31px 80px 0 rgba(0, 0, 0, 0.01), 0 13px 33px 0 rgba(0, 0, 0, 0.02), 0 7px 18px 0 rgba(0, 0, 0, 0.03), 0 4px 10px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  height: 50px;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption {
+  border-radius: 8px;
+  border: 1px solid rgba(34, 30, 28, 0.1);
+  background: #FDFCFC;
+  height: 40px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  color: transparent;
+  text-overflow: ellipsis;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper.hasValue select#msDynamicsOption {
+  color: #2D2725 !important;
+}
+
+.spz_8005_v1 form.form-wrapper select#msDynamicsOption.hide + label {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper select#msDynamicsOption.hide + label + .arrow {
+  display: none;
+}
+
+.spz_8005_v1 form.form-wrapper .spz-business-type.hasValue select ~ label,
+.spz_8005_v1 section#signupType .form-field-wrap.hasValue label,
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer .form-field-wrap.hasValue label {
+  overflow: hidden;
+  background: #fff;
+  color: #5D5F6D;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+  top: -10px;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .error-message {
+  position: relative;
+  top: -6px;
+  display: flex;
+  align-items: center;
+}
+
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .error-message span {
+  margin-left: 5px;
+}
+
+.spz_8005_v1 form.form-wrapper.formProgressive input#email + .error-message {
+  margin-bottom: 5px;
+}
+
+/* ============ QUALIFYING QUESTIONS ============ */
+.spz_8005_v1 .spz-qq-wrap {
+  display: none;
+}
+
+body.spz_8005_v1.spz-qq-step-1 .spz-qq-wrap,
+body.spz_8005_v1.spz-qq-step-2 .spz-qq-wrap {
+  display: block;
+}
+
+body.spz_8005_v1.spz-qq-step-1 .spz-qq-wrap .spz-qq-step[data-step="1"] {
+  display: flex;
+}
+
+body.spz_8005_v1.spz-qq-step-1 .spz-qq-wrap .spz-qq-step[data-step="2"] {
+  display: none;
+}
+
+body.spz_8005_v1.spz-qq-step-2 .spz-qq-wrap .spz-qq-step[data-step="1"] {
+  display: none;
+}
+
+body.spz_8005_v1.spz-qq-step-2 .spz-qq-wrap .spz-qq-step[data-step="2"] {
+  display: flex;
+}
+
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .form-field-columns,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .form-fields-hide,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper #form-panel-3,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .button-disclaimer,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper a.button,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper input.submit-button,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper h2.heading-style-h4,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .spacer-xsmall,
+body.spz_8005_v1.spz-qq-step-1 .spz-qq-step3-header,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .form-field-columns,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .form-fields-hide,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper #form-panel-3,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .button-disclaimer,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper a.button,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper input.submit-button,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper h2.heading-style-h4,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .spacer-xsmall,
+body.spz_8005_v1.spz-qq-step-2 .spz-qq-step3-header {
+  display: none !important;
+}
+
+body.spz_8005_v1.spz-qq-step-3 .spz-qq-wrap {
+  display: none;
+}
+
+body.spz_8005_v1.spz-qq-step-3 .spz-qq-step3-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper h2.heading-style-h4 {
+  display: block;
+}
+
+body.spz_8005_v1.spz-qq-bypass .spz-qq-wrap,
+body.spz_8005_v1.spz-qq-bypass .spz-qq-step3-header {
+  display: none !important;
+}
+
+/* QQ Step Layout */
+.spz_8005_v1 .spz-qq-step {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  position: relative;
+}
+
+/* Stepper Dots */
+.spz_8005_v1 .spz-qq-stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spz_8005_v1 .spz-qq-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: #F1F0EC;
+}
+
+.spz_8005_v1 .spz-qq-dot.is-active {
+  background: #FF5A0A;
+  box-shadow: 0px 0px 0px 3px rgba(255, 90, 10, 0.25);
+}
+
+/* QQ Heading */
+.spz_8005_v1 .spz-qq-heading {
+  color: #2D2725;
+  text-align: center;
+  font-family: Soehne kraftig, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.64px;
+  margin: 0;
+  width: 100%;
+}
+
+.spz_8005_v1 .spz-qq-heading .span-orange {
+  color: #FF5A0A;
+}
+
+/* QQ Prompt */
+.spz_8005_v1 .spz-qq-prompt {
+  color: #2D2725;
+  text-align: center;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: -16px 0 0;
+  width: 100%;
+}
+
+/* QQ Tiles Container */
+.spz_8005_v1 .spz-qq-tiles {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+/* QQ Tile */
+.spz_8005_v1 .spz-qq-tile {
+  flex: 1;
+  min-width: 0;
+  height: 156px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 30, 28, 0.1);
+  background: #FDFCFC;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease, border-width 0.2s ease, padding 0.2s ease;
+  font-family: inherit;
+  outline: none;
+}
+.spz_8005_v1 .spz-qq-tile:hover {
+  border-color: #2D2725;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected {
+  border: 1px solid #2D2725;
+}
+
+.spz_8005_v1 .spz-qq-tile > *,
+.spz_8005_v1 .spz-qq-tile svg {
+  pointer-events: none;
+}
+
+/* QQ Tile Selector (checkbox/radio) */
+.spz_8005_v1 .spz-qq-tile-selector {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #C3B4AC;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.spz_8005_v1 .spz-qq-tile-selector.is-radio {
+  border-radius: 50%;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-selector {
+  background: #FF5A0A;
+  border-color: #F55000;
+}
+
+.spz_8005_v1 .spz-qq-tile-selector .spz-qq-check {
+  display: none;
+  width: 12px;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-selector .spz-qq-check {
+  display: flex;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-selector.is-radio .spz-qq-check {
+  display: none;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-selector.is-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* QQ Tile Icon */
+.spz_8005_v1 .spz-qq-tile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.spz_8005_v1 .spz-qq-tile-icon img,
+.spz_8005_v1 .spz-qq-tile-icon svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
+/* QQ Tile Copy */
+.spz_8005_v1 .spz-qq-tile-label {
+  color: #584F4B;
+  text-align: center;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-label {
+  color: #2D2725;
+  font-family: Soehne kraftig, sans-serif;
+  font-weight: 500;
+}
+
+/* Q2 Tiles (taller, with title+subtitle) */
+.spz_8005_v1 .spz-qq-tiles-single .spz-qq-tile {
+  height: 182px;
+  width: 216px;
+  flex: none;
+}
+
+.spz_8005_v1 .spz-qq-tile-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 0;
+  text-align: center;
+}
+
+.spz_8005_v1 .spz-qq-tile-title {
+  color: #2D2725;
+  font-family: "Soehne Kraeftig", "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.spz_8005_v1 .spz-qq-tile-subtitle {
+  color: #584F4B;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.spz_8005_v1 .spz-qq-tile.is-selected .spz-qq-tile-subtitle {
+  color: #2D2725;
+}
+
+/* QQ Next Button */
+.spz_8005_v1 .spz-qq-next {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 25px;
+  border-radius: 12px;
+  border: 1px solid #114A97;
+  background: #024DBD;
+  box-shadow: 0px 31px 80px 0px rgba(0, 0, 0, 0.01), 0px 13px 33px 0px rgba(0, 0, 0, 0.02), 0px 7px 18px 0px rgba(0, 0, 0, 0.03), 0px 4px 10px 0px rgba(0, 0, 0, 0.03), 0px 2px 5px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: #FFF;
+  font-family: Soehne kraftig, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.spz_8005_v1 .spz-qq-next:focus {
+  box-shadow: 0 31px 80px 0 rgba(0, 0, 0, 0.01), 0 12.951px 33.422px 0 rgba(0, 0, 0, 0.02), 0 6.924px 17.869px 0 rgba(0, 0, 0, 0.03), 0 3.882px 10.017px 0 rgba(0, 0, 0, 0.03), 0 2.062px 5.32px 0 rgba(0, 0, 0, 0.04), 0 0.858px 2.214px 0 rgba(0, 0, 0, 0.05), 0 0 0 2px #FFF, 0 0 0 4px #024DBD;
+}
+
+.spz_8005_v1 .spz-qq-next:hover {
+  background: #2C73DD;
+  border-color: #145AB8;
+}
+
+.spz_8005_v1 .spz-qq-next:active,
+.spz_8005_v1 .spz-qq-next:focus-visible {
+  background: #0242A1;
+  border-color: #0C366E;
+}
+
+/* QQ Back Link */
+.spz_8005_v1 .spz-qq-back {
+  position: absolute;
+  top: -11.5px;
+  left: -21.5px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #024DBD;
+  font-family: "Soehne Buch", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+}
+.spz_8005_v1 .spz-qq-back span {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.spz_8005_v1 .spz-qq-back:hover span {
+  transform: translateX(5px) translateY(-1px);
+}
+
+.spz_8005_v1 .spz-qq-back img {
+  width: 11px;
+  height: 11px;
+  display: block;
+}
+
+/* QQ Error Message */
+.spz_8005_v1 .spz-qq-error {
+  color: #B32820;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  font-family: "Soehne Buch", sans-serif;
+  width: 100%;
+  margin: -16px 0 0;
+  min-height: 21px;
+  display: none;
+}
+
+.spz_8005_v1 .spz-qq-error.is-visible {
+  display: block;
+}
+
+.spz_8005_v1:has(.spz-qq-error.is-visible) .spz-qq-next {
+  box-shadow: 0 31px 80px 0 rgba(0, 0, 0, 0.01), 0 12.951px 33.422px 0 rgba(0, 0, 0, 0.02), 0 6.924px 17.869px 0 rgba(0, 0, 0, 0.03), 0 3.882px 10.017px 0 rgba(0, 0, 0, 0.03), 0 2.062px 5.32px 0 rgba(0, 0, 0, 0.04), 0 0.858px 2.214px 0 rgba(0, 0, 0, 0.05), 0 0 0 2px #FFF, 0 0 0 4px #B32820;
+}
+
+/* Step 3 Header (stepper + back for form step) */
+.spz_8005_v1 .spz-qq-step3-header {
+  display: none;
+  position: relative;
+}
+
+/* Hide signupType on Step 3 when QQ is active */
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper .form-options,
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper #form-panel-3 {
+  display: none !important;
+}
+
+/* Show accountingSoftware only when Q2=direct */
+body.spz_8005_v1.spz-qq-console form.form-wrapper #accountingSoftwareContainer {
+  display: none !important;
+}
+
+/* ============ RESPONSIVE - TABLET ============ */
+@media only screen and (max-width: 1023.98px) {
+  .spz_8005_v1 form.form-wrapper {
+    padding: 31px 39px 30px;
+  }
+}
+/* ============ RESPONSIVE - MOBILE ============ */
+@media only screen and (max-width: 767.98px) {
+  body.spz_8005_v1 {
+    background-attachment: fixed !important;
+  }
+  .spz_8005_v1 form.form-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 23px 19px;
+  }
+  .spz_8005_v1 form.form-wrapper h2.heading-style-h4 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33.6px;
+    letter-spacing: -0.56px;
+    margin-bottom: 20px;
+  }
+  .spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap {
+    width: 100%;
+  }
+  .spz_8005_v1 form.form-wrapper a.button {
+    margin: 4px 0 12px;
+  }
+  .spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
+    margin-top: 4px;
+  }
+  /* QQ Mobile Styles */
+  .spz_8005_v1 .spz-qq-step {
+    gap: 20px;
+  }
+  .spz_8005_v1 .spz-qq-heading {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+  .spz_8005_v1 .spz-qq-prompt {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: -12px;
+  }
+  .spz_8005_v1 .spz-qq-tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+  .spz_8005_v1 .spz-qq-tile {
+    height: auto;
+    min-height: 100px;
+  }
+  .spz_8005_v1 .spz-qq-tiles-single .spz-qq-tile {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+  .spz_8005_v1 .spz-qq-back {
+    left: 2.5px;
+    top: -7px;
+  }
+  .spz_8005_v1 .spz-qq-back img {
+    align-self: unset;
+  }
+  body.spz_8005_v1.spz-qq-step-3 .spz-qq-step3-header {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  body.spz_8005_v1 section#formjumplink.formProgressive {
+    margin: 0;
+  }
+  body.spz_8005_v1 section#formjumplink .text-image-hero > div:last-child > .form-signup {
+    margin: 50px 0;
+  }
+  body.spz_8005_v1 section#formjumplink .text-image-hero {
+    align-items: flex-start;
+  }
+}
+@media only screen and (max-width: 500px) and (max-height: 690px) {
+  body.spz_8005_v1 section#formjumplink.formProgressive {
+    margin: 40px 0;
+  }
+  body.spz_8005_v1 section#formjumplink.formProgressive .text-image-hero > div:last-child > .form-signup {
+    margin: 50px 0;
+  }
+}/*# sourceMappingURL=4001.css.map */

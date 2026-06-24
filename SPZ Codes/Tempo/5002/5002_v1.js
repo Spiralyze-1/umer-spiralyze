@@ -57,7 +57,6 @@ function waitForElement(cssSelector, callback) {
 			subtree: true,
 		});
 	}
-
 	var spz5001MarqueeDeb = null;
 	var spz5001MarqueeRo = null;
 	function spz5001MarqueeSync() {
@@ -76,7 +75,6 @@ function waitForElement(cssSelector, callback) {
 		if (cells.length < 12) return;
 		var w = cells[6].offsetLeft - cells[0].offsetLeft;
 		if (!(w > 0)) return;
-
 		var armed = track.dataset.spz5001MarqueeArmed === '1';
 		var prev = armed && track.dataset.spz5001LoopPx ? parseFloat(track.dataset.spz5001LoopPx, 10) : null;
 		/* Avoid animation:none restarts when width already stable (stops load/RO/resize “jerks”). */
@@ -89,7 +87,6 @@ function waitForElement(cssSelector, callback) {
 			track.style.webkitAnimation = 'none';
 			void track.offsetWidth;
 		}
-
 		track.dataset.spz5001LoopPx = String(w);
 		track.style.setProperty('--spz5001-loop', w + 'px');
 		var anim = 'spz5001-marquee-px 40s linear infinite';
@@ -152,7 +149,6 @@ function waitForElement(cssSelector, callback) {
 			window.addEventListener('resize', spz5001MarqueeBind, { passive: true });
 		}
 	})();
-
 	function spzHero() {
 		document.querySelector('main>section:nth-of-type(1)').insertAdjacentHTML('afterend', `
 			<section class="spz_hero">
@@ -177,10 +173,10 @@ function waitForElement(cssSelector, callback) {
 									<div class="spz__hero-section__content__email-cta">
 										<form class="spz__email-cta__form">
 											<div class="spz__input-wrap">
-												<input type="text" placeholder="Email" name="email" autocomplete="false">
+												<input class="spz_hero_email" id="spz_hero_email_field" type="email" placeholder="Email" name="email" autocomplete="false">
 												<label class="spz__input-label" for="email">Email</label>
 											</div>
-											<button class="main_cta spz6009_v" type="submit">
+											<button class="main_cta spz6009_v" id="spz_hero_email_submit" type="submit">
 												Get Started Free
 												<div class="arrow"></div>
 											</button>
@@ -191,7 +187,7 @@ function waitForElement(cssSelector, callback) {
 											<summary class="flex cursor-pointer items-center text-sm underline">Disclaimer
 												<span class="ml-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<path d="M14.1827 8.06655L15 8.88459L10.5459 13.3403C10.4745 13.4121 10.3896 13.4691 10.2962 13.508C10.2027 13.5469 10.1024 13.5669 10.0012 13.5669C9.8999 13.5669 9.79965 13.5469 9.70616 13.508C9.61268 13.4691 9.52781 13.4121 9.45644 13.3403L5 8.88459L5.81727 8.06732L10 12.2493L14.1827 8.06655Z" fill="#1D1D1B"/>
+														<path d="M14.1827 8.06655L15 8.88459L10.5459 13.3403C10.4745 13.4121 10.3896 13.4691 10.2962 13.508C10.2027 13.5469 10.1024 13.5669 10.0012 13.5669C9.8999 13.5669 9.79965 13.5469 9.70616 13.508C9.61268 13.4691 9.52781 13.4121 9.45644 13.3403L5 8.88459L5.81727 8.06732L10 12.2493L14.1827 8.06655Z" fill="#1D1D1B"></path>
 													</svg>
 												</span>
 											</summary>
@@ -210,9 +206,10 @@ function waitForElement(cssSelector, callback) {
 								</div>
 								<div class="spz_heroRight">
 									<picture>
-										<source media="(max-width: 1023)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/768_ui_4.webp" type="image/webp">
+										<source media="(max-width: 1399PX)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/768_ui_4.webp" type="image/webp">
+										<source media="(max-width: 1023PX)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/768_ui_4.webp" type="image/webp">
 										<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/360_ui_4.webp" type="image/webp">
-										<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1440_ui_4.webp" title="project collections" alt="project collections">
+										<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/1440_ui_5.webp" title="project collections" alt="project collections">
 									</picture>
 								</div>
 							</div>
@@ -226,96 +223,96 @@ function waitForElement(cssSelector, callback) {
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbnb_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbnb_1.webp" alt="airbnb logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_airbnb_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_airbnb_3.svg" alt="airbnb logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbus_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbus.webp" alt="airbus logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_airbus_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_airbus_3.svg" alt="airbus logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_netflix_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_netflix.webp" alt="netflix logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_netflix_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_netflix_3.svg" alt="netflix logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_cisco_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_cisco.webp" alt="cisco logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_cisco_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_cisco_3.svg" alt="cisco logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_slack_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_slack.webp" alt="slack logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_slack_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_slack_3.svg" alt="slack logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_oracle_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_oracle.webp" alt="oracle logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_oracle_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_oracle_3.svg" alt="oracle logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbnb_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbnb_1.webp" alt="airbnb logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_airbnb_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_airbnb_3.svg" alt="airbnb logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbus_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_airbus.webp" alt="airbus logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_airbus_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_airbus_3.svg" alt="airbus logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_netflix_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_netflix.webp" alt="netflix logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_netflix_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_netflix_3.svg" alt="netflix logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_cisco_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_cisco.webp" alt="cisco logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_cisco_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_cisco_3.svg" alt="cisco logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_slack_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_slack.webp" alt="slack logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263837/tempo/5002/logo_slack_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263839/tempo/5002/logo_slack_3.svg" alt="slack logo">
 													</picture>
 												</div>
 											</div>
 											<div class="box-content shrink-0 pr-8 md:pr-20" aria-hidden="false">
 												<div class="spz_logoMain">
 													<picture>
-														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_oracle_1.webp" type="image/webp">
-														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/tempo/5002/logo_oracle.webp" alt="oracle logo">
+														<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263838/tempo/5002/logo_oracle_2.svg" type="image/webp">
+														<img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1779263840/tempo/5002/logo_oracle_3.svg" alt="oracle logo">
 													</picture>
 												</div>
 											</div>
@@ -328,7 +325,6 @@ function waitForElement(cssSelector, callback) {
 				</div>	
 			</section>
 		`);
-
 		document.body.insertAdjacentHTML('beforeend', `
 			<div class="popup-wrapper"> 
 				<div class="spz-form-wrap">
@@ -336,7 +332,7 @@ function waitForElement(cssSelector, callback) {
 						<div class="close-button">
 							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
 								<g opacity="0.3">
-									<path d="M8.53341 25.3332L6.66675 23.4665L14.1334 15.9998L6.66675 8.53317L8.53341 6.6665L16.0001 14.1332L23.4667 6.6665L25.3334 8.53317L17.8667 15.9998L25.3334 23.4665L23.4667 25.3332L16.0001 17.8665L8.53341 25.3332Z" fill="#1D1D1B"/>
+									<path d="M8.53341 25.3332L6.66675 23.4665L14.1334 15.9998L6.66675 8.53317L8.53341 6.6665L16.0001 14.1332L23.4667 6.6665L25.3334 8.53317L17.8667 15.9998L25.3334 23.4665L23.4667 25.3332L16.0001 17.8665L8.53341 25.3332Z" fill="#1D1D1B"></path>
 								</g>
 							</svg>			
 						</div>
@@ -345,14 +341,12 @@ function waitForElement(cssSelector, callback) {
 				</div>
 			</div>
 		`);
-
 		function smoothScrollAndWait(targetY, callback) {
 			// If already at target position, execute immediately
 			if (window.scrollY === targetY) {
 				callback();
 				return;
 			}
-
 			let scrollTimeout;
 			const scrollHandler = () => {
 				clearTimeout(scrollTimeout);
@@ -361,65 +355,45 @@ function waitForElement(cssSelector, callback) {
 					callback();
 				}, 50);
 			};
-
 			window.addEventListener('scroll', scrollHandler);
 			window.scrollTo({ top: targetY, behavior: 'smooth' });
 		}
 		document.querySelectorAll('.spz__email-cta__form').forEach(form => {
 			form.addEventListener('submit', function (e) {
 				e.preventDefault();
-
 				this.querySelector('input[name="email"]').blur();
 				smoothScrollAndWait(0, () => {
 					document.querySelector('.popup-wrapper').classList.add('show');
 					document.querySelector('html').classList.add('scroll-hidden');
-
 					const email = form.querySelector('input[name="email"]').value;
 					if (email) {
 						var emailField = document.querySelector('.popup-wrapper form input[name="company_email"]');
 						emailField.value = email;
-
-						// Trigger form validation/events
-						emailField.dispatchEvent(new Event('input', { bubbles: true }));
-						emailField.dispatchEvent(new Event('change', { bubbles: true }));
-						emailField.dispatchEvent(new Event('blur', { bubbles: true }));
-						emailField.dispatchEvent(new InputEvent('input', {
-							bubbles: true,
-							inputType: 'insertText',
-							data: emailField.value
-						}));
+						emailField.focus();
+						emailField.blur();
 						var flexCol = emailField.closest('.flex-col');
 						if (flexCol) flexCol.classList.add('filled');
 					}
 				});
 			});
 		});
-
 		document.querySelector('.spz_5002_v .popup-wrapper .close-button').addEventListener('click', function (e) {
 			e.preventDefault();
 			document.querySelector('.spz_5002_v .popup-wrapper').classList.remove('show');
-			document.querySelector('html').classList.remove('scroll-hidden');
+			document.querySelector('html').classList.remove('scroll-hidden', 'scroll-hidden-2');
 		});
-
 		document.querySelectorAll('a[href^="https://www.tempo.io/collections/project"]').forEach(function (link) {
 			link.href = 'javascript:void(0);';
 			link.addEventListener('click', function (e) {
 				e.preventDefault();
-
 				const formSection = document.querySelector('.spz_hero');
-
 				if (formSection) {
-					formSection.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
+					document.querySelector('.popup-wrapper').classList.add('show');
+					document.querySelector('html').classList.add('scroll-hidden-2');
 				}
 			});
 		});
 	}
-
-
-
 	// ============================================================
 	//  All FUNCTIONS — define here
 	// ============================================================
@@ -431,13 +405,13 @@ function waitForElement(cssSelector, callback) {
 		const BASE = 'body.spz_5002_v #form-collection-save';
 		const aside = $(BASE);
 		if (!aside) return; // Exit early if base element doesn't exist
-
 		// const rightInner = $('.spz_form', aside);
 		// if (!rightInner) return;
-
 		// ── 3. Move form div after logo ───────────────────────────────────
 		const formDiv = $(`${BASE}`);
-		if (formDiv) $('.spz_form').insertAdjacentElement('afterbegin', formDiv);
+		if (formDiv && !document.querySelector('.spz_form #form-collection-save')) {
+			$('.spz_form').insertAdjacentElement('afterbegin', formDiv);
+		}
 		// ── 4. Update form title ──────────────────────────────────────────
 		const formHeader = $(`.spz_form header`);
 		if (formHeader) formHeader.textContent = 'Get Started Free';
@@ -512,23 +486,19 @@ function waitForElement(cssSelector, callback) {
 			submitBtn.textContent = 'Submit';
 			submitBtn.classList.add('spz5001_v', 'spz_submit_btn');
 		}
-
 		document.querySelector('input[name="company_email"]').closest('.form-field-cell').insertAdjacentElement('afterend', document.querySelector('input[name="company_name"]').closest('.form-field-cell'));
-
 		// document.querySelector('.spz__hero-section__content__email-cta').insertAdjacentElement('afterend', document.querySelector('.spz_form div:has(> details)'));
 		document.querySelectorAll('.spz__hero-section__content__email-cta form .spz__input-wrap input').forEach(function (input) {
 			function toggleClass() {
 				input.classList.toggle('has-value', input.value.trim() !== '');
 			}
-
 			input.addEventListener('input', toggleClass);
 			input.addEventListener('blur', toggleClass);
-
 			toggleClass();
 		});
 		if (document.querySelector('.spz_form details summary span')) {
 			document.querySelector('.spz_form details summary span').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-					<path d="M14.1827 8.06655L15 8.88459L10.5459 13.3403C10.4745 13.4121 10.3896 13.4691 10.2962 13.508C10.2027 13.5469 10.1024 13.5669 10.0012 13.5669C9.8999 13.5669 9.79965 13.5469 9.70616 13.508C9.61268 13.4691 9.52781 13.4121 9.45644 13.3403L5 8.88459L5.81727 8.06732L10 12.2493L14.1827 8.06655Z" fill="#1D1D1B"/>
+					<path d="M14.1827 8.06655L15 8.88459L10.5459 13.3403C10.4745 13.4121 10.3896 13.4691 10.2962 13.508C10.2027 13.5469 10.1024 13.5669 10.0012 13.5669C9.8999 13.5669 9.79965 13.5469 9.70616 13.508C9.61268 13.4691 9.52781 13.4121 9.45644 13.3403L5 8.88459L5.81727 8.06732L10 12.2493L14.1827 8.06655Z" fill="#1D1D1B"></path>
 				</svg>`;
 		}
 		// ── 11. Disclaimer ────────────────────────────────────────────────
@@ -542,9 +512,7 @@ function waitForElement(cssSelector, callback) {
 		//     </div>
 		// `);
 		// }
-
 	}
-
 	function init5001() {
 		document.body.classList.add('spz_5002_v');
 		// document.querySelector('body.spz_5002_v main section > div').classList.add('spz_main_wrapper');
@@ -553,7 +521,6 @@ function waitForElement(cssSelector, callback) {
 			spz5001MarqueeObserveShell();
 			spz5001MarqueeBind();
 			window.addEventListener('load', spz5001MarqueeBind);
-
 			waitForElement("#form-collection-save form", () => {
 				formElemChanges();
 			});
@@ -564,18 +531,14 @@ function waitForElement(cssSelector, callback) {
 			// If you face any issues, please switch to the named-function version of this code and use that instead.
 			(function () {
 				//Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
-
 				// Set the value of the squeezePage variable as needed:
 				// true  – if you are using a squeeze page (i.e., the page contains a form)
 				// false – if you are not using a squeeze page (i.e., the page does not contain a form)
 				// 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
-
 				const squeezePage = true; // true / false / 'both'
 				const expName = '5002'; //experiment name should be 1001, 1002, 1003 etc.
 				const variantName = `spz_` + expName + `_variant`; //variantName should be _variant, _true_control etc.
 				const clientDomain = '.tempo.io'; //domain should be .spiralyze.com
-
-
 				/***********************************
 				************************************
 				DO NOT TOUCH
@@ -601,7 +564,6 @@ function waitForElement(cssSelector, callback) {
 						}
 						document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
 					}
-
 					function getCookie(name) {
 						var nameEQ = name + "=";
 						var ca = document.cookie.split(';');
@@ -612,11 +574,9 @@ function waitForElement(cssSelector, callback) {
 						}
 						return null;
 					}
-
 					var ExistingExperimentName = getCookie('ExperimentName');
 					var ExistingExperimentValue = getCookie('ExperimentValue');
 					var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
-
 					if (!ExistingExperimentName) {
 						setCookie('ExperimentName', currentExperimentName, 1);
 						setCookie('ExperimentValue', currentExperimentValue, 1);
@@ -641,9 +601,22 @@ function waitForElement(cssSelector, callback) {
 		// ✅ If not demo page, remove your classes from body
 		if (!window.location.pathname.includes("/collections/project")) {
 			document.body.classList.remove('spz_5002_v');
+			if (document.querySelector('.popup-wrapper')) {
+				document.querySelector('.popup-wrapper').remove();
+			}
+			if (document.querySelector('.spz_hero')) {
+				document.querySelector('.spz_hero').remove();
+			}
+			const utmContentField = document.querySelector('input[name="utm_content"]');
+			if (utmContentField) {
+				utmContentField.value = utmContentField.value
+					.replace('spz_5002_variant', '')
+					.replace(/,{2,}/g, ',')
+					.replace(/^,|,$/g, '')
+					.trim();
+			}
 		}
 		waitForProjectPage();
 	});
-
 	waitForProjectPage();
 })();

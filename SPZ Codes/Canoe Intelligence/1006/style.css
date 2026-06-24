@@ -726,6 +726,9 @@
 .spz_1006_v1 .spz_form .hs-form-field.hide {
   display: none;
 }
+.spz_1006_v1 .spz_form .hs-form-field.hs_country_region_2.hide + .hs_state_region_2 {
+  display: none;
+}
 @media (max-width: 767.98px) {
   .spz_1006_v1 .spz_form {
     left: 0;

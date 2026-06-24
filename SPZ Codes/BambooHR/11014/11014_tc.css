@@ -1,0 +1,2941 @@
+.spz_hero_banner h1 {
+  color: #FFF;
+  font-family: Fields;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 67px;
+  margin-top: 0;
+}
+
+.spz_11012_v.hr-software #base .spz_hero_banner h1 {
+  margin-top: 0;
+}
+
+
+.spz_hero_banner h1#employee-time-and-attendance-tracking {
+  font-size: 48px;
+  line-height: 56px;
+  margin-top: 0;
+}
+
+.spz_hero_banner h1 span {
+  color: #599D15;
+}
+
+.form-container.spz_hero_banner .form-wrapper {
+  max-width: 1207px;
+  padding: 0;
+}
+
+.form-container.spz_hero_banner .form-wrapper:has(#employee-time-and-attendance-tracking) {
+  max-width: 1206px;
+}
+
+.spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
+  margin-top: 67px;
+}
+
+.spz_11012_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
+  margin-top: 4px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form.has-content {
+  position: relative;
+  left: 22px;
+  margin-top: 68px;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 16px);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.spz_11012_v.paid-landing-page .spz_hero_banner .content-col h2 {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 12px 0 32px;
+}
+
+.spz_11012_v.paid-landing-page main .form.has-content .content-col ul {
+  margin: 0;
+}
+
+.spz_11012_v.paid-landing-page main .form.has-content .content-col:has(#employee-time-and-attendance-tracking) ul {
+  max-width: 546px;
+}
+
+.spz_11012_v.paid-landing-page main .form.has-content .content-col ul li {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  padding-left: 45px;
+  margin-bottom: 22px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><g clip-path="url(%23clip0_28977_1877)"><path d="M14 1.75C11.5772 1.75 9.20877 2.46845 7.19427 3.8145C5.17977 5.16054 3.60965 7.07373 2.68248 9.31213C1.75531 11.5505 1.51272 14.0136 1.98539 16.3899C2.45805 18.7661 3.62475 20.9489 5.33795 22.6621C7.05114 24.3752 9.23388 25.542 11.6101 26.0146C13.9864 26.4873 16.4495 26.2447 18.6879 25.3175C20.9263 24.3904 22.8395 22.8202 24.1855 20.8057C25.5316 18.7912 26.25 16.4228 26.25 14C26.25 10.7511 24.9594 7.63526 22.6621 5.33794C20.3647 3.04062 17.2489 1.75 14 1.75ZM12.25 18.8919L7.87501 14.5169L9.26678 13.125L12.25 16.1081L18.7338 9.625L20.13 11.0127L12.25 18.8919Z" fill="%2373C41D"/></g><defs><clipPath id="clip0_28977_1877"><rect width="28" height="28" fill="white"/></clipPath></defs></svg>');
+  background-repeat: no-repeat;
+}
+
+.spz_11012_v.paid-landing-page main .form.has-content .content-col:has(#employee-time-and-attendance-tracking) ul {
+  max-width: 596px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+  margin-top: 67px;
+  left: 23px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
+  gap: 38px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+  padding-left: 44px;
+  margin-bottom: 20.5px;
+}
+
+#base .form-container.spz_hero_banner:has(#employee-time-and-attendance-tracking) .hero-bg-video {
+  height: calc(100% + 80px);
+}
+
+.form-container.spz_hero_banner .form-wrapper .content-col {
+  padding-right: 40px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+  padding: 40px 40px 30px;
+  border-radius: 32px;
+  border: 0.567px solid #2E7918;
+  box-shadow: -10px 10px 0 0 #2E7918;
+}
+
+.spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+  padding: 40px 40px 29px;
+}
+
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 {
+  width: calc(50% - 10px);
+}
+
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 input:-webkit-autofill,
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 input:-webkit-autofill:hover,
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 input:-webkit-autofill:focus,
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select:-webkit-autofill,
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select:-webkit-autofill:hover,
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-gray-10);
+}
+
+
+.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:first-child strong {
+  color: #03551C;
+  text-align: center;
+  font-family: Fields;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+  color: #38312F;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 {
+  margin-top: 4px;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+  width: 220px;
+  height: 56px;
+  margin: 19.5px auto 0px;
+}
+
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
+  /* color: #95918F; */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel .mktoAsterix {
+  display: none;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.focus {
+  color: #03551C;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active {
+  color: #95918F;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  left: 8px;
+}
+
+.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.error {
+  color: #A73440;
+}
+
+.spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M0.75 0.75L6.75 6.75L12.75 0.75" stroke="%23A5A29F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 92.5% 50%;
+  background-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+}
+
+
+.spz_11012_v #base .form .mktoForm .mktoFormRow a[href="/legal/privacy-policy"] {
+  text-underline-offset: 2px;
+}
+
+.spz_11012_v #base .section.quote-container {
+  padding-top: 48px;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container {
+  padding-top: 111px;
+}
+
+
+.spz_11012_v #base .section.quote-container>.title-wrapper .title {
+  margin-bottom: 47px;
+}
+
+.spz_11012_v #base .section.quote-container>.logos-wrapper .logos.partner-logos {
+  margin-bottom: 32px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md+.spacer-wrapper {
+  display: none;
+}
+
+
+.spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md {
+  padding: 0;
+  max-width: 1160px;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container {
+  padding-top: 111px;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col {
+  width: calc(48.03% - 20px);
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col img {
+  border-radius: 1rem;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
+  width: calc(52.81% - 20px);
+  margin-top: 20px;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper {
+  padding-top: 0;
+  max-width: 700px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper p {
+  max-width: 100%;
+  margin-top: 5px;
+}
+
+body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper .quote.full {
+  margin-top: 62px;
+  margin-bottom: 26px;
+  border-top: 2px solid #599D15;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols {
+  margin-top: 20px;
+  margin-bottom: 56.6px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click) {
+  margin-top: 0px;
+  margin-bottom: 56px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) {
+  margin-top: 1px;
+  margin-bottom: 56.5px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) .img-col img {
+  position: relative;
+  top: -0.5px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#automate-time-and-attendance-management) {
+  margin-top: -0.2px;
+  margin-bottom: 56px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col {
+  position: relative;
+  top: -3px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col p {
+  margin-top: 24px;
+  color: #58524F;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
+  margin-top: 1px;
+  margin-bottom: 55px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) .img-col img {
+  position: relative;
+  top: -0.5px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#simplify-overtime-tracking-and-reduce-compliance-risk) {
+  margin-top: 1px;
+}
+
+
+.spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md p {
+  margin: 24px 0 0;
+  color: #58524F;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md h2#a-single-platform-where-everything-works-together {
+  color: #38312F;
+  text-align: center;
+  font-family: Fields;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img,
+.spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col img {
+  border-radius: 32px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col p {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #58524F;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols {
+  margin-bottom: 0px;
+  margin-top: 61px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hr-data--reporting) .column7.img-col img {
+  position: relative;
+  top: 2.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col ul li {
+  padding-left: 7px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col ul {
+  padding-left: 17px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) {
+  margin-top: 56px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) .column7.img-col img {
+  position: relative;
+  top: 3px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+  margin-top: 56px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column7.img-col img {
+  position: relative;
+  top: 4px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) {
+  margin-top: 58px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column7.img-col img {
+  position: relative;
+  top: 3px;
+}
+
+.spz_demo_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 2px solid #2E7918;
+  padding: 18px 30px;
+  margin-top: 24px;
+  width: 171px;
+  height: 60px;
+  cursor: pointer;
+  color: #2E7918;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  transition: all 0.2s ease-in;
+}
+
+.spz_demo_btn:hover {
+  background: #03551C;
+  border-color: #03551C;
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols h3#integration-marketplace {
+  color: #38312F;
+  text-align: center;
+  font-family: Fields;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.spz_11012_v #base .integration-section h3#integration-marketplace {
+  color: #38312F;
+  text-align: center;
+  font-family: Fields;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.spz_11012_v #base .integration-section {
+  padding-top: 34px;
+  padding-bottom: 50px;
+}
+
+.spz_11012_v #base .integration-section picture {
+  margin: 47px 0 47px;
+  display: block;
+}
+
+.spz_11012_v.hr-time-tracking #base .integration-section picture {
+  margin-bottom: 48px;
+}
+
+.spz_11012_v.onboarding .spz_award_section ul li {
+  padding: 32px 32px 30px;
+}
+
+.spz_11012_v #base .integration-section picture img {
+  max-width: 71%;
+  margin: 0 auto;
+  display: block;
+}
+
+.spz_11012_v #base .integration-section .spz_demo_btn {
+  background: #2E7918;
+  color: #fff;
+}
+
+.spz_11012_v #base .integration-section .spz_demo_btn:hover,
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col .spz_demo_btn:hover {
+  background: #03551C;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .title-wrapper:last-child {
+  display: none;
+}
+
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#integration-marketplace) {
+  margin-top: 91.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col {
+  width: calc(48.97% - 20px);
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column5.non-img-col {
+  width: calc(48.99% - 20px);
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col,
+.spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col {
+  width: calc(48.95% - 20px);
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col {
+  width: calc(48.99% - 20px);
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col {
+  width: calc(48.99% - 20px);
+  margin-top: -2px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column-flex-container {
+  flex-direction: column;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col {
+  width: 100%;
+  text-align: center;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col p {
+  display: none;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column7.img-col {
+  display: none;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col .spz_demo_btn {
+  margin: 0 auto;
+  border: none;
+  background: #2E7918;
+  color: #fff;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture {
+  margin: 48px 0 42px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial {
+  max-width: 1160px;
+  margin: 35px auto 0;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col {
+  max-width: 26.75%;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col {
+  width: calc(66.24% - 20px);
+  padding-right: 30px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col p {
+  color: #599D15;
+  font-family: Fields;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
+  position: relative;
+  top: 10px;
+  left: 60px;
+}
+
+body.spz_11012_v.hr-time-tracking .spz_award_section {
+  padding-top: 98px;
+  padding-bottom: 96px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col p:last-child {
+  max-width: 100%;
+  text-transform: unset;
+  letter-spacing: 0;
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: block;
+  margin: 0;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col p:last-child em {
+  letter-spacing: 0;
+  text-transform: unset;
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline-block;
+}
+
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture .new_icon_image {
+  max-width: 81.4%;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper {
+  max-width: 1160px;
+  padding-top: 58px;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper .image {
+  max-width: 29.49%;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper .image img {
+  position: relative;
+  left: 6.5px;
+  top: 16px;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper .quote.full>div {
+  gap: 46px;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper .content p {
+  max-width: 95%;
+}
+
+.spz_award_section ul li>img {
+  width: 128px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.spz_11012_v footer .footer .links ul {
+  margin: 0;
+}
+
+.spz_11012_v footer .footer .links ul li {
+  margin-bottom: 0px;
+  padding: 0 0;
+  margin-left: 32.4px;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper .content p.byline {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  max-width: 100%;
+  text-transform: unset;
+  gap: 0;
+  letter-spacing: 0;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper~.title-wrapper {
+  display: none;
+}
+
+.spz_11012_v #base .awards-container.reviews-container {
+  display: none;
+}
+
+.spz_award_section {
+  padding: 76px 0 96.5px;
+}
+
+.spz_award_section .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.spz_award_section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.spz_award_section ul li {
+  padding: 0;
+  border-radius: 24px;
+  border: 1.5px solid #599D15;
+  background: #F7FFE5;
+  box-shadow: -6px 6px 0 0 #599D15;
+  box-sizing: border-box;
+  padding: 32px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 25%;
+}
+
+.spz_award_section ul li>img {
+  width: 128px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.spz_award_section ul li picture {
+  text-align: center;
+}
+
+.spz_award_section ul li:first-child picture img {
+  width: 110px;
+  height: 126.582px;
+}
+
+.spz_award_section ul li:nth-child(2) picture img {
+  width: 140px;
+  position: relative;
+  top: -4px;
+}
+
+.spz_award_section ul li:nth-child(3) picture img {
+  width: 120px;
+  position: relative;
+  top: -4px;
+}
+
+.spz_award_section ul li:nth-child(4) picture img {
+  width: 140.8px;
+  position: relative;
+  top: -4px;
+}
+
+.spz_award_section ul li p {
+  margin: 0;
+  color: #38312F;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  margin-top: 7px;
+}
+
+.spz_11012_v footer.footer-limited {
+  margin-bottom: -24px;
+  background: #38312F;
+  padding: 52px 30px 56px;
+}
+
+.spz_11012_v footer.footer-limited .footer.block {
+  max-width: 1160px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.footer_links {
+  max-width: 64%;
+}
+
+.spz_11012_v footer.footer-limited .brand {
+  padding: 4px 0 0;
+  max-width: 36%;
+}
+
+.spz_11012_v footer .footer .links ul li:nth-child(7) {
+  display: none;
+}
+
+.spz_11012_v footer .footer .links ul li:last-child {
+  display: none;
+}
+
+.spz_11012_v footer .footer .footer_logo {
+  margin-bottom: 17px;
+}
+
+.spz_11012_v .footer_links .legal {
+  text-align: right;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container.columns-container h2#hear-what-companies-say-about-bamboohr {
+  color: #38312F;
+  text-align: center;
+  font-family: Fields;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+}
+
+.spz_11012_v footer.footer-limited .footer .links {
+  margin-bottom: 26px;
+}
+
+.spz_11012_v .footer_links .legal p strong a {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.spz_11012_v footer .footer .links ul li a {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  transition: all 0.3s ease;
+}
+
+.spz_11012_v footer .footer .links ul li a:hover {
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.spz_11012_v footer.footer-limited .brand p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container.columns-container {
+  background: #fff;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child>picture {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child .text {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+  margin: 0;
+  min-width: unset;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child .border {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child.active .active-border {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child {
+  padding: 20px 0px;
+  width: calc(25% - 4px);
+  margin-left: 0;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child.active {
+  border-radius: 16px 16px 0 0;
+  background: #F6FFE3;
+  margin-left: 0;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child.active {
+  background: #F6FFE3;
+  border-radius: 0 0 32px 32px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child.active .text,
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child.active .text em {
+  color: #03551C;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content {
+  padding: 0;
+  width: 100%;
+  max-width: 1160px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content::after {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
+  margin-bottom: 0;
+  margin-top: 63px;
+  max-width: 996px;
+  padding: 0;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child {
+  padding: 40px;
+  width: 100%;
+  height: 500px;
+  left: 0;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom .title {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -71px !important;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper .columns-1-cols {
+  margin-top: 0;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper a.button {
+  margin-left: 15px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info {
+  width: 100%;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 16px;
+  height: 100%;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content #panel-custom-1 .bottom picture {
+  width: 91.374px;
+  height: 58px;
+}
+
+/* .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom>picture img {
+  width: 100% !important;
+  height: 100%;
+} */
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text {
+  padding: 0 0 0 80px;
+  width: calc(100% - 310px);
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .middle {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  overflow: visible;
+}
+
+.spz_11012_v.onboarding .spz_hero_banner h1 {
+  margin-top: 0;
+}
+
+.spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .content-col {
+  padding-right: 90px;
+}
+
+.spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+  padding: 40px 40px 29px;
+}
+
+.spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
+  margin-bottom: 112px;
+  margin-top: 67px;
+}
+
+.spz_11012_v.onboarding .logos-wrapper.content-width-lg {
+  margin-top: 23px;
+}
+
+.spz_11012_v.onboarding .logos.partner-logos {
+  margin-bottom: 0px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .title h2 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .title h2::before {
+  display: none;
+}
+
+.spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child em {
+  margin-left: 0;
+  color: #38312F;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="4"] .text {
+  position: relative;
+  left: -4px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="1"] .text {
+  position: relative;
+  left: 3px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
+  width: 310px;
+  margin-top: 60px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info .name {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child[data-index="2"] .bottom picture {
+  position: relative;
+  left: -13px;
+  width: 174px;
+}
+
+.tabs-custom-container .tabs-custom-wrapper+.columns-wrapper+.spacer-wrapper {
+  display: none;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) {
+  padding-top: 19px;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .columns-wrapper {
+  max-width: 1160px;
+  padding: 0;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col {
+  width: calc(47.83% - 20px);
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col {
+  width: calc(52.81% - 20px);
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col img {
+  border-radius: 10px !important;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column-flex-container.columns-align-start {
+  align-items: center;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .quote-wrapper {
+  max-width: 700px;
+  padding: 0;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .quote.full {
+  margin-top: 62px;
+  margin-bottom: 26px;
+  border-top: 2px solid #599D15;
+}
+
+.spz_11012_v.onboarding #base .section.quote-container .quote-wrapper p {
+  max-width: 100%;
+  margin-top: 5px;
+  margin-bottom: 23px;
+}
+
+.spz_11012_v #base .section.quote-container .quote-wrapper~.title-wrapper+.spacer-wrapper {
+  display: none;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) {
+  margin-top: 11px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column7.img-col img {
+  position: relative;
+  top: 3.2px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) {
+  margin-top: 57px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column7.img-col img {
+  position: relative;
+  top: 2.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) {
+  margin-top: 57px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) {
+  margin-top: 56.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) {
+  margin-top: 56.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) h2,
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) h2,
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) h2 {
+  color: #38312F;
+  font-family: Fields;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column7.img-col img,
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column7.img-col img,
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column7.img-col img {
+  position: relative;
+  top: 3px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column7.img-col img {
+  top: 2.5px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col {
+  width: calc(39.77% - 20px);
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col {
+  width: calc(61.13% - 20px);
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:first-child {
+  margin-top: 7px;
+}
+
+.spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:last-child em {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.spz_11012_v.onboarding #base .integration-section {
+  padding-top: 92px;
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols {
+  margin-top: 28px;
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col {
+  width: calc(39.77% - 20px);
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
+  width: calc(61.13% - 20px);
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column-flex-container.columns-align-start {
+  align-items: center;
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
+  position: relative;
+  top: 12px;
+}
+
+.spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p em {
+  color: #38312F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: CAPITALIZE;
+  letter-spacing: 0;
+}
+
+.spz_11012_v.onboarding .spz_award_section {
+  padding-top: 94.5px;
+  padding-bottom: 95.5px;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child[data-index="3"] .bottom img.tab_logo_3 {
+  width: 192.41px !important;
+  height: 34.473px;
+  object-fit: cover;
+}
+
+.spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child[data-index="4"] .bottom img.tab_logo_4 {
+  width: 161.908px !important;
+  height: 44.064px;
+  object-fit: cover;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) {
+  margin-top: 19px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) .column5.non-img-col {
+  width: calc(48.09% - 20px);
+  top: -3px;
+}
+
+.spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click) .column5.non-img-col {
+  width: calc(48.99% - 20px);
+}
+
+
+
+
+@media only screen and (min-width: 1800px) {
+  /* .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
+      max-width: 100%;
+  } */
+
+  .form-container.spz_hero_banner .form-wrapper {
+    max-width: 1668px !important;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
+    width: 59%;
+    text-align: left;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+    width: 41%;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content,
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+    left: 0;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper {
+    padding: 0 40px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    display: flex;
+  }
+
+  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+    text-align: left;
+    font-size: 54px;
+    line-height: 65px;
+  }
+
+  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork span br {
+    display: none;
+  }
+
+  .spz_hero_banner .content-col h2#bamboohr-automates-operational-tasks-and-frees-hr-to-perform-the-big-picture-projects-that-make-a-difference {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .form-container.spz_hero_banner .form-wrapper {
+    padding: 0 54px;
+  }
+
+  .tabs-custom-container .tabs-custom-wrapper {
+    padding: 0 54px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
+    max-width: 100%;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child .text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child em {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper {
+    padding: 0 54px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child {
+    height: auto !important;
+    gap: 48px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) {
+    padding-left: 54px;
+    padding-right: 54px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .image picture {
+    display: block;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
+    width: 206px;
+    margin-top: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text {
+    padding: 0;
+    width: 100%;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child .text {
+    text-align: center;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child[data-index="2"] .text em {
+    display: block;
+  }
+
+  .spz_award_section .container {
+    padding: 0 54px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper.content-width-md {
+    padding: 0 54px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col ul li {
+    padding-left: 44px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
+    margin-top: 130px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper {
+    margin-top: 20px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper {
+    margin-top: 0px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
+    margin-top: 90px !important;
+  }
+
+  .spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-top: 43px;
+  }
+
+  #base .form-container.spz_hero_banner:has(#employee-time-and-attendance-tracking) .hero-bg-video {
+    height: calc(100% - 208px);
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
+    margin-top: 135px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+    margin-top: 42px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    flex-direction: column;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .spz_11012_v.hr-time-tracking .spz_award_section ul li:first-child picture img {
+    height: 132.582px;
+  }
+
+  .spz_11012_v.onboarding .spz_hero_banner h1 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+  }
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .content-col {
+    padding: 0;
+  }
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-top: 43px;
+    margin-bottom: 68px;
+  }
+
+  .spz_11012_v.onboarding main .form.has-content .content-col ul li {
+    margin-bottom: 21.4px;
+    padding-left: 44px;
+  }
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    gap: 25px;
+  }
+
+  .spz_11012_v.onboarding .logos-wrapper.content-width-lg {
+    margin-top: 0px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .spacer-wrapper {
+    display: none;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container {
+    margin-top: 56px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols .column-flex-container {
+    flex-flow: column;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols .non-img-col {
+    order: 2;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols .column7.img-col {
+    order: 1;
+  }
+
+  .spz_11012_v.onboarding .hero-bg-video {
+    height: calc(100% - 136px);
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .title h2 {
+    width: 80%;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child[data-index="1"] .text em {
+    margin-top: 5px;
+    display: block;
+    margin-left: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child[data-index="2"] .text em {
+    margin-top: 4px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child.active {
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 20px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="4"] .text {
+    left: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="1"] .text {
+    left: 0;
+  }
+
+  .tabs-custom-wrapper .tabs-custom-content .child .text .top {
+    color: #38312F;
+    font-family: Fields;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .middle {
+    margin-bottom: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .top {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 46px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child[data-index="2"] .bottom picture {
+    width: 174px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom .info {
+    margin-bottom: 47px;
+  }
+
+
+  .spz_11012_v.paid-landing-page .spz_hero_banner .content-col h2 {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column7.img-col img {
+    top: 3px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
+    gap: 29px;
+  }
+
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col ul,
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col:has(#employee-time-and-attendance-tracking) ul {
+    max-width: 100%;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+    width: 100%;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+    max-width: 96%;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container {
+    padding-top: 20px;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col picture {
+    --width: 100%;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols {
+    margin-top: 46px;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
+    margin-top: 30px;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper {
+    max-width: 100%;
+    padding: 0 54px;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper .quote.full {
+    margin-top: 63px;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .quote.full>div {
+    margin-top: 19px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols {
+    margin-bottom: 61px !important;
+    margin-top: 20px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) {
+    margin-top: 21px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) .column5.non-img-col {
+    width: 100%;
+    top: 0px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click) .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) {
+    margin-top: 2px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col,
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col,
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .column-flex-container {
+    flex-direction: column;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col {
+    order: 1;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col {
+    top: 0;
+    margin-top: 26px;
+    order: 2;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click),
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#automate-time-and-attendance-management) {
+    margin-top: 1.5px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) .column5.non-img-col {
+    top: -1px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#simplify-overtime-tracking-and-reduce-compliance-risk),
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
+    margin-top: 1px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
+    margin-top: 2px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper {
+    margin-top: 24px !important;
+  }
+
+  .spz_11012_v #base .integration-section {
+    padding-top: 10px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column7.img-col img {
+    top: 2px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col {
+    width: calc(70.07% - 20px);
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col picture {
+    --width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col {
+    width: 100%;
+    margin-top: 33px;
+  }
+
+  /* .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper {
+      padding: 0 54px;
+  } */
+
+  /* .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column-flex-container.columns-align-start {
+      padding: 0 54px;
+  } */
+
+  .spz_11012_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) .columns-2-cols {
+    margin-top: 64px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols {
+    margin-top: 21px !important;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .wistia picture {
+    --width: 67%;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section {
+    padding-top: 54px;
+    padding-bottom: 72px;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li:first-child picture {
+    margin-bottom: 1px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col {
+    margin-top: 60px;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li {
+    padding: 32px 32px 30.5px;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li:first-child picture img {
+    top: -4px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper {
+    max-width: 100%;
+    /* padding: 0 54px; */
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .content p {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .content p.byline {
+    margin-top: 24px;
+    color: #38312F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .quote.full>div {
+    max-width: 97%;
+    margin: 21px auto 0;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
+    border-radius: 32px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column5.non-img-col {
+    margin-top: 29px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col picture {
+    --width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) {
+    margin-top: 60px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col,
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column5.non-img-col,
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col,
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column5.non-img-col {
+    margin-top: 28px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections),
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment),
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) {
+    margin-top: 61px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col img {
+    border-radius: 16px !important;
+    height: 99.5%;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section {
+    padding-top: 71px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section picture {
+    margin-bottom: 48px;
+    margin-top: 48px;
+  }
+
+  .spz_11012_v #base .integration-section picture img {
+    max-width: 100%;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper p {
+    text-align: center;
+    margin-top: 11px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
+    top: 0;
+    justify-content: flex-start;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
+    position: static;
+    max-width: 232px;
+    float: left;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial {
+    margin-top: 6px;
+    margin-bottom: 0 !important;
+  }
+
+  .spz_award_section {
+    padding-top: 71px;
+    padding-bottom: 72px;
+  }
+
+  .spz_11012_v.hr-software .spz_award_section {
+    padding-top: 35px;
+  }
+
+  .spz_award_section .container {
+    padding: 0 54px;
+  }
+
+  body.spz_11012_v.hr-time-tracking .spz_award_section {
+    padding-top: 71px;
+    padding-bottom: 72px;
+  }
+
+  .spz_award_section ul {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .spz_award_section ul li {
+    width: calc(50% - 12px);
+    padding: 32px 32px 30px;
+    gap: 3px;
+  }
+
+  .spz_11012_v .spz_award_section ul li:first-child picture img {
+    height: 132.582px;
+  }
+
+  .spz_award_section ul li p {
+    margin-top: 13px;
+  }
+
+  .spz_award_section ul li:first-child picture img {
+    position: relative;
+    top: -5px;
+  }
+
+  .spz_11012_v footer.footer-limited {
+    padding: 52px 54px 54px;
+  }
+
+  .spz_11012_v footer.footer-limited .footer.block {
+    flex-direction: column-reverse;
+  }
+
+  .spz_11012_v footer.footer-limited .brand {
+    max-width: 100%;
+  }
+
+  .spz_11012_v footer.footer-limited .brand p {
+    max-width: 65%;
+  }
+
+  .footer_links {
+    max-width: 100%;
+    margin-top: 27px;
+  }
+
+  .spz_11012_v .footer_links .legal {
+    text-align: left;
+  }
+
+  .spz_11012_v footer .footer .links ul li {
+    margin-left: 0;
+    margin-right: 32px;
+  }
+
+  .spz_11012_v footer.footer-limited .footer .links {
+    margin-bottom: 0;
+  }
+
+  .spz_11012_v .footer_links .legal {
+    margin-top: 27px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols {
+    margin-top: 63px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
+    margin-top: 26px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding),
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+    margin-top: 60px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+    margin-top: 60.5px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) .column5.non-img-col {
+    margin-top: 28px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column5.non-img-col {
+    margin-top: 29px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) {
+    margin-top: 59px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column5.non-img-col {
+    margin-top: 30px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#integration-marketplace) {
+    margin-top: 10px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture .new_icon_image {
+    max-width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture {
+    margin: 48px 0 41px;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .image {
+    max-width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .quote.full>div {
+    align-items: flex-start;
+    margin-top: 13px;
+    gap: 16px;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .image img {
+    position: static;
+    max-width: 232px;
+    float: left;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .content p {
+    max-width: 100%;
+    text-align: left;
+  }
+
+
+}
+
+@media only screen and (max-width: 899px) {
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
+    margin-top: 180px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper {
+    margin-top: 20px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper {
+    margin-top: 45px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
+    margin-top: 180px !important;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-top: 11px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .content-col {
+    padding: 0;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper {
+    padding: 0 54px;
+  }
+
+  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col ul {
+    max-width: 100%;
+  }
+
+  .hero-bg-video {
+    height: calc(100% - 97px);
+  }
+
+  .spz_11012_v #base .section.quote-container {
+    padding-top: 19px;
+  }
+
+  .spz_11012_v #base .section.quote-container>.title-wrapper .title {
+    margin-bottom: 21px;
+  }
+
+  .spz_11012_v #base .section.quote-container>.logos-wrapper .logos.partner-logos {
+    margin-bottom: 8px;
+  }
+
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col ul {
+    max-width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md {
+    padding: 0 54px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
+    border-radius: 32px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hr-data--reporting) .column7.img-col img {
+    top: 0px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols {
+    margin-top: 46px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content {
+    height: 618px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
+    margin-top: 22px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper,
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper,
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
+    margin-top: 22px !important;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
+    margin-top: 31px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) .column5.non-img-col {
+    margin-top: 26px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
+    margin-top: 2.5px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper.content-width-md {
+    padding: 0 20px;
+  }
+
+  .hero-bg-video {
+    height: 65.36%;
+  }
+
+  .spz_11012_v.onboarding .hero-bg-video {
+    height: 82.33%;
+  }
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-bottom: 64px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .title h2 {
+    width: 100%;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container {
+    margin-top: 38px;
+  }
+
+  .spz_11012_v.onboarding .spz_hero_banner h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .spz_hero_banner h1#employee-time-and-attendance-tracking {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  #base .form-container.spz_hero_banner:has(#employee-time-and-attendance-tracking) .hero-bg-video {
+    height: 77.43%;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols {
+    margin-top: 30px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+    margin-top: 43px;
+    margin-bottom: 44px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
+    gap: 28px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .form-col-container {
+    padding: 20px 20px 9px;
+  }
+
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    gap: 28px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container h2#hear-what-companies-say-about-bamboohr {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .spz_11012_v.onboarding .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+    padding: 20px 19px 9px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper {
+    padding: 0 20px;
+  }
+
+  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+    padding: 20px;
+    padding-bottom: 9px;
+  }
+
+  .spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 {
+    width: 100%;
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  .spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select {
+    background-position: 94.9% 45%;
+    padding: 9px 11px 11px
+  }
+
+  body.spz_11012_v.hr-time-tracking #base .section.quote-container .quote-wrapper {
+    padding: 0 20px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .columns-wrapper {
+    padding: 0 20px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img,
+  .spz_11012_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col img {
+    border-radius: 18.686px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col h3 {
+    font-family: Fields;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    color: #38312F;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #58524F;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col {
+    margin-top: 27px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols {
+    margin-top: 21px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) {
+    margin-top: 21px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .quote.full {
+    margin-top: 64px;
+  }
+
+  .spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 select[name="Country"] {
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .title h2 {
+    width: 100%;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container {
+    margin-top: 38px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-wrapper {
+    padding: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper {
+    position: relative;
+  }
+
+  .spz_11012_v .spz_award_section ul li:first-child picture img {
+    height: 79.114px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content {
+    width: calc(100% - 60px);
+    padding: 0 30px;
+    /* min-height: 862px !important; */
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 96px;
+    height: 92px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 96px;
+    height: 92px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    z-index: 1;
+    transform: rotate(180deg);
+    pointer-events: none;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header.show-gradient.scroll-not-at-start::before,
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header.show-gradient.scroll-not-at-start::after {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container .tabs-custom-header .child {
+    width: 156px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child.active {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child {
+    padding: 24px 20px;
+    gap: 32px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
+    width: 165px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .top {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col {
+    margin-top: 26px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info {
+    margin-bottom: 31px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom {
+    height: 100%;
+    margin-top: 15px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper a.button {
+    margin-left: 0;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container>.columns-wrapper {
+    margin-top: 7px !important;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-container div.button {
+    width: 172px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) .columns-2-cols {
+    margin-top: 34px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col img {
+    height: 100%;
+    border-radius: 10px !important;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col h3#create-better-first-days-for-your-new-hires {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col {
+    margin-top: 31px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper {
+    padding: 0 20px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .quote-wrapper .quote.full>div {
+    max-width: 100%;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
+    border-radius: 18.686px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column7.img-col img {
+    top: 0;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) {
+    margin-top: 13px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column7.img-col img,
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column7.img-col img {
+    top: 2px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    color: #38312F;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col .column5.non-img-col,
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column5.non-img-col {
+    margin-top: 27px !important;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col,
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column5.non-img-col,
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col {
+    margin-top: 28.5px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column7.img-col img {
+    top: 1px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col {
+    width: calc(100% - 6px);
+    margin-left: 3px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:first-child {
+    margin-top: 6px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    font-family: Fields;
+    color: #599D15;
+    max-width: 99%;
+    margin-left: 4px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:last-child {
+    margin-left: 4px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column5.non-img-col {
+    margin-top: 28px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column7.img-col img {
+    top: 1px;
+  }
+
+  .spz_11012_v #base .integration-section h3#integration-marketplace {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 64px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section picture {
+    margin-top: 15px;
+    margin-bottom: 16px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section .spz_demo_btn {
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .wistia picture {
+    --width: calc(100% - 7px);
+    position: relative;
+    left: 4px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .integration-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .integration-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#simplify-overtime-tracking-and-reduce-compliance-risk) {
+    margin-bottom: 53px !important;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .integration-section picture {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .integration-section .spz_demo_btn {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial {
+    margin-top: 0px !important;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
+    max-width: 232px;
+    position: relative;
+    left: 4px;
+    top: -1px;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col {
+    margin-top: 16px;
+    margin-left: 2px;
+    max-width: 98%;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col p:last-child em {
+    max-width: 90%;
+  }
+
+  .spz_11012_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
+    max-width: 232px;
+    position: relative;
+    left: 4px;
+    top: -1px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container .testimonial.columns-2-cols {
+    margin-top: 14px !important;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
+    margin-top: 15px;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p:last-child {
+    margin-top: 0;
+  }
+
+  .spz_11012_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p:first-child {
+    margin-bottom: 15px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) {
+    margin-top: 61px;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section {
+    padding-top: 49px;
+    padding-bottom: 64px;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li {
+    padding: 16px 12px 14.8px;
+  }
+
+  .spz_11012_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li:first-child picture img {
+    top: 0;
+    height: 79.114px;
+    object-fit: cover;
+  }
+
+  .spz_11012_v.onboarding .spz_award_section ul li:first-child picture {
+    margin-bottom: 0;
+  }
+
+  .spz_award_section ul li:last-child picture {
+    margin-bottom: 13px;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .middle {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 26px;
+    height: auto;
+  }
+
+
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+    padding-top: 18.5px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper.content-width-md {
+    padding: 0 20px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper.content-width-lg {
+    padding: 0 20px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col p {
+    color: #58524F;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col ul li {
+    color: #38312F;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .spz_11012_v.paid-landing-page main .form.has-content .content-col ul li {
+    margin-bottom: 20px;
+    padding-left: 44px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+    margin: 0 auto;
+    width: calc(100% - 20px);
+  }
+
+  .spz_11012_v.paid-landing-page .spz_hero_banner .content-col h2 {
+    margin-bottom: 32px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+    gap: 28.2px;
+  }
+
+  .spz_11012_v #base .form .mktoForm .mktoFormRow.form-input-width50 .mktoFieldWrap {
+    margin-top: 20px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+    margin-bottom: 25px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:first-child {
+    margin-bottom: 8px;
+  }
+
+  .spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-bottom: 45px;
+  }
+
+  .spz_11012_v #base .section.quote-container>.title-wrapper .title {
+    margin-bottom: 14px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
+    margin-top: 118.5px;
+  }
+
+  .spz_11012_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
+    margin-bottom: 45px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
+    border-radius: 16.623px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols {
+    margin-top: 64px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+    padding-top: 18.5px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column7.img-col img {
+    top: 4px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
+    margin-bottom: 27px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding),
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+    margin-top: 32px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+    margin-top: 34px;
+  }
+
+  .spz_11012_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
+    margin-top: 27px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) .column5.non-img-col {
+    margin-top: 30px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column5.non-img-col {
+    margin-top: 31px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column7.img-col img {
+    top: 2px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) {
+    margin-top: 31px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns-2-cols h3#integration-marketplace {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture {
+    margin: 15px 0 11px;
+  }
+
+  .spz_11012_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col .spz_demo_btn {
+    width: 100%;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 23px;
+  }
+
+  .spz_11012_v #base .section.quote-container .quote-wrapper .content p {
+    color: #599D15;
+    font-family: Fields;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .spz_award_section .container {
+    padding: 0 20px;
+  }
+
+  .spz_award_section ul {
+    gap: 12px;
+  }
+
+  .spz_11012_v.hr-software .spz_award_section {
+    padding-top: 33px;
+    padding-bottom: 64px;
+  }
+
+  .spz_award_section ul li {
+    width: calc(50% - 6px);
+    padding: 16px 13px;
+  }
+
+  .spz_award_section ul li:first-child picture img {
+    width: 68.75px;
+    height: 79.114px;
+    top: -2px;
+    object-fit: cover;
+  }
+
+  body.spz_11012_v.hr-time-tracking .spz_award_section {
+    padding-top: 63px;
+    padding-bottom: 63.5px;
+  }
+
+  .spz_11012_v.hr-time-tracking .spz_award_section ul li:first-child picture img {
+    height: 79.114px;
+  }
+
+  .spz_11012_v.hr-time-tracking .spz_award_section ul li:last-child picture {
+    margin-bottom: 13px;
+  }
+
+  .spz_11012_v.hr-time-tracking footer .footer .footer_logo {
+    margin-bottom: 18px;
+  }
+
+
+  .spz_award_section ul li:nth-child(2) picture img {
+    width: 87.5px;
+    height: 68.359px;
+    top: 4px;
+    object-fit: cover;
+  }
+
+  .spz_award_section ul li p {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-top: 7px;
+  }
+
+  .spz_award_section ul li:nth-child(3) picture img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    top: 1px;
+  }
+
+  .spz_award_section ul li:nth-child(4) picture img {
+    width: 88px;
+    height: 68.75px;
+    object-fit: cover;
+    top: 4px;
+  }
+
+  .spz_award_section ul li:first-child,
+  .spz_award_section ul li:nth-child(2) {
+    padding: 16px 12px 15px;
+    gap: 5px;
+  }
+
+  .spz_award_section ul li:nth-child(3) picture {
+    margin-bottom: 7px;
+  }
+
+  .spz_award_section ul li:nth-child(2)>img {
+    margin-top: 11px;
+  }
+
+  .spz_award_section ul li:nth-child(3) p {
+    margin-top: 9px;
+  }
+
+  .spz_award_section ul li:last-child {
+    padding: 16px 11px 15px;
+  }
+
+  .spz_award_section ul li:nth-child(3) {
+    padding-bottom: 14px;
+  }
+
+  .spz_award_section ul li:last-child picture {
+    margin-bottom: 12px;
+  }
+
+  .spz_award_section ul li:last-child p {
+    margin-top: 9px;
+  }
+
+  .spz_11012_v footer.footer-limited {
+    padding: 52px 20px 52px;
+    margin-bottom: -24px;
+  }
+
+  .spz_11012_v footer.footer-limited .brand p {
+    max-width: 100%;
+  }
+
+  .footer_links {
+    margin-top: 28px;
+  }
+
+  .spz_11012_v .footer_links .legal {
+    margin-top: 0px;
+  }
+
+  .spz_11012_v footer .footer .links ul li {
+    margin-bottom: 26px;
+  }
+
+}
+
+@media only screen and (max-width: 560px) {
+  .spz_11012_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
+    justify-content: flex-start;
+  }
+}
