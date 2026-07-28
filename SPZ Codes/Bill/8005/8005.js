@@ -18,39 +18,39 @@ const QQ_CONFIG = {
 		type: 'multi',
 		tiles: [
 			{
-				id: 'bill_entry',
-				label: 'Bill entry',
-				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconbill-pay_1.svg`,
-				alt: 'Bill entry',
-				formValue: 'bill_entry'
+				id: 'pay_bills',
+				label: 'Pay bills',
+				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1784119413/bill/8005/iconpay-20px.svg`,
+				alt: 'Pay bills',
+				formValue: 'pay_bills'
 			},
 			{
-				id: 'approvals',
-				label: 'Approvals',
-				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconapprovals_1.svg`,
-				alt: 'Approvals',
-				formValue: 'approvals'
-			},
-			{
-				id: 'customer_payments',
-				label: 'Customer payments',
+				id: 'collect_payment',
+				label: 'Collect payment',
 				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconpayment-verified_1.svg`,
-				alt: 'Customer payments',
-				formValue: 'customer_payments'
+				alt: 'Collect payment',
+				formValue: 'collect_payment'
 			},
 			{
-				id: 'receipt_chasing',
-				label: 'Receipt chasing',
-				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconreceipt_1.svg`,
-				alt: 'Receipt chasing',
-				formValue: 'receipt_chasing'
+				id: 'control_expenses',
+				label: 'Control expenses',
+				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1784119413/bill/8005/iconcheck-payment-20px.svg`,
+				alt: 'Control expenses',
+				formValue: 'control_expenses'
 			},
 			{
-				id: 'reconciliation',
-				label: 'Reconciliation',
-				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconsyncing_1.svg`,
-				alt: 'Reconciliation',
-				formValue: 'reconciliation'
+				id: 'access_capital',
+				label: 'Access capital',
+				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconbill-pay_1.svg`,
+				alt: 'Access capital',
+				formValue: 'access_capital'
+			},
+			{
+				id: 'finance_visibility',
+				label: 'Finance visibility',
+				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1784119413/bill/8005/iconre-arrange-dashboard-20px.svg`,
+				alt: 'Finance visibility',
+				formValue: 'finance_visibility'
 			},
 			{
 				id: 'other',
@@ -69,16 +69,16 @@ const QQ_CONFIG = {
 				id: 'direct',
 				title: 'Small / Midsize Business',
 				subtitle: 'Financial operations for one business or entity',
-				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864851/bill/8005/iconsmall-business_1.svg`, 
+				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864851/bill/8005/iconsmall-business_1.svg`,
 				alt: 'Small or Midsize Business',
 				formValue: 'direct'
 			},
 			{
-				id: 'console', 
-				title: 'Accounting Firm', 
-				subtitle: 'Accounting services for multiple clients', 
+				id: 'console',
+				title: 'Accounting Firm',
+				subtitle: 'Accounting services for multiple clients',
 				icon: `https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1781864850/bill/8005/iconestimate_1.svg`,
-				alt: 'Accounting Firm', 
+				alt: 'Accounting Firm',
 				formValue: 'console'
 			}
 		]
@@ -96,17 +96,17 @@ function applyStoredAnswers() {
 	const q1Value = sessionStorage.getItem(QQ_CONFIG.sessionKeys.q1);
 	const q2Value = sessionStorage.getItem(QQ_CONFIG.sessionKeys.q2);
 
-	if (q1Value) {
-		let productInput = document.querySelector('form.form-wrapper input[name="productInterest"]');
-		if (!productInput) {
-			productInput = document.createElement('input');
-			productInput.type = 'hidden';
-			productInput.name = 'productInterest';
-			const formEl = document.querySelector('form.form-wrapper');
-			if (formEl) formEl.appendChild(productInput);
-		}
-		productInput.value = q1Value;
-	}
+	// if (q1Value) {
+	// 	let productInput = document.querySelector('form.form-wrapper input[name="productInterest"]');
+	// 	if (!productInput) {
+	// 		productInput = document.createElement('input');
+	// 		productInput.type = 'hidden';
+	// 		productInput.name = 'productInterest';
+	// 		const formEl = document.querySelector('form.form-wrapper');
+	// 		if (formEl) formEl.appendChild(productInput);
+	// 	}
+	// 	productInput.value = q1Value;
+	// }
 
 	if (q2Value) {
 		const signupType = document.querySelector('select#signupType');
@@ -124,18 +124,103 @@ function applyStoredAnswers() {
 	}
 }
 
+function showFormPanel3AfterSubmit() {
+	const formPanel3 = document.querySelector('#form-panel-3');
+	if (!formPanel3) return;
+	formPanel3.classList.remove('hide');
+	formPanel3.style.float = 'none';
+}
+
+function applyPostSubmitFormState() {
+	document.body.classList.add('spz-qq-bypass');
+	document.body.classList.remove('spz-qq-step-1', 'spz-qq-step-2', 'spz-qq-step-3');
+	showFormPanel3AfterSubmit();
+}
+
+function markQQFormSubmitted() {
+	sessionStorage.setItem(QQ_CONFIG.sessionKeys.submitted, 'true');
+	applyPostSubmitFormState();
+}
+
+function initSubmitSuccessTracking() {
+	if (window.__spz8005SubmitTracking) return;
+	window.__spz8005SubmitTracking = true;
+
+	const signupMarketingAction = 'signupservice/v1/signup/marketing';
+
+	if (!HTMLFormElement.prototype.__spz8005SubmitPatched) {
+		const nativeFormSubmit = HTMLFormElement.prototype.submit;
+		HTMLFormElement.prototype.submit = function spz8005PatchedFormSubmit() {
+			const action = this.getAttribute('action') || '';
+			if (this.parentElement === document.body && action.indexOf(signupMarketingAction) !== -1) {
+				markQQFormSubmitted();
+			}
+			return nativeFormSubmit.apply(this, arguments);
+		};
+		HTMLFormElement.prototype.__spz8005SubmitPatched = true;
+	}
+
+	if (!window.__spz8005LocationPatched) {
+		const nativeAssign = window.location.assign.bind(window.location);
+		const nativeReplace = window.location.replace.bind(window.location);
+
+		window.location.assign = function spz8005PatchedAssign(url) {
+			if (typeof url === 'string' && (url.indexOf('/thank-you') !== -1 || url.indexOf('/confirmation') !== -1)) {
+				markQQFormSubmitted();
+			}
+			return nativeAssign(url);
+		};
+
+		window.location.replace = function spz8005PatchedReplace(url) {
+			if (typeof url === 'string' && url.indexOf('app-signup') !== -1) {
+				markQQFormSubmitted();
+			}
+			return nativeReplace(url);
+		};
+
+		window.__spz8005LocationPatched = true;
+	}
+
+	const directSignupForm = document.querySelector('#directSignup');
+	if (!directSignupForm) return;
+
+	const formWrap = directSignupForm.closest('.form-signup, .w-form');
+	const formDone = formWrap && formWrap.querySelector('.w-form-done');
+	if (!formDone) return;
+
+	function checkFormDone() {
+		if (window.getComputedStyle(formDone).display !== 'none') {
+			markQQFormSubmitted();
+		}
+	}
+
+	const submitObserver = new MutationObserver(checkFormDone);
+	submitObserver.observe(formDone, {
+		attributes: true,
+		attributeFilter: ['style', 'class'],
+		childList: true,
+		subtree: true
+	});
+	checkFormDone();
+}
+
 // ========== MAIN ==========
 function loadTestCode8005() {
 	if (!window.location.pathname.includes('/lp/home')) return;
 	if (document.body.classList.contains(testClass)) return;
 	document.body.classList.add(testClass);
-	localStorage.setItem('bdcAbTest14', '8005-v1');
+	localStorage.setItem('bdcAbTest10', '8005-v1');
+	initSubmitSuccessTracking();
 
 	// Post-submit bypass: skip QQ, go straight to form
+	if (document.referrer.indexOf('accounts.bill.com/signup') !== -1) {
+		markQQFormSubmitted();
+	}
 	if (sessionStorage.getItem(QQ_CONFIG.sessionKeys.submitted)) {
-		document.body.classList.add('spz-qq-bypass');
+		applyPostSubmitFormState();
 		initFormSetup();
 		applyStoredAnswers();
+		showFormPanel3AfterSubmit();
 		return;
 	}
 
@@ -220,13 +305,13 @@ function initFormSetup() {
 			return emailPattern.test(email);
 		}
 
-		function areAllFieldsFilledAndValid() {
-			const firstName = firstNameInput.value.trim();
-			const lastName = lastNameInput.value.trim();
-			const email = emailInput.value.trim();
-			const name = nameInput.value.trim();
-			return firstName !== '' && lastName !== '' && email !== '' && name !== '' && isEmailValid(email);
-		}
+		// function areAllFieldsFilledAndValid() {
+		// 	const firstName = firstNameInput.value.trim();
+		// 	const lastName = lastNameInput.value.trim();
+		// 	const email = emailInput.value.trim();
+		// 	const name = nameInput.value.trim();
+		// 	return firstName !== '' && lastName !== '' && email !== '' && name !== '' && isEmailValid(email);
+		// }
 
 		function addRedBorderToEmptyFields() {
 			const fields = [
@@ -264,20 +349,20 @@ function initFormSetup() {
 			});
 		});
 
-		submitButton.addEventListener('click', function (e) {
-			const email = emailInput.value.trim();
-			if (!areAllFieldsFilledAndValid()) {
-				e.preventDefault();
-				e.stopPropagation();
-				triggerHTML5Validation();
-				if (!isEmailValid(email) && email.includes('@')) {
-					if (typeof showError === 'function') {
-						showError('Valid email required.');
-					}
-				}
-				return false;
-			}
-		});
+		// submitButton.addEventListener('click', function (e) {
+		// 	const email = emailInput.value.trim();
+		// 	if (!areAllFieldsFilledAndValid()) {
+		// 		e.preventDefault();
+		// 		e.stopPropagation();
+		// 		triggerHTML5Validation();
+		// 		if (!isEmailValid(email) && email.includes('@')) {
+		// 			if (typeof showError === 'function') {
+		// 				showError('Valid email required.');
+		// 			}
+		// 		}
+		// 		return false;
+		// 	}
+		// });
 
 		[firstNameInput, lastNameInput, emailInput, nameInput].forEach(input => {
 			input.addEventListener('input', function () {
@@ -326,7 +411,7 @@ function initFormSetup() {
 			}
 		});
 	});
-	if(	document.querySelector('.spz_8005_v1 #accountingSoftwareContainer option:first-child')){
+	if (document.querySelector('.spz_8005_v1 #accountingSoftwareContainer option:first-child')) {
 		document.querySelector('.spz_8005_v1 #accountingSoftwareContainer option:first-child').textContent = '';
 	}
 
@@ -413,54 +498,40 @@ function initFormSetup() {
 	}
 
 	// Email blur validation
-	document.querySelector('#email').addEventListener('blur', function () {
-		const email = this.value;
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-		const emailValid = emailPattern.test(email);
-		if (!emailValid && email !== '') {
-			showError('Valid email required.');
-		} else {
-			removeError();
-		}
-	});
+	// document.querySelector('#email').addEventListener('blur', function () {
+	// 	const email = this.value;
+	// 	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+	// 	const emailValid = emailPattern.test(email);
+	// 	if (!emailValid && email !== '') {
+	// 		showError('Valid email required.');
+	// 	} else {
+	// 		removeError();
+	// 	}
+	// });
 
 	formChanges8005();
+	// 	let errorMsg = document.querySelector('.error-message');
+	// 	const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#spz-clip-err)"><path d="M7.99967 5.33334V8.00001M7.99967 10.6667H8.00634M14.6663 8.00001C14.6663 11.6819 11.6816 14.6667 7.99967 14.6667C4.31778 14.6667 1.33301 11.6819 1.33301 8.00001C1.33301 4.31811 4.31778 1.33334 7.99967 1.33334C11.6816 1.33334 14.6663 4.31811 14.6663 8.00001Z" stroke="#FF0F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="spz-clip-err"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>`;
+	// 	const svgShapIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6" fill="none"><path d="M0 6L12 6L7.41421 1.41421C6.63317 0.633165 5.36684 0.633166 4.58579 1.41421L0 6Z" fill="#FFF3ED"></path></svg>`;
+	// 	if (!errorMsg) {
+	// 		errorMsg = document.createElement('div');
+	// 		errorMsg.className = 'error-message';
+	// 		errorMsg.innerHTML = `${svgIcon} <span>${message}</span> ${svgShapIcon}`;
+	// 		document.querySelector('#email').after(errorMsg);
+	// 	}
+	// }
 
-	function showError(message) {
-		let errorMsg = document.querySelector('.error-message');
-		const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><g clip-path="url(#spz-clip-err)"><path d="M7.99967 5.33334V8.00001M7.99967 10.6667H8.00634M14.6663 8.00001C14.6663 11.6819 11.6816 14.6667 7.99967 14.6667C4.31778 14.6667 1.33301 11.6819 1.33301 8.00001C1.33301 4.31811 4.31778 1.33334 7.99967 1.33334C11.6816 1.33334 14.6663 4.31811 14.6663 8.00001Z" stroke="#FF0F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="spz-clip-err"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>`;
-		const svgShapIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6" fill="none"><path d="M0 6L12 6L7.41421 1.41421C6.63317 0.633165 5.36684 0.633166 4.58579 1.41421L0 6Z" fill="#FFF3ED"></path></svg>`;
-		if (!errorMsg) {
-			errorMsg = document.createElement('div');
-			errorMsg.className = 'error-message';
-			errorMsg.innerHTML = `${svgIcon} <span>${message}</span> ${svgShapIcon}`;
-			document.querySelector('#email').after(errorMsg);
-		}
-	}
-
-	function removeError() {
-		const email = document.querySelector('#email').value;
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-		const emailValid = emailPattern.test(email);
-		if (emailValid) {
-			const errorMsg = document.querySelector('.error-message');
-			if (errorMsg) {
-				errorMsg.remove();
-			}
-		}
-	}
-
-	// Submit success observer — flag sessionStorage so next page load skips QQ
-	const formDone = document.querySelector('.w-form-done');
-	if (formDone) {
-		const submitObserver = new MutationObserver(function () {
-			const display = window.getComputedStyle(formDone).display;
-			if (display !== 'none') {
-				sessionStorage.setItem(QQ_CONFIG.sessionKeys.submitted, 'true');
-			}
-		});
-		submitObserver.observe(formDone, { attributes: true, childList: true, subtree: true });
-	}
+	// function removeError() {
+	// 	const email = document.querySelector('#email').value;
+	// 	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+	// 	const emailValid = emailPattern.test(email);
+	// 	if (emailValid) {
+	// 		const errorMsg = document.querySelector('.error-message');
+	// 		if (errorMsg) {
+	// 			errorMsg.remove();
+	// 		}
+	// 	}
+	// }
 }
 
 // ========== FORM CHANGES ==========
@@ -691,8 +762,8 @@ let checkCondition8005 = setInterval(function () {
 	if (document.querySelectorAll('body').length > 0) {
 		clearInterval(checkCondition8005);
 		loadTestCode8005();
-		localStorage.setItem('bdcAbTest14','8005-v1');
-		
+		localStorage.setItem('bdcAbTest10', '8005-v1');
+
 		if (!document.referrer.includes('bill.com/lp/home')) {
 			document.querySelectorAll('.' + testClass + ' form.form-wrapper .form-field-columns .form-field-wrap input').forEach(function (input) {
 				input.value = '';

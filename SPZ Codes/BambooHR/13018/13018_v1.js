@@ -73,11 +73,13 @@ function heroBannerChanges() {
             </div>
           </div>
           <div class="spz_slider_image"> 
-            <dotlottie-player
-              src="https://res.cloudinary.com/spiralyze/raw/upload/v1782288868/bamboohr/13018/animations/1_HR_Data_Reporting_Image_Desktop.lottie"
-              background="transparent"
-              speed="1">
-            </dotlottie-player>
+            <div class="spz_lottie">
+              <dotlottie-player
+                src="https://res.cloudinary.com/spiralyze/raw/upload/v1782394989/bamboohr/13018/animations/1_HR_Data.lottie"
+                background="transparent"
+                speed="1">
+              </dotlottie-player>
+            </div>
           </div>
         </div>
       </li>
@@ -106,11 +108,13 @@ function heroBannerChanges() {
             </div>
           </div>
           <div class="spz_slider_image">
-            <dotlottie-player
-              src="https://res.cloudinary.com/spiralyze/raw/upload/v1782290093/bamboohr/13018/animations/2_Hiring_Onboarding_Desktop.lottie"
-              background="transparent"
-              speed="1">
-            </dotlottie-player>
+            <div class="spz_lottie">
+              <dotlottie-player
+                src="https://res.cloudinary.com/spiralyze/raw/upload/v1782394989/bamboohr/13018/animations/2_Hiring.lottie"
+                background="transparent"
+                speed="1">
+              </dotlottie-player>
+            </div>
           </div>
         </div>
       </li>
@@ -139,11 +143,13 @@ function heroBannerChanges() {
             </div>
           </div>
           <div class="spz_slider_image">
-            <dotlottie-player
-              src="https://res.cloudinary.com/spiralyze/raw/upload/v1782290092/bamboohr/13018/animations/3_Payroll_Time_Benefits_img_Desktop.lottie"
-              background="transparent"
-              speed="1">
-            </dotlottie-player>
+            <div class="spz_lottie">
+              <dotlottie-player
+                src="https://res.cloudinary.com/spiralyze/raw/upload/v1782394989/bamboohr/13018/animations/3_Payroll_Time.lottie"
+                background="transparent"
+                speed="1">
+              </dotlottie-player>
+            </div>
           </div>
         </div>
       </li>
@@ -172,11 +178,13 @@ function heroBannerChanges() {
             </div>
           </div>
           <div class="spz_slider_image">
-            <dotlottie-player
-              src="https://res.cloudinary.com/spiralyze/raw/upload/v1782290092/bamboohr/13018/animations/4_Employee_Experience_Performance_Desktop.lottie"
-              background="transparent"
-              speed="1">
-            </dotlottie-player>
+            <div class="spz_lottie">
+              <dotlottie-player
+                src="https://res.cloudinary.com/spiralyze/raw/upload/v1782394989/bamboohr/13018/animations/4_Employee_Experience.lottie"
+                background="transparent"
+                speed="1">
+              </dotlottie-player>
+            </div>
           </div>
         </div>
       </li>
@@ -205,11 +213,13 @@ function heroBannerChanges() {
             </div>
           </div>
           <div class="spz_slider_image">
-            <dotlottie-player
-              src="https://res.cloudinary.com/spiralyze/raw/upload/v1782290092/bamboohr/13018/animations/5_Compensation_img_Desktop.lottie"
-              background="transparent"
-              speed="1">
-            </dotlottie-player>
+            <div class="spz_lottie">
+              <dotlottie-player
+                src="https://res.cloudinary.com/spiralyze/raw/upload/v1782290092/bamboohr/13018/animations/5_Compensation_img_Desktop.lottie"
+                background="transparent"
+                speed="1">
+              </dotlottie-player>
+            </div>
           </div>
         </div>
       </li> 
@@ -251,6 +261,24 @@ function initScrollLottieAnimations() {
   players.forEach(function (player) {
     observer.observe(player);
   });
+
+  //browser detection
+  let userAgent = navigator.userAgent;
+  let browser;
+  if (userAgent.match(/edg/i)) {
+    browser = "edge";
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    browser = "firefox";
+  } else if (userAgent.match(/opr\//i)) {
+    browser = "opera";
+  } else if (userAgent.match(/chrome|chromium|crios/i)) {
+    browser = "chrome";
+  } else if (userAgent.match(/safari/i)) {
+    browser = "safari";
+  } else {
+    //alert("Other browser");
+  }
+  document.querySelector('body').classList.add(browser);
 }
 
 // function initScrollLineFill() {
@@ -372,7 +400,7 @@ function init13018() {
       // false – if you are not using a squeeze page (i.e., the page does not contain a form)
       // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-      const squeezePage = true; // true / false / 'both'
+      const squeezePage = false; // true / false / 'both'
       const expName = '13018'; //experiment name should be 1001, 1002, 1003 etc.
       const variantName = `#` + expName + `_variant`; //variantName should be _variant, _true_control etc.
       const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com

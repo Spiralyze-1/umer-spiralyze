@@ -1,0 +1,1823 @@
+body.spz_3002_v .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-8300) {
+  width: 100vw;
+  max-width: 100vw;
+  transform: translateX(0%);
+  left: 0 !important;
+}
+
+body.spz_3002_v .sgpb-popup-overlay {
+  min-width: 100vw !important;
+}
+
+body.spz_3002_v .sgpb-popup-overlay {
+  width: 100vmax !important;
+  background: rgba(31, 44, 64, 0.60) !important;
+  backdrop-filter: blur(4px);
+  opacity: 1 !important;
+}
+
+body.spz_3002_v #row1,
+body.spz_3002_v:has(.solution-main) #row2 {
+  display: none;
+}
+
+body.spz_3002_v #row2,
+body.spz_3002_v:has(.solution-main) #row3 {
+  padding-top: 0 !important;
+}
+
+body.spz_3002_v .spz3002-hero {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 115px 0 118px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+body.spz_3002_v .spz3002-hero:before {
+  content: '';
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-1_1.webp);
+  background-size: auto 759px;
+  background-repeat: no-repeat;
+  height: 759px;
+  width: 1335px;
+  position: absolute;
+  top: 0;
+  left: calc(50% + 28px);
+}
+
+/* Horizontal max-width and gutters come from the page .container (aligns with control). */
+body.spz_3002_v .spz3002-hero > .container,
+body.spz_3002_v .spz3002-testimonials > .container {
+  width: 100%;
+  max-width: 1358px;
+  box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+}
+
+body.spz_3002_v .spz3002-hero__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 48px 63px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+body.spz_3002_v .spz3002-hero__copy {
+  flex: 1 1 100%;
+  max-width: 633px;
+  min-width: 0;
+}
+
+body.spz_3002_v .spz3002-hero__eyebrow {
+  margin: 0 0 2px;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+  color: #c423f9;
+  padding-bottom: 0;
+}
+
+body.spz_3002_v .spz3002-hero__title {
+  margin: 0 0 47px;
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #293054;
+  padding: 0;
+}
+
+body.spz_3002_v .spz3002-hero__list {
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+body.spz_3002_v .spz3002-hero__item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+body.spz_3002_v .spz3002-hero__item:before {
+  content: none;
+}
+
+body.spz_3002_v .spz3002-hero__check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.spz_3002_v .spz3002-hero__check svg {
+  display: block;
+  width: 17px;
+  height: 13px;
+}
+
+body.spz_3002_v .spz3002-hero__item-text {
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #293054;
+}
+
+body.spz_3002_v .spz3002-hero__item-text strong {
+  font-weight: 600;
+  color: #293054;
+}
+
+body.spz_3002_v .spz3002-hero__muted {
+  color: rgba(41, 48, 84, 0.7);
+  font-weight: 400;
+}
+
+body.spz_3002_v .spz3002-hero__cta-wrap {
+  display: inline-flex;
+  column-gap: 12px;
+}
+
+body.spz_3002_v .spz3002-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100px;
+  background: #c423f9;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+@media (hover: hover) {
+  body.spz_3002_v .spz3002-hero__cta:hover {
+      background: #1BFFC3;
+      color: #293054;
+      outline: none;
+  }
+}
+
+body.spz_3002_v .spz3002-hero__cta:focus,
+body.spz_3002_v .spz3002-hero__cta:active {
+  background: #1BFFC3;
+  color: #293054;
+  outline: none;
+}
+
+body.spz_3002_v .demo-cta-border {
+  border: 2px solid var(--Outline-button, #293054);
+  background-color: #fff;
+  color: var(--Outline-button, #293054);
+  padding: 0 31px;
+}
+
+@media (hover: hover) {
+  body.spz_3002_v .demo-cta-border:hover {
+      background: #C423F9;
+      color: #FFFFFF;
+      border-color: #C423F9;
+      outline: none;
+  }
+}
+
+body.spz_3002_v .demo-cta-border:focus {
+  background: #C423F9;
+  color: #FFFFFF;
+  border-color: #C423F9;
+  outline: none;
+}
+
+body.spz_3002_v .spz3002-hero__media {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: 668px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+body.spz_3002_v .spz3002-hero__media img {
+  display: block;
+  max-width: unset;
+  width: calc(582px + 93px);
+  height: auto;
+  margin-top: -58px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Testimonials: 3 cards — desktop = static 3-col grid; under 1024px = Splide (dots on mobile/tablet) */
+body.spz_3002_v .spz3002-testimonials {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 80px 0 80px;
+  background: #293054;
+}
+
+body.spz_3002_v .spz3002-testimonials__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: calc(100% + 8px);
+  max-width: calc(100% + 8px);
+  margin-left: -4px;
+  box-sizing: border-box;
+}
+
+body.spz_3002_v .spz3002-testimonials__title {
+  margin: 0;
+  padding: 0 0 0 4px !important;
+  max-width: 608px;
+  text-align: left;
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  width: 100%;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body.spz_3002_v .spz3002-testimonials__slide {
+  display: flex !important;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body.spz_3002_v .spz3002-testimonials__slide:before {
+  content: none;
+}
+
+body.spz_3002_v .spz3002-testimonials__slide > * {
+  width: 100%;
+}
+
+/* Slick core overrides: keep list element clean */
+body.spz_3002_v .spz3002-testimonials__splide .slick-list {
+  width: 100%;
+  overflow: hidden;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Slick pagination dots — matches previous Splide pagination visual exactly */
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots {
+  position: static;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  margin: 37px 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  transform: none;
+  bottom: auto;
+  left: auto;
+  text-align: left;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots li {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots li:before {
+  content: none;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots li button {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ECF2F2;
+  opacity: 1;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots li button:before {
+  display: none !important;
+  content: none !important;
+}
+
+body.spz_3002_v .spz3002-testimonials__splide .slick-dots li.slick-active button {
+  background: #00B1B1;
+  transform: scale(1.1);
+  width: 14px;
+  height: 14px;
+  outline: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+body.spz_3002_v .spz3002-testimonials__card {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 47px;
+  padding: 21px 20px 28px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 4px solid #434969;
+  background: #ecf2f2;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+body.spz_3002_v .spz3002-testimonials__block {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  min-width: 0;
+}
+
+body.spz_3002_v .spz3002-testimonials__stat {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  color: #00b1b1;
+  width: 100%;
+}
+
+body.spz_3002_v .spz3002-testimonials__num {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #00b1b1;
+}
+
+body.spz_3002_v .spz3002-testimonials__label {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #00b1b1;
+  min-width: 0;
+}
+
+body.spz_3002_v .spz3002-testimonials__label p {
+  margin: 0;
+  padding: 0;
+}
+
+body.spz_3002_v .spz3002-testimonials__label--single p {
+  max-width: 100%;
+}
+
+body.spz_3002_v .spz3002-testimonials__quote {
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(41, 48, 84, 0.7);
+}
+
+body.spz_3002_v .spz3002-testimonials__author {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+body.spz_3002_v .spz3002-testimonials__avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: black;
+}
+
+body.spz_3002_v .spz3002-testimonials__byline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  margin-top: -1px;
+}
+
+body.spz_3002_v .spz3002-testimonials__name {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #293054;
+}
+
+body.spz_3002_v .spz3002-testimonials__role {
+  margin: 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: rgba(41, 48, 84, 0.7);
+}
+
+body.spz_3002_v .spz3002-testimonials__role .tab {
+  display: inline;
+}
+
+body.spz_3002_v .spz3002-testimonials__role .desk {
+  display: none;
+}
+
+/* body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form:has(.hs_state_region_2) .hs_company_type {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) {
+  display: flex !important;
+  grid-column: 1 / -1;
+}
+
+body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) .hs_country_region_2 {
+  width: calc(50% - 8px);
+} */
+
+body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) .hs_state_region_2 {
+  grid-column: span 2;
+  /* width: 50%;
+  margin-left: 16px; */
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-8610) {
+  min-width: 576px !important;
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8610) form .hs-dependent-field:has(.hs_country_region_2) {
+  grid-column: span 2;
+}
+
+
+@media (max-width: 1200px) {
+  body.spz_3002_v .spz3002-hero__copy {
+      max-width: 536px;
+  }
+
+  body.spz_3002_v .spz3002-hero__media img {
+      width: calc(628px);
+      margin-top: 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.spz_3002_v .spz3002-hero {
+      padding: 90px 0 80px;
+      height: 1346px;
+  }
+
+  body.spz_3002_v .spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-tablet-1_1.webp);
+      background-size: auto 609px;
+      height: 609px;
+      width: 1335px;
+      top: auto;
+      bottom: 71px;
+      left: -63px;
+  }
+
+  body.spz_3002_v .spz3002-hero__inner {
+      flex-direction: column;
+      gap: 38px 22px;
+  }
+
+  body.spz_3002_v .spz3002-hero__copy {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  body.spz_3002_v .spz3002-hero__title {
+      font-size: 56px;
+      margin: 0 0 35px;
+  }
+
+  body.spz_3002_v .spz3002-hero__check {
+      margin-top: 3px;
+  }
+
+  body.spz_3002_v .spz3002-hero__media {
+      max-width: 688px;
+      margin: auto;
+  }
+
+  body.spz_3002_v .spz3002-hero__media img {
+      margin-top: 2px;
+      margin-left: -41px;
+      width: 733px;
+      position: static;
+  }
+
+  body.spz_3002_v .spz3002-testimonials {
+      padding: 80px 0 80px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials > .container {
+      padding: 0 42px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__inner {
+      gap: 37px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__title {
+      font-size: 32px;
+      text-align: center;
+      padding: 0;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__card {
+      padding: 28px 20px 28px;
+      gap: 15px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__block {
+      gap: 29px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__stat {
+      gap: 16px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__quote {
+      min-height: 148px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__byline {
+      gap: 3px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__role {
+      letter-spacing: 0px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__role .desk {
+      display: none;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__role .tab {
+      display: inline;
+  }
+}
+
+@media (max-width: 767.95px) {
+  body.spz_3002_v .spz3002-hero {
+      padding: 90px 0 76px;
+      height: auto;
+  }
+
+  body.spz_3002_v .spz3002-hero:before {
+      background-size: auto 400px;
+      height: 400px;
+      width: 1335px;
+      bottom: 108px;
+      left: -70px;
+  }
+
+  body.spz_3002_v .spz3002-hero > .container {
+      padding: 0 20px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials > .container {
+      padding: 0 0px;
+  }
+
+  body.spz_3002_v .spz3002-hero__title {
+      font-size: 32px;
+      margin: 0 0 30px;
+  }
+
+  body.spz_3002_v .spz3002-hero__eyebrow {
+      font-size: 16px;
+      margin: 0 0 16px;
+  }
+
+  body.spz_3002_v .spz3002-hero__item-text {
+      font-size: 16px;
+  }
+
+  body.spz_3002_v .spz3002-hero__list {
+      margin: 0px 0 47px;
+      gap: 22px;
+  }
+
+  body.spz_3002_v .spz3002-hero__cta-wrap {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v .spz3002-hero__cta {
+      width: 100%;
+      font-size: 16px;
+  }
+
+  body.spz_3002_v .spz3002-hero__media img {
+      margin-top: 2px;
+      margin-left: -5px;
+      width: 385px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials {
+      padding: 58px 0 64px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__title {
+      max-width: 100%;
+      font-size: 23px;
+      padding: 0 20px !important;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__inner {
+      gap: 32px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__slide {
+      padding: 0 20px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__card {
+      padding: 26px 16px 28px;
+      gap: 8px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__block {
+      gap: 26px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__num {
+      font-size: 40px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__byline {
+      gap: 8px;
+      margin-top: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.spz_3002_v .spz3002-testimonials {
+      padding: 121px 0 118px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__title {
+      max-width: 100%;
+      padding: 0 42px;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__num {
+      font-size: 48px;
+  }
+
+  /* Static 3-col grid at 1024+ after Slick unslick — slides are direct children */
+  body.spz_3002_v .spz3002-testimonials__splide {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      width: 100%;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__splide .spz3002-testimonials__slide {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+  }
+
+  body.spz_3002_v .spz3002-testimonials__splide .slick-dots {
+      display: none !important;
+  }
+}
+
+/*canoe Intelligence*/
+body.spz_3002_v .canoe-intelligence .spz3002-hero__copy {
+  max-width: 618px;
+}
+
+body.spz_3002_v .canoe-intelligence .spz3002-hero__title {
+  font-size: 51px;
+  margin: 0 0 37px;
+}
+
+body.spz_3002_v .canoe-intelligence .spz3002-hero__media img {
+  width: 769px;
+  margin-top: 21px;
+  left: 85px;
+}
+
+body.spz_3002_v .canoe-intelligence.spz3002-hero:before {
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-2_1.webp);
+  top: 3px;
+  left: calc(50% + 20px);
+  background-size: auto 698px;
+  height: 698px;
+  width: 1229px;
+}
+
+@media (max-width: 1320px) {
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__media img {
+      left: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__copy {
+      max-width: 536px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.spz_3002_v .canoe-intelligence.spz3002-hero {
+      height: 1293px;
+  }
+
+  body.spz_3002_v .canoe-intelligence.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-tablet-2_1.webp);
+      top: auto;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-size: auto 560px;
+      height: 560px;
+      width: 984px;
+      bottom: 67px;
+      transform: translateX(-59px);
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__copy {
+      max-width: 100%;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__title {
+      font-size: 56px;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__list {
+      margin: 0 0 46px;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__media img {
+      margin-top: 2px;
+      margin-left: 79px;
+  }
+}
+
+@media (max-width: 767.95px) {
+  body.spz_3002_v .canoe-intelligence.spz3002-hero {
+      height: auto;
+      padding: 90px 0 96px;
+  }
+
+  body.spz_3002_v .canoe-intelligence.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-mobile-2_1.webp);
+      background-size: auto 400px;
+      height: 400px;
+      width: 700px;
+      bottom: 74px;
+      transform: translateX(-179px);
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__title {
+      font-size: 32px;
+      margin: 0 0 31px;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__title br {
+      display: none;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__list .spz3002-hero__item:last-child .spz3002-hero__item-text {
+      padding-right: 1px;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__cta-wrap {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v .canoe-intelligence .demo-cta-border {
+      margin-top: 12px;
+  }
+
+  body.spz_3002_v .canoe-intelligence .spz3002-hero__media img {
+      width: 383px;
+      margin-left: -1px;
+  }
+}
+
+/*canoe Connect*/
+body.spz_3002_v .canoe-connect {}
+
+body.spz_3002_v .canoe-connect .spz3002-hero__copy {
+  max-width: 651px;
+}
+
+body.spz_3002_v .canoe-connect .spz3002-hero__eyebrow {
+  margin: 0 0 14px;
+}
+
+body.spz_3002_v .canoe-connect .spz3002-hero__title {
+  font-size: 54px;
+}
+
+body.spz_3002_v .canoe-connect .spz3002-hero__list {
+  padding-right: 14px;
+}
+
+body.spz_3002_v .canoe-connect .spz3002-hero__media img {
+  width: calc(582px + 74px);
+  height: auto;
+  margin-top: 6px;
+}
+
+body.spz_3002_v .canoe-connect.spz3002-hero:before {
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-3_1.webp);
+  width: 1466px;
+  height: 662px;
+  background-size: auto 662px;
+  top: 76px;
+  margin: auto;
+  left: calc(50% + -126px);
+}
+
+@media (max-width: 1200px) {
+  body.spz_3002_v .canoe-connect.spz3002-hero:before {
+      left: 528px;
+  }
+
+  body.spz_3002_v .canoe-connect.spz3002-hero__inner {
+      gap: 48px 30px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__copy {
+      max-width: 580px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.spz_3002_v .canoe-connect.spz3002-hero {
+      height: 1274px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__copy {
+      max-width: 100%;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__eyebrow {
+      margin: 0 0 3px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__title {
+      font-size: 56px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__media img {
+      margin-left: -1px;
+      margin-top: 1px;
+      width: calc(688px);
+  }
+
+  body.spz_3002_v .canoe-connect.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-tablet-3_1.webp);
+      width: 1009px;
+      height: 456px;
+      background-size: auto 456px;
+      top: auto;
+      left: -95px;
+      bottom: 106px;
+  }
+}
+
+@media (max-width: 767.95px) {
+  body.spz_3002_v .canoe-connect.spz3002-hero {
+      height: auto;
+      padding: 90px 0 96px;
+  }
+
+  body.spz_3002_v .canoe-connect.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-mobile-3_1.webp);
+      width: 689px;
+      height: 311.241px;
+      background-size: auto 311px;
+      left: -111px;
+      bottom: 140px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__eyebrow {
+      margin: 0 0 14px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__title {
+      font-size: 32px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__list {
+      padding-right: 0;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__cta-wrap {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v .canoe-connect .demo-cta-border {
+      margin-top: 12px;
+  }
+
+  body.spz_3002_v .canoe-connect .spz3002-hero__media img {
+      width: 380px;
+  }
+}
+
+/* Canoe Asset */
+body.spz_3002_v .canoe-asset.spz3002-hero:before {
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-4_1.webp);
+  background-size: auto 662px;
+  height: 662px;
+  width: 1465px;
+  left: calc(50% - 194px);
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+body.spz_3002_v .canoe-asset .spz3002-hero__inner {
+  gap: 48px 65px;
+}
+
+body.spz_3002_v .canoe-asset .spz3002-hero__eyebrow {
+  margin: 0 0 7px;
+}
+
+body.spz_3002_v .canoe-asset .spz3002-hero__item-text strong {
+  letter-spacing: 0.31px;
+}
+
+body.spz_3002_v .canoe-asset .spz3002-hero__list {
+  gap: 23px;
+}
+
+body.spz_3002_v .canoe-asset .spz3002-hero__media img {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: calc(744px + 12px);
+  transform: translateY(25px);
+}
+
+@media (max-width: 1024px) {
+  body.spz_3002_v .canoe-asset.spz3002-hero {
+      height: 1297px;
+  }
+
+  body.spz_3002_v .canoe-asset.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-tablet-4_1.webp);
+      background-size: auto 456px;
+      width: 1009px;
+      height: 456px;
+      top: auto;
+      bottom: 85px;
+      left: -116px;
+      right: 0;
+      margin: auto;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__eyebrow {
+      margin: 0 0 3px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__media img {
+      width: 688px;
+      transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 767.95px) {
+  body.spz_3002_v .canoe-asset.spz3002-hero {
+      height: auto;
+      padding: 90px 0 90px;
+  }
+
+  body.spz_3002_v .canoe-asset.spz3002-hero:before {
+      background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/3002/bg-pattern-mobile-4_1.webp);
+      background-size: auto 311px;
+      width: 690px;
+      height: 311px;
+      bottom: 130px;
+      left: -115px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__eyebrow {
+      margin: 0 0 16px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__title {
+      margin: 0 0 29px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__list {
+      gap: 21px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__cta-wrap {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v .canoe-asset .demo-cta-border {
+      margin-top: 12px;
+  }
+
+  body.spz_3002_v .canoe-asset .spz3002-hero__media img {
+      width: 380px;
+      transform: translateY(-6px);
+  }
+}
+
+
+
+
+/*** Download Popup ***/
+body.spz_3002_v.sgpb-overflow-hidden-body {
+  height: 100%;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) {
+  transform: translateX(-50%);
+  left: 50% !important;
+  max-width: 100%;
+  background: rgba(31, 44, 64, 0.60);
+  backdrop-filter: blur(4px);
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) .form_wrapper {
+  padding: 0;
+  background: none;
+}
+
+
+/* Brochure form popup redesign */
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div {
+  width: 100%;
+  max-width: 575px;
+  margin: 0;
+  /*left: 50% !important;
+  transform: translateX(-50%);*/
+}
+
+body.spz_3002_v.spz-solutions #sgpb-popup-dialog-main-div-wrapper > div {
+  width: 100dvw !important;
+  max-width: 100dvw !important;
+}
+
+/* body.spz_3002_v {
+  width: 100% !important;
+  max-width: 100% !important;
+} */
+
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-6998),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-7500) {
+  border-radius: 28px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998),
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-7500) {
+  width: 100% !important;
+  max-height: inherit !important;
+  overflow: hidden !important;
+  color: #293054 !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 33px 32px 32px !important;
+  border-radius: 20px !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div .gform-body.gform_body {
+  padding-bottom: 20px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper > p {
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper h2.gform_title {
+  color: #293054;
+  text-align: center;
+  font-family: "DM Serif Display";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35.2px;
+  padding: 0 0 23px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper p {
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper p {
+  display: none;
+}
+
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-popup-builder-content-8216 .sgpb-main-html-content-wrapper p,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-popup-builder-content-8219 .sgpb-main-html-content-wrapper p,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-popup-builder-content-8215 .sgpb-main-html-content-wrapper p {
+  display: block;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield {
+  padding-bottom: 6px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:not(:has(.form_wrapper)) > div > img {
+  display: none;
+}
+
+.spz_close_icon {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.spz_close_icon:hover {
+  filter: contrast(2);
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_15,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_15,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_15 {
+  /* order: 1; */
+  position: relative;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_16,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_16,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_16 {
+  /* order: 2; */
+  position: relative;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield--type-email {
+  /* order: 3; */
+  position: relative;
+  grid-column: span 6;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_18,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_17,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_18 {
+  /* order: 4; */
+  position: relative;
+  grid-column: span 6;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 {
+  /* order: 5; */
+  position: relative;
+  grid-column: span 6;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield--type-select:focus-within select {
+  box-shadow: none;
+  border-color: #293054 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22 {
+  grid-column: span 6;
+  position: relative;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .ginput_container input {
+  border-radius: 16px;
+  border: 1px solid #ECF2F2;
+  padding: 16px;
+  height: 56px;
+  color: #293054;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-field-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: auto;
+  margin: 0;
+  z-index: 1;
+  overflow: hidden;
+  color: rgba(41, 48, 84, 0.7);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22 select {
+  border-radius: 16px;
+  border: 1px solid #ECF2F2;
+  padding: 16px;
+  height: 56px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><g clip-path="url(%23clip0_26432_480)"><path d="M5 7L8.29289 10.2929C8.68342 10.6834 9.31658 10.6834 9.70711 10.2929L13 7" stroke="%23293054" stroke-opacity="0.7" stroke-width="1.5"/></g><defs><clipPath id="clip0_26432_480"><rect width="18" height="18" fill="white"/></clipPath></defs></svg>');
+  background-position: top 50% right 16px;
+  color: rgba(41, 48, 84, 0.70);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  padding-right: 35px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value select {
+  color: #293054 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield:has(.validation_message) input,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield:has(.validation_message) select {
+  border-color: #FF4349 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22 .gform-field-label {
+  top: -11px;
+  left: 12px;
+  color: rgba(41, 48, 84, 0.7);
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+  padding: 1px 5px;
+  background: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 92%;
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .gform_fields {
+  grid-column-gap: 16px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .spz_input_focus label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .spz_input_filled label {
+  top: -10.8px !important;
+  left: 11.5px !important;
+  color: rgba(41, 48, 84, 0.70);
+  font-family: "Open Sans";
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px !important;
+  padding: 1px 5px !important;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .ginput_container input:autofill,
+.hero-input-container input.email-input:autofill,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .ginput_container select:autofill {
+  background-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: #293054 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value .gform-field-label {
+  display: flex;
+  display: inline-block;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-footer {
+  text-align: center;
+  height: auto !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-footer .spz_disclaimer p {
+  display: block;
+  color: #193446;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+  max-width: 92%;
+  margin: 0 auto 20px;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-footer button {
+  width: 220px;
+  height: 56px;
+  padding: 0;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-footer .spz_disclaimer p a {
+  font-weight: 400;
+}
+
+/* #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_22.has-value select {
+  border-color: #293054;
+} */
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield .gfield_validation_message {
+  color: #FF4349;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.6px;
+}
+
+#sgpb-popup-dialog-main-div h2.gform_submission_error.hide_summary {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .ginput_container input[aria-describedby*="validation_message"],
+#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_14_5 select[aria-describedby*="validation_message"],
+#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_11_5 select[aria-describedby*="validation_message"] {
+  border-color: #FF4349;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield.spz_custom_error label {
+  color: #FF4349;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield.spz_custom_error select {
+  color: #FF4349 !important;
+  border-color: #FF4349 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .ginput_container input:focus,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 select:focus,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 select:focus,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 select:focus,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 select:focus {
+  box-shadow: none;
+  /* border-color: #293054; */
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield_visibility_visible.focused input,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield_visibility_visible.focused select {
+  box-shadow: none;
+  border-color: #293054 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 {
+  position: relative;
+  grid-column: span 6;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 {
+  position: relative;
+  grid-column: span 6;
+}
+
+/* body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .gfield--input-type-select.gfield_error select {
+  border-color: #FF4349 !important;
+  color: #FF4349 !important;
+} */
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield--input-type-text.gfield_error label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield--type-email.gfield_error label {
+  color: #FF4349;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8219):not(:has(.form_wrapper)),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8216):not(:has(.form_wrapper)),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8215):not(:has(.form_wrapper)) {
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8219):not(:has(.form_wrapper)) + .sgpb-theme-1-overlay.sgpb-popup-overlay-8219,
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8216):not(:has(.form_wrapper)) + .sgpb-theme-1-overlay.sgpb-popup-overlay-8216,
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8215):not(:has(.form_wrapper)) + .sgpb-theme-1-overlay.sgpb-popup-overlay-8215 {
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.gfield_error select#input_15_25 {
+  color: #FF4349 !important;
+  border-color: #FF4349 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value select#input_15_25 {
+  color: #293054 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gfield.gfield_error select {
+  color: #FF4349 !important;
+  border-color: #FF4349 !important;
+}
+
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-7500),
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6998) {
+  transition: transform 0.3s ease;
+  transform: translateY(-2000px);
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-7500),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6998) {
+  display: block !important;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-7500),
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6998) {
+  transform: translateY(0px);
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-7500)[style=""],
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6959)[style=""],
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6998)[style=""] {
+  pointer-events: auto;
+  visibility: visible;
+  display: flex !important;
+  height: 100vh;
+  align-items: center;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 12345;
+  justify-content: center;
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-6959),
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-6998),
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper > div:has(#sg-popup-content-wrapper-7500) {
+  border: 8px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0px 12px 32px 0px rgba(0, 0, 0, 0.22);
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6993) {
+  padding: 0 !important;
+  width: auto !important;
+  max-height: none !important;
+  background: none !important;
+  color: inherit;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  margin: auto;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6993) {
+  display: block !important;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6993)[style=""] {
+  pointer-events: auto;
+  visibility: visible;
+  display: block !important;
+}
+
+body.spz_3002_v .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) {
+  width: 100%;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  background: rgba(41, 48, 84, 0.80);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  display: flex;
+  overflow: auto;
+  padding: 48px 0;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body.spz_3002_v .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) .sgpb-popup-close-button-2 {
+  display: none;
+}
+
+body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6993) {
+
+  transition: transform 0.3s ease;
+  transform: translateY(-2000px);
+}
+
+body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6993) {
+  transform: translateY(0px);
+}
+
+@media only screen and (max-width: 767px) {
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .gform_fields {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div {
+      width: calc(100% - 24px);
+      top: 0% !important;
+      z-index: 9999100000 !important;
+  }
+
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-7500),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6959),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-6998),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div-wrapper:has(.sgpb-popup-builder-content-6998) {
+      align-items: flex-start;
+      padding-top: 113px;
+      padding-bottom: 40px;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      height: 100vh;
+      max-height: 100dvh;
+  }
+
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6959),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-7500),
+  body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6998) {
+      overflow: visible !important;
+      max-height: none !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper h2.gform_title {
+      font-size: 24px !important;
+      line-height: 26.4px !important;
+  }
+
+  /* .spz_close_icon {
+      display: none;
+  } */
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .gform-body.gform_body {
+      padding-bottom: 13px;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 select {
+      text-transform: capitalize !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .gfield--type-email {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_18,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_17,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_18 {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .spz_input_focus label,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .spz_input_filled label {
+      font-size: 10px !important;
+      line-height: 14px !important;
+      top: -8px !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .gform-footer .spz_disclaimer p {
+      max-width: 100%;
+      font-size: 10px;
+      line-height: 14px;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .gform-footer button {
+      width: 100% !important;
+  }
+
+  .spz-canoe-intelligencbody.spz_3002_v .spz_hero_content_left h1 {
+      margin-top: 13px;
+  }
+
+  .spz-canoe-intelligencbody.spz_3002_v .spz_hero_content_left ul {
+      margin-top: 35px;
+  }
+
+  .spz-canoe-intelligencbody.spz_3002_v .spz_hero_content_left ul li {
+      padding-left: 28px;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_25,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_24 {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_16,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_16,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_16,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998),
+  body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6959),
+  body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-7500) {
+      padding: 32px 16px 32px !important;
+      box-shadow: 0px 7px 8px -6px rgba(164, 6, 216, 0.82) !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .gform-field-label {
+      font-size: 14px !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .ginput_container input {
+      font-size: 14px !important;
+      line-height: 19.6px !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_25 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_24 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_22 select {
+      font-size: 14px !important;
+      line-height: 19.6px !important;
+      padding-right: 35px !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value select {
+      font-size: 14px !important;
+      line-height: 19.6px !important;
+      padding-right: 35px !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_22 {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_15,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_15,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_15 {
+      grid-column: span 12;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) .form_wrapper {
+      padding: 0 !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div > div {
+      max-height: 100%;
+      overflow: unset !important;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .has-value .gform-field-label,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .active .gform-field-label {
+      line-height: 16px !important;
+      font-size: 10px !important;
+      top: -9px !important;
+  }
+
+  body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-8610) form {
+      display: flex;
+      flex-direction: column;
+  }
+
+  body.spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-8610) {
+      min-width: unset !important;
+  }
+
+  /* body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) {
+      flex-direction: column;
+      grid-column: unset;
+  }
+
+  body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) .hs_country_region_2 {
+      width: 100%;
+      margin-bottom: 16px;
+  }
+
+  body.spz_3002_v .form_wrapper#demo-request-form .hbspt-form form .hs_company_type + .hs-dependent-field:has(.hs_state_region_2) .hs_state_region_2 {
+      width: 100%;
+      margin: 0;
+  } */
+}

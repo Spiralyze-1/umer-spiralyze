@@ -1,0 +1,1239 @@
+/* Spiralyze | Experiment #2004 | Greenlight Guru | Split Screen | VARIANT
+       Font: "proxima-nova" is supplied by the live Greenlight Guru page (Adobe Fonts). */
+
+/* ---------------------------------------------------------------------- */
+/* RESET + HIDE ORIGINAL PAGE                                              */
+/* ---------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* kill any min-width / max-width the live page sets so the variant
+       shrinks correctly on tablet/mobile (was stuck ~632px) */
+html:has(body.spz_2004_v) {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+body.spz_2004_v {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  background: #fff;
+  overflow-x: hidden;
+  font-family: "proxima-nova", sans-serif;
+}
+
+.spz_2004_v .form-wrapper h2.heading {
+  display: none;
+}
+
+body.spz_2004_v main#main-content {
+  display: none;
+}
+
+.spz-2004-section,
+.spz-2004-section *,
+.spz-2004-section *::before,
+.spz-2004-section *::after {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------- */
+/* SHELL — split screen + independent scroll                              */
+/* ---------------------------------------------------------------------- */
+.spz_2004_v .hero-section {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: 100dvh;
+  overflow: hidden;
+  font-family: "proxima-nova", sans-serif;
+}
+
+.spz_2004_v .hero-section>.spz-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.spz_2004_v .hero-section .content-left,
+.spz_2004_v .hero-section .content-right {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+}
+
+/* hide scrollbar on the form (right) side */
+.spz_2004_v .hero-section .content-left,
+.spz_2004_v .hero-section .content-right {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.spz_2004_v .hero-section .content-right::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* LEFT PANEL — dark, static                                              */
+/* ---------------------------------------------------------------------- */
+.spz_2004_v .hero-section .content-left {
+  background: #1d2120;
+  padding: 56px 48px;
+}
+
+.spz_2004_v .content-left-outer {
+  width: 100%;
+  max-width: 624px;
+  margin: 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.spz_2004_v .hero-title {
+  color: #fff;
+  font-family: 'proxima-nova';
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 33.6px;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.spz_2004_v .hero-ui-image {
+  pointer-events: none;
+}
+
+.spz_2004_v .hero-ui-image picture,
+.spz_2004_v .hero-ui-image img {
+  display: block;
+  width: 108%;
+  height: auto;
+  object-fit: cover;
+  max-height: 444px;
+  object-position: 0 0px;
+}
+
+.spz_2004_v .hero-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spz_2004_v .hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 7px;
+}
+
+.spz_2004_v .stat-headline {
+  color: #29b260;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 33.6px;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.spz_2004_v .stat-subtext {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0.25px;
+  margin: 0;
+  max-width: 100%;
+}
+
+.spz_2004_v .hero-testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  pointer-events: none;
+}
+
+.spz_2004_v .hero-testimonial .testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spz_2004_v .hero-testimonial .author-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.spz_2004_v .form-wrapper div[id^="hs_form_target"] {
+  min-height: unset;
+}
+
+.spz_2004_v .hero-testimonial .author-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 25.6px;
+  letter-spacing: 0.4px;
+  margin: 0;
+  transform: translateY(-2px);
+}
+
+.spz_2004_v .hero-testimonial .author-title {
+  color: #89908e;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+
+.spz_2004_v .hero-testimonial .testimonial-logo img {
+  width: 121.846px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  aspect-ratio: 36 / 13;
+}
+
+/* ---------------------------------------------------------------------- */
+/* RIGHT PANEL — white, form                                              */
+/* ---------------------------------------------------------------------- */
+.spz_2004_v .hero-section .content-right {
+  background: #fff;
+  padding: 32px 80px 30px;
+}
+
+.spz_2004_v .content-right-outer {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.spz_2004_v .content-right .logo {
+  text-align: center;
+}
+
+.spz_2004_v .content-right .logo a {
+  display: inline-block;
+}
+
+.spz_2004_v .content-right .logo a:focus-visible {
+  outline: none;
+}
+
+.spz_2004_v .content-right .logo img {
+  height: 28px;
+  width: 152px;
+}
+
+.spz_2004_v .spz-form-outer {
+  width: 100%;
+  transform: translateY(-1px);
+}
+
+.spz_2004_v .form-heading {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 33.6px;
+  letter-spacing: 0;
+  color: #303735;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+/* USP badges */
+.spz_2004_v .spz_usp_box ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.spz_2004_v .spz_usp_box ul li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  border-radius: 8px;
+  background: #f2f9f7;
+  padding: 8px;
+}
+
+.spz_2004_v .spz_usp_box ul li img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.spz_2004_v .spz_usp_box ul li span {
+  color: #303735;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.25px;
+}
+
+.spz_2004_v .spz_usp_box ul li br {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* FORM                                                                    */
+/* ---------------------------------------------------------------------- */
+.spz_2004_v .form-wrapper {
+  width: 100%;
+}
+
+.spz_2004_v .hs-form-private {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.spz_2004_v .hs-form-private fieldset {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+
+.spz_2004_v .hs-form-private .hs-form-field {
+  position: relative;
+}
+
+.spz_2004_v .hs-form-private .hs-form-field>label:first-child {
+  display: none;
+}
+
+.spz_2004_v .hs-form-private .input {
+  position: static;
+  margin: 0 !important;
+}
+
+/* names row -> 2 columns */
+.spz_2004_v .hs-form-private .form-columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.spz_2004_v .hs-form-private .form-columns-2 .hs-form-field {
+  width: 100% !important;
+  float: none;
+}
+
+/* hide HubSpot utility / force-hidden rows entirely */
+.spz_2004_v .hs-form-private>fieldset:has(.force-hide) {
+  display: none !important;
+}
+
+/* ---------- STEP 1 (short form): email + names + privacy only ---------- */
+.spz_2004_v:not(.spz_2004_form_reveal) .hs-form-private>fieldset.form-columns-1:not(.spz_email_field):not(:has(.legal-consent-container)) {
+  display: none;
+}
+
+/* ---------- FULL FORM (after slide) ---------- */
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:not(:has(.force-hide)) {
+  display: block;
+}
+
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:not(.spz_email_field):not(:has(.legal-consent-container)) {
+  animation: spz2004slidein 0.35s ease both;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) {
+  flex-wrap: wrap;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_),
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_demo_product_dropdown) {
+  flex-wrap: wrap;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li {
+  width: fit-content;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware>label {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  padding: 0;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label {
+  display: flex;
+  align-items: center;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label input {
+  border-radius: 4px;
+  border: 1px solid #89908e !important;
+  padding: 0;
+  width: 16px !important;
+  height: 16px;
+  appearance: none;
+  position: relative;
+  margin: 0 !important;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label span {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  padding-left: 10rem;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label input:checked {
+  appearance: none;
+  background: #9756ff;
+  border-color: #9756ff !important;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label input:checked:after {
+  content: "";
+  position: absolute;
+  left: 4.3px;
+  top: 1.5px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+body.spz_2004_v.os-windows .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label input:checked:after {
+  left: 4.9px;
+}
+
+.spz_2004_v .hs-form-private.US-selected .spz_dropdown_country_field {
+  width: 100% !important;
+}
+
+.spz_2004_v .hs-form-private.US-selected .spz_phone_country_field {
+  width: 100% !important;
+}
+
+.spz_2004_v .hs-form-private.US-selected .hs-fieldtype-intl-phone {
+  gap: 0;
+}
+
+.spz_2004_v .hs-form-private.US-selected .hs-fieldtype-intl-phone select {
+  max-width: 304px !important;
+  margin-right: 16px !important;
+  flex: 1 1 auto !important;
+}
+
+body.spz_2004_v [id*="hs_cos_wrapper_widget"] form[id*="hsForm"].US_selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+body.spz_2004_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"] {
+  width: 50% !important;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware>label .hs-form-required {
+  display: none;
+}
+
+
+
+@keyframes spz2004slidein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* phone + country side-by-side on desktop */
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has(.hs_phone),
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name="dropdown_country"]) {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has(.hs_phone) {
+  width: 50%;
+}
+
+/* dependent country / state */
+.spz_2004_v .hs-form-private .hs-dependent-field {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.spz_2004_v .hs-form-private .hs-dependent-field>.field {
+  flex: 1;
+  margin: 0;
+}
+
+/* inputs & selects */
+.spz_2004_v .hs-form-private input:not([type="checkbox"]):not([type="submit"]),
+.spz_2004_v .hs-form-private select {
+  border-radius: 8px;
+  border: 1px solid #d6dbda;
+  background: #fff;
+  padding: 8px 15px;
+  height: 48px;
+  width: 100% !important;
+  appearance: none;
+  outline: none;
+  color: #050605;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.6px;
+  letter-spacing: 0.25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spz_2004_v .hs-form-private select {
+  padding-right: 38px !important;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none"><path d="M5.29361 6C5.20695 5.99964 5.12122 5.98207 5.0414 5.94831C4.96157 5.91455 4.88923 5.86527 4.82857 5.80332L0.191269 1.11583C0.0688016 0.993251 0 0.826996 0 0.65364C0 0.480284 0.0688016 0.314028 0.191269 0.191447C0.313737 0.0688654 0.479839 0 0.653034 0C0.82623 0 0.992332 0.0688654 1.1148 0.191447L5.28706 4.40691L9.38072 0.21767C9.63617 -0.0380109 10.0488 -0.0445669 10.3043 0.204558C10.5597 0.46024 10.5662 0.873263 10.3174 1.12894L5.75865 5.79021C5.69799 5.85216 5.62565 5.90144 5.54582 5.9352C5.466 5.96896 5.38027 5.98653 5.29361 5.98689V6Z" fill="%2346524F"/></svg>');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 14px) center;
+}
+
+.spz_2004_v .hs-form-private input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #050605 !important;
+}
+
+/* phone field internal layout */
+.spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  width: calc(100% - 8px) !important;
+}
+
+.spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone select {
+  width: 99px !important;
+  flex: 0 0 99px;
+  margin-right: 8rem !important;
+}
+
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name="dropdown_country"]) .hs_dropdown_country {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone input[type="tel"] {
+  flex: 1 1 auto;
+  width: 100% !important;
+}
+
+/* floating labels */
+.spz_2004_v .hs-form-private .floating-label {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.6px;
+  letter-spacing: 0.25px;
+  color: #89908e;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 48px);
+  transition: all 0.18s ease-in-out;
+}
+
+.spz_2004_v .hs-form-private .has-input-focus .floating-label,
+.spz_2004_v .hs-form-private .has-select-focus .floating-label,
+.spz_2004_v .hs-form-private .has-input-value .floating-label,
+.spz_2004_v .hs-form-private .has-select-value .floating-label,
+.spz_2004_v .hs-form-private .floating-label--phone {
+  top: -15px;
+  left: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #303735;
+  background: #fff;
+  padding: 2px 4px;
+  z-index: 2;
+}
+
+.spz_2004_v .hs-form-private .hs_phone {
+  position: relative;
+}
+
+.spz_2004_v .hs-form-private .floating-label--phone {
+  position: absolute;
+}
+
+/* field hover / focus */
+@media (hover: hover) {
+
+  .spz_2004_v .hs-form-private input:not([type="checkbox"]):not([type="submit"]):hover,
+  .spz_2004_v .hs-form-private select:hover {
+    border-color: #6b7270;
+  }
+}
+
+.spz_2004_v .hs-form-private .has-input-focus input,
+.spz_2004_v .hs-form-private .has-select-focus select {
+  border-color: #9756ff;
+}
+
+/* privacy text */
+.spz_2004_v .hs-form-private fieldset:has(.legal-consent-container) {
+  margin: 8px 0;
+}
+
+.spz_2004_v .hs-form-private .legal-consent-container .hs-richtext p {
+  color: #89908e;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+
+.spz_2004_v .hs-form-private .legal-consent-container a {
+  color: #9756ff;
+  font-weight: 500;
+}
+
+@media (hover: hover) {
+  .spz_2004_v .hs-form-private .legal-consent-container a:hover {
+    color: #803ee9;
+    text-decoration: underline;
+  }
+}
+
+/* submit */
+.spz_2004_v .hs-form-private .hs_submit {
+  width: 100%;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.spz_2004_v .hs-form-private .hs_submit input[type="submit"],
+.spz_2004_v .hs-form-private .hs_submit #formBtn,
+.spz_2004_v .hs-form-private .hs_submit #buttonSPZ {
+  display: none !important;
+}
+
+.spz_2004_v .hs-form-private .dummy-cta {
+  width: 100%;
+  height: 50px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background: #9756ff;
+  border: 0;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .spz_2004_v .hs-form-private .dummy-cta:hover {
+    background: #803ee9;
+  }
+}
+
+/* errors */
+.spz_2004_v .hs-form-private .spz_input_error,
+.spz_2004_v .hs-form-private .hs-form-field:has(.hs-error-msgs) input:not([type="checkbox"]),
+.spz_2004_v .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone) select {
+  border-color: #f00 !important;
+}
+
+.spz_2004_v .hs-form-private .spz_input_error~.floating-label,
+.spz_2004_v .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone) .floating-label {
+  color: #f00;
+}
+
+.spz_2004_v .hs-form-private .custom_spz_error_msg,
+.spz_2004_v .hs-form-private .hs-error-msgs {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  color: #f00;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.spz_2004_v .hs-form-private .hs-form-field.hs_email .hs-error-msgs:has(label:not(.hs-error-msg)) {
+  word-break: break-all;
+}
+
+.spz_2004_v .hs-form-private.US-selected .hs_phone .hs-error-msgs {
+  margin-left: calc(50% + 8px);
+}
+
+.spz_2004_v .hs-form-private .hs-error-msgs li {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.spz_2004_v .hs-form-private>.hs_error_rollup {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------- */
+/* LOGO CAROUSEL                                                           */
+/* ---------------------------------------------------------------------- */
+.spz_2004_v .spz-2004-logos {
+  width: calc(100% + 160px);
+  margin-left: -80px;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 40%, #000 85%, transparent 90%);
+  mask-image: linear-gradient(90deg, transparent 8%, #000 40%, #000 85%, transparent 90%);
+}
+
+.spz_2004_v .spz-2004-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: spz2004marquee 32s linear infinite;
+}
+
+.spz_2004_v .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone select {
+  margin-right: 16rem !important;
+}
+
+.spz_2004_v .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone {
+  width: 100% !important;
+}
+
+.spz_2004_v .spz-2004-logos-slide {
+  flex: 0 0 auto;
+}
+
+.spz_2004_v .spz-2004-logos-slide img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.spz_2004_v.is-firefox .hs-form-private .input:not(.has-select-focus):not(.has-select-value):has(select) select {
+  color: transparent;
+}
+
+.spz_2004_v .hs-form-private select[name="dropdown_country"] {
+  background-image: none;
+}
+
+.spz_2004_v .hs-form-private select[name="dropdown_country"]+.custom_arrow {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none"><path d="M5.29361 6C5.20695 5.99964 5.12122 5.98207 5.0414 5.94831C4.96157 5.91455 4.88923 5.86527 4.82857 5.80332L0.191269 1.11583C0.0688016 0.993251 0 0.826996 0 0.65364C0 0.480284 0.0688016 0.314028 0.191269 0.191447C0.313737 0.0688654 0.479839 0 0.653034 0C0.82623 0 0.992332 0.0688654 1.1148 0.191447L5.28706 4.40691L9.38072 0.21767C9.63617 -0.0380109 10.0488 -0.0445669 10.3043 0.204558C10.5597 0.46024 10.5662 0.873263 10.3174 1.12894L5.75865 5.79021C5.69799 5.85216 5.62565 5.90144 5.54582 5.9352C5.466 5.96896 5.38027 5.98653 5.29361 5.98689V6Z" fill="%2346524F"/></svg>') !important;
+  background-repeat: no-repeat !important;
+  width: 11px;
+  height: 6px;
+}
+
+.spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name="dropdown_country"]) .hs_dropdown_country .input {
+  position: relative;
+}
+
+.spz_2004_v .hs-form-private .hs_phone .hs-error-msgs {
+  margin-left: 107px;
+}
+
+@keyframes spz2004marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* RESPONSIVE — desktop-first                                              */
+/* ---------------------------------------------------------------------- */
+
+
+@media only screen and (min-height: 950px) and (min-width: 1024px) {
+  .spz_2004_v .content-left-outer {
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .spz_2004_v .spz-form-outer {
+    transform: none;
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .spz-form-outer {
+    transform: translateY(1px);
+  }
+
+  .spz_2004_v .hs-form-private .legal-consent-container .hs-richtext p {
+    font-size: 12px;
+    line-height: 19.2px;
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .spz_usp_box ul {
+    margin-bottom: 24px;
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .form-heading {
+    margin: 0 0 20px;
+    transform: translateY(-3px);
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .hs-form-private .hs_submit {
+    margin-top: 17px;
+  }
+
+  .spz_2004_v .content-left-outer {
+    justify-content: center;
+  }
+
+  .spz_2004_v .hero-ui-image picture,
+  .spz_2004_v .hero-ui-image img {
+    object-position: -17px -3px;
+  }
+
+  .spz_2004_v .hero-stat {
+    margin-top: 0;
+  }
+
+  .spz_2004_v .hs-form-private .hs_submit {
+    margin-top: 16px;
+  }
+
+  .spz_2004_v .hero-section .content-right {
+    padding: 80px;
+  }
+
+  .spz_2004_v .content-right-outer {
+    max-width: 616px;
+  }
+}
+
+@media only screen and (min-width: 2559px) {
+  .spz_2004_v .hs-form-private .hs_submit {
+    margin-top: 16px;
+  }
+
+  .spz_2004_v .hs-form-private .legal-consent-container .hs-richtext p {
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .form-heading {
+    margin: 0 0 23px;
+    transform: translateY(-2px);
+  }
+
+  body.spz_2004_v.spz_2004_form_reveal .hs-form-private .hs_submit {
+    margin-top: 9px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .spz_2004_v .hero-ui-image img {
+    object-position: -17px 0px;
+  }
+}
+
+
+@media (max-width: 1279.98px) {
+  .spz_2004_v .hero-section .content-left {
+    padding: 56px 40px;
+  }
+
+  .spz_2004_v .hero-section .content-right {
+    padding: 32px 48px;
+  }
+}
+
+/* TABLET + below — stack, form on top, normal page scroll */
+@media (max-width: 1023.98px) {
+  .spz_2004_v {
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .spz_2004_v .hero-section {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .spz_2004_v .hero-section>.spz-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .spz_2004_v .hero-section .content-left,
+  .spz_2004_v .hero-section .content-right {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .spz_2004_v .hero-section .content-right {
+    order: 1;
+    padding: 32px 48px 32px;
+  }
+
+  .spz_2004_v .hero-section .content-left {
+    order: 2;
+    padding: 55px 48px 56px;
+  }
+
+  .spz_2004_v .content-left-outer,
+  .spz_2004_v .content-right-outer {
+    max-width: 100%;
+    gap: 64px;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+  }
+
+  .spz_2004_v .spz-form-outer {
+    transform: translateY(0px);
+  }
+
+  .spz_2004_v .hs-form-private .hs_submit {
+    margin-top: 16px;
+  }
+
+  .spz_2004_v .hs-form-private .hs_phone {
+    width: 100%;
+  }
+
+  .spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name=dropdown_country]) .hs-dependent-field {
+    width: 100%;
+  }
+
+  .spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone select {
+    width: 99px !important;
+    flex: 0 0 99px;
+  }
+
+
+  .spz_2004_v .spz-2004-logos {
+    width: calc(100% + 96px);
+    margin-left: -48px;
+  }
+
+  .spz_2004_v .spz_usp_box ul li span {
+    max-width: 70%;
+  }
+
+  .spz_2004_v .hs-form-private .legal-consent-container .hs-richtext p {
+    font-size: 12px;
+    line-height: 19.2px;
+  }
+
+  .spz_2004_v .content-left-outer {
+    gap: 9px;
+  }
+
+  .spz_2004_v .hero-stat {
+    margin-top: 6px;
+  }
+
+  .spz_2004_v .hero-ui-image {
+    transform: translateY(20px);
+  }
+
+  .spz_2004_v .hero-ui-image picture,
+  .spz_2004_v .hero-ui-image img {
+    width: 100.3%;
+    max-height: 484px;
+    object-position: 7px 0px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .spz_2004_v .stat-subtext {
+    max-width: 100%;
+  }
+
+  .spz_2004_v .hs-form-private.US-selected .hs-fieldtype-intl-phone select {
+    max-width: 451px !important;
+  }
+
+  .spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name="dropdown_country"]) .hs_dropdown_country {
+    display: block !important;
+  }
+
+  .spz_2004_v .form-wrapper div[id^="hs_form_target"] {
+    min-height: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .spz_2004_v .hero-ui-image img {
+    object-position: 7px 0px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767.98px) {
+  .spz_2004_v .hero-section .content-right {
+    padding: 28px 16px 26px;
+  }
+
+  .spz_2004_v .hero-section .content-left {
+    padding: 57px 16px 56px;
+  }
+
+  .spz_2004_v .hero-title {
+    font-size: 28px;
+    line-height: 33.6px;
+  }
+
+  .spz_2004_v .stat-headline {
+    font-size: 28px;
+    line-height: 33.6px;
+    padding-right: 10px;
+  }
+
+  .spz_2004_v .stat-subtext {
+    font-size: 20px;
+    line-height: 32px;
+    max-width: 100%;
+  }
+
+  .spz_2004_v .hero-testimonial .author-name {
+    transform: translateY(-4px);
+  }
+
+  .spz_2004_v .hero-bottom {
+    gap: 25px;
+  }
+
+  .spz_2004_v .form-wrapper {
+    transform: translateY(4px);
+  }
+
+  .spz_2004_v .content-right-outer {
+    gap: 48px;
+  }
+
+  .spz_2004_v .hero-testimonial {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .spz_2004_v .hero-testimonial .testimonial-logo img {
+    max-width: 100%;
+  }
+
+  .spz_2004_v .spz_usp_box ul li br {
+    display: block;
+  }
+
+  .spz_2004_v .form-heading {
+    font-size: 22px;
+    line-height: 26.4px;
+    margin-bottom: 23px;
+  }
+
+  .spz_2004_v .spz_usp_box ul {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .spz_2004_v .spz_usp_box ul li {
+    max-width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .spz_2004_v .spz_usp_box ul li span {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .spz_2004_v .spz_usp_box ul li img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .spz_2004_v .spz_usp_box ul li:last-child span {
+    margin-top: 7px;
+  }
+
+  .spz_2004_v .hero-ui-image {
+    transform: none;
+  }
+
+  /* .spz_2004_v .hero-title br {
+      display: none;
+  } */
+
+  .spz_2004_v .spz-2004-logos-track {
+    gap: 32px;
+  }
+
+  .spz_2004_v .spz-2004-logos-slide img {
+    height: 48px;
+  }
+
+  .spz_2004_v .spz-2004-logos {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-top: 6px;
+  }
+
+  .spz_2004_v .content-left-outer {
+    gap: 24px;
+  }
+
+  .spz_2004_v .hero-ui-image picture,
+  .spz_2004_v .hero-ui-image img {
+    width: 100%;
+    max-height: 100%;
+    object-position: 0px 0px;
+  }
+
+  .spz_2004_v .hero-stat {
+    margin-top: 0px;
+  }
+
+  .spz_2004_v .hs-form-private input:not([type=checkbox]):not([type=submit]),
+  .spz_2004_v .hs-form-private select {
+    border-radius: 4px;
+  }
+
+  .spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has(.hs_phone) {
+    width: 100%;
+  }
+
+  .spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name=dropdown_country]) {
+    width: 100%;
+  }
+
+  .spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone {
+    gap: 0;
+    width: 100%;
+    justify-content: space-between;
+    width: 100% !important;
+  }
+
+  .spz_2004_v .hs-form-private .hs_phone .hs-fieldtype-intl-phone select {
+    margin-right: 8px;
+  }
+
+  .spz_2004_v .hs-form-private .legal-consent-container .hs-richtext p {
+    letter-spacing: 0.24px;
+    padding-right: 2px;
+  }
+
+  .spz_2004_v .hs-form-private .form-columns-2 {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+
+
+  .spz_2004_v .hs-form-private.US-selected .hs_phone .hs-error-msgs {
+    margin-left: calc(50% + 8px);
+  }
+}
+
+/* SMALL MOBILE — stack name columns (per 360px mockup) */
+@media (max-width: 575.98px) {
+  .spz_2004_v .hs-form-private .form-columns-2 {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+
+  .spz_2004_v .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone select {
+    margin-right: 8px !important;
+    flex: 0 0 99px !important;
+  }
+
+  body.spz_2004_v [id*="hs_cos_wrapper_widget"] form[id*="hsForm"].US_selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+  body.spz_2004_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"] {
+    width: 100% !important;
+  }
+
+  .spz_2004_v.spz_2004_form_reveal .hs-form-private>fieldset.form-columns-1:has([name=dropdown_country]) .hs-dependent-field {
+    flex-direction: column;
+  }
+
+  .spz_2004_v .hs-form-private.US-selected .hs_phone .hs-error-msgs {
+    margin-left: 107px;
+  }
+}
