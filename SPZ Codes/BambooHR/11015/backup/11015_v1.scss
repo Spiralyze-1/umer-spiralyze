@@ -49,62 +49,119 @@ $mobile: 767.98px;
   }
 }
 
-@charset "UTF-8";
-.spz_hero_banner h1 {
-  color: #FFF;
-  font-family: Fields;
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 67px;
-  margin-top: 0;
-}
+
 
 .spz_11015_v.hr-software #base .spz_hero_banner h1 {
   margin-top: 0;
 }
 
-.spz_hero_banner h1#employee-time-and-attendance-tracking {
-  font-size: 48px;
-  line-height: 56px;
-  margin-top: 0;
+.spz_11015_v {
+  .spz_hero_banner {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11014/bg.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include tablet {
+        max-height: 1001px;
+      }
+
+      @include mobile {
+        max-height: 1001px;
+      }
+    }
+
+    h1 {
+      color: #FFF;
+      font-family: Fields;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 67px;
+      margin-top: 0;
+    }
+
+    .content-col {
+      >strong {
+        display: inline-flex;
+        padding: 12px 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 32px;
+        background: #73C41D;
+        height: 34px;
+        color: #38312F;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .spz_hero_banner h1#employee-time-and-attendance-tracking {
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 0;
+  }
+
+  .spz_hero_banner h1 span {
+    color: #599D15;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper {
+    max-width: 1160px;
+    padding-top: 69px;
+
+    @media (min-width: 1200px) {
+      padding: 69px 0 0;
+    }
+  }
+
+  &.spz_industry_selected {
+    .form-container.spz_hero_banner .form-wrapper {
+      padding-top: 0;
+
+      @media (min-width: 1200px) {
+        padding: 0;
+      }
+    }
+  }
+
+  .form-container.spz_hero_banner .form-wrapper:has(#employee-time-and-attendance-tracking) {
+    max-width: 1206px;
+  }
 }
 
-.spz_hero_banner h1 span {
-  color: #599D15;
-}
-
-.form-container.spz_hero_banner .form-wrapper {
-  max-width: 1207px;
-  padding: 0;
-}
-
-.form-container.spz_hero_banner .form-wrapper:has(#employee-time-and-attendance-tracking) {
-  max-width: 1206px;
-}
 
 .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
-  margin-top: 67px;
+  margin-top: 40px;
+  margin-bottom: 48px;
+  padding-bottom: 46px;
+  left: 0;
+
+  @include tablet() {
+    margin-bottom: 3px;
+  }
 }
 
 .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
   margin-top: 4px;
 }
 
-.form-container.spz_hero_banner .form-wrapper .form.has-content {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content {
   position: relative;
-  left: 22px;
   margin-top: 68px;
-}
-
-.hero-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 16px);
-  object-fit: cover;
-  z-index: -1;
 }
 
 .spz_11015_v.paid-landing-page .spz_hero_banner .content-col h2 {
@@ -142,16 +199,16 @@ $mobile: 767.98px;
   max-width: 596px;
 }
 
-.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
   margin-top: 67px;
   left: 23px;
 }
 
-.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) > div {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
   gap: 38px;
 }
 
-.form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
   padding-left: 44px;
   margin-bottom: 20.5px;
 }
@@ -160,11 +217,11 @@ $mobile: 767.98px;
   height: calc(100% + 80px);
 }
 
-.form-container.spz_hero_banner .form-wrapper .content-col {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .content-col {
   padding-right: 40px;
 }
 
-.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
+.spz_11015_v .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
   padding: 40px 40px 30px;
   border-radius: 32px;
   border: 0.567px solid #2E7918;
@@ -173,71 +230,94 @@ $mobile: 767.98px;
 
 .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
   padding: 40px 40px 29px;
+
+  @include tablet-pro() {
+    padding: 30px 15px 30px;
+  }
 }
 
 .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 {
   width: calc(50% - 10px);
 }
 
-.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:first-child strong {
-  color: #03551C;
-  text-align: center;
-  font-family: Fields;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 30px;
+.spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 {
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--color-gray-10);
+  }
 }
 
-.form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) {
-  color: #38312F;
-  text-align: center;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
+.spz_11015_v {
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 {
-  margin-top: 4px;
-}
+  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:first-child strong {
+    color: #03551C;
+    text-align: center;
+    font-family: Fields;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+  }
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
-  width: 220px;
-  height: 56px;
-  margin: 19.5px auto 0px;
-}
+  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+    color: #38312F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
-  /* color: #95918F; */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-}
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 {
+    margin-top: 4px;
+  }
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel .mktoAsterix {
-  display: none;
-}
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+    width: 220px;
+    height: 56px;
+    margin: 19.5px auto 0px;
+  }
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.focus {
-  color: #03551C;
-}
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active {
-  color: #95918F;
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  left: 8px;
-}
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel {
+    /* color: #95918F; */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
 
-.form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.error {
-  color: #A73440;
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel .mktoAsterix {
+    display: none;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.focus {
+    color: #03551C;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active {
+    color: #95918F;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    left: 8px;
+  }
+
+  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 .mktoFieldWrap:not(.form-checkbox-flex):not(.form-multi-checkboxes) .mktoLabel.active.error {
+    color: #A73440;
+  }
+
 }
 
 .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 select {
@@ -251,6 +331,7 @@ $mobile: 767.98px;
   text-overflow: ellipsis;
 }
 
+
 .spz_11015_v #base .form .mktoForm .mktoFormRow a[href="/legal/privacy-policy"] {
   text-underline-offset: 2px;
 }
@@ -263,17 +344,19 @@ body.spz_11015_v.hr-time-tracking #base .section.quote-container {
   padding-top: 111px;
 }
 
-.spz_11015_v #base .section.quote-container > .title-wrapper .title {
+
+.spz_11015_v #base .section.quote-container>.title-wrapper .title {
   margin-bottom: 47px;
 }
 
-.spz_11015_v #base .section.quote-container > .logos-wrapper .logos.partner-logos {
+.spz_11015_v #base .section.quote-container>.logos-wrapper .logos.partner-logos {
   margin-bottom: 32px;
 }
 
-.spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md + .spacer-wrapper {
+.spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md+.spacer-wrapper {
   display: none;
 }
+
 
 .spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md {
   padding: 0;
@@ -364,6 +447,7 @@ body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper 
   margin-top: 1px;
 }
 
+
 .spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md p {
   margin: 24px 0 0;
   color: #58524F;
@@ -441,32 +525,35 @@ body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper 
   top: 3px;
 }
 
-.spz_demo_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  border: 2px solid #2E7918;
-  padding: 18px 30px;
-  margin-top: 24px;
-  width: 171px;
-  height: 60px;
-  cursor: pointer;
-  color: #2E7918;
-  text-align: center;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  transition: all 0.2s ease-in;
-}
+.spz_11015_v {
 
-.spz_demo_btn:hover {
-  background: #03551C;
-  border-color: #03551C;
-  color: #fff;
-  transition: all 0.2s ease-in;
+  .spz_demo_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid #2E7918;
+    padding: 18px 30px;
+    margin-top: 24px;
+    width: 171px;
+    height: 60px;
+    cursor: pointer;
+    color: #2E7918;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    transition: all 0.2s ease-in;
+  }
+
+  .spz_demo_btn:hover {
+    background: #03551C;
+    border-color: #03551C;
+    color: #fff;
+    transition: all 0.2s ease-in;
+  }
 }
 
 .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols h3#integration-marketplace {
@@ -526,6 +613,7 @@ body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper 
 .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .title-wrapper:last-child {
   display: none;
 }
+
 
 .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#integration-marketplace) {
   margin-top: 91.5px;
@@ -643,6 +731,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   display: inline-block;
 }
 
+
 .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture .new_icon_image {
   max-width: 81.4%;
 }
@@ -662,7 +751,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   top: 16px;
 }
 
-.spz_11015_v #base .section.quote-container .quote-wrapper .quote.full > div {
+.spz_11015_v #base .section.quote-container .quote-wrapper .quote.full>div {
   gap: 46px;
 }
 
@@ -670,7 +759,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   max-width: 95%;
 }
 
-.spz_award_section ul li > img {
+.spz_award_section ul li>img {
   width: 128px;
   height: 24px;
   margin: 0 auto;
@@ -699,7 +788,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   letter-spacing: 0;
 }
 
-.spz_11015_v #base .section.quote-container .quote-wrapper ~ .title-wrapper {
+.spz_11015_v #base .section.quote-container .quote-wrapper~.title-wrapper {
   display: none;
 }
 
@@ -707,83 +796,128 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   display: none;
 }
 
-.spz_award_section {
-  padding: 76px 0 96.5px;
-}
+.spz_11015_v {
+  .spz_award_section {
+    padding: 76px 0 96.5px;
+  }
 
-.spz_award_section .container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
+  .spz_award_section .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
 
-.spz_award_section ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-}
+  .spz_award_section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
 
-.spz_award_section ul li {
-  padding: 0;
-  border-radius: 24px;
-  border: 1.5px solid #599D15;
-  background: #F7FFE5;
-  box-shadow: -6px 6px 0 0 #599D15;
-  box-sizing: border-box;
-  padding: 32px 32px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  width: 25%;
-}
+  .spz_award_section ul li {
+    padding: 0;
+    border-radius: 24px;
+    border: 1.5px solid #599D15;
+    background: #F7FFE5;
+    box-shadow: -6px 6px 0 0 #599D15;
+    box-sizing: border-box;
+    padding: 32px 32px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 25%;
+  }
 
-.spz_award_section ul li > img {
-  width: 128px;
-  height: 24px;
-  margin: 0 auto;
-}
+  .spz_award_section ul li>img {
+    width: 128px;
+    height: 24px;
+    margin: 0 auto;
+  }
 
-.spz_award_section ul li picture {
-  text-align: center;
-}
+  .spz_award_section ul li picture {
+    text-align: center;
+  }
 
-.spz_award_section ul li:first-child picture img {
-  width: 110px;
-  height: 126.582px;
-}
+  .spz_award_section ul li:first-child picture img {
+    width: 110px;
+    height: 126.582px;
+  }
 
-.spz_award_section ul li:nth-child(2) picture img {
-  width: 140px;
-  position: relative;
-  top: -4px;
-}
+  .spz_award_section ul li:nth-child(2) picture img {
+    width: 140px;
+    position: relative;
+    top: -4px;
+  }
 
-.spz_award_section ul li:nth-child(3) picture img {
-  width: 120px;
-  position: relative;
-  top: -4px;
-}
+  .spz_award_section ul li:nth-child(3) picture img {
+    width: 120px;
+    position: relative;
+    top: -4px;
+  }
 
-.spz_award_section ul li:nth-child(4) picture img {
-  width: 140.8px;
-  position: relative;
-  top: -4px;
-}
+  .spz_award_section ul li:nth-child(4) picture img {
+    width: 140.8px;
+    position: relative;
+    top: -4px;
+  }
 
-.spz_award_section ul li p {
-  margin: 0;
-  color: #38312F;
-  text-align: center;
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  margin-top: 7px;
+  .spz_award_section ul li p {
+    margin: 0;
+    color: #38312F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 7px;
+  }
+
+  .footer_links {
+    max-width: 64%;
+  }
+
+  @media (min-width: 1200px) {
+    main .form.has-content.grid-7-5 .content-col {
+      padding-right: 20px;
+      max-width: 660px;
+    }
+
+    &.finance {
+      main .form.has-content.grid-7-5 .content-col {
+        padding-right: 10px;
+
+        ul {
+          padding-right: 16px;
+        }
+      }
+    }
+
+    &.healthcare {
+      main .form.has-content.grid-7-5 .content-col {
+        ul {
+          padding-right: 14px;
+        }
+      }
+    }
+
+    &.non_profit {
+      main .form.has-content.grid-7-5 .content-col {
+        padding-right: 4px;
+
+        ul {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    main .form.has-content.grid-7-5 .form-col {
+      min-width: 480px;
+    }
+  }
 }
 
 .spz_11015_v footer.footer-limited {
@@ -796,10 +930,6 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   max-width: 1160px;
   display: flex;
   flex-direction: row-reverse;
-}
-
-.footer_links {
-  max-width: 64%;
 }
 
 .spz_11015_v footer.footer-limited .brand {
@@ -874,7 +1004,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   background: #fff;
 }
 
-.spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child > picture {
+.spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child>picture {
   display: none;
 }
 
@@ -946,22 +1076,22 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   left: 0;
 }
 
-.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*=panel-custom] .bottom .title {
+.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom .title {
   display: none;
 }
 
-.spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper {
+.spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
   margin-top: -71px !important;
 }
 
-.spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper .columns-1-cols {
+.spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper .columns-1-cols {
   margin-top: 0;
 }
 
-.spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper a.button {
+.spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper a.button {
   margin-left: 15px;
 }
 
@@ -969,7 +1099,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: 100%;
 }
 
-.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*=panel-custom] .bottom {
+.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 16px;
@@ -985,6 +1115,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: 100% !important;
   height: 100%;
 } */
+
 .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text {
   padding: 0 0 0 80px;
   width: calc(100% - 310px);
@@ -1056,7 +1187,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   left: 3px;
 }
 
-.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child > .image {
+.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
   width: 310px;
   margin-top: 60px;
 }
@@ -1078,7 +1209,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: 174px;
 }
 
-.tabs-custom-container .tabs-custom-wrapper + .columns-wrapper + .spacer-wrapper {
+.tabs-custom-container .tabs-custom-wrapper+.columns-wrapper+.spacer-wrapper {
   display: none;
 }
 
@@ -1124,7 +1255,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   margin-bottom: 23px;
 }
 
-.spz_11015_v #base .section.quote-container .quote-wrapper ~ .title-wrapper + .spacer-wrapper {
+.spz_11015_v #base .section.quote-container .quote-wrapper~.title-wrapper+.spacer-wrapper {
   display: none;
 }
 
@@ -1188,11 +1319,11 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: calc(61.13% - 20px);
 }
 
-.spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col > p:first-child {
+.spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:first-child {
   margin-top: 7px;
 }
 
-.spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col > p:last-child em {
+.spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:last-child em {
   color: #38312F;
   font-family: Inter;
   font-size: 16px;
@@ -1207,28 +1338,28 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   padding-top: 92px;
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols {
   margin-top: 28px;
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column5.img-col {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col {
   width: calc(39.77% - 20px);
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
   width: calc(61.13% - 20px);
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column-flex-container.columns-align-start {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column-flex-container.columns-align-start {
   align-items: center;
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
   position: relative;
   top: 12px;
 }
 
-.spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col p em {
+.spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p em {
   color: #38312F;
   font-family: Inter;
   font-size: 16px;
@@ -1269,204 +1400,286 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: calc(48.99% - 20px);
 }
 
+
+
+
 @media only screen and (min-width: 1800px) {
   /* .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
       max-width: 100%;
   } */
-  .form-container.spz_hero_banner .form-wrapper {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper {
     max-width: 1668px !important;
   }
 }
+
 @media only screen and (max-width: 1300px) {
-  .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
     width: 59%;
     text-align: left;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
     width: 41%;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content,
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content,
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
     left: 0;
   }
-  .form-container.spz_hero_banner .form-wrapper {
-    padding: 0 40px;
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper {
+    padding: 69px 40px 0;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     display: flex;
   }
-  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
     text-align: left;
     font-size: 54px;
     line-height: 65px;
   }
-  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork span br {
+
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork span br {
     display: none;
   }
-  .spz_hero_banner .content-col h2#bamboohr-automates-operational-tasks-and-frees-hr-to-perform-the-big-picture-projects-that-make-a-difference {
+
+  .spz_11015_v .spz_hero_banner .content-col h2#bamboohr-automates-operational-tasks-and-frees-hr-to-perform-the-big-picture-projects-that-make-a-difference {
     text-align: left;
     max-width: 100%;
   }
 }
-@media only screen and (max-width: 1200px) {
-  .form-container.spz_hero_banner .form-wrapper {
+
+@include tablet-pro() {
+
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+    font-size: 48px;
+    line-height: 57px;
+  }
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+    br {
+      display: none;
+    }
+  }
+
+  .spz_11015_v.spz_industry_selected main .form.has-content .content-col>figure img {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper {
+    padding: 69px 54px 0;
+  }
+
+  .spz_11015_v .tabs-custom-container .tabs-custom-wrapper {
     padding: 0 54px;
   }
-  .tabs-custom-container .tabs-custom-wrapper {
-    padding: 0 54px;
-  }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
     max-width: 100%;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child .text {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-header .child em {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper {
     padding: 0 54px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child {
     height: auto !important;
     gap: 48px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) {
     padding-left: 54px;
     padding-right: 54px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .image picture {
     display: block;
   }
-  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child > .image {
+
+  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
     width: 206px;
     margin-top: 0;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text {
     padding: 0;
     width: 100%;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child .text {
     text-align: center;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child[data-index="2"] .text em {
     display: block;
   }
+
   .spz_award_section .container {
     padding: 0 54px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper.content-width-md {
     padding: 0 54px;
   }
 }
+
 @media only screen and (max-width: 1024px) {
   .spz_11015_v.paid-landing-page main .form.has-content .content-col ul li {
     padding-left: 44px;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
     margin-top: 130px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper {
     margin-top: 20px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper {
     margin-top: 0px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
     margin-top: 90px !important;
   }
+
   .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
-    margin-top: 43px;
+    margin-top: 40px;
   }
+
   #base .form-container.spz_hero_banner:has(#employee-time-and-attendance-tracking) .hero-bg-video {
     height: calc(100% - 208px);
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
     margin-top: 135px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
     margin-top: 42px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     flex-direction: column;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .content-col {
     width: 100%;
     max-width: 100%;
   }
+
   .spz_11015_v.hr-time-tracking .spz_award_section ul li:first-child picture img {
     height: 132.582px;
   }
+
   .spz_11015_v.onboarding .spz_hero_banner h1 {
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
     line-height: 56px;
   }
+
   .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .content-col {
     padding: 0;
   }
+
   .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
     margin-top: 43px;
     margin-bottom: 68px;
   }
+
   .spz_11015_v.onboarding main .form.has-content .content-col ul li {
     margin-bottom: 21.4px;
     padding-left: 44px;
   }
-  .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     gap: 25px;
   }
+
   .spz_11015_v.onboarding .logos-wrapper.content-width-lg {
     margin-top: 0px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .spacer-wrapper {
     display: none;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container {
     margin-top: 56px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols .column-flex-container {
     flex-flow: column;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols .non-img-col {
     order: 2;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols .column7.img-col {
     order: 1;
   }
+
   .spz_11015_v.onboarding .hero-bg-video {
     height: calc(100% - 136px);
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .title h2 {
     width: 80%;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-header .child[data-index="1"] .text em {
     margin-top: 5px;
     display: block;
     margin-left: 0;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-header .child[data-index="2"] .text em {
     margin-top: 4px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child.active {
     padding-left: 11px;
     padding-right: 11px;
     padding-top: 20px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="4"] .text {
     left: 0;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header .child[data-index="1"] .text {
     left: 0;
   }
-  .tabs-custom-wrapper .tabs-custom-content .child .text .top {
+
+  .spz_11015_v .tabs-custom-wrapper .tabs-custom-content .child .text .top {
     color: #38312F;
     font-family: Fields;
     font-size: 36px;
@@ -1474,188 +1687,244 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     font-weight: 700;
     line-height: 46px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .middle {
     margin-bottom: 0;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .top {
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
     line-height: 46px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child[data-index="2"] .bottom picture {
     width: 174px;
   }
-  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*=panel-custom] .bottom .info {
+
+  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom .info {
     margin-bottom: 47px;
   }
+
+
   .spz_11015_v.paid-landing-page .spz_hero_banner .content-col h2 {
     max-width: 100%;
     margin-bottom: 32px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column7.img-col img {
     top: 3px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
     gap: 29px;
   }
+
   .spz_11015_v.paid-landing-page main .form.has-content .content-col ul,
   .spz_11015_v.paid-landing-page main .form.has-content .content-col:has(#employee-time-and-attendance-tracking) ul {
     max-width: 100%;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
     width: 100%;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
     max-width: 96%;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container {
     padding-top: 20px;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col picture {
     --width: 100%;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column7.img-col {
     width: 100%;
     margin-top: 0;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols {
     margin-top: 46px;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
     margin-top: 30px;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper {
     max-width: 100%;
     padding: 0 54px;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper .quote.full {
     margin-top: 63px;
   }
-  .spz_11015_v #base .section.quote-container .quote-wrapper .quote.full > div {
+
+  .spz_11015_v #base .section.quote-container .quote-wrapper .quote.full>div {
     margin-top: 19px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols {
     margin-bottom: 61px !important;
     margin-top: 20px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) {
     margin-top: 21px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) .column5.non-img-col {
     width: 100%;
     top: 0px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click) .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) {
     margin-top: 2px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col,
   .spz_11015_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col,
   .spz_11015_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col {
     width: 100%;
     margin: 0px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container .column-flex-container {
     flex-direction: column;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col {
     order: 1;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col {
     top: 0;
     margin-top: 26px;
     order: 2;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#approve-timesheets-in-one-click),
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#automate-time-and-attendance-management) {
     margin-top: 1.5px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) .column5.non-img-col {
     top: -1px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#simplify-overtime-tracking-and-reduce-compliance-risk),
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
     margin-top: 1px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
     margin-top: 2px;
   }
-  .spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper {
     margin-top: 24px !important;
   }
+
   .spz_11015_v #base .integration-section {
     padding-top: 10px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col {
     width: 100%;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col {
     width: 100%;
     margin-top: 30px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column7.img-col img {
     top: 2px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col {
     width: calc(70.07% - 20px);
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col picture {
     --width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col {
     width: 100%;
     margin-top: 33px;
   }
+
   /* .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper {
       padding: 0 54px;
   } */
+
   /* .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column-flex-container.columns-align-start {
       padding: 0 54px;
   } */
+
   .spz_11015_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) .columns-2-cols {
     margin-top: 64px;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols {
     margin-top: 21px !important;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .wistia picture {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .wistia picture {
     --width: 67%;
   }
+
   .spz_11015_v.onboarding .spz_award_section {
     padding-top: 54px;
     padding-bottom: 72px;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li:first-child picture {
     margin-bottom: 1px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col {
     margin-top: 60px;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li {
     padding: 32px 32px 30.5px;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li:first-child picture img {
     top: -4px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper {
     max-width: 100%;
     /* padding: 0 54px; */
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .content p {
     font-size: 24px;
     line-height: 36px;
@@ -1663,6 +1932,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     text-align: center;
     margin-top: 4px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .content p.byline {
     margin-top: 24px;
     color: #38312F;
@@ -1673,382 +1943,482 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     font-weight: 400;
     line-height: 24px;
   }
-  .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .quote.full > div {
+
+  .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .quote.full>div {
     max-width: 97%;
     margin: 21px auto 0;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
     border-radius: 32px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column5.non-img-col {
     margin-top: 29px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col picture {
     --width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) {
     margin-top: 60px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col,
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column5.non-img-col,
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col,
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column5.non-img-col {
     margin-top: 28px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections),
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment),
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) {
     margin-top: 61px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col img {
     border-radius: 16px !important;
     height: 99.5%;
   }
+
   .spz_11015_v.onboarding #base .integration-section {
     padding-top: 71px;
     padding-left: 0;
     padding-right: 0;
   }
+
   .spz_11015_v.onboarding #base .integration-section picture {
     margin-bottom: 48px;
     margin-top: 48px;
   }
+
   .spz_11015_v #base .integration-section picture img {
     max-width: 100%;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper p {
     text-align: center;
     margin-top: 11px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col {
     max-width: 100%;
     width: 100%;
     margin-bottom: 24px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col {
     width: 100%;
     padding: 0;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column5.img-col {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col {
     width: 100%;
     margin-top: 0;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
     width: 100%;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column5.img-col .wistia.block.is-loaded {
     top: 0;
     justify-content: flex-start;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
     position: static;
     max-width: 232px;
     float: left;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial {
     margin-top: 6px;
     margin-bottom: 0 !important;
   }
-  .spz_award_section {
-    padding-top: 71px;
-    padding-bottom: 72px;
+
+  .spz_11015_v {
+    .spz_award_section {
+      padding-top: 71px;
+      padding-bottom: 72px;
+    }
+
+    .spz_award_section .container {
+      padding: 0 54px;
+    }
+
+    .spz_award_section ul {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .spz_award_section ul li {
+      width: calc(50% - 12px);
+      padding: 32px 32px 30px;
+      gap: 3px;
+    }
+
+    .spz_award_section ul li p {
+      margin-top: 13px;
+    }
+
+    .spz_award_section ul li:first-child picture img {
+      position: relative;
+      top: -5px;
+    }
   }
+
   .spz_11015_v.hr-software .spz_award_section {
     padding-top: 35px;
   }
-  .spz_award_section .container {
-    padding: 0 54px;
-  }
+
   body.spz_11015_v.hr-time-tracking .spz_award_section {
     padding-top: 71px;
     padding-bottom: 72px;
   }
-  .spz_award_section ul {
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-  .spz_award_section ul li {
-    width: calc(50% - 12px);
-    padding: 32px 32px 30px;
-    gap: 3px;
-  }
+
   .spz_11015_v .spz_award_section ul li:first-child picture img {
     height: 132.582px;
   }
-  .spz_award_section ul li p {
-    margin-top: 13px;
-  }
-  .spz_award_section ul li:first-child picture img {
-    position: relative;
-    top: -5px;
-  }
+
   .spz_11015_v footer.footer-limited {
     padding: 52px 54px 54px;
   }
+
   .spz_11015_v footer.footer-limited .footer.block {
     flex-direction: column-reverse;
   }
+
   .spz_11015_v footer.footer-limited .brand {
     max-width: 100%;
   }
+
   .spz_11015_v footer.footer-limited .brand p {
     max-width: 65%;
   }
-  .footer_links {
+
+  .spz_11015_v .footer_links {
     max-width: 100%;
     margin-top: 27px;
   }
+
   .spz_11015_v .footer_links .legal {
     text-align: left;
   }
+
   .spz_11015_v footer .footer .links ul li {
     margin-left: 0;
     margin-right: 32px;
   }
+
   .spz_11015_v footer.footer-limited .footer .links {
     margin-bottom: 0;
   }
+
   .spz_11015_v .footer_links .legal {
     margin-top: 27px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols {
     margin-top: 63px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
     margin-top: 26px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding),
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
     margin-top: 60px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
     margin-top: 60.5px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) .column5.non-img-col {
     margin-top: 28px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column5.non-img-col {
     margin-top: 29px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) {
     margin-top: 59px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column5.non-img-col {
     margin-top: 30px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#integration-marketplace) {
     margin-top: 10px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture .new_icon_image {
     max-width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture {
     margin: 48px 0 41px;
   }
+
   .spz_11015_v #base .section.quote-container .quote-wrapper .image {
     max-width: 100%;
   }
-  .spz_11015_v #base .section.quote-container .quote-wrapper .quote.full > div {
+
+  .spz_11015_v #base .section.quote-container .quote-wrapper .quote.full>div {
     align-items: flex-start;
     margin-top: 13px;
     gap: 16px;
   }
+
   .spz_11015_v #base .section.quote-container .quote-wrapper .image img {
     position: static;
     max-width: 232px;
     float: left;
   }
+
   .spz_11015_v #base .section.quote-container .quote-wrapper .content p {
     max-width: 100%;
     text-align: left;
   }
 }
+
 @media only screen and (max-width: 899px) {
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active) + .columns-wrapper {
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
     margin-top: 180px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper {
     margin-top: 20px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper {
     margin-top: 45px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
     margin-top: 180px !important;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content {
     margin-top: 11px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     flex-direction: column;
     gap: 28px;
   }
-  .form-container.spz_hero_banner .form-wrapper .content-col {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .content-col {
     padding: 0;
     max-width: 100%;
     margin-bottom: 0;
   }
-  .form-container.spz_hero_banner .form-wrapper {
-    padding: 0 54px;
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper {
+    padding: 79px 54px 0;
   }
-  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
     font-size: 48px;
     line-height: 56px;
   }
-  .spz_11015_v.paid-landing-page main .form.has-content .content-col ul {
+
+  .spz_11015_v .spz_11015_v.paid-landing-page main .form.has-content .content-col ul {
     max-width: 100%;
   }
-  .hero-bg-video {
-    height: calc(100% - 97px);
-  }
+
   .spz_11015_v #base .section.quote-container {
     padding-top: 19px;
   }
-  .spz_11015_v #base .section.quote-container > .title-wrapper .title {
+
+  .spz_11015_v #base .section.quote-container>.title-wrapper .title {
     margin-bottom: 21px;
   }
-  .spz_11015_v #base .section.quote-container > .logos-wrapper .logos.partner-logos {
+
+  .spz_11015_v #base .section.quote-container>.logos-wrapper .logos.partner-logos {
     margin-bottom: 8px;
   }
+
   .spz_11015_v.paid-landing-page main .form.has-content .content-col ul {
     max-width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md {
     padding: 0 54px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
     border-radius: 32px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hr-data--reporting) .column7.img-col img {
     top: 0px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols {
     margin-top: 46px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content {
     height: 618px !important;
   }
 }
+
 @media only screen and (max-width: 767px) {
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active) + .columns-wrapper {
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="1"].active)+.columns-wrapper {
     margin-top: 22px !important;
   }
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active) + .columns-wrapper,
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active) + .columns-wrapper,
-  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active) + .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="2"].active)+.columns-wrapper,
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="3"].active)+.columns-wrapper,
+  .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper:has([data-index="4"].active)+.columns-wrapper {
     margin-top: 22px !important;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col {
     margin-top: 31px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#clock-in-on-the-go) .column5.non-img-col {
     margin-top: 26px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#create-insightful-reports-to-analyze-your-resource-distribution) {
     margin-top: 2.5px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper.content-width-md {
     padding: 0 20px;
   }
-  .hero-bg-video {
-    height: 65.36%;
-  }
+
   .spz_11015_v.onboarding .hero-bg-video {
     height: 82.33%;
   }
+
   .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content {
     margin-bottom: 64px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .title h2 {
     width: 100%;
     font-size: 32px;
     line-height: 40px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container {
     margin-top: 38px;
   }
+
   .spz_11015_v.onboarding .spz_hero_banner h1 {
     font-size: 40px;
     line-height: 48px;
   }
-  .spz_hero_banner h1#employee-time-and-attendance-tracking {
+
+  .spz_11015_v .spz_hero_banner h1#employee-time-and-attendance-tracking {
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
   }
+
   #base .form-container.spz_hero_banner:has(#employee-time-and-attendance-tracking) .hero-bg-video {
     height: 77.43%;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols {
     margin-top: 30px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) {
     margin-top: 43px;
     margin-bottom: 44px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .content-col ul li {
     max-width: 100%;
     margin-bottom: 20px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking)>div {
     gap: 28px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .form-col-container {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content:has(#employee-time-and-attendance-tracking) .form-col-container {
     padding: 20px 20px 9px;
   }
-  .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     gap: 28px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container h2#hear-what-companies-say-about-bamboohr {
     font-size: 32px;
     line-height: 40px;
   }
+
   .spz_11015_v.onboarding .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
     padding: 20px 19px 9px;
   }
-  .form-container.spz_hero_banner .form-wrapper {
-    padding: 0 20px;
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper {
+    padding: 69px 20px 0;
   }
-  .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+
+  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
     font-size: 40px;
     line-height: 48px;
   }
+
   .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container {
     padding: 20px;
     padding-bottom: 9px;
   }
+
   .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 {
     width: 100%;
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .columns-wrapper .columns-2-cols:has(#stay-on-top-of-employee-time-tracking-and-increase-efficiency) .column5.non-img-col h3 {
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
   }
+
   .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 select {
     background-position: 94.9% 45%;
-    padding: 9px 11px 11px;
+    padding: 9px 11px 11px
   }
+
   body.spz_11015_v.hr-time-tracking #base .section.quote-container .quote-wrapper {
     padding: 0 20px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container .columns-wrapper {
     padding: 0 20px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img,
   .spz_11015_v.hr-time-tracking #base .section.columns-container .columns.columns-2-cols .column7.img-col img {
     border-radius: 18.686px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col h3 {
     font-family: Fields;
     font-size: 24px;
@@ -2057,6 +2427,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     line-height: 30px;
     color: #38312F;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col p {
     font-size: 16px;
     font-style: normal;
@@ -2064,152 +2435,189 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     line-height: 24px;
     color: #58524F;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols .column5.non-img-col {
     margin-top: 27px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols {
     margin-top: 21px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#know-exactly-where-your-time-and-resources-are-going) {
     margin-top: 21px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .quote.full {
     margin-top: 64px;
   }
-  .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 select[name=Country] {
+
+  .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 select[name="Country"] {
     padding-right: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .title h2 {
     width: 100%;
     font-size: 32px;
     line-height: 40px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container {
     margin-top: 38px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-wrapper {
     padding: 0;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
     justify-content: center;
     margin-top: 40px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper {
     position: relative;
   }
+
   .spz_11015_v .spz_award_section ul li:first-child picture img {
     height: 79.114px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content {
     width: calc(100% - 60px);
     padding: 0 30px;
     /* min-height: 862px !important; */
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0px;
     width: 96px;
     height: 92px;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
     z-index: 1;
     pointer-events: none;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0px;
     width: 96px;
     height: 92px;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
     z-index: 1;
     transform: rotate(180deg);
     pointer-events: none;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header.show-gradient.scroll-not-at-start::before,
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header.show-gradient.scroll-not-at-start::after {
     opacity: 0;
     z-index: -1;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container .tabs-custom-header .child {
     width: 156px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container.columns-container .tabs-custom-header .child.active {
     padding-left: 8px;
     padding-right: 8px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child {
     padding: 24px 20px;
     gap: 32px;
   }
-  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child > .image {
+
+  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child>.image {
     width: 165px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .top {
     font-size: 24px;
     line-height: 30px;
     font-weight: 600;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col {
     margin-top: 26px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info {
     margin-bottom: 31px;
   }
-  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*=panel-custom] .bottom {
+
+  .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content [id*="panel-custom"] .bottom {
     height: 100%;
     margin-top: 15px;
   }
-  .spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper a.button {
+
+  .spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper a.button {
     margin-left: 0;
   }
-  .spz_11015_v.onboarding .tabs-custom-container > .columns-wrapper {
+
+  .spz_11015_v.onboarding .tabs-custom-container>.columns-wrapper {
     margin-top: 7px !important;
   }
+
   .spz_11015_v.onboarding .tabs-custom-container div.button {
     width: 172px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) .columns-2-cols {
     margin-top: 34px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column7.img-col img {
     height: 100%;
     border-radius: 10px !important;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col h3#create-better-first-days-for-your-new-hires {
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col {
     margin-top: 31px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper {
     padding: 0 20px;
   }
-  .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .quote.full > div {
+
+  .spz_11015_v.onboarding #base .section.quote-container .quote-wrapper .quote.full>div {
     max-width: 100%;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
     border-radius: 18.686px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column7.img-col img {
     top: 0;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) {
     margin-top: 13px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column7.img-col img,
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column7.img-col img {
     top: 2px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col h3 {
     font-size: 24px;
     font-style: normal;
@@ -2217,23 +2625,28 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     line-height: 30px;
     color: #38312F;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col .column5.non-img-col,
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#retain-great-hires-with-a-great-onboarding-process) .column5.non-img-col {
     margin-top: 27px !important;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) .column5.non-img-col,
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#create-instant-personal-connections) .column5.non-img-col,
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column5.non-img-col {
     margin-top: 28.5px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#improve-time-to-productivity-for-new-hires) .column7.img-col img {
     top: 1px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column5.img-col {
     width: calc(100% - 6px);
     margin-left: 3px;
   }
-  .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col > p:first-child {
+
+  .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:first-child {
     margin-top: 6px;
     font-size: 24px;
     line-height: 36px;
@@ -2243,126 +2656,157 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     max-width: 99%;
     margin-left: 4px;
   }
-  .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col > p:last-child {
+
+  .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols.testimonial .column7.non-img-col>p:last-child {
     margin-left: 4px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column5.non-img-col {
     margin-top: 28px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#save-timeand-the-environment) .column7.img-col img {
     top: 1px;
   }
+
   .spz_11015_v #base .integration-section h3#integration-marketplace {
     font-size: 28px;
     font-style: normal;
     font-weight: 700;
     line-height: 36px;
   }
+
   .spz_11015_v.onboarding #base .integration-section {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 64px;
   }
+
   .spz_11015_v.onboarding #base .integration-section picture {
     margin-top: 15px;
     margin-bottom: 16px;
   }
+
   .spz_11015_v.onboarding #base .integration-section .spz_demo_btn {
     margin-top: 0px;
     width: 100%;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .wistia picture {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .wistia picture {
     --width: calc(100% - 7px);
     position: relative;
     left: 4px;
   }
+
   .spz_11015_v.hr-time-tracking #base .integration-section {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .spz_11015_v.hr-time-tracking #base .integration-section {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols:has(#simplify-overtime-tracking-and-reduce-compliance-risk) {
     margin-bottom: 53px !important;
   }
+
   .spz_11015_v.hr-time-tracking #base .integration-section picture {
     margin-top: 16px;
     margin-bottom: 0;
   }
+
   .spz_11015_v.hr-time-tracking #base .integration-section .spz_demo_btn {
     width: 100%;
     margin-top: 16px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial {
     margin-top: 0px !important;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
     max-width: 232px;
     position: relative;
     left: 4px;
     top: -1px;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col {
     margin-top: 16px;
     margin-left: 2px;
     max-width: 98%;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column7.non-img-col p:last-child em {
     max-width: 90%;
   }
+
   .spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial .column5.img-col img {
     max-width: 232px;
     position: relative;
     left: 4px;
     top: -1px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container .testimonial.columns-2-cols {
     margin-top: 14px !important;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col {
     margin-top: 15px;
     padding-right: 4px;
     padding-left: 4px;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col p {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col p:last-child {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p:last-child {
     margin-top: 0;
   }
-  .spz_11015_v.onboarding #base .integration-section ~ .columns-wrapper .columns-2-cols .column7.non-img-col p:first-child {
+
+  .spz_11015_v.onboarding #base .integration-section~.columns-wrapper .columns-2-cols .column7.non-img-col p:first-child {
     margin-bottom: 15px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#keep-new-hires-engaged-with-a-custom-experience) {
     margin-top: 61px;
   }
+
   .spz_11015_v.onboarding .spz_award_section {
     padding-top: 49px;
     padding-bottom: 64px;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li {
     padding: 16px 12px 14.8px;
   }
+
   .spz_11015_v.onboarding #base .section.quote-container:has(#create-better-first-days-for-your-new-hires) {
     padding-left: 0;
     padding-right: 0;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li:first-child picture img {
     top: 0;
     height: 79.114px;
     object-fit: cover;
   }
+
   .spz_11015_v.onboarding .spz_award_section ul li:first-child picture {
     margin-bottom: 0;
   }
-  .spz_award_section ul li:last-child picture {
+
+  .spz_11015_v .spz_award_section ul li:last-child picture {
     margin-bottom: 13px;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .bottom .info .name {
     font-size: 14px;
     font-style: normal;
@@ -2371,21 +2815,27 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     letter-spacing: 2px;
     text-transform: uppercase;
   }
+
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child .text .middle {
     margin-top: 16px;
     font-size: 18px;
     line-height: 26px;
     height: auto;
   }
-  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
     padding-top: 18.5px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md {
     padding: 0 20px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper.content-width-lg {
     padding: 0 20px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col p {
     color: #58524F;
     font-family: Inter;
@@ -2394,6 +2844,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     font-weight: 400;
     line-height: 24px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column5.non-img-col ul li {
     color: #38312F;
     font-family: Inter;
@@ -2402,98 +2853,123 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     font-weight: 400;
     line-height: 24px;
   }
+
   .spz_11015_v.paid-landing-page main .form.has-content .content-col ul li {
     margin-bottom: 20px;
     padding-left: 44px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content .form-col {
     margin: 0 auto;
     width: calc(100% - 20px);
   }
+
   .spz_11015_v.paid-landing-page .spz_hero_banner .content-col h2 {
     margin-bottom: 32px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
     gap: 28.2px;
   }
+
   .spz_11015_v #base .form .mktoForm .mktoFormRow.form-input-width50 .mktoFieldWrap {
     margin-top: 20px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
     margin-bottom: 25px;
   }
-  .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:first-child {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:first-child {
     margin-bottom: 8px;
   }
+
   .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
-    margin-bottom: 45px;
+    margin-bottom: 0;
   }
-  .spz_11015_v #base .section.quote-container > .title-wrapper .title {
+
+  .spz_11015_v #base .section.quote-container>.title-wrapper .title {
     margin-bottom: 14px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
     margin-top: 118.5px;
   }
-  .spz_11015_v.hr-software .form-container.spz_hero_banner .form-wrapper .form.has-content {
-    margin-bottom: 45px;
-  }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols .column7.img-col img {
     border-radius: 16.623px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols {
     margin-top: 64px;
   }
-  .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
+
+  .spz_11015_v .form-container.spz_hero_banner .form-wrapper form#mktoForm_1240 button.mktoButton {
     padding-top: 18.5px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column7.img-col img {
     top: 4px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols h3 {
     font-size: 24px;
     line-height: 30px;
     font-weight: 600;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
     margin-bottom: 27px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding),
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
     margin-top: 32px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
     margin-top: 34px;
   }
+
   .spz_11015_v.hr-software #base .section.quote-container .columns-wrapper .columns-2-cols .column5.non-img-col {
     margin-top: 27px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#hiring--onboarding) .column5.non-img-col {
     margin-top: 30px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) .column5.non-img-col {
     margin-top: 31px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) .column7.img-col img {
     top: 2px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols:has(#employee-experience--performance) {
     margin-top: 31px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns-2-cols h3#integration-marketplace {
     font-size: 28px;
     line-height: 36px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col picture {
     margin: 15px 0 11px;
   }
+
   .spz_11015_v #base .section.quote-container .columns-wrapper .columns.columns-2-cols:has(#integration-marketplace) .column5.non-img-col .spz_demo_btn {
     width: 100%;
   }
+
   .spz_11015_v #base .section.quote-container .quote-wrapper {
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 23px;
   }
+
   .spz_11015_v #base .section.quote-container .quote-wrapper .content p {
     color: #599D15;
     font-family: Fields;
@@ -2502,456 +2978,850 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     font-weight: 400;
     line-height: 36px;
   }
-  .spz_award_section .container {
+
+  .spz_11015_v .spz_award_section .container {
     padding: 0 20px;
   }
-  .spz_award_section ul {
+
+  .spz_11015_v .spz_award_section ul {
     gap: 12px;
   }
+
   .spz_11015_v.hr-software .spz_award_section {
     padding-top: 33px;
     padding-bottom: 64px;
   }
-  .spz_award_section ul li {
+
+  .spz_11015_v .spz_award_section ul li {
     width: calc(50% - 6px);
     padding: 16px 13px;
   }
-  .spz_award_section ul li:first-child picture img {
+
+  .spz_11015_v .spz_award_section ul li:first-child picture img {
     width: 68.75px;
     height: 79.114px;
     top: -2px;
     object-fit: cover;
   }
+
   body.spz_11015_v.hr-time-tracking .spz_award_section {
     padding-top: 63px;
     padding-bottom: 63.5px;
   }
+
   .spz_11015_v.hr-time-tracking .spz_award_section ul li:first-child picture img {
     height: 79.114px;
   }
+
   .spz_11015_v.hr-time-tracking .spz_award_section ul li:last-child picture {
     margin-bottom: 13px;
   }
+
   .spz_11015_v.hr-time-tracking footer .footer .footer_logo {
     margin-bottom: 18px;
   }
-  .spz_award_section ul li:nth-child(2) picture img {
+
+
+  .spz_11015_v .spz_award_section ul li:nth-child(2) picture img {
     width: 87.5px;
     height: 68.359px;
     top: 4px;
     object-fit: cover;
   }
-  .spz_award_section ul li p {
+
+  .spz_11015_v .spz_award_section ul li p {
     font-size: 12px;
     line-height: 18px;
     font-weight: 700;
     margin-top: 7px;
   }
-  .spz_award_section ul li:nth-child(3) picture img {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(3) picture img {
     width: 75px;
     height: 75px;
     object-fit: cover;
     top: 1px;
   }
-  .spz_award_section ul li:nth-child(4) picture img {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(4) picture img {
     width: 88px;
     height: 68.75px;
     object-fit: cover;
     top: 4px;
   }
-  .spz_award_section ul li:first-child,
-  .spz_award_section ul li:nth-child(2) {
+
+  .spz_11015_v .spz_award_section ul li:first-child,
+  .spz_11015_v .spz_award_section ul li:nth-child(2) {
     padding: 16px 12px 15px;
     gap: 5px;
   }
-  .spz_award_section ul li:nth-child(3) picture {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(3) picture {
     margin-bottom: 7px;
   }
-  .spz_award_section ul li:nth-child(2) > img {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(2)>img {
     margin-top: 11px;
   }
-  .spz_award_section ul li:nth-child(3) p {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(3) p {
     margin-top: 9px;
   }
-  .spz_award_section ul li:last-child {
+
+  .spz_11015_v .spz_award_section ul li:last-child {
     padding: 16px 11px 15px;
   }
-  .spz_award_section ul li:nth-child(3) {
+
+  .spz_11015_v .spz_award_section ul li:nth-child(3) {
     padding-bottom: 14px;
   }
-  .spz_award_section ul li:last-child picture {
+
+  .spz_11015_v .spz_award_section ul li:last-child picture {
     margin-bottom: 12px;
   }
-  .spz_award_section ul li:last-child p {
+
+  .spz_11015_v .spz_award_section ul li:last-child p {
     margin-top: 9px;
   }
+
   .spz_11015_v footer.footer-limited {
     padding: 52px 20px 52px;
     margin-bottom: -24px;
   }
+
   .spz_11015_v footer.footer-limited .brand p {
     max-width: 100%;
   }
-  .footer_links {
+
+  .spz_11015_v .footer_links {
     margin-top: 28px;
   }
+
   .spz_11015_v .footer_links .legal {
     margin-top: 0px;
   }
+
   .spz_11015_v footer .footer .links ul li {
     margin-bottom: 26px;
   }
+
 }
+
 @media only screen and (max-width: 560px) {
   .spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-header {
     justify-content: flex-start;
   }
 }
-@media only screen and (max-width: 1300px) {
-  .spz_11015_v .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork span br {
-    display: none;
-  }
-}
-.spz_11015_v .hero_nav {
-  display: none;
-}
-.spz_11015_v .spz_hero_banner .content-col > strong {
-  display: inline-flex;
-  padding: 12px 20px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 32px;
-  background: #73C41D;
-  height: 34px;
-  color: #38312F;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 14px;
-  margin-bottom: 16px;
-}
-.spz_11015_v.spz_industry_selected .hero_nav,
-.spz_11015_v.spz_industry_selected .quote-container > div:nth-of-type(2) {
-  display: none;
-}
-.spz_11015_v.spz_industry_selected .spz_hero_banner::after {
-  max-height: 737px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .spz_11015_v.spz_industry_selected .spz_hero_banner::after {
-    max-height: 1001px;
-  }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_industry_selected .spz_hero_banner::after {
-    max-height: 1001px;
-  }
-}
-.spz_11015_v.spz_industry_selected .form-container.spz_hero_banner .form-wrapper .form.has-content {
-  margin-top: 31px;
-  padding-bottom: 0px;
-  margin-bottom: 39.5px;
-}
-.spz_11015_v.spz_industry_selected .spz_hero_banner h1 {
-  margin-bottom: 32.5px;
-}
-.spz_11015_v.spz_industry_selected .spz_hero_banner h1 span {
-  color: #73C41D;
-}
-.spz_11015_v.spz_industry_selected .spz_hero_banner h1 br {
-  display: none;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col ul li {
-  background-position: 0 -0.5px;
-  padding-left: 44px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col ul li:not(:last-child) {
-  margin-bottom: 20px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col ul li strong {
-  font-weight: 700;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure {
-  display: inline-block;
-  transform: translateX(-84px);
-  margin: 23.5px 0 0;
-  max-width: 602px;
-}
-@media (min-width: 1025px) and (max-width: 1399px) {
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure {
-    transform: translateX(-25px);
-  }
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure img {
-  display: block;
-  box-shadow: none;
-  border-radius: 0;
-  width: auto;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.education {
-  max-width: 506px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.finance {
-  max-width: 540px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.healthcare {
-  max-width: 537px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.manufacturing {
-  max-width: 415px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.non_profit {
-  max-width: 535px;
-}
-.spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure.technology {
-  max-width: 517px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure {
-    display: none;
-  }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col > figure {
-    display: none;
-  }
-}
-.spz_11015_v.spz_industry_selected main .logos-wrapper {
-  padding-bottom: 85px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .spz_11015_v.spz_industry_selected main .logos-wrapper {
-    padding-bottom: 0;
-  }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_industry_selected main .logos-wrapper {
-    padding: 0 24px;
-    margin-top: -1px;
-  }
-  .spz_11015_v.spz_industry_selected main .logos-wrapper picture {
-    margin: 0 auto;
-    display: block;
-    max-width: 312px;
-  }
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper {
-  max-width: 1150px;
-  padding-top: 75px;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper > .quote {
-  margin-bottom: 26px;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div {
-  gap: 47px;
-  margin-top: 11px;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image {
-  max-width: 28.77%;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image picture {
-  display: block;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image picture img {
-  display: block;
-  left: 0;
-  top: 0;
-  transform: translate(6.5px, -1px);
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(1) {
-  max-width: unset;
-  margin-right: -5px;
-  position: relative;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(1)::after {
-  content: "“";
-  position: absolute;
-  left: -10px;
-  top: 0;
-  width: 10px;
-  height: 10px;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(2) {
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(3) {
-  margin: 0;
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) {
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content h3 {
-    text-align: left;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper {
-    padding: 75px 54px 0;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper > .quote {
-    margin-bottom: 24px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div {
-    gap: 40px;
-    margin-top: 13px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image {
-    max-width: 200px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image picture img {
-    transform: none;
-    float: none;
-    max-width: 100%;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content h3 {
-    text-align: left;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(1) {
-    margin-right: 0;
-  }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper {
-    padding: 47.5px 20px 0;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper > .quote {
-    margin-bottom: 24px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div {
-    gap: 40px;
-    margin-top: 13px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image {
-    max-width: 200px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .image picture img {
-    transform: none;
-    float: none;
-    max-width: 100%;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content h3 {
-    text-align: left;
-    font-size: 24px;
-    line-height: 30px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .quote-wrapper .quote.full > div .content p:nth-of-type(1) {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .spz_11015_v.spz_industry_selected .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
-    font-size: 56px;
-    line-height: 67px;
-  }
-  .spz_11015_v.spz_industry_selected .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork br {
-    display: none;
-  }
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col ul {
-    padding-right: 15px;
-  }
-  .spz_11015_v.spz_industry_selected.finance main .form.has-content .content-col ul {
-    padding-right: 25px;
-  }
-  .spz_11015_v.spz_industry_selected.healthcare main .form.has-content .content-col ul {
-    padding-right: 20px;
-  }
-  .spz_11015_v.spz_industry_selected.non_profit main .form.has-content .content-col ul {
-    padding-right: 28px;
-  }
-  .spz_11015_v.spz_industry_selected.technology main .form.has-content .content-col ul {
-    padding-right: 25px;
-  }
-  .spz_11015_v.spz_industry_selected.technology .quote.full > div .content p:nth-of-type(1) br {
-    display: none;
-  }
-  .spz_11015_v.spz_industry_selected .form-container.spz_hero_banner .form-wrapper .form.has-content > div {
-    gap: 25.5px;
-  }
-  .spz_11015_v.spz_industry_selected .logos-wrapper {
-    padding: 0 20px;
-  }
-  .spz_11015_v.spz_industry_selected .logos-wrapper picture {
-    max-width: 660px;
-    margin: auto;
-    display: block;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container {
-    padding-top: 31px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
-    margin-top: 65px;
-  }
-  .spz_11015_v.spz_industry_selected.construction .logos-wrapper picture {
-    max-width: 700px;
-  }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_industry_selected .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork br {
-    display: none;
-  }
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col ul {
-    padding-right: 32px;
-  }
-  .spz_11015_v.spz_industry_selected main .form.has-content .content-col ul li {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .spz_11015_v.spz_industry_selected .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) {
-    padding: 0 5px;
-    margin-bottom: 24px;
-  }
-  .spz_11015_v.spz_industry_selected .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) br {
-    display: none;
-  }
-  .spz_11015_v.spz_industry_selected.healthcare .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2), .spz_11015_v.spz_industry_selected.non_profit .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2), .spz_11015_v.spz_industry_selected.technology .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) {
-    padding: 0;
-  }
-  .spz_11015_v.spz_industry_selected.manufacturing .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container > p:nth-child(2) {
-    padding: 0 35px;
-  }
-  .spz_11015_v.spz_industry_selected.technology .quote.full > div .content p:nth-of-type(1) br {
-    display: none;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container {
-    padding-top: 31px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
-    margin-top: 57.5px;
-  }
-  .spz_11015_v.spz_industry_selected #base .section.quote-container .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
-    margin-top: 61px;
-  }
-}
-.spz_11015_v.spz_11015_popup_open {
-  overflow: hidden;
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v.spz_11015_popup_open {
+
+.spz_11015_v {
+  .hero_nav {
     position: fixed;
-    left: 0;
+    top: 80px;
+    left: 50%;
+    z-index: 1;
+    padding-top: 1.5px;
+    transform: translateX(-50%);
+
+    .auto_container {
+      padding: 0 20px;
+      max-width: 1020px;
+      margin: auto;
+    }
+
+    .hero_navInner {
+      border-radius: 32px;
+      background: linear-gradient(180deg, #01270C 36.74%, #01270C 100%);
+    }
+
+    @include tablet() {
+      padding: 0;
+      max-width: unset;
+      width: 100%;
+      top: 83.5px;
+
+      .hero_navInner {
+        border-radius: 32px;
+        background: linear-gradient(180deg, #01270C 36.74%, #01270C 100%);
+      }
+
+      .auto_container {
+        padding: 0 10px;
+      }
+    }
+
+    @include mobile() {
+      padding: 0;
+      max-width: 100%;
+      top: 83.5px;
+
+      .auto_container {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .hero_navInner {
+    max-width: 975px;
+    margin: 0 auto;
+    padding: 20px 26.5px 20px 27.5px;
+    overflow: hidden;
+
+    h3 {
+      text-align: center;
+      color: #FFF;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 0 0 13.5px;
+
+      @include mobile() {
+        margin: 0;
+      }
+    }
+
+    @include tablet() {
+      padding: 18px 0;
+
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mobile() {
+      padding: 18px 0;
+
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .hero_navData {
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin: 0;
+
+      li {
+        padding: 0;
+        cursor: pointer;
+        pointer-events: all;
+
+        span,
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px 23.25px;
+          height: 38px;
+          white-space: nowrap;
+          border-radius: 32px;
+          border: 1px solid rgba(115, 196, 29, 0.30);
+          background: rgba(115, 196, 29, 0.04);
+          color: #C6C2BF;
+          font-family: Inter;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 18px;
+          backdrop-filter: blur(2px);
+          -moz-backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          pointer-events: all;
+
+          &:hover {
+            cursor: pointer;
+            color: #fff;
+            background: rgba(115, 196, 29, 0.30);
+          }
+
+          &.all {
+            border-color: #fff;
+            background: #73C41D;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            color: #38312F;
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              right: 7px;
+              top: -7px;
+              width: 16px;
+              height: 16px;
+              border-radius: 99px;
+              background-color: #fff;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M8 1C6.61553 1 5.26216 1.41054 4.11101 2.17971C2.95987 2.94888 2.06266 4.04213 1.53285 5.32122C1.00303 6.6003 0.86441 8.00776 1.13451 9.36563C1.4046 10.7235 2.07129 11.9708 3.05026 12.9497C4.02922 13.9287 5.2765 14.5954 6.63437 14.8655C7.99224 15.1356 9.3997 14.997 10.6788 14.4672C11.9579 13.9373 13.0511 13.0401 13.8203 11.889C14.5895 10.7378 15 9.38447 15 8C14.9979 6.14414 14.2597 4.36491 12.9474 3.05262C11.6351 1.74033 9.85586 1.00214 8 1ZM11.3338 6.77426L7.38477 10.5435C7.28436 10.639 7.15107 10.6923 7.01247 10.6923C6.87388 10.6923 6.74059 10.639 6.64018 10.5435L4.66617 8.65888C4.56304 8.56009 4.50334 8.42441 4.50017 8.28163C4.49701 8.13885 4.55065 8.00066 4.64931 7.89741C4.74797 7.79415 4.88357 7.73428 5.02635 7.73093C5.16912 7.72759 5.30738 7.78105 5.41076 7.87958L7.01247 9.40925L10.5892 5.99497C10.6926 5.89644 10.8309 5.84298 10.9737 5.84632C11.1164 5.84966 11.252 5.90954 11.3507 6.01279C11.4494 6.11605 11.503 6.25424 11.4998 6.39702C11.4967 6.53979 11.437 6.67547 11.3338 6.77426Z' fill='%2303551C'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+              background-size: inherit;
+              background-position: center;
+            }
+          }
+        }
+      }
+    }
+
+    @include tablet() {
+      overflow-x: auto;
+      overflow-y: visible;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      ul {
+        min-width: 938px;
+        padding-top: 13.5px;
+
+        li {
+          &:first-child {
+            order: 1;
+          }
+
+          &:nth-child(2) {
+            order: 2;
+          }
+
+          &:nth-child(4) {
+            order: 3;
+          }
+
+          &:nth-child(3) {
+            order: 4;
+          }
+
+          &:nth-child(5) {
+            order: 5;
+          }
+
+          &:nth-child(6) {
+            order: 6;
+          }
+
+          &:nth-child(7) {
+            order: 7;
+          }
+
+          &:last-child {
+            order: 8;
+          }
+        }
+      }
+    }
+
+    @include mobile() {
+      overflow-x: auto;
+      overflow-y: visible;
+      padding-top: 13.5px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      ul {
+        min-width: 938px;
+        padding-left: 0;
+
+        li {
+          &:first-child {
+            order: 1;
+          }
+
+          &:nth-child(2) {
+            order: 2;
+          }
+
+          &:nth-child(4) {
+            order: 3;
+          }
+
+          &:nth-child(3) {
+            order: 4;
+          }
+
+          &:nth-child(5) {
+            order: 5;
+          }
+
+          &:nth-child(6) {
+            order: 6;
+          }
+
+          &:nth-child(7) {
+            order: 7;
+          }
+
+          &:last-child {
+            order: 8;
+          }
+        }
+      }
+    }
+  }
+
+  &.spz_industry_selected {
+
+    .hero_nav,
+    .quote-container>div:nth-of-type(2) {
+      display: none;
+    }
+
+    .spz_hero_banner {
+      &::after {
+        max-height: 737px;
+
+        @include tablet() {
+          max-height: 1001px;
+        }
+
+        @include mobile() {
+          max-height: 1001px;
+        }
+      }
+    }
+
+    .form-container.spz_hero_banner .form-wrapper .form.has-content {
+      margin-top: 31px;
+      padding-bottom: 0px;
+      margin-bottom: 39.5px;
+    }
+
+    .spz_hero_banner {
+      h1 {
+        margin-bottom: 32.5px;
+
+        span {
+          color: #73C41D
+        }
+      }
+    }
+
+    main {
+      .form.has-content {
+        .content-col {
+          ul {
+            li {
+              background-position: 0 -0.5px;
+              padding-left: 44px;
+
+              &:not(:last-child) {
+                margin-bottom: 20px;
+              }
+
+              strong {
+                font-weight: 700;
+              }
+            }
+          }
+
+          >figure {
+            display: inline-block;
+            transform: translateX(-84px);
+            margin: 23.5px 0 0;
+            max-width: 602px;
+
+            @include tablet-pro() {
+              transform: translateX(-25px);
+            }
+
+            img {
+              display: block;
+              box-shadow: none;
+              border-radius: 0;
+              width: auto;
+            }
+
+            &.education {
+              max-width: 506px;
+            }
+
+            &.finance {
+              max-width: 540px;
+            }
+
+            &.healthcare {
+              max-width: 537px;
+            }
+
+            &.manufacturing {
+              max-width: 415px;
+            }
+
+            &.non_profit {
+              max-width: 535px;
+            }
+
+            &.technology {
+              max-width: 517px;
+            }
+
+            @include tablet() {
+              display: none;
+            }
+
+            @include mobile() {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .logos-wrapper {
+        padding-bottom: 85px;
+
+        @include tablet() {
+          padding-bottom: 0;
+        }
+
+        @include mobile() {
+          padding: 0 24px;
+          margin-top: -1px;
+
+          picture {
+            margin: 0 auto;
+            display: block;
+            max-width: 312px;
+          }
+        }
+      }
+    }
+
+    #base .section.quote-container .quote-wrapper {
+      max-width: 1150px;
+      padding-top: 75px;
+
+      >.quote {
+        margin-bottom: 26px;
+      }
+
+      .quote.full>div {
+        gap: 47px;
+        margin-top: 11px;
+
+        .image {
+          max-width: 28.77%;
+
+          picture {
+            display: block;
+
+            img {
+              display: block;
+              left: 0;
+              top: 0;
+              transform: translate(6.5px, -1px);
+            }
+          }
+        }
+
+        .content {
+          p {
+            &:nth-of-type(1) {
+              max-width: unset;
+              margin-right: -5px;
+              position: relative;
+
+              &::after {
+                content: '“';
+                position: absolute;
+                left: -10px;
+                top: 0;
+                width: 10px;
+                height: 10px;
+              }
+            }
+
+            &:nth-of-type(2) {
+              font-weight: 700;
+              margin-bottom: 4px;
+            }
+
+            &:nth-of-type(3) {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      @media only screen and (min-width: 1024px) and (max-width: 1024px) {
+        .quote.full>div {
+          .content {
+            h3 {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      @include tablet() {
+        padding: 75px 54px 0;
+
+        >.quote {
+          margin-bottom: 24px;
+        }
+
+        .quote.full>div {
+          gap: 40px;
+          margin-top: 13px;
+
+          .image {
+            max-width: 200px;
+
+            picture {
+              img {
+                transform: none;
+                float: none;
+                max-width: 100%;
+              }
+            }
+          }
+
+          .content {
+            h3 {
+              text-align: left;
+            }
+
+            p {
+              &:nth-of-type(1) {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      @include mobile() {
+        padding: 47.5px 20px 0;
+
+        >.quote {
+          margin-bottom: 24px;
+        }
+
+        .quote.full>div {
+          gap: 40px;
+          margin-top: 13px;
+
+          .image {
+            max-width: 200px;
+
+            picture {
+
+              img {
+                transform: none;
+                float: none;
+                max-width: 100%;
+              }
+            }
+          }
+
+          .content {
+            h3 {
+              text-align: left;
+              font-size: 24px;
+              line-height: 30px;
+            }
+
+            p {
+              &:nth-of-type(1) {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include tablet() {
+      .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+        font-size: 56px;
+        line-height: 67px;
+
+        br {
+          display: none;
+        }
+      }
+
+      main .form.has-content .content-col ul {
+        padding-right: 15px;
+      }
+
+      &.finance main .form.has-content .content-col ul {
+        padding-right: 25px;
+      }
+
+      &.healthcare main .form.has-content .content-col ul {
+        padding-right: 20px;
+      }
+
+      &.non_profit main .form.has-content .content-col ul {
+        padding-right: 28px;
+      }
+
+      &.technology {
+        main .form.has-content .content-col ul {
+          padding-right: 25px;
+        }
+
+        .quote.full>div {
+          .content {
+            p {
+              &:nth-of-type(1) {
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .form-container.spz_hero_banner .form-wrapper .form.has-content>div {
+        gap: 25.5px;
+      }
+
+      .logos-wrapper {
+        padding: 0 20px;
+
+        picture {
+          max-width: 660px;
+          margin: auto;
+          display: block;
+        }
+      }
+
+      #base .section.quote-container {
+        padding-top: 31px;
+
+        .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
+          margin-top: 65px;
+        }
+      }
+
+      &.construction {
+        .logos-wrapper {
+          picture {
+            max-width: 700px;
+          }
+        }
+      }
+
+    }
+
+    @include mobile() {
+      .spz_hero_banner h1#hr-software-so-you-can-focus-on-the-people-not-the-paperwork {
+        br {
+          display: none;
+        }
+      }
+
+      main .form.has-content .content-col ul {
+        padding-right: 32px;
+
+        li {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+        padding: 0 5px;
+        margin-bottom: 24px;
+
+        br {
+          display: none;
+        }
+      }
+
+      &.healthcare .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2),
+      &.non_profit .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2),
+      &.technology .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+        padding: 0;
+      }
+
+      &.manufacturing .form-container.spz_hero_banner .form-wrapper .form-col .form-col-container>p:nth-child(2) {
+        padding: 0 35px;
+      }
+
+      &.technology {
+        .quote.full>div {
+          .content {
+            p {
+              &:nth-of-type(1) {
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #base .section.quote-container {
+        padding-top: 31px;
+
+        .columns-wrapper:has(#a-single-platform-where-everything-works-together) .columns-1-cols {
+          margin-top: 57.5px;
+        }
+
+        .columns-wrapper .columns-2-cols:has(#payroll-time--benefits) {
+          margin-top: 61px;
+        }
+      }
+    }
+  }
+}
+
+// 11015 css 
+
+.spz_11015_v {
+  &.spz_11015_popup_open {
+    overflow: hidden;
+
+    @include mobile() {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .spz_11015_overlay {
+    position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 201;
   }
-}
-.spz_11015_v .spz_11015_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 201;
-}
-.spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) *:not(.spz_11015_popupOuter):not(.spz_11015_popupOuter *):not(#consent-banner):not(#consent-banner *) {
-  pointer-events: none;
-}
-.spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) footer #consent-banner {
-  pointer-events: auto;
-  z-index: 100000000000000000000000000;
-}
-.spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) div[data-testid=survey-root] > div {
-  z-index: 100;
-}
-.spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) div[data-testid=survey-root] > div > div {
-  z-index: 100;
+
+  &:has(.spz_11015_popupOuter[style*="display: flex"]) {
+    *:not(.spz_11015_popupOuter):not(.spz_11015_popupOuter *):not(#consent-banner):not(#consent-banner *) {
+      pointer-events: none;
+    }
+
+    footer {
+      #consent-banner {
+        pointer-events: auto;
+        z-index: 100000000000000000000000000;
+      }
+    }
+
+    div[data-testid="survey-root"] {
+      >div {
+        z-index: 100;
+        >div {
+          z-index: 100;
+        }
+      }
+    }
+  }
 }
 
 .spz_11015_popupOuter {
@@ -2963,24 +3833,23 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000000000000000000000000;
+  z-index: 9999999999999999999999999;
   padding: 48px 20px;
   overflow: auto;
   background: rgba(0, 0, 0, 0.33);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   pointer-events: none;
-}
-.spz_11015_popupOuter .spz_11015_popup {
-  pointer-events: auto;
-}
-@media (max-height: 690px) {
-  .spz_11015_popupOuter {
+
+  .spz_11015_popup {
+    pointer-events: auto;
+  }
+
+  @media (max-height: 690px) {
     align-items: flex-start;
   }
-}
-@media (max-width: 767.98px) {
-  .spz_11015_popupOuter {
+
+  @include mobile() {
     align-items: flex-start;
   }
 }
@@ -2994,9 +3863,8 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   padding: 56px;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.12);
   z-index: 202;
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v .spz_11015_popup {
+
+  @include mobile() {
     max-width: 100%;
     height: auto;
     padding: 56px 23px;
@@ -3013,13 +3881,15 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   background: none;
   padding: 0;
   cursor: pointer;
-}
-.spz_11015_v .spz_11015_popup button.close-btn:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-.spz_11015_v .spz_11015_popup button.close-btn svg:focus-visible {
-  outline: none;
+  &:focus-visible{
+    outline: none;
+    box-shadow: none;
+  }
+  svg{
+    &:focus-visible{
+      outline: none;
+    }
+  }
 }
 
 .spz_11015_v .spz_11015_popup button.close-btn:hover svg path {
@@ -3035,9 +3905,8 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   font-weight: 700;
   line-height: 46px;
   margin: 0 0 16px;
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v .spz_11015_popup #modal-title {
+
+  @include mobile() {
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
@@ -3061,29 +3930,25 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   flex-direction: column;
   gap: 10px;
 }
-@media (min-width: 768px) {
-  .spz_11015_v .spz_11015_popup .grid-wrapper {
-    min-width: 484px;
-  }
-}
 
 .spz_11015_v .spz_11015_popup .grid-wrapper .flex-row {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
-}
-.spz_11015_v .spz_11015_popup .grid-wrapper .flex-row .card {
-  flex: 0 0 calc(33.333% - 6.66px);
-  max-width: calc(33.333% - 6.66px);
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v .spz_11015_popup .grid-wrapper .flex-row {
-    flex-wrap: wrap;
+
+  .card {
+    flex: 0 0 calc(33.333% - 6.66px);
+    max-width: calc(33.333% - 6.66px);
   }
-  .spz_11015_v .spz_11015_popup .grid-wrapper .flex-row .card {
-    flex: 0 0 calc(50% - 5px);
-    max-width: calc(50% - 5px);
+
+  @include mobile() {
+    flex-wrap: wrap;
+
+    .card {
+      flex: 0 0 calc(50% - 5px);
+      max-width: calc(50% - 5px);
+    }
   }
 }
 
@@ -3092,13 +3957,15 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   flex-direction: row;
   gap: 10px;
   justify-content: center;
-}
-@media (max-width: 767.98px) {
-  .spz_11015_v .spz_11015_popup .grid-wrapper .flex-row-bottom .card {
-    flex: 0 0 calc(50% - 5px);
-    max-width: calc(50% - 5px);
+
+  @include mobile() {
+    .card {
+      flex: 0 0 calc(50% - 5px);
+      max-width: calc(50% - 5px);
+    }
   }
 }
+
 
 .spz_11015_v .spz_11015_popup .grid-wrapper .card {
   border-radius: 8px;
@@ -3120,14 +3987,14 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
 .spz_11015_v .spz_11015_popup .grid-wrapper .card.selected {
   border-radius: 8px;
   border: 1px solid #03551C;
-  background: linear-gradient(0deg, rgba(46, 121, 24, 0.1) 0%, rgba(46, 121, 24, 0.1) 100%), #FFF;
+  background: linear-gradient(0deg, rgba(46, 121, 24, 0.10) 0%, rgba(46, 121, 24, 0.10) 100%), #FFF;
   box-shadow: 0 6px 6px 0 rgba(8, 15, 1, 0.06);
 }
 
 .spz_11015_v .spz_11015_popup .grid-wrapper .card:hover {
   border-radius: 8px;
   border: 1px solid #03551C;
-  background: linear-gradient(0deg, rgba(46, 121, 24, 0.1) 0%, rgba(46, 121, 24, 0.1) 100%), #FFF;
+  background: linear-gradient(0deg, rgba(46, 121, 24, 0.10) 0%, rgba(46, 121, 24, 0.10) 100%), #FFF;
   box-shadow: 0 6px 6px 0 rgba(8, 15, 1, 0.06);
 }
 
@@ -3135,7 +4002,7 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   stroke: #03551C;
 }
 
-.spz_11015_v .spz_11015_popup .grid-wrapper .card[data-industry=healthcare]:hover svg path {
+.spz_11015_v .spz_11015_popup .grid-wrapper .card[data-industry="healthcare"]:hover svg path {
   fill: #03551C;
   stroke: none;
 }
@@ -3148,4 +4015,4 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-}/*# sourceMappingURL=11015_v1.css.map */
+}

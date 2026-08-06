@@ -1,4 +1,5 @@
 // #8005 | BILL | Home LP | Qualifying Questions
+
 // ========== CONFIG ==========
 let testId = '8005',
 	testType = 'v1',
@@ -13,7 +14,7 @@ const QQ_CONFIG = {
 		submitted: 'spz_8005_submitted'
 	},
 	q1: {
-		prompt: 'What product(s) are you interested in?',
+		prompt: 'What are you interested in?',
 		type: 'multi',
 		tiles: [
 			{
@@ -96,12 +97,12 @@ function applyStoredAnswers() {
 	const q2Value = sessionStorage.getItem(QQ_CONFIG.sessionKeys.q2);
 
 	// if (q1Value) {
-	// 	let productInput = document.querySelector('form.logiin-sub-wrapper input[name="productInterest"]');
+	// 	let productInput = document.querySelector('form.form-wrapper input[name="productInterest"]');
 	// 	if (!productInput) {
 	// 		productInput = document.createElement('input');
 	// 		productInput.type = 'hidden';
 	// 		productInput.name = 'productInterest';
-	// 		const formEl = document.querySelector('form.logiin-sub-wrapper');
+	// 		const formEl = document.querySelector('form.form-wrapper');
 	// 		if (formEl) formEl.appendChild(productInput);
 	// 	}
 	// 	productInput.value = q1Value;
@@ -224,7 +225,7 @@ function loadTestCode8005() {
 	}
 
 	// QQ flow
-	const formEl = document.querySelector('form.logiin-sub-wrapper');
+	const formEl = document.querySelector('form.form-wrapper');
 	if (!formEl) return;
 	initQualifyingQuestions(formEl);
 }
@@ -244,8 +245,8 @@ function initFormSetup() {
 	});
 
 	// Rearrange: email after lastName
-	const emailField = document.querySelector('.spz_8005_v1 form.logiin-sub-wrapper[data-name="Direct Signup Form Small"] input#email');
-	const companyName = document.querySelector('.spz_8005_v1 form.logiin-sub-wrapper[data-name="Direct Signup Form Small"] input#name');
+	const emailField = document.querySelector('.spz_8005_v1 form.form-wrapper[data-name="Direct Signup Form Small"] input#email');
+	const companyName = document.querySelector('.spz_8005_v1 form.form-wrapper[data-name="Direct Signup Form Small"] input#name');
 	if (companyName && emailField) {
 		const emailParent = emailField.parentNode;
 		const companyParent = companyName.parentNode;
@@ -256,14 +257,14 @@ function initFormSetup() {
 	document.querySelector('#firstName').closest('.form-field-columns').insertAdjacentElement('beforeend', document.querySelector('#lastName').closest('.form-field-wrap'));
 
 	// Rename labels
-	if (document.querySelector('form.logiin-sub-wrapper #numberOfEmployees + label')) {
-		document.querySelector('form.logiin-sub-wrapper #numberOfEmployees + label').innerHTML = document.querySelector('#numberOfEmployees + label').innerHTML.replace('Number Of', 'Number of');
+	if (document.querySelector('form.form-wrapper #numberOfEmployees + label')) {
+		document.querySelector('form.form-wrapper #numberOfEmployees + label').innerHTML = document.querySelector('#numberOfEmployees + label').innerHTML.replace('Number Of', 'Number of');
 	}
-	if (document.querySelector('form.logiin-sub-wrapper #signupType + label')) {
-		document.querySelector('form.logiin-sub-wrapper #signupType + label').innerHTML = 'Business Type';
+	if (document.querySelector('form.form-wrapper #signupType + label')) {
+		document.querySelector('form.form-wrapper #signupType + label').innerHTML = 'Business Type';
 	}
-	if (document.querySelector('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper #accountingSoftware + label')) {
-		document.querySelector('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper #accountingSoftware + label').innerHTML = 'Your accounting software?';
+	if (document.querySelector('.spz_8005_v1 .section_form-content form.form-wrapper #accountingSoftware + label')) {
+		document.querySelector('.spz_8005_v1 .section_form-content form.form-wrapper #accountingSoftware + label').innerHTML = 'Your accounting software?';
 	}
 
 	// Floating label state management
@@ -338,7 +339,7 @@ function initFormSetup() {
 		}
 
 		window.addEventListener('resize', function () {
-			const accountingSoftwareField = document.querySelectorAll('.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer label[for="accountingSoftware"]');
+			const accountingSoftwareField = document.querySelectorAll('.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer label[for="accountingSoftware"]');
 			accountingSoftwareField.forEach(function (ele) {
 				if (window.innerWidth >= 767) {
 					ele.textContent = 'Which accounting software do you use?';
@@ -393,17 +394,17 @@ function initFormSetup() {
 	setTimeout(initFormValidation, 3000);
 
 	// signupType label
-	document.querySelectorAll('.spz_8005_v1 form.logiin-sub-wrapper .form-fields-hide select#signupType').forEach(function (select) {
+	document.querySelectorAll('.spz_8005_v1 form.form-wrapper .form-fields-hide select#signupType').forEach(function (select) {
 		select.insertAdjacentHTML('afterend', '<label for="businessType">Business Type</label> ');
 	});
 
 	// CTA text
-	document.querySelectorAll('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper a.button').forEach(function (ele) {
+	document.querySelectorAll('.spz_8005_v1 .section_form-content form.form-wrapper a.button').forEach(function (ele) {
 		ele.textContent = 'Get Started';
 	});
 
 	// Disclaimer apostrophe fix
-	document.querySelectorAll('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper .button-disclaimer').forEach((el) => {
+	document.querySelectorAll('.spz_8005_v1 .section_form-content form.form-wrapper .button-disclaimer').forEach((el) => {
 		el.childNodes.forEach((node) => {
 			if (node.nodeType === Node.TEXT_NODE) {
 				node.textContent = node.textContent.replace(/BILL's/g, "BILL\u2019s");
@@ -428,7 +429,7 @@ function initFormSetup() {
 			showError('Valid email required.');
 		}
 
-		const accountingSoftwareField = document.querySelectorAll('.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer label[for="accountingSoftware"]');
+		const accountingSoftwareField = document.querySelectorAll('.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer label[for="accountingSoftware"]');
 		accountingSoftwareField.forEach(function (ele) {
 			if (window.innerWidth >= 767) {
 				ele.textContent = 'Which accounting software do you use?';
@@ -445,8 +446,8 @@ function initFormSetup() {
 	document.querySelector('#phone + label').textContent = 'Phone Number';
 
 	// Select arrows
-	for (let x = 0; x < document.querySelectorAll('form.logiin-sub-wrapper select').length; x++) {
-		document.querySelectorAll('form.logiin-sub-wrapper select')[x].parentNode.insertAdjacentHTML('beforeend', '<div class="arrow"></div>');
+	for (let x = 0; x < document.querySelectorAll('form.form-wrapper select').length; x++) {
+		document.querySelectorAll('form.form-wrapper select')[x].parentNode.insertAdjacentHTML('beforeend', '<div class="arrow"></div>');
 	}
 
 	// Submit button class
@@ -464,26 +465,26 @@ function initFormSetup() {
 
 	// Move MS Dynamics dropdown outside accounting container
 	const selectBoxInterval = setInterval(function () {
-		const msOptions = document.querySelector('.spz_8005_v1 .signup-direct form.logiin-sub-wrapper #accountingSoftwareContainer .form-field-wrap.msDynamicsOption_wrapper');
-		const accountingContainer = document.querySelector('.spz_8005_v1 .signup-direct form.logiin-sub-wrapper #accountingSoftwareContainer');
+		const msOptions = document.querySelector('.spz_8005_v1 .signup-direct form.form-wrapper #accountingSoftwareContainer .form-field-wrap.msDynamicsOption_wrapper');
+		const accountingContainer = document.querySelector('.spz_8005_v1 .signup-direct form.form-wrapper #accountingSoftwareContainer');
 		if (msOptions && accountingContainer) {
 			clearInterval(selectBoxInterval);
 			accountingContainer.insertAdjacentElement('afterend', msOptions);
-			document.querySelector('.spz_8005_v1 .signup-direct form.logiin-sub-wrapper #msDynamicsOption + label').innerHTML = 'Select your MS Dynamics solution:';
+			document.querySelector('.spz_8005_v1 .signup-direct form.form-wrapper #msDynamicsOption + label').innerHTML = 'Select your MS Dynamics solution:';
 		}
 	}, 50);
 
-	if (document.querySelector('.spz_8005_v1 form.logiin-sub-wrapper #msDynamicsOption + label')) {
-		document.querySelector('.spz_8005_v1 form.logiin-sub-wrapper #msDynamicsOption + label').innerHTML = 'Select your MS Dynamics solution:';
+	if (document.querySelector('.spz_8005_v1 form.form-wrapper #msDynamicsOption + label')) {
+		document.querySelector('.spz_8005_v1 form.form-wrapper #msDynamicsOption + label').innerHTML = 'Select your MS Dynamics solution:';
 	}
 
-	const msDynamicsOptionWrappers = document.querySelectorAll('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper .form-field-wrap.msDynamicsOption_wrapper');
+	const msDynamicsOptionWrappers = document.querySelectorAll('.spz_8005_v1 .section_form-content form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper');
 	msDynamicsOptionWrappers.forEach(function (msDynamicsOptionWrapper) {
 		const parentWrapper = msDynamicsOptionWrapper.parentNode;
 		parentWrapper.parentNode.insertBefore(msDynamicsOptionWrapper, parentWrapper.nextSibling);
 	});
 
-	document.querySelectorAll('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption').forEach(function (ele) {
+	document.querySelectorAll('.spz_8005_v1 .section_form-content form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption').forEach(function (ele) {
 		ele.querySelector('option:first-child').setAttribute('disabled', 'disabled');
 	});
 
@@ -539,11 +540,11 @@ function formChanges8005() {
 	if (sectionH2) {
 		sectionH2.innerHTML = 'Start using <span class="span-orange">BILL</span> today';
 	}
-	const formH2 = document.querySelector('form.logiin-sub-wrapper h2.heading-style-h4');
+	const formH2 = document.querySelector('form.form-wrapper h2.heading-style-h4');
 	if (formH2) {
 		formH2.innerHTML = 'Start using <span class="span-orange">BILL</span> today';
 	}
-	const formCTA = document.querySelector('.spz_8005_v1 .section_form-content form.logiin-sub-wrapper a.button');
+	const formCTA = document.querySelector('.spz_8005_v1 .section_form-content form.form-wrapper a.button');
 	if (formCTA) {
 		formCTA.textContent = 'Get Started';
 	}
@@ -551,7 +552,7 @@ function formChanges8005() {
 
 // ========== QQ HTML BUILDER ==========
 function buildQQHTML() {
-	const checkSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5L2 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+	const checkSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5L2 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
 
 	const q1Tiles = QQ_CONFIG.q1.tiles.map(tile =>
 		`<button type="button" class="spz-qq-tile" data-tile-id="${tile.id}" data-form-value="${tile.formValue}">
@@ -764,7 +765,7 @@ let checkCondition8005 = setInterval(function () {
 		localStorage.setItem('bdcAbTest10', '8005-v1');
 
 		if (!document.referrer.includes('bill.com/lp/home')) {
-			document.querySelectorAll('.' + testClass + ' form.logiin-sub-wrapper .form-field-columns .form-field-wrap input').forEach(function (input) {
+			document.querySelectorAll('.' + testClass + ' form.form-wrapper .form-field-columns .form-field-wrap input').forEach(function (input) {
 				input.value = '';
 				const wrap = input.closest('.form-field-wrap');
 				if (wrap) wrap.classList.remove('hasValue');

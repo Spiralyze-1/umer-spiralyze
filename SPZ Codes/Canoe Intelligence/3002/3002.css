@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* #3002 | Canoe Intelligence | Solutions | Email Plus CTA - AI Check */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:ital,wght@0,400;0,600;0,700&display=swap");
+.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:has(#sg-popup-content-wrapper-8214),
+.spz_3002_v .sgpb-popup-overlay-8214 {
+  display: none;
+}
 .spz_3002_v .header-main .nav-bar .btn-header button {
   width: 233px;
   height: 48px;
@@ -2416,6 +2420,12 @@ body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:not(:has(.form_wrapper)) > d
   right: 15px;
   z-index: 1;
   cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .spz_close_icon:hover {
@@ -2424,14 +2434,14 @@ body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper:not(:has(.form_wrapper)) > d
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_15,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_15,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_15 {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_15 {
   /* order: 1; */
   position: relative;
 }
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_16,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_16,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_16 {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_16 {
   /* order: 2; */
   position: relative;
 }
@@ -2444,7 +2454,7 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_18,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_17,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_18 {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_18 {
   /* order: 4; */
   position: relative;
   grid-column: span 6;
@@ -2452,7 +2462,7 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5 {
   /* order: 5; */
   position: relative;
   grid-column: span 6;
@@ -2501,9 +2511,9 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5 select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 select,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5 select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 select,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22 select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22 select {
   border-radius: 16px;
   border: 1px solid #ECF2F2;
@@ -2524,9 +2534,9 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value select,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5.has-value select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value select,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value select,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22.has-value select,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value select {
   color: #293054 !important;
 }
@@ -2538,9 +2548,9 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5 .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 .gform-field-label,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5 .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 .gform-field-label,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22 .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22 .gform-field-label {
   top: -11px;
   left: 12px;
@@ -2587,9 +2597,9 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value .gform-field-label,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5.has-value .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value .gform-field-label,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value .gform-field-label,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22.has-value .gform-field-label,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value .gform-field-label {
   display: flex;
   display: inline-block;
@@ -2659,9 +2669,9 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
 
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form .ginput_container input:focus,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5 select:focus,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5 select:focus,
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5 select:focus,
 body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25 select:focus,
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 select:focus {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22 select:focus {
   box-shadow: none;
   /* border-color: #293054; */
 }
@@ -2672,7 +2682,7 @@ body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-
   border-color: #293054 !important;
 }
 
-body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24 {
+body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22 {
   position: relative;
   grid-column: span 6;
 }
@@ -2865,7 +2875,7 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5 select,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5 select,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 select {
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_5 select {
     text-transform: capitalize !important;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .gfield--type-email {
@@ -2873,7 +2883,7 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_18,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_17,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_18 {
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_18 {
     grid-column: span 12;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .spz_input_focus label,
@@ -2900,15 +2910,15 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
     padding-left: 28px;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_25,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_24 {
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_22 {
     grid-column: span 12;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_16,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_16,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_16,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_16,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 {
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_5 {
     grid-column: span 12;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998),
@@ -2926,9 +2936,9 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5 select,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5 select,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_5 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_5 select,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_25 select,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_24 select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_22 select,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_22 select {
     font-size: 14px !important;
     line-height: 19.6px !important;
@@ -2936,9 +2946,9 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_5.has-value select,
   body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_5.has-value select,
-  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_5.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_5.has-value select,
   body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_15_25.has-value select,
-  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_4_24.has-value select,
+  body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_5_22.has-value select,
   body.spz_3002_v #sgpb-popup-dialog-main-div:not(:has(.form_wrapper)) .sgpb-main-html-content-wrapper form #field_6_22.has-value select {
     font-size: 14px !important;
     line-height: 19.6px !important;
@@ -2949,7 +2959,7 @@ body.spz_3002_v.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-po
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_15,
   body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_15,
-  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_4_15 {
+  body.spz_3002_v #sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_15 {
     grid-column: span 12;
   }
   body.spz_3002_v #sgpb-popup-dialog-main-div-wrapper > .sgpb-popup-dialog-main-div-theme-wrapper-2:has(#sg-popup-content-wrapper-6993) .form_wrapper {

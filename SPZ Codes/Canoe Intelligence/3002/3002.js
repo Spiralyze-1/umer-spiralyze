@@ -7,7 +7,7 @@
     experiment: '3002',
     bodyClass: 'spz_3002_v',
     guardAttr: 'data-spz-exp',
-    demoUrl: 'https://canoeintelligence.com/demo-request/',
+    allowedPaths: ['/canoe-tax', '/canoe-pro'],
     demoPopup: {
       id: 8300,
       sourcePath: '/solutions/canoe-intelligence/',
@@ -97,11 +97,21 @@
   // Namespaced logger — flip CONFIG.debug to reveal the full lifecycle.
   const log = (...args) => { if (CONFIG.debug) console.log('[SPZ-3002]', ...args); };
 
-  // Returns the current page key ('tax' | 'pro') or null when off-target.
+  const normalizePath = () => {
+    const path = location.pathname.replace(/\/+$/, '');
+    return path || '/';
+  };
+
+  // Experiment runs only on /canoe-tax/ and /canoe-pro/.
+  const isTargetPage = () => CONFIG.allowedPaths.indexOf(normalizePath()) !== -1;
+
+  if (!isTargetPage()) return;
+
+  // Returns the current page key ('tax' | 'pro').
   const getCurrentPage = () => {
-    const path = location.pathname;
-    if (/\/canoe-tax\/?/i.test(path)) return 'tax';
-    if (/\/canoe-pro\/?/i.test(path)) {
+    const path = normalizePath();
+    if (path === '/canoe-tax') return 'tax';
+    if (path === '/canoe-pro') {
       document.body.classList.add('pro-page');
       return 'pro';
     }
@@ -763,9 +773,9 @@
   var SPZ3002_POPUP_TRACKED_SELECT_FIELDS = {
     field_6_5: 1,
     field_15_5: 1,
-    field_4_5: 1,
+    field_5_5: 1,
     field_15_25: 1,
-    field_4_24: 1,
+    field_5_22: 1,
     field_6_22: 1
   };
 
@@ -800,6 +810,7 @@
     const selectors = [
       '#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form .ginput_container input[aria-describedby*="validation_message"]',
       '#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_6_5 select[aria-describedby*="validation_message"]',
+      '#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_5_5 select[aria-describedby*="validation_message"]',
       '#sgpb-popup-dialog-main-div .sgpb-main-html-content-wrapper form #field_15_5 select[aria-describedby*="validation_message"]'
     ];
 
@@ -832,6 +843,29 @@
     });
   }
 
+  function spz3002BrochureFormHasFocus(modal) {
+    modal = modal || spz3002BrochurePopupRoot();
+    if (!modal) return false;
+    var ae = document.activeElement;
+    return !!(ae && modal.contains(ae) && ae.matches("input, textarea, select"));
+  }
+
+  function spz3002CloseBrochurePopup(fromEl) {
+    var root = fromEl && fromEl.closest
+      ? (fromEl.closest("#sgpb-popup-dialog-main-div-wrapper") || fromEl.closest(".sgpb-popup-dialog-main-div-wrapper"))
+      : null;
+    var closeBtn = root && root.querySelector(".sgpb-popup-close-button-2");
+    if (closeBtn) {
+      closeBtn.click();
+      return true;
+    }
+    if (window.SGPBPopup && typeof window.SGPBPopup.closePopup === "function") {
+      window.SGPBPopup.closePopup();
+      return true;
+    }
+    return false;
+  }
+
   /** Brochure / demo controls in SG popup (CSS floated labels expect `.active` / `.focused` on `.gfield`). */
   function spz3002BrochureModalControlMatches(el) {
     if (!el || !el.closest || !spz3002IsVariantActive()) return false;
@@ -851,15 +885,19 @@
     var field = controlEl.closest(".gfield");
     if (!field) return;
 
-    field.classList.remove("spz_input_focus");
-
+    var isFocused = document.activeElement === controlEl;
     var has = controlEl.tagName === "SELECT" ? !!(controlEl.value && String(controlEl.value).trim() !== "") : !!(controlEl.value && String(controlEl.value).trim() !== "");
 
-    if (!has) {
-      field.classList.remove("active", "focused");
+    if (isFocused) {
+      field.classList.add("active", "focused", "spz_input_focus");
     } else {
-      field.classList.add("active");
-      field.classList.remove("focused");
+      field.classList.remove("spz_input_focus");
+      if (!has) {
+        field.classList.remove("active", "focused");
+      } else {
+        field.classList.add("active");
+        field.classList.remove("focused");
+      }
     }
 
     if (controlEl.tagName === "INPUT" || controlEl.tagName === "TEXTAREA") {
@@ -871,16 +909,21 @@
   function spz3002SyncBrochureFloatingLabels(modalRoot) {
     var modal = modalRoot || document.querySelector("#sgpb-popup-dialog-main-div");
     if (!modal) return;
+    var active = document.activeElement;
     modal.querySelectorAll(".gfield.gfield_visibility_visible input, .gfield.gfield_visibility_visible select, .gfield.gfield_visibility_visible textarea").forEach(function (el) {
+      if (el === active) return;
       spz3002BrochureGfieldLabelState(el);
     });
+    if (active && spz3002BrochureModalControlMatches(active)) {
+      spz3002BrochureGfieldLabelState(active);
+    }
   }
 
   function spz3002BrochurePopupShell() {
     if (!spz3002IsVariantActive()) return null;
     var popupDivs = document.querySelectorAll(".spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div");
     var brochureMark =
-      ".sgpb-popup-builder-content-6998, #sg-popup-content-wrapper-6998, " + "#sg-popup-content-wrapper-6999, #sg-popup-content-wrapper-7500, " + "form#gform_6, form#gform_4, form#gform_15";
+      ".sgpb-popup-builder-content-6998, #sg-popup-content-wrapper-6998, " + "#sg-popup-content-wrapper-6999, #sg-popup-content-wrapper-7500, " + "form#gform_6, form#gform_5, form#gform_15";
     var i;
     for (i = popupDivs.length - 1; i >= 0; i--) {
       if (popupDivs[i].querySelector(brochureMark)) return popupDivs[i];
@@ -911,7 +954,7 @@
     if (!modal) return false;
 
     var ae = document.activeElement;
-    if (ae && modal.contains(ae) && ae.matches("select")) return true;
+    if (ae && modal.contains(ae) && ae.matches("input, textarea, select")) return true;
 
     var openInScope = modal.querySelectorAll('.chosen-with-drop, .chosen-container-active, .select2-container--open, .choices.is-open, [aria-expanded="true"][role="combobox"]');
     for (var i = 0; i < openInScope.length; i++) {
@@ -937,17 +980,13 @@
     return -1;
   }
 
-  /** True when popup 6998 / gform_6 still needs reorder (fields missing or wrong DOM order). */
-  function spz3002Gform6FieldOrderPending(modal) {
-    modal = modal || spz3002BrochurePopupRoot();
-    if (!modal || !spz3002PopupIs6998Brochure(modal)) return false;
-    var form = modal.querySelector("form#gform_6");
+  /** True when a brochure GF still needs reorder (fields missing or wrong DOM order). */
+  function spz3002GformFieldOrderPending(form, lastNameSel, companyTypeSel, jobSel) {
     if (!form) return false;
-
     var email = form.querySelector(".gfield--type-email");
-    var lastName = form.querySelector("#field_6_16");
-    var companyType = form.querySelector("#field_6_5");
-    var job = form.querySelector("#field_6_22");
+    var lastName = form.querySelector(lastNameSel);
+    var companyType = form.querySelector(companyTypeSel);
+    var job = form.querySelector(jobSel);
     if (!email || !lastName || !companyType || !job) return true;
 
     var lastIdx = spz3002GformFieldIndex(form, lastName);
@@ -959,11 +998,40 @@
     return !(emailIdx > lastIdx && jobIdx > coIdx);
   }
 
+  function spz3002BrochureFieldOrderPending(modal) {
+    modal = modal || spz3002BrochurePopupRoot();
+    if (!modal) return false;
+    var gf6 = modal.querySelector("form#gform_6");
+    if (gf6 && spz3002GformFieldOrderPending(gf6, "#field_6_16", "#field_6_5", "#field_6_22")) return true;
+    var gf5 = modal.querySelector("form#gform_5");
+    if (gf5 && spz3002GformFieldOrderPending(gf5, "#field_5_16", "#field_5_5", "#field_5_22")) return true;
+    var gf15 = modal.querySelector("form#gform_15");
+    if (gf15 && spz3002GformFieldOrderPending(gf15, "#field_15_16", "#field_15_5", "#field_15_25")) return true;
+    return false;
+  }
+
+  /** True when popup 6998 / gform_6 still needs reorder (fields missing or wrong DOM order). */
+  function spz3002Gform6FieldOrderPending(modal) {
+    modal = modal || spz3002BrochurePopupRoot();
+    if (!modal || !spz3002PopupIs6998Brochure(modal)) return false;
+    var form = modal.querySelector("form#gform_6");
+    return spz3002GformFieldOrderPending(form, "#field_6_16", "#field_6_5", "#field_6_22");
+  }
+
+  function spz3002RunWithBrochureObsSuppressed(fn) {
+    window.__SPZ3002_SUPPRESS_BROCHURE_OBS__ = true;
+    try {
+      fn();
+    } finally {
+      window.__SPZ3002_SUPPRESS_BROCHURE_OBS__ = false;
+    }
+  }
+
   /** Apply field reorder when no control/dropdown is active; retry so GF AJAX + timers do not clash with the user. */
   function spz3002MaybeApplyFieldReorder(modal, attempt) {
     modal = spz3002BrochurePopupRoot() || modal;
     if (!modal) return;
-    if (!modal.querySelector("form#gform_6, form#gform_4, form#gform_15")) return;
+    if (!modal.querySelector("form#gform_6, form#gform_5, form#gform_15")) return;
     var n = attempt != null ? attempt : 0;
     var MAX_ATTEMPTS = 80;
     if (spz3002PopupShouldDeferFieldReorder(modal)) {
@@ -973,11 +1041,14 @@
         }, 150);
       return;
     }
-    brochureApplyFieldOrderInPopup(modal);
-    handleSelectHasValueClass();
-    spz3002SyncBrochureFloatingLabels(modal);
+    if (!spz3002BrochureFieldOrderPending(modal)) return;
+    spz3002RunWithBrochureObsSuppressed(function () {
+      brochureApplyFieldOrderInPopup(modal);
+      handleSelectHasValueClass();
+      spz3002SyncBrochureFloatingLabels(modal);
+    });
 
-    if (spz3002Gform6FieldOrderPending(modal) && n < MAX_ATTEMPTS) {
+    if (spz3002BrochureFieldOrderPending(modal) && n < MAX_ATTEMPTS) {
       window.setTimeout(function () {
         spz3002MaybeApplyFieldReorder(modal, n + 1);
       }, 150);
@@ -992,13 +1063,13 @@
     if (!targetDiv.querySelector(".spz_close_icon")) {
       targetDiv.insertAdjacentHTML(
         "afterbegin",
-        '<div class="spz_close_icon">' +
-          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">' +
+        '<button type="button" class="spz_close_icon" aria-label="Close">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">' +
           '<path d="M15.8337 4.16675L4.16699 15.8334M15.8337 15.8334L4.16699 4.16675" ' +
           'stroke="#293054" stroke-opacity="0.5" stroke-width="1.5" ' +
           'stroke-linecap="round" stroke-linejoin="round"></path>' +
           "</svg>" +
-          "</div>"
+          "</button>"
       );
     }
   }
@@ -1030,7 +1101,7 @@
     if (!modalRoot) return;
     [
       { id: "6", companySel: "#field_6_16" },
-      { id: "4", companySel: "#field_4_16" },
+      { id: "5", companySel: "#field_5_16" },
       { id: "15", companySel: "#field_15_16" }
     ].forEach(function (cfg) {
       var fel = spz3002GravityFormByNumInPopup(modalRoot, cfg.id);
@@ -1038,7 +1109,9 @@
       var email = fel.querySelector(".gfield--type-email");
       var companyField = fel.querySelector(cfg.companySel + ".gfield--type-text") || fel.querySelector(cfg.companySel);
       if (!email || !companyField) return;
-      companyField.after(email);
+      if (spz3002GformFieldIndex(fel, email) <= spz3002GformFieldIndex(fel, companyField)) {
+        companyField.after(email);
+      }
       var validationMessage = email.querySelector(".validation_message");
       if (validationMessage) {
         validationMessage.innerHTML = validationMessage.innerHTML.replace("The email address entered is invalid, please check the formatting (e.g. email@domain.com).", "Invalid email format.");
@@ -1051,7 +1124,7 @@
     if (!modalRoot) return;
     [
       [".sgpb-popup-builder-content-6998, #sg-popup-content-wrapper-6998", "#gform_6", "#field_6_16"],
-      ["#sg-popup-content-wrapper-6999", "#gform_4", "#field_4_16"],
+      ["#sg-popup-content-wrapper-6999", "#gform_5", "#field_5_16"],
       ["#sg-popup-content-wrapper-7500", "#gform_15", "#field_15_16"]
     ].forEach(function (parts) {
       var wrapper = parts[0];
@@ -1063,7 +1136,9 @@
       var email = fel.querySelector(".gfield--type-email");
       var companyField = fel.querySelector(companySel + ".gfield--type-text") || fel.querySelector(companySel);
       if (!email || !companyField) return;
-      companyField.after(email);
+      if (spz3002GformFieldIndex(fel, email) <= spz3002GformFieldIndex(fel, companyField)) {
+        companyField.after(email);
+      }
       var validationMessage = email.querySelector(".validation_message");
       if (validationMessage) {
         validationMessage.innerHTML = validationMessage.innerHTML.replace("The email address entered is invalid, please check the formatting (e.g. email@domain.com).", "Invalid email format.");
@@ -1079,7 +1154,17 @@
     if (!form) return;
     var emailField = form.querySelector(".gfield--type-email") || form.querySelector('[id$="_2"]');
     var lastNameField = form.querySelector(lastNameSel || '[id$="_16"]');
-    if (emailField && lastNameField) lastNameField.after(emailField);
+    if (!emailField || !lastNameField) return;
+    if (spz3002GformFieldIndex(form, emailField) <= spz3002GformFieldIndex(form, lastNameField)) {
+      lastNameField.after(emailField);
+    }
+  }
+
+  function spz3002InsertAfterIfNeeded(container, anchor, node) {
+    if (!container || !anchor || !node || anchor === node) return;
+    if (spz3002GformFieldIndex(container, node) <= spz3002GformFieldIndex(container, anchor)) {
+      anchor.insertAdjacentElement("afterend", node);
+    }
   }
 
   function brochureApplyFieldOrderInPopup(modal) {
@@ -1087,35 +1172,35 @@
     if (!modal) return;
 
     var gf6 = modal.querySelector(".sgpb-main-html-content-wrapper form#gform_6") || modal.querySelector("form#gform_6");
-    var gf4 = modal.querySelector(".sgpb-main-html-content-wrapper form#gform_4") || modal.querySelector("form#gform_4");
+    var gf5 = modal.querySelector(".sgpb-main-html-content-wrapper form#gform_5") || modal.querySelector("form#gform_5");
     var gf15 = modal.querySelector(".sgpb-main-html-content-wrapper form#gform_15") || modal.querySelector("form#gform_15");
 
     spz3002ReorderEmailAfterLastName(gf6, "#field_6_16");
-    spz3002ReorderEmailAfterLastName(gf4, "#field_4_16");
+    spz3002ReorderEmailAfterLastName(gf5, "#field_5_16");
     spz3002ReorderEmailAfterLastName(gf15, "#field_15_16");
 
     if (gf15) {
       var companyName = gf15.querySelector('[id="field_15_17"]');
       var companyType = gf15.querySelector('[id="field_15_5"]');
-      if (companyName && companyType) companyName.after(companyType);
+      spz3002InsertAfterIfNeeded(gf15, companyName, companyType);
     }
 
     if (gf6) {
       var giJob = gf6.querySelector("#field_6_22");
       var giCo = gf6.querySelector("#field_6_5");
-      if (giJob && giCo) giCo.insertAdjacentElement("afterend", giJob);
+      spz3002InsertAfterIfNeeded(gf6, giCo, giJob);
     }
 
     if (gf15) {
       var connJob = gf15.querySelector("#field_15_25");
       var connCo = gf15.querySelector("#field_15_5");
-      if (connJob && connCo) connCo.insertAdjacentElement("afterend", connJob);
+      spz3002InsertAfterIfNeeded(gf15, connCo, connJob);
     }
 
-    if (gf4) {
-      var assetJob = gf4.querySelector("#field_4_24");
-      var assetCo = gf4.querySelector("#field_4_5");
-      if (assetJob && assetCo) assetCo.insertAdjacentElement("afterend", assetJob);
+    if (gf5) {
+      var assetJob = gf5.querySelector("#field_5_22");
+      var assetCo = gf5.querySelector("#field_5_5");
+      spz3002InsertAfterIfNeeded(gf5, assetCo, assetJob);
     }
 
     brochureReorderBrochureEmailColumns(modal);
@@ -1128,16 +1213,18 @@
     var timer = window.setInterval(function () {
       attempts += 1;
       var modal = spz3002BrochurePopupRoot();
-      if (!modal || !modal.querySelector("form#gform_6")) {
+      if (!modal || !modal.querySelector("form#gform_6, form#gform_5, form#gform_15")) {
         if (attempts >= MAX) window.clearInterval(timer);
         return;
       }
-      if (!spz3002PopupShouldDeferFieldReorder(modal)) {
-        brochureApplyFieldOrderInPopup(modal);
-        handleSelectHasValueClass();
-        spz3002SyncBrochureFloatingLabels(modal);
+      if (!spz3002PopupShouldDeferFieldReorder(modal) && spz3002BrochureFieldOrderPending(modal)) {
+        spz3002RunWithBrochureObsSuppressed(function () {
+          brochureApplyFieldOrderInPopup(modal);
+          handleSelectHasValueClass();
+          spz3002SyncBrochureFloatingLabels(modal);
+        });
       }
-      if (!spz3002Gform6FieldOrderPending(modal) || attempts >= MAX) {
+      if (!spz3002BrochureFieldOrderPending(modal) || attempts >= MAX) {
         window.clearInterval(timer);
       }
     }, 200);
@@ -1148,6 +1235,7 @@
     var delays = [0, 32, 100, 200, 380, 700, 1200, 2000, 3500];
     delays.forEach(function (ms) {
       window.setTimeout(function () {
+        if (spz3002BrochureFormHasFocus()) return;
         brochureFormDomEnhancements();
         updateSpz3002PopupFilledState();
       }, ms);
@@ -1161,25 +1249,37 @@
 
     var debounceTimer = null;
     var DEBOUNCE_MS = 160;
+    var popupObservers = window.__SPZ3002_POPUP_FIELD_OBS__ || (window.__SPZ3002_POPUP_FIELD_OBS__ = []);
 
     function applyReorderAfterStableFrame() {
-      if (!spz3002IsVariantActive()) return;
+      if (!spz3002IsVariantActive() || window.__SPZ3002_SUPPRESS_BROCHURE_OBS__) return;
       window.requestAnimationFrame(function () {
         window.requestAnimationFrame(function () {
           var modal = spz3002BrochurePopupRoot();
           if (!modal || !modal.querySelector('form[id^="gform_"]')) return;
+          if (!spz3002BrochureFieldOrderPending(modal)) return;
           spz3002MaybeApplyFieldReorder(modal);
         });
       });
     }
 
     function scheduleReorder() {
-      if (!spz3002IsVariantActive()) return;
+      if (!spz3002IsVariantActive() || window.__SPZ3002_SUPPRESS_BROCHURE_OBS__) return;
+      var modal = spz3002BrochurePopupRoot();
+      if (!modal || !spz3002BrochureFieldOrderPending(modal)) return;
+      if (spz3002BrochureFormHasFocus(modal) || spz3002PopupShouldDeferFieldReorder(modal)) return;
       if (debounceTimer) window.clearTimeout(debounceTimer);
       debounceTimer = window.setTimeout(function () {
         debounceTimer = null;
         applyReorderAfterStableFrame();
       }, DEBOUNCE_MS);
+    }
+
+    function disconnectPopupObservers() {
+      popupObservers.forEach(function (entry) {
+        if (entry && entry.disconnect) entry.disconnect();
+      });
+      popupObservers.length = 0;
     }
 
     function observePopupModal(popupModal) {
@@ -1190,23 +1290,34 @@
           scheduleReorder();
         });
         mo.observe(popupModal, { childList: true, subtree: true });
+        popupObservers.push(mo);
       } catch (e) {}
     }
 
-    try {
-      var bootMo = new MutationObserver(function () {
-        var wrapper = document.querySelector(".spz_3002_v #sgpb-popup-dialog-main-div-wrapper");
-        if (wrapper) observePopupModal(wrapper);
-        var m = spz3002BrochurePopupRoot();
-        if (m) observePopupModal(m);
-      });
-      bootMo.observe(document.documentElement, { childList: true, subtree: true });
-    } catch (e) {}
+    function attachPopupObservers() {
+      var wrapper = document.querySelector(".spz_3002_v #sgpb-popup-dialog-main-div-wrapper");
+      if (wrapper) observePopupModal(wrapper);
+      var modal = spz3002BrochurePopupRoot();
+      if (modal) observePopupModal(modal);
+    }
 
-    var wrapperFirst = document.querySelector(".spz_3002_v #sgpb-popup-dialog-main-div-wrapper");
-    if (wrapperFirst) observePopupModal(wrapperFirst);
-    var first = spz3002BrochurePopupRoot();
-    if (first) observePopupModal(first);
+    attachPopupObservers();
+
+    if (typeof window.addEventListener === "function") {
+      var onPopupEvent = typeof sgAddEvent === "function"
+        ? function (name, fn) { sgAddEvent(window, name, fn); }
+        : function (name, fn) { window.addEventListener(name, fn); };
+
+      onPopupEvent("sgpbDidClose", function () {
+        disconnectPopupObservers();
+        document.querySelectorAll(".spz_3002_v #sgpb-popup-dialog-main-div-wrapper > div").forEach(function (node) {
+          node.__spz3002FieldOrderSubtreeObs = false;
+        });
+      });
+      onPopupEvent("sgpbDidOpen", function () {
+        attachPopupObservers();
+      });
+    }
   }
 
   function brochureFormDelegatedListenersOnce() {
@@ -1215,11 +1326,11 @@
 
     document.addEventListener("click", function (e) {
       const closeIcon = e.target.closest(".spz_close_icon");
-      if (!closeIcon) return;
-      const wrapper = closeIcon.parentElement;
-      const closeImg = wrapper && wrapper.querySelector('img[title="Close"]');
-      if (closeImg) closeImg.click();
-    });
+      if (!closeIcon || !spz3002IsVariantActive()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      spz3002CloseBrochurePopup(closeIcon);
+    }, true);
 
     document.addEventListener(
       "input",
@@ -1291,16 +1402,6 @@
     });
   }
 
-  function isWhyCanoePage() {
-    var body = spz3002Body();
-    return window.location.pathname.includes("why-canoe-intelligence") || !!(body && body.classList.contains("why-canoe-intelligence"));
-  }
-
-  function isWhyCanoeInfoPage() {
-    const normalizedPath = window.location.pathname.replace(/\/$/, "");
-    return window.location.hostname === "info.canoeintelligence.com" && normalizedPath === "/why-canoe-intelligence";
-  }
-
   function spz3002DemoCountrySelect() {
     return document.querySelector(".spz_3002_v .form_wrapper form#gform_3 #field_3_23 select") || document.querySelector(".spz_3002_v #sg-popup-content-wrapper-6993 form#gform_3 #field_3_23 select");
   }
@@ -1315,8 +1416,6 @@
   }
 
   function updateStatePlaceholder() {
-    if (isWhyCanoePage()) return;
-
     const stateSelect = spz3002DemoStateSelect();
     const firstOption = stateSelect ? stateSelect.querySelector("option:first-child") : null;
     if (firstOption && firstOption.textContent !== "State") {
@@ -1342,7 +1441,7 @@
         countrySelect.dataset.spzCountryChangeBound = "1";
         countrySelect.addEventListener("change", function (event) {
           setTimeout(function () {
-            if (event.target.value === "United States" && !isWhyCanoeInfoPage()) {
+            if (event.target.value === "United States") {
               const stateField = spz3002DemoStateField();
               const stateLabel = stateField?.querySelector("label");
               if (stateLabel) stateLabel.textContent = "State";
@@ -1363,44 +1462,49 @@
   function brochureFormDomEnhancements() {
     var modal = spz3002BrochurePopupRoot();
     if (!modal) return;
-    if (!modal.querySelector("form#gform_6, form#gform_4, form#gform_15")) return;
+    if (!modal.querySelector("form#gform_6, form#gform_5, form#gform_15")) return;
+    var userInteracting = spz3002BrochureFormHasFocus(modal);
 
-    ensureBrochurePopupChrome();
-    updateSelectState();
+    spz3002RunWithBrochureObsSuppressed(function () {
+      ensureBrochurePopupChrome();
+      updateSelectState();
 
-    modal.querySelectorAll('form[id^="gform_"] .gfield label').forEach(function (label) {
-      var labelText = label.textContent.trim().replace(/\*/g, "").replace(/\s+/g, "-").toLowerCase();
+      modal.querySelectorAll('form[id^="gform_"] .gfield label').forEach(function (label) {
+        var labelText = label.textContent.trim().replace(/\*/g, "").replace(/\s+/g, "-").toLowerCase();
 
-      var gf = label.closest(".gfield");
-      if (gf) gf.classList.add(labelText);
-    });
-
-    spz3002SyncBrochureFloatingLabels(modal);
-    spz3002MaybeApplyFieldReorder(modal);
-
-    document
-      .querySelectorAll(
-        ".spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-7500) h2.gform_title," +
-          ".spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998) h2.gform_title," +
-          ".spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6999) h2.gform_title"
-      )
-      .forEach(function (ele) {
-        ele.textContent = "Download the Canoe Brochure";
+        var gf = label.closest(".gfield");
+        if (gf) gf.classList.add(labelText);
       });
 
-    modal.querySelectorAll("#field_6_5 select option:first-child, #field_15_5 select option:first-child, #field_4_5 select option:first-child").forEach(function (ele) {
-      ele.textContent = "Company Type*";
+      if (!userInteracting) {
+        spz3002SyncBrochureFloatingLabels(modal);
+        spz3002MaybeApplyFieldReorder(modal);
+      }
+
+      document
+        .querySelectorAll(
+          ".spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-7500) h2.gform_title," +
+            ".spz_3002_v #sgpb-popup-dialog-main-div:has(.sgpb-popup-builder-content-6998) h2.gform_title," +
+            ".spz_3002_v #sgpb-popup-dialog-main-div:has(#sg-popup-content-wrapper-6999) h2.gform_title"
+        )
+        .forEach(function (ele) {
+          ele.textContent = "Download the Canoe Brochure";
+        });
+
+      modal.querySelectorAll("#field_6_5 select option:first-child, #field_15_5 select option:first-child, #field_5_5 select option:first-child").forEach(function (ele) {
+        ele.textContent = "Company Type*";
+      });
+
+      modal.querySelectorAll("#field_15_25 select option:first-child, #field_5_22 select option:first-child, #field_6_22 select option:first-child").forEach(function (option) {
+        option.textContent = "Your Job Function*";
+        option.closest(".gfield").querySelector(".gfield_label").textContent = "Your Job Function*";
+      });
+
+      handleSelectHasValueClass();
+      handleErrorState();
+      updateSpz3002PopupFilledState();
     });
 
-    modal.querySelectorAll("#field_15_25 select option:first-child, #field_4_24 select option:first-child, #field_6_22 select option:first-child").forEach(function (option) {
-      option.textContent = "Your Job Function*";
-      let gfield = option.closest(".gfield");
-      option.closest(".gfield").querySelector(".gfield_label").textContent = "Your Job Function*";
-    });
-
-    handleSelectHasValueClass();
-    handleErrorState();
-    updateSpz3002PopupFilledState();
     window.setTimeout(updateSpz3002PopupFilledState, 120);
     spz3002SyncBrochureFloatingLabels(modal);
     window.setTimeout(function () {
@@ -1409,6 +1513,7 @@
   }
 
   function brochureFormChanges() {
+    spz3002EnsurePopupFieldOrderObserver();
     brochureFormDelegatedListenersOnce();
     brochureFormDomEnhancements();
     brochureScheduleDomEnhancementPasses();
@@ -1441,7 +1546,7 @@
       window.jQuery(document).on("gform_post_render.spz3002", function (_event, formId) {
         if (!spz3002IsVariantActive()) return;
         if (formId === 3) return;
-        if ([4, 6, 15].indexOf(Number(formId)) === -1) return;
+        if ([5, 6, 15].indexOf(Number(formId)) === -1) return;
         var modal = spz3002BrochurePopupRoot();
         if (!modal || !modal.querySelector("form#gform_" + formId)) return;
         brochureFormDelegatedListenersOnce();
@@ -1456,7 +1561,6 @@
     }
   }
   spz3002BindGformPostRender();
-  spz3002EnsurePopupFieldOrderObserver();
 
 
   window.addEventListener('click', (e) => {
@@ -1477,7 +1581,8 @@
 
     if (e.target.closest('.close-popup')) {
       e.preventDefault();
-      document.querySelector('.sgpb-popup-close-button-2').click();
+      e.stopPropagation();
+      spz3002CloseBrochurePopup(e.target);
     }
   });
 
@@ -1491,6 +1596,12 @@
 
 /* ===== Down-funnel tracking (VARIANT) ===== */
 (function () {
+  const isTargetPage = () => {
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    return path === '/canoe-tax' || path === '/canoe-pro';
+  };
+  if (!isTargetPage()) return;
+
   //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
   // Set the value of the squeezePage variable as needed:

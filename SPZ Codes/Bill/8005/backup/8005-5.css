@@ -43,9 +43,6 @@ body.spz_8005_v1 {
   position: relative;
   z-index: 10;
 }
-body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
-  display: none;
-}
 
 @media (max-width: 767.98px) {
   body.spz_8005_v1 {
@@ -67,7 +64,7 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
     padding: 0 18px !important;
   }
 }
-.spz_8005_v1 form.logiin-sub-wrapper {
+.spz_8005_v1 form.form-wrapper {
   border-radius: 16px;
   background: #FFF;
   box-shadow: 0 4px 20px -2px rgba(45, 39, 37, 0.1), 0 2px 4px -2px rgba(45, 39, 37, 0.06);
@@ -77,12 +74,12 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   width: 528px;
 }
 
-.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper {
+.spz_8005_v1.spz-qq-step-1 form.form-wrapper {
   width: 640px;
 }
 
 @media (max-width: 767.98px) {
-  .spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper {
+  .spz_8005_v1.spz-qq-step-1 form.form-wrapper {
     width: 100%;
     max-width: 450px;
   }
@@ -149,7 +146,7 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper h2.heading-style-h4 {
+.spz_8005_v1 form.form-wrapper h2.heading-style-h4 {
   color: #2D2725;
   text-align: center;
   font-size: 32px;
@@ -161,16 +158,16 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   margin-bottom: 24px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .spacer-small {
+.spz_8005_v1 form.form-wrapper .spacer-small {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-options.hasValue select#signupType,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.hasValue select#signupType {
+.spz_8005_v1 form.form-wrapper .form-options.hasValue select#signupType,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select#signupType {
   color: #2D2725;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper #form-panel-3.hasValue select#signupType ~ label {
+.spz_8005_v1 form.form-wrapper #form-panel-3.hasValue select#signupType ~ label {
   overflow: hidden;
   color: #5D5F6D;
   background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
@@ -181,11 +178,11 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   line-height: 19.2px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper h2.heading-style-h4 + .spacer-xsmall {
+.spz_8005_v1 form.form-wrapper h2.heading-style-h4 + .spacer-xsmall {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns {
+.spz_8005_v1 form.form-wrapper .form-field-columns {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -196,12 +193,12 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   grid-row-gap: 0;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap {
   width: calc((100% - 16px) / 2);
   position: relative;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input {
   border-radius: 8px;
   border: 1px solid rgba(34, 30, 28, 0.1);
   background: #FDFCFC;
@@ -224,17 +221,17 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   outline: 0;
 }
 @media (max-width: 767.98px) {
-  .spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input {
+  .spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input {
     max-height: unset;
     margin-top: 0;
   }
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input:-webkit-autofill ~ label {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:-webkit-autofill ~ label {
   color: transparent;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper label {
+.spz_8005_v1 form.form-wrapper label {
   position: absolute;
   top: 8px;
   left: 8px;
@@ -258,11 +255,11 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   white-space: nowrap;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns input::-webkit-input-placeholder {
+.spz_8005_v1 form.form-wrapper .form-field-columns input::-webkit-input-placeholder {
   color: transparent;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper a.button {
+.spz_8005_v1 form.form-wrapper a.button {
   width: 100%;
   margin: 8px 0 12px;
   height: 50px;
@@ -276,54 +273,54 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   border-width: 1px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper a.button:hover,
-.spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:hover {
+.spz_8005_v1 form.form-wrapper a.button:hover,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:hover {
   background: #2C73DD;
   border-color: #145AB8;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper a.button:focus-visible,
-.spz_8005_v1 form.logiin-sub-wrapper a.button:active,
-.spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus-visible,
-.spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:active {
+.spz_8005_v1 form.form-wrapper a.button:focus-visible,
+.spz_8005_v1 form.form-wrapper a.button:active,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus-visible,
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:active {
   border: 1px solid #0C366E;
   background: #0242A1;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus {
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1:focus {
   outline: none;
   box-shadow: inset 0 0 0 2px #fff;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-options select:focus option,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select:focus option {
+.spz_8005_v1 form.form-wrapper .form-options select:focus option,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select:focus option {
   color: #2D2725;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select:focus,
-.spz_8005_v1 form.logiin-sub-wrapper select:focus {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus,
+.spz_8005_v1 form.form-wrapper select:focus {
   color: #2D2725;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input::-moz-placeholder,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select::-moz-placeholder,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select::-moz-placeholder {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input::-moz-placeholder,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select::-moz-placeholder,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select::-moz-placeholder {
   color: transparent;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input::placeholder,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select::placeholder,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select::placeholder {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input::placeholder,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select::placeholder,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select::placeholder {
   color: transparent;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input:focus ~ label {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label {
   color: #2D2725 !important;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select:focus ~ label {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select:focus ~ label {
   overflow: hidden;
   color: #2D2725;
   text-overflow: ellipsis;
@@ -335,12 +332,12 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   font-family: "Soehne Buch", sans-serif;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue input ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue select ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap .form-field-wrap.hasValue select ~ label {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .form-field-wrap.hasValue select ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-wrap .form-field-wrap.hasValue select ~ label {
   font-size: 12px;
   line-height: 19.2px;
   background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
@@ -348,9 +345,9 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   left: 8px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper select.hasValue input ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.hasValue select ~ label {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper select.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select ~ label {
   overflow: hidden;
   color: #5D5F6D;
   background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
@@ -362,11 +359,11 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   top: -10px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper input:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper select:focus ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap.hasValue select ~ label,
-.spz_8005_v1 form.logiin-sub-wrapper #form-panel-3.hasValue select ~ label {
+.spz_8005_v1 form.form-wrapper input:focus ~ label,
+.spz_8005_v1 form.form-wrapper select:focus ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue input ~ label,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap.hasValue select ~ label,
+.spz_8005_v1 form.form-wrapper #form-panel-3.hasValue select ~ label {
   font-size: 12px;
   line-height: 19.2px;
   background-image: linear-gradient(to bottom, #fff 50%, #FDFCFC 50%);
@@ -374,13 +371,13 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   left: 8px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap input:focus,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap select:focus,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select:focus {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap input:focus,
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap select:focus,
+.spz_8005_v1 form.form-wrapper .form-field-wrap select:focus {
   border-color: #584F4B;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .button-disclaimer {
+.spz_8005_v1 form.form-wrapper .button-disclaimer {
   margin: 0;
   color: #2D2725;
   text-align: center;
@@ -390,7 +387,7 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   line-height: 19.2px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .button-disclaimer a {
+.spz_8005_v1 form.form-wrapper .button-disclaimer a {
   color: #024DBD;
   font-size: 12px;
   font-style: normal;
@@ -400,23 +397,23 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   transition: all 0.4s ease-in;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .button-disclaimer a:hover {
+.spz_8005_v1 form.form-wrapper .button-disclaimer a:hover {
   text-decoration: underline;
   transition: all 0.4s ease-in;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-fields-hide[style="display: block;"] {
+.spz_8005_v1 form.form-wrapper .form-fields-hide[style="display: block;"] {
   width: 100%;
   display: flex !important;
   flex-wrap: wrap;
   grid-column-gap: 16px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper #form-panel-3 .flex-horizontal {
+.spz_8005_v1 form.form-wrapper #form-panel-3 .flex-horizontal {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper #form-panel-3 {
+.spz_8005_v1 form.form-wrapper #form-panel-3 {
   float: left;
   position: relative;
   width: 100%;
@@ -424,7 +421,7 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   grid-row-gap: 0;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper select#signupType {
+.spz_8005_v1 form.form-wrapper select#signupType {
   border-radius: 8px;
   border: 1px solid rgba(34, 30, 28, 0.1);
   background: #FDFCFC;
@@ -444,18 +441,18 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   -webkit-appearance: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer {
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer {
   width: 100%;
   margin: 0;
   margin-left: 0;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer .form-field-wrap {
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer .form-field-wrap {
   width: 100%;
   position: relative;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select {
+.spz_8005_v1 form.form-wrapper .form-field-wrap select {
   border-radius: 8px;
   border: 1px solid rgba(34, 30, 28, 0.1);
   background: #FDFCFC;
@@ -476,9 +473,9 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   -webkit-appearance: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper select#signupType ~ .arrow,
-.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer select#accountingSoftware ~ .arrow,
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption ~ .arrow {
+.spz_8005_v1 form.form-wrapper select#signupType ~ .arrow,
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer select#accountingSoftware ~ .arrow,
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper select#msDynamicsOption ~ .arrow {
   position: absolute;
   top: 10px;
   right: 12px;
@@ -494,22 +491,22 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   color: #2D2725 !important;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper input:-webkit-autofill {
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill {
   color: #2D2725 !important;
   -webkit-text-fill-color: #2D2725 !important;
   -webkit-transition: background-color 5000s ease-in-out 0s !important;
   transition: background-color 5000s ease-in-out 0s !important;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper input:-webkit-autofill,
-.spz_8005_v1 form.logiin-sub-wrapper input:-webkit-autofill:hover,
-.spz_8005_v1 form.logiin-sub-wrapper input:-webkit-autofill:focus,
-.spz_8005_v1 form.logiin-sub-wrapper textarea:-webkit-autofill,
-.spz_8005_v1 form.logiin-sub-wrapper textarea:-webkit-autofill:hover,
-.spz_8005_v1 form.logiin-sub-wrapper textarea:-webkit-autofill:focus,
-.spz_8005_v1 form.logiin-sub-wrapper select:-webkit-autofill,
-.spz_8005_v1 form.logiin-sub-wrapper select:-webkit-autofill:hover,
-.spz_8005_v1 form.logiin-sub-wrapper select:-webkit-autofill:focus {
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper input:-webkit-autofill:focus,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper textarea:-webkit-autofill:focus,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill:hover,
+.spz_8005_v1 form.form-wrapper select:-webkit-autofill:focus {
   background-color: #FDFCFC !important;
   -webkit-box-shadow: 0 0 0 1000px #FDFCFC inset !important;
   -webkit-text-fill-color: #2D2725 !important;
@@ -517,7 +514,7 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
+.spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
   border-radius: 12px;
   border: 1px solid #114A97;
   background: #024DBD;
@@ -533,12 +530,12 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   margin-bottom: 12px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.msDynamicsOption_wrapper {
+.spz_8005_v1 form.form-wrapper .form-field-wrap.msDynamicsOption_wrapper {
   width: 100%;
   position: relative;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap select {
+.spz_8005_v1 form.form-wrapper .form-field-wrap select {
   border-radius: 8px;
   border: 1px solid rgba(34, 30, 28, 0.1);
   background: #FDFCFC;
@@ -558,26 +555,26 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   -webkit-appearance: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.hasValue select {
+.spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select {
   color: #2D2725 !important;
 }
 @media (max-width: 767.98px) {
-  .spz_8005_v1 form.logiin-sub-wrapper .form-field-wrap.hasValue select {
+  .spz_8005_v1 form.form-wrapper .form-field-wrap.hasValue select {
     padding-right: 30px;
   }
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper select#msDynamicsOption.hide + label {
+.spz_8005_v1 form.form-wrapper select#msDynamicsOption.hide + label {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper select#msDynamicsOption.hide + label + .arrow {
+.spz_8005_v1 form.form-wrapper select#msDynamicsOption.hide + label + .arrow {
   display: none;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .spz-business-type.hasValue select ~ label,
+.spz_8005_v1 form.form-wrapper .spz-business-type.hasValue select ~ label,
 .spz_8005_v1 section#signupType .form-field-wrap.hasValue label,
-.spz_8005_v1 form.logiin-sub-wrapper #accountingSoftwareContainer .form-field-wrap.hasValue label {
+.spz_8005_v1 form.form-wrapper #accountingSoftwareContainer .form-field-wrap.hasValue label {
   overflow: hidden;
   background: #fff;
   color: #5D5F6D;
@@ -589,18 +586,18 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
   top: -10px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap .error-message {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .error-message {
   position: relative;
   top: -6px;
   display: flex;
   align-items: center;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap .error-message span {
+.spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap .error-message span {
   margin-left: 5px;
 }
 
-.spz_8005_v1 form.logiin-sub-wrapper.formProgressive input#email + .error-message {
+.spz_8005_v1 form.form-wrapper.formProgressive input#email + .error-message {
   margin-bottom: 5px;
 }
 
@@ -630,23 +627,23 @@ body.spz_8005_v1.spz-qq-step-2 .spz-qq-wrap .spz-qq-step[data-step="2"] {
   display: flex;
 }
 
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper .form-field-columns,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper .form-fields-hide,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper #form-panel-3,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper .button-disclaimer,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper a.button,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper input.submit-button,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper h2.heading-style-h4,
-body.spz_8005_v1.spz-qq-step-1 form.logiin-sub-wrapper .spacer-xsmall,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .form-field-columns,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .form-fields-hide,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper #form-panel-3,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .button-disclaimer,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper a.button,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper input.submit-button,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper h2.heading-style-h4,
+body.spz_8005_v1.spz-qq-step-1 form.form-wrapper .spacer-xsmall,
 body.spz_8005_v1.spz-qq-step-1 .spz-qq-step3-header,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper .form-field-columns,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper .form-fields-hide,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper #form-panel-3,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper .button-disclaimer,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper a.button,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper input.submit-button,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper h2.heading-style-h4,
-body.spz_8005_v1.spz-qq-step-2 form.logiin-sub-wrapper .spacer-xsmall,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .form-field-columns,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .form-fields-hide,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper #form-panel-3,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .button-disclaimer,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper a.button,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper input.submit-button,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper h2.heading-style-h4,
+body.spz_8005_v1.spz-qq-step-2 form.form-wrapper .spacer-xsmall,
 body.spz_8005_v1.spz-qq-step-2 .spz-qq-step3-header {
   display: none !important;
 }
@@ -663,7 +660,7 @@ body.spz_8005_v1.spz-qq-step-3 .spz-qq-step3-header {
   margin-bottom: 24px;
 }
 
-body.spz_8005_v1.spz-qq-step-3 form.logiin-sub-wrapper h2.heading-style-h4 {
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper h2.heading-style-h4 {
   display: block;
 }
 
@@ -998,19 +995,19 @@ body.spz_8005_v1.spz-qq-bypass .spz-qq-step3-header {
 }
 
 /* Hide signupType on Step 3 when QQ is active */
-body.spz_8005_v1.spz-qq-step-3 form.logiin-sub-wrapper .form-options,
-body.spz_8005_v1.spz-qq-step-3 form.logiin-sub-wrapper #form-panel-3 {
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper .form-options,
+body.spz_8005_v1.spz-qq-step-3 form.form-wrapper #form-panel-3 {
   display: none !important;
 }
 
 /* Show accountingSoftware only when Q2=direct */
-body.spz_8005_v1.spz-qq-console:not(.spz-qq-bypass) form.logiin-sub-wrapper #accountingSoftwareContainer {
+body.spz_8005_v1.spz-qq-console:not(.spz-qq-bypass) form.form-wrapper #accountingSoftwareContainer {
   display: none !important;
 }
 
 /* ============ RESPONSIVE - TABLET ============ */
 @media only screen and (max-width: 1023.98px) {
-  .spz_8005_v1 form.logiin-sub-wrapper {
+  .spz_8005_v1 form.form-wrapper {
     padding: 31px 39px 30px;
   }
 }
@@ -1020,12 +1017,12 @@ body.spz_8005_v1.spz-qq-console:not(.spz-qq-bypass) form.logiin-sub-wrapper #acc
     background-attachment: fixed !important;
     overflow: auto;
   }
-  .spz_8005_v1 form.logiin-sub-wrapper {
+  .spz_8005_v1 form.form-wrapper {
     width: 100%;
     margin: 0 auto;
     padding: 23px 19px;
   }
-  .spz_8005_v1 form.logiin-sub-wrapper h2.heading-style-h4 {
+  .spz_8005_v1 form.form-wrapper h2.heading-style-h4 {
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
@@ -1033,13 +1030,13 @@ body.spz_8005_v1.spz-qq-console:not(.spz-qq-bypass) form.logiin-sub-wrapper #acc
     letter-spacing: -0.56px;
     margin-bottom: 20px;
   }
-  .spz_8005_v1 form.logiin-sub-wrapper .form-field-columns .form-field-wrap {
+  .spz_8005_v1 form.form-wrapper .form-field-columns .form-field-wrap {
     width: 100%;
   }
-  .spz_8005_v1 form.logiin-sub-wrapper a.button {
+  .spz_8005_v1 form.form-wrapper a.button {
     margin: 4px 0 12px;
   }
-  .spz_8005_v1 form.logiin-sub-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
+  .spz_8005_v1 form.form-wrapper input.submit-button.spz-submitcta-8005.spz_8005_v1 {
     margin-top: 4px;
   }
   /* QQ Mobile Styles */

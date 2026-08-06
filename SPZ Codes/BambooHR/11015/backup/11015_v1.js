@@ -1,6 +1,34 @@
+function waitForElement(cssSelector, callback) {
+	var interval;
+	var timeout;
+
+	var check = function () {
+		try {
+			var element = document.querySelector(cssSelector);
+			if (element) {
+				clearInterval(interval);
+				clearTimeout(timeout);
+				callback(element);
+			}
+		} catch (err) {
+			console.log(err);
+			clearInterval(interval);
+			clearTimeout(timeout);
+		}
+	};
+
+	interval = setInterval(check, 100); // poll every 100ms
+
+	timeout = setTimeout(function () {
+		clearInterval(interval);
+	}, 20000);
+}
+
 function heroBannerChanges() {
 	document.querySelector('main#base > div:first-child').classList.add('spz_hero_banner');
-	document.querySelector('.form-container.spz_hero_banner').insertAdjacentHTML('afterbegin', `<video class="hero-bg-video" autoplay="" muted="" loop="" playsinline="" preload="auto"><source src="https://res.cloudinary.com/spiralyze/video/upload/v1770798186/bamboohr/11012/Background_Hero.mp4" type="video/mp4"></video>`);
+	document.querySelector('.form-container.spz_hero_banner').insertAdjacentHTML('afterbegin', `
+		<div class="hero-bg-video">
+		</div>`);
 
 	const pathname = window.location.pathname;
 	const cleanPath = pathname.replace(/^\/pl-pages\//, '').replace(/^\//, '');
@@ -66,29 +94,19 @@ function heroBannerChanges() {
 			`);
 	}
 
-	if (pathname === '/pl-pages/hr-software') {
-		if (document.querySelector('.spz_hero_banner h1')) {
-			document.querySelector('.spz_hero_banner h1').innerHTML = `HR software so you can <span>focus on the people,<br> not the paperwork.</span>`;
-			const heading = document.querySelector(
-				'.spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md h2#a-single-platform-where-everything-works-together'
-			);
 
-			if (heading) {
-				heading.textContent = heading.textContent.replace('.', '');
-			}
+	if (document.querySelector('.spz_hero_banner h1')) {
+		document.querySelector('.spz_hero_banner h1').innerHTML = `HR software so you can <span>focus on the people,<br> not the paperwork.</span>`;
+		const heading = document.querySelector(
+			'.spz_11015_v #base .section.quote-container .columns-wrapper.content-width-md h2#a-single-platform-where-everything-works-together'
+		);
 
+		if (heading) {
+			heading.textContent = heading.textContent.replace('.', '');
 		}
+
 	}
-	if (pathname === '/pl-pages/hr-time-tracking') {
-		if (document.querySelector('.spz_hero_banner h1')) {
-			document.querySelector('.spz_hero_banner h1').innerHTML = `Employee Time and  <span>Attendance Tracking</span>`;
-		}
-	}
-	if (pathname === '/pl-pages/onboarding') {
-		if (document.querySelector('.spz_hero_banner h1')) {
-			document.querySelector('.spz_hero_banner h1').innerHTML = `New-Hire Orientation and <span>Onboarding</span>`;
-		}
-	}
+
 
 	// Form Changes Started
 	const formInterval11015 = setInterval(function () {
@@ -99,6 +117,13 @@ function heroBannerChanges() {
 			});
 		}
 	}, 100);
+
+	const heroNav = document.querySelector('.hero_nav');
+	if (heroNav) {
+		window.addEventListener('scroll', () => {
+			heroNav?.classList.toggle('sticky', window.scrollY > 10);
+		});
+	}
 
 }
 
@@ -113,172 +138,51 @@ function secondSectionChanges() {
 				{
 					id: '#hr-data--reporting',
 					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/hr_data__reporting_image-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/hr_data__reporting_image-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/hr_data__reporting_image-mobile.webp',
+						desktop: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/hr_data__reporting_image-desktop.webp',
+						tablet: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/hr_data__reporting_image-tablet.webp',
+						mobile: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/hr_data__reporting_image-mobile.webp',
 					},
 					alt: 'HR Data & Reporting'
 				},
 				{
 					id: '#hiring--onboarding',
 					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/hiring__onboarding-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232192/bamboohr/11012/hiring__onboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232188/bamboohr/11012/hiring__onboarding-mobile.webp',
+						desktop: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/hiring__onboarding-desktop.webp',
+						tablet: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232192/bamboohr/11012/hiring__onboarding-tablet.webp',
+						mobile: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232188/bamboohr/11012/hiring__onboarding-mobile.webp',
 					},
 					alt: 'Hiring & Onboarding'
 				},
 				{
 					id: '#payroll-time--benefits',
 					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/payroll_time__benefits-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/payroll_time__benefits-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/payroll_time__benefits-mobile.webp',
+						desktop: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/payroll_time__benefits-desktop.webp',
+						tablet: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/payroll_time__benefits-tablet.webp',
+						mobile: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/payroll_time__benefits-mobile.webp',
 					},
 					alt: 'Payroll Time & Benefits'
 				},
 				{
 					id: '#employee-experience--performance',
 					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/employee_experience__performance-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232192/bamboohr/11012/employee_experience__performance-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/employee_experience__performance-mobile.webp',
+						desktop: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/employee_experience__performance-desktop.webp',
+						tablet: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232192/bamboohr/11012/employee_experience__performance-tablet.webp',
+						mobile: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/employee_experience__performance-mobile.webp',
 					},
 					alt: 'Employee Experience & Performance'
 				}
 			],
 			integrationSection: {
 				targetId: '#integration-marketplace',
-				desktopSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_desktop.webp',
-				tabletSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_tablet.webp',
-				mobileSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1770810601/bamboohr/11012/Integrations_Mobile.png',
+				desktopSrc: '//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_desktop.webp',
+				tabletSrc: '//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_tablet.webp',
+				mobileSrc: '//res.cloudinary.com/spiralyze/image/upload/f_auto/v1770810601/bamboohr/11012/Integrations_Mobile.png',
 				alt: 'integration marketplace'
 			},
 			quoteImage: {
-				desktopSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/natalie_snow_desktop.webp',
-				mobileSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/natalie_snow_mobile.webp',
+				desktopSrc: '//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/natalie_snow_desktop.webp',
+				mobileSrc: '//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/natalie_snow_mobile.webp',
 				alt: 'natalie snow'
-			}
-		},
-		'/pl-pages/hr-time-tracking': {
-			baseSelector: '.spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.columns-2-cols',
-			imageReplacements: [
-				{
-					id: '#know-exactly-where-your-time-and-resources-are-going',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/tracking_image_hr-time-tracking-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/tracking_image_hr-time-tracking-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/tracking_image_hr-time-tracking-mobile.webp',
-					},
-					alt: 'project tracking image'
-				},
-				{
-					id: '#approve-timesheets-in-one-click',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/timesheet_image_hr-time-tracking-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/timesheet_image_hr-time-tracking-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/timesheet_image_hr-time-tracking-mobile.webp',
-					},
-					alt: 'timesheet image hr time tracking'
-				},
-				{
-					id: '#clock-in-on-the-go',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/clockin_the_go_image_hr-time-tracking-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/clockin_the_go_image_hr-time-tracking-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232188/bamboohr/11012/clockin_the_go_image_hr-time-tracking-mobile.webp',
-					},
-					alt: 'clock in the go image hr time tracking'
-				},
-				{
-					id: '#automate-time-and-attendance-management',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/automate_time_image_hr-time-tracking-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/automate_time_image_hr-time-tracking-tablet_1.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232188/bamboohr/11012/automate_time_image_hr-time-tracking-mobile_1.webp',
-					},
-					alt: 'automate time image hr time tracking'
-				},
-				{
-					id: '#create-insightful-reports-to-analyze-your-resource-distribution',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/reports_imagehr-time-tracking-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/reports_imagehr-time-tracking-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/reports_imagehr-time-tracking-mobile.webp',
-					},
-					alt: 'create insightful reports image hr time tracking'
-				},
-				{
-					id: '#simplify-overtime-tracking-and-reduce-compliance-risk',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/automate_time_image_hr-time-tracking-desktop.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/automate_time_image_hr-time-tracking-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/automate_time_image_hr-time-tracking-mobile.webp',
-					},
-					alt: 'simplify overtime image hr time tracking'
-				}
-			],
-			integrationSection: null, // Set to null if not needed on this page
-			quoteImage: {
-				desktopSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/amy_boston__desktop.webp',
-				mobileSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/amy_boston__mobile.webp',
-				alt: 'amy boston'
-			}
-		},
-		'/pl-pages/onboarding': {
-			baseSelector: '.spz_11015_v.onboarding #base .section.quote-container .columns-wrapper .columns-2-cols:not(:has(#create-better-first-days-for-your-new-hires))',
-			imageReplacements: [
-				{
-					id: '#retain-great-hires-with-a-great-onboarding-process',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/retain_hires_pl-pagesonboarding-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/retain_hires_pl-pagesonboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/retain_hires_pl-pagesonboarding-desktop.webp',
-					},
-					alt: 'retain hires pages onboarding'
-				},
-				{
-					id: '#keep-new-hires-engaged-with-a-custom-experience',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/kepp_hires_pl-pagesonboarding-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/kepp_hires_pl-pagesonboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/kepp_hires_pl-pagesonboarding-desktop.webp',
-					},
-					alt: 'keep hires pages onboarding'
-				},
-				{
-					id: '#create-instant-personal-connections',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/connections_pl-pagesonboarding-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/connections_pl-pagesonboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/connections_pl-pagesonboarding-desktop.webp',
-					},
-					alt: 'connections pages onboarding'
-				},
-				{
-					id: '#improve-time-to-productivity-for-new-hires',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232190/bamboohr/11012/productivity_pl-pagesonboarding-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232191/bamboohr/11012/productivity_pl-pagesonboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/productivity_pl-pagesonboarding-desktop.webp',
-					},
-					alt: 'productivity pages onboarding'
-				},
-				{
-					id: '#save-timeand-the-environment',
-					src: {
-						desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232188/bamboohr/11012/save_time_pl-pagesonboarding-desktop_1.webp',
-						tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232189/bamboohr/11012/save_time_pl-pagesonboarding-tablet.webp',
-						mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1773232187/bamboohr/11012/save_time_pl-pagesonboarding-desktop.webp',
-					},
-					alt: 'save time pages onboarding'
-				}
-			],
-			integrationSection: null,
-			quoteImage: {
-				desktopSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/quote_onboarding_desktop.webp',
-				mobileSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/quote_onboarding_mobile.webp',
-				alt: 'onboarding quote'
 			}
 		}
 	};
@@ -299,26 +203,14 @@ function secondSectionChanges() {
 	// Get the base selector for the current page
 	const baseSelector = currentConfig.baseSelector;
 
-	const rightColImageInterval11012 = setInterval(function () {
+	const rightColImageInterval11015 = setInterval(function () {
 		let imagesReplaced = false;
-
-		// Replace images if configured
-		// if (currentConfig.imageReplacements && currentConfig.imageReplacements.length > 0) {
-		//     for (const replacement of currentConfig.imageReplacements) {
-		//         const imgCol = document.querySelector(`${baseSelector}:has(${replacement.id}) .column7.img-col`);
-		//         if (imgCol && !imgCol.hasAttribute('data-spz-replaced')) {
-		//             imgCol.innerHTML = `<img src="${replacement.src}" alt="${replacement.alt}">`;
-		//             imgCol.setAttribute('data-spz-replaced', 'true');
-		//             imagesReplaced = true;
-		//         }
-		//     }
-		// }
 
 		if (currentConfig.imageReplacements && currentConfig.imageReplacements.length > 0) {
 			for (const replacement of currentConfig.imageReplacements) {
 				const imgCol = document.querySelector(`${baseSelector}:has(${replacement.id}) .column7.img-col`);
 				if (imgCol && !imgCol.hasAttribute('data-spz-replaced')) {
-					const resolvedSrc = getDeviceSrc(replacement.src); // Ã¢â€ Â pick correct src
+					const resolvedSrc = getDeviceSrc(replacement.src); // â† pick correct src
 					imgCol.innerHTML = `<img src="${resolvedSrc}" alt="${replacement.alt}">`;
 					imgCol.setAttribute('data-spz-replaced', 'true');
 					imagesReplaced = true;
@@ -360,178 +252,16 @@ function secondSectionChanges() {
 			const quotePicture = document.querySelector('.spz_11015_v #base .section.quote-container .quote-wrapper picture');
 			if (quotePicture && !quotePicture.hasAttribute('data-spz-replaced')) {
 				quotePicture.innerHTML = `<source media="(max-width: 768px)" srcset="${currentConfig.quoteImage.mobileSrc}">
-                  <img src="${currentConfig.quoteImage.desktopSrc}" alt="${currentConfig.quoteImage.alt}">`;
+                  <img src="${currentConfig.quoteImage.desktopSrc}" alt="${currentConfig.quoteImage.alt}" loading="lazy">`;
 				quotePicture.setAttribute('data-spz-replaced', 'true');
 			}
 		}
 
 		// Clear interval when elements are found or modified
 		if (imagesReplaced || columns.length > 0) {
-			clearInterval(rightColImageInterval11012);
+			clearInterval(rightColImageInterval11015);
 		}
 
-
-		// Adding integration section manually to hr time tracking page
-		if (pathname === '/pl-pages/hr-time-tracking') {
-			// const integrationSection = document.querySelector('.spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns-wrapper:has(#simplify-overtime-tracking-and-reduce-compliance-risk)');
-			// if (integrationSection && document.querySelectorAll('.integration-section').length === 0) {
-			//     integrationSection.insertAdjacentHTML('afterend', `<div class="integration-section">
-			//         <h3 id="integration-marketplace">Integration Marketplace</h3>
-			//         <picture>
-			//         <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1770810601/bamboohr/11012/Integrations_Mobile.png">
-			//             <source media="(max-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_tablet.webp">
-			//             <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_desktop.webp" alt="integration marketplace">
-			//         </picture>
-			//         <span class="spz_demo_btn">Get a Demo</span>
-			//     </div>`);
-			// }
-
-			if (currentConfig.quoteImage) {
-				const quotePicture = document.querySelector('.spz_11015_v.hr-time-tracking #base .section.columns-container:not(.logos-container) .columns.testimonial picture');
-				if (quotePicture && !quotePicture.hasAttribute('data-spz-replaced')) {
-					quotePicture.innerHTML = `<source media="(max-width: 768px)" srcset="${currentConfig.quoteImage.mobileSrc}">
-                  <img src="${currentConfig.quoteImage.desktopSrc}" alt="${currentConfig.quoteImage.alt}">`;
-					quotePicture.setAttribute('data-spz-replaced', 'true');
-				}
-			}
-
-			const column = document.querySelector(
-				`.spz_11015_v.hr-time-tracking #base .section.columns-container.logos-container .columns.columns-2-cols .column5.non-img-col`
-			);
-
-			if (column && !column.querySelector('.spz_demo_btn')) {
-				column.insertAdjacentHTML('beforeend', `<span class="spz_demo_btn">Get a Demo</span>`);
-			}
-
-		}
-
-		// Adding integration section manually to onboarding page
-		if (pathname === '/pl-pages/onboarding') {
-			// const integrationSection = document.querySelector('.spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#save-timeand-the-environment)');
-			// if (integrationSection && document.querySelectorAll('.integration-section').length === 0) {
-			//     integrationSection.insertAdjacentHTML('afterend', `<div class="integration-section">
-			//         <h3 id="integration-marketplace">Integration Marketplace</h3>
-			//         <picture>
-			//             <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/v1770810601/bamboohr/11012/Integrations_Mobile.png">
-			//             <source media="(max-width: 1024px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_tablet.webp">
-			//             <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/integrations_desktop.webp" alt="integration marketplace">
-			//         </picture>
-			//         <span class="spz_demo_btn">Get a Demo</span>
-			//     </div>`);
-			// }
-
-			const topColumnSection = document.querySelector('.spz_11015_v.onboarding #base .section.quote-container .columns-wrapper:has(#create-better-first-days-for-your-new-hires) .column5.non-img-col');
-			if (topColumnSection && !topColumnSection.querySelector('.spz_demo_btn')) {
-				topColumnSection.insertAdjacentHTML('beforeend', `<span class="spz_demo_btn">Get a Demo</span>`);
-			}
-
-			if (currentConfig.quoteImage) {
-				const quotePicture = document.querySelector('.spz_11015_v.onboarding #base .section.columns-container:not(.logos-container) .columns.testimonial picture');
-				if (quotePicture && !quotePicture.hasAttribute('data-spz-replaced')) {
-					quotePicture.innerHTML = `<source media="(max-width: 767px)" srcset="${currentConfig.quoteImage.mobileSrc}">
-                  <img src="${currentConfig.quoteImage.desktopSrc}" alt="${currentConfig.quoteImage.alt}">`;
-					quotePicture.setAttribute('data-spz-replaced', 'true');
-				}
-			}
-
-			const column = document.querySelector(
-				`.spz_11015_v.onboarding #base .section.columns-container.logos-container .columns.columns-2-cols .column5.non-img-col`
-			);
-
-			if (column && !column.querySelector('.spz_demo_btn')) {
-				column.insertAdjacentHTML('beforeend', `<span class="spz_demo_btn">Get a Demo</span>`);
-			}
-
-		}
-
-
-	}, 100);
-}
-
-
-function tabSectionChanges() {
-	if (window.location.pathname !== '/pl-pages/onboarding') return;
-
-	const tabsWrapper = setInterval(function () {
-		const tabConfigs = [
-			{
-				panelId: 'panel-custom-1',
-				imageSrc: {
-					desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/erin_howard__-_desktop.webp',
-					tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/erin_howard__-_tablet.webp',
-					mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/erin_howard__-_mobile.webp'
-				},
-				logoSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/cabinet_peaks_logo.webp',
-				logoAlt: 'cabinet peaks',
-				alt: 'cabinet peaks',
-				name: 'Erin Howard | HR Generalist'
-			},
-			{
-				panelId: 'panel-custom-2',
-				imageSrc: {
-					desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/angie_brinkley_-_desktop.webp',
-					tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/angie_brinkley_-_tablet.webp',
-					mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/angie_brinkley_-_mobile.webp'
-				},
-				logoSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/stukent_logo.webp',
-				logoAlt: 'stukent',
-				alt: 'stukent',
-				name: 'Angie Brinkley | Human Resources Coordinator'
-			},
-			{
-				panelId: 'panel-custom-3',
-				imageSrc: {
-					desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/marijane_moreau_peterson_-_desktop.webp',
-					tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/marijane_moreau_peterson_-_tablet.webp',
-					mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/marijane_moreau_peterson_-_mobile.webp'
-				},
-				logoSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/viridis_logo.webp',
-				logoAlt: 'viridis terra',
-				alt: 'viridis terra',
-				name: 'Marijane Moreau Peterson | Director of Talents and Culture'
-			},
-			{
-				panelId: 'panel-custom-4',
-				imageSrc: {
-					desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/kevin_stephens_-_desktop.webp',
-					tablet: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/kevin_stephens_-_tablet.webp',
-					mobile: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/kevin_stephens_-_mobile.webp'
-				},
-				logoSrc: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/continuoun_logo.webp',
-				logoAlt: 'continuoun',
-				alt: 'continuoun',
-				name: 'Kevin Stephens | HR Generalist'
-			}
-		];
-
-		const baseSelector = '.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content';
-		let allFound = true;
-
-		tabConfigs.forEach(config => {
-			const imageEl = document.querySelector(`${baseSelector} #${config.panelId} .image`);
-			const nameEl = document.querySelector(`${baseSelector} #${config.panelId} .bottom .name`);
-			const logoEl = document.querySelector(`${baseSelector} #${config.panelId} .bottom > picture`);
-
-			if (imageEl && nameEl && logoEl) {
-				imageEl.innerHTML = `
-                  <picture>
-                      <source media="(max-width: 1024px)" srcset="${config.imageSrc.tablet}">
-                      <source media="(max-width: 768px)" srcset="${config.imageSrc.mobile}">
-                      <img src="${config.imageSrc.desktop}" alt="${config.alt}" class="tab_image_${config.panelId.split('-').pop()}">
-                  </picture>
-              `;
-				nameEl.textContent = config.name;
-				logoEl.innerHTML = `
-                  <img src="${config.logoSrc}" alt="${config.alt}" class="tab_logo_${config.panelId.split('-').pop()}">
-              `;
-			} else {
-				allFound = false;
-			}
-		});
-
-		if (allFound) {
-			clearInterval(tabsWrapper);
-		}
 	}, 100);
 }
 
@@ -543,45 +273,45 @@ function awardSection() {
        <li>
           <picture>
              <source media="(max-width: 768px)"
-                srcset="https://res.cloudinary.com/spiralyze/image/upload/v1770812002/bamboohr/11012/G2___Mobile.png">
-             <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/g2__desktop.webp"
+                srcset="//res.cloudinary.com/spiralyze/image/upload/v1770812002/bamboohr/11012/G2___Mobile.png">
+             <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/g2__desktop.webp"
                 alt="G2 award">
           </picture>
-          <img src="https://res.cloudinary.com/spiralyze/image/upload/v1770232399/bamboohr/11012/stars_45.svg"
+          <img src="//res.cloudinary.com/spiralyze/image/upload/v1770232399/bamboohr/11012/stars_45.svg"
              alt="stars">
           <p>G2 / 4.5</p>
        </li>
        <li>
           <picture>
              <source media="(max-width: 768px)"
-                srcset="https://res.cloudinary.com/spiralyze/image/upload/v1770812002/bamboohr/11012/Capterra___Mobile.png">
-             <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/capterra__desktop.webp"
+                srcset="//res.cloudinary.com/spiralyze/image/upload/v1770812002/bamboohr/11012/Capterra___Mobile.png">
+             <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/capterra__desktop.webp"
                 alt="capterra award">
           </picture>
-          <img src="https://res.cloudinary.com/spiralyze/image/upload/v1770232398/bamboohr/11012/stars_46.svg"
+          <img src="//res.cloudinary.com/spiralyze/image/upload/v1770232398/bamboohr/11012/stars_46.svg"
              alt="stars">
           <p>Capterra / 4.6</p>
        </li>
        <li>
           <picture>
              <source media="(max-width: 768px)"
-                srcset="https://res.cloudinary.com/spiralyze/image/upload/v1770812001/bamboohr/11012/Get_App___Mobile.png">
-             <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/get_app__desktop.webp"
+                srcset="//res.cloudinary.com/spiralyze/image/upload/v1770812001/bamboohr/11012/Get_App___Mobile.png">
+             <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/get_app__desktop.webp"
                 alt="get app award">
           </picture>
-          <img src="https://res.cloudinary.com/spiralyze/image/upload/v1770232398/bamboohr/11012/stars_46.svg"
+          <img src="//res.cloudinary.com/spiralyze/image/upload/v1770232398/bamboohr/11012/stars_46.svg"
              alt="stars">
           <p>Get App / 4.6</p>
        </li>
        <li>
           <picture>
              <source media="(max-width: 768px)"
-                srcset="https://res.cloudinary.com/spiralyze/image/upload/v1770812001/bamboohr/11012/Software_Advice___Mobile.png">
+                srcset="//res.cloudinary.com/spiralyze/image/upload/v1770812001/bamboohr/11012/Software_Advice___Mobile.png">
              <img
-                src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/software_advice__desktop.webp"
+                src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11012/software_advice__desktop.webp"
                 alt="software advice award">
           </picture>
-          <img src="https://res.cloudinary.com/spiralyze/image/upload/v1770232399/bamboohr/11012/stars_45.svg"
+          <img src="//res.cloudinary.com/spiralyze/image/upload/v1770232399/bamboohr/11012/stars_45.svg"
              alt="stars">
           <p>Software Advice / 4.5</p>
        </li>
@@ -593,12 +323,12 @@ function awardSection() {
 
 
 function footerChanges() {
-	const footerInterval11012 = setInterval(function () {
+	const footerInterval11015 = setInterval(function () {
 		const brand = document.querySelector('.footer .links');
 		const legal = document.querySelector('.footer .legal');
 
 		if (brand && legal) {
-			clearInterval(footerInterval11012);
+			clearInterval(footerInterval11015);
 			const wrapper = document.createElement('div');
 			wrapper.className = 'footer_links';
 
@@ -634,37 +364,7 @@ function footerChanges() {
 
 }
 
-const tabSectionInterval = setInterval(function () {
-	const tabChild = document.querySelectorAll('.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child');
-
-	if (tabChild.length === 4) {
-		clearInterval(tabSectionInterval);
-
-		const content = document.querySelector('.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content');
-
-		// Remove inline height from ALL children immediately
-		tabChild.forEach(child => child.style.removeProperty('height'));
-
-		const applyHeight = () => {
-			const activeChild = content.querySelector('.child.active');
-			if (activeChild) {
-				// Remove inline height from ALL children on every switch
-				tabChild.forEach(child => child.style.removeProperty('height'));
-				content.style.height = activeChild.scrollHeight + 'px';
-			}
-		};
-
-		const observer = new MutationObserver(applyHeight);
-
-		if (content) {
-			observer.observe(content, { subtree: true, attributeFilter: ['class'] });
-			applyHeight();
-		}
-	}
-}, 100);
-
 // 11015 code
-
 
 function popupHTML() {
 	return `
@@ -1069,7 +769,7 @@ function initPopupState() {
 	}
 	setTimeout(function () {
 		setPopupOpen(true);
-	}, 1000)
+	}, 1000);
 }
 
 function getFocusableInPopup() {
@@ -1185,7 +885,6 @@ function clickEvent() {
 				behavior: 'smooth'
 			});
 		}
-
 		const target = event.target;
 		if (target.classList.contains('nav_item') && event.isTrusted) {
 			var navIndustry = getIndustryFromNavItem(target);
@@ -1230,7 +929,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>Over $70k a year in time-savings on reporting alone</h3>
-				<p>When people try to sell me on their HRIS, Iâ€™m like, â€˜You guys will have to rip BambooHR out of my cold dead hands.â€™ Then I point out to them all the things that BambooHR can do that they canâ€™t.â€</p>
+				<p>When people try to sell me on their HRIS, I’m like, ‘You guys will have to rip BambooHR out of my cold dead hands.’ Then I point out to them all the things that BambooHR can do that they can’t.”</p>
 				<p class="byline">Heather Saxon | VP of Human Resources</p>
 				<p class="byline">Rycon Construction</p>
 			`;
@@ -1261,7 +960,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>50% less time to onboard employees</h3>
-				<p>We're growing quickly, so having our processes automated is extremely helpful. The background checks, onboarding, and hiring make processes faster, which candidates appreciate.â€</p>
+				<p>We're growing quickly, so having our processes automated is extremely helpful. The background checks, onboarding, and hiring make processes faster, which candidates appreciate.”</p>
 				<p class="byline">Angie Brinkley | Human Resources Coordinator </p>
 				<p class="byline">Stukent   </p>
 			`;
@@ -1292,7 +991,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>98% reduced HR time</h3>
-				<p>I have automations and workflows set up for everything. It's amazing because I can just set it and forget it. I donâ€™t think anything compares to BambooHRâ€”itâ€™s not even close.â€</p>
+				<p>I have automations and workflows set up for everything. It's amazing because I can just set it and forget it. I don’t think anything compares to BambooHR—it’s not even close.”</p>
 				<p class="byline">Tawny Bartel | President </p>
 				<p class="byline">HOA Accounting Services  </p>
 			`;
@@ -1323,7 +1022,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>Cut assessment time by 50%</h3>
-				<p>I love being able to see all of the great data surrounding assessments and progress at a glance. [Before] It was so time consuming trying to pull this data from 20 different places.â€</p>
+				<p>I love being able to see all of the great data surrounding assessments and progress at a glance. [Before] It was so time consuming trying to pull this data from 20 different places.”</p>
 				<p class="byline">Jacob Alsup | Director of Recruiting & Hiring</p>
 				<p class="byline">Community Counseling Center  </p>
 			`;
@@ -1354,7 +1053,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>90% faster payroll processing</h3>
-				<p>Now Iâ€™m able to run payroll in just two hours on a Monday morning. BambooHR makes it so easy.â€</p>
+				<p>Now I’m able to run payroll in just two hours on a Monday morning. BambooHR makes it so easy.”</p>
 				<p class="byline">Uriah Hansen | Director of Human Resources</p>
 				<p class="byline">Continental Manufacturing Chemist  </p>
 			`;
@@ -1385,7 +1084,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>37% reduced turnover</h3>
-				<p>Last month our grant writer was asking me for a turnover rate, and I was able to give not just the rate, but also the narrative of how our turnover rate has gone down. That got us the grant.â€</p>
+				<p>Last month our grant writer was asking me for a turnover rate, and I was able to give not just the rate, but also the narrative of how our turnover rate has gone down. That got us the grant.”</p>
 				<p class="byline">Emily White Hodge | Director of HR and Operations</p>
 				<p class="byline">New Moms  </p>
 			`;
@@ -1416,7 +1115,7 @@ function clickEvent() {
 			`;
 			document.querySelector('#base .section.quote-container .quote-wrapper .content').innerHTML = `
 				<h3>96% faster reporting</h3>
-				<p>Helps me save time in my reporting process. The information is right there. A couple clicks, and itâ€™s ready to go. Itâ€™s an <br> incredible time-saver for us.â€</p>
+				<p>Helps me save time in my reporting process. The information is right there. A couple clicks, and it’s ready to go. It’s an <br> incredible time-saver for us.”</p>
 				<p class="byline">Cristal Kelshaw | Head of People </p>
 				<p class="byline">Anonyome Labs, Inc.</p>
 			`;
@@ -1439,16 +1138,47 @@ function clickEvent() {
 			tile.classList.add('selected');
 			var industry = tile.getAttribute('data-industry');
 			if (industry) selectIndustryFromPopup(industry);
-			window.scrollTo({ top: 0, behavior: 'smooth'});
 		});
 	});
 
 }
 
+function initTabsSectionHeight() {
+	if (initTabsSectionHeight.initialized) return;
 
-const bodyInterval11012 = setInterval(function () {
+	var tabsSectionInterval = setInterval(function () {
+		const tabChild = document.querySelectorAll('.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content .child');
+
+		if (tabChild.length === 4) {
+			clearInterval(tabsSectionInterval);
+			initTabsSectionHeight.initialized = true;
+
+			const content = document.querySelector('.spz_11015_v.onboarding .tabs-custom-wrapper .tabs-custom-content');
+
+			// Remove inline height from ALL children immediately
+			tabChild.forEach(child => child.style.removeProperty('height'));
+
+			const applyHeight = () => {
+				const activeChild = content.querySelector('.child.active');
+				if (activeChild) {
+					// Remove inline height from ALL children on every switch
+					tabChild.forEach(child => child.style.removeProperty('height'));
+					content.style.height = activeChild.scrollHeight + 'px';
+				}
+			};
+
+			const observer = new MutationObserver(applyHeight);
+
+			if (content) {
+				observer.observe(content, { subtree: true, attributeFilter: ['class'] });
+				applyHeight();
+			}
+		}
+	}, 100);
+}
+
+function init11015() {
 	if (document.querySelector('body') && !document.querySelector('.spz_11015_v')) {
-		clearInterval(bodyInterval11012)
 		document.querySelector('body').classList.add("spz_11015_v");
 		heroBannerChanges();
 		setTimeout(() => {
@@ -1456,71 +1186,87 @@ const bodyInterval11012 = setInterval(function () {
 			clickEvent();
 			initPopupState();
 		}, 100);
-		tabSectionChanges();
 		awardSection();
-		injectPopup();
 		footerChanges();
+		injectPopup();
+		initTabsSectionHeight();
+	}
+}
+
+waitForElement('main#base', function () {
+	init11015();
+});
 
 
-		const expName = '#11015'; //experiment name should be #1001, #1002, #1003 etc.
-		const variantName = expName + `_variant`; //variantName should be _V1, _V2, _TC etc.
-		const clientDomain = '.bamboohr.com'; //domain should be .bamboohr.com
+(function () {
+	//Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
+	// Set the value of the squeezePage variable as needed:
+	// true  – if you are using a squeeze page (i.e., the page contains a form)
+	// false – if you are not using a squeeze page (i.e., the page does not contain a form)
+	// 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
+	const squeezePage = true; // true / false / 'both'
+	const expName = '11015'; //experiment name should be 1001, 1002, 1003 etc.
+	const variantName = `#` + expName + `_variant`; //variantName should be _variant, _true_control etc.
+	const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com
+
+	console.log("squeezePage 11015", squeezePage);
+
+	/***********************************
+	************************************
+	DO NOT TOUCH
+	BEYOND THIS LINE
+	******************************
+	******************************/
+	const formHiddenValue = variantName;
+	if (squeezePage === true) {
+		window.squeezePageValue = formHiddenValue;
+	} else if (squeezePage === false) {
 		hiddenValue(expName, variantName);
-
-		/***********************************
-		************************************
-		DO NOT TOUCH
-		BEYOND THIS LINE
-		******************************
-		************************/
-		function hiddenValue(currentExperimentName, currentExperimentValue) {
-			function setCookie(name, value, days) {
-				var expires = "";
-				if (days) {
-					var date = new Date();
-					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-					expires = "; expires=" + date.toUTCString();
-				}
-				document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
+	} else if (squeezePage === 'both') {
+		hiddenValue(expName, variantName);
+		window.squeezePageValue = formHiddenValue;
+	}
+	function hiddenValue(currentExperimentName, currentExperimentValue) {
+		function setCookie(name, value, days) {
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toUTCString();
 			}
+			document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
+		}
 
-			function getCookie(name) {
-				var nameEQ = name + "=";
-				var ca = document.cookie.split(';');
-				for (var i = 0; i < ca.length; i++) {
-					var c = ca[i];
-					while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-				}
-				return null;
+		function getCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
 			}
+			return null;
+		}
 
-			var ExistingExperimentName = getCookie('ExperimentName');
-			var ExistingExperimentValue = getCookie('ExperimentValue');
-			var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+		var ExistingExperimentName = getCookie('ExperimentName');
+		var ExistingExperimentValue = getCookie('ExperimentValue');
+		var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
 
-			if (!ExistingExperimentName) {
-
-				setCookie('ExperimentName', currentExperimentName, 1);
-				setCookie('ExperimentValue', currentExperimentValue, 1);
-
-			} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
-
-				setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-				setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-
-			} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
-
-				var existingNames = ExistingExperimentName.split(',');
-				var existingValues = ExistingExperimentValue.split(',');
-
-				var index = existingNames.indexOf(currentExperimentName);
-				existingValues[index] = currentExperimentValue;
-
-				setCookie('ExperimentName', existingNames.join(','), 1);
-				setCookie('ExperimentValue', existingValues.join(','), 1);
-			}
+		if (!ExistingExperimentName) {
+			setCookie('ExperimentName', currentExperimentName, 1);
+			setCookie('ExperimentValue', currentExperimentValue, 1);
+		} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+			setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+			setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+		} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+			var existingNames = ExistingExperimentName.split(',');
+			var existingValues = ExistingExperimentValue.split(',');
+			var index = existingNames.indexOf(currentExperimentName);
+			existingValues[index] = currentExperimentValue;
+			setCookie('ExperimentName', existingNames.join(','), 1);
+			setCookie('ExperimentValue', existingValues.join(','), 1);
 		}
 	}
-}, 10);
+}());

@@ -29,12 +29,17 @@
             </div>
             <div class="form-wrapper">
             </div>
+            <ul class="lp-hero-list">
+              <li><strong>Fast application.</strong> Apply for funding in minutes. No effect on your credit. Get funds as soon as next day.</li>
+              <li><strong>75+ Lenders.</strong> See offers from over 75 vetted lenders, including SBA-approved lenders. Compare interest rates, APR, terms, and more.</li>
+              <li><strong>Loan options.</strong> Loan types include SBA, accounts receivable, equipment financing, and small business.</li>
+            </ul>
           </div>
           <div class="image lp-hero-img-col">
             <picture class="spz-3019-hero-picture">
-              <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-360.png">
-              <source media="(max-width: 1023.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-768.png">
-              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440.png" alt="Hero Image">
+              <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/lendio/1014/hero-img-360.png">
+              <source media="(max-width: 1023.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/lendio/1014/hero-img-768.png">
+              <img src="https://res.cloudinary.com/spiralyze/image/upload/lendio/1014/hero-img-1440.png" alt="Hero Image">
             </picture>
           </div>
         </div>
@@ -46,11 +51,11 @@
           <div class="dropdown-amount-form-2 w-embed">
             <div class="form-application-home-2" id="application-dropdown-form-2">
               <label class="form-label-hidden">What do you need funding for?</label>
-              <div class="custom-dropdown-2">
-                <button type="button" class="application-dropdown-select-2" aria-expanded="false" aria-haspopup="listbox"
-                  id="dropdownButton-2">What do you need funding for?</button>
-                <div class="custom-dropdown-list-wrap-2" role="listbox" aria-labelledby="dropdownButton-2" tabindex="0">
-                  <ul class="custom-dropdown-list-2 custom-dropdown-list" role="presentation">
+              <div class="custom-dropdown">
+                <button type="button" class="application-dropdown-select application-dropdown-select-2" aria-expanded="false" aria-haspopup="listbox"
+                  id="dropdownButton">What do you need funding for?</button>
+                <div class="custom-dropdown-list-wrap" role="listbox" aria-labelledby="dropdownButton" tabindex="0">
+                  <ul class="custom-dropdown-list" role="presentation">
                     <li data-value="Expansion" role="option" tabindex="0">Expansion</li>
                     <li data-value="Working capital" role="option" tabindex="0">Working capital</li>
                     <li data-value="Payroll" role="option" tabindex="0">Payroll</li>
@@ -76,8 +81,6 @@
       if (isLendioHomepage() && document.querySelector(".spz_1014_v .home-hero-content")) {
         document.querySelector('.spz_1014_v .home-hero-section').insertAdjacentHTML("afterbegin", heroHTML)
         document.querySelector(".spz_1014_v .lp-hero-content").insertAdjacentHTML("beforeend", newHTMl);
-        initDropdown();
-        initNextBtn();
         if (document.querySelectorAll(".back_btn").length === 0) {
           document.querySelector(".spz_1014_v .dropdown-amount-form.w-embed").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
           backClick();
@@ -104,54 +107,6 @@
     clearInterval(bodyInterval3008);
   }, 7000);
 
-  let outsideClickBound = false;
-
-  function initDropdown() {
-    const dropdownButton = document.querySelector(".form-wrapper-2 .application-dropdown-select-2");
-    const dropdown = dropdownButton?.closest(".custom-dropdown-2");
-    if (!dropdownButton || !dropdown || dropdownButton.dataset.dropdownBound) return;
-
-    dropdownButton.dataset.dropdownBound = "true";
-
-    dropdownButton.addEventListener("click", function () {
-      const isOpen = dropdown.classList.contains("open");
-      dropdown.classList.toggle("open", !isOpen);
-      dropdownButton.setAttribute("aria-expanded", String(!isOpen));
-    });
-
-    dropdown.querySelectorAll('.custom-dropdown-list-2 li[role="option"]').forEach((option) => {
-      option.addEventListener("click", function () {
-        dropdown.classList.remove("open");
-        dropdownButton.textContent = option.dataset.value || option.textContent.trim();
-        dropdownButton.classList.add("has-value");
-        dropdownButton.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    if (outsideClickBound) return;
-    outsideClickBound = true;
-
-    document.addEventListener("click", function (e) {
-      const btn = document.querySelector(".form-wrapper-2 .application-dropdown-select-2");
-      const targetDropdown = btn?.closest(".custom-dropdown-2");
-      if (!btn || !targetDropdown?.classList.contains("open")) return;
-      if (targetDropdown.contains(e.target)) return;
-
-      targetDropdown.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    });
-  }
-
-  function initNextBtn() {
-    const nextBtn = document.querySelector(".spz_1014_v2 .next-btn");
-    if (!nextBtn || nextBtn.dataset.hideTilesBound) return;
-
-    nextBtn.addEventListener("click", function () {
-      document.querySelector(".lp-hero-content")?.classList.add("hide_tiles");
-    });
-    nextBtn.dataset.hideTilesBound = "true";
-  }
-
   function backClick() {
     document.addEventListener("click", function (e) {
       const backBtn = e.target.closest(".spz_1014_v .dropdown-amount-form .back_btn");
@@ -159,6 +114,41 @@
       backBtn.closest(".lp-hero-content")?.classList.remove("hide_tiles");
     });
   }
+  window.addEventListener("click", function (e) {
+    const dropdown = document.querySelector(".form-wrapper-2 .custom-dropdown");
+    const dropdownButton = document.querySelector(".application-dropdown-select-2");
+    const nextBtn = document.querySelector(".spz_1014_v2 .next-btn");
+    if (!dropdown || !dropdownButton || !nextBtn) return;
+
+    const clickedOption = e.target.closest('.custom-dropdown-list li[role="option"]');
+
+    if (clickedOption && dropdown.contains(clickedOption)) {
+      dropdown.classList.remove("open");
+      dropdownButton.textContent = clickedOption.dataset.value || clickedOption.textContent.trim();
+      dropdownButton.setAttribute("aria-expanded", "false");
+      return;
+    }
+
+    if (e.target.closest(".application-dropdown-select-2")) {
+      if (!dropdown.classList.contains("open")) {
+        dropdown.classList.add("open");
+        dropdownButton.setAttribute("aria-expanded", "true");
+      } else {
+        dropdown.classList.remove("open");
+        dropdownButton.setAttribute("aria-expanded", "false");
+      }
+      return;
+    }
+
+    if (!e.target.closest(".form-wrapper-2 .custom-dropdown") && dropdown.classList.contains("open")) {
+      dropdown.classList.remove("open");
+      dropdownButton.setAttribute("aria-expanded", "false");
+    }
+
+    if (e.target.closest(".spz_1014_v2 .next-btn")) {
+      document.querySelector(".lp-hero-content")?.classList.add("hide_tiles");
+    }
+  });
 
   const tileInterval3008 = setInterval(function () {
     if (document.querySelectorAll(".spz_1014_v2 .tile").length > 0) {
@@ -168,6 +158,8 @@
         tile.removeAttribute("onclick");
         tile.addEventListener("click", () => tile.classList.toggle("selected"));
       });
+
+      clickEvents();
     }
   });
 

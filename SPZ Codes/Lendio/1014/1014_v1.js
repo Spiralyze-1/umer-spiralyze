@@ -2,30 +2,19 @@
   let formInterval;
   let carouselObserverInitialized = false;
 
+  function isLendioHomepage() {
+    return window.location.hostname === "www.lendio.com" && window.location.pathname === "/";
+  }
+
   const bodyInterval3008 = setInterval(function () {
-    if (document.querySelector("body") && !document.querySelector(".spz_3008_v")) {
+    if (document.querySelector("body") && !document.querySelector(".spz_1014_v")) {
       clearInterval(bodyInterval3008);
 
-      document.querySelector("body").classList.add("spz_3008_v", "spz_3008_v2");
-      if (window.location.pathname == "/lp/direct/sba-loans") {
-        document.querySelector("body").classList.add("sba-only");
-      }
-
-      if (window.location.pathname == "/lp/direct/sb-financing") {
-        document.querySelector("body").classList.add("small", "sb-financing");
-      }
+      document.querySelector("body").classList.add("spz_1014_v");
 
       const heroHTML =
-      `<div class="spz-3010-section1">
+        `<div class="spz-3010-section1 lp-hero">
       <div class="wrapper">
-        <div class="header">
-          <a href="https://www.lendio.com" target="_blank">
-            <picture>
-              <source media="(max-width:767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/v1764604812/lendio/3007/logo_1.svg">
-              <img src="https://res.cloudinary.com/spiralyze/image/upload/v1764604810/lendio/3007/logo.svg" width="127" height="25" alt="Lendio Logo">
-            </picture>
-          </a>
-        </div>
         <div class="hero-section">
           <div class="text lp-hero-content">
             <div class="eyelash"><span>SMALL BUSINESS FUNDING</span></div>
@@ -40,17 +29,12 @@
             </div>
             <div class="form-wrapper">
             </div>
-            <ul class="lp-hero-list">
-              <li><strong>Fast application.</strong> Apply for funding in minutes. No effect on your credit. Get funds as soon as next day.</li>
-              <li><strong>75+ Lenders.</strong> See offers from over 75 vetted lenders, including SBA-approved lenders. Compare interest rates, APR, terms, and more.</li>
-              <li><strong>Loan options.</strong> Loan types include SBA, accounts receivable, equipment financing, and small business.</li>
-            </ul>
           </div>
           <div class="image lp-hero-img-col">
             <picture class="spz-3019-hero-picture">
-              <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/lendio/3019/tablet-01.png">
-              <source media="(max-width: 991px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/lendio/3019/tablet-01.png">
-              <img src="https://res.cloudinary.com/spiralyze/image/upload/lendio/3019/desktop-01.png" alt="Hero Image">
+              <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-360.png">
+              <source media="(max-width: 1023.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-768.png">
+              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440.png" alt="Hero Image">
             </picture>
           </div>
         </div>
@@ -148,11 +132,8 @@
                     <button class="next-btn" id="fundsNext">Next</button>
                     <div class="text-center mt-3 d-block text-base-500">
                       <small>Applying is free and won't impact your credit.<sup>1</sup>
-                        <span class="disclosure-tooltip"> View Disclosure.
+                        <span class="disclosure-tooltip">
                           <span class="disclosure-tooltiptext">
-                            Filling out an application for business funding and submitting it to our funding partners will not impact
-                            your personal credit score. However, depending on the product and lender, accepting a funding offer may
-                            result in a hard credit inquiry, which could affect your personal credit score.
                           </span>
                         </span>
                       </small>
@@ -161,42 +142,26 @@
                 </div>
               `;
 
-      // page 3
-      if (window.location.href === "https://www.lendio.com/" && document.querySelector(".spz_3008_v .home-hero-content")) {
-        document.querySelector('.spz_3008_v .home-hero-section').insertAdjacentHTML("afterbegin", heroHTML)
-        document.querySelector(".spz_3008_v .home-hero-content").insertAdjacentHTML("afterend", newHTMl);
+      if (isLendioHomepage() && document.querySelector(".spz_1014_v .home-hero-content")) {
+        document.querySelector('.spz_1014_v .home-hero-section').insertAdjacentHTML("afterbegin", heroHTML)
+        document.querySelector(".spz_1014_v .lp-hero-content").insertAdjacentHTML("beforeend", newHTMl);
         if (document.querySelectorAll(".back_btn").length === 0) {
-          document.querySelector(".spz_3008_v .dropdown-amount-form.w-embed").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
+          document.querySelector(".spz_1014_v .dropdown-amount-form.w-embed").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
           backClick();
         }
+        let formIntervalTwo;
 
-        if (document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a")) {
-          document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
-        }
-      }
-      if (window.location.pathname == "/lp/direct/sba-loans" && document.querySelector(".spz_3008_v .lp-hero-content-wrapper")) {
-        document.querySelector(".spz_3008_v .lp-hero-content").insertAdjacentHTML("beforeend", newHTMl);
-        if (document.querySelectorAll(".back_btn").length === 0) {
-          document.querySelector(".spz_3008_v .text-amount-form-wrap-lp-sbfv2").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
-          backClick();
-        }
-
-        if (document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a")) {
-          document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
-        }
-      }
-
-      //page 4
-      if (window.location.pathname == "/lp/direct/sb-financing" && document.querySelector(".spz_3008_v .lp-hero-content-wrapper")) {
-        document.querySelector(".spz_3008_v .lp-hero-content").insertAdjacentHTML("beforeend", newHTMl);
-        if (document.querySelectorAll(".back_btn").length === 0) {
-          document.querySelector(".spz_3008_v .text-amount-form-wrap-lp-sbfv2").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
-          backClick();
-        }
-
-        if (document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a")) {
-          document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
-          document.querySelector(".spz_3008_v .spz-3010-section1 .wrapper .header a").setAttribute("href", "https://www.lendio.com");
+        formIntervalTwo = setInterval(function () {
+          if (document.querySelector('.form-application-home')) {
+            clearInterval(formIntervalTwo);
+            //form move
+            if (document.querySelector('.dropdown-amount-form ')) {
+              document.querySelector('.spz_1014_v .spz-3010-section1 .hero-section .text .form-wrapper').insertAdjacentElement("beforeend", document.querySelector('.dropdown-amount-form '))
+            }
+          }
+        }, 100);
+        if (document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a")) {
+          document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
         }
       }
     }
@@ -206,184 +171,16 @@
     clearInterval(bodyInterval3008);
   }, 7000);
 
-  function formEdits() {
-    if (carouselObserverInitialized) return;
-
-    function initCarouselObserver() {
-      const lendioStart = document.querySelector("lendio-start");
-      const shadowRoot = lendioStart?.shadowRoot;
-      if (!shadowRoot || carouselObserverInitialized) return false;
-
-      carouselObserverInitialized = true;
-      if (formInterval) clearInterval(formInterval);
-
-      const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
-
-      let prevSlide = null;
-      let carouselObserved = false;
-      let slideChangeTimer = null;
-      let syncingBtnAction = false;
-
-      function syncHideBtn() {
-        const backBtn = document.querySelector(".spz_3008_v .text-amount-form-wrap-lp-sbfv2 .back_btn");
-        if (!backBtn) return;
-
-        const slide1Active = shadowRoot.querySelector(".carousel-item.slide-1.active");
-
-        if (slide1Active) {
-          if (!isMobile()) {
-            backBtn.classList.remove("hide_btn");
-          }
-        } else if (!backBtn.classList.contains("hide_btn")) {
-          backBtn.classList.add("hide_btn");
-        }
-      }
-
-      function syncMobileBtnAction() {
-        if (!isMobile() || syncingBtnAction) return;
-
-        const slide1Active = shadowRoot.querySelector(".carousel-item.slide-1.active");
-        const btnAction = shadowRoot.querySelector("#pwf-1 .btn-action");
-
-        if (slide1Active && btnAction && btnAction.classList.contains("slide-1-active")) {
-          syncingBtnAction = true;
-          btnAction.classList.remove("slide-1-active");
-          syncingBtnAction = false;
-        }
-      }
-
-      function applyMobileLogic() {
-        if (!isMobile()) return;
-
-        const slide1Active = shadowRoot.querySelector(".carousel-item.slide-1.active");
-        if (!slide1Active) return;
-
-        const backBtn = document.querySelector(".spz_3008_v .text-amount-form-wrap-lp-sbfv2 .back_btn");
-        const backLink = shadowRoot.querySelector("#pwf-1 .back-link");
-
-        if (backLink) backLink.classList.remove("invisible");
-        syncMobileBtnAction();
-        if (backBtn) backBtn.classList.add("hide_btn");
-
-        if (backLink && !backLink.dataset.mobileBindDone) {
-          let slideOnPress = null;
-
-          backLink.addEventListener("mousedown", function () {
-            slideOnPress = shadowRoot.querySelector(".carousel-item.slide-1.active") ? "slide1" : "other";
-          });
-
-          backLink.addEventListener(
-            "touchstart",
-            function () {
-              slideOnPress = shadowRoot.querySelector(".carousel-item.slide-1.active") ? "slide1" : "other";
-            },
-            { passive: true }
-          );
-
-          backLink.addEventListener("click", function (e) {
-            if (isMobile()) {
-              e.stopPropagation();
-              if (slideOnPress === "slide1" && isSlide1Active()) {
-                document.querySelector(".lp-hero-content")?.classList.remove("hide_tiles");
-              }
-              slideOnPress = null;
-            }
-          });
-
-          backLink.dataset.mobileBindDone = "true";
-        }
-      }
-
-      function handleSlideChange() {
-        observeCarousel();
-        syncHideBtn();
-
-        const slide1Active = shadowRoot.querySelector(".carousel-item.slide-1.active");
-        const currentSlide = slide1Active ? "slide1" : "other";
-
-        if (currentSlide === "slide1") {
-          syncMobileBtnAction();
-        }
-
-        if (currentSlide === prevSlide) return;
-        prevSlide = currentSlide;
-
-        if (currentSlide === "slide1") {
-          applyMobileLogic();
-        }
-      }
-
-      function queueSlideChange() {
-        clearTimeout(slideChangeTimer);
-        slideChangeTimer = setTimeout(handleSlideChange, 50);
-      }
-
-      const observer = new MutationObserver(queueSlideChange);
-
-      function observeCarousel() {
-        if (carouselObserved) return;
-
-        const carouselInner = shadowRoot.querySelector("#pwf-1 .carousel-inner") || shadowRoot.querySelector(".carousel-inner");
-
-        if (!carouselInner) return;
-
-        carouselObserved = true;
-        observer.disconnect();
-        observer.observe(carouselInner, {
-          subtree: true,
-          attributes: true,
-          attributeFilter: ["class"]
-        });
-      }
-
-      observeCarousel();
-      observer.observe(shadowRoot, {
-        childList: true,
-        subtree: true
-      });
-
-      let clickSyncTimer = null;
-      shadowRoot.addEventListener(
-        "click",
-        function () {
-          clearTimeout(clickSyncTimer);
-          clickSyncTimer = setTimeout(function () {
-            syncHideBtn();
-            syncMobileBtnAction();
-          }, 300);
-        },
-        true
-      );
-
-      handleSlideChange();
-      return true;
-    }
-
-    if (initCarouselObserver()) return;
-
-    formInterval = setInterval(function () {
-      initCarouselObserver();
-    }, 200);
-  }
-
-  function isSlide1Active() {
-    const shadowRoot = document.querySelector("lendio-start")?.shadowRoot;
-    if (!shadowRoot) return false;
-    return !!shadowRoot.querySelector(".carousel-item.slide-1.active");
-  }
-
   function backClick() {
     document.addEventListener("click", function (e) {
-      const backBtn = e.target.closest(".spz_3008_v .text-amount-form-wrap-lp-sbfv2 .back_btn");
+      const backBtn = e.target.closest(".spz_1014_v .dropdown-amount-form .back_btn");
       if (!backBtn) return;
-      if (!isSlide1Active()) return;
-
       backBtn.closest(".lp-hero-content")?.classList.remove("hide_tiles");
     });
   }
 
   function clickEvents() {
-    const nextBtn = document.querySelector(".spz_3008_v2 .next-btn");
+    const nextBtn = document.querySelector(".spz_1014_v .next-btn");
     if (!nextBtn || nextBtn.dataset.hideTilesBound) return;
 
     nextBtn.addEventListener("click", function (e) {
@@ -393,10 +190,10 @@
   }
 
   const tileInterval3008 = setInterval(function () {
-    if (document.querySelectorAll(".spz_3008_v2 .tile").length > 0) {
+    if (document.querySelectorAll(".spz_1014_v .tile").length > 0) {
       clearInterval(tileInterval3008);
 
-      document.querySelectorAll(".spz_3008_v2 .tile").forEach((tile) => {
+      document.querySelectorAll(".spz_1014_v .tile").forEach((tile) => {
         tile.removeAttribute("onclick");
         tile.addEventListener("click", () => tile.classList.toggle("selected"));
       });
@@ -405,10 +202,10 @@
     }
   });
 
+
   const tileNewInterval3008 = setInterval(function () {
-    if (document.querySelectorAll(".spz_3008_v2 .funds-title").length > 0) {
+    if (document.querySelectorAll(".spz_1014_v .funds-title").length > 0) {
       clearInterval(tileNewInterval3008);
-      formEdits();
     }
   });
 })();
