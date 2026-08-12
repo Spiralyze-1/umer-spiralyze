@@ -13,7 +13,7 @@ const QQ_CONFIG = {
 		submitted: 'spz_8005_submitted'
 	},
 	q1: {
-		prompt: 'What are you interested in?',
+		prompt: 'What product(s) are you interested in?',
 		type: 'multi',
 		tiles: [
 			{
@@ -132,8 +132,6 @@ function showFormPanel3AfterSubmit() {
 
 function applyPostSubmitFormState() {
 	document.body.classList.add('spz-qq-bypass');
-	// existiing account
-	document.querySelector('.spz_8005_v1 form.logiin-sub-wrapper .button-disclaimer').insertAdjacentHTML("afterend", `<div class="existiing_account">Already have an account? <a href="https://login.us.bill.com/neo/login" class="spz_1016_v1">Login</a></div>`);
 	document.body.classList.remove('spz-qq-step-1', 'spz-qq-step-2', 'spz-qq-step-3');
 	showFormPanel3AfterSubmit();
 }
@@ -756,10 +754,6 @@ function initQualifyingQuestions(formEl) {
 			}
 		}
 	}
-
-	// existiing account
-	document.querySelector('.spz_8005_v1 .spz-qq-step[data-step="1"] .spz-qq-next').insertAdjacentHTML("afterend", `<div class="existiing_account">Already have an account? <a href="https://login.us.bill.com/neo/login" class="spz_1016_v1">Login</a></div>`);
-
 }
 
 // ========== INIT ==========

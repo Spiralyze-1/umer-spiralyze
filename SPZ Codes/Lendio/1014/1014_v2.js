@@ -34,7 +34,7 @@
             <picture class="spz-3019-hero-picture">
               <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-360.png">
               <source media="(max-width: 1023.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-768.png">
-              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440.png" alt="Hero Image">
+              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440_1.png" alt="Hero Image">
             </picture>
           </div>
         </div>
@@ -64,7 +64,7 @@
                 </div>
               </div>
 
-              <button class="next-btn" id="fundsNext">Next</button>
+              <a href="https://app.lendio.com/bp/application" class="next-btn" id="fundsNext">Next</a>
             </div>
           </div>
           <div class="form_bottom">
@@ -77,7 +77,7 @@
         document.querySelector('.spz_1014_v .home-hero-section').insertAdjacentHTML("afterbegin", heroHTML)
         document.querySelector(".spz_1014_v .lp-hero-content").insertAdjacentHTML("beforeend", newHTMl);
         initDropdown();
-        initNextBtn();
+        // initNextBtn();
         if (document.querySelectorAll(".back_btn").length === 0) {
           document.querySelector(".spz_1014_v .dropdown-amount-form.w-embed").insertAdjacentHTML("afterbegin", '<div class="back_btn"><span>Back</span></div>');
           backClick();
@@ -95,6 +95,10 @@
         }, 100);
         if (document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a")) {
           document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
+        }
+        if(document.querySelector('.spz-3010-section1')){
+          document.querySelector('.spz-3010-section1').insertAdjacentHTML('afterend', `<div class="spz-3010-section-outer"></div>`);
+          document.querySelector('.spz-3010-section-outer').appendChild(document.querySelector('.spz-3010-section1'));
         }
       }
     }

@@ -26,33 +26,33 @@
         'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397111/greenlightguru/1006/g2_stars_rating.svg',
       bulletIcons: [
         'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397106/greenlightguru/1006/frame_427319842.svg',
-        'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397103/greenlightguru/1006/frame_427319840.svg',
-        'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397104/greenlightguru/1006/frame_427319841.svg'
+        'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397104/greenlightguru/1006/frame_427319841.svg',
+        'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397103/greenlightguru/1006/frame_427319840.svg'
       ],
       mediaDesktop:
-        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/ui-desktop.png',
+        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/img-container_1.png',
       mediaTablet:
-        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/ui-tablet.png',
+        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/img-container_2.png',
       mediaMobile:
-        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/ui-mobile.png',
+        'https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/img-container.png',
       closeIcon:
         'https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1782397125/greenlightguru/1006/frame.svg'
     },
     bullets: [
       {
-        lead: 'Medical device QMS.',
+        lead: 'Medical QMS.',
         rest: ' Automate training, CAPA, approvals, and more. Full audit trails. Track docs. FDA & ISO compliant.',
-        alt: 'Medical device QMS'
+        alt: 'Medical QMS'
       },
       {
-        lead: 'Design and development.',
-        rest: ' Generate a full DHF. Sync designs with inputs, outputs, reviews, etc. ISO 14971-compliant risk management.',
-        alt: 'Design and development'
-      },
-      {
-        lead: 'Clinical data management.',
+        lead: 'Clinical Trials.',
         rest: ' Secure EDC platform. Drag-and-drop eCRFs. Mobile surveys. Compliant eConsent. Ad hoc data capture.',
-        alt: 'Clinical data management'
+        alt: 'Clinical Trials'
+      },
+      {
+        lead: 'Design & Dev.',
+        rest: ' Generate a full DHF. Sync designs with inputs, outputs, reviews, etc. ISO 14971-compliant risk management.',
+        alt: 'Design & Dev'
       }
     ]
   };
@@ -175,7 +175,7 @@
           <div class="spz-1006-hero-content">
             <div class="spz-1006-hero-heading">
               <img class="spz-1006-hero-rating" src="${CONFIG.assets.rating}" alt="Capterra rating 4.7 out of 5" width="255" height="26">
-              <h1 class="spz-1006-hero-title"> <span class="spz-1006-hero-accent">50%</span> less time spent on audit prep. Streamline quality management, design & dev, and clinical trials.</h1>
+              <h1 class="spz-1006-hero-title">Cut time to market<br>by <span class="spz-1006-hero-accent">35%.</span> Simplify medical device development.</h1>
             </div>
             <ul class="spz-1006-hero-bullets">
               ${CONFIG.bullets.map(bulletHTML).join('')}
@@ -206,6 +206,7 @@
         <div class="spz-1006-modal-formhost"></div>
       </div>
     </div>`;
+
 
   /* ---------------------------------------------------------
    * Modal open / close

@@ -34,7 +34,7 @@
             <picture class="spz-3019-hero-picture">
               <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-360.png">
               <source media="(max-width: 1023.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-768.png">
-              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440.png" alt="Hero Image">
+              <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/lendio/1014/hero-img-1440_1.png" alt="Hero Image">
             </picture>
           </div>
         </div>
@@ -129,7 +129,7 @@
                 
                   </div>
                   <div class="funds-footer">
-                    <button class="next-btn" id="fundsNext">Next</button>
+                    <a href="https://app.lendio.com/bp/application" class="next-btn" id="fundsNext">Next</a>
                     <div class="text-center mt-3 d-block text-base-500">
                       <small>Applying is free and won't impact your credit.<sup>1</sup>
                         <span class="disclosure-tooltip">
@@ -162,6 +162,11 @@
         }, 100);
         if (document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a")) {
           document.querySelector(".spz_1014_v .spz-3010-section1 .wrapper .header a").removeAttribute("target");
+        }
+
+        if(document.querySelector('.spz-3010-section1')){
+          document.querySelector('.spz-3010-section1').insertAdjacentHTML('afterend', `<div class="spz-3010-section-outer"></div>`);
+          document.querySelector('.spz-3010-section-outer').appendChild(document.querySelector('.spz-3010-section1'));
         }
       }
     }
@@ -198,7 +203,7 @@
         tile.addEventListener("click", () => tile.classList.toggle("selected"));
       });
 
-      clickEvents();
+      // clickEvents();
     }
   });
 

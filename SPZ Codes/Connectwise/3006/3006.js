@@ -51,9 +51,9 @@ function formChanges() {
 
       if (document.querySelectorAll('.spz_3006_v #resource .form-container__form .spz_form_title').length === 0) {
           document.querySelector('.spz_3006_v #resource .form-container__form').insertAdjacentHTML('afterbegin', `
-            <span class="form_logo">
-                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1784767238/connectwise/3006/logo.svg" alt="Connecwise logo">
-            </span>
+            <a href="https://www.connectwise.com/" class="form_logo">
+                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1784767238/connectwise/3006/logo.svg" alt="Connectwise logo">
+            </a>
             <h2 class="spz_form_title">Get Pricing</h2>
         `);
       }
@@ -167,9 +167,6 @@ const bodyObserver = new MutationObserver(function () {
 });
 
 bodyObserver.observe(document.documentElement, { childList: true, subtree: true });
-
-// Run on resize
-window.addEventListener('resize', adjustResourceLayout);
 
 
 // If you face any issues, please switch to the named-function version of this code and use that instead.

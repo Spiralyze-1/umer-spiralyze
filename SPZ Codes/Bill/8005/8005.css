@@ -109,6 +109,11 @@ body.spz_8005_v1 form.logiin-sub-wrapper + div .is-sub-wrapper {
 @media (max-width: 767.98px) {
   .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile {
     max-width: 136px;
+    height: 136px;
+  }
+  .spz_8005_v1.spz-qq-step-1 .spz-qq-tile-label {
+    padding: 0 27px;
+    justify-content: flex-start;
   }
   .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile:nth-child(3),
   .spz_8005_v1.spz-qq-step-1 .spz-qq-tiles .spz-qq-tile:nth-child(4) {
@@ -1006,6 +1011,35 @@ body.spz_8005_v1.spz-qq-step-3 form.logiin-sub-wrapper #form-panel-3 {
 /* Show accountingSoftware only when Q2=direct */
 body.spz_8005_v1.spz-qq-console:not(.spz-qq-bypass) form.logiin-sub-wrapper #accountingSoftwareContainer {
   display: none !important;
+}
+
+.spz_8005_v1 .existiing_account {
+  text-align: center;
+  color: #2D2725;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: -8px;
+}
+.spz_8005_v1 .existiing_account a {
+  color: #024DBD;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+}
+.spz_8005_v1 .existiing_account a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767.98px) {
+  .spz_8005_v1 .existiing_account {
+    margin-top: -3px;
+  }
+}
+.spz_8005_v1.spz-qq-bypass .existiing_account {
+  padding: 10px 0 0;
 }
 
 /* ============ RESPONSIVE - TABLET ============ */

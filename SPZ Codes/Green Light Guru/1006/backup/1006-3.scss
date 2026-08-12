@@ -70,22 +70,14 @@ $mobile: 767.98px;
 
 /* ===== Hero ===== */
 .spz-1006-hero {
-  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/bg-desktop.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top left;
-  padding: 195px 0 80px;
+  background: var(--spz-1006-bg);
+  padding: 192.5px 0 77px;
   margin-bottom: 151px;
   width: 100%;
   overflow: hidden;
   font-family: var(--spz-1006-font);
   box-sizing: border-box;
-  @include tablet(){
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/img-bg_1.webp');
-  }
-  @include mobile() {
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/1006/img-bg.webp');
-  }
+
 }
 
 .spz-1006-hero *,
@@ -103,7 +95,7 @@ $mobile: 767.98px;
 .spz-1006-hero-inner-row {
   display: flex;
   align-items: center;
-  gap: 58px;
+  gap: 64px;
 }
 
 .spz-1006-hero-content {
@@ -111,16 +103,13 @@ $mobile: 767.98px;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 41.5px;
+  gap: 41px;
 }
 
 .spz-1006-hero-heading {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  @include mobile(){
-    gap: 24px;
-  }
+  gap: 23px;
 }
 
 .spz-1006-hero-rating {
@@ -134,17 +123,14 @@ $mobile: 767.98px;
   margin: 0;
   color: var(--spz-1006-white);
   font-family: var(--spz-1006-font);
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
-  line-height: 48px;
+  line-height: 60px;
   letter-spacing: 0.25px;
 
   @include tablet-pro() {
     font-size: 34px;
     line-height: 40px;
-  }
-  @include tablet(){
-    margin-right: -1px;
   }
 }
 
@@ -165,12 +151,6 @@ $mobile: 767.98px;
   display: flex;
   flex-direction: column;
   gap: 23px;
-  @include tablet() {
-    gap: 23.5px;
-  }
-  @include mobile() {
-    margin-right: -1px;
-  }
 }
 
 .spz-1006-hero-bullet {
@@ -198,7 +178,6 @@ $mobile: 767.98px;
 
   @include mobile() {
     letter-spacing: 0.4px;
-    display: contents;
   }
 }
 
@@ -227,7 +206,7 @@ $mobile: 767.98px;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  width: 480px;
+  width: 417px;
   height: 54px;
   max-width: 100%;
   margin: 0;
@@ -332,7 +311,7 @@ $mobile: 767.98px;
 }
 
 .spz-1006-hero-media {
-  flex: 1 1 617px;
+  flex: 1 1 625px;
   min-width: 0;
 }
 
@@ -355,7 +334,7 @@ $mobile: 767.98px;
 /* ----- Hero: tablet ----- */
 @media (max-width: 1023.98px) {
   .spz-1006-hero {
-    padding: 164px 0 80px;
+    padding: 141px 0 56px;
   }
 
   .spz-1006-hero-inner {
@@ -365,13 +344,13 @@ $mobile: 767.98px;
   .spz-1006-hero-inner-row {
     flex-direction: column;
     align-items: stretch;
-    gap: 64px;
+    gap: 56px;
   }
 
   .spz-1006-hero-content {
     flex: none;
     width: 100%;
-    gap: 41px;
+    gap: 33px;
   }
 
   .spz-1006-hero-media {
@@ -385,9 +364,6 @@ $mobile: 767.98px;
   .spz-1006-hero {
     padding: 163px 0 57px;
     margin-bottom: 104px;
-  }
-  .spz-1006-hero-content{
-    gap: 33px;
   }
 }
 
@@ -404,7 +380,6 @@ $mobile: 767.98px;
 
   .spz-1006-hero-form {
     width: 100%;
-    margin-top: 1px;
   }
 }
 
@@ -859,8 +834,7 @@ body .spz-1006-modal .hs-fieldtype-intl-phone select {
 }
 
 .spz_1006_v {
-  &.safari,
-  &.firefox {
+  &.safari {
     .aos-animate .image-container {
       text-align: center;
     }

@@ -342,7 +342,8 @@ body::-webkit-scrollbar {
 
 .spz_3006_v #resource .form-container__form .form_logo {
   display: block;
-  margin-bottom: 25px;
+  width: fit-content;
+  margin: 0 auto 25px;
 
   img {
     display: block;
@@ -534,12 +535,12 @@ body::-webkit-scrollbar {
     padding: 12px;
     color: #FFF;
     text-align: center;
-    // font-family: Inter;
+    font-family: "Cera-Pro";
     font-size: 16px;
     font-style: normal;
     font-weight: 700 !important;
     line-height: 24px;
-    letter-spacing: -0.16px;
+    // letter-spacing: -0.16px;
     @include mobile() {
       max-width: 100%;
     }
@@ -558,12 +559,12 @@ body::-webkit-scrollbar {
 .spz_3006_v #resource .form-container__form .mktoForm .mktoButtonRow~.mktoFormRow .mktoFieldWrap .mktoHtmlText {
   color: #231F20;
   text-align: center;
-  font-family: 'Cera Pro';
+  font-family: "Cera-Pro";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
-  letter-spacing: 0.43px;
+  // letter-spacing: 0.43px;
   display: flex;
   justify-content: center;
 }
@@ -588,9 +589,9 @@ body::-webkit-scrollbar {
   color: #29389A;
   font-weight: 500;
   position: relative;
-  letter-spacing: 0.4px;
+  // letter-spacing: 0.4px;
   margin-left: 7px;
-  transform: translateX(-5px);
+  transform: translateX(-3px);
   display: inline-block;
   padding: 0;
 }
@@ -612,7 +613,7 @@ body::-webkit-scrollbar {
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: auto;
-  text-underline-offset: -0.5px;
+  text-underline-offset: 0;
   text-underline-position: from-font;
 }
 

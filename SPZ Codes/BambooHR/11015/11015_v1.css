@@ -2899,6 +2899,10 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
     margin-top: 61px;
   }
 }
+html:has(.spz_11015_v.spz_11015_popup_open) > *::-webkit-scrollbar {
+  display: none;
+}
+
 .spz_11015_v.spz_11015_popup_open {
   overflow: hidden;
 }
@@ -2919,10 +2923,6 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   width: 100%;
   height: 100%;
   z-index: 201;
-}
-
-.spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) *:not(.spz_11015_popupOuter):not(.spz_11015_popupOuter *):not(#consent-banner):not(#consent-banner *) {
-  pointer-events: none;
 }
 
 .spz_11015_v:has(.spz_11015_popupOuter[style*="display: flex"]) footer #consent-banner {
@@ -2950,14 +2950,25 @@ body.spz_11015_v.hr-time-tracking .spz_award_section {
   z-index: 10000000000000000000000000;
   padding: 48px 20px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   background: rgba(0, 0, 0, 0.33);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
+  pointer-events: auto;
+}
+.spz_11015_popupOuter::-webkit-scrollbar {
+  display: none;
+}
+
+.spz_11015_popupOuter .spz_11015_overlay {
   pointer-events: none;
 }
 
 .spz_11015_popupOuter .spz_11015_popup {
   pointer-events: auto;
+  touch-action: pan-y;
 }
 
 @media (max-height: 690px) {
