@@ -670,11 +670,6 @@ body::-webkit-scrollbar {
     object-fit: cover;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px) and (min-height: 1190px) {
-  .spz_3006_v #PageMain {
-    background: #fff;
-  }
-}
 @media only screen and (max-width: 1250px) and (min-width: 1025px) {
   .socialProofLogo {
     flex-wrap: wrap;

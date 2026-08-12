@@ -102,6 +102,14 @@
             gap: 9px;
             margin-top: 31.5px;
           }
+          // #pwf-1 .error-text{
+          //   white-space: nowrap;
+          // }
+          #pwf-1:has(.slide-11.active) div:has(>#pwf-submit-button){
+            width: 0px;
+            visibility: hidden;
+            opacity: 0;
+          }
           .form_header{
             padding-bottom: 26.5px;
           }
@@ -110,7 +118,7 @@
             font-size: 28px;
             font-weight: 500;
             line-height: 36.4px;
-            letter-spacing: 0.17px;
+            font-family: 'proxima-nova';
             text-align: center;
           }
           .steps,
@@ -118,7 +126,7 @@
             display: none;
           }
           .additional-answered{
-            padding: 29.5px 47px 31px;
+            padding:29.5px 47.5px 31px 46.5px;
             border-radius: 12px;
             border: 1px solid rgba(175, 146, 125, 0.20);
             background: #FFF;
@@ -128,19 +136,39 @@
           .additional-answered .form_header{
             display: block;
           }
-          .spz_steps ul{
+          .spz_steps > ul{
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 18px 18px;
             padding-left: 0;
             list-style: none;
-            margin: 0;
+            margin: 0 1px 0 1px;
           }
-          .spz_steps ul li {
-            width: calc(50% - 8px);
+          .spz_steps > ul > li {
+            width: calc(50% - 9px);
+          }
+          .spz_steps > .col-12{
+            padding-left: 1px;
+          }
+          .spz_steps ul + .col-12{
+            padding-top: 2px;
           }
           .custom_stepField{
             width: 100%;
+          }
+          .custom_stepField input:-webkit-autofill,
+          .custom_stepField input:-webkit-autofill:hover,
+          .custom_stepField input:-webkit-autofill:focus,
+          .custom_stepField input:-webkit-autofill:active,
+          .custom_stepField select:-webkit-autofill,
+          .custom_stepField select:-webkit-autofill:hover,
+          .custom_stepField select:-webkit-autofill:focus,
+          .custom_stepField select:-webkit-autofill:active {
+              -webkit-box-shadow: 0 0 0 30px white inset !important;
+          }
+          .spz_steps ul li:has(.error-text) .custom_stepField select,
+          .spz_steps ul li:has(.error-text) .custom_stepField input{
+            border-color: #BE3A3A;
           }
           #pwf-1 select, 
           #pwf-1 input:not([type="checkbox"]) {
@@ -187,6 +215,33 @@
             margin-left: 0px;
             margin-top: 8px;
             justify-content: space-between;
+          }
+          #pwf-1 .flex:has(.btn-action):not(:has(.w-100.text-center.my-4[style="display: none;"])) .additional-button-wrapper,
+          #pwf-1 .flex:has(.btn-action):not(:has(.w-100.text-center.my-4[style="display: none;"])) .additional-back-button-wrapper{
+            display: none!important;
+          }
+          /* Keep custom next/back visible on slides 2-11 even when control toggles loader display */
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-2.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-3.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-4.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-5.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-6.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-7.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-8.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-9.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-10.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-11.active) .additional-back-button-wrapper {
+            display: block !important;
           }
           #pwf-1 div:has(.disclosure-tooltip){
             position: relative;
@@ -253,13 +308,13 @@
             margin-bottom: -0.5px;
           }
           #pwf-1 .flex:has(> #marketingSmsOptIn){
-            margin-bottom:5.5px;
+            margin: 16px 0;
           }
           #pwf-1 .legal-consent .agreements{
             line-height: 18px;
           }
           #pwf-1 .flex.mb-3:has(.agreements[data-cy="applicationSigned-text"]){
-            margin-bottom: 9.5px;
+            margin-bottom: 0;
           }
           #pwf-1:not(.additional-answered) .carousel-item,
           #pwf-1:not(.additional-answered) button[data-cy="next"],
@@ -283,6 +338,18 @@
           #pwf-1.spz-four-mode .spz_four_steps {
             display: block;
           }
+          #pwf-1:has(.slide-2.active) .form_header,
+          #pwf-1:has(.slide-3.active) .form_header,
+          #pwf-1:has(.slide-4.active) .form_header,
+          #pwf-1:has(.slide-5.active) .form_header,
+          #pwf-1:has(.slide-6.active) .form_header,
+          #pwf-1:has(.slide-7.active) .form_header,
+          #pwf-1:has(.slide-8.active) .form_header,
+          #pwf-1:has(.slide-9.active) .form_header,
+          #pwf-1:has(.slide-10.active) .form_header,
+          #pwf-1:has(.slide-11.active) .form_header {
+            padding-bottom: 26.5px;
+          }
           #pwf-1:has(.slide-2.active) .additional-button-wrapper,
           #pwf-1:has(.slide-3.active) .additional-button-wrapper,
           #pwf-1:has(.slide-4.active) .additional-button-wrapper,
@@ -294,6 +361,47 @@
           #pwf-1:has(.slide-10.active) .additional-button-wrapper,
           #pwf-1:has(.slide-11.active) .additional-button-wrapper {
             display: block;
+            min-width: unset;
+            width: calc(100% - 57px);
+            text-align: center;
+            margin-left: -57px;
+            margin-top: 0;
+          }
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper button {
+            width: 140px;
+          }
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper + div {
+            width: unset;
+          }
+          #pwf-1:has(.slide-2.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-3.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-4.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-5.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-6.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-7.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-8.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-9.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-10.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-11.active) .flex:has(.btn-action) {
+            margin-top: 17px;
           }
           #pwf-1:has(.slide-2.active) button[data-cy="next"],
           #pwf-1:has(.slide-3.active) button[data-cy="next"],
@@ -317,12 +425,12 @@
           #pwf-1:has(.slide-11.active) .back-link {
             display: none !important;
           }
-          #pwf-1 .spz_steps .text-left .error-text {
-            color: #b91c1c;
-          }
+          // #pwf-1 .spz_steps .text-left .error-text {
+          //   color: #b91c1c;
+          // }
           #pwf-1 .custom_stepField.form-field-wrapper:has(+ .text-left .error-text) select,
           #pwf-1 .custom_stepField.form-field-wrapper:has(+ .text-left .error-text) input {
-            border-color: #b91c1c;
+            outline-color: #b91c1c;
           }
           #pwf-1 .additional-button-wrapper{
             min-width: 100%;
@@ -355,6 +463,11 @@
           }
           #pwf-1 .additional-button-wrapper button:hover{
             background: #121111;
+          }
+          #pwf-1 .additional-button-wrapper button:disabled{
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
           }
          
           #pwf-1 .additional-back-button-wrapper{
@@ -406,34 +519,34 @@
             --bar-scale: calc(1 / 3);
           }
           #pwf-1:has(.carousel-item.slide-2.active) .carousel-inner{
-            --bar-scale: calc(2 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-3.active) .carousel-inner{
-            --bar-scale: calc(3 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-4.active) .carousel-inner{
-            --bar-scale: calc(4 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-5.active) .carousel-inner{
-            --bar-scale: calc(5 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-6.active) .carousel-inner{
-            --bar-scale: calc(6 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-7.active) .carousel-inner{
-            --bar-scale: calc(7 / 11);
+            --bar-scale: calc(2 / 3);
           }
           #pwf-1:has(.carousel-item.slide-8.active) .carousel-inner{
-            --bar-scale: calc(8 / 11);
+            --bar-scale: calc(3 / 3);
           }
           #pwf-1:has(.carousel-item.slide-9.active) .carousel-inner{
-            --bar-scale: calc(9 / 11);
+            --bar-scale: calc(3 / 3);
           }
           #pwf-1:has(.carousel-item.slide-10.active) .carousel-inner{
-            --bar-scale: calc(10 / 11);
+            --bar-scale: calc(3 / 3);
           }
           #pwf-1:has(.carousel-item.slide-11.active) .carousel-inner{
-            --bar-scale: calc(11 / 11);
+            --bar-scale: calc(3 / 3);
           }
           .steps {
             width: calc(100% + 1px);
@@ -684,7 +797,7 @@
                     class="legal-box-shadow-controller relative">
                     <div class="legal-box-shadow"></div>
                     <div class="p-2 border ml-1 pr-3 bg-white text-start legal-box"><span class="pb-4 agreements"
-                        data-cy="marketingSmsOptIn-text">By checking this box and clicking 'Continue', I agree to receive
+                        data-cy="marketingSmsOptIn-text">By checking this box and clicking ‘Submit’, I agree to receive
                         automated marketing calls/texts from or on behalf of Lendio at the number I provided. I understand this
                         consent is optional, and not required to create an account or use Lendio's services, and I can opt out
                         anytime by texting STOP. Msg &amp; data rates may apply.</span></div>
@@ -696,7 +809,7 @@
                 <div class="flex mb-3">
                   <div class="py-2 text-start legal-consent">
                     <span class="pb-4 agreements" data-cy="applicationSigned-text">
-                      By clicking ‘Continue’ you agree to receive informational text messages about your account. You also agree
+                      By clicking ‘Submit’ you agree to receive informational text messages about your account. You also agree
                       to
                       the <a href="//www.lendio.com/agreements/terms-of-application/" target="_blank">Terms of Application</a>,
                       <a href="//www.lendio.com/agreements/terms-of-use" target="_blank">Terms of Use</a> (which includes an
@@ -743,9 +856,9 @@
           ];
           const fourStepFields = [
             { selector: '.first', type: 'text', requiredMsg: 'First Name is required', minLength: 2, minLengthMsg: 'First Name must be at least 2 characters long' },
-            { selector: '.last', type: 'text', requiredMsg: 'Last Name is required', minLength: 2, minLengthMsg: 'Last Name must be at least 2 characters long' },
+            { selector: '.last', type: 'text', sameSlide: true, requiredMsg: 'Last Name is required', minLength: 2, minLengthMsg: 'Last Name must be at least 2 characters long' },
             { selector: '.email', type: 'email', requiredMsg: 'Email address is required', invalidMsg: 'Must be a valid email address' },
-            { selector: '.primary_phone', type: 'phone', requiredMsg: 'Phone number is required', invalidMsg: 'Please enter a valid phone number' }
+            { selector: '.primary_phone', type: 'phone', requiredMsg: 'Phone number is required', invalidMsg: 'Please enter a valid phone number', lengthMsg: 'Phone number must be 10 digits long' }
           ];
 
           function getFieldId(selector) {
@@ -757,6 +870,86 @@
             if (!activeSlide) return 0;
             const match = activeSlide.className.match(/slide-(\d+)/);
             return match ? parseInt(match[1], 10) : 0;
+          }
+
+          const HEADER_AMOUNT = 'How much money do you need?';
+          const HEADER_SIX = 'Tell us about your business';
+          const HEADER_FOUR = 'Tell us about you';
+
+          function updateFormHeader() {
+            const h2 = shadowRoot.querySelector('.form_header h2');
+            if (!h2) return;
+            if (pwfForm.classList.contains('spz-four-mode')) {
+              h2.textContent = HEADER_FOUR;
+            } else if (getActiveSlideNumber() >= 2) {
+              h2.textContent = HEADER_SIX;
+            } else {
+              h2.textContent = HEADER_AMOUNT;
+            }
+            updateAdditionalButtonText();
+          }
+
+          function updateAdditionalButtonText() {
+            const btn = shadowRoot.querySelector('.additional-button-wrapper button');
+            if (!btn) return;
+            btn.textContent = pwfForm.classList.contains('spz-four-mode') ? 'Submit' : 'Next';
+          }
+
+          function waitForSlide(slideNum, timeout) {
+            timeout = timeout || 10000;
+            return new Promise(function(resolve, reject) {
+              const start = Date.now();
+              (function check() {
+                if (getActiveSlideNumber() === slideNum) return resolve();
+                if (Date.now() - start > timeout) return reject(new Error('slide-' + slideNum + ' not active'));
+                setTimeout(check, 50);
+              })();
+            });
+          }
+
+          function waitForSlideDecrease(previousSlide, timeout) {
+            timeout = timeout || 3000;
+            return new Promise(function(resolve) {
+              const start = Date.now();
+              (function check() {
+                const current = getActiveSlideNumber();
+                if (current > 0 && current < previousSlide) return resolve(true);
+                if (Date.now() - start > timeout) return resolve(false);
+                setTimeout(check, 50);
+              })();
+            });
+          }
+
+          function clickControlBack() {
+            const backLink = shadowRoot.querySelector('.back-link');
+            if (!backLink) return;
+            // Control back is hidden on slides 2-11; temporarily force it clickable
+            backLink.style.setProperty('display', 'block', 'important');
+            backLink.style.setProperty('visibility', 'visible', 'important');
+            backLink.style.setProperty('pointer-events', 'auto', 'important');
+            const clickable = backLink.querySelector('div, button, a, span') || backLink;
+            clickable.click();
+            backLink.style.removeProperty('display');
+            backLink.style.removeProperty('visibility');
+            backLink.style.removeProperty('pointer-events');
+          }
+
+          async function goBackToSlide(targetSlide) {
+            let guard = 25;
+            while (getActiveSlideNumber() > targetSlide && guard-- > 0) {
+              const before = getActiveSlideNumber();
+              clickControlBack();
+              const moved = await waitForSlideDecrease(before, 3000);
+              if (!moved) {
+                // Retry once if the first click did not change the slide
+                clickControlBack();
+                await waitForSlideDecrease(before, 3000);
+              }
+            }
+            // Ensure we landed on the target (control may skip slides while going back)
+            if (getActiveSlideNumber() !== targetSlide && getActiveSlideNumber() > targetSlide) {
+              throw new Error('Unable to reach slide-' + targetSlide + ', currently on slide-' + getActiveSlideNumber());
+            }
           }
 
           function clearFieldError(wrapper) {
@@ -779,9 +972,19 @@
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
           }
 
+          function getPhoneDigits(value) {
+            return (value || '').replace(/\D/g, '').slice(0, 10);
+          }
+
+          function formatPhoneNumber(value) {
+            const digits = getPhoneDigits(value);
+            if (digits.length <= 3) return digits;
+            if (digits.length <= 6) return digits.slice(0, 3) + '-' + digits.slice(3);
+            return digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6);
+          }
+
           function isValidPhone(value) {
-            const digits = (value || '').replace(/\D/g, '');
-            return digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1');
+            return getPhoneDigits(value).length === 10;
           }
 
           function getFieldError(field, el) {
@@ -794,7 +997,13 @@
             if (!value) return field.requiredMsg;
             if (field.minLength && value.length < field.minLength) return field.minLengthMsg;
             if (field.type === 'email' && !isValidEmail(value)) return field.invalidMsg;
-            if (field.type === 'phone' && !isValidPhone(value)) return field.invalidMsg;
+            if (field.type === 'phone') {
+              const digits = getPhoneDigits(value);
+              if (!digits.length) return field.requiredMsg;
+              if (digits.length !== 10) return field.lengthMsg || 'Phone number must be 10 digits long';
+              if (!isValidPhone(value)) return field.invalidMsg;
+              return '';
+            }
             return '';
           }
 
@@ -848,7 +1057,8 @@
             return new Promise(function(resolve, reject) {
               const start = Date.now();
               (function check() {
-                const el = shadowRoot.querySelector('#' + fieldId);
+                // Control removes inactive-slide fields — only match the active slide
+                const el = shadowRoot.querySelector('.carousel-item.active #' + fieldId);
                 if (el) return resolve(el);
                 if (Date.now() - start > timeout) return reject(new Error(fieldId + ' not found'));
                 setTimeout(check, 50);
@@ -858,25 +1068,13 @@
 
           function clickControlNext() {
             const nextBtn = shadowRoot.querySelector('button[data-cy="next"]');
-            if (nextBtn) nextBtn.click();
-          }
-
-          function clickControlBack() {
-            const backBtn = shadowRoot.querySelector('.back-link');
-            if (backBtn) backBtn.click();
-          }
-
-          function waitForControlFieldOptional(fieldId, timeout) {
-            timeout = timeout || 400;
-            return new Promise(function(resolve) {
-              const start = Date.now();
-              (function check() {
-                const el = shadowRoot.querySelector('#' + fieldId);
-                if (el) return resolve(el);
-                if (Date.now() - start > timeout) return resolve(null);
-                setTimeout(check, 50);
-              })();
-            });
+            if (!nextBtn) return;
+            nextBtn.style.setProperty('display', 'inline-block', 'important');
+            nextBtn.style.setProperty('pointer-events', 'auto', 'important');
+            nextBtn.disabled = false;
+            nextBtn.click();
+            nextBtn.style.removeProperty('display');
+            nextBtn.style.removeProperty('pointer-events');
           }
 
           async function syncFieldsToControl(containerSelector, fields, options) {
@@ -888,18 +1086,22 @@
               if (!customEl) continue;
 
               const controlEl = await waitForControlField(fieldId);
-              setNativeValue(controlEl, customEl.value);
+              setNativeValue(controlEl, field.type === 'phone' ? formatPhoneNumber(customEl.value) : customEl.value);
+              await delay(150);
 
-              // Advance control form so the next field can appear
               if (i < fields.length - 1) {
-                const nextFieldId = getFieldId(fields[i + 1].selector);
-                let nextEl = await waitForControlFieldOptional(nextFieldId, 400);
-                if (!nextEl) {
+                const nextField = fields[i + 1];
+                const nextFieldId = getFieldId(nextField.selector);
+                // sameSlide (e.g. #first + #last on slide-9): fill both, do not click next
+                if (nextField.sameSlide) continue;
+                if (!shadowRoot.querySelector('.carousel-item.active #' + nextFieldId)) {
                   clickControlNext();
-                  nextEl = await waitForControlField(nextFieldId);
                 }
+                await waitForControlField(nextFieldId);
               } else if (!options.skipLastNext) {
-                clickControlNext();
+                if (shadowRoot.querySelector('.carousel-item.active #' + fieldId)) {
+                  clickControlNext();
+                }
               }
             }
           }
@@ -910,36 +1112,208 @@
               const start = Date.now();
               (function check() {
                 const el = shadowRoot.querySelector('#pwf-submit-button');
-                if (el) return resolve(el);
+                if (el && getActiveSlideNumber() === 11 && !el.disabled) return resolve(el);
                 if (Date.now() - start > timeout) return reject(new Error('pwf-submit-button not found'));
                 setTimeout(check, 50);
               })();
             });
           }
 
+          function clickPwfSubmit() {
+            const submitBtn = shadowRoot.querySelector('#pwf-submit-button');
+            if (!submitBtn) return false;
+            submitBtn.disabled = false;
+            submitBtn.removeAttribute('disabled');
+            submitBtn.click();
+            return true;
+          }
+
           async function syncSixSteps() {
             await syncFieldsToControl('.spz_six_steps', sixStepFields);
             pwfForm.classList.add('spz-four-mode');
+            updateFormHeader();
+          }
+
+          function getControlMarketingOptIn() {
+            return shadowRoot.querySelector('.slide-11 #marketingSmsOptIn') ||
+              shadowRoot.querySelector('.carousel-item.slide-11 input[name="marketingSmsOptIn"]');
+          }
+
+          function syncMarketingOptIn() {
+            const customOptIn = shadowRoot.querySelector('.spz_four_steps #marketingSmsOptIn');
+            const controlOptIn = getControlMarketingOptIn();
+            if (!customOptIn || !controlOptIn) return;
+            if (customOptIn.checked !== controlOptIn.checked) {
+              controlOptIn.click();
+            }
+          }
+
+          function bindPhoneFormatter() {
+            const phoneInput = shadowRoot.querySelector('.spz_four_steps .primary_phone');
+            if (!phoneInput || phoneInput.hasAttribute('data-spz-phone-bound')) return;
+            phoneInput.setAttribute('data-spz-phone-bound', 'true');
+            phoneInput.setAttribute('maxlength', '12'); // 10 digits + 2 dashes
+            phoneInput.addEventListener('input', function() {
+              const formatted = formatPhoneNumber(phoneInput.value);
+              if (phoneInput.value !== formatted) {
+                phoneInput.value = formatted;
+              }
+            });
+            phoneInput.addEventListener('keydown', function(e) {
+              // Allow control keys
+              if (e.ctrlKey || e.metaKey || e.altKey) return;
+              const allowed = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+              if (allowed.indexOf(e.key) !== -1) return;
+              if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+                return;
+              }
+              if (getPhoneDigits(phoneInput.value).length >= 10) {
+                e.preventDefault();
+              }
+            });
+          }
+
+          function bindMarketingOptInSync() {
+            const customOptIn = shadowRoot.querySelector('.spz_four_steps #marketingSmsOptIn');
+            if (!customOptIn || customOptIn.hasAttribute('data-spz-optin-bound')) return;
+            customOptIn.setAttribute('data-spz-optin-bound', 'true');
+            customOptIn.addEventListener('change', function() {
+              syncMarketingOptIn();
+            });
+          }
+
+          function delay(ms) {
+            return new Promise(function(resolve) {
+              setTimeout(resolve, ms);
+            });
+          }
+
+          function getSlide11ErrorMessages() {
+            const slide11 = shadowRoot.querySelector('.carousel-item.slide-11.active');
+            if (!slide11) return [];
+            const errors = [];
+            slide11.querySelectorAll('.error-text').forEach(function(errorEl) {
+              const message = (errorEl.textContent || '').trim();
+              if (!message) return;
+
+              let relatedInput = null;
+              let node = errorEl.parentElement;
+              while (node && node !== slide11) {
+                const prev = node.previousElementSibling;
+                if (prev) {
+                  relatedInput = prev.matches('input:not([type="checkbox"]), select')
+                    ? prev
+                    : prev.querySelector('input:not([type="checkbox"]), select');
+                  if (relatedInput) break;
+                }
+                const candidate = node.querySelector('input:not([type="checkbox"]), select');
+                if (candidate && !errorEl.contains(candidate)) {
+                  relatedInput = candidate;
+                  break;
+                }
+                node = node.parentElement;
+              }
+
+              errors.push({
+                message: message,
+                fieldId: relatedInput && relatedInput.id ? relatedInput.id : 'primary_phone'
+              });
+            });
+            return errors;
+          }
+
+          function mirrorSlide11ErrorsToFourSteps() {
+            const errors = getSlide11ErrorMessages();
+            if (!errors.length) return false;
+
+            // Clear existing custom errors first
+            shadowRoot.querySelectorAll('.spz_four_steps .form-field-wrapper').forEach(function(wrapper) {
+              clearFieldError(wrapper);
+            });
+
+            errors.forEach(function(error) {
+              const customEl = shadowRoot.querySelector('.spz_four_steps .' + error.fieldId) ||
+                shadowRoot.querySelector('.spz_four_steps .primary_phone');
+              const wrapper = customEl && customEl.closest('.form-field-wrapper');
+              if (wrapper) {
+                showFieldError(wrapper, error.message);
+              }
+            });
+            return true;
+          }
+
+          async function waitForSlide11ErrorsOrClear(timeout) {
+            timeout = timeout || 1500;
+            const start = Date.now();
+            // Give control a moment to render validation after first submit click
+            await delay(200);
+            return new Promise(function(resolve) {
+              (function check() {
+                const errors = getSlide11ErrorMessages();
+                if (errors.length) return resolve(true);
+                if (Date.now() - start > timeout) return resolve(false);
+                setTimeout(check, 50);
+              })();
+            });
           }
 
           async function syncFourSteps() {
-            const customOptIn = shadowRoot.querySelector('.spz_four_steps #marketingSmsOptIn');
-            const controlOptIn = shadowRoot.querySelector('.carousel-item input[name="marketingSmsOptIn"]');
-            if (customOptIn && controlOptIn && customOptIn.checked !== controlOptIn.checked) {
-              controlOptIn.click();
+            // slide-9 = #first + #last together, slide-10 = #email, slide-11 = #primary_phone
+            const slide = getActiveSlideNumber();
+            const startIndex = slide <= 9 ? 0 : (slide === 10 ? 2 : 3);
+            await syncFieldsToControl('.spz_four_steps', fourStepFields.slice(startIndex), { skipLastNext: true });
+
+            if (getActiveSlideNumber() !== 11) {
+              await waitForSlide(11);
             }
-            await syncFieldsToControl('.spz_four_steps', fourStepFields, { skipLastNext: true });
-            const submitBtn = await waitForSubmitButton();
-            submitBtn.click();
+            syncMarketingOptIn();
+            await delay(250);
+
+            await waitForSubmitButton();
+            clickPwfSubmit();
+
+            const hasErrors = await waitForSlide11ErrorsOrClear(1500);
+            if (hasErrors) {
+              mirrorSlide11ErrorsToFourSteps();
+              // Back to slide-9 so #first + #last are in the DOM again for the next submit
+              await goBackToSlide(9);
+              return;
+            }
+
+            // Re-query after validation — first click can re-render the button
+            await delay(200);
+            await waitForSubmitButton();
+            clickPwfSubmit();
           }
 
           bindFieldErrorClear('.spz_six_steps', sixStepFields);
           bindFieldErrorClear('.spz_four_steps', fourStepFields);
+          bindPhoneFormatter();
+          bindMarketingOptInSync();
+
+          // Keep form header / CTA label in sync with active slide / step mode
+          shadowRoot.querySelectorAll('.carousel-item').forEach(function(item) {
+            new MutationObserver(function() {
+              updateFormHeader();
+              // Opt-in may only exist once slide-11 is in the DOM
+              if (getActiveSlideNumber() === 11) {
+                syncMarketingOptIn();
+              }
+            }).observe(item, { attributes: true, attributeFilter: ['class'] });
+          });
+          updateFormHeader();
 
           let isSyncing = false;
 
+          function setSyncing(state) {
+            isSyncing = state;
+            const btn = shadowRoot.querySelector('.additional-button-wrapper button');
+            if (btn) btn.disabled = state;
+          }
+
           shadowRoot.querySelector('#pwf-1 .additional-button-wrapper button').addEventListener("click", async function(){
-            if (isSyncing) return;
+            if (isSyncing || this.disabled) return;
 
             // Initial funding question step (before additional-answered)
             if (!pwfForm.classList.contains('additional-answered')) {
@@ -952,41 +1326,59 @@
 
             if (!pwfForm.classList.contains('spz-four-mode')) {
               if (!validateStepFields('.spz_six_steps', sixStepFields)) return;
-              isSyncing = true;
+              setSyncing(true);
               try {
                 await syncSixSteps();
               } catch (e) {
                 console.warn('SPZ 3017 six-step sync failed', e);
               }
-              isSyncing = false;
+              setSyncing(false);
               return;
             }
 
             if (!validateStepFields('.spz_four_steps', fourStepFields)) return;
-            isSyncing = true;
+            setSyncing(true);
             try {
               await syncFourSteps();
             } catch (e) {
               console.warn('SPZ 3017 four-step sync failed', e);
             }
-            isSyncing = false;
+            setSyncing(false);
           });
 
-          shadowRoot.querySelector('#pwf-1 .additional-back-button-wrapper').addEventListener("click",function(){
+          shadowRoot.querySelector('#pwf-1 .additional-back-button-wrapper').addEventListener("click", async function(){
             if (isSyncing) return;
             const slideNum = getActiveSlideNumber();
 
+            // From four-steps: click control back until slide-2, then show six-steps
             if (pwfForm.classList.contains('spz-four-mode')) {
+              setSyncing(true);
               pwfForm.classList.remove('spz-four-mode');
+              try {
+                await goBackToSlide(2);
+              } catch (e) {
+                console.warn('SPZ 3017 back to six-steps failed', e);
+              }
+              updateFormHeader();
+              setSyncing(false);
               return;
             }
 
+            // From six-steps: go back to amount (slide-1)
             if (slideNum >= 2) {
-              clickControlBack();
+              setSyncing(true);
+              try {
+                await goBackToSlide(1);
+              } catch (e) {
+                console.warn('SPZ 3017 back to amount failed', e);
+              }
+              updateFormHeader();
+              setSyncing(false);
               return;
             }
 
             pwfForm.classList.remove('additional-answered');
+            updateFormHeader();
           });
 
           shadowRoot.querySelector('label.amountSeeking').textContent = "Select amount";
