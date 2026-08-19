@@ -108,7 +108,7 @@
           // #pwf-1 .error-text{
           //   white-space: nowrap;
           // }
-          #pwf-1.spz-slide-11 div:has(>#pwf-submit-button){
+          #pwf-1:has(.slide-11.active) div:has(>#pwf-submit-button){
             width: 0px;
             visibility: hidden;
             opacity: 0;
@@ -227,26 +227,26 @@
             display: none!important;
           }
           /* Keep custom next/back visible on slides 2-11 even when control toggles loader display */
-          #pwf-1.spz-slide-2 .additional-button-wrapper,
-          #pwf-1.spz-slide-3 .additional-button-wrapper,
-          #pwf-1.spz-slide-4 .additional-button-wrapper,
-          #pwf-1.spz-slide-5 .additional-button-wrapper,
-          #pwf-1.spz-slide-6 .additional-button-wrapper,
-          #pwf-1.spz-slide-7 .additional-button-wrapper,
-          #pwf-1.spz-slide-8 .additional-button-wrapper,
-          #pwf-1.spz-slide-9 .additional-button-wrapper,
-          #pwf-1.spz-slide-10 .additional-button-wrapper,
-          #pwf-1.spz-slide-11 .additional-button-wrapper,
-          #pwf-1.spz-slide-2 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-3 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-4 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-5 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-6 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-7 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-8 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-9 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-10 .additional-back-button-wrapper,
-          #pwf-1.spz-slide-11 .additional-back-button-wrapper {
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-2.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-3.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-4.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-5.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-6.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-7.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-8.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-9.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-10.active) .additional-back-button-wrapper,
+          #pwf-1:has(.slide-11.active) .additional-back-button-wrapper {
             display: block !important;
           }
           #pwf-1 div:has(.disclosure-tooltip){
@@ -325,9 +325,9 @@
           #pwf-1:not(.additional-answered) .carousel-item,
           #pwf-1:not(.additional-answered) button[data-cy="next"],
           #pwf-1:not(.additional-answered) .spz_steps,
-          #pwf-1.spz-slide-1 .spz_steps,
+          #pwf-1:has(.slide-1.active) .spz_steps,
           #pwf-1.additional-answered .additional-question,
-          #pwf-1.additional-answered.spz-slide-1 .additional-button-wrapper,
+          #pwf-1.additional-answered:has(.slide-1.active) .additional-button-wrapper,
           #pwf-1 .spz_four_steps,
           #pwf-1.spz-four-mode .spz_six_steps {
             display: none;
@@ -344,38 +344,28 @@
           #pwf-1.spz-four-mode .spz_four_steps {
             display: block;
           }
-
-          #pwf-1.spz-form-submitting .spz_four_steps,
-          #pwf-1.spz-form-submitting .spz_six_steps,
-          #pwf-1.spz-form-submitting .additional-button-wrapper,
-          #pwf-1.spz-form-submitting .additional-back-button-wrapper,
-          #pwf-1.spz-form-submitting .form_header,
-          #pwf-1.spz-form-submitting .steps {
-            display: none !important;
-          }
-
-          #pwf-1.spz-slide-2 .form_header,
-          #pwf-1.spz-slide-3 .form_header,
-          #pwf-1.spz-slide-4 .form_header,
-          #pwf-1.spz-slide-5 .form_header,
-          #pwf-1.spz-slide-6 .form_header,
-          #pwf-1.spz-slide-7 .form_header,
-          #pwf-1.spz-slide-8 .form_header,
-          #pwf-1.spz-slide-9 .form_header,
-          #pwf-1.spz-slide-10 .form_header,
-          #pwf-1.spz-slide-11 .form_header {
+          #pwf-1:has(.slide-2.active) .form_header,
+          #pwf-1:has(.slide-3.active) .form_header,
+          #pwf-1:has(.slide-4.active) .form_header,
+          #pwf-1:has(.slide-5.active) .form_header,
+          #pwf-1:has(.slide-6.active) .form_header,
+          #pwf-1:has(.slide-7.active) .form_header,
+          #pwf-1:has(.slide-8.active) .form_header,
+          #pwf-1:has(.slide-9.active) .form_header,
+          #pwf-1:has(.slide-10.active) .form_header,
+          #pwf-1:has(.slide-11.active) .form_header {
             padding-bottom: 26.5px;
           }
-          #pwf-1.spz-slide-2 .additional-button-wrapper,
-          #pwf-1.spz-slide-3 .additional-button-wrapper,
-          #pwf-1.spz-slide-4 .additional-button-wrapper,
-          #pwf-1.spz-slide-5 .additional-button-wrapper,
-          #pwf-1.spz-slide-6 .additional-button-wrapper,
-          #pwf-1.spz-slide-7 .additional-button-wrapper,
-          #pwf-1.spz-slide-8 .additional-button-wrapper,
-          #pwf-1.spz-slide-9 .additional-button-wrapper,
-          #pwf-1.spz-slide-10 .additional-button-wrapper,
-          #pwf-1.spz-slide-11 .additional-button-wrapper {
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper {
             display: block;
             min-width: unset;
             width: calc(100% - 57px);
@@ -383,64 +373,62 @@
             margin-left: -57px;
             margin-top: 0;
           }
-          #pwf-1.spz-slide-2 .additional-button-wrapper button,
-          #pwf-1.spz-slide-3 .additional-button-wrapper button,
-          #pwf-1.spz-slide-4 .additional-button-wrapper button,
-          #pwf-1.spz-slide-5 .additional-button-wrapper button,
-          #pwf-1.spz-slide-6 .additional-button-wrapper button,
-          #pwf-1.spz-slide-7 .additional-button-wrapper button,
-          #pwf-1.spz-slide-8 .additional-button-wrapper button{
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper button,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper button {
             width: 140px;
           }
-          #pwf-1.spz-slide-9 .additional-button-wrapper button,
-          #pwf-1.spz-slide-10 .additional-button-wrapper button,
-          #pwf-1.spz-slide-11 .additional-button-wrapper button {
-            width: 151px;
-          }
-          #pwf-1.spz-slide-2 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-3 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-4 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-5 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-6 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-7 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-8 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-9 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-10 .additional-button-wrapper + div,
-          #pwf-1.spz-slide-11 .additional-button-wrapper + div {
+          #pwf-1:has(.slide-2.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-3.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-4.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-5.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-6.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-7.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-8.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-9.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-10.active) .additional-button-wrapper + div,
+          #pwf-1:has(.slide-11.active) .additional-button-wrapper + div {
             width: unset;
           }
-          #pwf-1.spz-slide-2 .flex:has(.btn-action),
-          #pwf-1.spz-slide-3 .flex:has(.btn-action),
-          #pwf-1.spz-slide-4 .flex:has(.btn-action),
-          #pwf-1.spz-slide-5 .flex:has(.btn-action),
-          #pwf-1.spz-slide-6 .flex:has(.btn-action),
-          #pwf-1.spz-slide-7 .flex:has(.btn-action),
-          #pwf-1.spz-slide-8 .flex:has(.btn-action),
-          #pwf-1.spz-slide-9 .flex:has(.btn-action),
-          #pwf-1.spz-slide-10 .flex:has(.btn-action),
-          #pwf-1.spz-slide-11 .flex:has(.btn-action) {
+          #pwf-1:has(.slide-2.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-3.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-4.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-5.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-6.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-7.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-8.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-9.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-10.active) .flex:has(.btn-action),
+          #pwf-1:has(.slide-11.active) .flex:has(.btn-action) {
             margin-top: 17px;
           }
-          #pwf-1.spz-slide-2 button[data-cy="next"],
-          #pwf-1.spz-slide-3 button[data-cy="next"],
-          #pwf-1.spz-slide-4 button[data-cy="next"],
-          #pwf-1.spz-slide-5 button[data-cy="next"],
-          #pwf-1.spz-slide-6 button[data-cy="next"],
-          #pwf-1.spz-slide-7 button[data-cy="next"],
-          #pwf-1.spz-slide-8 button[data-cy="next"],
-          #pwf-1.spz-slide-9 button[data-cy="next"],
-          #pwf-1.spz-slide-10 button[data-cy="next"],
-          #pwf-1.spz-slide-11 button[data-cy="next"],
-          #pwf-1.spz-slide-2 .back-link,
-          #pwf-1.spz-slide-3 .back-link,
-          #pwf-1.spz-slide-4 .back-link,
-          #pwf-1.spz-slide-5 .back-link,
-          #pwf-1.spz-slide-6 .back-link,
-          #pwf-1.spz-slide-7 .back-link,
-          #pwf-1.spz-slide-8 .back-link,
-          #pwf-1.spz-slide-9 .back-link,
-          #pwf-1.spz-slide-10 .back-link,
-          #pwf-1.spz-slide-11 .back-link {
+          #pwf-1:has(.slide-2.active) button[data-cy="next"],
+          #pwf-1:has(.slide-3.active) button[data-cy="next"],
+          #pwf-1:has(.slide-4.active) button[data-cy="next"],
+          #pwf-1:has(.slide-5.active) button[data-cy="next"],
+          #pwf-1:has(.slide-6.active) button[data-cy="next"],
+          #pwf-1:has(.slide-7.active) button[data-cy="next"],
+          #pwf-1:has(.slide-8.active) button[data-cy="next"],
+          #pwf-1:has(.slide-9.active) button[data-cy="next"],
+          #pwf-1:has(.slide-10.active) button[data-cy="next"],
+          #pwf-1:has(.slide-11.active) button[data-cy="next"],
+          #pwf-1:has(.slide-2.active) .back-link,
+          #pwf-1:has(.slide-3.active) .back-link,
+          #pwf-1:has(.slide-4.active) .back-link,
+          #pwf-1:has(.slide-5.active) .back-link,
+          #pwf-1:has(.slide-6.active) .back-link,
+          #pwf-1:has(.slide-7.active) .back-link,
+          #pwf-1:has(.slide-8.active) .back-link,
+          #pwf-1:has(.slide-9.active) .back-link,
+          #pwf-1:has(.slide-10.active) .back-link,
+          #pwf-1:has(.slide-11.active) .back-link {
             display: none !important;
           }
           // #pwf-1 .spz_steps .text-left .error-text {
@@ -499,19 +487,18 @@
             transition-duration: .15s;
             animation: fadeIn 1s ease-out forwards;
             opacity: 0;
-            cursor: pointer;
           }
-          #pwf-1.additional-answered.spz-slide-1,
-          #pwf-1.spz-slide-2,
-          #pwf-1.spz-slide-3,
-          #pwf-1.spz-slide-4,
-          #pwf-1.spz-slide-5,
-          #pwf-1.spz-slide-6,
-          #pwf-1.spz-slide-7,
-          #pwf-1.spz-slide-8,
-          #pwf-1.spz-slide-9,
-          #pwf-1.spz-slide-10,
-          #pwf-1.spz-slide-11{
+          #pwf-1.additional-answered:has(.active.slide-1),
+          #pwf-1:has(.slide-2.active),
+          #pwf-1:has(.slide-3.active),
+          #pwf-1:has(.slide-4.active),
+          #pwf-1:has(.slide-5.active),
+          #pwf-1:has(.slide-6.active),
+          #pwf-1:has(.slide-7.active),
+          #pwf-1:has(.slide-8.active),
+          #pwf-1:has(.slide-9.active),
+          #pwf-1:has(.slide-10.active),
+          #pwf-1:has(.slide-11.active){
             --back-display: block;
             --back-opacity: 1;
           }
@@ -534,37 +521,37 @@
           #pwf-1 .additional-back-button-wrapper:hover button{
             color: #121111;
           }
-          #pwf-1.spz-slide-1 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-1.active) .carousel-inner{
             --bar-scale: calc(1 / 3);
           }
-          #pwf-1.spz-slide-2 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-2.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-3 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-3.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-4 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-4.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-5 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-5.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-6 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-6.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-7 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-7.active) .carousel-inner{
             --bar-scale: calc(2 / 3);
           }
-          #pwf-1.spz-slide-8 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-8.active) .carousel-inner{
             --bar-scale: calc(3 / 3);
           }
-          #pwf-1.spz-slide-9 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-9.active) .carousel-inner{
             --bar-scale: calc(3 / 3);
           }
-          #pwf-1.spz-slide-10 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-10.active) .carousel-inner{
             --bar-scale: calc(3 / 3);
           }
-          #pwf-1.spz-slide-11 .carousel-inner{
+          #pwf-1:has(.carousel-item.slide-11.active) .carousel-inner{
             --bar-scale: calc(3 / 3);
           }
           .steps {
@@ -648,16 +635,16 @@
             .additional-answered {
               padding: 33.5px 47px 35px 47px;
             }
-            #pwf-1.spz-slide-2 .additional-button-wrapper, 
-            #pwf-1.spz-slide-3 .additional-button-wrapper, 
-            #pwf-1.spz-slide-4 .additional-button-wrapper, 
-            #pwf-1.spz-slide-5 .additional-button-wrapper, 
-            #pwf-1.spz-slide-6 .additional-button-wrapper, 
-            #pwf-1.spz-slide-7 .additional-button-wrapper, 
-            #pwf-1.spz-slide-8 .additional-button-wrapper, 
-            #pwf-1.spz-slide-9 .additional-button-wrapper, 
-            #pwf-1.spz-slide-10 .additional-button-wrapper, 
-            #pwf-1.spz-slide-11 .additional-button-wrapper {
+            #pwf-1:has(.slide-2.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-3.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-4.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-5.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-6.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-7.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-8.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-9.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-10.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-11.active) .additional-button-wrapper {
               width: calc(100% - 57px);
               margin-left: -57px;
             }
@@ -685,7 +672,7 @@
             #pwf-1.additional-answered, #pwf-1.additional-answered:has(.back-link:not(.invisible)), #pwf-1.additional-answered:has(.back-link:not(.invisible)>div[style*="display: none"]){
               margin-top: 31.5px;
             }
-            #pwf-1.spz-slide-11 .carousel-inner+div {
+            #pwf-1:has(.slide-11.active) .carousel-inner+div {
               margin-top: 5px;
             }
             #pwf-1 div:has(.disclosure-tooltip){
@@ -702,7 +689,7 @@
             #pwf-1 .back-link{
               margin-top: 6px;
             }
-            #pwf-1.spz-slide-1 .additional-back-button-wrapper{
+            #pwf-1:has(.active.slide-1) .additional-back-button-wrapper{
               margin-top: 9px;
             }
             #pwf-1 .back-link >div{
@@ -742,16 +729,16 @@
               font-size: 24px;
               line-height: 31.2px;
             }
-            #pwf-1.spz-slide-2 .form_header, 
-            #pwf-1.spz-slide-3 .form_header, 
-            #pwf-1.spz-slide-4 .form_header, 
-            #pwf-1.spz-slide-5 .form_header, 
-            #pwf-1.spz-slide-6 .form_header, 
-            #pwf-1.spz-slide-7 .form_header, 
-            #pwf-1.spz-slide-8 .form_header, 
-            #pwf-1.spz-slide-9 .form_header, 
-            #pwf-1.spz-slide-10 .form_header, 
-            #pwf-1.spz-slide-11 .form_header {
+            #pwf-1:has(.slide-2.active) .form_header, 
+            #pwf-1:has(.slide-3.active) .form_header, 
+            #pwf-1:has(.slide-4.active) .form_header, 
+            #pwf-1:has(.slide-5.active) .form_header, 
+            #pwf-1:has(.slide-6.active) .form_header, 
+            #pwf-1:has(.slide-7.active) .form_header, 
+            #pwf-1:has(.slide-8.active) .form_header, 
+            #pwf-1:has(.slide-9.active) .form_header, 
+            #pwf-1:has(.slide-10.active) .form_header, 
+            #pwf-1:has(.slide-11.active) .form_header {
                 padding-bottom: 18px;
             }
             .spz_steps > ul{
@@ -760,28 +747,28 @@
             .spz_steps > ul > li{
               width: 100%;
             }
-            #pwf-1.spz-slide-2 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-3 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-4 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-5 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-6 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-7 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-8 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-9 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-10 .flex:has(.btn-action), 
-            #pwf-1.spz-slide-11 .flex:has(.btn-action) {
+            #pwf-1:has(.slide-2.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-3.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-4.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-5.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-6.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-7.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-8.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-9.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-10.active) .flex:has(.btn-action), 
+            #pwf-1:has(.slide-11.active) .flex:has(.btn-action) {
               margin-top: 18px;
             }
-            #pwf-1.spz-slide-2 .additional-button-wrapper, 
-            #pwf-1.spz-slide-3 .additional-button-wrapper, 
-            #pwf-1.spz-slide-4 .additional-button-wrapper, 
-            #pwf-1.spz-slide-5 .additional-button-wrapper, 
-            #pwf-1.spz-slide-6 .additional-button-wrapper, 
-            #pwf-1.spz-slide-7 .additional-button-wrapper, 
-            #pwf-1.spz-slide-8 .additional-button-wrapper, 
-            #pwf-1.spz-slide-9 .additional-button-wrapper, 
-            #pwf-1.spz-slide-10 .additional-button-wrapper, 
-            #pwf-1.spz-slide-11 .additional-button-wrapper {
+            #pwf-1:has(.slide-2.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-3.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-4.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-5.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-6.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-7.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-8.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-9.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-10.active) .additional-button-wrapper, 
+            #pwf-1:has(.slide-11.active) .additional-button-wrapper {
               width: 100%;
               margin-left: 0;
               text-align: end;
@@ -789,14 +776,7 @@
             #pwf-1 div:has(>.back-link){
               margin-top: 0;
             }
-            #pwf-1 .flex:has(> #marketingSmsOptIn){
-              margin: 16px 0 12px;
-            }
-            .spz_steps ul + .col-12 {
-              padding-top: 0px;
-              margin-top: -2px;
-              margin-right: -4px;
-            }
+
           }
           @keyframes fadeIn {
             from {
@@ -1146,27 +1126,6 @@
             if (!btn) return;
             btn.textContent = pwfForm.classList.contains('spz-four-mode') ? 'Submit' : 'Next';
           }
-
-          function syncActiveSlideClass() {
-            const slideNum = getActiveSlideNumber();
-            for (let i = 1; i <= 11; i++) {
-              pwfForm.classList.toggle('spz-slide-' + i, i === slideNum);
-            }
-            // Keep control next/back hidden on multi-field steps (Safari-safe, no :has)
-            const hideControlNav = slideNum >= 2;
-            const nextBtn = shadowRoot.querySelector('button[data-cy="next"]');
-            const backLink = shadowRoot.querySelector('.back-link');
-            if (nextBtn) {
-              if (hideControlNav) nextBtn.style.setProperty('display', 'none', 'important');
-              else nextBtn.style.removeProperty('display');
-            }
-            if (backLink) {
-              if (hideControlNav) backLink.style.setProperty('display', 'none', 'important');
-              else backLink.style.removeProperty('display');
-            }
-            updateFormHeader();
-          }
-
 
           function waitForSlide(slideNum, timeout) {
             timeout = timeout || 10000;
@@ -1548,16 +1507,13 @@
 
             const hasErrors = await waitForSlide11ErrorsOrClear(1500);
             if (hasErrors) {
-              pwfForm.classList.remove('spz-form-submitting');
               mirrorSlide11ErrorsToFourSteps();
               // Back to slide-9 so #first + #last are in the DOM again for the next submit
               await goBackToSlide(9);
               return;
             }
 
-            // Hide custom steps immediately so they don't flash during redirect delay
-            pwfForm.classList.add('spz-form-submitting');
-            pwfForm.classList.remove('spz-four-mode');
+            // Re-query after validation — first click can re-render the button
             await delay(200);
             await waitForSubmitButton();
             clickPwfSubmit();
@@ -1571,14 +1527,14 @@
           // Keep form header / CTA label in sync with active slide / step mode
           shadowRoot.querySelectorAll('.carousel-item').forEach(function(item) {
             new MutationObserver(function() {
-              syncActiveSlideClass();
+              updateFormHeader();
               // Opt-in may only exist once slide-11 is in the DOM
               if (getActiveSlideNumber() === 11) {
                 syncMarketingOptIn();
               }
             }).observe(item, { attributes: true, attributeFilter: ['class'] });
           });
-          syncActiveSlideClass();
+          updateFormHeader();
 
           let isSyncing = false;
 
@@ -1619,10 +1575,7 @@
             } catch (e) {
               console.warn('SPZ 3017 four-step sync failed', e);
             }
-            // Keep disabled while redirecting after successful submit
-            if (!pwfForm.classList.contains('spz-form-submitting')) {
-              setSyncing(false);
-            }
+            setSyncing(false);
           });
 
           shadowRoot.querySelector('#pwf-1 .additional-back-button-wrapper').addEventListener("click", async function(){
