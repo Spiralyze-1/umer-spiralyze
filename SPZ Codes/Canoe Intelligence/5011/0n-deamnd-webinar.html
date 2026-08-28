@@ -1,68 +1,306 @@
-function spz5011() {
-	if (!document.querySelector('body').classList.contains('spz_5011_v')) {
-		document.querySelector('body').classList.add('spz_5011_v');
+<style>
+  .spz_5011_v .spz_webinar_section {
+    padding: 80px 0;
+  }
 
-		document.querySelector('.hero-title').insertAdjacentHTML('afterend', `
-<div class="spz_thankYou_hero">
-  <div class="auto_container">
-    <div class="spz_hero_inner">
-      <div class="spz_hero_data">
-        <strong>WEBINAR: SHAPING A SMARTER FUTURE FOR ALTS WITH CANOE</strong>
-        <h1>Optimize alts strategy and grow</h1>
-        <b>You’re registered!</b>
-        <p>Check your email for your confirmation.</p>
-        <div class="spz_dateTime">
-          <span>
-            <img
-              src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1785325116/canoeintelligence/5011/icon-calendar.svg"
-              alt="date icon">
-            Thursday, July 23, 2026
-          </span>
-          <span>
-            <img
-              src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1785325116/canoeintelligence/5011/icon-clock.svg"
-              alt="clock icon">
-            11:00 am – 12:00 pm PT
-          </span>
-        </div>
-        <div class="spz_hero_tags">
-          <ul>
-            <li>
-              <div class="spz_tagData">
-                <img
-                  src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1785325117/canoeintelligence/5011/icon-arrow-link.svg"
-                  alt="arrow">
-                <p>Automate alts workflows from middle office to compliance</p>
-              </div>
-            </li>
-            <li>
-              <div class="spz_tagData">
-                <img
-                  src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1785325117/canoeintelligence/5011/icon-arrow-link.svg"
-                  alt="arrow">
-                <p>Classify docs and extract data with AI</p>
-              </div>
-            </li>
-            <li>
-              <div class="spz_tagData">
-                <img
-                  src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1785325117/canoeintelligence/5011/icon-arrow-link.svg"
-                  alt="arrow">
-                <p>Optimize alts strategy and grow</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="spz_ctaOuter">
-          <a href="" class="spz_custom_cta btn btn-fill">
-            Click to add to your calendar
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  .spz_5011_v .spz_webinar_section .auto_container {
+    max-width: 1416px;
+  }
 
+  .spz_5011_v .spz_webinar_section .cta_outer .spz_custom_cta {
+    width: 231px;
+    padding: 17px 15px;
+  }
+
+  .spz_5011_v .spz_webinar_title {
+    padding-bottom: 64px;
+  }
+
+  .spz_5011_v .spz_webinar_title h2 {
+    color: #293054;
+    text-align: center;
+    font-family: "DM Serif Display";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52.8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz_5011_v .webinar_list {
+    padding-bottom: 64px;
+  }
+
+  .spz_5011_v .webinar_list>ul {
+    padding: 0;
+    margin: 0 -12px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .spz_5011_v .webinar_list>ul>li {
+    width: 33.33%;
+    padding: 0 12px;
+  }
+
+  .spz_5011_v .webinar_list>ul>li::before {
+    display: none;
+  }
+
+  .spz_5011_v .webinar_listData a {
+    display: block;
+    border-radius: 0 24px 24px 24px;
+    border: 1px solid #DDE4E4;
+    background: #FFF;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .spz_5011_v .webinar_listData a * {
+    text-decoration: none;
+  }
+
+  .spz_5011_v .webinar_listData a *:hover {
+    text-decoration: none;
+  }
+
+  .spz_5011_v .webinar_top {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/5011/1440.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 0 14px 19px;
+    border-radius: 0 24px;
+    height: 216px;
+  }
+
+  .spz_5011_v .webinar_top>span {
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14.85px;
+    letter-spacing: 0.66px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 6px 1px;
+    border-radius: 0 6px;
+    background: #1BFFC3;
+    backdrop-filter: blur(2.2898795605px);
+    -moz-backdrop-filter: blur(2.2898795605px);
+  }
+
+  .spz_5011_v .webinar_topLeft {
+    max-width: 200px;
+    transform: translateY(4px);
+  }
+
+  .spz_5011_v .webinar_topLeft strong {
+    display: block;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30.8px;
+    max-width: 185px;
+    padding-bottom: 4px;
+  }
+
+  .spz_5011_v .webinar_topLeft span {
+    display: flex;
+    align-items: center;
+  }
+
+  .spz_5011_v .webinar_topLeft span img {
+    display: inline-block;
+  }
+
+  .spz_5011_v .webinar_topLeft span b {
+    display: block;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16.8px;
+    padding: 0 6px;
+  }
+
+  .spz_5011_v .webinar_topRight {
+    max-width: 154px;
+    width: 100%;
+  }
+
+  .spz_5011_v .webinar_topRight ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .spz_5011_v .webinar_topRight ul li {
+    width: 100%;
+    padding: 0 0 4px;
+  }
+
+  .spz_5011_v .webinar_topRight ul li:last-child {
+    padding-bottom: 0;
+  }
+
+  .spz_5011_v .webinar_topRight ul li::before {
+    display: none;
+  }
+
+  .spz_5011_v .webinar_team {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    border-radius: 294px 0 0 294px;
+    background: #ECF2F2;
+  }
+
+  .spz_5011_v .webinar_team figure {
+    display: block;
+    width: 32px;
+    margin-bottom: 0;
+  }
+
+  .spz_5011_v .webinar_team figure img {
+    display: block;
+    width: 100%;
+    border-radius: 32px;
+  }
+
+  .spz_5011_v .webinar_team small {
+    width: calc(100% - 38px);
+  }
+
+  .spz_5011_v .webinar_team small strong {
+    display: block;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 11.2px;
+    margin-bottom: 2px;
+  }
+
+  .spz_5011_v .webinar_team small span {
+    display: block;
+    color: rgba(41, 48, 84, 0.7);
+    font-family: "Open Sans";
+    font-size: 7px;
+    font-weight: 400;
+    line-height: 9.8px;
+    padding-right: 10px;
+  }
+
+  .spz_5011_v .webinar_bottom {
+    padding: 20px 23px 12px;
+  }
+
+  .spz_5011_v .webinar_bottom h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22.4px;
+    padding-bottom: 13px;
+  }
+
+  .spz_5011_v .webinar_bottom p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    color: rgba(41, 48, 84, 0.7);
+    text-overflow: ellipsis;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+  }
+
+  .spz_5011_v .webinar_bottom.h3_3_lines p {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .spz_5011_v .webinar_bottom span {
+    display: inline-block;
+    color: #C423F9;
+    font-family: "Open Sans";
+    font-size: 15.48px;
+    font-weight: 700;
+    line-height: 20.898px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 6px;
+  }
+
+  .spz_5011_v .webinar_bottom span:before {
+    content: "";
+    width: 0;
+    height: 2px;
+    float: left;
+    background: #c423f9;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .spz_5011_v .webinar_bottom span::after {
+    content: "";
+    width: 11px;
+    height: 13px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11'%3E%3Cpath d='M0.867124 0.433633C0.867124 0.556826 0.917493 0.673176 1.00361 0.755304C2.17589 1.888 2.84205 3.48694 2.83962 5.16203C2.83962 6.83712 2.17102 8.43521 0.997107 9.56448C0.823255 9.71847 0.799696 9.99052 0.945927 10.1745C1.07591 10.3404 1.30257 10.3789 1.47642 10.266L9.25346 5.54615C9.45006 5.42724 9.5183 5.16203 9.40538 4.955C9.36964 4.88912 9.31764 4.83351 9.25346 4.79587L1.48454 0.0589203C1.28794 -0.0608509 1.03691 0.00930078 0.92318 0.216334C0.886622 0.282208 0.867124 0.356637 0.867124 0.433633Z' fill='%23C423F9'/%3E%3C/svg%3E") center/contain no-repeat;
+    background-size: 100% auto;
+    text-indent: -9999px;
+    position: relative;
+    top: -2px;
+    margin: 0 0 0 4px;
+  }
+
+  .spz_5011_v .webinar_bottom span:hover::before {
+    width: 100%;
+  }
+
+  .spz_5011_v .cta_outer {
+    text-align: center;
+  }
+
+  /*# sourceMappingURL=style.css.map */
+</style>
 <div class="spz_webinar_section">
   <div class="auto_container">
     <div class="spz_webinar_inner">
@@ -296,120 +534,41 @@ function spz5011() {
         </ul>
       </div>
       <div class="cta_outer">
-        <a href="https://canoeintelligence.com/webinar-center" class="spz_custom_cta btn btn-fill">See ALL Webinars</a>
+        <a href="#" class="spz_custom_cta btn btn-fill">See ALL Webinars</a>
       </div>
     </div>
   </div>
 </div>
-        `);
+<script>
 
-		function clampWebinarCopy() {
-			document.querySelectorAll('.webinar_bottom').forEach(function (bottom) {
-				var heading = bottom.querySelector('h3');
-				if (!heading) return;
-				var styles = window.getComputedStyle(heading);
-				var lineHeight = parseFloat(styles.lineHeight);
-				if (!lineHeight) return;
-				var paddingY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
-				var lines = Math.round((heading.getBoundingClientRect().height - paddingY) / lineHeight);
-				bottom.classList.toggle('h3_3_lines', lines >= 3);
-			});
-		}
+  function clampWebinarCopy() {
+    document.querySelectorAll('.webinar_bottom').forEach(function (bottom) {
+      var heading = bottom.querySelector('h3');
+      if (!heading) return;
+      var styles = window.getComputedStyle(heading);
+      var lineHeight = parseFloat(styles.lineHeight);
+      if (!lineHeight) return;
+      var paddingY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+      var lines = Math.round((heading.getBoundingClientRect().height - paddingY) / lineHeight);
+      bottom.classList.toggle('h3_3_lines', lines >= 3);
+    });
+  }
 
-		var clampWebinarCopyTimer;
-		function scheduleClampWebinarCopy() {
-			clearTimeout(clampWebinarCopyTimer);
-			clampWebinarCopyTimer = setTimeout(clampWebinarCopy, 50);
-		}
+  var clampWebinarCopyTimer;
+  function scheduleClampWebinarCopy() {
+    clearTimeout(clampWebinarCopyTimer);
+    clampWebinarCopyTimer = setTimeout(clampWebinarCopy, 50);
+  }
 
-		clampWebinarCopy();
-		if (document.fonts && document.fonts.ready) {
-			document.fonts.ready.then(clampWebinarCopy);
-		}
-		window.addEventListener('resize', scheduleClampWebinarCopy);
-		if (typeof ResizeObserver !== 'undefined') {
-			var webinarCopyClampObserver = new ResizeObserver(scheduleClampWebinarCopy);
-			document.querySelectorAll('.webinar_bottom h3').forEach(function (heading) {
-				webinarCopyClampObserver.observe(heading);
-			});
-		}
-
-	}
-}
-
-spz5011();
-
-
-// If you face any issues, please switch to the named-function version of this code and use that instead.
-(function () {
-	//Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
-
-	// Set the value of the squeezePage variable as needed:
-	// true  – if you are using a squeeze page (i.e., the page contains a form)
-	// false – if you are not using a squeeze page (i.e., the page does not contain a form)
-	// 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
-
-	const squeezePage = false; // true / false / 'both'
-	const expName = '5011'; //experiment name should be 1001, 1002, 1003 etc.
-	const variantName = `#` + expName + `_spz_var`; //variantName should be _spz_var, _spz_control etc.
-	const clientDomain = '.canoeintelligence.com'; //domain should be .spiralyze.com
-
-
-	/***********************************
-	************************************
-	DO NOT TOUCH
-	BEYOND THIS LINE
-	******************************
-	******************************/
-	const formHiddenValue = variantName;
-	if (squeezePage === true) {
-		window.squeezePageValue = formHiddenValue;
-	} else if (squeezePage === false) {
-		hiddenValue(expName, variantName);
-	} else if (squeezePage === 'both') {
-		hiddenValue(expName, variantName);
-		window.squeezePageValue = formHiddenValue;
-	}
-	function hiddenValue(currentExperimentName, currentExperimentValue) {
-		function setCookie(name, value, days) {
-			var expires = "";
-			if (days) {
-				var date = new Date();
-				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-				expires = "; expires=" + date.toUTCString();
-			}
-			document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
-		}
-
-		function getCookie(name) {
-			var nameEQ = name + "=";
-			var ca = document.cookie.split(';');
-			for (var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-			}
-			return null;
-		}
-
-		var ExistingExperimentName = getCookie('ExperimentName');
-		var ExistingExperimentValue = getCookie('ExperimentValue');
-		var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
-
-		if (!ExistingExperimentName) {
-			setCookie('ExperimentName', currentExperimentName, 1);
-			setCookie('ExperimentValue', currentExperimentValue, 1);
-		} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
-			setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-			setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-		} else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
-			var existingNames = ExistingExperimentName.split(',');
-			var existingValues = ExistingExperimentValue.split(',');
-			var index = existingNames.indexOf(currentExperimentName);
-			existingValues[index] = currentExperimentValue;
-			setCookie('ExperimentName', existingNames.join(','), 1);
-			setCookie('ExperimentValue', existingValues.join(','), 1);
-		}
-
-	}
-}());
+  clampWebinarCopy();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(clampWebinarCopy);
+  }
+  window.addEventListener('resize', scheduleClampWebinarCopy);
+  if (typeof ResizeObserver !== 'undefined') {
+    var webinarCopyClampObserver = new ResizeObserver(scheduleClampWebinarCopy);
+    document.querySelectorAll('.webinar_bottom h3').forEach(function (heading) {
+      webinarCopyClampObserver.observe(heading);
+    });
+  }
+</script>

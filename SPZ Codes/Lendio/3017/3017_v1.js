@@ -167,7 +167,9 @@
               -webkit-box-shadow: 0 0 0 30px white inset !important;
           }
           .spz_steps ul li:has(.error-text) .custom_stepField select,
-          .spz_steps ul li:has(.error-text) .custom_stepField input{
+          .spz_steps ul li:has(.error-text) .custom_stepField input,
+          #pwf-1 .custom_stepField.form-field-wrapper.spz-has-error select,
+          #pwf-1 .custom_stepField.form-field-wrapper.spz-has-error input{
             border-color: #BE3A3A;
           }
           #pwf-1 select, 
@@ -440,9 +442,9 @@
           // #pwf-1 .spz_steps .text-left .error-text {
           //   color: #b91c1c;
           // }
-          #pwf-1 .custom_stepField.form-field-wrapper:has(+ .text-left .error-text) select,
-          #pwf-1 .custom_stepField.form-field-wrapper:has(+ .text-left .error-text) input {
-            outline-color: #b91c1c;
+          #pwf-1 .custom_stepField.form-field-wrapper.spz-has-error select,
+          #pwf-1 .custom_stepField.form-field-wrapper.spz-has-error input {
+            outline:1px solid #BE3A3A;
           }
           #pwf-1 .additional-button-wrapper{
             min-width: 100%;
@@ -584,6 +586,13 @@
             -webkit-transform: scaleX(var(--bar-scale, 0));
             -webkit-transform-origin: left;
             will-change: transform;
+          }
+          .amountSeeking-wrapper > .justify-center,
+          .amountSeeking-wrapper h5[for="amountSeeking"] {
+            display:none;
+          }
+          .carousel-item .form-field-wrapper + div{
+            min-height: unset;
           }
           @media (min-width: 768px) and (max-width: 1023.98px) {
             #pwf-1:not(.additional-answered) .flex:has(.btn-action){
@@ -1032,8 +1041,8 @@
             { selector: '.business_name', type: 'text', requiredMsg: 'Business name is required', minLength: 2, minLengthMsg: 'Business Name must be at least 2 characters long' }
           ];
           const fourStepFields = [
-            { selector: '.first', type: 'text', requiredMsg: 'First Name is required', minLength: 2, minLengthMsg: 'First Name must be at least 2 characters long' },
-            { selector: '.last', type: 'text', sameSlide: true, requiredMsg: 'Last Name is required', minLength: 2, minLengthMsg: 'Last Name must be at least 2 characters long' },
+            { selector: '.first', type: 'text', requiredMsg: 'First Name is required', minLength: 2, minLengthMsg: 'First Name must be at least 2 characters long', pattern: /^[A-Za-z'. -]+$/, patternMsg: 'Use letters, apostrophes, and hyphens only', periodMsg: 'Periods must be followed by a space or be the last character.' },
+            { selector: '.last', type: 'text', sameSlide: true, requiredMsg: 'Last Name is required', minLength: 2, minLengthMsg: 'Last Name must be at least 2 characters long', pattern: /^[A-Za-z'. -]+$/, patternMsg: 'Use letters, apostrophes, and hyphens only', periodMsg: 'Periods must be followed by a space or be the last character.' },
             { selector: '.email', type: 'email', requiredMsg: 'Email address is required', invalidMsg: 'Must be a valid email address' },
             { selector: '.primary_phone', type: 'phone', requiredMsg: 'Phone number is required', invalidMsg: 'Please enter a valid phone number', lengthMsg: 'Phone number must be 10 digits long' }
           ];
@@ -1089,6 +1098,8 @@
               if (hideControlNav) backLink.style.setProperty('display', 'none', 'important');
               else backLink.style.removeProperty('display');
             }
+            const amountLabel = shadowRoot.querySelector('label.amountSeeking');
+            if (amountLabel) amountLabel.textContent = 'Select amount';
             updateFormHeader();
           }
 
@@ -1152,6 +1163,7 @@
 
           function clearFieldError(wrapper) {
             if (!wrapper) return;
+            wrapper.classList.remove('spz-has-error');
             const siblingError = wrapper.nextElementSibling;
             if (siblingError && siblingError.classList.contains('text-left') && siblingError.querySelector('.error-text')) {
               siblingError.remove();
@@ -1163,6 +1175,7 @@
             const errorDiv = document.createElement('div');
             errorDiv.className = 'text-left';
             errorDiv.innerHTML = '<div class="mt-1 text-sm font-semibold text-danger-700 error-text">' + message + '</div>';
+            wrapper.classList.add('spz-has-error');
             wrapper.insertAdjacentElement('afterend', errorDiv);
           }
 
@@ -1193,6 +1206,8 @@
             }
             const value = (el.value || '').trim();
             if (!value) return field.requiredMsg;
+            if (field.periodMsg && /\.(?!\s|$)/.test(value)) return field.periodMsg;
+            if (field.pattern && !field.pattern.test(value)) return field.patternMsg;
             if (field.minLength && value.length < field.minLength) return field.minLengthMsg;
             if (field.type === 'email' && !isValidEmail(value)) return field.invalidMsg;
             if (field.type === 'phone') {
@@ -1295,6 +1310,13 @@
                 if (!shadowRoot.querySelector('.carousel-item.active #' + nextFieldId)) {
                   clickControlNext();
                 }
+                if (field.type === 'email') {
+                  const hasEmailError = await waitForSlide10EmailError(1500);
+                  if (hasEmailError) {
+                    mirrorSlide10EmailError();
+                    throw new Error('email validation failed');
+                  }
+                }
                 await waitForControlField(nextFieldId);
               } else if (!options.skipLastNext) {
                 if (shadowRoot.querySelector('.carousel-item.active #' + fieldId)) {
@@ -1350,11 +1372,21 @@
             const phoneInput = shadowRoot.querySelector('.spz_four_steps .primary_phone');
             if (!phoneInput || phoneInput.hasAttribute('data-spz-phone-bound')) return;
             phoneInput.setAttribute('data-spz-phone-bound', 'true');
-            phoneInput.setAttribute('maxlength', '12'); // 10 digits + 2 dashes
             phoneInput.addEventListener('input', function() {
+              const caret = phoneInput.selectionStart;
+              const digitsBeforeCaret = (phoneInput.value.slice(0, caret).match(/\d/g) || []).length;
               const formatted = formatPhoneNumber(phoneInput.value);
               if (phoneInput.value !== formatted) {
                 phoneInput.value = formatted;
+                let pos = formatted.length, count = 0;
+                for (let i = 0; i < formatted.length; i++) {
+                  if (/\d/.test(formatted[i]) && ++count === digitsBeforeCaret) {
+                    pos = i + 1;
+                    break;
+                  }
+                }
+                if (!digitsBeforeCaret) pos = 0;
+                phoneInput.setSelectionRange(pos, pos);
               }
             });
             phoneInput.addEventListener('keydown', function(e) {
@@ -1366,7 +1398,9 @@
                 e.preventDefault();
                 return;
               }
-              if (getPhoneDigits(phoneInput.value).length >= 10) {
+              const hasSelection = phoneInput.selectionStart !== phoneInput.selectionEnd;
+              const atEnd = phoneInput.selectionStart === (phoneInput.value || '').length;
+              if (!hasSelection && atEnd && getPhoneDigits(phoneInput.value).length >= 10) {
                 e.preventDefault();
               }
             });
@@ -1384,6 +1418,34 @@
           function delay(ms) {
             return new Promise(function(resolve) {
               setTimeout(resolve, ms);
+            });
+          }
+
+          function getSlide10EmailError() {
+            const errorEl = shadowRoot.querySelector('.slide-10 .error-text');
+            return errorEl ? (errorEl.textContent || '').trim() : '';
+          }
+
+          function mirrorSlide10EmailError() {
+            const message = getSlide10EmailError();
+            if (!message) return false;
+            const customEl = shadowRoot.querySelector('.spz_four_steps .email');
+            const wrapper = customEl && customEl.closest('.form-field-wrapper');
+            if (wrapper) showFieldError(wrapper, message);
+            return true;
+          }
+
+          async function waitForSlide10EmailError(timeout) {
+            timeout = timeout || 1500;
+            const start = Date.now();
+            await delay(200);
+            return new Promise(function(resolve) {
+              (function check() {
+                if (getActiveSlideNumber() !== 10) return resolve(false);
+                if (getSlide10EmailError()) return resolve(true);
+                if (Date.now() - start > timeout) return resolve(!!getSlide10EmailError());
+                setTimeout(check, 50);
+              })();
             });
           }
 
@@ -1543,6 +1605,7 @@
               await syncFourSteps();
             } catch (e) {
               console.warn('SPZ 3017 four-step sync failed', e);
+              mirrorSlide10EmailError();
             }
             // Keep disabled while redirecting after successful submit
             if (!pwfForm.classList.contains('spz-form-submitting')) {
