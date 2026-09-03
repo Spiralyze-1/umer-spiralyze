@@ -282,7 +282,7 @@ $mobile: 767.98px;
   height: 56px !important;
   width: 375px !important;
   max-width: 100% !important;
-  padding: 15px !important;
+  padding: 16px 15px !important;
 
   @include mobile() {
     font-size: 14px !important;
@@ -364,11 +364,10 @@ $mobile: 767.98px;
       &::before {
         display: none;
       }
-      &:nth-child(2){
-        .webinar_topLeft span img{
-          &:nth-of-type(2){
-            width: 75px;
-          }
+
+      &:nth-child(2) {
+        .webinar_topLeft span picture img {
+          width: 75px;
         }
       }
     }
@@ -502,8 +501,12 @@ $mobile: 767.98px;
     display: flex;
     align-items: center;
 
-    img {
+    >img {
       display: inline-block;
+
+      &:nth-of-type(1) {
+        width: 54px;
+      }
     }
 
     b {
@@ -728,7 +731,7 @@ $mobile: 767.98px;
       text-indent: -9999px;
       position: relative;
       top: -2px;
-      margin: 0 0 0 4px;
+      margin: 0 0 0 7px;
     }
 
     &:hover {
