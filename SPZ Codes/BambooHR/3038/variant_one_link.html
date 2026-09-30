@@ -1,0 +1,15 @@
+<script>
+    // For the CSS
+    var timestamp = new Date().getTime();
+    var linkTag = document.createElement('link');
+    linkTag.rel = 'stylesheet';
+    linkTag.href = "//res.cloudinary.com/spiralyze/raw/upload/bamboohr/3038/code/3038_v1.css?t=" + timestamp;
+    document.head.appendChild(linkTag); // Append the dynamically created link tag for CSS
+
+    // For the JavaScript
+    var timestampJs = new Date().getTime();
+    var scriptTag = document.createElement('script');
+    scriptTag.src = "//res.cloudinary.com/spiralyze/raw/upload/bamboohr/3038/code/3038_v1.js?t=" + timestampJs;
+    scriptTag.async = true; // Optional: Load script asynchronously
+    document.body.appendChild(scriptTag); // Append the dynamically created script tag for JS
+</script>

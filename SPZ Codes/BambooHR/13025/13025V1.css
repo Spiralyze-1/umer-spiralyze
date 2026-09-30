@@ -1,0 +1,117 @@
+/* =====================================================================
+   Hero â€” copy-only change. The live page already styles the h1/p
+   (Fields serif, white, centered). We only add the green accent, the
+   Variant 3 eyebrow, and the Variant 2 word-rotation animation.
+   All rules scoped under the numbered body class for isolation.
+   ===================================================================== */
+
+/* ---- Green accent (all variants) ---- */
+body.spz_13025_v .columns.heading-color-white h1{
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67px;
+  font-family: var(--heading-font-family);
+}
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-accent {
+  color: #73C41D !important;
+}
+body.spz_13025_v .columns.heading-color-white h1 + p{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 16.5px;
+}
+
+body.spz_13025_v .columns-wrapper.content-width-sm{
+  max-width: 1030px;
+}
+/* ---- Eyebrow (Variant 3) ---- */
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-eyebrow{
+  display: block;
+  font-family: var(--body-font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+/* ---- Rotating headline (Variant 2) ---- */
+/* Wrapper clips the word so the slide never overlaps the line above.
+   Height is driven by JS so 1-line â†” 2-line swaps animate smoothly. */
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-rotate {
+  display: block;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-rotate-word {
+  display: inline-block;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+/* Current word exits upward. */
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-rotate-word.spz-hero-rotate-out {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Next word starts below with no transition (instant jump before it enters). */
+body.spz_13025_v .columns.heading-color-white h1 .spz-hero-rotate-word.spz-hero-rotate-in {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: none;
+}
+
+/* ---- Tablet (<=1023.98px) ---- */
+@media (max-width: 1023.98px) {
+  body.spz_13025_v .columns-wrapper.content-width-sm{
+    max-width: 700px;
+  }
+  
+  body.spz_13025_v.spz_13025_v3 .columns-wrapper.content-width-sm,
+  body.spz_13025_v.spz_13025_v4 .columns-wrapper.content-width-sm{
+    max-width: 740px;
+  }
+  
+  body.spz_13025_v.spz_13025_v2 .columns-wrapper.content-width-sm{
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}
+
+/* ---- Mobile (<=767.98px) ---- */
+@media (max-width: 767.98px) {
+  body.spz_13025_v .columns-wrapper.content-width-sm{
+    max-width: 100%;
+  }
+  body.spz_13025_v .columns.heading-color-white h1{
+    font-size: 36px;
+    line-height: 46px;
+    padding: 0 32px;
+  }
+  body.spz_13025_v.spz_13025_v2 .columns.heading-color-white h1,
+  body.spz_13025_v.spz_13025_v4 .columns.heading-color-white h1{
+    padding: 0;
+  }
+  body.spz_13025_v .columns.heading-color-white h1 + p{
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+  body.spz_13025_v.spz_13025_v2 .columns.heading-color-white h1 + p br{
+    display: none;
+  }
+  /* body.spz_13025_v.spz_13025_v2 .columns.heading-color-white h1 + p{
+    padding: 0 22px;
+  } */
+  body.spz_13025_v.spz_13025_v2 .columns.heading-color-white h1 .spz-hero-rotate-word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92px;
+  }
+}

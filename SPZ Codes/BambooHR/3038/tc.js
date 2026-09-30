@@ -1,0 +1,341 @@
+console.log('Executing TC 3038');
+function trackingCode() {
+    (function () {
+        //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+
+        // Set the value of the squeezePage variable as needed:
+        // true  – if you are using a squeeze page (i.e., the page contains a form)
+        // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+        // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+
+        const squeezePage = true; // true / false / 'both'
+        const expName = '3038'; //experiment name should be 1001, 1002, 1003 etc.
+        const variantName = '#' + expName + `_true_control`; //variantName should be variant_, true_control_ etc.
+        const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com
+
+
+        /***********************************
+        ************************************
+        DO NOT TOUCH
+        BEYOND THIS LINE
+        ******************************
+        ******************************/
+        const formHiddenValue = variantName;
+        if (squeezePage === true) {
+            window.squeezePageValue = formHiddenValue;
+        } else if (squeezePage === false) {
+            hiddenValue(expName, variantName);
+        } else if (squeezePage === 'both') {
+            hiddenValue(expName, variantName);
+            window.squeezePageValue = formHiddenValue;
+        }
+        function hiddenValue(currentExperimentName, currentExperimentValue) {
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            var ExistingExperimentName = getCookie('ExperimentName');
+            var ExistingExperimentValue = getCookie('ExperimentValue');
+            var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+
+            if (!ExistingExperimentName) {
+                setCookie('ExperimentName', currentExperimentName, 1);
+                setCookie('ExperimentValue', currentExperimentValue, 1);
+            } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+                setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+                setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+            } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+                var existingNames = ExistingExperimentName.split(',');
+                var existingValues = ExistingExperimentValue.split(',');
+                var index = existingNames.indexOf(currentExperimentName);
+                existingValues[index] = currentExperimentValue;
+                setCookie('ExperimentName', existingNames.join(','), 1);
+                setCookie('ExperimentValue', existingValues.join(','), 1);
+            }
+        }
+    }());
+}
+(function () {
+    const bodyInterval3028 = setInterval(function () {
+        if (document.querySelector('body') && document.querySelector('main .form.white-container .form-col .form-col-container') && !document.querySelector('.spz-3028')) {
+            clearInterval(bodyInterval3028)
+            const checkBoxValueQ1 = [];
+            Array.prototype.remove = function () {
+                var what, a = arguments, L = a.length, ax;
+                while (L && this.length) {
+                    what = a[--L];
+                    while ((ax = this.indexOf(what)) !== -1) {
+                        this.splice(ax, 1);
+                    }
+                }
+                return this;
+            };
+
+            trackingCode();
+         
+            document.querySelector('body').classList.add("spz-3028", "spz-3027")
+            document.querySelector('.spz-3028 .content-col').innerHTML = `
+          <img class="leaf" src="//res.cloudinary.com/spiralyze/image/upload/v1743768427/bamboohr/3028/leaf_desktop_and_tablet.svg" alt="Leaf" width="1261" height="943">
+          <a href="https://www.bamboohr.com"><img class="bamboo-logo" src="//res.cloudinary.com/spiralyze/image/upload/v1743768354/bamboohr/3028/bamboohr_logo.svg" alt="BambooHR Logo" width="222" height="56"></a>
+          
+          <picture>
+            <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/mobile_interface.png">
+            <source media="(max-width:1199.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/tablet_interface.png">
+            <img class="middle-image" src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/desktop_interface.png" alt="Hero Image" width="700" height="520">
+          </picture>
+          <div class="logo-section">
+            <div class="title">Join leading organizations using BambooHR to streamline HR</div>
+             <picture>
+              <source media="(max-width:767.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/logos_1.webp">
+              <source media="(max-width:1199.98px)" srcset="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/LogosTablet.png">
+              <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/3028/logos.webp" alt="Company Logo" width="700" height="106">
+            </picture>
+          </div>
+        `;
+            document.querySelector('.spz-3028 main .form.has-content .form-col').insertAdjacentHTML("afterbegin", `
+          <img class="bamboo-logo-tablet" src="//res.cloudinary.com/spiralyze/image/upload/v1743769464/bamboohr/3028/bamboohr_logo_2.svg" alt="BambooHR Logo" width="222" height="56">
+          <div class="form-section-title">Save time and reduce cost with an all-in-one HR platform</div>  
+        `)
+            document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container').classList.add("step1")
+            document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container').insertAdjacentHTML("afterbegin", `
+          <div class="steps">
+            <div class="step step1"></div>
+            <div class="border"></div>
+            <div class="step step2"></div>
+            <div class="border"></div>
+            <div class="step step3"></div>
+          </div>
+        `)
+            document.querySelector('.spz-3028 main .form .form-col .form-col-container p strong').textContent = "GET A DEMO"
+            document.querySelector('.spz-3028 main .form .form-col .form-col-container p strong').insertAdjacentHTML("afterend", `<div class="subtitle">How can we help?</div> 
+        <div class="lds-dual-ring"></div> `)
+
+            const formInterval = setInterval(function () {
+                if (document.querySelector('.bhrForm__partnerDisclaimer') && document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow.form-input-width50')) {
+                    clearInterval(formInterval)
+                    document.querySelector('.spz-3027 main .form .form-col .form-col-container .subtitle').insertAdjacentHTML("afterend", `
+              <div class="q1-wrapper">
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="51" height="50" viewBox="0 0 51 50" fill="none">
+                    <path d="M1 18.4266V43.7638C1 44.8684 1.89543 45.7638 3 45.7638H23.5739M26.059 37.9158V42.2431M26.059 9.52136V4.55097M26.059 4.55097V3.03027C26.059 1.9257 26.9545 1.03027 28.059 1.03027H46.84C47.9446 1.03027 48.84 1.9257 48.84 3.03027V4.55097M26.059 4.55097H48.84M48.84 4.55097V42.2431M48.84 42.2431V47.0774C48.84 48.1819 47.9446 49.0774 46.84 49.0774H28.059C26.9545 49.0774 26.059 48.1819 26.059 47.0774V42.2431M48.84 42.2431H26.059M25.2306 12.4208H2.76035C1.78813 12.4208 1 13.2089 1 14.1811V14.1811C1 15.1533 1.78813 15.9414 2.76035 15.9414H22.1242M13.0118 22.5686H22.7455M13.0118 25.468H20.4674M4.52069 32.7165H13.0118M4.52069 35.823H10.3195M4.52069 38.7224H7.42009" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.41992 20.9976C9.2025 20.9976 10.6483 22.4426 10.6484 24.2251C10.6484 26.0078 9.20258 27.4536 7.41992 27.4536C5.63738 27.4535 4.19238 26.0077 4.19238 24.2251C4.19252 22.4426 5.63746 20.9977 7.41992 20.9976Z" stroke="currentColor"/>
+                    <ellipse cx="37.6566" cy="45.7637" rx="1.6568" ry="1.6568" fill="currentColor"/>
+                    <circle cx="36.4139" cy="22.5687" r="7.78398" stroke="currentColor"/>
+                    <path d="M36.4141 12.2998C42.0854 12.3 46.6826 16.8979 46.6826 22.5693C46.6824 28.2406 42.0853 32.8377 36.4141 32.8379C30.7427 32.8379 26.1447 28.2407 26.1445 22.5693C26.1445 16.8978 30.7426 12.2998 36.4141 12.2998Z" stroke="currentColor"/>
+                    <path d="M36.2068 16.8555C37.6463 16.8555 38.8132 18.0224 38.8132 19.4619C38.8132 20.9014 37.6463 22.0684 36.2068 22.0684C34.7673 22.0683 33.6003 20.9014 33.6003 19.4619C33.6004 18.0224 34.7673 16.8555 36.2068 16.8555Z" stroke="currentColor"/>
+                    <path d="M33.5146 27.125V30.0244" stroke="currentColor"/>
+                    <path d="M38.8992 27.125V30.2315" stroke="currentColor"/>
+                    <rect x="11.5623" y="38.8081" width="15.8735" height="5.3302" rx="2" transform="rotate(-39 11.5623 38.8081)" stroke="currentColor"/>
+                    <path d="M27.1477 27.5391L24.5593 29.6351L26.5916 32.1448L29.18 30.0488" stroke="currentColor"/>
+                    <path d="M41.4606 28.2262V26.7896C41.4606 25.1327 40.1175 23.7896 38.4606 23.7896H34.3455C32.6886 23.7896 31.3455 25.1327 31.3455 26.7896V28.2262" stroke="currentColor"/>
+                  </svg>
+                  <div class="text">Hiring &<br>Onboarding </div>
+                </button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="51" height="50" viewBox="0 0 51 50" fill="none">
+                    <path d="M47.2916 18.184C44.8009 14.4875 40.5763 12.0562 35.7837 12.0562C28.1256 12.0562 21.9175 18.2643 21.9175 25.9224C21.9175 29.8706 23.5676 33.4334 26.2158 35.9587M48.6123 20.6497C49.2811 22.2752 49.65 24.0557 49.65 25.9224C49.65 29.9207 47.9578 33.5237 45.2505 36.0543M26.2158 35.9587C28.7041 38.3317 32.0738 39.7887 35.7837 39.7887C37.7213 39.7887 39.5661 39.3913 41.241 38.6735M26.2158 35.9587V35.9587C26.2158 31.5338 29.8029 27.9466 34.2278 27.9466H37.1429C41.6206 27.9466 45.2505 31.5766 45.2505 36.0543V36.0543M45.2505 36.0543C44.0843 37.1444 42.7298 38.0355 41.241 38.6735M41.241 38.6735V33.1225" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M44.2396 14.8168V6.67023M1 26.7234V6.67023M1 30.6977V46.8654C1 47.97 1.89543 48.8654 3 48.8654H42.2396C43.3442 48.8654 44.2396 47.97 44.2396 46.8654V36.9589M1 6.67023V3.03027C1 1.9257 1.89543 1.03027 3 1.03027H42.2396C43.3442 1.03027 44.2396 1.9257 44.2396 3.03027V6.67023M1 6.67023H31.0798M34.6363 6.67023H44.2396" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.344 38.6608V33.2778" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="35.7838" cy="19.9237" r="4.98135" stroke="currentColor"/>
+                    <rect x="6.51318" y="13.646" width="5.26661" height="5.26661" rx="0.5" stroke="currentColor" stroke-linejoin="round"/>
+                    <rect x="6.51318" y="24.3179" width="5.26661" height="5.26661" rx="0.5" stroke="currentColor" stroke-linejoin="round"/>
+                    <rect x="6.51318" y="34.9907" width="5.26661" height="5.26661" rx="0.5" stroke="currentColor" stroke-linejoin="round"/>
+                    <path d="M15.4131 40.5098H30.6618M15.4131 37.7943H28.3641M15.4131 35.0788H21.4708M15.4131 29.8566H22.5152M15.4131 27.1411H21.8886M15.4131 24.4255H21.8886M15.4131 18.9945H23.5597M15.4131 16.4878H25.4397M15.4131 13.7723H21.8886M15.8309 3.95459H18.7553M21.053 3.95459H24.1863M26.2752 3.95459H29.4085" stroke="currentColor" stroke-linecap="round"/>
+                  </svg>
+                  <div class="text">HR Data &<br>Reporting</div>
+                </button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" viewBox="0 0 52 50" fill="none">
+                    <path d="M45.4061 19.3905V8.92942M1.21338 11.2778V8.92942M2.87917 45.8634H2.21338C1.66109 45.8634 1.21338 45.4157 1.21338 44.8634V14.7013M28.9673 45.8634H44.4061C44.9584 45.8634 45.4061 45.4157 45.4061 44.8634V43.7285M22.7479 48.6388H25.6189C26.1711 48.6388 26.6189 48.1911 26.6189 47.6388V35.9754C26.6189 35.4231 26.1711 34.9754 25.6189 34.9754H6.26971C5.71743 34.9754 5.26971 35.4231 5.26971 35.9754V47.6388C5.26971 48.1911 5.71743 48.6388 6.26971 48.6388H19.1467M1.21338 8.92942V3.95166C1.21338 3.39938 1.66109 2.95166 2.21338 2.95166H44.4061C44.9584 2.95166 45.4061 3.39938 45.4061 3.95166V8.92942M1.21338 8.92942H45.4061" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.1015 12.1318V31.1326M19.3602 12.1318V31.1326M26.6189 12.1318V23.6604M33.8776 12.1318V20.2445M4.41577 17.8961H41.5633M4.41577 25.1548H23.203" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="42.4905" y1="1.53027" x2="42.4905" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="39.0745" y1="1.53027" x2="39.0745" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="35.6587" y1="1.53027" x2="35.6587" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="32.2427" y1="1.53027" x2="32.2427" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="28.8267" y1="1.53027" x2="28.8267" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="25.4111" y1="1.53027" x2="25.4111" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="21.9951" y1="1.53027" x2="21.9951" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="18.5793" y1="1.53027" x2="18.5793" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="15.1636" y1="1.53027" x2="15.1636" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="11.7476" y1="1.53027" x2="11.7476" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="8.33179" y1="1.53027" x2="8.33179" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <line x1="4.91577" y1="1.53027" x2="4.91577" y2="4.8001" stroke="currentColor" stroke-linecap="round"/>
+                    <path d="M17.6522 39.4583C17.2252 38.889 15.7308 38.1775 14.8768 39.0314C13.9158 39.9923 14.512 41.2993 15.7308 41.7063M14.2363 43.7282C15.0903 44.7957 16.5847 44.7957 17.2252 44.1552C17.98 43.4004 17.6522 42.0203 16.1578 41.8068C16.0086 41.7855 15.8659 41.7515 15.7308 41.7063M16.3712 37.7505V41.8068M15.7308 45.8632V41.7063" stroke="currentColor"/>
+                    <path d="M46.432 23.3638C44.6195 21.9443 42.3364 21.0981 39.8557 21.0981C33.9603 21.0981 29.1812 25.8773 29.1812 31.7727C29.1812 33.9264 29.8189 35.931 30.9159 37.6082M48.7263 25.8328C48.9839 26.2167 49.2173 26.6183 49.4241 27.0354M50.3568 29.8457C50.4708 30.4708 50.5303 31.1148 50.5303 31.7727C50.5303 37.6681 45.7511 42.4473 39.8557 42.4473C37.2945 42.4473 34.9439 41.5452 33.1044 40.0415" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M37.5072 26.0088V29.6381H33.6643V33.908H37.5072V37.9643H41.777V33.908H45.6198V29.6381H41.777V26.0088H37.5072Z" stroke="currentColor" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="text">Payroll<br>& Time</div>
+                </button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="56" viewBox="0 0 50 56" fill="none">
+                    <path d="M31.9928 47.7428C39.3367 44.9835 44.57 37.824 44.57 29.4266C44.57 22.8633 41.3731 17.0562 36.4703 13.5152M18.5772 47.7428C11.2333 44.9835 6 37.8239 6 29.4266C6 25.7813 6.98615 22.3693 8.70302 19.4493M25.285 26.9579V39.386M21.2137 41.9573V53.7426M24.2136 43.8858V50.3142M26.5707 48.8142V55.0283M29.3563 42.3859V52.4569M31.0705 30.3863C31.7824 29.1405 32.3601 27.8487 32.8092 26.5293M19.4995 30.3863C19.4995 30.3863 18.752 28.9092 18.0418 26.5293M18.0418 26.5293C16.2877 20.6514 14.7608 9.26658 25.285 1.03027C32.7869 6.65672 35.9608 17.2719 32.8092 26.5293M18.0418 26.5293L13.2854 29.9578V38.3146L19.4995 33.3862M31.0705 33.3862L37.0703 38.3146V29.9578L32.8092 26.5293M10.7248 16.6198C11.724 15.4557 12.8571 14.4127 14.0997 13.5152" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25.2854 11.3872C26.9026 11.3874 28.2131 12.6987 28.2131 14.3159C28.213 15.933 26.9025 17.2435 25.2854 17.2437C23.6682 17.2437 22.3568 15.9331 22.3567 14.3159C22.3567 12.6986 23.6681 11.3872 25.2854 11.3872Z" stroke="currentColor"/>
+                  </svg>
+                  <div class="text">Benefits<br>Administration</div>
+                </button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0795 9.10807C41.3068 8.88114 41.6477 8.88114 41.875 9.10807C42.1023 9.33501 42.1023 9.67541 41.875 9.90234L35.0568 16.7104C34.8295 16.9373 34.4886 16.9373 34.2614 16.7104L30.8523 13.3064C30.625 13.0794 30.625 12.739 30.8523 12.5121C31.0795 12.2852 31.4205 12.2852 31.6477 12.5121L34.6591 15.519L41.0795 9.10807ZM27.2727 23.6886C24.4318 23.6886 22.1591 21.4193 22.1591 18.5826V6.66853C22.1591 3.83185 24.4318 1.5625 27.2727 1.5625H44.8864C47.7273 1.5625 50 3.83185 50 6.66853V18.5826C50 21.4193 47.7273 23.6886 44.8864 23.6886H34.8864L31.0795 27.6032C30.7386 27.9436 30.1136 27.7167 30.1136 27.2061V23.6319H27.2727V23.6886ZM34.2614 22.7241C34.375 22.6107 34.4886 22.5539 34.6591 22.5539H44.8864C47.1023 22.5539 48.8636 20.7952 48.8636 18.5826V6.66853C48.8636 4.45592 47.1023 2.69717 44.8864 2.69717H27.2727C25.0568 2.69717 23.2955 4.45592 23.2955 6.66853V18.5826C23.2955 20.7952 25.0568 22.5539 27.2727 22.5539H30.6818C31.0227 22.5539 31.25 22.7809 31.25 23.1213V25.8445L34.2614 22.7241ZM3.97727 45.8147C4.31818 45.8147 4.54545 45.5878 4.54545 45.2474C4.54545 44.907 4.31818 44.6801 3.97727 44.6801C3.63636 44.6801 3.40909 44.907 3.40909 45.2474C3.40909 45.5878 3.63636 45.8147 3.97727 45.8147ZM3.97727 46.9494C3.01136 46.9494 2.27273 46.2119 2.27273 45.2474C2.27273 44.2829 3.01136 43.5454 3.97727 43.5454C4.94318 43.5454 5.68182 44.2829 5.68182 45.2474C5.68182 46.2119 4.94318 46.9494 3.97727 46.9494ZM23.2955 35.0353H29.5455C30.1705 35.0353 30.6818 34.5247 30.6818 33.9007V32.766C30.6818 32.1419 30.1705 31.6313 29.5455 31.6313H24.4318H23.2955C22.6705 31.6313 22.1591 32.1419 22.1591 32.766V33.9007C22.1591 34.5247 22.6705 35.0353 23.2955 35.0353ZM27.8409 39.574H29.5455C30.1705 39.574 30.6818 39.0634 30.6818 38.4394V37.3047C30.6818 36.6806 30.1705 36.17 29.5455 36.17H23.2955C22.6705 36.17 22.1591 36.6806 22.1591 37.3047V38.4394C22.1591 39.0634 22.6705 39.574 23.2955 39.574H27.8409ZM23.2955 44.1127H26.7045H27.8409C28.4659 44.1127 28.9773 43.6021 28.9773 42.9781V41.8434C28.9773 41.2193 28.4659 40.7087 27.8409 40.7087H23.2955C22.6705 40.7087 22.1591 41.2193 22.1591 41.8434V42.9781C22.1591 43.6021 22.6705 44.1127 23.2955 44.1127ZM1.13636 36.17C1.13636 36.5104 0.909091 36.7374 0.568182 36.7374C0.227273 36.7374 0 36.5104 0 36.17V35.6027C0 35.2623 0.227273 35.0353 0.568182 35.0353C0.909091 35.0353 1.13636 35.2623 1.13636 35.6027V36.17ZM23.2955 48.0841H26.1364H26.7045C27.3295 48.0841 27.8409 47.5735 27.8409 46.9494V46.3821C27.8409 45.758 27.3295 45.2474 26.7045 45.2474H23.2955C22.6705 45.2474 22.1591 45.758 22.1591 46.3821V46.9494C22.1591 47.5735 22.6705 48.0841 23.2955 48.0841ZM7.95455 48.0841V48.6514C7.95455 48.9918 7.72727 49.2188 7.38636 49.2188H0.568182C0.227273 49.2188 0 48.9918 0 48.6514V38.0422C0 37.7018 0.227273 37.4749 0.568182 37.4749C0.909091 37.4749 1.13636 37.7018 1.13636 38.0422V48.0841H6.81818V31.064H1.13636V33.1064C1.13636 33.4468 0.909091 33.6737 0.568182 33.6737C0.227273 33.6737 0 33.4468 0 33.1064V30.4967C0 30.1562 0.227273 29.9293 0.568182 29.9293H7.38636C7.72727 29.9293 7.95455 30.1562 7.95455 30.4967V31.3477H8.01136C9.09091 31.064 10.2273 30.6669 11.3636 30.2697C12.8977 29.7024 15.3977 25.2772 15.9091 22.2703L16.5341 18.2989C16.5909 18.0153 16.8182 17.7883 17.1591 17.8451C18.9773 17.9585 20.2273 18.5259 20.7955 19.4903C21.3636 20.4548 21.4773 22.1568 21.1932 24.6531L20.4545 29.362L20.2841 30.4967H23.8636H29.5455C30.7955 30.4967 31.8182 31.5179 31.8182 32.766V33.9007C31.8182 34.5815 31.5341 35.2055 31.0227 35.6027C31.4773 35.9998 31.8182 36.6239 31.8182 37.3047V38.4394C31.8182 39.6308 30.9091 40.5952 29.8295 40.7087C30 41.0491 30.1136 41.4462 30.1136 41.8434V42.9781C30.1136 43.9425 29.4886 44.7935 28.5795 45.1339C28.8068 45.4743 28.9773 45.9282 28.9773 46.3821V46.9494C28.9773 48.1975 27.9545 49.2188 26.7045 49.2188H24.7159H16.6477H16.5341L10.9659 48.0841H7.95455ZM7.95455 46.9494H11.0227H11.1364L16.7045 48.0841H21.3068C21.1364 47.7437 21.0227 47.3465 21.0227 46.9494V46.3821C21.0227 45.7013 21.3068 45.0772 21.8182 44.6801C21.3636 44.2829 21.0227 43.6589 21.0227 42.9781V41.8434C21.0227 41.1626 21.3068 40.5385 21.8182 40.1414C21.3636 39.7442 21.0227 39.1202 21.0227 38.4394V37.3047C21.0227 36.6239 21.3068 35.9998 21.8182 35.6027C21.3636 35.2055 21.0227 34.5815 21.0227 33.9007V32.766C21.0227 32.3689 21.1364 31.9717 21.3068 31.6313H20.1136L19.7159 34.2411C19.4886 36.1133 17.7841 39.0634 16.4205 40.1414C15.9659 40.5385 15.4545 40.8789 15.0568 41.1626C14.8864 41.276 14.7727 41.3895 14.6591 41.4462C14.6023 41.503 14.5455 41.5597 14.4886 41.5597C14.2045 41.7299 13.8636 41.6732 13.6932 41.3895C13.5227 41.1058 13.5795 40.7654 13.8636 40.5952C13.8636 40.5952 13.9205 40.5385 14.0341 40.4818C14.1477 40.425 14.2614 40.3116 14.4318 40.1981C14.8864 39.9144 15.3409 39.574 15.7955 39.1769C17.1023 38.1557 18.4659 35.7161 18.6932 34.0141L19.4886 29.135L20.2273 24.4262C20.5114 22.1568 20.3977 20.6817 20 20.0009C19.6591 19.4336 18.9205 19.0932 17.7273 18.923L17.1591 22.327C16.6477 25.6743 13.8636 30.4967 11.875 31.2342C10.6818 31.6881 9.48864 32.0852 8.40909 32.3689C8.29545 32.4256 8.18182 32.3689 8.06818 32.3689V46.9494H7.95455Z" fill="currentColor"/>
+                  </svg>
+                  <div class="text">Employee <br>Experience</div>
+                </button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <path d="M2.6582 31.1103H0.78125V7.67871H49.2188V31.1103H32.0537" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.21436 7.67871V22.4673" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M29.3594 24.4351H46.2822" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M35.7017 27.0083H46.2822" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M23.5317 11.7202H10.1509" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M46.2822 11.7202H29.3594" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M23.5317 14.5962H10.1509" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.0654 17.4722H10.1509" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M40.7271 20.2573H29.3594V14.5962H46.2822V20.2573H43.8149" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M41.6958 5.46875H45.7524" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.80859 5.46875H38.7744" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.4314 32.5332L6.04863 33.7441C5.83672 31.731 6.09404 29.9297 6.88115 28.0679L17.4314 32.5332Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.6187 42.4326C8.56104 40.6616 6.45703 37.5132 6.04834 33.7441L17.4312 32.5332L16.4473 43.9463C15.751 43.8857 15.085 43.7646 14.4341 43.5981" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.4316 32.5331L6.88135 28.0678C9.34863 22.2401 16.0693 19.5306 21.897 21.9979C27.7246 24.4652 30.4492 31.1859 27.9819 36.9984C26.0142 41.6605 21.4883 44.37 16.4478 43.9462L17.4316 32.5331Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="text">Performance<br>Management</div>
+                </button>
+              </div>
+              
+            `)
+                    document.querySelector('.spz-3027 main .form .mktoButton').insertAdjacentHTML("beforebegin", `
+              <div class="spz-3027-nextcta">
+                <span>Next</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                  <path d="M12.0132 13L16 8M16 8L12.0132 3M16 8L0.999999 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            `)
+
+                    document.querySelector('.spz-3027 main .form .form-col .form-col-container .q1-wrapper').addEventListener("click", function (e) {
+                        if (e.target.closest("button")) {
+                            if (e.target.closest("button").classList.contains("active")) {
+                                checkBoxValueQ1.remove("" + e.target.closest("button").querySelector('.text').textContent)
+                            } else {
+                                checkBoxValueQ1.push("" + e.target.closest("button").querySelector('.text').textContent)
+                            }
+                            e.target.closest("button").classList.toggle("active");
+                        }
+                    })
+                    document.querySelector('.spz-3027 main .form .spz-3027-nextcta').addEventListener("click", function () {
+                        if (document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container.step1')) {
+                            if (checkBoxValueQ1.length > 0) {
+                                localStorage.spz3027CheckBoxValueQ1 = JSON.stringify(checkBoxValueQ1);
+                            } else {
+                                localStorage.spz3027CheckBoxValueQ1 = "";
+                            }
+                            // move to step 2
+                            document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container.step1').classList.remove("step1")
+                            document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container').classList.add("step2")
+                            document.querySelector('.spz-3027 main .form .form-col .form-col-container .subtitle').textContent = "How many employees do you have?"
+                            document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').classList.remove("hidden")
+                            document.querySelector('.spz-3027 main .form .form-col .form-col-container .q1-wrapper').classList.add("hidden")
+                            document.querySelector('[name="Employees_Text__c"]').addEventListener("blur", function () {
+                                if (document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').querySelector("select").value != "") {
+                                    if (document.querySelector('.spz-3027 main .form .form-msg')) {
+                                        document.querySelector('.spz-3027 main .form .form-msg').remove()
+                                    }
+                                } else {
+                                    setTimeout(function () {
+                                        MktoForms2.allForms()[0].showErrorMessage("This field is required.", MktoForms2.$(document.querySelector('[name="Employees_Text__c"]')))
+                                    }, 100);
+                                }
+                            })
+                        }
+                        else if (document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container.step2')) {
+                            if (document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').querySelector("select").value == "") {
+                                document.querySelector('.spz-3027 main .form .mktoButton').click()
+                                setTimeout(function () {
+                                    MktoForms2.allForms()[0].showErrorMessage("This field is required.", MktoForms2.$(document.querySelector('[name="Employees_Text__c"]')))
+                                }, 100);
+                            } else {
+                                //move to step 3
+                                document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container.step2').classList.remove("step2")
+                                document.querySelector('.spz-3027 main .form.white-container .form-col .form-col-container').classList.add("step3")
+                                document.querySelector('.spz-3027 main .form .form-col .form-col-container .subtitle').textContent = "Great! Sounds like BambooHR will be a good fit for you."
+                                document.querySelectorAll('.spz-3027 .mktoFormRow.hidden').forEach((elmt) => {
+                                    if (elmt.querySelector('.error')) {
+                                        elmt.querySelector('.error').classList.remove("error")
+                                    }
+                                    if (elmt.querySelector('.mktoInvalid')) {
+                                        elmt.querySelector('.mktoInvalid').classList.remove("mktoInvalid")
+                                    }
+                                    elmt.classList.remove("hidden")
+                                })
+                                document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').classList.add("hidden")
+                                document.querySelector('.spz-3027 main .form .spz-3027-nextcta').classList.add("hidden")
+                                document.querySelector('.spz-3027 main .form .mktoButton').classList.remove("hidden")
+                            }
+                        }
+                    })
+
+                    // check local storage for Q1 on page load
+                    if (localStorage.spz3027CheckBoxValueQ1) {
+                        const storedValueQ1 = JSON.parse(localStorage.spz3027CheckBoxValueQ1);
+                        if (storedValueQ1.length > 0) {
+                            for (let i = 0; i < document.querySelectorAll('.spz-3027 main .form .form-col .form-col-container .q1-wrapper button').length; i++) {
+                                if (storedValueQ1.includes(document.querySelectorAll('.spz-3027 main .form .form-col .form-col-container .q1-wrapper button')[i].querySelector('.text').textContent)) {
+                                    document.querySelectorAll('.spz-3027 main .form .form-col .form-col-container .q1-wrapper button')[i].classList.add("active")
+                                    checkBoxValueQ1.push(document.querySelectorAll('.spz-3027 main .form .form-col .form-col-container .q1-wrapper button')[i].querySelector('.text').textContent)
+                                }
+                            }
+                        }
+                    }
+                    document.querySelector('.spz-3028 .lds-dual-ring').remove()
+                    document.querySelector('#LblEmail').childNodes[1].textContent = "Email";
+                    document.querySelector('.spz-3027 main .form .mktoButton').textContent = "Get a Demo"
+                    document.querySelector('#LblEmail').closest('.mktoFormRow').classList.add('email-parent', 'width50', 'hidden')
+                    document.querySelector('#LblFirstName').closest('.mktoFormRow').classList.add('fname-parent', 'width50', 'hidden')
+                    document.querySelector('#LblLastName').closest('.mktoFormRow').classList.add('lname-parent', 'width50', 'hidden')
+                    document.querySelector('#LblPhone').closest('.mktoFormRow').classList.add('phone-parent', 'width50', 'hidden')
+                    document.querySelector('#LblTitle').closest('.mktoFormRow').classList.add('job-parent', 'width50', 'hidden')
+                    document.querySelector('#LblCompany').closest('.mktoFormRow').classList.add('company-parent', 'width50', 'hidden')
+                    document.querySelector('#LblCountry').closest('.mktoFormRow').classList.add('country-parent', 'hidden')
+                    document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').classList.add('employee_c-parent', 'hidden')
+                    document.querySelector('#LblEmployees_Text__c').closest('.mktoFormRow').classList.remove("form-input-width50")
+                    document.querySelector('#LblCountry').closest('.mktoFormRow').classList.remove("form-input-width50")
+                    if (document.querySelector('.bhrForm__partnerDisclaimer').parentNode.parentNode.classList.contains("form-checkbox-flex")) {
+                        document.querySelector('.bhrForm__partnerDisclaimer').closest('.mktoFormRow').classList.add('disclaimer-parent-2', "privacy-policy", 'hidden')
+                        document.querySelector('.mktoPlaceholder').closest('.mktoFormRow').classList.add('disclaimer-parent-1', "privacy-policy", 'hidden')
+                    } else {
+                        document.querySelector('.bhrForm__partnerDisclaimer').closest('.mktoFormRow').classList.add('disclaimer-parent-1', "privacy-policy", 'hidden')
+                        document.querySelector('.mktoPlaceholder').closest('.mktoFormRow').classList.add('disclaimer-parent-2', "privacy-policy", 'hidden')
+                    }
+                    document.querySelector('.spz-3027 main .form .mktoButton').classList.add("spz-3027-submit-cta", 'hidden')
+                    document.querySelector('[name="Employees_Text__c"]').tabIndex = 1;
+                    document.querySelector('[name="FirstName"]').tabIndex = 2;
+                    document.querySelector('[name="LastName"]').tabIndex = 3;
+                    document.querySelector('[name="Email"]').tabIndex = 4;
+                    document.querySelector('[name="Phone"]').tabIndex = 5;
+                    document.querySelector('[name="Title"]').tabIndex = 6;
+                    document.querySelector('[name="Company"]').tabIndex = 7;
+                    document.querySelector('[name="Country"]').tabIndex = 8;
+
+                }
+            }, 20)
+        }
+    }, 20)
+    setTimeout(function () {
+        clearInterval(bodyInterval3028)
+    }, 7000)
+})();

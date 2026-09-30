@@ -47,22 +47,22 @@ body::-webkit-scrollbar {
 .spz_3006_v {
   height: 100%;
   background-color: #0E1024;
-  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-desktop.webp);
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-desktop_1.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
 }
+
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .spz_3006_v {
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-tablet.webp");
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-tablet_1.webp");
   }
 }
 @media (max-width: 767.98px) {
   .spz_3006_v {
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-mobile.webp");
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/connectwise/3006/background-mobile_1.webp");
   }
 }
-
 /* .spz_3006_v:after {
   content: '';
   position: absolute;
@@ -82,6 +82,7 @@ body::-webkit-scrollbar {
 }
 
 .spz_3006_v #resource {
+  background: transparent;
   padding: 0;
   height: 100%;
 }
@@ -101,6 +102,7 @@ body::-webkit-scrollbar {
   width: 100%;
   overflow: auto;
 }
+
 .spz_3006_v #resource .container .row::-webkit-scrollbar {
   display: none;
 }
@@ -285,6 +287,7 @@ body::-webkit-scrollbar {
   width: fit-content;
   margin: 0 auto 25px;
 }
+
 .spz_3006_v #resource .form-container__form .form_logo img {
   display: block;
   margin: auto;
@@ -355,15 +358,16 @@ body::-webkit-scrollbar {
 .spz_3006_v #resource .form-container__form .mktoFormRow .mktoFieldWrap {
   padding-bottom: 14px;
 }
+
 .spz_3006_v #resource .form-container__form .mktoFormRow .mktoFieldWrap.checkbox {
   padding-bottom: 17px;
 }
+
 @media (max-width: 767.98px) {
   .spz_3006_v #resource .form-container__form .mktoFormRow .mktoFieldWrap.checkbox {
     padding-bottom: 15px;
   }
 }
-
 .spz_3006_v #resource .form-container__form .mktoFormRow.spz_email .mktoFieldWrap {
   padding-bottom: 16.5px;
 }
@@ -439,10 +443,20 @@ body::-webkit-scrollbar {
   appearance: none;
   cursor: pointer;
   padding: 0 !important;
+  overflow: visible;
+  background-color: #fff;
+  border: 1px solid #A2A2A2;
 }
+
 .spz_3006_v #resource .form-container__form .mktoFormRow.mktoFormRowLogical input[type=checkbox]:checked {
-  -webkit-appearance: checkbox;
-  appearance: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0ZM6.22222 12.4444L1.77778 8.17094L3.02222 6.97436L6.22222 10.0513L12.9778 3.55556L14.2222 4.75214L6.22222 12.4444Z' fill='%2329389A'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .spz_3006_v #resource .form-container__form .mktoFormRow label.checkbox-label {
@@ -470,6 +484,7 @@ body::-webkit-scrollbar {
   padding: 0 0.5px;
   display: block;
 }
+
 .spz_3006_v #resource .form-container__form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
   max-width: 520px;
   margin: 0 auto;
@@ -483,12 +498,12 @@ body::-webkit-scrollbar {
   font-weight: 700 !important;
   line-height: 24px;
 }
+
 @media (max-width: 767.98px) {
   .spz_3006_v #resource .form-container__form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
     max-width: 100%;
   }
 }
-
 .spz_3006_v #resource .form-container__form .mktoForm .mktoButtonRow ~ .mktoFormRow {
   display: block;
 }
@@ -938,4 +953,5 @@ body::-webkit-scrollbar {
   .socialProofLogo img:last-child {
     margin-right: auto;
   }
-}/*# sourceMappingURL=3006.css.map */
+}
+/*# sourceMappingURL=3006.css.map */

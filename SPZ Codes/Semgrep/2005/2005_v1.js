@@ -32,7 +32,7 @@
     iconJobs: "https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1786958547/semgrep/2005/suitcase.svg",
     // Composed dashboard/reviews illustrations exported from Figma (no Cloudinary equivalent).
     dashboardDesktop: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/436f10c9-0b69-437d-ace2-1e8b14ced50a",
-    dashboardMobile: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cddcb6b0-8630-4e3c-a627-dedb1ceaa42b",
+    dashboardMobile: "https://res.cloudinary.com/spiralyze/image/upload/f_auto/semgrep/2005/ui_mobile_image_f_auto_1.png",
     reviews: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/314a29d8-6bba-47b1-85a8-8526a1f39a88"
   };
 
@@ -65,6 +65,14 @@
       { icon: ASSETS.iconJobs, title: "Jobs & careers", heading: "Jobs & careers", desc: "Interested in joining our team? See our current job openings." }
     ],
     optinLabel: "Opt-in to receive email from Semgrep",
+    // .spz-form-title copy -> select#tempfield option value
+    reasonByHeading: {
+      "Get a demo & pricing": "Request a Demo",
+      "Sales inquiry": "Sales Inquiry",
+      "Partner inquiry": "Partnership Opportunity",
+      "Media/Press inquiry": "Media or Press",
+      "Jobs & careers": "Careers"
+    },
     // Marketo field id -> placeholder shown in the redesigned form.
     placeholders: {
       FirstName: "First name",
@@ -145,9 +153,9 @@
   const tileHTML = (tile) => `
               <button type="button" class="spz-tile" data-heading="${tile.heading}">
                 <span class="spz-tile-row">
-                  <img class="spz-tile-icon" src="${tile.icon}" alt="" aria-hidden="true">
+                  <img class="spz-tile-icon" src="${tile.icon}" alt="${tile.heading}" aria-hidden="true">
                   <span class="spz-tile-title">${tile.title}</span>
-                  <img class="spz-tile-arrow" src="${CONTENT.assets.arrow}" alt="" aria-hidden="true">
+                  <img class="spz-tile-arrow" src="${CONTENT.assets.arrow}" alt="arrow icon" aria-hidden="true">
                 </span>
                 <span class="spz-tile-desc">${tile.desc}</span>
               </button>`;
@@ -157,14 +165,14 @@
               <div class="spz-hero-cta-card">
                 <div class="spz-hero-cta-head">
                   <div class="spz-hero-cta-titlerow">
-                    <img class="spz-hero-cta-icon" src="${CONTENT.assets.chat}" alt="" aria-hidden="true">
+                    <img class="spz-hero-cta-icon" src="${CONTENT.assets.chat}" alt="chat icon" aria-hidden="true">
                     <h2 class="spz-hero-cta-title">${CONTENT.demoCard.title}</h2>
                   </div>
                   <p class="spz-hero-cta-sub">${CONTENT.demoCard.subtitle}</p>
                 </div>
                 <button type="button" class="${CONFIG.heroCtaClass}" data-heading="${CONTENT.demoCard.heading}">
                   <span>${CONTENT.demoCard.button}</span>
-                  <img src="${CONTENT.assets.arrow}" alt="" aria-hidden="true">
+                  <img src="${CONTENT.assets.arrow}" alt="arrow" aria-hidden="true">
                 </button>
                 <div class="spz-hero-cta-visual">
                   <picture>
@@ -178,7 +186,7 @@
   const stepOneHTML = () => `
           <section class="spz-step spz-step1">
             <a class="spz-step1-logo" href="${CONTENT.logoHref}">
-              <img src="${CONTENT.assets.logo}" alt="Semgrep">
+              <img src="${CONTENT.assets.logo}" alt="Semgrep logo">
             </a>
             <div class="spz-step1-body">
               <h1 class="spz-step1-title">${CONTENT.contactTitle}</h1>
@@ -196,11 +204,11 @@
           <section class="spz-step spz-step2">
             <div class="spz-step2-header">
               <button type="button" class="${CONFIG.backCtaClass}">
-                <img class="spz-back-arrow" src="${CONTENT.assets.arrow}" alt="" aria-hidden="true">
+                <img class="spz-back-arrow" src="${CONTENT.assets.arrow}" alt="arrow" aria-hidden="true">
                 <span>${CONTENT.backLabel}</span>
               </button>
               <a class="spz-step2-logo" href="${CONTENT.logoHref}">
-                <img src="${CONTENT.assets.logo}" alt="Semgrep">
+                <img src="${CONTENT.assets.logo}" alt="Semgrep logo">
               </a>
               <span class="spz-step2-spacer" aria-hidden="true"></span>
             </div>
@@ -210,7 +218,7 @@
                 <img class="spz-form-reviews" src="${CONTENT.assets.reviews}" alt="${CONTENT.reviewsAlt}">
               </div>
               <div class="${CONFIG.formMountClass}"></div>
-              <p class="spz-form-privacy">${CONTENT.privacyNote} <a href="${CONTENT.privacyUrl}">${CONTENT.privacyLinkText}</a></p>
+              <p class="spz-form-privacy">${CONTENT.privacyNote} <a href="${CONTENT.privacyUrl}" target="_blank">${CONTENT.privacyLinkText}</a></p>
             </div>
           </section>`;
 
@@ -250,7 +258,9 @@
   const applyPlaceholders = (form) => {
     Object.keys(CONTENT.placeholders).forEach((id) => {
       const field = form.querySelector("#" + id);
-      if (field) field.setAttribute("placeholder", CONTENT.placeholders[id]);
+      if (field && field.getAttribute("placeholder") !== CONTENT.placeholders[id]) {
+        field.setAttribute("placeholder", CONTENT.placeholders[id]);
+      }
     });
   };
 
@@ -322,6 +332,11 @@
     arrangeRows(form);
     styleSubmit(form);
     syncFieldPersistence(form);
+    wireFloatingLabels(form);
+    decorateFields(form);
+    syncAllFloating(form);
+    const title = document.querySelector(".spz-form-title");
+    if (title) syncReasonField(title.textContent);
   };
 
   // Marketo re-renders can wipe our classes/placeholders — re-apply on childList
@@ -341,15 +356,25 @@
           configureForm(form);
         } finally {
           applying = false;
-          observer.observe(form, { childList: true, subtree: true });
+          observer.observe(form, { childList: true });
         }
       }, 50);
     });
 
-    observer.observe(form, { childList: true, subtree: true });
+    observer.observe(form, { childList: true });
   };
 
   /* ===== Behaviour ===== */
+
+  // Match select#tempfield to the Step 2 heading from the previous tile/CTA.
+  const syncReasonField = (heading) => {
+    const select = document.querySelector("select#tempfield");
+    const value = heading && CONTENT.reasonByHeading[heading];
+    if (!select || !value) return;
+    if (select.value === value) return;
+    select.value = value;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+  };
 
   // Switch between Step 1 and Step 2, updating the dynamic form heading.
   const showStep = (step, heading) => {
@@ -358,6 +383,7 @@
     if (heading) {
       const title = root.querySelector(".spz-form-title");
       if (title) title.textContent = heading;
+      syncReasonField(heading);
     }
     root.classList.toggle(CONFIG.stepTwoClass, step === 2);
     window.scrollTo({ top: 0 });
@@ -395,6 +421,88 @@
     log("injected");
   };
 
+
+  // True for text/select/textarea fields that get a floating label (not checkboxes).
+  const isFloatingField = (field) => !!field && field.classList && field.classList.contains("mktoField") && field.type !== "checkbox" && field.type !== "hidden";
+
+  // Resolve the element that should receive .spz-active (wrap, else column).
+  const getFloatingWrap = (field) => field.closest(".mktoFieldWrap") || field.closest(".mktoFieldDescriptor") || field.closest(".mktoFormCol");
+
+  // Keep .spz-active in sync with value (autofill / typed text).
+  const syncFloatingActive = (field) => {
+    const wrap = isFloatingField(field) && getFloatingWrap(field);
+    if (!wrap) return;
+    wrap.classList.toggle("spz-active", document.activeElement === field || String(field.value || "").trim() !== "");
+  };
+
+  const syncAllFloating = (form) => {
+    const nodes = form.querySelectorAll("input.mktoField, select.mktoField, textarea.mktoField");
+    for (let i = 0; i < nodes.length; i++) syncFloatingActive(nodes[i]);
+  };
+
+  /* Wire floating labels via delegation on the form element itself.
+           Marketo renders (and may re-render) fields AFTER we relocate the form, so per-field
+           listeners can land on stale inputs and never fire — delegating on the persistent
+           form keeps every label animating. focusin/focusout/input/change all bubble. */
+  const wireFloatingLabels = (form) => {
+    if (!form || form.dataset.spzFloatWired === "1") return;
+    form.dataset.spzFloatWired = "1";
+
+    form.addEventListener("focusin", (event) => {
+      const wrap = isFloatingField(event.target) && getFloatingWrap(event.target);
+      if (wrap) wrap.classList.add("spz-active");
+    });
+
+    form.addEventListener("focusout", (event) => {
+      const wrap = isFloatingField(event.target) && getFloatingWrap(event.target);
+      if (!wrap) return;
+      if (String(event.target.value || "").trim() === "") {
+        wrap.classList.remove("spz-active");
+      }
+    });
+
+    const onFieldValue = (event) => {
+      if (isFloatingField(event.target)) syncFloatingActive(event.target);
+    };
+    form.addEventListener("input", onFieldValue);
+    form.addEventListener("change", onFieldValue);
+  };
+
+  // Apply mockup labels and floating-label behaviour to each field.
+  const decorateFields = (form) => {
+    if (form.dataset.spzFieldsDecorated === "1") {
+      wireFloatingLabels(form);
+      return;
+    }
+
+    let allFound = true;
+    const fieldIds = Object.keys(CONTENT.placeholders);
+    for (let i = 0; i < fieldIds.length; i++) {
+      const id = fieldIds[i];
+      const input = form.querySelector("#" + id);
+      if (!input) {
+        allFound = false;
+        log("field missing —", id);
+        continue;
+      }
+      const col = input.closest(".mktoFieldDescriptor") || input.closest(".mktoFormCol");
+      const wrap = input.closest(".mktoFieldWrap") || col;
+      const labelEl = (wrap && wrap.querySelector(".mktoLabel")) || (col && col.querySelector(".mktoLabel"));
+      if (col) col.classList.add("spz-field-col");
+      if (labelEl && labelEl.textContent !== CONTENT.placeholders[id]) {
+        labelEl.textContent = CONTENT.placeholders[id];
+      }
+      if (input.tagName === "SELECT" && wrap) {
+        wrap.classList.add("spz-active"); // select always has a value
+      }
+    }
+
+    if (allFound) form.dataset.spzFieldsDecorated = "1";
+    wireFloatingLabels(form);
+
+  };
+
+
   const init = () => {
     log("start", location.href);
     if (!onUrlMatch()) {
@@ -415,7 +523,7 @@
   init();
 })();
 
-/* ===== Tracking (downfunnel template — variant) ===== */
+/* ===== Downfunnel tracking (variant) ===== */
 (function () {
   //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
@@ -430,11 +538,11 @@
   const clientDomain = ".semgrep.dev"; //domain should be .spiralyze.com
 
   /***********************************
-      ************************************
-      DO NOT TOUCH
-      BEYOND THIS LINE
-      ******************************
-      ******************************/
+            ************************************
+            DO NOT TOUCH
+            BEYOND THIS LINE
+            ******************************
+            ******************************/
   const formHiddenValue = variantName;
   if (squeezePage === true) {
     window.squeezePageValue = formHiddenValue;
