@@ -1,0 +1,466 @@
+document.querySelector('.content-main').insertAdjacentHTML('afterbegin', `
+<section class="spz_hero">
+  <div class="spz_hero__container">
+    <nav class="spz_hero__navbar">
+      <div class="spz_hero__navbar-inner">
+        <div class="spz_hero__navbar-side">
+          <picture>
+            <source media="(max-width: 767.98px)"
+              srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/speakers/nav-element-mobile.svg">
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/speakers/nav-element.svg"
+              alt="navbar curve" class="spz_hero__navbar-element">
+          </picture>
+        </div>
+        <div class="spz_hero__navbar-links">
+          <a href="https://canoeintelligence.com/canoe-compass-new-york-2026-home/" class="spz_hero__nav-link">
+            Home
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+              alt="arrow" class="spz_hero__nav-arrow">
+          </a>
+          <a href="javascript:void(0);" class="spz_hero__nav-link spz_hero__nav-link--active">
+            Speakers
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+              alt="arrow" class="spz_hero__nav-arrow">
+          </a>
+          <a href="https://canoeintelligence.com/canoe-compass-new-york-2026-resources/" class="spz_hero__nav-link">
+            Resources
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+              alt="arrow" class="spz_hero__nav-arrow">
+          </a>
+        </div>
+        <div class="spz_hero__navbar-side spz_hero__navbar-side--right">
+          <picture>
+            <source media="(max-width: 767.98px)"
+              srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/speakers/nav-element-mobile.svg">
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/speakers/nav-element.svg"
+              alt="navbar curve" class="spz_hero__navbar-element perfmatters-lazy entered pmloaded">
+          </picture>
+        </div>
+      </div>
+    </nav>
+
+    <div class="spz_hero__mobile-nav">
+      <div class="spz_hero__mobile-nav__bar">
+        <span class="spz_hero__nav-link spz_hero__nav-link--active spz_hero__mobile-nav__current">
+          Speakers
+          <img
+            src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+            alt="" class="spz_hero__nav-arrow">
+        </span>
+        <button type="button" class="spz_hero__mobile-nav__toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="spz_hero__mobile-menu">
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="spz_hero__content">
+      <div class="spz_hero__logo">
+        <!-- <div class="spz_hero__logo-blur">
+        </div> -->
+        <div class="spz_hero__logo-grp">
+          <picture>
+            <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1790805280/canoeintelligence/9008/container_2.svg">
+            <img src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/logo-grp.svg"
+            alt="Logo Canoe Compass">
+          </picture>
+        </div>
+      </div>
+
+      <div class="spz__compass-hero__logistics">
+        <span>Wednesday, October 14, 2026</span>
+        <picture>
+          <source media="(max-width: 767.98px)"
+            srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/spz_compass_star_pink_large.svg">
+          <img
+            src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/spz_compass_star_pink_small.svg"
+            alt="Logistics Separator" class="perfmatters-lazy entered pmloaded">
+        </picture>
+        <span>The Assembly, New York</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="spz_hero__mobile-menu" class="spz_hero__mobile-menu" aria-hidden="true">
+  <div class="spz_hero__mobile-menu__overlay" aria-hidden="true"></div>
+  <div class="spz_hero__mobile-menu__panel">
+    <nav class="spz_hero__mobile-menu__links" aria-label="Microsite navigation">
+      <a href="https://canoeintelligence.com/canoe-compass-new-york-2026-home/" class="spz_hero__nav-link">Home</a>
+      <a href="https://canoeintelligence.com/canoe-compass-new-york-2026-resources/"
+        class="spz_hero__nav-link">Resources</a>
+    </nav>
+  </div>
+</div>
+
+<section class="ci_speakers">
+  <div class="webinar__container">
+    <div class="ci_speakersInner">
+      <div class="ci_speakersDetail">
+        <div class="ci_spekaerDetail_left">
+          <h2>Meet our speakers.</h2>
+        </div>
+        <div class="ci_spekaerDetail_right">
+          <p><strong>The voices shaping the future of alternative investment data.</strong> We are thrilled to welcome a
+            distinguished lineup of industry leaders, innovators, and experts to the stage. </p>
+          <p>These speakers bring a wealth of experience from across the global financial landscape to share their
+            insights on automation, institutional strategy, and the road ahead.</p>
+        </div>
+      </div>
+      <div class="ci_speakerList">
+        <div class="ci_col">
+          <div class="ci_speaker_item">
+            <div class="ci_speaker_left">
+              <picture>
+                <source media="(max-width: 767px)"
+                  srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_7.png">
+                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img.png"
+                  alt="Minoo Soleymani">
+              </picture>
+            </div>
+            <div class="ci_speaker_right">
+              <h3>Minoo Soleymani</h3>
+              <h4>Senior Relationship Manager</h4>
+              <p>Minoo Soleymani is a Senior Relationship Manager at Canoe Intelligence, where she has spent over four
+                years helping wealth and institutional clients get value from alternative investment data automation.
+                Based in New York, she began her time with Canoe working on the Implementations team across all client
+                groups.</p>
+              <small>
+                <span>
+                  <img
+                    src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791191488/canoeintelligence/9008/main-logo.svg"
+                    alt="Canoe">
+                </span>
+              </small>
+            </div>
+          </div>
+          <div class="ci_speaker_item">
+            <div class="ci_speaker_left">
+              <picture>
+                <source media="(max-width: 767px)"
+                  srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_5.png">
+                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_1.png"
+                  alt="Christine Iannacone">
+              </picture>
+            </div>
+            <div class="ci_speaker_right">
+              <h3>Christine Iannacone</h3>
+              <h4>Head of Investment Office Operations - HPC</h4>
+              <p>Christine Iannacone is a Vice President at Prudential Financial. Christine is the Head of Investment
+                Performance Reporting and Analysis within the Chief Investment Office. She is responsible for
+                performance analysis, client reporting, and marketing presentations for the investments of the general
+                account and clients of Prudential Select Strategies LLC. Prior to joining Prudential, Christine was with
+                Goldman Sachs Asset Management, where she was a Vice President in the Alternative Investments & Manager
+                Selection Group. She managed the Performance Analytics and Client Reporting teams for the Hedge Fund
+                Strategies Group. Previously, she worked in Fixed Income Investment Performance and Portfolio
+                Administration where she managed the performance team. Prior to joining Goldman Sachs, she worked as a
+                securities analyst at SEI Investments. Christine received a Bachelor of Science in Economics from The
+                Pennsylvania State University and a Master of Business Administration with a concentration in Finance
+                from LaSalle University. She is a CIPM® certificate holder and an active volunteer for the CFA
+                Institute. Christine serves on the advisory board of The Journal of Performance Measurement.
+              </p>
+              <small>
+                <span>
+                  <!-- <img
+                    src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791191491/canoeintelligence/9008/frame_2147217492.svg"
+                    alt="Prudential"> -->
+                </span>
+                <a href="https://www.linkedin.com/in/christineiannacone/">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <g clip-path="url(#clip0_31102_2084)">
+                      <rect width="28" height="28" rx="2" fill="white" />
+                      <path
+                        d="M25.9331 0H2.06694C1.51876 0 0.993022 0.217767 0.605394 0.605394C0.217767 0.993022 0 1.51876 0 2.06694V25.9331C0 26.4812 0.217767 27.007 0.605394 27.3946C0.993022 27.7822 1.51876 28 2.06694 28H25.9331C26.4812 28 27.007 27.7822 27.3946 27.3946C27.7822 27.007 28 26.4812 28 25.9331V2.06694C28 1.51876 27.7822 0.993022 27.3946 0.605394C27.007 0.217767 26.4812 0 25.9331 0ZM8.34556 23.8525H4.13583V10.4806H8.34556V23.8525ZM6.23778 8.6275C5.76026 8.62481 5.29423 8.48073 4.89852 8.21344C4.50281 7.94614 4.19515 7.56762 4.01436 7.12564C3.83357 6.68365 3.78776 6.19802 3.8827 5.73003C3.97765 5.26204 4.2091 4.83266 4.54785 4.49608C4.88659 4.1595 5.31745 3.93081 5.78604 3.83887C6.25464 3.74693 6.73996 3.79586 7.18078 3.97948C7.62159 4.16311 7.99813 4.47319 8.26288 4.87061C8.52762 5.26803 8.66871 5.73497 8.66833 6.2125C8.67284 6.53221 8.61293 6.84955 8.49218 7.14561C8.37143 7.44166 8.19231 7.71038 7.9655 7.93574C7.73869 8.16111 7.46882 8.3385 7.17199 8.45734C6.87517 8.57619 6.55745 8.63406 6.23778 8.6275ZM23.8622 23.8642H19.6544V16.5589C19.6544 14.4044 18.7386 13.7394 17.5564 13.7394C16.3081 13.7394 15.0831 14.6806 15.0831 16.6133V23.8642H10.8733V10.4903H14.9217V12.3433H14.9761C15.3825 11.5208 16.8058 10.115 18.9778 10.115C21.3267 10.115 23.8642 11.5092 23.8642 15.5925L23.8622 23.8642Z"
+                        fill="#0A66C2" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_31102_2084">
+                        <rect width="28" height="28" rx="2" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="ci_col">
+          <div class="ci_speaker_item">
+            <div class="ci_speaker_left">
+              <picture>
+                <source media="(max-width: 767px)"
+                  srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_6.png">
+                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_2.png"
+                  alt="Bryan Targosz">
+              </picture>
+            </div>
+            <div class="ci_speaker_right">
+              <h3>Bryan Targosz</h3>
+              <h4>Partnership Accounting Manager</h4>
+              <p>As a Senior Manager Accounting – Investments of Briar Hall, Bryan
+                provides critical support to the investment professionals at Briar Hall.
+                Bryan oversees the monthly close process of all private equity funds
+                and he is responsible for providing private equity cash flow forecasts
+                to investors. Bryan’s background includes more than 15 years of private equity experience. Prior to
+                joining Briar Hall, he worked for Northern Trust
+                Hedge Fund Services.Bryan earned his Bachelor of Science degree in Accounting and Finance at Illinois
+                State University. Bryan has been a registered Certified Public Accountant since 2009.
+              </p>
+              <small>
+                <span>
+                  <img
+                    src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791191491/canoeintelligence/9008/lgt_logo-3.svg"
+                    alt="LGT">
+                </span>
+                <a href="https://www.linkedin.com/in/bryan-targosz-cpa-18a61865">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <g clip-path="url(#clip0_31102_2084)">
+                      <rect width="28" height="28" rx="2" fill="white" />
+                      <path
+                        d="M25.9331 0H2.06694C1.51876 0 0.993022 0.217767 0.605394 0.605394C0.217767 0.993022 0 1.51876 0 2.06694V25.9331C0 26.4812 0.217767 27.007 0.605394 27.3946C0.993022 27.7822 1.51876 28 2.06694 28H25.9331C26.4812 28 27.007 27.7822 27.3946 27.3946C27.7822 27.007 28 26.4812 28 25.9331V2.06694C28 1.51876 27.7822 0.993022 27.3946 0.605394C27.007 0.217767 26.4812 0 25.9331 0ZM8.34556 23.8525H4.13583V10.4806H8.34556V23.8525ZM6.23778 8.6275C5.76026 8.62481 5.29423 8.48073 4.89852 8.21344C4.50281 7.94614 4.19515 7.56762 4.01436 7.12564C3.83357 6.68365 3.78776 6.19802 3.8827 5.73003C3.97765 5.26204 4.2091 4.83266 4.54785 4.49608C4.88659 4.1595 5.31745 3.93081 5.78604 3.83887C6.25464 3.74693 6.73996 3.79586 7.18078 3.97948C7.62159 4.16311 7.99813 4.47319 8.26288 4.87061C8.52762 5.26803 8.66871 5.73497 8.66833 6.2125C8.67284 6.53221 8.61293 6.84955 8.49218 7.14561C8.37143 7.44166 8.19231 7.71038 7.9655 7.93574C7.73869 8.16111 7.46882 8.3385 7.17199 8.45734C6.87517 8.57619 6.55745 8.63406 6.23778 8.6275ZM23.8622 23.8642H19.6544V16.5589C19.6544 14.4044 18.7386 13.7394 17.5564 13.7394C16.3081 13.7394 15.0831 14.6806 15.0831 16.6133V23.8642H10.8733V10.4903H14.9217V12.3433H14.9761C15.3825 11.5208 16.8058 10.115 18.9778 10.115C21.3267 10.115 23.8642 11.5092 23.8642 15.5925L23.8622 23.8642Z"
+                        fill="#0A66C2" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_31102_2084">
+                        <rect width="28" height="28" rx="2" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </small>
+            </div>
+          </div>
+          <div class="ci_speaker_item">
+            <div class="ci_speaker_left">
+              <picture>
+                <source media="(max-width: 767px)"
+                  srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_4.png">
+                <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/img_3.png"
+                  alt="Mike Jackson">
+              </picture>
+            </div>
+            <div class="ci_speaker_right">
+              <h3>Mike Jackson</h3>
+              <h4>Executive Director of Finance</h4>
+              <p>Mr. Jackson shares responsibility for the firm’s fund finance operations, with a focus on private
+                equity, real estate & infrastructure investments. Earlier in his GCM Grosvenor career, Mr. Jackson held
+                roles within fund finance operations focusing on carried interest plans & absolute return strategies.
+                Prior to joining GCM Grosvenor in 2008, he was an Associate at Jenkins, Magnus, Volk & Carroll, where he
+                prepared tax returns & audited small businesses. Mr. Jackson received his Bachelor of Science in
+                Accounting and Finance with honors from the University of Dayton. He is a Certified Public Accountant.
+              </p>
+              <small>
+                <span>
+                  <img
+                    src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791191491/canoeintelligence/9008/frame_2147217510.svg"
+                    alt="Grosvenor">
+                </span>
+                <a href="https://www.linkedin.com/in/mike-jackson-4279781/">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <g clip-path="url(#clip0_31102_2084)">
+                      <rect width="28" height="28" rx="2" fill="white" />
+                      <path
+                        d="M25.9331 0H2.06694C1.51876 0 0.993022 0.217767 0.605394 0.605394C0.217767 0.993022 0 1.51876 0 2.06694V25.9331C0 26.4812 0.217767 27.007 0.605394 27.3946C0.993022 27.7822 1.51876 28 2.06694 28H25.9331C26.4812 28 27.007 27.7822 27.3946 27.3946C27.7822 27.007 28 26.4812 28 25.9331V2.06694C28 1.51876 27.7822 0.993022 27.3946 0.605394C27.007 0.217767 26.4812 0 25.9331 0ZM8.34556 23.8525H4.13583V10.4806H8.34556V23.8525ZM6.23778 8.6275C5.76026 8.62481 5.29423 8.48073 4.89852 8.21344C4.50281 7.94614 4.19515 7.56762 4.01436 7.12564C3.83357 6.68365 3.78776 6.19802 3.8827 5.73003C3.97765 5.26204 4.2091 4.83266 4.54785 4.49608C4.88659 4.1595 5.31745 3.93081 5.78604 3.83887C6.25464 3.74693 6.73996 3.79586 7.18078 3.97948C7.62159 4.16311 7.99813 4.47319 8.26288 4.87061C8.52762 5.26803 8.66871 5.73497 8.66833 6.2125C8.67284 6.53221 8.61293 6.84955 8.49218 7.14561C8.37143 7.44166 8.19231 7.71038 7.9655 7.93574C7.73869 8.16111 7.46882 8.3385 7.17199 8.45734C6.87517 8.57619 6.55745 8.63406 6.23778 8.6275ZM23.8622 23.8642H19.6544V16.5589C19.6544 14.4044 18.7386 13.7394 17.5564 13.7394C16.3081 13.7394 15.0831 14.6806 15.0831 16.6133V23.8642H10.8733V10.4903H14.9217V12.3433H14.9761C15.3825 11.5208 16.8058 10.115 18.9778 10.115C21.3267 10.115 23.8642 11.5092 23.8642 15.5925L23.8622 23.8642Z"
+                        fill="#0A66C2" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_31102_2084">
+                        <rect width="28" height="28" rx="2" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ci_team">
+  <div class="webinar__container">
+    <div class="ci_speakersDetail">
+      <div class="ci_spekaerDetail_left">
+        <h2>Meet the <br>  Canoe team.</h2>
+      </div>
+      <div class="ci_spekaerDetail_right">
+        <p><strong>Your partners in operational excellence.</strong> Whether you're looking to discuss the latest product updates or want to explore how we can better support your firm's specific goals, our leadership and US teams are here to connect. </p>
+        <p>We'll have representatives from across the business, from AI engineering to relationship management, on-site and ready to chat.</p>
+      </div>
+    </div>
+  </div>
+  <div class="webinar_image">
+    <picture>
+      <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/flex.png">
+      <source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/768.png">
+      <source media="(max-width: 1440px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/team_1440.png">
+      <img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/9008/flex_1.png" alt="Canoe team">
+    </picture>
+  </div>  
+  <div class="webinar__container">
+    <div class="ci_leadership">
+      <div class="ci_leadership_list">
+        <div class="ci_leadershipItem">
+          <h3>Executive <br> Leadership</h3>
+          <div class="ci_leadership_data">
+            <strong>Jason Eiswerth </strong>
+            <span>CEO</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Mike Muniz</strong>
+            <span>Partner and Chief Strategy Officer</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Zack Helgeson </strong>
+            <span>Head of Product</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Christopher Jones</strong>
+            <span>Chief Revenue Officer</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Tim Loughrey</strong>
+            <span>Global Head of Client Experience</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Betsy Daitch</strong>
+            <span>Head of Marketing</span>
+          </div>
+        </div>
+        <div class="ci_leadershipItem">
+          <h3>Account Executive <br> + Leadership</h3>
+          <div class="ci_leadership_data">
+            <strong>Dennis Mangalinden </strong>
+            <span>Senior Director of Sales</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Maggie Thorson </strong>
+            <span>Director of Sales</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>CT McLean </strong>
+            <span>Director, Strategic Accounts</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Connor Doran </strong>
+            <span>Account Executive </span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Clayton Bearden </strong>
+            <span>Account Executive</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Kelly Nuzzo</strong>
+            <span>Account Executive</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Mark Ferri </strong>
+            <span>Director of Sales Engineering</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Fred Camerzell </strong>
+            <span>Sales Engineer </span>
+          </div>
+        </div>
+        <div class="ci_leadershipItem">
+          <h3>Client Success <br> & PRODUCT</h3>
+          <div class="ci_leadership_data">
+            <strong>Will Daly </strong>
+            <span>Senior Director, Institutional Investors</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Minoo Soleymani</strong>
+            <span>Senior Relationship Manager</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Emma Purcell </strong>
+            <span>Relationship Manager</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Justin Cullen </strong>
+            <span>Solutions Architect</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Taylor Braney </strong>
+            <span>Senior Relationship Manager</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Kevin Tobiassen </strong>
+            <span>Senior Director, Product Management</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Andrew Thomerson </strong>
+            <span>Senior Product Manager</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Kate Wicker </strong>
+            <span>Director, Product Management</span>
+          </div>
+          <div class="ci_leadership_data">
+            <strong>Emily McGurrin </strong>
+            <span>Senior Product Manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+
+<section class="spz__compass__contact">
+  <div class="spz__compass__contact__container">
+    <img src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/spz_compass_caneo_logo.svg"
+      alt="Canoe Logo" class="perfmatters-lazy entered pmloaded">
+    <p>Optimise every step of <br> alts management.</p>
+    <div class="spz__compass__contact__actions">
+      <a href="mailto:events@canoeintelligence.com" class="spz__compass__contact__actions__button">Contact Us</a>
+    </div>
+  </div>
+</section>
+`);
+
+
+// (function () {
+//   const list = document.querySelector('.ci_speakerList');
+//   if (!list) return;
+
+//   // Keep the original cards in DOM order
+//   const items = Array.from(list.querySelectorAll('.ci_speaker_item'));
+//   let currentCols = 0;
+
+//   function layout() {
+//     const colCount = window.matchMedia('(max-width: 767px)').matches ? 1 : 2;
+//     if (colCount === currentCols) return; // only rebuild when the column count changes
+//     currentCols = colCount;
+
+//     const cols = Array.from({ length: colCount }, () => {
+//       const c = document.createElement('div');
+//       c.className = 'ci_col';
+//       return c;
+//     });
+
+//     list.innerHTML = '';
+//     cols.forEach(c => list.appendChild(c));
+
+//     // Place each card in the currently shortest column
+//     items.forEach(item => {
+//       const shortest = cols.reduce((a, b) => (a.offsetHeight <= b.offsetHeight ? a : b));
+//       shortest.appendChild(item);
+//     });
+//   }
+
+//   // Run after images load so heights are accurate
+//   if (document.readyState === 'complete') layout();
+//   else window.addEventListener('load', layout);
+
+//   window.addEventListener('resize', layout);
+// })();

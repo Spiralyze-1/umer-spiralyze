@@ -66,7 +66,7 @@ document.querySelector('.content-main').insertAdjacentHTML('afterbegin', `
           Thank you for securing your spot!
         </h1>
       </div>
-      <div class="spz_hero_timer">
+      <div class="spz_hero_timer" data-end="1791982800000">
         <span>
           <span class="days_value">34</span>
           <strong>DAYS</strong>
@@ -684,12 +684,13 @@ function initCountdownTimer() {
     return;
   }
 
-  var endRaw = root.getAttribute('data-end') || '2026-10-14T09:00:00-04:00';
-  var endTime = new Date(/^\d+$/.test(endRaw) ? Number(endRaw) : endRaw);
-  if (Number.isNaN(endTime.getTime())) {
+  var endTime = Number(root.dataset.end);
+  if (!endTime || Number.isNaN(endTime)) {
     console.log('invalid end date for countdown timer');
     return;
   }
+
+  endTime = new Date(endTime);
 
   function pad2(n) {
     return String(n).padStart(2, '0');

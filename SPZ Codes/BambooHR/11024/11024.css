@@ -2638,9 +2638,11 @@ body.spz_11024_v.hr-time-tracking .spz_award_section {
 }
 .spz_11024_v .spz_platformList.spz-stack-ready {
   overflow: visible;
+  overflow-anchor: none;
 }
 .spz_11024_v .spz_platformList.spz-stack-ready > ul {
   overflow: visible;
+  overflow-anchor: none;
 }
 .spz_11024_v .spz_platformList.spz-stack-ready > ul > li {
   position: -webkit-sticky;
@@ -3045,9 +3047,6 @@ body.spz_11024_v.hr-time-tracking .spz_award_section {
   }
   .spz_11024_v.onboarding .spz_platformLeft:has(ul) p {
     margin-bottom: 10px;
-  }
-  .spz_11024_v.onboarding .spz_platformLeft .spz_demo_btn.secondary {
-    width: 151px !important;
   }
 }
 .spz_11024_v.onboarding .spz_platformRight {

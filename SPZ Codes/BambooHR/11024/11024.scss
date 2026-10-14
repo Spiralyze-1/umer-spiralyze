@@ -3070,9 +3070,11 @@ body.spz_11024_v.hr-time-tracking .spz_award_section {
 
     &.spz-stack-ready {
       overflow: visible;
+      overflow-anchor: none;
 
       >ul {
         overflow: visible;
+        overflow-anchor: none;
 
         >li {
           position: -webkit-sticky;
@@ -3493,9 +3495,9 @@ body.spz_11024_v.hr-time-tracking .spz_award_section {
           margin-bottom: 10px;
         }
 
-        .spz_demo_btn.secondary {
-          width: 151px !important;
-        }
+        // .spz_demo_btn.secondary {
+        //   width: 151px !important;
+        // }
       }
     }
 

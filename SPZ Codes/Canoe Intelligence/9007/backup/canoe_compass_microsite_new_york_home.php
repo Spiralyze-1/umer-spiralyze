@@ -1,0 +1,6009 @@
+<?php
+$image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite_nyc';
+?>
+<style>
+  @charset "UTF-8";
+  /* google fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    padding: 0 !important;
+  }
+
+  footer.footer-main,
+  header.header-main {
+    display: none !important;
+  }
+
+  .content-main {
+    padding: 0 !important;
+  }
+
+  .go3670563033,
+  .go2933276541 {
+    display: none !important;
+  }
+
+  /* =============================================
+   HERO SECTION — START
+   ============================================= */
+  .spz_hero {
+    width: 100%;
+    background: #fff;
+    padding: 32px 32px 0;
+    box-sizing: border-box;
+  }
+
+  .spz_hero *,
+  .spz_hero *::before,
+  .spz_hero *::after {
+    box-sizing: border-box;
+  }
+
+  .spz_hero .spz_hero__container {
+    position: relative;
+    width: 100%;
+    background-color: #293054;
+    border-radius: 24px;
+    padding-top: 48px;
+    padding-bottom: 0;
+    background-image: url("<?php echo $image_url . '/bg-texture-compass.svg'; ?>");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  @media (min-width: 2560px) {
+    .spz_hero .spz_hero__container {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_1.svg'; ?>");
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_hero .spz_hero__container {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_6.svg'; ?>");
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_hero .spz_hero__container {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_6.svg'; ?>");
+      background-size: 1116px 858px;
+    }
+  }
+
+  /* --- Navbar --- */
+  .spz_hero .spz_hero__navbar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .spz_hero .spz_hero__navbar-inner {
+    display: flex;
+    align-items: flex-start;
+    filter: drop-shadow(0 4px 2px rgba(0, 46, 56, 0.16));
+  }
+
+  .spz_hero .spz_hero__navbar-side {
+    width: 64px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .spz_hero .spz_hero__navbar-side:nth-of-type(1) {
+    transform: translateX(-0.5px);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_hero .spz_hero__navbar-side:nth-of-type(1) {
+      transform: translateX(0);
+    }
+  }
+
+  .spz_hero .spz_hero__navbar-side--right {
+    transform: scaleY(-1) translateX(0) rotate(180deg);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_hero .spz_hero__navbar-side--right {
+      transform: scaleY(-1) translateX(0) rotate(180deg);
+    }
+  }
+
+  .spz_hero .spz_hero__navbar-side picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .spz_hero .spz_hero__navbar-element {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .spz_hero .spz_hero__navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    width: 700px;
+    padding: 0 140px;
+    background: #fff;
+    flex-shrink: 0;
+    margin: 0 -1px;
+  }
+
+  .spz_hero .spz_hero__nav-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding-bottom: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(41, 48, 84, 0.7);
+    white-space: nowrap;
+  }
+
+  .spz_hero__nav-link span {
+    position: absolute;
+    left: 6px;
+    top: -11.5px;
+    display: flex;
+    transform: rotate(-8deg);
+    padding: 2.5px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 0 6px;
+    border: 1px solid #FFF;
+    background: #1BFFC3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14);
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 9.45px;
+    letter-spacing: 0.18px;
+    text-transform: uppercase;
+  }
+
+  .spz_hero__nav-link:nth-child(2),
+  .spz_hero__nav-link:last-child {
+    pointer-events: none;
+  }
+
+  .spz_hero .spz_hero__nav-link.comingsoon:after {
+    content: "";
+    background-image: url(https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/comingsoon.png);
+    background-size: cover;
+    width: 100px;
+    height: 42px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
+
+  .spz_hero .spz_hero__nav-link--active {
+    color: #c423f9;
+  }
+
+  @media (hover: hover) {
+    .spz_hero .spz_hero__nav-link:hover {
+      color: #c423f9;
+    }
+  }
+
+  .spz_hero .spz_hero__nav-arrow {
+    position: absolute;
+    top: 0;
+    right: -9.7px;
+    width: 13.2px;
+    height: 12px;
+  }
+
+  .spz_hero .spz_hero__mobile-nav {
+    display: none;
+  }
+
+  .spz_hero .spz_hero__mobile-nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    height: 58px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    background: #fff;
+    filter: drop-shadow(0 4px 2px rgba(0, 46, 56, 0.16));
+  }
+
+  .spz_hero .spz_hero__mobile-nav__current.spz_hero__nav-link {
+    flex-shrink: 0;
+    height: auto;
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+
+  @media (max-width: 767px) {
+    .spz_hero .spz_hero__mobile-nav__current.spz_hero__nav-link {
+      font-size: 16px;
+    }
+  }
+
+  .spz_hero .spz_hero__mobile-nav__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .spz_hero .spz_hero__mobile-nav__toggle-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(41, 48, 84, 0.7);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .spz_hero .spz_hero__mobile-nav__toggle[aria-expanded=true] .spz_hero__mobile-nav__toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .spz_hero .spz_hero__mobile-nav__toggle[aria-expanded=true] .spz_hero__mobile-nav__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .spz_hero .spz_hero__mobile-nav__toggle[aria-expanded=true] .spz_hero__mobile-nav__toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .spz_hero__mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .spz_hero__mobile-menu.is-open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .spz_hero__mobile-menu__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 38, 70, 0.63);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .spz_hero__mobile-menu.is-open .spz_hero__mobile-menu__overlay {
+    opacity: 1;
+  }
+
+  .spz_hero__mobile-menu__panel {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding: 24px 20px 32px;
+    transform: translateY(-100%);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .spz_hero__mobile-menu.is-open .spz_hero__mobile-menu__panel {
+    transform: translateY(0);
+  }
+
+  .spz_hero__mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz_hero__mobile-menu__links .spz_hero__nav-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-bottom: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(41, 48, 84, 0.7);
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .spz_hero__mobile-menu__links .spz_hero__nav-link:hover {
+      color: #c423f9;
+    }
+  }
+
+  body.spz_hero__mobile-menu-open {
+    overflow: hidden !important;
+    max-height: 100vh !important;
+  }
+
+  /* --- Content --- */
+  .spz_hero .spz_hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    width: 100%;
+    padding: 80px 0;
+  }
+
+  /* --- Logo --- */
+  .spz_hero .spz_hero__logo {
+    position: relative;
+    width: 554.782px;
+    height: 176px;
+    flex-shrink: 0;
+  }
+
+  .spz_hero .spz_hero__logo-blur {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 16px);
+    transform: translate(-50%, -50%);
+    width: 888px;
+    height: 380px;
+    pointer-events: none;
+    border-radius: 888px;
+    opacity: 0.77;
+    background: radial-gradient(45.91% 45.91% at 50% 50%, rgba(27, 255, 195, 0.56) 0%, rgba(27, 255, 195, 0) 100%);
+    mix-blend-mode: overlay;
+  }
+
+  .spz_hero .spz_hero__logo-blur img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .spz_hero .spz_hero__logo-grp {
+    position: absolute;
+    inset: 0;
+    top: -13px;
+  }
+
+  .spz_hero .spz_hero__logo-grp img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .spz_hero .spz_hero__logo-border {
+    position: absolute;
+  }
+
+  .spz_hero .spz_hero__logo-border--right {
+    top: 11.96%;
+    right: 0;
+    bottom: 0;
+    left: 35.38%;
+  }
+
+  .spz_hero .spz_hero__logo-border--left {
+    top: 11.96%;
+    right: 27.69%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .spz_hero .spz_hero__logo-canoe {
+    position: absolute;
+    top: 0;
+    right: 66.33%;
+    bottom: 80.89%;
+    left: 6.36%;
+  }
+
+  .spz_hero .spz_hero__logo-compass-wrap {
+    position: absolute;
+    top: 43.81%;
+    right: 6.41%;
+    bottom: 26.99%;
+    left: 6.4%;
+  }
+
+  .spz_hero .spz_hero__logo-compass {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 3.45%;
+    left: 0;
+  }
+
+  .spz_hero .spz_hero__logo-compass-a {
+    position: absolute;
+    top: 12.12%;
+    right: 33.9%;
+    bottom: 0;
+    left: 62.71%;
+  }
+
+  /* --- Heading --- */
+  .spz_hero .spz_hero__heading {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1110px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    color: #fff;
+    word-break: break-word;
+    padding: 0 0;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52.8px;
+    letter-spacing: -1.44px;
+  }
+
+  .spz_hero .spz_hero__heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: -14px;
+  }
+
+  .spz_hero .spz_hero__eyebrow {
+    margin: 0;
+    color: #1BFFC3;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .spz_hero .spz_hero__logistics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0;
+    color: #1BFFC3;
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: -2.5px;
+    margin-top: -0.5px;
+  }
+
+  .spz_hero .spz_hero__logistics picture {
+    margin-left: -4px;
+    transform: translateY(-1px);
+  }
+
+  .spz_hero .spz_hero__logistics picture img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .spz_hero .spz_hero__logistics .spz_hero__logistics-location {
+    transform: translateX(-4px);
+  }
+
+  /* --- Video --- */
+  .spz_hero .spz_hero__video {
+    position: relative;
+    width: 1220px;
+    max-width: calc(100% - 64px);
+    border-radius: 24px;
+    background: #293054;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .spz_hero .spz_hero__video-bg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    pointer-events: none;
+  }
+
+  .spz_hero .spz_hero__video-label {
+    position: absolute;
+    left: calc(50% - 542px);
+    top: calc(50% - 309px);
+    font-family: "Open Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    display: none;
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_hero {
+      padding: 24px 32px 0;
+    }
+
+    .spz_hero .spz_hero__container {
+      /*overflow-x: hidden;*/
+    }
+
+    .spz_hero .spz_hero__navbar {
+      left: 30px;
+      right: 30px;
+      width: auto;
+      max-width: calc(100% - 60px);
+      transform: none;
+    }
+
+    .spz_hero .spz_hero__navbar-inner {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .spz_hero .spz_hero__navbar-links {
+      flex: 1 1 0;
+      flex-shrink: 1;
+      min-width: 0;
+      width: auto;
+      padding: 0;
+      gap: 100px;
+    }
+
+    .spz_hero .spz_hero__content {
+      padding: 80px 0 80.5px;
+    }
+
+    .spz_hero .spz_hero__logo {
+      width: min(554.782px, 100%);
+      max-width: 100%;
+    }
+
+    .spz_hero .spz_hero__heading {
+      width: 100%;
+      max-width: 538px;
+      font-size: 48px;
+      letter-spacing: -1.44px;
+    }
+
+    .spz_hero .spz_hero__logistics {
+      margin-top: -0.5px;
+    }
+
+    .spz_hero .spz_hero__video {
+      width: 100%;
+      max-width: calc(100% - 40px);
+      height: auto;
+      aspect-ratio: 680/382.5;
+      border-radius: 13.377px;
+    }
+
+    .spz_hero .spz_hero__video-label {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 15.61px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_hero {
+      padding: 0;
+    }
+
+    .spz_hero .spz_hero__container {
+      border-radius: 0 0 24px 24px;
+      padding-top: 0;
+    }
+
+    .spz_hero .spz_hero__logistics {
+      font-size: 18px;
+      line-height: 25.2px;
+      margin-bottom: 0;
+      justify-content: flex-start;
+      max-width: 305px;
+      margin: -1px auto 15px;
+    }
+
+    .spz_hero .spz_hero__logistics picture img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .spz_hero .spz_hero__navbar {
+      display: none;
+    }
+
+    .spz_hero .spz_hero__mobile-nav {
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .spz_hero .spz_hero__nav-link.comingsoon:after {
+      width: 93px;
+      height: 40px;
+      top: 14px;
+      left: -6px;
+      z-index: 2;
+    }
+
+    .spz_hero .spz_hero__content {
+      padding: 38.5px 20px 20px;
+      gap: 40px;
+    }
+
+    .spz_hero .spz_hero__logo {
+      width: min(296px, 100%);
+      height: auto;
+    }
+
+    .spz_hero .spz_hero__logo-blur {
+      width: min(444px, 150%);
+      height: auto;
+      aspect-ratio: 888/380;
+    }
+
+    .spz_hero .spz_hero__logo-grp {
+      position: relative;
+      top: 0;
+    }
+
+    .spz_hero .spz_hero__heading {
+      max-width: 100%;
+      padding: 0 20px;
+      font-size: 36px;
+      line-height: 39.6px;
+      letter-spacing: -1.08px;
+    }
+
+    .spz_hero .spz_hero__eyebrow {
+      font-size: 18px;
+    }
+
+    .spz_hero .spz_hero__video {
+      width: 100%;
+      max-width: calc(100% - 40px);
+      height: auto;
+      aspect-ratio: unset;
+      border-radius: 6.295px;
+    }
+
+    .spz_hero .spz_hero__video-bg {
+      height: auto;
+    }
+
+    .spz_hero .spz_hero__video-label {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+    }
+  }
+
+  /* =============================================
+   HERO SECTION — END
+   ============================================= */
+  /* =============================================
+   AGENDA SECTION — START
+   ============================================= */
+  .spz_agenda {
+    width: 100%;
+    background: #fff;
+    padding: 80px 32px 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64.5px;
+  }
+
+  .spz_agenda *,
+  .spz_agenda *::before,
+  .spz_agenda *::after {
+    box-sizing: border-box;
+  }
+
+  /* --- Header --- */
+  .spz_agenda .spz_agenda__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+    color: #293054;
+  }
+
+  .spz_agenda .spz_agenda__title {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.44px;
+    color: #293054;
+  }
+
+  .spz_agenda .spz_agenda__subtitle {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.66px;
+    text-transform: uppercase;
+    color: #293054;
+  }
+
+  /* --- Body --- */
+  .spz_agenda .spz_agenda__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+    max-width: 1220px;
+  }
+
+  /* --- Media (left column) --- */
+  .spz_agenda .spz_agenda__media {
+    position: relative;
+    flex: 1 0 0;
+    min-width: 0;
+    align-self: stretch;
+    width: 100%;
+    max-width: 555px;
+  }
+
+  .spz_agenda .spz_agenda__media-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .spz_agenda .spz_agenda__media-image picture,
+  .spz_agenda .spz_agenda__media-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .spz_agenda .spz_agenda__media-content {
+    position: absolute;
+    top: 25px;
+    left: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #fff;
+  }
+
+  .spz_agenda .spz_agenda__venue {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 29.7px;
+    text-transform: uppercase;
+    color: #293054;
+  }
+
+  .spz_agenda .spz_agenda__date {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52.8px;
+    letter-spacing: -1.44px;
+    color: #293054;
+  }
+
+  /* --- Schedule (right column) --- */
+  .spz_agenda .spz_agenda__schedule {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 580px;
+  }
+
+  .spz_agenda .spz_agenda__row {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 16px 0 15.5px;
+    border-bottom: 0.5px solid rgba(0, 77, 77, 0.3);
+  }
+
+  .spz_agenda .spz_agenda__row:last-child {
+    padding-bottom: 14px;
+  }
+
+  .spz_agenda .spz_agenda__row--last {
+    border-bottom: none;
+  }
+
+  .spz_agenda .spz_agenda__time {
+    flex-shrink: 0;
+    width: 90px;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #293054;
+  }
+
+  .spz_agenda .spz_agenda__detail {
+    flex: 1 0 0;
+    min-width: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #293054;
+    word-break: break-word;
+  }
+
+  .spz_agenda .spz_agenda__detail-block {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .spz_agenda .spz_agenda__speakers {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .spz_agenda .spz_agenda__speakers--stacked {
+    gap: 12px;
+  }
+
+  .spz_agenda .spz_agenda__speakers--stacked-2 {
+    margin-top: -1.5px;
+    gap: 16px;
+  }
+
+  .spz_agenda .spz_agenda__speaker {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .spz_agenda .spz_agenda__bullet {
+    flex-shrink: 0;
+    width: 9px;
+    height: 22px;
+    margin-top: 0;
+  }
+
+  .spz_agenda .spz_agenda__speaker-info {
+    flex: 1 0 0;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spz_agenda .spz_agenda__speaker-name {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #293054;
+  }
+
+  .spz_agenda .spz_agenda__speaker-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.4px;
+    color: #293054;
+    margin-top: -3px;
+  }
+
+  .spz_agenda .spz_agenda__detail-link {
+    font-family: "Open Sans", sans-serif;
+    color: #C423F9;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+    text-transform: uppercase;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+  }
+
+  .spz_agenda .spz_agenda__detail-link:hover::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 2px;
+    background: #C423F9;
+    bottom: -2px;
+  }
+
+  .spz_agenda .spz_agenda__detail-link::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cmask id='mask0_30073_259' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='1' y='0' width='10' height='12'%3E%3Cpath d='M11 0H1V12H11V0Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_30073_259)'%3E%3Cpath d='M1.00852 0.504145C1.00852 0.647393 1.06708 0.782683 1.16722 0.878181C2.53034 2.19527 3.30495 4.05451 3.30211 6.00228C3.30211 7.95005 2.52467 9.8083 1.15966 11.1214C0.957505 11.3005 0.930111 11.6168 1.10015 11.8307C1.25129 12.0237 1.51485 12.0684 1.717 11.9371L10.7601 6.44894C10.9887 6.31066 11.068 6.00228 10.9367 5.76154C10.8952 5.68495 10.8347 5.62029 10.7601 5.57652L1.72645 0.0684325C1.49784 -0.0708364 1.20595 0.0107354 1.0737 0.251472C1.03119 0.328069 1.00852 0.414615 1.00852 0.504145Z' fill='%23C423F9'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  @media (max-width: 1200px) {
+    .spz_agenda .spz_agenda__media {
+      width: calc(50% - 20px);
+    }
+
+    .spz_agenda .spz_agenda__schedule {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_agenda {
+      padding: 80px 24px 81px;
+      gap: 56px;
+    }
+
+    .spz_agenda .spz_agenda__header {
+      align-items: center;
+    }
+
+    .spz_agenda .spz_agenda__body {
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .spz_agenda .spz_agenda__media {
+      width: 100%;
+      flex: none;
+      align-self: auto;
+      max-width: 704px;
+    }
+
+    .spz_agenda .spz_agenda__media-image {
+      min-height: 0;
+      height: auto;
+    }
+
+    .spz_agenda .spz_agenda__media-image picture,
+    .spz_agenda .spz_agenda__media-image img {
+      height: auto;
+    }
+
+    .spz_agenda .spz_agenda__schedule {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_agenda {
+      padding: 64px 20px;
+      gap: 56px;
+    }
+
+    .spz_agenda .spz_agenda__header {
+      align-items: center;
+      gap: 16px;
+    }
+
+    .spz_agenda .spz_agenda__title {
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -1.08px;
+    }
+
+    .spz_agenda .spz_agenda__subtitle {
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0.54px;
+    }
+
+    .spz_agenda .spz_agenda__body {
+      gap: 32px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .spz_agenda .spz_agenda__media {
+      width: 100%;
+      overflow: hidden;
+      border-bottom-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .spz_agenda .spz_agenda__media-image {
+      width: 100%;
+      aspect-ratio: 320/362.4;
+      min-height: 0;
+      height: auto;
+      border-bottom-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+
+    .spz_agenda .spz_agenda__media-image picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .spz_agenda .spz_agenda__media-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .spz_agenda .spz_agenda__media-content {
+      z-index: 1;
+      top: 20px;
+      left: 20px;
+      width: 100%;
+      max-width: calc(100% - 32px);
+      gap: 8px;
+    }
+
+    .spz_agenda .spz_agenda__venue {
+      font-size: 14px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .spz_agenda .spz_agenda__date {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 35.2px;
+      letter-spacing: -0.96px;
+    }
+
+    .spz_agenda .spz_agenda__schedule {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .spz_agenda .spz_agenda__row {
+      gap: 32px;
+      padding: 16px 0;
+    }
+
+    .spz_agenda .spz_agenda__row:first-child,
+    .spz_agenda .spz_agenda__row:nth-child(12),
+    .spz_agenda .spz_agenda__row:last-child {
+      padding-bottom: 14.5px;
+    }
+
+    .spz_agenda .spz_agenda__row:nth-child(3) {
+      padding-bottom: 15px;
+    }
+
+    .spz_agenda .spz_agenda__row:nth-child(7) {
+      padding-bottom: 17.5px;
+    }
+
+    .spz_agenda .spz_agenda__row:nth-child(6),
+    .spz_agenda .spz_agenda__row:nth-child(9) {
+      padding-bottom: 14px;
+    }
+
+    .spz_agenda .spz_agenda__row:nth-child(11) {
+      padding-top: 15px;
+      padding-bottom: 13.5px;
+    }
+
+    .spz_agenda .spz_agenda__time {
+      width: 90px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .spz_agenda .spz_agenda__detail {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .spz_agenda .spz_agenda__detail-block {
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .spz_agenda .spz_agenda__detail-link {
+      font-size: 10px;
+      margin-top: 3.5px;
+      margin-bottom: 4px;
+    }
+
+    .spz_agenda .spz_agenda__speakers {
+      gap: 0;
+    }
+
+    .spz_agenda .spz_agenda__speakers--stacked {
+      gap: 13px;
+    }
+
+    .spz_agenda .spz_agenda__speakers--stacked-2 {
+      margin-top: 0;
+      gap: 16px;
+    }
+
+    .spz_agenda .spz_agenda__speaker {
+      gap: 8px;
+    }
+
+    .spz_agenda .spz_agenda__bullet {
+      width: 9px;
+      height: 17px;
+      object-fit: contain;
+    }
+
+    .spz_agenda .spz_agenda__speaker-info {
+      display: block;
+    }
+
+    .spz_agenda .spz_agenda__speaker-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .spz_agenda .spz_agenda__speakers--stacked .spz_agenda__speaker:nth-child(2) .spz_agenda__speaker-name,
+    .spz_agenda .spz_agenda__speakers--stacked .spz_agenda__speaker:nth-child(3) .spz_agenda__speaker-name {
+      font-size: 14px;
+    }
+
+    .spz_agenda .spz_agenda__speaker-title {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+
+  /* =============================================
+   AGENDA SECTION — END
+   ============================================= */
+  /* =============================================
+   VIDEO SECTION — START
+   ============================================= */
+  .spz_video {
+    width: 100%;
+    /*background: #293054;*/
+    padding: 80px 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/background-pattren.jpg);
+  }
+
+  .spz_video *,
+  .spz_video *::before,
+  .spz_video *::after {
+    box-sizing: border-box;
+  }
+
+  .spz_video .spz_video__player {
+    position: relative;
+    width: 1220px;
+    max-width: 100%;
+    border-radius: 24px;
+    background: #293054;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .spz_video .spz_video__player img {
+    width: 100%;
+  }
+
+  .spz_video .spz_video__bg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    opacity: 1;
+    pointer-events: none;
+    background: #555;
+  }
+
+  .spz_video .spz_video__label {
+    position: absolute;
+    left: calc(50% - 542px);
+    top: calc(50% - 309px);
+    font-family: "Open Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    display: none;
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_video {
+      padding: 80px 24px;
+    }
+
+    .spz_video .spz_video__player {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1200/675;
+      border-radius: 13.377px;
+    }
+
+    .spz_video .spz_video__label {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 15.61px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_video {
+      padding: 64px 20px;
+    }
+
+    .spz_video .spz_video__player {
+      width: 100%;
+      height: auto;
+      aspect-ratio: unset;
+      border-radius: 6.295px;
+    }
+
+    .spz_video .spz_video__bg {
+      height: auto;
+    }
+
+    .spz_video .spz_video__label {
+      font-size: 14px;
+    }
+  }
+
+  /* =============================================
+   VIDEO SECTION — END
+   ============================================= */
+  /* =============================================
+   TRAVEL SECTION — START
+   ============================================= */
+  .spz_travel {
+    position: relative;
+    padding: 92px 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 48px;
+    border-radius: 64px;
+    background: #293054;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_travel {
+      border-radius: 48px 48px 64px 64px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_travel {
+      border-radius: 24px;
+    }
+  }
+
+  .spz_travel *,
+  .spz_travel *::before,
+  .spz_travel *::after {
+    box-sizing: border-box;
+  }
+
+  /* --- Background --- */
+  .spz_travel .spz_travel__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 711px;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .spz_travel .spz_travel__bg img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    background: #ccc;
+  }
+
+  .spz_travel .spz_travel__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 28.039%, rgba(255, 255, 255, 0.95) 72.279%);
+  }
+
+  /* --- Inner --- */
+  .spz_travel .spz_travel__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  /* --- Header --- */
+  .spz_travel .spz_travel__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+    color: #293054;
+  }
+
+  .spz_travel .spz_travel__eyebrow {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-transform: uppercase;
+    color: #293054;
+  }
+
+  .spz_travel .spz_travel__title {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.44px;
+    color: #293054;
+  }
+
+  /* --- Card --- */
+  .spz_travel .spz_travel__card {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 396px;
+    overflow: hidden;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .spz_travel .spz_travel__content {
+    flex: 1 0 0;
+    background: #fff;
+    padding: 48px 40px;
+    overflow: hidden;
+    min-width: 423px;
+  }
+
+  .spz_travel .spz_travel__content p {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #293054;
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+
+  .spz_travel .spz_travel__content strong {
+    font-weight: 700;
+  }
+
+  .spz_travel .spz_travel__spacer {
+    line-height: 1.4;
+  }
+
+  .spz_travel .spz_travel__time {
+    color: rgba(41, 48, 84, 0.5);
+  }
+
+  /* --- Map --- */
+  .spz_travel .spz_travel__map {
+    position: relative;
+    flex-shrink: 0;
+    width: 710px;
+    overflow: hidden;
+  }
+
+  .spz_travel .spz_travel__map img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    background: #ccc;
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_travel {
+      padding: 92px 32px 79.5px;
+    }
+
+    .spz_travel .auto_container {
+      padding: 0;
+    }
+
+    .spz_travel .spz_travel__bg {
+      height: 100%;
+    }
+
+    .spz_travel .spz_travel__inner {
+      gap: 56px;
+    }
+
+    .spz_travel .spz_travel__card {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .spz_travel .spz_travel__content {
+      width: 100%;
+      padding: 48px 40px;
+      flex: auto;
+    }
+
+    .spz_travel .spz_travel__map {
+      width: 100%;
+      height: auto;
+    }
+
+    .spz_travel .spz_travel__map iframe {
+      height: 396px !important;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_travel {
+      padding: 80px 20px 63px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .spz_travel .spz_travel__inner {
+      gap: 48px;
+      width: 100%;
+    }
+
+    .spz_travel .spz_travel__header {
+      gap: 18px;
+    }
+
+    .spz_travel .spz_travel__eyebrow {
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .spz_travel .spz_travel__title {
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -1.08px;
+    }
+
+    .spz_travel .spz_travel__card {
+      min-height: 0;
+      width: 100%;
+      border-bottom-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+
+    .spz_travel .spz_travel__content {
+      width: 100%;
+      min-width: 0;
+      padding: 40px 24px;
+      flex: none;
+    }
+
+    .spz_travel .spz_travel__content p {
+      font-size: 16px;
+      line-height: 1.37;
+    }
+
+    .spz_travel .spz_travel__map {
+      width: 100%;
+      height: 396px;
+    }
+
+    .spz_travel .spz_travel__map iframe {
+      display: block;
+      width: 100%;
+      height: 396px !important;
+    }
+  }
+
+  /* =============================================
+   TRAVEL SECTION — END
+   ============================================= */
+  /* =============================================
+   ACCOMMODATIONS SECTION — START
+   ============================================= */
+  .spz_accommodations {
+    width: 100%;
+    background: #293054;
+    padding: 80px 32px;
+    box-sizing: border-box;
+  }
+
+  .spz_accommodations *,
+  .spz_accommodations *::before,
+  .spz_accommodations *::after {
+    box-sizing: border-box;
+  }
+
+  .spz_accommodations .spz_accommodations__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  /* --- Header --- */
+  .spz_accommodations .spz_accommodations__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+
+  .spz_accommodations .spz_accommodations__title {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.44px;
+    color: #fff;
+  }
+
+  .spz_accommodations .spz_accommodations__subtitle {
+    margin: 0;
+    max-width: 652px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #fff;
+  }
+
+  /* --- Cards --- */
+  .spz_accommodations .spz_accommodations__cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .spz_accommodations .spz_accommodations__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 40px 24px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(0, 177, 177, 0.5) 0%, rgba(50, 58, 102, 0.5) 100%);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    .spz_accommodations .spz_accommodations__card:hover:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--action-btn-prim-hov, #1BFFC3);
+      border-radius: 8px;
+    }
+  }
+
+  .spz_accommodations .spz_accommodations__card-glow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  .spz_accommodations .spz_accommodations__card-glow img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .spz_accommodations .spz_accommodations__card-logo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 102px;
+    flex-shrink: 0;
+  }
+
+  .spz_accommodations .spz_accommodations__card-logo img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .spz_accommodations .spz_accommodations__card-info {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .spz_accommodations .spz_accommodations__card-name {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    color: #1bffc3;
+    word-break: break-word;
+  }
+
+  .spz_accommodations .spz_accommodations__card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    height: auto;
+    justify-content: center;
+  }
+
+  .spz_accommodations .spz_accommodations__address {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    color: #fff;
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+
+  .spz_accommodations .spz_accommodations__address strong {
+    font-weight: 700;
+  }
+
+  .spz_accommodations .spz_accommodations__walk {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+    width: 100%;
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_accommodations {
+      padding: 80px 24px;
+    }
+
+    .spz_accommodations .spz_accommodations__header {
+      padding: 0 34px;
+      box-sizing: border-box;
+    }
+
+    .spz_accommodations .spz_accommodations__subtitle {
+      max-width: 652px;
+    }
+
+    .spz_accommodations .spz_accommodations__cards {
+      grid-template-columns: repeat(2, minmax(0, 320px));
+      justify-content: center;
+      padding: 0 34px;
+      box-sizing: border-box;
+    }
+
+    .spz_accommodations .spz_accommodations__card-logo img {
+      height: 102px;
+    }
+
+    .spz_accommodations .spz_accommodations__card-glow img {
+      object-fit: cover;
+      height: 210px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_accommodations {
+      padding: 64px 20px 63px;
+    }
+
+    .spz_accommodations .spz_accommodations__inner {
+      gap: 47px;
+      width: 100%;
+    }
+
+    .spz_accommodations .spz_accommodations__header {
+      padding: 0;
+      gap: 16px;
+    }
+
+    .spz_accommodations .spz_accommodations__title {
+      font-family: "Open Sans", sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.08px;
+      color: #fff;
+    }
+
+    .spz_accommodations .spz_accommodations__subtitle {
+      max-width: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0;
+      color: #fff;
+    }
+
+    .spz_accommodations .spz_accommodations__cards {
+      grid-template-columns: 1fr;
+      justify-content: stretch;
+      gap: 12px;
+      width: 100%;
+      padding: 0;
+    }
+
+    .spz_accommodations .spz_accommodations__card {
+      width: 100%;
+      height: auto;
+      padding: 31px 24px 33px;
+      gap: 64px;
+    }
+
+    .spz_accommodations .spz_accommodations__card-glow {
+      height: 226px;
+    }
+
+    .spz_accommodations .spz_accommodations__card-glow img {
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: bottom;
+      margin: auto;
+    }
+
+    .spz_accommodations .spz_accommodations__card-logo {
+      height: 102px;
+    }
+
+    .spz_accommodations .spz_accommodations__card-logo img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .spz_accommodations .spz_accommodations__card-info {
+      gap: 21px;
+      flex: none;
+      width: 100%;
+    }
+
+    .spz_accommodations .spz_accommodations__card-name {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #1bffc3;
+    }
+
+    .spz_accommodations .spz_accommodations__card-details {
+      gap: 27px;
+      height: auto;
+      flex: none;
+      width: 100%;
+      justify-content: unset;
+    }
+
+    .spz_accommodations .spz_accommodations__address {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #fff;
+    }
+
+    .spz_accommodations .spz_accommodations__address strong {
+      font-weight: 700;
+    }
+
+    .spz_accommodations .spz_accommodations__walk {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #fff;
+      opacity: 0.7;
+    }
+  }
+
+  /* =============================================
+   ACCOMMODATIONS SECTION — END
+   ============================================= */
+  /* =============================================
+   CONVERSION SECTION — START
+   ============================================= */
+  .spz_conversion {
+    width: 100%;
+    background: #ecf2f2;
+    padding: 80px 32px 65px;
+    box-sizing: border-box;
+  }
+
+  .spz_conversion *,
+  .spz_conversion *::before,
+  .spz_conversion *::after {
+    box-sizing: border-box;
+  }
+
+  .spz_conversion .spz_conversion__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  /* --- Content --- */
+  .spz_conversion .spz_conversion__content {
+    flex: 1 0 0;
+    min-width: 0;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-7px);
+  }
+
+  .spz_conversion .spz_conversion__header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    color: #293054;
+  }
+
+  .spz_conversion .spz_conversion__title {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.44px;
+    color: #293054;
+    word-break: break-word;
+  }
+
+  .spz_conversion .spz_conversion__text {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #293054;
+    word-break: break-word;
+  }
+
+  .spz_conversion .spz_conversion__text strong {
+    font-weight: 700;
+  }
+
+  /* --- Form card --- */
+  .spz_conversion .spz_conversion__form {
+    flex-shrink: 0;
+    width: 526px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 30px 32px;
+    background: #fff;
+    border: 8px solid #eff4f4;
+    border-radius: 0 24px 0 24px;
+    box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.12);
+    transform: translate(8px, -8px);
+  }
+
+  .spz_conversion .spz_conversion__form-title {
+    margin: 0;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.96px;
+    text-align: center;
+    color: #293054;
+    word-break: break-word;
+  }
+
+  .spz_conversion .spz_conversion__form-fields {
+    width: 100%;
+  }
+
+  /* --- HubSpot form --- */
+  .spz_conversion .hbspt-form {
+    width: 100%;
+  }
+
+  .spz_conversion .hbspt-form .hs_error_rollup {
+    display: none !important;
+  }
+
+  .spz_conversion .hbspt-form form.hs-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field {
+    position: relative;
+    flex: 0 0 calc(50% - 8px);
+    width: calc(50% - 8px);
+    margin: 0 !important;
+    padding: 0;
+    float: none;
+    overflow: visible;
+  }
+
+  /* --- Field label (floating label pattern) --- */
+  .spz_conversion .hbspt-form .hs-form-field>label {
+    position: absolute;
+    left: 16px;
+    top: 17px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(41, 48, 84, 0.7);
+    pointer-events: none;
+    z-index: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 32px);
+    transition: top 0.15s ease, transform 0.15s ease, font-size 0.15s ease, color 0.15s ease, padding 0.15s ease, background 0.15s ease;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field>label .hs-form-required {
+    display: none;
+  }
+
+  /* Active / Focus — floating label */
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--focused>label,
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--filled>label {
+    top: -11px;
+    left: 11px;
+    transform: none;
+    font-size: 12px;
+    padding: 1px 5px;
+    background: #fff;
+    width: auto;
+    max-width: calc(100% - 22px);
+  }
+
+  /* Error / Default — label inside, red */
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error:not(.spz-field--filled):not(.spz-field--focused)>label {
+    top: 17px;
+    left: 16px;
+    font-size: 16px;
+    padding: 0;
+    background: transparent;
+    color: #ff4349;
+  }
+
+  /* Error / Filled or Error / Focus — floating red label */
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error.spz-field--filled>label,
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error.spz-field--focused>label {
+    top: -11px;
+    left: 11px;
+    transform: none;
+    font-size: 12px;
+    padding: 1px 5px;
+    background: #fff;
+    color: #ff4349;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field .input {
+    margin: 0;
+    width: 100%;
+  }
+
+  /* --- Input base (Blank / Default) --- */
+  .spz_conversion .hbspt-form .hs-input {
+    width: 100% !important;
+    height: 56px;
+    padding: 16px;
+    border: 1px solid #dde4e4;
+    border-radius: 16px;
+    background: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #293054;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.15s ease;
+    display: block !important;
+  }
+
+  /* Override browser autofill to match default input style */
+  .spz_conversion .hbspt-form input.hs-input:-webkit-autofill,
+  .spz_conversion .hbspt-form input.hs-input:-webkit-autofill:hover,
+  .spz_conversion .hbspt-form input.hs-input:-webkit-autofill:focus,
+  .spz_conversion .hbspt-form input.hs-input:-webkit-autofill:active,
+  .spz_conversion .hbspt-form input.hs-input:autofill,
+  .spz_conversion .hbspt-form input.hs-input:autofill:hover,
+  .spz_conversion .hbspt-form input.hs-input:autofill:focus,
+  .spz_conversion .hbspt-form input.hs-input:autofill:active {
+    -webkit-text-fill-color: #293054 !important;
+    caret-color: #293054;
+    border: 1px solid #dde4e4;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    box-shadow: 0 0 0 1000px #fff inset !important;
+    transition: background-color 9999s ease-out 0s;
+  }
+
+  /* Active / Focus */
+  .spz_hero .spz_hero__nav-link .spz_conversion .hbspt-form .hs-form-field.spz-field--focused .hs-input {
+    border-color: #293054;
+  }
+
+  /* Filled / Has Value */
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--filled:not(.spz-field--focused) .hs-input {
+    border-color: #dde4e4;
+    color: #293054;
+  }
+
+  /* Error states */
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error .hs-input {
+    border-color: #ff4349;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error select.hs-input.is-placeholder:not(:focus) {
+    color: transparent;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error.spz-field--filled .hs-input,
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error.spz-field--focused .hs-input {
+    color: #293054;
+  }
+
+  /* --- Select --- */
+  .spz_conversion .hbspt-form select.hs-input {
+    padding-right: 42px;
+    cursor: pointer;
+    color: #293054;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='4' viewBox='0 0 8 4' fill='none'%3E%3Cpath d='M1 1L4 3.5L7 1' stroke='%23293054' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 8px 4px;
+  }
+
+  .spz_conversion .hbspt-form select.hs-input.is-placeholder:not(:focus) {
+    color: transparent;
+  }
+
+  .spz_conversion .hbspt-form .hs-form-field.spz-field--error select.hs-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='4' viewBox='0 0 8 4' fill='none'%3E%3Cpath d='M1 1L4 3.5L7 1' stroke='%23ff4349' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  /* --- Error messages --- */
+  .spz_conversion .hbspt-form .hs-error-msgs {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .spz_conversion .hbspt-form .hs-error-msgs li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz_conversion .hbspt-form .hs-error-msgs li:before {
+    content: none;
+  }
+
+  .spz_conversion .hbspt-form .hs-error-msgs label,
+  .spz_conversion .hbspt-form .hs-error-msgs .hs-error-msg {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #293054;
+    cursor: default;
+  }
+
+  .spz_conversion .hbspt-form form.hs-form>div:has(.hs-richtext) {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .spz_conversion .hbspt-form .hs-richtext {
+    width: 100%;
+    margin: 0;
+  }
+
+  .spz_conversion .hbspt-form .hs-richtext p {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(41, 48, 84, 0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .spz_conversion .hbspt-form .hs_submit {
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 31px 0 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .spz_conversion .hbspt-form .hs_submit .actions {
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz_conversion .hbspt-form .hs-button.primary.large,
+  .spz_conversion .hbspt-form input[type=submit].hs-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 48px;
+    border: none;
+    border-radius: 100px;
+    background: #c423f9;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+    text-transform: capitalize;
+  }
+
+  .spz_conversion .hbspt-form .hs-button.primary.large:hover,
+  .spz_conversion .hbspt-form input[type=submit].hs-button:hover {
+    background: var(--action-btn-prim-hov, #1BFFC3) !important;
+    color: var(--text-default, #293054);
+  }
+
+  .spz_conversion .hbspt-form .hs-field-desc,
+  .spz_conversion .hbspt-form .legal-consent-container {
+    display: none !important;
+  }
+
+  .spz_conversion .hbspt-form .submitted-message {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #293054;
+    text-align: center;
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_conversion {
+      padding: 87px 56px 57px;
+    }
+
+    .spz_conversion .spz_conversion__inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+      width: 100%;
+      max-width: 1220px;
+    }
+
+    .spz_conversion .spz_conversion__content {
+      align-self: auto;
+      width: 100%;
+    }
+
+    .spz_conversion .spz_conversion__header {
+      gap: 32px;
+    }
+
+    .spz_conversion .spz_conversion__form {
+      width: 672px;
+      max-width: 672px;
+      box-shadow: 0 12px 16px rgba(0, 0, 0, 0.12);
+      transform: translate(0px, -16px);
+    }
+
+    .spz_conversion .spz_conversion__form-fields {
+      width: 100%;
+    }
+
+    .spz_conversion .hbspt-form .hs-form-field {
+      flex: 0 0 calc(50% - 8px);
+      width: calc(50% - 8px);
+    }
+
+    .spz_conversion .hbspt-form .hs-richtext p {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_conversion {
+      padding: 65px 32px 49px;
+    }
+
+    .spz_conversion .spz_conversion__inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 64px;
+      width: 100%;
+    }
+
+    .spz_conversion .spz_conversion__content {
+      width: 100%;
+      transform: none;
+      align-self: auto;
+    }
+
+    .spz_conversion h2.spz_conversion__title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.08px;
+      color: #293054;
+    }
+
+    .spz_conversion .spz_conversion__header {
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .spz_conversion .spz_conversion__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.38;
+      color: #293054;
+    }
+
+    .spz_conversion .spz_conversion__text strong {
+      font-weight: 700;
+    }
+
+    .spz_conversion .spz_conversion__form {
+      width: calc(100% + 16px);
+      max-width: calc(100% + 16px);
+      padding: 32px 16px;
+      gap: 32px;
+      transform: translate(-8px, -8px);
+    }
+
+    .spz_conversion h3.spz_conversion__form-title {
+      font-family: "Open Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.72px;
+      color: #293054;
+    }
+
+    .spz_conversion .spz_conversion__form-fields {
+      width: 100%;
+    }
+
+    .spz_conversion .hbspt-form .hs-form-field {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    .spz_conversion .hbspt-form .hs-form-field>label {
+      font-size: 16px;
+      top: 13px;
+    }
+
+    .spz_conversion .hbspt-form .hs-form-field.spz-field--error:not(.spz-field--filled):not(.spz-field--focused)>label {
+      top: 13px;
+    }
+
+    .spz_conversion .hbspt-form .hs-input {
+      height: 48px;
+      padding: 0 16px;
+      font-size: 16px;
+      border-radius: 16px;
+    }
+
+    .spz_conversion .hbspt-form .hs-richtext p {
+      width: 100%;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .spz_conversion .hbspt-form .hs-button.primary.large,
+    .spz_conversion .hbspt-form input[type=submit].hs-button {
+      height: 48px;
+      padding: 0 40px;
+      font-size: 16px;
+    }
+  }
+
+  /* =============================================
+   CONVERSION SECTION — END
+   ============================================= */
+  /* =============================================
+   SUPPORT SECTION — START
+   ============================================= */
+  .spz_support {
+    width: 100%;
+    background: #FFF;
+    padding: 0 32px 32px;
+    box-sizing: border-box;
+  }
+
+  .spz_support *,
+  .spz_support *::before,
+  .spz_support *::after {
+    box-sizing: border-box;
+  }
+
+  .spz_support .spz_support__container {
+    width: 100%;
+    background: #293054;
+    border-radius: 0 24px 0 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 96px 80px;
+    background-image: url("<?php echo $image_url . '/bg-texture-compass_9.svg'; ?>");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+
+  @media (min-width: 2560px) {
+    .spz_support .spz_support__container {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_10.svg'; ?>");
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_support .spz_support__container {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_8.svg'; ?>");
+    }
+  }
+
+  .spz_support .spz_support__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 675px;
+    max-width: 100%;
+    text-align: center;
+    color: #fff;
+  }
+
+  .spz_support .spz_support__blur {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 0.5px);
+    transform: translate(-50%, -50%);
+    width: 888px;
+    height: 380px;
+    pointer-events: none;
+    opacity: 0.1;
+    background: #1BFFC3;
+    filter: blur(100px);
+    -moz-filter: blur(100px);
+  }
+
+  .spz_support .spz_support__blur img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    background: transparent;
+  }
+
+  .spz_support .spz_support__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.44px;
+    text-align: center;
+    color: #fff;
+    word-break: break-word;
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_support .spz_support__title {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_support .spz_support__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .spz_support .spz_support__text {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    color: #fff;
+    word-break: break-word;
+  }
+
+  .spz_support .spz_support__text:nth-of-type(1) {
+    margin-bottom: 24.5px;
+  }
+
+  .spz_support .spz_support__text:nth-of-type(2) {
+    margin-bottom: 28px;
+  }
+
+  .spz_support .spz_support__text a {
+    color: #1BFFC3;
+    word-break: keep-all;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_support .spz_support__text:nth-of-type(1) {
+      margin-bottom: -3.5px;
+    }
+
+    .spz_support .spz_support__text:nth-of-type(2) {
+      margin-bottom: -0.5px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_support .spz_support__text {
+      padding: 0 1px !important;
+    }
+
+    .spz_support .spz_support__text:nth-of-type(1) {
+      margin-bottom: -8.5px;
+      margin-top: -0.5px;
+    }
+
+    .spz_support .spz_support__text:nth-of-type(2) {
+      margin-bottom: -0.5px;
+    }
+  }
+
+  .spz_support .spz_support__text strong {
+    font-weight: 700;
+  }
+
+  .spz_support .spz_support__cta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 260px;
+    padding: 0 30px;
+    border: 2px solid #1bffc3;
+    border-radius: 100px;
+    background: transparent;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1bffc3;
+    white-space: nowrap;
+  }
+
+  @media (hover: hover) {
+    .spz_support .spz_support__cta:hover {
+      background: #fff;
+      border-color: #fff;
+      color: #293054;
+    }
+  }
+
+  @media (max-width: 1023.98px) {
+    .spz_support {
+      padding: 0 32px 24px;
+    }
+
+    .spz_support .spz_support__container {
+      height: auto;
+      min-height: 432px;
+      padding: 96px 80px;
+    }
+
+    .spz_support .spz_support__content {
+      width: 100%;
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz_support {
+      padding: 0;
+    }
+
+    .spz_support .spz_support__container {
+      min-height: 0;
+      padding: 73px 18px;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .spz_support .spz_support__title {
+      font-size: 36px;
+      letter-spacing: -1.08px;
+    }
+
+    .spz_support .spz_support__text {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+
+    .spz_support .spz_support__cta {
+      width: 230px;
+      height: 48px;
+      font-size: 16px;
+      padding: 0 39px;
+    }
+  }
+
+  /* =============================================
+   SUPPORT SECTION — END
+   ============================================= */
+  /* =============================================
+   MODAL SECTION — START
+   ============================================= */
+  .spz__canoe-compass__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    z-index: 10000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .spz__canoe-compass__modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .spz__canoe-compass__modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background: rgba(31, 38, 70, 0.63);
+    backdrop-filter: blur(8px);
+  }
+
+  .spz__canoe-compass__modal__wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    min-height: 100dvh;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .spz__canoe-compass__modal__content {
+    width: 100%;
+    max-width: 510px;
+    margin: auto;
+    transform: translateY(-24px);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+    border-radius: 0 24px;
+    border: 8px solid rgba(255, 255, 255, 0.15);
+    background: #FFF;
+    box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.22);
+    background-clip: padding-box;
+    padding: 32px;
+  }
+
+  .spz__canoe-compass__modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .spz__canoe-compass__modal.show .spz__canoe-compass__modal__content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body.spz__canoe-compass__modal-open {
+    overflow: clip !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form>div:has(img),
+  .spz__canoe-compass__modal form.hs-form>div:nth-child(2):not(:has(input)),
+  .spz__canoe-compass__modal form.hs-form>div:has(.hs-richtext.hs-main-font-element),
+  .spz__canoe-compass__modal form.hs-form .hs-form-field.hs_recaptcha {
+    display: none !important;
+  }
+
+  .spz__canoe-compass__modal_form>h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-inline: auto;
+    padding: 0;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.96px;
+  }
+
+  .spz__canoe-compass__modal form.hs-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+    vertical-align: top;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field.full-width,
+  .spz__canoe-compass__modal form.hs-form .hs_submit.hs-submit.full-width,
+  .spz__canoe-compass__modal form.hs-form .hs-dependent-field:not(:has(select[name=state_region_2])) .spz__form-field:has(select[name=country_region_2]) {
+    grid-column: span 2;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs-dependent-field {
+    display: contents;
+  }
+
+  .spz__canoe-compass__modal form.hs-form legend.hs-field-desc {
+    grid-column: 1/-1;
+    margin: 0;
+    color: rgba(41, 48, 84, 0.5);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_error_rollup {
+    grid-column: 1/-1;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field .input {
+    position: relative;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input,
+  .spz__canoe-compass__modal form.hs-form textarea,
+  .spz__canoe-compass__modal form.hs-form select {
+    border-radius: 16px;
+    border: 1px solid #DDE4E4;
+    padding: 16px 16px 16px 15px;
+    color: #293054;
+    background-color: transparent;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    outline: none;
+    box-shadow: none;
+    outline: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 56px;
+    vertical-align: middle;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:focus,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:hover,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:active {
+    -webkit-text-fill-color: #293054 !important;
+    color: #293054 !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error,
+  .spz__canoe-compass__modal form.hs-form textarea.error,
+  .spz__canoe-compass__modal form.hs-form select.error {
+    display: block !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error:not(:focus),
+  .spz__canoe-compass__modal form.hs-form textarea.error:not(:focus),
+  .spz__canoe-compass__modal form.hs-form select.error:not(:focus) {
+    border-color: #FF4349;
+  }
+
+  .spz__canoe-compass__modal form.hs-form select option:disabled {
+    color: transparent;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error:not(:focus)+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form textarea.error:not(:focus)+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form select.error:not(:focus)+.spz__form-field-label {
+    color: #FF4349;
+  }
+
+  .spz__canoe-compass__modal form.hs-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4IiBmaWxsPSJub25lIj4KICA8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMjkwMzhfMTMyKSI+CiAgICA8cGF0aCBkPSJNNSA3TDguMjkyODkgMTAuMjkyOUM4LjY4MzQyIDEwLjY4MzQgOS4zMTY1OCAxMC42ODM0IDkuNzA3MTEgMTAuMjkyOUwxMyA3IiBzdHJva2U9IiMyOTMwNTQiIHN0cm9rZS1vcGFjaXR5PSIwLjciIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPC9nPgogIDxkZWZzPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwMF8yOTAzOF8xMzIiPgogICAgICA8cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9IndoaXRlIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KPC9zdmc+");
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: top 18.5px right 16px;
+    padding-right: 36px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .legal-consent-container {
+    color: #193446;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__canoe-compass__modal__success-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_desktop.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .spz__canoe-compass__modal__success-message.hidden {
+    display: none;
+  }
+
+  .spz__canoe-compass__modal__success-message h5 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .spz__canoe-compass__modal__success-message p {
+    color: rgba(41, 48, 84, 0.7);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 326px;
+  }
+
+  .spz__canoe-compass__modal__success-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  .spz__canoe-compass__modal__closed-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_desktop.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .spz__canoe-compass__modal__closed-message.hidden {
+    display: none;
+  }
+
+  .spz__canoe-compass__modal__closed-message h2 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .spz__canoe-compass__modal__closed-message p {
+    color: rgba(41, 48, 84, 0.7);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 356px;
+  }
+
+  .spz__canoe-compass__modal__closed-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  .spz__canoe-compass__modal__disclaimer {
+    color: rgba(41, 48, 84, 0.5);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 12px 0 0;
+  }
+
+  /* =============================================
+   MODAL SECTION — END
+   ============================================= */
+  .spz_hero_timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 14px;
+  }
+
+  .spz_hero_timer>span {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1BFFC3;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 52.8px;
+    padding: 0 25px;
+    position: relative;
+  }
+
+  .spz_hero_timer>span:first-child {
+    padding-left: 0;
+  }
+
+  .spz_hero_timer>span:last-child {
+    padding-right: 0;
+  }
+
+  .spz_hero_timer>span:last-child::after {
+    display: none;
+  }
+
+  .spz_hero_timer>span strong {
+    color: #FFF;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    margin-top: 4px;
+  }
+
+  .spz_hero_timer>span::after {
+    content: ":";
+    position: absolute;
+    right: -6.5px;
+    top: 0px;
+    width: 13px;
+    height: 53px;
+    color: #1BFFC3;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 52.8px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  @media (max-width: 767px) {
+    .spz_hero_timer {
+      padding-top: 15px;
+    }
+
+    .spz_hero_timer>span {
+      font-size: 36px;
+      line-height: 39.6px;
+      padding: 0 17.5px;
+    }
+
+    .spz_hero_timer>span strong {
+      font-size: 10.5px;
+      line-height: 14.7px;
+    }
+
+    .spz_hero_timer>span::after {
+      right: -5.5px;
+      top: -0.5px;
+      width: 10px;
+      height: 40px;
+      font-size: 36px;
+      line-height: 39.6px;
+    }
+  }
+
+  .spz_hero_venue {
+    margin-top: -43px;
+  }
+
+  .spz_hero_venue span {
+    display: block;
+    padding-left: 21px;
+    position: relative;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .spz_hero_venue span:not(:last-child) {
+    margin-bottom: 8.5px;
+  }
+
+  .spz_hero_venue span strong {
+    font-weight: 700;
+  }
+
+  .spz_hero_venue span::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 20px;
+    height: 17px;
+    background-image: url("<?php echo $image_url . '/icon_18.svg'; ?>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media (max-width: 767px) {
+    .spz_hero_venue span {
+      font-size: 12px;
+      line-height: 16.8px;
+      padding-left: 28px;
+    }
+
+    .spz_hero_venue span::after {
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .auto_container {
+    max-width: 1260px;
+    width: 100%;
+    padding: 0 20px;
+    margin: auto;
+  }
+
+  .spz_agendaHeading {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 48px;
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaHeading {
+      flex-direction: column;
+    }
+  }
+
+  .spz_agenda_headingLeft {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .spz_agenda_headingLeft strong {
+    display: block;
+    color: #1BFFC3;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 29.7px;
+    text-transform: uppercase;
+    letter-spacing: -0.05px;
+    padding-bottom: 17px;
+    padding-top: 1px;
+  }
+
+  .spz_agenda_headingLeft p {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52.8px;
+    letter-spacing: -1.44px;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agenda_headingLeft {
+      max-width: 388px;
+      font-size: 22px;
+      line-height: 29.7px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agenda_headingLeft {
+      padding-bottom: 24px;
+    }
+
+    .spz_agenda_headingLeft strong {
+      font-size: 16px;
+      line-height: 21.6px;
+      padding-bottom: 19px;
+      padding-top: 0;
+    }
+
+    .spz_agenda_headingLeft p {
+      font-size: 36px;
+      line-height: 39.6px;
+      letter-spacing: -1.08px;
+    }
+  }
+
+  .spz_agenda_headingRight {
+    width: 100%;
+    max-width: 508px;
+    padding-left: 36px;
+    border-left: 2px solid #1BFFC3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .spz_agenda_headingRight h3 {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.2px;
+    letter-spacing: -0.96px;
+    margin: 2px 0 0;
+  }
+
+  .spz_agenda_headingRight b {
+    display: block;
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+  }
+
+  .spz_agenda_headingRight p {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    max-width: 400px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agenda_headingRight {
+      max-width: 292px;
+      padding-left: 24px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agenda_headingRight {
+      padding: 16px 0 16px 20px;
+      gap: 10.5px;
+    }
+
+    .spz_agenda_headingRight h3 {
+      font-size: 28px;
+      line-height: 30.8px;
+      letter-spacing: -0.84px;
+      margin-top: 0;
+    }
+
+    .spz_agenda_headingRight b {
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+
+    .spz_agenda_headingRight p {
+      font-size: 12px;
+      line-height: 16.8px;
+    }
+  }
+
+  .spz_agendaLocation {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 48.5px;
+  }
+
+  .spz_agendaLocation iframe {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: 888px;
+    height: 420px;
+    border: 0;
+    border-radius: 16px;
+    filter: invert(100%) hue-rotate(180deg) saturate(0.75) brightness(0.95) contrast(0.9);
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaLocation {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .spz_agendaLocation iframe {
+      border-radius: 0;
+    }
+  }
+
+  .spz_agendaData {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 470px;
+    padding: 36px;
+    border-radius: 0 16px;
+    border: 1px solid rgba(27, 255, 195, 0.35);
+    background: linear-gradient(243deg, rgba(41, 48, 84, 0.65) 0%, rgba(21, 113, 130, 0.65) 125.46%);
+    backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+  }
+
+  .spz_agendaData p {
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+  }
+
+  .spz_agendaData p:nth-of-type(1) {
+    margin-bottom: 20px;
+  }
+
+  .spz_agendaData i {
+    display: block;
+    color: #D3D3D3;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 19.6px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agendaData {
+      bottom: -167px;
+      top: unset;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 604px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaData {
+      top: unset;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 320px;
+      bottom: -202px;
+      padding: 20px;
+    }
+
+    .spz_agendaData p {
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+
+    .spz_agendaData p:nth-of-type(1) {
+      margin-bottom: 23px;
+    }
+
+    .spz_agendaData i {
+      padding-top: 19px;
+    }
+  }
+
+  .spz_agendaRoute {
+    padding-bottom: 64px;
+  }
+
+  .spz_agendaRoute ul {
+    padding: 0 0 42px !important;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .spz_agendaRoute ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .spz_agendaRoute ul li::after,
+  .spz_agendaRoute ul li::before {
+    display: none !important;
+  }
+
+  .spz_agendaRoute ul li:nth-child(2) .spz_agendaStops::before,
+  .spz_agendaRoute ul li:nth-child(2) .spz_agendaStops::after {
+    background: #C423F9;
+  }
+
+  .spz_agendaRoute ul li:nth-child(2) .spz_agendaStops strong {
+    color: #C423F9;
+  }
+
+  .spz_agendaRoute ul li:last-child .spz_agendaStops::before,
+  .spz_agendaRoute ul li:last-child .spz_agendaStops::after {
+    background: #00B1B1;
+  }
+
+  .spz_agendaRoute ul li:last-child .spz_agendaStops strong {
+    color: #00B1B1;
+  }
+
+  .spz_agendaRoute h3 {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid rgba(27, 255, 195, 0.7);
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 22.4px;
+    padding-left: 16px !important;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agendaRoute {
+      padding-top: 168px;
+    }
+
+    .spz_agendaRoute ul {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      padding-bottom: 43px !important;
+    }
+
+    .spz_agendaRoute ul li {
+      flex-direction: column;
+      width: 33.33%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaRoute {
+      padding-top: 201.5px;
+      padding-bottom: 59px;
+    }
+
+    .spz_agendaRoute ul {
+      display: flex;
+      flex-direction: column;
+      gap: 41px;
+      padding-bottom: 45px !important;
+    }
+
+    .spz_agendaRoute ul li {
+      flex-direction: column;
+      width: 100%;
+      gap: 21px;
+    }
+
+    .spz_agendaRoute h3 {
+      text-align: left;
+      padding-left: 12px !important;
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+  }
+
+  .spz_routeLeft {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .spz_routeLeft span {
+    display: block;
+    width: 46px;
+  }
+
+  .spz_routeLeft span img {
+    display: block;
+  }
+
+  .spz_routeLeft strong {
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.3px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_routeLeft span {
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_routeLeft strong {
+      font-size: 14px;
+      line-height: 18.9px;
+    }
+  }
+
+  .spz_agendaRight {
+    padding-top: 16px;
+    display: flex;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agendaRight {
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaRight {
+      flex-direction: column;
+      padding-top: 0;
+      width: 100%;
+    }
+  }
+
+  .spz_agendaStops {
+    padding-top: 22px;
+    position: relative;
+    width: 200px;
+  }
+
+  .spz_agendaStops::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: #1BFFC3;
+    border-radius: 99px;
+  }
+
+  .spz_agendaStops::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 5.5px;
+    display: block;
+    width: calc(100% - 14px);
+    height: 3px;
+    border-radius: 2px;
+    background: #1BFFC3;
+  }
+
+  .spz_agendaStops:last-child::after {
+    display: none;
+  }
+
+  .spz_agendaStops p {
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.6px;
+    margin-bottom: 8.5px;
+  }
+
+  .spz_agendaStops strong {
+    display: block;
+    color: #1BFFC3;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22.4px;
+    margin-bottom: 8px;
+  }
+
+  .spz_agendaStops span {
+    display: block;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1299px) {
+    .spz_agendaStops {
+      width: 152px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_agendaStops {
+      padding: 0 0 26px 44px;
+      width: 100%;
+    }
+
+    .spz_agendaStops::before {
+      left: 16px;
+      top: -3px;
+    }
+
+    .spz_agendaStops::after {
+      width: 3px;
+      height: calc(100% - 14px);
+      left: 21.5px;
+      top: 11px;
+    }
+
+    .spz_agendaStops p {
+      margin-bottom: 4.5px;
+      margin-top: -3px;
+    }
+
+    .spz_agendaStops strong {
+      margin-bottom: 3px;
+    }
+
+    .spz_agendaStops:first-child::before {
+      top: 0;
+    }
+
+    .spz_agendaStops:first-child::after {
+      top: 14px;
+      height: calc(100% - 17px);
+    }
+
+    .spz_agendaStops:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_agendaStops {
+      padding: 0 0 26.5px 44px;
+      width: 100%;
+    }
+
+    .spz_agendaStops::before {
+      left: 16px;
+      top: -3px;
+    }
+
+    .spz_agendaStops::after {
+      width: 3px;
+      height: calc(100% - 14px);
+      left: 21.5px;
+      top: 11px;
+    }
+
+    .spz_agendaStops p {
+      margin-bottom: 4.5px;
+      margin-top: -3px;
+      font-size: 12px;
+      line-height: 16.8px;
+    }
+
+    .spz_agendaStops strong {
+      margin-bottom: 3px;
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+
+    .spz_agendaStops span {
+      font-size: 12px;
+      line-height: 16.8px;
+    }
+
+    .spz_agendaStops:first-child::before {
+      top: 0;
+    }
+
+    .spz_agendaStops:first-child::after {
+      top: 14px;
+      height: calc(100% - 17px);
+    }
+
+    .spz_agendaStops:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .spz_accomodation>p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+  }
+
+  @media (max-width: 767px) {
+    .spz_accomodation>p {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+  }
+
+  .spz_heading {
+    padding: 80px 0 55.5px;
+    background: url("<?php echo $image_url . '/logo_bg.svg'; ?>");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+  }
+
+  .spz_heading h2 {
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52.8px;
+    letter-spacing: -1.44px;
+    margin-bottom: 16px;
+  }
+
+  .spz_heading p {
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_heading {
+      background-size: 1220px;
+      margin: 0 -32px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_heading {
+      background-size: 675.6px;
+      margin: 0 -32px;
+      padding: 63.5px 40px 47px;
+    }
+
+    .spz_heading h2 {
+      font-size: 36px;
+      line-height: 39.6px;
+      letter-spacing: -1.08px;
+    }
+
+    .spz_heading p {
+      font-size: 16px;
+      line-height: 22.4px;
+      margin: 0 -10px;
+    }
+  }
+
+  .spz_accommodationList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -6px;
+    padding-bottom: 59.5px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_accommodationList {
+      max-width: 616px;
+      margin: auto;
+    }
+  }
+
+  .spz_accommodationData {
+    width: 25%;
+    padding: 0 6px 12px;
+  }
+
+  .spz_accommodationData a {
+    position: relative;
+    border-radius: 16px;
+    background: linear-gradient(180deg, var(--Surface-blue, rgba(0, 177, 177, 0.5)) 0%, rgba(50, 58, 102, 0.5) 100%);
+    padding: 40px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .spz_accommodationData a:hover {
+    text-decoration: none;
+  }
+
+  .spz_accommodationData a:hover * {
+    text-decoration: none;
+  }
+
+  .spz_accommodationData a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='296' height='385' viewBox='0 0 296 385' fill='none'%3E%3Cg filter='url(%23filter0_d_31013_9558)'%3E%3Cpath d='M0.273926 0H296.274V344.5C292.274 239.5 225.552 191.17 163.552 183.17C101.552 175.17 73.1497 160.144 38.0519 123.67C12.5521 97.1699 -2.22569 47 0.273926 0Z' fill='%2300B1B1' fill-opacity='0.1' shape-rendering='crispEdges'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_31013_9558' x='-30' y='-20' width='356.274' height='404.5' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='10'/%3E%3CfeGaussianBlur stdDeviation='15'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.160784 0 0 0 0 0.188235 0 0 0 0 0.329412 0 0 0 0.2 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_31013_9558'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_31013_9558' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto;
+    z-index: 0;
+  }
+
+  .spz_accommodationData a img {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .spz_accommodationData a>strong {
+    display: block;
+    color: #1BFFC3;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30.8px;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .spz_accommodationData a p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .spz_accommodationData a p strong {
+    font-weight: 700;
+    display: block;
+  }
+
+  .spz_accommodationData a span {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1299px) {
+    .spz_accommodationData a {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .spz_accommodationData a>strong {
+      font-size: 18px;
+      line-height: 24.8px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_accommodationData {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_accommodationData {
+      width: 100%;
+    }
+
+    .spz_accommodationData:not(:last-child) {
+      padding-bottom: 12.5px;
+    }
+
+    .spz_accommodationData a {
+      padding: 31.5px 24px;
+    }
+
+    .spz_accommodationData a::after {
+      background-size: cover;
+    }
+
+    .spz_accommodationData a img {
+      max-width: 249px;
+      margin-bottom: 40px;
+    }
+
+    .spz_accommodationData a>strong {
+      font-size: 18px;
+      line-height: 25.2px;
+    }
+
+    .spz_accommodationData a p {
+      font-size: 14px;
+      line-height: 19.6px;
+      margin-bottom: 27.5px;
+    }
+
+    .spz_accommodationData a p strong {
+      font-weight: 700;
+    }
+
+    .spz_accommodationData a span {
+      font-size: 12px;
+      line-height: 16.8px;
+      margin-bottom: 20.5px;
+    }
+  }
+
+  .spz_cta {
+    width: 168px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: #C423F9;
+    color: #FFF;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.3px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .spz_cta:hover {
+    color: #293054;
+    background: #1BFFC3;
+  }
+
+  @media (max-width: 767px) {
+    .spz_cta {
+      width: 145px;
+      font-size: 14px;
+      line-height: 18.9px;
+    }
+  }
+
+  .spz__compass__faq__wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spz__compass__faq__container {
+    padding: 96px 32px 96.5px;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__container__inner {
+    max-width: 1220px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__copy {
+    flex: 1;
+    max-width: 555px;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__copy h3 {
+    color: #C423F9;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-transform: uppercase;
+    margin-bottom: 16.5px;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__copy h2 {
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 52.8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 20.5px 20px;
+    border-radius: 0 24px;
+    background: #ECF2F2;
+  }
+
+  @media (max-width: 767px) {
+    .spz__compass__faq__container .spz__compass__faq__list__item {
+      padding: 20px;
+    }
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item:last-child {
+    border-bottom: none;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item__question {
+    padding: 16px 0;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30.8px;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    padding-left: 64px !important;
+    position: relative;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item__question:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.5px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M15.9998 6.66699V25.3337M6.6665 16.0003H25.3332' stroke='%2300B1B1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.4s ease;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item .spz__compass__faq__list__item__question:hover:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNMTYuMDAwMyA2LjY2Njk5VjI1LjMzMzdNNi42NjY5OSAxNi4wMDAzSDI1LjMzMzciIHN0cm9rZT0iIzAwQjFCMSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=");
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item.active .spz__compass__faq__list__item__question:before {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNNi42NjY5OSAxNkgyNS4zMzM3IiBzdHJva2U9IiMwMEIxQjEiIHN0cm9rZS13aWR0aD0iMS4zMzMzMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==");
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item__answer {
+    max-height: 0;
+    overflow: hidden;
+    min-height: 0;
+    transition: max-height 0.4s ease;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item.active .spz__compass__faq__list__item__answer {
+    max-height: 60rem;
+  }
+
+  .spz__compass__faq__container .spz__compass__faq__list__item__answer p {
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+    margin: 0;
+    padding: 19px 0 0 64px !important;
+  }
+
+  @media (max-width: 767px) {
+    .spz__compass__faq__container .spz__compass__faq__list__item__answer p {
+      padding-top: 20px !important;
+    }
+  }
+
+  @media (min-width: 1649.98px) {
+    .spz__compass__faq__wrapper {
+      background-size: 2292px 1571px;
+      background-position: -220px 0;
+    }
+
+    .spz__compass__faq__image img {
+      transform: none;
+      margin: 72px auto 80px;
+      padding: 0 16px;
+    }
+  }
+
+  @media (min-width: 2560.98px) {
+    .spz__compass__faq__wrapper {
+      background-position: center top -820px;
+      background-size: 100%;
+    }
+  }
+
+  @media (max-width: 1149.98px) {
+    .spz__compass__faq__wrapper {
+      background-position: top center;
+      background-size: 1903px 1271px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__action p {
+      font-size: 18px;
+      max-width: 336px;
+    }
+
+    .spz__compass__faq__image img {
+      margin: 72px auto 0px;
+    }
+
+    .spz__compass__faq__container__inner {
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__copy {
+      max-width: unset;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__copy h2 {
+      max-width: unset;
+    }
+
+    .spz__compass__faq__container {
+      background-position: center top 42px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz__compass__faq__wrapper {
+      padding: 0 0;
+    }
+
+    .spz__compass__faq__container {
+      padding: 72.5px 20px 71.5px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__inner {
+      padding: 0 20px;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__location {
+      width: 100%;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__location h6 {
+      font-size: 14px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__location h3 {
+      font-size: 36px;
+      letter-spacing: -1.08px;
+      margin: 24.5px 0 32px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__location__badge {
+      max-width: 320px;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__location__badge span {
+      font-size: 18px;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__action p {
+      font-size: 16px;
+      max-width: 100%;
+      margin: 0 0 30.5px 0;
+    }
+
+    .spz__compass__faq__information .spz__compass__faq__information__action__button {
+      min-width: 146px;
+      font-size: 16px;
+      height: 48px;
+    }
+
+    .spz__compass__faq__image img {
+      transform: translateX(20px);
+      margin: 72px auto 0px;
+      width: 823px;
+    }
+
+    .spz__compass__faq__container__inner {
+      gap: 56px;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__copy h3 {
+      font-size: 12px;
+      line-height: 16.2px;
+      margin-bottom: 16px;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__copy h2 {
+      font-size: 36px;
+      line-height: 39.6px;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__list__item__question {
+      font-size: 18px;
+      line-height: 25.2px;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__list__item__question:before {
+      margin-right: 20px;
+      top: 0;
+    }
+
+    .spz__compass__faq__container .spz__compass__faq__list__item__answer p {
+      font-size: 16px;
+      padding: 0px 0px 23.5px 52px;
+      line-height: 22px;
+    }
+  }
+
+  .spz_sponsors {
+    padding: 112px 0 120px;
+  }
+
+  .spz_sponsors .spz_heading {
+    padding: 80.5px 0 64px;
+  }
+
+  .spz_sponsors .spz_heading h2 {
+    color: #293054;
+  }
+
+  .spz_sponsors .spz_heading p {
+    color: #293054;
+    font-size: 22px;
+    line-height: 30.8px;
+    max-width: 980px;
+  }
+
+  .spz_sponsors .spz_heading p strong {
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_sponsors .spz_heading {
+      padding: 80.5px 32px 55.5px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_sponsors {
+      padding: 56px 0 80px;
+    }
+
+    .spz_sponsors .spz_heading {
+      padding: 40px 20px 46.5px;
+    }
+
+    .spz_sponsors .spz_heading p {
+      font-size: 16px;
+      line-height: 22.4px;
+      margin: 0;
+      padding: 0 15px !important;
+    }
+  }
+
+  .spz_sponsorsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_sponsorsList {
+      padding: 0 12px;
+    }
+  }
+
+  .spz_sponsorData {
+    width: calc((100% - 72px) / 4);
+    height: 180px;
+    border-radius: 20px;
+    background: #293054;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spz_sponsorData::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    border-radius: 420px;
+    opacity: 0.77;
+    background: radial-gradient(45.91% 45.91% at 50% 50%, rgba(196, 35, 249, 0.9) 0%, rgba(196, 35, 249, 0) 100%);
+    mix-blend-mode: overlay;
+  }
+
+  .spz_sponsorData img {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz_sponsorData {
+      width: calc((100% - 24px) / 2);
+    }
+
+    .spz_sponsorData:last-child img {
+      width: 286px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz_sponsorData {
+      width: 100%;
+      height: 140px;
+    }
+
+    .spz_sponsorData:last-child img {
+      width: 286px;
+    }
+  }
+
+  .spz__compass-footer {
+    margin: 0 32px;
+    border-radius: 0 24px;
+    background-color: #293054;
+    background-image: url("<?php echo $image_url . '/bg-texture-compass_4.svg'; ?>");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 96px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 2560px) {
+    .spz__compass-footer {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_2.svg'; ?>");
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz__compass-footer {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_7.svg'; ?>");
+      background-position: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .spz__compass-footer {
+      background-image: url("<?php echo $image_url . '/bg-texture-compass_7.svg'; ?>");
+      background-position: center;
+      border-radius: 24px;
+    }
+  }
+
+  .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container {
+    max-width: 1284px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 26px 0 34px;
+  }
+
+  .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy {
+    flex: 1;
+  }
+
+  .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy p {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+  }
+
+  .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy p strong {
+    font-weight: 700;
+  }
+
+  @media (max-width: 767px) {
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy p {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+  }
+
+  .spz__compass-footer__eyebrow {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52.8px;
+    margin: 0 0 16px;
+    padding: 0;
+    letter-spacing: -1.44px;
+    text-align: left;
+  }
+
+  /* Form styles */
+  .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__form {
+    max-width: 526px;
+    width: 100%;
+    padding: 32px 32px 40px;
+    border-radius: 0 32px;
+    border: 8px solid rgba(255, 255, 255, 0.15);
+    background: #FFF;
+    box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.22);
+    align-self: flex-start;
+    background-clip: padding-box;
+    transform: translateY(-8px);
+    overflow: clip;
+    display: block !important;
+  }
+
+  .spz__compass-footer__form form.hs-form>div:has(img),
+  .spz__compass-footer__form form.hs-form>div:nth-child(2):not(:has(input)),
+  .spz__compass-footer__form form.hs-form>div:has(.hs-richtext.hs-main-font-element),
+  .spz__compass-footer__form form.hs-form .hs-form-field.hs_recaptcha {
+    display: none !important;
+  }
+
+  .spz__compass-footer__form>h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    max-width: 300px;
+    margin-inline: auto;
+    padding: 0;
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44.8px;
+    letter-spacing: -0.96px;
+  }
+
+  .spz__compass-footer__form form.hs-form,
+  .spz__compass-footer__modal_form form.hs-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_are_you_able_to_attend,
+  .spz__compass-footer__modal_form form.hs-form .hs_are_you_able_to_attend {
+    display: none;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions,
+  .spz__compass-footer__form form.hs-form .hs_zipup_size,
+  .spz__compass-footer__form form.hs-form .hs_canoe_compass_questions,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions,
+  .spz__compass-footer__modal_form form.hs-form .hs_zipup_size,
+  .spz__compass-footer__modal_form form.hs-form .hs_canoe_compass_questions {
+    grid-column: span 2;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_canoe_compass_questions textarea,
+  .spz__compass-footer__modal_form form.hs-form .hs_canoe_compass_questions textarea {
+    resize: none;
+    height: 56px !important;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li {
+    padding-left: 0;
+    padding-bottom: 5px;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li::before,
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li::after,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li::before,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li::after {
+    display: none;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label {
+    color: rgba(41, 48, 84, 0.7);
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input {
+    height: auto;
+    transform: translateY(4px);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background: #fff;
+    display: inline-grid;
+    place-content: center;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input::before,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input::before {
+    margin-top: -1px;
+    content: "";
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input:checked,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input:checked {
+    background: #00B1B1;
+    border-color: #00B1B1;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input:checked::before,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label input:checked::before {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label span,
+  .spz__compass-footer__modal_form form.hs-form .hs_do_you_have_any_questions_about_the_following_sessions .inputs-list li label span {
+    padding-left: 10px;
+  }
+
+  .spz__compass-footer__form form.hs-form .spz__form-field,
+  .spz__compass-footer__modal_form form.hs-form .spz__form-field {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+    vertical-align: top;
+  }
+
+  .spz__compass-footer__form form.hs-form .spz__form-field.full-width,
+  .spz__compass-footer__form form.hs-form .hs_submit.hs-submit.full-width,
+  .spz__compass-footer__form form.hs-form .hs-dependent-field:not(:has(select[name=state_region_2])) .spz__form-field:has(select[name=country_region_2]),
+  .spz__compass-footer__modal_form form.hs-form .spz__form-field.full-width,
+  .spz__compass-footer__modal_form form.hs-form .hs_submit.hs-submit.full-width,
+  .spz__compass-footer__modal_form form.hs-form .hs-dependent-field:not(:has(select[name=state_region_2])) .spz__form-field:has(select[name=country_region_2]) {
+    grid-column: span 2;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs-dependent-field {
+    display: contents;
+  }
+
+  .spz__compass-footer__form form.hs-form legend.hs-field-desc {
+    grid-column: 1/-1;
+    margin: 0;
+    color: rgba(41, 48, 84, 0.5);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_error_rollup {
+    grid-column: 1/-1;
+  }
+
+  .spz__compass-footer__form form.hs-form .spz__form-field .input {
+    position: relative;
+  }
+
+  .spz__compass-footer__form form.hs-form input,
+  .spz__compass-footer__form form.hs-form textarea,
+  .spz__compass-footer__form form.hs-form select {
+    border-radius: 16px;
+    border: 1px solid #DDE4E4;
+    padding: 16px 16px 16px 15px;
+    color: #293054;
+    background-color: transparent;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    outline: none;
+    box-shadow: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 56px;
+    vertical-align: middle;
+  }
+
+  .spz__compass-footer__form form.hs-form input:-webkit-autofill,
+  .spz__compass-footer__form form.hs-form input:-webkit-autofill:focus,
+  .spz__compass-footer__form form.hs-form input:-webkit-autofill:hover,
+  .spz__compass-footer__form form.hs-form input:-webkit-autofill:active,
+  .spz__compass-footer__modal_form form.hs-form input:-webkit-autofill,
+  .spz__compass-footer__modal_form form.hs-form input:-webkit-autofill:focus,
+  .spz__compass-footer__modal_form form.hs-form input:-webkit-autofill:hover,
+  .spz__compass-footer__modal_form form.hs-form input:-webkit-autofill:active {
+    -webkit-text-fill-color: #293054 !important;
+    color: #293054 !important;
+  }
+
+  .spz__compass-footer__form form.hs-form input.error,
+  .spz__compass-footer__form form.hs-form textarea.error,
+  .spz__compass-footer__form form.hs-form select.error,
+  .spz__compass-footer__modal_form form.hs-form input.error,
+  .spz__compass-footer__modal_form form.hs-form textarea.error,
+  .spz__compass-footer__modal_form form.hs-form select.error {
+    display: block !important;
+  }
+
+  .spz__compass-footer__form form.hs-form input.error:not(:focus),
+  .spz__compass-footer__form form.hs-form textarea.error:not(:focus),
+  .spz__compass-footer__form form.hs-form select.error:not(:focus),
+  .spz__compass-footer__modal_form form.hs-form input.error:not(:focus),
+  .spz__compass-footer__modal_form form.hs-form textarea.error:not(:focus),
+  .spz__compass-footer__modal_form form.hs-form select.error:not(:focus) {
+    border-color: #FF4349;
+  }
+
+  .spz__compass-footer__form form.hs-form select option:disabled,
+  .spz__compass-footer__modal_form form.hs-form select option:disabled {
+    color: transparent;
+  }
+
+  .spz__compass-footer__form form.hs-form input.error:not(:focus)+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form textarea.error:not(:focus)+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form select.error:not(:focus)+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form input.error:not(:focus)+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form textarea.error:not(:focus)+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form select.error:not(:focus)+.spz__form-field-label {
+    color: #FF4349;
+  }
+
+  .spz__compass-footer__form form.hs-form select,
+  .spz__compass-footer__modal_form form.hs-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4IiBmaWxsPSJub25lIj4KICA8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMjkwMzhfMTMyKSI+CiAgICA8cGF0aCBkPSJNNSA3TDguMjkyODkgMTAuMjkyOUM4LjY4MzQyIDEwLjY4MzQgOS4zMTY1OCAxMC42ODM0IDkuNzA3MTEgMTAuMjkyOUwxMyA3IiBzdHJva2U9IiMyOTMwNTQiIHN0cm9rZS1vcGFjaXR5PSIwLjciIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPC9nPgogIDxkZWZzPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwMF8yOTAzOF8xMzIiPgogICAgICA8cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9IndoaXRlIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KPC9zdmc+");
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: top 18.5px right 16px;
+    padding-right: 36px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .spz__compass-footer__form form.hs-form select::placeholder,
+  .spz__compass-footer__form form.hs-form select:-moz-placeholder,
+  .spz__compass-footer__form form.hs-form select::-moz-placeholder,
+  .spz__compass-footer__modal_form form.hs-form select::placeholder,
+  .spz__compass-footer__modal_form form.hs-form select:-moz-placeholder,
+  .spz__compass-footer__modal_form form.hs-form select::-moz-placeholder {
+    color: transparent !important;
+  }
+
+  .spz__compass-footer__form form.hs-form .spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form .spz__form-field-label {
+    display: block;
+    position: absolute;
+    width: auto;
+    text-transform: capitalize;
+    overflow: hidden;
+    color: rgba(41, 48, 84, 0.7);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+
+  .spz__compass-footer__form form.hs-form input:focus,
+  .spz__compass-footer__form form.hs-form textarea:focus,
+  .spz__compass-footer__form form.hs-form select:focus,
+  .spz__compass-footer__modal_form form.hs-form input:focus,
+  .spz__compass-footer__modal_form form.hs-form textarea:focus,
+  .spz__compass-footer__modal_form form.hs-form select:focus {
+    border-color: #293054;
+  }
+
+  .spz__compass-footer__form form.hs-form input:focus+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form .hs_canoe_compass_questions:has(textarea:focus) .spz__form-field-label,
+  .spz__compass-footer__form form.hs-form select:focus+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form select:has(option:checked:not([value=""]))+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label,
+  .spz__compass-footer__form form.hs-form .hs_canoe_compass_questions:has(textarea:not(:placeholder-shown)) .spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form input:focus+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form textarea:focus+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form select:focus+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form select:valid+.spz__form-field-label,
+  .spz__compass-footer__modal_form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label {
+    top: 0;
+    left: 12px;
+    font-size: 12px;
+    background: #FFFFFF;
+    padding: 0 5px !important;
+  }
+
+  .spz__compass-footer__form .hs-error-msgs li,
+  .spz__compass-footer__modal_form .hs-error-msgs li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz__compass-footer__form .hs-error-msgs:has(a:not([href])),
+  .spz__compass-footer__modal_form .hs-error-msgs:has(a:not([href])) {
+    display: none !important;
+  }
+
+  .spz__compass-footer__form .hs-error-msgs li:before,
+  .spz__compass-footer__modal_form .hs-error-msgs li:before {
+    content: "";
+    display: none !important;
+  }
+
+  .spz__compass-footer__form .hs-error-msgs .hs-error-msg,
+  .spz__compass-footer__form .hs-error-msgs .hs-main-font-element,
+  .spz__compass-footer__modal_form .hs-error-msgs .hs-error-msg,
+  .spz__compass-footer__modal_form .hs-error-msgs .hs-main-font-element {
+    margin: 0;
+    padding: 0;
+    color: #FF4349;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: left;
+  }
+
+  .spz__compass-footer__form .hs-error-msgs a,
+  .spz__compass-footer__modal_form .hs-error-msgs a {
+    color: #293054 !important;
+    font-size: 10px !important;
+    font-family: "Open Sans" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_submit,
+  .spz__compass-footer__modal_form form.hs-form .hs_submit {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_submit .actions,
+  .spz__compass-footer__modal_form form.hs-form .hs_submit .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_submit .hs-button,
+  .spz__compass-footer__modal_form form.hs-form .hs_submit .hs-button {
+    border-radius: 100px;
+    background: #C423F9;
+    height: 56px;
+    width: 165px;
+    padding: 0 32px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    color: #FFF;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+  }
+
+  .spz__compass-footer__form form.hs-form .hs_submit .hs-button:hover,
+  .spz__compass-footer__modal_form form.hs-form .hs_submit .hs-button:hover {
+    background: #1BFFC3;
+    color: #293054;
+  }
+
+  .spz__compass-footer__form form.hs-form .legal-consent-container,
+  .spz__compass-footer__modal_form form.hs-form .legal-consent-container {
+    color: #193446;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__compass-footer__form__disclaimer,
+  .spz__compass-footer__modal_form__disclaimer {
+    color: rgba(41, 48, 84, 0.5);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 12px 0 0;
+  }
+
+  .rsvp_hero__form__success-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('<?php echo $assets_url . 'canoe_compass_ny_rsvp_form_success_bg.webp'; ?>');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .rsvp_hero__form__success-message.hidden {
+    display: none;
+  }
+
+  .rsvp_hero__form__success-message h5 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0px;
+    padding: 0;
+  }
+
+  .rsvp_hero__form__success-message p {
+    color: rgba(41, 48, 84, 0.70);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 442px;
+    padding: 0 16px;
+  }
+
+  .rsvp_hero__form__success-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  .rsvp_hero__form__closed-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_desktop.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .rsvp_hero__form__closed-message.hidden {
+    display: none;
+  }
+
+  .rsvp_hero__form__closed-message h2 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .rsvp_hero__form__closed-message p {
+    color: rgba(41, 48, 84, 0.70);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 356px;
+  }
+
+  .rsvp_hero__form__closed-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  @media (max-width: 1299.98px) {
+    .spz__compass-footer {
+      padding: 80px 0px 64px;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container {
+      flex-direction: column;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy {
+      display: flex;
+      flex-direction: column;
+      padding-top: 0;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__copy .spz__compass-footer__logo {
+      margin: 0 auto;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__logistics {
+      margin: 25px 0 22px;
+      gap: 11px;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__form {
+      max-width: calc(100% + 8px);
+      width: calc(100% + 8px);
+      margin-inline-start: -8px;
+    }
+
+    .spz__compass-footer__alternate-copy__copy {
+      max-width: 85%;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023.98px) {
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container {
+      gap: 56px;
+      padding: 0 56px 0 64px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .spz__compass-footer {
+      padding: 64.5px 0px 48px;
+      margin: 0;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container {
+      padding: 0 20px;
+      gap: 45px;
+    }
+
+    .spz__compass-footer__alternate-copy__title {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    .spz__compass-footer__eyebrow {
+      font-size: 36px;
+      line-height: 39.6px;
+      letter-spacing: -1.08px;
+    }
+
+    .spz__compass-footer__alternate-copy__copy {
+      font-size: 16px;
+      max-width: unset;
+    }
+
+    .spz__compass-footer__alternate__list-title {
+      font-size: 14px;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__logistics {
+      gap: 13px;
+      margin: 31.5px auto 17.5px;
+      transform: none;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__logistics span {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__logistics picture {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__logistics span:last-child {
+      transform: translateX(-7px);
+    }
+
+    .spz__compass-footer .spz__compass-footer__bullet-points {
+      padding: 0;
+    }
+
+    .spz__compass-footer .spz__compass-footer__bullet-points ul {
+      gap: 14.5px;
+    }
+
+    .spz__compass-footer .spz__compass-footer__bullet-points ul li {
+      font-size: 16px;
+      max-width: 98%;
+    }
+
+    .spz__compass-footer .spz__compass-footer__content .spz__compass-footer__content__container .spz__compass-footer__form {
+      max-width: calc(100% + 16px);
+      width: calc(100% + 16px);
+      margin-inline-start: -8px;
+      padding: 32px 16px 40px;
+    }
+
+    .spz__compass-footer__form>h2,
+    .spz__compass-footer__modal_form>h2 {
+      max-width: unset !important;
+      font-size: 24px !important;
+      letter-spacing: -0.72px;
+      line-height: 33.6px;
+    }
+
+    .spz__compass-footer__form form.hs-form .spz__form-field,
+    .spz__compass-footer__modal_form form.hs-form .spz__form-field {
+      display: flex;
+      width: 100%;
+      margin-right: 0;
+      grid-column: span 2;
+    }
+
+    .spz__compass-footer__form form.hs-form,
+    .spz__compass-footer__modal_form form.hs-form {
+      grid-template-columns: 1fr;
+    }
+
+    .spz__compass-footer__form form.hs-form .spz__form-field.full-width,
+    .spz__compass-footer__form form.hs-form .hs_submit.hs-submit.full-width,
+    .spz__compass-footer__form form.hs-form .hs-dependent-field:not(:has(select[name=state_region_2])) .spz__form-field:has(select[name=country_region_2]),
+    .spz__compass-footer__modal_form form.hs-form .spz__form-field.full-width,
+    .spz__compass-footer__modal_form form.hs-form .hs_submit.hs-submit.full-width,
+    .spz__compass-footer__modal_form form.hs-form .hs-dependent-field:not(:has(select[name=state_region_2])) .spz__form-field:has(select[name=country_region_2]) {
+      grid-column: span 2;
+    }
+
+    .spz__compass-footer__form form.hs-form .hs_submit,
+    .spz__compass-footer__modal_form form.hs-form .hs_submit {
+      width: 100% !important;
+    }
+
+    .spz__compass-footer__form form.hs-form .hs_submit .hs-button,
+    .spz__compass-footer__modal_form form.hs-form .hs_submit .hs-button {
+      width: 118px !important;
+      height: 48px;
+      font-size: 14px;
+      line-height: 18.9px;
+    }
+
+    .spz__compass-footer__form form.hs-form input,
+    .spz__compass-footer__form form.hs-form textarea,
+    .spz__compass-footer__form form.hs-form select,
+    .spz__compass-footer__modal_form form.hs-form input,
+    .spz__compass-footer__modal_form form.hs-form textarea,
+    .spz__compass-footer__modal_form form.hs-form select {
+      padding: 13px 15px 15px 15px;
+      font-size: 16px;
+      height: 48px;
+    }
+
+    .spz__compass-footer__form form.hs-form select,
+    .spz__compass-footer__modal_form form.hs-form select {
+      background-position: top 15.5px right 16px;
+      padding-bottom: 10px !important;
+      padding-right: 30px !important;
+    }
+
+    .spz__compass-footer__form form.hs-form .spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form .spz__form-field-label {
+      font-size: 16px;
+    }
+
+    .spz__compass-footer__form form.hs-form input:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form textarea:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form select:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form select:has(option:checked:not([value=""]))+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form input:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form textarea:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form select:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form select:valid+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label {
+      top: 1px;
+      font-size: 10px;
+    }
+
+    .spz__compass-footer__form form.hs-form .hs_submit,
+    .spz__compass-footer__modal_form form.hs-form .hs_submit {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .spz__compass-footer__form form.hs-form .legal-consent-container,
+    .spz__compass-footer__modal_form form.hs-form .legal-consent-container {
+      font-size: 10px;
+    }
+
+    .spz__compass-footer__form__disclaimer,
+    .spz__compass-footer__modal_form__disclaimer {
+      font-size: 10px;
+    }
+
+    .spz__compass-footer__modal__content {
+      padding: 32px 16px !important;
+    }
+
+    .spz__compass-footer__form form.hs-form input:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form textarea:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form select:focus+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form select:has(option:checked:not([value=""]))+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label,
+    .spz__compass-footer__form form.hs-form textarea:not(:placeholder-shown)+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form input:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form textarea:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form select:focus+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form select:valid+.spz__form-field-label,
+    .spz__compass-footer__modal_form form.hs-form input:not(:placeholder-shown)+.spz__form-field-label {
+      font-size: 10px;
+    }
+
+    .rsvp_hero__form__success-message {
+      margin: -32px -20px;
+      padding: 32px;
+      background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_mobile.webp');
+    }
+
+    .rsvp_hero__form__success-message__inner {
+      min-height: 410px;
+    }
+
+    .rsvp_hero__form__success-message h5 {
+      font-size: 22px;
+    }
+
+    .rsvp_hero__form__success-message p {
+      font-size: 16px;
+      padding: 0 16px;
+      max-width: unset;
+    }
+
+    .rsvp_hero__form__closed-message h2 {
+      font-size: 24px;
+    }
+
+    .rsvp_hero__form__closed-message p {
+      font-size: 18px;
+    }
+
+    .rsvp_hero__form__closed-message {
+      margin: -22px;
+      padding: 14px;
+      background-image: url('<?php echo $assets_url . 'canoe_compass_ny_rsvp_form_success_bg.webp'; ?>');
+    }
+
+    .rsvp_hero__form__closed-message__inner {
+      min-height: 540px;
+    }
+
+  }
+
+  /* End Form styles */
+  /*# sourceMappingURL=9007_v1.css.map */
+</style>
+<section class="spz_hero">
+  <div class="spz_hero__container">
+
+    <nav class="spz_hero__navbar" aria-label="Microsite navigation">
+      <div class="spz_hero__navbar-inner">
+        <div class="spz_hero__navbar-side">
+          <picture>
+            <source media="(max-width: 767.98px)"
+              srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-element-mobile.svg">
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-element.svg"
+              alt="navbar curve" class="spz_hero__navbar-element">
+          </picture>
+        </div>
+        <div class="spz_hero__navbar-links">
+          <a href="#" class="spz_hero__nav-link spz_hero__nav-link--active">
+            Home <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+              alt="" class="spz_hero__nav-arrow">
+          </a>
+          <a href="javascript:void(0);" class="spz_hero__nav-link">
+            Speakers <span>Coming Soon!</span></a>
+          <a href="javascript:void(0);" class="spz_hero__nav-link">
+            Resources <span>Coming Soon!</span> </a>
+        </div>
+        <div class="spz_hero__navbar-side spz_hero__navbar-side--right">
+          <picture>
+            <source media="(max-width: 767.98px)"
+              srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-element-mobile.svg">
+            <img
+              src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-element.svg"
+              alt="navbar curve" class="spz_hero__navbar-element">
+          </picture>
+        </div>
+      </div>
+    </nav>
+
+    <div class="spz_hero__mobile-nav">
+      <div class="spz_hero__mobile-nav__bar">
+        <span class="spz_hero__nav-link spz_hero__nav-link--active spz_hero__mobile-nav__current">
+          Home <img
+            src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/nav-arrow.svg"
+            alt="" class="spz_hero__nav-arrow">
+        </span>
+        <button type="button" class="spz_hero__mobile-nav__toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="spz_hero__mobile-menu">
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+          <span class="spz_hero__mobile-nav__toggle-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="spz_hero__content">
+      <div class="spz_hero__logo">
+        <div class="spz_hero__logo-blur">
+        </div>
+        <div class="spz_hero__logo-grp">
+          <img src="<?php echo $image_url . '/logo_desktop_new.svg'; ?>" alt="Logo Canoe Compass">
+        </div>
+      </div>
+      <div class="spz_hero__heading-wrapper">
+        <h1 class="spz_hero__heading">
+          Thank you for securing your spot!
+        </h1>
+      </div>
+      <div class="spz_hero_timer">
+        <span>
+          <span class="days_value">34</span>
+          <strong>DAYS</strong>
+        </span>
+        <span>
+          <span class="hours_value">05</span>
+          <strong>HOURS</strong>
+        </span>
+        <span>
+          <span class="minutes_value">27</span>
+          <strong>MINUTES</strong>
+        </span>
+        <span>
+          <span class="seconds_value">16</span>
+          <strong>SECONDS</strong>
+        </span>
+      </div>
+      <div class="spz_hero__logistics">
+        <div class="spz_hero__logistics-time">
+          <span class="spz_hero__logistics-time-text">October 14, 2026</span>
+        </div>
+        <picture>
+          <source media="(max-width: 767.98px)"
+            srcset="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/spz_compass_star_pink_large.svg">
+          <img
+            src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/spz_compass_star_pink_small.svg"
+            alt="Logistics Separator">
+        </picture>
+        <div class="spz_hero__logistics-location">
+          <span class="spz_hero__logistics-location-text">New York City</span>
+        </div>
+      </div>
+      <div class="spz_hero_venue">
+        <span><strong>Venue:</strong> The Assembly, 2 Park Avenue, New York, NY 10016</span>
+        <span><strong>Program:</strong> 9:00 AM – 4:00 PM</span>
+        <span><strong>Reception:</strong> 4:00 PM – 6:00 PM, Eddie Lounge, 27th Floor</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="spz_hero__mobile-menu" class="spz_hero__mobile-menu" aria-hidden="true">
+  <div class="spz_hero__mobile-menu__overlay" aria-hidden="true"></div>
+  <div class="spz_hero__mobile-menu__panel">
+    <nav class="spz_hero__mobile-menu__links" aria-label="Microsite navigation">
+      <!-- <a href="https://canoeintelligence.com/canoe-compass-nyc-2026-home/"
+        class="spz_hero__nav-link">Home</a> -->
+      <a href="javascript:void(0);" class="spz_hero__nav-link">Speakers <span>Coming Soon!</span></a>
+      <a href="javascript:void(0);" class="spz_hero__nav-link">Resources <span>Coming Soon!</span></a>
+    </nav>
+  </div>
+</div>
+
+<section class="spz_agenda">
+  <div class="spz_agenda__header">
+    <h2 class="spz_agenda__title">Agenda</h2>
+  </div>
+
+  <div class="spz_agenda__body">
+    <div class="spz_agenda__media">
+      <div class="spz_agenda__media-image">
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="<?php echo $image_url . '/agenda_mobile.webp'; ?>">
+          <source media="(max-width: 1023px)" srcset="<?php echo $image_url . '/agenda_tablet.webp'; ?>">
+          <img src="<?php echo $image_url . '/agenda_desktop.webp'; ?>" alt="Canoe Compass Agenda" loading="lazy">
+        </picture>
+      </div>
+      <div class="spz_agenda__media-content">
+        <p class="spz_agenda__venue">NEW YORK CITY</p>
+        <p class="spz_agenda__date">14 October, 2026</p>
+      </div>
+    </div>
+
+    <div class="spz_agenda__schedule">
+
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">9:00 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Registration, breakfast & coffee. Doors open.</p>
+        </div>
+      </div>
+
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">9:30 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Welcome</p>
+        </div>
+      </div>
+
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">9:35 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Keynote: Total Portfolio Vision</p>
+          <div class="spz_agenda__speakers">
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Jason Eiswerth</span>
+                <span class="spz_agenda__speaker-title">CEO, Canoe Intelligence</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">10:05 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Canoe Product Vision</p>
+          <div class="spz_agenda__speakers spz_agenda__speakers--stacked-2">
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Zack Helgeson</span>
+                <span class="spz_agenda__speaker-title">Chief Product Officer, Canoe Intelligence</span>
+              </p>
+            </div>
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Michael Muniz</span>
+                <span class="spz_agenda__speaker-title">Partner and Chief Strategy Officer, Canoe Intelligence</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">10:30 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Networking Break</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">11:00 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Roundtable: The Cost of Chaos - Operational Decisions that Matter</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">11:45 AM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Client Panel: The Operations Playbook</p>
+          <div class="spz_agenda__speakers spz_agenda__speakers--stacked-2">
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Minoo Soleymani</span>
+                <span class="spz_agenda__speaker-title">Senior Relationship Manager, Canoe Intelligence</span>
+              </p>
+            </div>
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Brian Targosz</span>
+                <span class="spz_agenda__speaker-title">Partnership Accounting Manager, Briar Hall LLC</span>
+              </p>
+            </div>
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Mike Jackson</span>
+                <span class="spz_agenda__speaker-title">Executive Director, GCM Grosvenor</span>
+              </p>
+            </div>
+            <div class="spz_agenda__speaker">
+              <img
+                src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/agenda-star.svg"
+                alt="Agenda Bullet Point" class="spz_agenda__bullet">
+              <p class="spz_agenda__speaker-info">
+                <span class="spz_agenda__speaker-name">Christine Iannacone</span>
+                <span class="spz_agenda__speaker-title">Head of Investment Performance Reporting and Analysis, Chief
+                  Investment Office, Prudential Financial</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">12:25 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Lunch & Networking at Eddie Lounge</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">1:30 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Product Showcase: 5 Kiosks</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">2:20 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Networking Break</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">2:40 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Round Table: AI is changing what 'operations' means in private markets, but
+            what should never change?</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">3:30 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Delta Spotlight </p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">3:50 PM</p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Closing Remarks</p>
+        </div>
+      </div>
+      <div class="spz_agenda__row">
+        <p class="spz_agenda__time">4:00 PM </p>
+        <div class="spz_agenda__detail-block">
+          <p class="spz_agenda__detail">Reception at Eddie Lounge & Rooftop Terrace</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spz_travel">
+  <div class="auto_container">
+    <div class="spz_agendaHeading">
+      <div class="spz_agenda_headingLeft">
+        <strong>TRAVEL & VENUE LOGISTICS</strong>
+        <p>Finding your way <br>
+          to the assembly</p>
+      </div>
+      <div class="spz_agenda_headingRight">
+        <h3>2 Park Avenue</h3>
+        <b>New York, NY 10016</b>
+        <p>A landmark 1927 Art Deco tower in the heart of
+          Midtown Manhattan, between E 32nd and E 33rd.</p>
+      </div>
+    </div>
+    <div class="spz_agendaLocation">
+      <iframe class="spz_agendaLocation__map" title="Map of 2 Park Avenue, New York, NY 10016"
+        src="https://maps.google.com/maps?q=2%20Park%20Avenue%2C%20New%20York%2C%20NY%2010016&z=16&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="spz_agendaData">
+        <p>Our sessions are held in the ground-floor Conference Center; lunch and the evening reception take place
+          upstairs in the Eddie Lounge & Rooftop Terrace on the 27th floor.
+        </p>
+        <p> You're a few minutes from Grand Central, a short walk from Penn Station, and steps from the Empire State
+          Building.</p>
+        <i>Step-free entrance, elevator access to the 27th floor, and accessible restrooms.</i>
+      </div>
+    </div>
+    <div class="spz_agendaRoute">
+      <ul>
+        <li>
+          <div class="spz_routeLeft">
+            <span>
+              <img src="<?php echo $image_url . '/flex_4.svg'; ?>" alt="Subway" loading="lazy">
+            </span>
+            <strong>SUBWAY</strong>
+          </div>
+          <div class="spz_agendaRight">
+            <div class="spz_agendaStops">
+              <p>33rd St</p>
+              <strong>Across the street</strong>
+              <span>6</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>28th St</p>
+              <strong>5 min</strong>
+              <span>6</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>34th–Herald Sq</p>
+              <strong>8 min</strong>
+              <span>B D F M N Q R W</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>Grand Central–42nd</p>
+              <strong>10 min</strong>
+              <span>4 5 6 7 S</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>34th–Penn Station</p>
+              <strong>13 min</strong>
+              <span>1 2 3 A C E</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="spz_routeLeft">
+            <span>
+              <img src="<?php echo $image_url . '/flex_5.svg'; ?>" alt="Train" loading="lazy">
+            </span>
+            <strong>TRAIN</strong>
+          </div>
+          <div class="spz_agendaRight">
+            <div class="spz_agendaStops">
+              <p>Grand Central Terminal</p>
+              <strong>10 min walk</strong>
+              <span>Metro-North</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>Penn Station</p>
+              <strong>13 min walk</strong>
+              <span>LIRR · NJ Transit · Amtrak</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="spz_routeLeft">
+            <span>
+              <img src="<?php echo $image_url . '/flex_6.svg'; ?>" alt="Air" loading="lazy">
+            </span>
+            <strong>AIR</strong>
+          </div>
+          <div class="spz_agendaRight">
+            <div class="spz_agendaStops">
+              <p>LaGuardia</p>
+              <strong>30–45 min</strong>
+              <span>LGA · by car</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>JFK</p>
+              <strong>45–70 min</strong>
+              <span>by car</span>
+            </div>
+            <div class="spz_agendaStops">
+              <p>Newark</p>
+              <strong>45–60 min</strong>
+              <span>EWR · by car</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <h3>Travel times vary considerably with traffic — build in a buffer for morning-of arrivals.</h3>
+    </div>
+    <div class="spz_accomodation">
+      <div class="spz_heading">
+        <h2>Nearby accommodations</h2>
+        <p>All six hotels below are within a ten-minute walk of The Assembly, and most are under five. Sorted nearest
+          first.</p>
+      </div>
+      <div class="spz_accommodationList">
+        <div class="spz_accommodationData">
+          <a href="https://www.hotel3232nyc.com/" class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/hetel_32:32.svg'; ?>" alt="Hotel 32|32" loading="lazy">
+            <strong>Hotel 32|32</strong>
+            <p><strong>32 East 32nd Street,</strong> New York, NY, 10016</p>
+            <span>2 min walk (0.1 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+        <div class="spz_accommodationData">
+          <a href="https://www.hgunyc.com/" class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/hgu_new_york.webp'; ?>" alt="HGU New York" loading="lazy">
+            <strong>HGU New York</strong>
+            <p><strong>34 East 32nd Street,</strong> New York, NY, 10016</p>
+            <span>2 min walk (0.1 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+        <div class="spz_accommodationData">
+          <a href="https://park.marmaranyc.com/" class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/marmara_park_eve.webp'; ?>" alt="Marmara Park Ave" loading="lazy">
+            <strong>Marmara Park Ave</strong>
+            <p><strong>114 East 32nd Street,</strong> New York, NY, 10016</p>
+            <span>2 min walk (0.1 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+        <div class="spz_accommodationData">
+          <a href="https://www.hilton.com/en/hotels/nycetgi-hilton-garden-inn-new-york-midtown-park-ave/"
+            class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/hilton_garden_inn.webp'; ?>" alt="Hilton Garden Inn NY" loading="lazy">
+            <strong>Hilton Garden Inn NY</strong>
+            <p><strong>45 East 33rd Street, </strong> New York, NY, 10016</p>
+            <span>3 min walk (0.2 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+        <div class="spz_accommodationData">
+          <a href="https://www.hotel31.com/" class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/hotel_31.webp'; ?>" alt="Hotel 31" loading="lazy">
+            <strong>Hotel 31</strong>
+            <p><strong>120 East 31st Street, </strong> New York, NY, 10016</p>
+            <span>4 min walk (0.2 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+        <div class="spz_accommodationData">
+          <a href="https://www.stayaka.com/hotel-aka-nomad" class="spz9007_v" target="_blank">
+            <img src="<?php echo $image_url . '/aka.webp'; ?>" alt="Hotel AKA NoMad" loading="lazy">
+            <strong>Hotel AKA NoMad</strong>
+            <p><strong>131 Madison Avenue, </strong>New York, NY, 10016</p>
+            <span>6 min walk (0.3 mi)</span>
+            <b class="spz_cta spz9007_v">BOOK NOW</b>
+          </a>
+        </div>
+      </div>
+      <p>Rates and availability in Midtown move quickly in October, so we'd recommend booking sooner rather than later.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="spz__compass__faq__wrapper">
+  <div class="spz__compass__faq__container" id="faq">
+    <div class="spz__compass__faq__container__inner">
+      <div class="spz__compass__faq__copy">
+        <h3>INFORMATION</h3>
+        <h2>Know before you go</h2>
+      </div>
+      <div class="spz__compass__faq__list">
+        <div class="spz__compass__faq__list__item active">
+          <h3 class="spz__compass__faq__list__item__question">
+            What should I wear?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Business casual
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            When should I arrive?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Registration opens at 9:00 AM with breakfast and coffee; the program begins promptly at 9:30 AM. We'd
+              recommend arriving by 9:15.
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            Can I bring a colleague?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              All firms receive 2 tickets, please register via the form on this page for all parties who would like to
+              attend.
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            Will materials be shared afterward?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Yes, recordings or sessions will be shared on the event website.
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            Is lunch provided? Can dietary requirements be accommodated?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Breakfast, lunch, and an evening reception are all included. All dietary requirements captured during
+              registration will be honored in all provided meals.
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            What's the Wi-Fi situation?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Wifi will be available all day throughout the event.
+            </p>
+          </div>
+        </div>
+        <div class="spz__compass__faq__list__item">
+          <h3 class="spz__compass__faq__list__item__question">
+            Is there a private area I can take a call?
+          </h3>
+          <div class="spz__compass__faq__list__item__answer">
+            <p>
+              Yes, there are private and semi- private spaces available for meetings and phone calls throughout the day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="spz__compass-footer" id="footer">
+  <div class="spz__compass-footer__content">
+    <div class="spz__compass-footer__content__container">
+      <div class="spz__compass-footer__copy">
+        <h5 class="spz__compass-footer__eyebrow">Join the conversation</h5>
+        <p><strong>Your Voice Matters.</strong> We want these sessions to be as useful to you as possible. If there's a
+          question you'd like our speakers to address, send it ahead of time, and we'll work it into the program.
+          Questions submitted in advance genuinely shape what gets discussed.</p>
+      </div>
+      <div id="footer-form" class="spz__compass-footer__form" data-form-key="<?= esc_attr($hubspot_form_key); ?>">
+        <h2>Submit a question</h2>
+        <?= do_shortcode('[hubspot type="form" portal="6988851" id="f0d59c05-c6ff-4a82-a79e-3b4810a0b974"]'); ?>
+        <div class="rsvp_hero__form__success-message hidden">
+          <div class="rsvp_hero__form__success-message__inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <rect width="42" height="42" rx="21" fill="#00B1B1" />
+              <path d="M13.05 21.6667L18.5885 27L31.05 15" stroke="white" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+            <h5>Form submitted</h5>
+            <p class="rsvp_hero__form__success-message__copy"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spz_sponsors">
+  <div class="auto_container">
+    <div class="spz_heading">
+      <h2>Sponsors</h2>
+      <p>Thank you to our sponsors. Canoe Compass New York is made possible with the support of <strong>K1x, Atomic
+          Insights,</strong> and <strong>Petra</strong>.</p>
+    </div>
+    <div class="spz_sponsorsList">
+      <div class="spz_sponsorData">
+        <img src="<?php echo $image_url . '/k1x.webp'; ?>" alt="K1x" width="174" loading="lazy">
+      </div>
+      <div class="spz_sponsorData">
+        <img src="<?php echo $image_url . '/atomic_insights.webp'; ?>" alt="Atomic Insights" width="201" loading="lazy">
+      </div>
+      <div class="spz_sponsorData">
+        <img src="<?php echo $image_url . '/petra_funds.webp'; ?>" alt="Petra Funds Group" width="226" loading="lazy">
+      </div>
+      <div class="spz_sponsorData">
+        <img src="<?php echo $image_url . '/pmlify.webp'; ?>" alt="Amplify" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      portalId: "6988851",
+      formId: "dd9613fc-244e-4d2b-9b0d-a26b49ce1f82",
+      region: "na1"
+    });
+  </script>
+  -->
+
+
+<section class="spz_support">
+  <div class="spz_support__container">
+    <div class="spz_support__content">
+      <div class="spz_support__blur">
+        <img
+          src="https://canoeintelligence.com/wp-content/themes/canoeintelligence/assets/img/microsite/support-blur-bg.svg"
+          alt="blur gradient">
+      </div>
+      <h2 class="spz_support__title">Need support?</h2>
+      <p class="spz_support__text"><strong>We’re here to help.</strong> Questions about your registration, travel,
+        accessibility, or the schedule? Reach our events team at <a
+          href="mailto:compassnyc@canoeintelligence.com">compassnyc@canoeintelligence.com</a> and we'll get back to you
+        within one business day. </p>
+      <p class="spz_support__text">On the day itself, our team will be at the registration desk on the ground floor from
+        8:45 AM.</p>
+      <a href="mailto:compassnyc@canoeintelligence.com" class="spz_support__cta">Contact Marketing</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="spz__canoe-compass__modal">
+  <div class="spz__canoe-compass__modal__overlay" aria-hidden="true"></div>
+  <div class="spz__canoe-compass__modal__wrapper">
+    <div class="spz__canoe-compass__modal__content spz__canoe-compass__modal_form">
+      <button class="spz__canoe-compass__modal__close" aria-label="Close">
+        <span class="spz__canoe-compass__modal__close__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M12.6673 3.33325L3.33398 12.6666M12.6673 12.6666L3.33398 3.33325" stroke="black"
+              stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+      <h2>Register now</h2>
+      <div class="spz__canoe-compass__modal__success-message hidden">
+        <div class="spz__canoe-compass__modal__success-message__inner">
+          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+            <rect width="42" height="42" rx="21" fill="#00B1B1" />
+            <path d="M13.05 21.6667L18.5885 27L31.05 15" stroke="white" stroke-width="2.4" stroke-linecap="round" />
+          </svg>
+          <h5>Thanks for requesting your invite!</h5>
+          <p>Our team will review your application and be in touch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

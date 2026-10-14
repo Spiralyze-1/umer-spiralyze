@@ -262,7 +262,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-mobile-01_1.webp">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-tablet-01_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-01_1.webp" alt="HR Data & Reporting">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-01_1.webp" alt="HR Data & Reporting" loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -285,7 +285,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-mobile-02_1.webp ">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-tablet-02_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-02_1.webp" alt="Hiring & Onboarding">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-02_1.webp" alt="Hiring & Onboarding" loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -308,7 +308,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-mobile-03_1.webp">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-tablet-03_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-03_1.webp" alt="Payroll, Time & Benefits">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-03_1.webp" alt="Payroll, Time & Benefits" loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -331,7 +331,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-mobile-04_1.webp">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-tablet-04_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-04_1.webp" alt="Employee Experience & Performance">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/hr_software-desktop-04_1.webp" alt="Employee Experience & Performance" loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -410,7 +410,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-mobile-01_1.png">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-tablet-01_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-01_1.webp" alt="Retain great hires with a great onboarding process">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-01_1.webp" alt="Retain great hires with a great onboarding process" loading="lazy">
 												</picture>
 											</div>
 										</div>  
@@ -439,7 +439,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/time_tracking-mobile-02_2.png">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-tablet-02_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-02_1.webp" alt="Keep new hires engaged with a custom experience.">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-02_1.webp" alt="Keep new hires engaged with a custom experience." loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -457,7 +457,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-mobile-03_1.png">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-tablet-03_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-03_1.webp" alt="Create instant personal connections.">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-03_1.webp" alt="Create instant personal connections." loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -475,7 +475,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-mobile-04_1.png">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-tablet-04_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-04_1.webp" alt="Improve time-to-productivity for new hires.">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-04_1.webp" alt="Improve time-to-productivity for new hires." loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -493,7 +493,7 @@ function secondSectionChanges() {
 												<picture>
 													<source media="(max-width: 767px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-mobile-05_1.png">
 													<source media="(max-width: 1023px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-tablet-05_1.webp">
-													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-05_1.webp" alt="Save time—and the environment.">
+													<img src="https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/11024/onboarding-desktop-05_1.webp" alt="Save time—and the environment." loading="lazy">
 												</picture>
 											</div>
 										</div>
@@ -710,58 +710,51 @@ function clickEvent() {
 }
 
 function platformListStack() {
-	var lists = document.querySelectorAll('.spz_11024_v .spz_platformList');
+	var mobileQuery = window.matchMedia('(max-width: 767px)');
 
-	function equalizeList(list) {
+	function equalize(list) {
 		var items = list.querySelectorAll(':scope > ul > li');
-		var mobile = window.matchMedia('(max-width: 767px)').matches;
-		var metrics = [];
-		var maxH = 0;
+		var cards = [];
 		var i;
 
 		for (i = 0; i < items.length; i++) {
 			var card = items[i].querySelector(':scope > .spz_platformData');
 			if (card) card.style.minHeight = '';
 			items[i].style.marginBottom = '';
+			items[i].style.transform = '';
+			cards.push(card);
 		}
 
-		if (!mobile || items.length < 2) return;
+		if (!mobileQuery.matches || items.length < 2) return;
 
+		var maxH = 0;
+		var heights = [];
 		for (i = 0; i < items.length; i++) {
-			var li = items[i];
-			var cardEl = li.querySelector(':scope > .spz_platformData');
-			var height = li.getBoundingClientRect().height;
+			var height = items[i].offsetHeight;
+			heights.push(height);
 			if (height > maxH) maxH = height;
-			metrics.push({
-				li: li,
-				card: cardEl,
-				height: height,
-				cardHeight: cardEl ? cardEl.getBoundingClientRect().height : 0
-			});
 		}
-
 		if (maxH < 1) return;
 
-		for (i = 0; i < metrics.length; i++) {
-			metrics[i].li.style.marginBottom = '0px';
-			var extra = maxH - metrics[i].height;
-			if (metrics[i].card && extra > 0.5) {
-				metrics[i].card.style.minHeight = Math.ceil(metrics[i].cardHeight + extra) + 'px';
+		for (i = 0; i < items.length; i++) {
+			items[i].style.marginBottom = '0px';
+			var extra = maxH - heights[i];
+			if (cards[i] && extra > 0.5) {
+				cards[i].style.minHeight = Math.ceil(cards[i].offsetHeight + extra) + 'px';
 			}
 		}
 	}
 
 	function equalizeAll() {
-		document.querySelectorAll('.spz_11024_v .spz_platformList.spz-stack-ready').forEach(equalizeList);
+		document.querySelectorAll('.spz_11024_v .spz_platformList.spz-stack-ready').forEach(equalize);
 	}
 
-	lists.forEach(function (list) {
+	document.querySelectorAll('.spz_11024_v .spz_platformList').forEach(function (list) {
 		if (list.dataset.spzStack === '1') {
-			equalizeList(list);
+			equalize(list);
 			return;
 		}
-		var items = list.querySelectorAll('ul > li');
-		if (items.length < 2) return;
+		if (list.querySelectorAll('ul > li').length < 2) return;
 
 		list.dataset.spzStack = '1';
 
@@ -776,16 +769,14 @@ function platformListStack() {
 		}
 
 		list.classList.add('spz-stack-ready');
-
 		list.querySelectorAll('img').forEach(function (img) {
 			if (!img.complete) {
 				img.addEventListener('load', function () {
-					equalizeList(list);
+					equalize(list);
 				});
 			}
 		});
-
-		equalizeList(list);
+		equalize(list);
 	});
 
 	if (!platformListStack.bound) {
@@ -797,10 +788,6 @@ function platformListStack() {
 			lastWidth = window.innerWidth;
 			clearTimeout(timer);
 			timer = setTimeout(equalizeAll, 120);
-		});
-		window.addEventListener('orientationchange', function () {
-			lastWidth = window.innerWidth;
-			equalizeAll();
 		});
 		window.addEventListener('load', equalizeAll);
 		if (document.fonts && document.fonts.ready) {
