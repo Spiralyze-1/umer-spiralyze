@@ -1,3 +1,54 @@
+$desktop-lg: 1760px;
+$desktop: 1440px;
+$desktop-sm: 1366px;
+$tablet-lg: 1159px;
+$tablet-pro: 1024px;
+$tablet: 1023.98px;
+$tablet-sm: 768px;
+$mobile: 767px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: #{$tablet-pro}) and (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-sm}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
 /* #1057 | BambooHR | Homepage | AI Section (redesign) — Features Accordion */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -12,14 +63,15 @@ body.spz_1057_v .spz-ai-section * {
   box-sizing: border-box;
 }
 
-/* Keyframes (global) — progress ring + media fade-in per spec */
+/* Keyframes (global) — progress ring */
 @keyframes spz-ai-progress {
-  from { stroke-dashoffset: 56.55; }
-  to   { stroke-dashoffset: 0; }
-}
-@keyframes spz-ai-fadeinout {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    stroke-dashoffset: 56.55;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* ===== Section shell ===== */
@@ -48,7 +100,8 @@ body.spz_1057_v .spz-ai-bg img {
 body.spz_1057_v .spz-ai-inner {
   position: relative;
   z-index: 1;
-  max-width: 1200px; /* 1160 content + 20px padding each side -> 140 gutter at 1440 */
+  max-width: 1200px;
+  /* 1160 content + 20px padding each side -> 140 gutter at 1440 */
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -82,10 +135,6 @@ body.spz_1057_v .spz-ai-title-wrap {
   color: #FFFFFF;
 }
 
-body.spz_1057_v .spz-ai-title-mobile {
-  display: none;
-}
-
 /* ===== Accordion body / list ===== */
 body.spz_1057_v .spz-ai-body {
   position: relative;
@@ -97,7 +146,8 @@ body.spz_1057_v .spz-ai-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 48.28%; /* 560 / 1160 */
+  width: 48.28%;
+  /* 560 / 1160 */
 }
 
 body.spz_1057_v .spz-ai-item {
@@ -120,14 +170,24 @@ body.spz_1057_v .spz-ai-head {
   border: 1px solid transparent;
   border-radius: 20px;
   background: rgba(3, 85, 28, 0.6);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   font-family: inherit;
   transition: background 0.25s ease, border-color 0.25s ease;
+  // @include tablet-pro(){
+  //   padding: 19px;
+  // }
 }
 
 body.spz_1057_v .spz-ai-item:not(.is-open) .spz-ai-head:hover {
-  background: rgba(3, 85, 28, 0.8);
+  border-color: #73C41D;
+  background: rgba(3, 85, 28, 0.60);
+
+  svg {
+    circle {
+      stroke: #FFF;
+    }
+  }
 }
 
 body.spz_1057_v .spz-ai-item.is-open .spz-ai-head {
@@ -137,6 +197,10 @@ body.spz_1057_v .spz-ai-item.is-open .spz-ai-head {
   box-shadow: inset 0 0 52px rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+
+  @include tablet-pro() {
+    padding: 10px 23px;
+  }
 }
 
 /* --- Header icon (plus / ring / minus) --- */
@@ -178,19 +242,20 @@ body.spz_1057_v .spz-ai-item.is-open .spz-ai-icon-ring {
 body.spz_1057_v .spz-ai-section.is-locked .spz-ai-item.is-open .spz-ai-icon-ring {
   display: none;
 }
+
 body.spz_1057_v .spz-ai-section.is-locked .spz-ai-item.is-open .spz-ai-icon-minus {
   display: block;
 }
 
 /* --- Progress ring --- */
 body.spz_1057_v .spz-ai-ring-track {
-  stroke: rgba(236, 255, 199, 0.35);
+  stroke: #edffc9;
   stroke-width: 1.6;
   fill: none;
 }
 
 body.spz_1057_v .spz-ai-ring-fill {
-  stroke: #ECFFC7;
+  stroke: #095820;
   stroke-width: 1.6;
   fill: none;
   stroke-linecap: round;
@@ -205,6 +270,7 @@ body.spz_1057_v .spz-ai-ring-fill {
 body.spz_1057_v .spz-ai-section.is-playing .spz-ai-item.is-open .spz-ai-ring-fill {
   animation: spz-ai-progress 8s linear forwards;
 }
+
 body.spz_1057_v .spz-ai-section.is-paused .spz-ai-item.is-open .spz-ai-ring-fill {
   animation-play-state: paused;
 }
@@ -251,7 +317,8 @@ body.spz_1057_v .spz-ai-media {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 49.66%; /* 576 / 1160 */
+  width: 49.66%;
+  /* 576 / 1160 */
   border-radius: 20px;
   overflow: hidden;
   background: #FFFFFF;
@@ -259,7 +326,11 @@ body.spz_1057_v .spz-ai-media {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  /* Opacity only. A fade animation on top of this transition replays on Safari when the panel opens. */
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+  @include tablet(){
+    max-height: 420px;
+  }
 }
 
 /* body.spz_1057_v .spz-ai-media::before {
@@ -273,7 +344,8 @@ body.spz_1057_v .spz-ai-media {
 body.spz_1057_v .spz-ai-item.is-open .spz-ai-media {
   opacity: 1;
   visibility: visible;
-  animation: spz-ai-fadeinout 0.5s ease;
+  pointer-events: auto;
+  transition: opacity 0.4s ease, visibility 0s linear 0s;
 }
 
 body.spz_1057_v .spz-ai-media-inner {
@@ -286,12 +358,22 @@ body.spz_1057_v .spz-ai-media-inner {
   background-position: -62px;
 }
 
-body.spz_1057_v .spz-ai-media-inner svg {
+body.spz_1057_v .spz-ai-media-inner dotlottie-player {
   width: 662px !important;
   height: auto !important;
+  aspect-ratio: 1320 / 876;
   display: block;
   margin-left: 50%;
   transform: translateX(-50%) !important;
+
+  @include tablet-pro() {
+    width: 700px !important;
+  }
+
+  @include mobile() {
+    width: 100% !important;
+    aspect-ratio: 768 / 976;
+  }
 }
 
 /* ===== CTAs ===== */
@@ -324,7 +406,12 @@ body.spz_1057_v .spz-ai-cta-demo {
   color: #FFFFFF;
   border: 2px solid #2E7918;
   width: 172px;
+
+  &:focus {
+    border-color: #AAE868;
+  }
 }
+
 body.spz_1057_v .spz-ai-cta-demo:hover,
 body.spz_1057_v .spz-ai-cta-demo:active {
   background: #03551C;
@@ -336,10 +423,16 @@ body.spz_1057_v .spz-ai-cta-learn {
   color: #2E7918;
   border: 2px solid #2E7918;
   width: 169px;
+  &:focus{
+    outline: 2px solid #AAE868;
+    border-color: #2E7918;
+  }
 }
+
 body.spz_1057_v .spz-ai-cta-learn:hover,
 body.spz_1057_v .spz-ai-cta-learn:active {
-  background: #2E7918;
+  background: #03551C;
+  border-color: #03551C;
   color: #FFFFFF;
 }
 
@@ -355,13 +448,6 @@ body.spz_1057_v .spz-ai-cta-learn:active {
     gap: 32px;
   }
 
-  body.spz_1057_v .spz-ai-title-desktop {
-    display: none;
-  }
-  body.spz_1057_v .spz-ai-title-mobile {
-    display: inline;
-  }
-
   /* Single column: each open feature shows its media inline below it */
   body.spz_1057_v .spz-ai-body {
     min-height: 0;
@@ -375,19 +461,22 @@ body.spz_1057_v .spz-ai-cta-learn:active {
     position: static;
     width: 100%;
     height: auto;
-    aspect-ratio: 66 / 42; /* 660 x 420 */
+    // aspect-ratio: 66 / 42; 
     opacity: 1;
     visibility: visible;
     display: none;
   }
-  body.spz_1057_v .spz-ai-media-inner{
+
+  body.spz_1057_v .spz-ai-media-inner {
     position: static;
     background-position: center -9px;
   }
 
   body.spz_1057_v .spz-ai-item.is-open .spz-ai-media {
     display: block;
+    animation: none;
   }
+
   // body.spz_1057_v .spz-ai-heading{
   //   gap: 22px;
   // }
@@ -396,7 +485,7 @@ body.spz_1057_v .spz-ai-cta-learn:active {
 /* ===== Mobile (<= 767.98px) ===== */
 @media (max-width: 767.98px) {
   body.spz_1057_v .spz-ai-section {
-    padding: 48px 0;
+    padding: 47.5px 0;
   }
 
   body.spz_1057_v .spz-ai-inner {
@@ -404,13 +493,35 @@ body.spz_1057_v .spz-ai-cta-learn:active {
     gap: 32px;
   }
 
+  body.spz_1057_v .spz-ai-media-inner {
+    background-position: center;
+  }
+
+  body.spz_1057_v .spz-ai-item[data-index="0"] .spz-ai-media-inner {
+    background-image: url(https://res.cloudinary.com/spiralyze/image/upload/v1792058383/bamboohr/1057/Mobile_Instant_V1.svg);
+  }
+
+  body.spz_1057_v .spz-ai-item[data-index="1"] .spz-ai-media-inner {
+    background-image: url(https://res.cloudinary.com/spiralyze/image/upload/v1792058383/bamboohr/1057/Mobile_Automated_V1.svg);
+  }
+
+  body.spz_1057_v .spz-ai-item[data-index="2"] .spz-ai-media-inner {
+    background-image: url(https://res.cloudinary.com/spiralyze/image/upload/v1792058384/bamboohr/1057/Mobile_Workforce_V1.svg);
+  }
+
+  body.spz_1057_v .spz-ai-item[data-index="3"] .spz-ai-media-inner {
+    background-image: url(https://res.cloudinary.com/spiralyze/image/upload/v1792058384/bamboohr/1057/Mobile_Tech_V1.svg);
+  }
+
   body.spz_1057_v .spz-ai-title-wrap {
     font-size: 32px;
     line-height: 40px;
+    padding: 0 40px;
   }
 
   body.spz_1057_v .spz-ai-media {
-    aspect-ratio: 30 / 38; /* 300 x 380 */
+    aspect-ratio: 30 / 38;
+    /* 300 x 380 */
   }
 
   body.spz_1057_v .spz-ai-ctas {

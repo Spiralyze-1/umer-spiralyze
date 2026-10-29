@@ -17,7 +17,7 @@
     progressKeyframe: 'spz-ai-progress', // keep in sync with code.css (8s linear)
     learnMoreUrl: 'https://www.bamboohr.com/platform/ai',
     demoFallbackUrl: 'https://www.bamboohr.com/signup/',
-    lottieScriptUrl: 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.0/lottie.min.js'
+    lottieScriptUrl: 'https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.js'
   };
 
   // Namespaced logger — flip CONFIG.debug to reveal the full lifecycle
@@ -32,39 +32,38 @@
       desktop: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/1057/1440_bg.png',
       wide: 'https://res.cloudinary.com/spiralyze/image/upload/f_auto/bamboohr/1057/1920_bg.png'
     },
-    // Lottie placeholder JSONs (raw) — swap these for the final animations when ready
+    // DotLottie files (.lottie). bodymovin cannot play this format.
     lottieBase: 'https://res.cloudinary.com/spiralyze/raw/upload/bamboohr/1057/animations/'
   };
 
   const CONTENT = {
     headingDesktop: 'AI-powered HR operations',
-    headingMobile: 'Streamline HR operations using AI',
     demoCtaText: 'Get a Demo',
     learnCtaText: 'Learn more',
     features: [
       {
         title: 'Instant answers to HR questions',
         description: 'Ask complex questions about your workforce. Get answers, charts, and reports in seconds. See recommendations on what to analyze next.',
-        lottie: ASSETS.lottieBase + 'Instant_answers_to_HR_questions-card_1.json',
-        lottieMobile: ASSETS.lottieBase + 'Instant_answers_to_HR_questions_card_mob.json'
+        lottie: ASSETS.lottieBase + 'Instant_answers_to_HR_questions-card.lottie',
+        lottieMobile: ASSETS.lottieBase + 'Instant_answers_to_HR_questions-card_mob.lottie'
       },
       {
         title: 'Automated routine admin',
         description: 'AI auto-generates schedules. Send recognition, anniversary, and other company messages. Automate payroll reminders. And more.',
-        lottie: ASSETS.lottieBase + 'Automated_routine_admin-card_1.json',
-        lottieMobile: ASSETS.lottieBase + 'Automated-routine-admin-card_mob.json'
+        lottie: ASSETS.lottieBase + 'Automated_routine_admin-card.lottie',
+        lottieMobile: ASSETS.lottieBase + 'Automated_routine_admin-card_mob.lottie'
       },
       {
         title: 'Workforce performance monitoring',
-        description: 'Flag performance inconsistencies and unusual patterns. Spot potential burnout and turnover. Get next step recommendations.',
-        lottie: ASSETS.lottieBase + 'Workforce_performance_monitoring-card_1.json',
-        lottieMobile: ASSETS.lottieBase + 'Workforce_performance_monitoring_card_mob.json'
+        description: 'Flag performance inconsistencies and unusual patterns. Spot potential burnout and turnover. Get next-step recommendations.',
+        lottie: ASSETS.lottieBase + 'Workforce_performance_monitoring-card.lottie',
+        lottieMobile: ASSETS.lottieBase + 'Workforce_performance_monitoring-card_mob.lottie'
       },
       {
         title: 'Tech stack integrations',
-        description: "Integrate Bamboo AI into Claude, ChatGPT, and Slack. Approve time-off, send review reminders, and ask who's out from your existing tools.",
-        lottie: ASSETS.lottieBase + 'Tech_stack_integrations-card_1.json',
-        lottieMobile: ASSETS.lottieBase + 'Tech_stack_integrations_card_mob.json'
+        description: "Integrate Bamboo AI into Claude, ChatGPT, and Slack. Approve time off, send review reminders, and ask who's out from your existing tools.",
+        lottie: ASSETS.lottieBase + 'Tech_stack_integrations-card.lottie',
+        lottieMobile: ASSETS.lottieBase + 'Tech_stack_integrations-card_mob.lottie'
       }
     ]
   };
@@ -101,57 +100,68 @@
     return null;
   };
 
-  // Load bodymovin once, then run the callback when it is ready
+  // Load the DotLottie player once (.lottie is a zip, not a Lottie JSON)
   const loadLottieLibrary = (onReady) => {
-    if (window.lottie) { onReady(); return; }
+    if (window.customElements && customElements.get('dotlottie-player')) { onReady(); return; }
     const existing = document.querySelector('script[data-spz-1057-lottie]');
-    if (existing) { existing.addEventListener('load', onReady); return; }
+    if (existing) {
+      if (existing.getAttribute('data-loaded') === 'true') { onReady(); return; }
+      existing.addEventListener('load', onReady);
+      return;
+    }
     const script = document.createElement('script');
     script.src = CONFIG.lottieScriptUrl;
     script.setAttribute('data-spz-1057-lottie', '');
-    script.addEventListener('load', onReady);
+    script.addEventListener('load', () => {
+      script.setAttribute('data-loaded', 'true');
+      onReady();
+    });
     document.head.appendChild(script);
   };
 
   // Mobile breakpoint matches the section CSS (max-width: 767.98px)
   const mobileMedia = window.matchMedia('(max-width: 767.98px)');
 
-  // Desktop path by default; mobile devices use the dedicated lottieMobile JSON
+  // Desktop path by default; mobile devices use the dedicated lottieMobile file
   const lottiePathFor = (container) => (
     mobileMedia.matches && container.dataset.lottieMobile
       ? container.dataset.lottieMobile
       : container.dataset.lottie
   );
 
-  // Mount each feature's Lottie animation (auto-play + loop, as the media is never clickable)
+  // Mount each feature's .lottie animation (auto-play + loop, as the media is never clickable)
   const initLottieAnimations = (root) => {
     const containers = root.querySelectorAll('.spz-ai-media-inner[data-lottie]');
     if (!containers.length) return;
     loadLottieLibrary(() => {
-      if (!window.lottie) { log('lottie library unavailable'); return; }
+      const start = () => {
+        if (!customElements.get('dotlottie-player')) { log('dotlottie player unavailable'); return; }
+        containers.forEach(mount);
+        const onBreakpoint = () => containers.forEach(mount);
+        if (mobileMedia.addEventListener) mobileMedia.addEventListener('change', onBreakpoint);
+        else mobileMedia.addListener(onBreakpoint);
+      };
 
       const mount = (container) => {
         const path = lottiePathFor(container);
-        if (container.dataset.lottieActive === path && container._spzLottie) return;
-        if (container._spzLottie) {
-          container._spzLottie.destroy();
-          container._spzLottie = null;
-          container.innerHTML = '';
-        }
+        const current = container.querySelector('dotlottie-player');
+        if (container.dataset.lottieActive === path && current) return;
         container.dataset.lottieActive = path;
-        container._spzLottie = window.lottie.loadAnimation({
-          container,
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          path
-        });
+        container.innerHTML = '';
+        const player = document.createElement('dotlottie-player');
+        player.setAttribute('src', path);
+        player.setAttribute('background', 'transparent');
+        player.setAttribute('speed', '1');
+        player.setAttribute('loop', 'true');
+        player.setAttribute('autoplay', '');
+        player.setAttribute('aria-hidden', 'true');
+        player.autoplay = true;
+        container.appendChild(player);
+        if (typeof player.play === 'function') player.play();
       };
 
-      containers.forEach(mount);
-      const onBreakpoint = () => containers.forEach(mount);
-      if (mobileMedia.addEventListener) mobileMedia.addEventListener('change', onBreakpoint);
-      else mobileMedia.addListener(onBreakpoint);
+      if (customElements.get('dotlottie-player')) start();
+      else customElements.whenDefined('dotlottie-player').then(start);
     });
   };
 
@@ -169,8 +179,7 @@
   const minusIconHTML = `
     <span class="spz-ai-icon-minus">
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <circle cx="10" cy="10" r="9.25" stroke="rgba(255,255,255,0.4)"></circle>
-        <path d="M6 10h8" stroke="#FFFFFF" stroke-linecap="round"></path>
+        <circle cx="10" cy="10" r="9.25" stroke="#03551C"></circle>
       </svg>
     </span>`;
 
@@ -207,19 +216,18 @@
       <source media="(max-width: 767.98px)" srcset="${ASSETS.bg.mobile}">
       <source media="(max-width: 1023.98px)" srcset="${ASSETS.bg.tablet}">
       <source media="(min-width: 1920px)" srcset="${ASSETS.bg.wide}">
-      <img src="${ASSETS.bg.desktop}" alt="" loading="lazy">
+      <img src="${ASSETS.bg.desktop}" alt="AI scetion background" loading="lazy">
     </picture>`;
 
   // The whole injected section
   const sectionHTML = () => `
-    <section class="spz-ai-section" ${CONFIG.rootAttribute}="${CONFIG.experiment}">
+    <div class="spz-ai-section" ${CONFIG.rootAttribute}="${CONFIG.experiment}">
       ${backgroundHTML()}
       <div class="spz-ai-inner">
         <div class="spz-ai-heading">
-          <img class="spz-ai-badge" src="${ASSETS.badge}" alt="Bamboo AI" width="143" height="32">
+          <img class="spz-ai-badge" src="${ASSETS.badge}" alt="Bamboo AI" width="143" height="32" loading="lazy">
           <h2 class="spz-ai-title-wrap">
             <span class="spz-ai-title-desktop">${CONTENT.headingDesktop}</span>
-            <span class="spz-ai-title-mobile">${CONTENT.headingMobile}</span>
           </h2>
         </div>
         <div class="spz-ai-body">
@@ -228,11 +236,11 @@
           </div>
         </div>
         <div class="spz-ai-ctas">
-          <button class="spz-ai-cta-demo spz-1057-ai-demo-cta" type="button">${CONTENT.demoCtaText}</button>
+          <p class="button-container"><a href="javascript:void(0)" title="Get a Demo" class="accent spz-ai-cta-demo spz-1057-ai-demo-cta" data-path="/fragments/modals/demo" data-url="https://www.bamboohr.com/fragments/modals/demo" data-modal="#demo-modal" data-qa="cta-action">${CONTENT.demoCtaText}</a></p>
           <a class="spz-ai-cta-learn spz-1057-ai-learn-cta" href="${CONFIG.learnMoreUrl}">${CONTENT.learnCtaText}</a>
         </div>
       </div>
-    </section>`;
+    </div>`;
 
   /* ===== Behavior ===== */
 
@@ -255,6 +263,7 @@
   const createAccordion = (section) => {
     const list = section.querySelector('.spz-ai-list');
     const items = Array.from(section.querySelectorAll('.spz-ai-item'));
+    const mediaPanels = Array.from(section.querySelectorAll('.spz-ai-media'));
     const state = { activeIndex: 0, isPlaying: false, isLocked: false };
     const canHover = window.matchMedia('(hover: hover)').matches;
 
@@ -305,15 +314,20 @@
 
     // Expand whichever feature was clicked, then lock the progress bar
     const handleClick = (event) => {
+      if (event.target.closest('.spz-ai-media')) return;
       const item = event.target.closest('.spz-ai-item');
       if (!item || !list.contains(item)) return;
       openFeature(items.indexOf(item));
       lockProgress();
     };
 
-    // Desktop-only: pause on hover, resume on leave
+    // Desktop-only: pause on hover of a feature or its media, resume on leave
     const handleEnter = () => { if (state.isPlaying && !state.isLocked) section.classList.add('is-paused'); };
-    const handleLeave = () => { section.classList.remove('is-paused'); };
+    const handleLeave = (event) => {
+      const next = event.relatedTarget;
+      if (next && next.closest && next.closest('.spz-ai-item, .spz-ai-media')) return;
+      section.classList.remove('is-paused');
+    };
 
     // The ring's CSS animation ending means a cycle finished -> advance
     const handleAnimationEnd = (event) => {
@@ -323,9 +337,9 @@
     list.addEventListener('click', handleClick);
     section.addEventListener('animationend', handleAnimationEnd);
     if (canHover) {
-      items.forEach((item) => {
-        item.addEventListener('mouseenter', handleEnter);
-        item.addEventListener('mouseleave', handleLeave);
+      items.concat(mediaPanels).forEach((target) => {
+        target.addEventListener('mouseenter', handleEnter);
+        target.addEventListener('mouseleave', handleLeave);
       });
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -347,7 +361,7 @@
     if (!section) { log('inject failed'); return; }
     log('injected');
     createAccordion(section);
-    bindCtas(section);
+    // bindCtas(section);
     initLottieAnimations(section);
   };
 
@@ -363,77 +377,80 @@
   document.readyState === 'loading'
     ? document.addEventListener('DOMContentLoaded', init)
     : init();
+
+    document.querySelector('.spz-ai-section').insertAdjacentHTML('afterend', `<div class="spz-ai-outer"></div>`);
+    document.querySelector('.spz-ai-outer').appendChild(document.querySelector('.spz-ai-section'));
 })();
 
 /* ===== Downfunnel tracking (variant) ===== */
-(function() {
-    //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
+(function () {
+  //Add the following code of experiment. This code will set the cookie with the experiment name and variant name.
 
-    // Set the value of the squeezePage variable as needed:
-    // true  – if you are using a squeeze page (i.e., the page contains a form)
-    // false – if you are not using a squeeze page (i.e., the page does not contain a form)
-    // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
+  // Set the value of the squeezePage variable as needed:
+  // true  – if you are using a squeeze page (i.e., the page contains a form)
+  // false – if you are not using a squeeze page (i.e., the page does not contain a form)
+  // 'both' – if you want to set both the cookie and the hidden field value (i.e., the page has a form and you also want to set a cookie)
 
-    const squeezePage = 'both'; // true / false / 'both'
-    const expName = '1057'; //experiment name should be 1001, 1002, 1003 etc.
-    const variantName = `#1057_variant`; //variantName should be _variant, _true_control etc.
-    const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com
+  const squeezePage = 'both'; // true / false / 'both'
+  const expName = '1057'; //experiment name should be 1001, 1002, 1003 etc.
+  const variantName = `#1057_variant`; //variantName should be _variant, _true_control etc.
+  const clientDomain = '.bamboohr.com'; //domain should be .spiralyze.com
 
 
-    /***********************************
-    ************************************
-    DO NOT TOUCH
-    BEYOND THIS LINE
-    ******************************
-    ******************************/
-    const formHiddenValue = variantName;
-    if (squeezePage === true) {
-        window.squeezePageValue = formHiddenValue;
-    } else if (squeezePage === false) {
-        hiddenValue(expName, variantName);
-    } else if (squeezePage === 'both') {
-        hiddenValue(expName, variantName);
-        window.squeezePageValue = formHiddenValue;
+  /***********************************
+  ************************************
+  DO NOT TOUCH
+  BEYOND THIS LINE
+  ******************************
+  ******************************/
+  const formHiddenValue = variantName;
+  if (squeezePage === true) {
+    window.squeezePageValue = formHiddenValue;
+  } else if (squeezePage === false) {
+    hiddenValue(expName, variantName);
+  } else if (squeezePage === 'both') {
+    hiddenValue(expName, variantName);
+    window.squeezePageValue = formHiddenValue;
+  }
+  function hiddenValue(currentExperimentName, currentExperimentValue) {
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
     }
-    function hiddenValue(currentExperimentName, currentExperimentValue) {
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + ";domain=" + clientDomain + ";path=/";
-        }
 
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        var ExistingExperimentName = getCookie('ExperimentName');
-        var ExistingExperimentValue = getCookie('ExperimentValue');
-        var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
-
-        if (!ExistingExperimentName) {
-            setCookie('ExperimentName', currentExperimentName, 1);
-            setCookie('ExperimentValue', currentExperimentValue, 1);
-        } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
-            setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
-            setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
-        } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
-            var existingNames = ExistingExperimentName.split(',');
-            var existingValues = ExistingExperimentValue.split(',');
-            var index = existingNames.indexOf(currentExperimentName);
-            existingValues[index] = currentExperimentValue;
-            setCookie('ExperimentName', existingNames.join(','), 1);
-            setCookie('ExperimentValue', existingValues.join(','), 1);
-        }
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
     }
+
+    var ExistingExperimentName = getCookie('ExperimentName');
+    var ExistingExperimentValue = getCookie('ExperimentValue');
+    var ExistingExperimentNameList = ExistingExperimentName ? ExistingExperimentName.split(',') : [];
+
+    if (!ExistingExperimentName) {
+      setCookie('ExperimentName', currentExperimentName, 1);
+      setCookie('ExperimentValue', currentExperimentValue, 1);
+    } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) == -1) {
+      setCookie('ExperimentName', ExistingExperimentName + ',' + currentExperimentName, 1);
+      setCookie('ExperimentValue', ExistingExperimentValue + ',' + currentExperimentValue, 1);
+    } else if (ExistingExperimentNameList.length > 0 && ExistingExperimentNameList.indexOf(currentExperimentName) > -1) {
+      var existingNames = ExistingExperimentName.split(',');
+      var existingValues = ExistingExperimentValue.split(',');
+      var index = existingNames.indexOf(currentExperimentName);
+      existingValues[index] = currentExperimentValue;
+      setCookie('ExperimentName', existingNames.join(','), 1);
+      setCookie('ExperimentValue', existingValues.join(','), 1);
+    }
+  }
 }());
