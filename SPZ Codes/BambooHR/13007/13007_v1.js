@@ -22,6 +22,7 @@ const bodyInterval13007 = setInterval(function () {
             </div>
             <div class="hero_main">
               <div class="hero_imageContainer">
+              
                 <div class="form_container">
                   <div class="form"></div>
                 </div>

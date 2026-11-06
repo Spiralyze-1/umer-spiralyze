@@ -5320,6 +5320,575 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
   }
 
   /* End Form styles */
+
+
+
+  /* =============================================
+   MODAL SECTION — START
+   ============================================= */
+
+  .spz__canoe-compass__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    z-index: 10000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .spz__canoe-compass__modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .spz__canoe-compass__modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background: rgba(41, 48, 84, 0.70);
+    backdrop-filter: blur(8px);
+    -moz-backdrop-filter: blur(8px);
+  }
+
+  .spz__canoe-compass__modal__wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    min-height: 100dvh;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .spz__canoe-compass__modal__content {
+    width: 100%;
+    max-width: 558px;
+    margin: auto;
+    transform: translateY(-24px);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+
+    border-radius: 0 32px;
+    border: 8px solid rgba(255, 255, 255, 0.15);
+    background: #FFF;
+    box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.22);
+    background-clip: padding-box;
+    padding: 32px 32px 40px;
+  }
+
+  .spz__canoe-compass__modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .spz__canoe-compass__modal.show .spz__canoe-compass__modal__content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body.spz__canoe-compass__modal-open {
+    overflow: clip !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form {}
+
+  .spz__canoe-compass__modal form.hs-form>div:has(img),
+  .spz__canoe-compass__modal form.hs-form>div:nth-child(2):not(:has(input)),
+  .spz__canoe-compass__modal form.hs-form>div:has(.hs-richtext.hs-main-font-element),
+  .spz__canoe-compass__modal form.hs-form .hs-form-field.hs_recaptcha {
+    display: none !important;
+  }
+
+  .spz__canoe-compass__modal_form>h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    margin-inline: auto;
+    padding: 0;
+
+    color: #293054;
+    font-family: "Open Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.96px;
+  }
+
+  .spz__canoe-compass__modal form.hs-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    gap: 4px;
+    vertical-align: top;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field.full-width,
+  .spz__canoe-compass__modal form.hs-form .hs_submit.hs-submit.full-width,
+  .spz__canoe-compass__modal form.hs-form .hs-dependent-field:not(:has(select[name="state_region_2"])) .spz__form-field:has(select[name="country_region_2"]) {
+    grid-column: span 2;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs-dependent-field {
+    display: contents;
+  }
+
+  .spz__canoe-compass__modal form.hs-form legend.hs-field-desc {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: rgba(41, 48, 84, 0.50);
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_error_rollup {
+    grid-column: 1 / -1;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field .input {
+    position: relative;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input,
+  .spz__canoe-compass__modal form.hs-form textarea,
+  .spz__canoe-compass__modal form.hs-form select {
+    border-radius: 16px;
+    border: 1px solid #DDE4E4;
+    padding: 16px 16px 16px 15px;
+
+    color: #293054;
+    background-color: transparent;
+
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    outline: none;
+    box-shadow: none;
+    outline: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    height: 56px;
+
+    vertical-align: middle;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:focus,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:hover,
+  .spz__canoe-compass__modal form.hs-form input:-webkit-autofill:active {
+    -webkit-text-fill-color: #293054 !important;
+    color: #293054 !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error,
+  .spz__canoe-compass__modal form.hs-form textarea.error,
+  .spz__canoe-compass__modal form.hs-form select.error {
+    display: block !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error:not(:focus),
+  .spz__canoe-compass__modal form.hs-form textarea.error:not(:focus),
+  .spz__canoe-compass__modal form.hs-form select.error:not(:focus) {
+    border-color: #FF4349;
+  }
+
+  .spz__canoe-compass__modal form.hs-form select option:disabled {
+    color: transparent;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input.error:not(:focus)+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form textarea.error:not(:focus)+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form select.error:not(:focus)+.spz__form-field-label {
+    color: #FF4349;
+  }
+
+  .spz__canoe-compass__modal form.hs-form select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4IiBmaWxsPSJub25lIj4KICA8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMjkwMzhfMTMyKSI+CiAgICA8cGF0aCBkPSJNNSA3TDguMjkyODkgMTAuMjkyOUM4LjY4MzQyIDEwLjY4MzQgOS4zMTY1OCAxMC42ODM0IDkuNzA3MTEgMTAuMjkyOUwxMyA3IiBzdHJva2U9IiMyOTMwNTQiIHN0cm9rZS1vcGFjaXR5PSIwLjciIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPC9nPgogIDxkZWZzPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwMF8yOTAzOF8xMzIiPgogICAgICA8cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGZpbGw9IndoaXRlIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KPC9zdmc+');
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: top 18.5px right 16px;
+    padding-right: 36px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .spz__canoe-compass__modal form.hs-form select::placeholder,
+  .spz__canoe-compass__modal form.hs-form select:-moz-placeholder,
+  .spz__canoe-compass__modal form.hs-form select::-moz-placeholder {
+    color: transparent !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .spz__form-field-label {
+    display: block;
+    position: absolute;
+    width: auto;
+    text-transform: capitalize;
+
+    overflow: hidden;
+    color: rgba(41, 48, 84, 0.70);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    pointer-events: none;
+
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.2s ease-in-out;
+
+    z-index: 1;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input:focus,
+  .spz__canoe-compass__modal form.hs-form textarea:focus,
+  .spz__canoe-compass__modal form.hs-form select:focus {
+    border-color: #293054;
+  }
+
+  .spz__canoe-compass__modal form.hs-form input:focus+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form textarea:focus+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form select:focus+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form select:valid+.spz__form-field-label,
+  .spz__canoe-compass__modal form.hs-form input:not(:placeholder-shown)+.spz__form-field-label {
+    top: 0;
+    left: 12px;
+    font-size: 12px;
+    background: #FFFFFF;
+    padding: 0 5px !important;
+  }
+
+  .spz__canoe-compass__modal .hs-error-msgs li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .spz__canoe-compass__modal .hs-error-msgs:has(a:not([href])) {
+    display: none !important;
+  }
+
+  .spz__canoe-compass__modal .hs-error-msgs li:before {
+    content: '';
+    display: none !important;
+  }
+
+  .spz__canoe-compass__modal .hs-error-msgs .hs-error-msg,
+  .spz__canoe-compass__modal .hs-error-msgs .hs-main-font-element {
+    margin: 0;
+    padding: 0;
+    color: #FF4349;
+
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-align: left;
+  }
+
+  .spz__canoe-compass__modal .hs-error-msgs a {
+    color: #293054 !important;
+    font-size: 10px !important;
+    font-family: "Open Sans" !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_submit {
+    margin-top: 0;
+    margin-bottom: 8px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_submit .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_submit .hs-button {
+    border-radius: 100px;
+    background: #C423F9;
+    height: 56px;
+    width: 156px;
+    padding: 0 32px;
+    margin-top: 24px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    color: #FFF;
+    text-align: center;
+
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%;
+    text-transform: none;
+
+  }
+
+  .spz__canoe-compass__modal form.hs-form .hs_submit .hs-button:hover {
+    background: #1BFFC3;
+    color: #293054;
+  }
+
+  .spz__canoe-compass__modal form.hs-form .legal-consent-container {
+    color: #193446;
+    text-align: center;
+
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .spz__canoe-compass__modal__success-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_desktop.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .spz__canoe-compass__modal__success-message.hidden {
+    display: none;
+  }
+
+  .spz__canoe-compass__modal__success-message h5 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .spz__canoe-compass__modal__success-message p {
+    color: rgba(41, 48, 84, 0.70);
+    text-align: center;
+
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 326px;
+  }
+
+  .spz__canoe-compass__modal__success-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  .spz__canoe-compass__modal__closed-message {
+    margin: -32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_canoe_form_success_bg_desktop.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .spz__canoe-compass__modal__closed-message.hidden {
+    display: none;
+  }
+
+  .spz__canoe-compass__modal__closed-message h2 {
+    color: #293054;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+
+  .spz__canoe-compass__modal__closed-message p {
+    color: rgba(41, 48, 84, 0.70);
+    text-align: center;
+
+    font-family: "Open Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 356px;
+  }
+
+  .spz__canoe-compass__modal__closed-message__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 0 8px;
+    border: 1px solid #00B1B1;
+    width: 100%;
+    min-height: 385px;
+    padding: 10px;
+  }
+
+  .spz__canoe-compass__modal__disclaimer {
+    color: rgba(41, 48, 84, 0.50);
+    text-align: center;
+
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 0;
+    margin: 12px 0 0;
+  }
+
+  @media (max-width: 767.98px) {
+    .spz__canoe-compass__modal__content {
+      padding: 32px 16px;
+    }
+
+    .spz__canoe-compass__modal>h2 {
+      max-width: unset !important;
+      font-size: 24px !important;
+      letter-spacing: -0.72px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form {
+      grid-template-columns: 1fr;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .spz__form-field.full-width,
+    .spz__canoe-compass__modal form.hs-form .hs_submit.hs-submit.full-width,
+    .spz__canoe-compass__modal form.hs-form .hs-dependent-field:not(:has(select[name="state_region_2"])) .spz__form-field:has(select[name="country_region_2"]) {
+      grid-column: unset;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .hs_submit {
+      width: 100% !important;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .hs_submit .hs-button {
+      width: 100% !important;
+      height: 48px;
+      font-size: 16px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form input,
+    .spz__canoe-compass__modal form.hs-form textarea,
+    .spz__canoe-compass__modal form.hs-form select {
+      padding: 13px 15px 15px 15px;
+      font-size: 16px;
+      height: 48px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form select {
+      background-position: top 15.5px right 16px;
+      padding-bottom: 10px !important;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .spz__form-field-label {
+      font-size: 16px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form input:focus+.spz__form-field-label,
+    .spz__canoe-compass__modal form.hs-form textarea:focus+.spz__form-field-label,
+    .spz__canoe-compass__modal form.hs-form select:focus+.spz__form-field-label,
+    .spz__canoe-compass__modal form.hs-form select:valid+.spz__form-field-label,
+    .spz__canoe-compass__modal form.hs-form input:not(:placeholder-shown)+.spz__form-field-label {
+      top: 3px;
+      font-size: 10px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .hs_submit {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .spz__canoe-compass__modal form.hs-form .legal-consent-container {
+      font-size: 10px;
+    }
+  }
+
+
+
+  /* =============================================
+   MODAL SECTION — END
+   ============================================= */
   /*# sourceMappingURL=9007_v1.css.map */
 </style>
 <section class="spz_hero">
@@ -5974,6 +6543,7 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
         </span>
       </button>
       <h2>Register now</h2>
+      <?= do_shortcode('[hubspot type="form" portal="6988851" id="1fc7db51-aff7-4d07-8133-ffec7f82aaff"]'); ?>
       <div class="spz__canoe-compass__modal__success-message hidden">
         <div class="spz__canoe-compass__modal__success-message__inner">
           <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
