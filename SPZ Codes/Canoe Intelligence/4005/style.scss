@@ -1,11 +1,11 @@
 $desktop-lg: 1760px;
 $desktop: 1440px;
 $desktop-sm: 1366px;
-$tablet-lg: 1299px;
+$tablet-lg: 1310.98px;
 $tablet-pro: 1024px;
 $tablet: 1023.98px;
 $tablet-sm: 768px;
-$mobile: 767px;
+$mobile: 767.98px;
 
 @mixin desktop-lg {
   @media (max-width: #{$desktop-lg}) {
@@ -49,7 +49,7 @@ $mobile: 767px;
   }
 }
 
-#wpadminbar,
+// #wpadminbar,
 #content-main>div:not(.spz_sections):not(.how-it-works) {
   display: none;
 }
@@ -67,6 +67,7 @@ body .header-main {
     @include tablet() {
       transform: translateX(-7px) translateY(5px);
     }
+
     @include mobile() {
       height: 80px;
       transform: translateX(-9px) translateY(0px);
@@ -93,37 +94,75 @@ body .header-main {
 
 .ci_hero {
   padding: 80px 0;
-  background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_1.webp');
+  // background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_1.webp');
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
 
   @include tablet() {
     padding: 77px 0 80px;
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_2.webp');
+    // background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_2.webp');
   }
 
   @include mobile() {
-    padding: 62.5px 0 60px;
-    background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp.webp');
-    .container{
+    padding: 62.5px 0 60.5px;
+    // background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp.webp');
+
+    .container {
       padding: 0 20px;
+      max-width: 100%;
     }
+  }
+
+  @media (min-width: 481px) and (max-width: 767.98px) {
+    background-position: right -12vw;
   }
 }
 
 .ci_heroInner {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -49%;
+    top: -80px;
+    width: 100%;
+    height: 105%;
+    background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/full_1.png);
+    background-size: 1238px;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 626.8px;
+  }
+
   @include tablet() {
     min-height: 1283px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    &::after {
+      display: none;
+    }
   }
+
   @include mobile() {
     min-height: 1392px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767.98px) {
+    min-height: 1200px;
   }
 }
 
@@ -195,29 +234,40 @@ body .header-main {
       }
     }
   }
-  @include tablet-pro(){
+
+  @media (min-width: 1024px) {
+    min-height: 576.8px;
+  }
+
+  @include tablet-pro() {
     max-width: 500px;
-    h1{
+
+    h1 {
       font-size: 38px;
       line-height: 42px;
     }
-    ul{
-      li{
-        &:not(:last-child){
+
+    ul {
+      li {
+        &:not(:last-child) {
           padding-bottom: 16px;
         }
-        p{
+
+        p {
           font-size: 15px;
           line-height: 20px;
-          br{
+
+          br {
             display: none;
           }
         }
       }
     }
   }
+
   @include tablet() {
     max-width: 100%;
+    padding-bottom: 10px;
 
     ul {
       li {
@@ -229,36 +279,92 @@ body .header-main {
       }
     }
   }
+
   @include mobile() {
     max-width: 100%;
-    h4{
+    padding-bottom: 10px;
+
+    h4 {
       font-size: 14px;
       line-height: 18.9px;
     }
-    h1{
+
+    h1 {
       font-size: 36px;
       line-height: 39.6px;
       padding-bottom: 32px;
+      max-width: 380px;
     }
+
     ul {
       padding-bottom: 30.5px;
+      max-width: 380px;
+
       li {
         padding-left: 28px;
-        &:not(:last-child){
+
+        &:not(:last-child) {
           padding-bottom: 18.5px;
         }
-        &::after{
+
+        &::after {
           top: 1px;
         }
+
         p {
           font-size: 16px;
           line-height: 22.4px;
+
           br {
             display: none;
           }
         }
       }
     }
+
+    .ci_ctaOuter {
+      a {
+        max-width: 320px;
+        // margin-left: auto;
+        // margin-right: auto;
+      }
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 767.98px) {
+    h1 {
+      max-width: 100%;
+    }
+
+    ul {
+      max-width: 100%;
+    }
+  }
+}
+
+.ci_heroImage {
+  margin-top: -112px;
+  margin-right: -40px;
+  margin-left: -40px;
+
+  picture {
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  @include mobile() {
+    margin-top: -52.5px;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: -55.5px;
   }
 }
 
@@ -266,6 +372,7 @@ body .header-main {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
   span {
     display: inline-block;
 
@@ -280,11 +387,12 @@ body .header-main {
     justify-content: center;
     gap: 32px 64px;
   }
+
   @include mobile() {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    transform: translateX(-3.5px);
+    transform: translateY(-3.5px);
   }
 }
 
@@ -297,7 +405,8 @@ body .header-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include mobile(){
+
+    @include mobile() {
       height: 48px;
       width: 100%;
       font-size: 14px;
@@ -307,7 +416,6 @@ body .header-main {
 }
 
 // ribbon css
-@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400&display=swap);
 
 .ci-ribbon-section {
   box-sizing: border-box;
@@ -324,6 +432,10 @@ body .how-it-works {
   background-color: #293054;
   background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/2012/1440.webp);
   padding-top: 0;
+
+  @include mobile() {
+    padding: 80.5px 16px 80.5px;
+  }
 }
 
 .ci-ribbon-bg {
@@ -375,6 +487,10 @@ body {
         line-height: 52.8px;
         padding-bottom: 64.5px;
       }
+
+      @include mobile() {
+        padding-bottom: 48px;
+      }
     }
 
     .steps {
@@ -422,6 +538,24 @@ body {
           padding-bottom: 19.5px;
         }
       }
+
+      @include mobile() {
+        padding: 0 4px;
+        gap: 41px;
+
+        picture {
+          border-radius: 10px;
+          margin-bottom: 31.5px;
+
+          img {
+            border-radius: 10px;
+          }
+        }
+
+        h3 {
+          padding-bottom: 11.5px;
+        }
+      }
     }
 
     .demo-button {
@@ -436,6 +570,16 @@ body {
 
         a {
           max-width: 222px;
+        }
+      }
+
+      @include mobile() {
+        margin-top: 48.5px;
+
+        a {
+          max-width: 320px;
+          font-size: 14px;
+          line-heght: 18.9px;
         }
       }
     }
@@ -686,7 +830,7 @@ body {
   }
 
   .ci-ribbon-section {
-    padding: 80px 4px 82px;
+    padding: 0 4px 81px;
   }
 
   .ci-ribbon-inner {
@@ -881,6 +1025,11 @@ body .spz-features .feature-text {
   line-height: 22.4px;
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.7);
+
+  @include tablet-pro() {
+    font-size: 14px;
+    line-height: 19.6px;
+  }
 }
 
 body .spz-features .feature-cta {
@@ -1010,7 +1159,7 @@ body:has(.solution-main) #row3.product-tabbed-cont {
   }
 
   body .spz-features .feature-inner {
-    gap: 30.3px;
+    gap: 31.3px;
   }
 
   body .spz-features .feature-heading {
@@ -1019,8 +1168,8 @@ body:has(.solution-main) #row3.product-tabbed-cont {
   }
 
   body .spz-features .feature-text {
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: 16px;
+    line-height: 22.4px;
   }
 
   body .spz-features .feature-grid {
@@ -1041,11 +1190,15 @@ body:has(.solution-main) #row3.product-tabbed-cont {
     height: 48px;
     font-size: 14px;
     line-height: 18.9px;
+    width: 100%;
+    max-width: 320px;
+    margin: 2.5px auto 0;
   }
 
   body .spz-features .feature-arrows {
-    bottom: 39%;
+    bottom: 39.85%;
     width: auto;
+    height: 664px;
     left: auto;
     right: 0;
   }
@@ -3489,12 +3642,12 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   }
 
   .spz-integrations-inner {
-    gap: 31px;
+    gap: 30px;
   }
 
   .spz-integrations-title {
-    font-size: 36px;
-    line-height: 39.6px;
+    font-size: 32px;
+    line-height: 35.2px;
   }
 
   .spz-integrations-logos {
@@ -3524,9 +3677,10 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   .spz-2015-integrations-cta {
     width: calc(100% - 32px);
     height: 48px;
+    max-width: 328px;
     font-size: 14px;
     line-height: 18.9px;
-    margin-top: -12px;
+    margin-top: -10.5px;
   }
 }
 
@@ -3537,10 +3691,10 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_location_bg.webp');
-  background-size: 1903px 1271px;
-  background-position: -130px 0;
-  background-repeat: no-repeat;
+  // background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_location_bg.webp');
+  // background-size: 1903px 1271px;
+  // background-position: -130px 0;
+  // background-repeat: no-repeat;
   position: relative;
 
   &::after {
@@ -3558,6 +3712,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     @include tablet-pro() {
       display: none;
     }
+
     @include tablet() {
       display: none;
     }
@@ -3575,7 +3730,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
       left: 0;
       bottom: 4px;
       width: 264px;
-      background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791537778/canoeintelligence/4005/group_3753.svg');
+      background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/group_3753_webp.webp');
     }
 
     .spz__compass__faq__list {
@@ -3587,6 +3742,18 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     @include tablet() {
       padding-bottom: 120.5px;
     }
+
+    @include mobile() {
+      padding-bottom: 122.5px;
+
+      .spz__compass__faq__container {
+        padding-top: 18.5px;
+
+        .spz__compass__faq__copy {
+          padding-bottom: 57.5px;
+        }
+      }
+    }
   }
 
   @include tablet() {
@@ -3595,10 +3762,10 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 }
 
 .spz__compass__faq__container {
-  background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_text_bg_two.svg');
-  background-size: 1220px 130px;
-  background-position: top;
-  background-repeat: no-repeat;
+  // background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_text_bg_two.svg');
+  // background-size: 1220px 130px;
+  // background-position: top;
+  // background-repeat: no-repeat;
   position: relative;
   z-index: 1;
   // padding: 80px 32px 0;
@@ -3644,6 +3811,11 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   gap: 0 56px;
 
   @include tablet() {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  @include mobile() {
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -3719,6 +3891,10 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 .spz__compass__faq__container .spz__compass__faq__list__item.active .spz__compass__faq__list__item__answer {
   max-height: 60rem;
   margin-top: -4px;
+
+  @include mobile() {
+    margin-top: 3.5px;
+  }
 }
 
 .spz__compass__faq__container .spz__compass__faq__list__item__answer {
@@ -3781,7 +3957,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   }
 
   .spz__compass__faq__container {
-    padding: 64.5px 20px 0;
+    padding: 15.5px 20px 0;
   }
 
   .spz__compass__faq__image img {
@@ -3791,25 +3967,29 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   }
 
   .spz__compass__faq__container__inner {
-    gap: 64px;
+    gap: 0;
   }
 
   .spz__compass__faq__container .spz__compass__faq__copy h2 {
     font-size: 36px;
-    letter-spacing: -1.08px;
+    line-height: 39.6px;
   }
 
   .spz__compass__faq__container .spz__compass__faq__list__item__question {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 23.5px 30px 23.5px 0;
   }
 
   .spz__compass__faq__container .spz__compass__faq__list__item__question:before {
-    margin-right: 20px;
+    margin-right: 0;
+    right: -1px;
+    margin-top: -1px;
   }
 
   .spz__compass__faq__container .spz__compass__faq__list__item__answer p {
     font-size: 16px;
-    padding: 0px 0px 23.5px 52px;
+    padding: 0px 0px 23.5px;
     line-height: 22px;
   }
 
@@ -3817,6 +3997,19 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 
 .ci_streamline {
   padding-bottom: 120px;
+
+  @include mobile() {
+    padding-bottom: 64px;
+
+    .container {
+      padding: 0 16px;
+      max-width: 100%;
+
+      .ci_ctaOuter {
+        max-width: 280px;
+      }
+    }
+  }
 }
 
 .ci_streamlineInner {
@@ -3829,6 +4022,13 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/banner_2.webp');
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: right;
+
+  @include tablet-pro() {
+    padding: 30px 20px;
+    min-height: 312px;
+    background-size: cover;
+  }
 
   @include tablet() {
     padding: 28px;
@@ -3838,6 +4038,9 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 
   @include mobile() {
     background-image: url('https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/banner_1.webp');
+    padding: 32.5px 24px 24px;
+    align-items: flex-start;
+    min-height: 556px;
   }
 }
 
@@ -3854,12 +4057,29 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 
   }
 
+  @include tablet-pro() {
+    max-width: 420px;
+
+    h3 {
+      font-size: 42px;
+      line-height: 44.4px;
+    }
+  }
+
   @include tablet() {
     max-width: 350px;
 
     h3 {
       font-size: 40px;
       line-height: 44px;
+    }
+  }
+
+  @include mobile() {
+    h3 {
+      font-size: 36px;
+      line-height: 39.6px;
+      padding-bottom: 24.5px;
     }
   }
 }

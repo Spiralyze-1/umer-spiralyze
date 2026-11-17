@@ -56,9 +56,9 @@ document.querySelector('#row1').insertAdjacentHTML('afterend', `
           </span>
           <span>
             <picture>
-              <source media="(max-width: 767.98px)" srcset="">
+              <source media="(max-width: 767.98px)" srcset="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791539537/canoeintelligence/4005/frame_2147223531.svg">
               <img
-                src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791539537/canoeintelligence/4005/frame_2147223531.svg"
+                src="https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791539435/canoeintelligence/4005/prime-quadrant-logo.svg"
                 alt="Prime Quadrant">
             </picture>
           </span>

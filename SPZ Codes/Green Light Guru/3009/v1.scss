@@ -1,0 +1,2020 @@
+$desktop-lg: 1760px;
+$desktop: 1440px;
+$desktop-sm: 1366px;
+$tablet-lg: 1399px;
+$tablet-pro: 1024px;
+$tablet: 1023.98px;
+$tablet-sm: 768px;
+$mobile: 767.98px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media (max-width: #{$desktop-sm}) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet-pro {
+  @media (min-width: #{$tablet-pro}) and (max-width: #{$tablet-lg}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-sm}) and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@charset "UTF-8";
+/* #3009 | Greenlight Guru | Contact | UI Behind the Form (VARIANT) */
+
+/* ===== Scope / reset / tokens ===== */
+html:has(body.spz_3009_v) {
+  background: #fff;
+}
+
+.spz_3009_v~q-root div#qualified-multimodal-host {
+  display: none;
+}
+
+.spz_3009_v {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body.spz_3009_v {
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.spz_3009_v .spz-form-section,
+.spz_3009_v .spz-form-section *,
+.spz_3009_v .spz-form-section *::before,
+.spz_3009_v .spz-form-section *::after {
+  box-sizing: border-box;
+}
+
+.spz_3009_v .spz-original-hidden,
+.spz_3009_v .spz-form-section~*,
+.spz_3009_v main>section:not(.spz-form-section),
+.spz_3009_v .u4m-form-2,
+.spz_3009_v section.u4m-logo-trust-marks-2,
+.spz_3009_v [data-hs-cos-general-type="widget"]:has(.u4m-logo-trust-marks),
+.spz_3009_v .hs_cos_wrapper:has(.u4m-footer),
+.spz_3009_v #hs_cos_wrapper_u4m-footer,
+.spz_3009_v .u4m-footer {
+  display: none !important;
+}
+
+.spz_3009_v .spz-form-section {
+  --spz-font: "proxima-nova", "Proxima Nova", "Helvetica Neue", Arial, sans-serif;
+  --spz-dark-card: #303735;
+  --spz-green: #31d57c;
+  --spz-ink: #171717;
+  --spz-text: #303735;
+  --spz-ghost: #89908e;
+  --spz-border: #d6dbda;
+  --spz-accent: #9756ff;
+  --spz-accent-hover: #803ee9;
+  --spz-error: #f53f3a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #fff;
+  font-family: var(--spz-font);
+  overflow: hidden;
+}
+
+.spz_3009_v .spz-form-section img {
+  max-width: 100%;
+}
+
+/* ===== Hero (background + logo + form card) =====
+   The art is a CSS background at its natural size, pinned to the top.
+   It does not scale when the form grows. ::before only keeps the closed
+   hero tall enough to show the full curve. */
+.spz_3009_v .spz-form-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-1440_1.webp");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.spz_3009_v .spz-form-hero::before {
+  content: "";
+  grid-area: 1 / 1;
+  height: 0;
+  padding-top: calc(100% * 1246 / 2880);
+  pointer-events: none;
+}
+
+.spz_3009_v .spz-form-hero-inner {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+.spz_3009_v .spz-form-section.spz-3009-expanded .spz-form-hero-inner {
+  padding-bottom: 108px;
+}
+
+/* Heading under the logo. Matches the control hero-title / hero-description:
+   h1 is 60px / 800 / #fff with a 25px gap before the paragraph, and the
+   accent line is its own centered line. */
+.spz_3009_v .spz-hero-copy {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.spz_3009_v .spz-hero-title {
+  margin: 20px auto 12px;
+  color: #fff;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0.25rem;
+  text-align: center;
+}
+
+
+
+.spz_3009_v .spz-hero-title span {
+  display: block;
+  color: var(--spz-green);
+  padding: 0;
+}
+
+.spz_3009_v .spz-hero-description {
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  margin: 12px auto 40px;
+  max-width: 770px;
+  letter-spacing: 0.25px;
+}
+
+/* form card */
+.spz_3009_v .spz-form-card {
+  position: relative;
+  width: 612px;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background: #fff;
+  border: 6px solid rgba(41, 178, 96, 0.5);
+  border-radius: 22px;
+  box-shadow: 0 12px 64px rgba(48, 55, 53, 0.16);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(180deg, #29B260 0%, rgba(41, 178, 96, 0.5) 0%, rgba(41, 178, 96, 0.15) 100%) border-box;
+  // transform: translateX(-1px);
+}
+
+.spz_3009_v .spz-form-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33.6px;
+  letter-spacing: 0.25px;
+  color: var(--spz-ink);
+  text-align: center;
+}
+
+.spz_3009_v .spz-form-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.spz_3009_v .spz-form-subtitle {
+  margin: 0;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.25px;
+  color: var(--spz-ghost);
+  text-align: center;
+}
+
+.spz_3009_v .spz-form-subtitle[hidden] {
+  display: none !important;
+}
+
+/* Progress indicator is visual only — not a control. */
+.spz_3009_v .spz-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 218px;
+  height: 26px;
+  margin: 0 auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spz_3009_v .spz-step-node {
+  position: relative;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  border: 4px solid #d6dbda;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.spz_3009_v .spz-step-node.is-current {
+  border-color: #29b260;
+}
+
+.spz_3009_v .spz-step-node.is-done {
+  border: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='4 5 16 16' fill='none'%3E%3Ccircle cx='12' cy='13' r='8' fill='%2329B260'/%3E%3Cpath d='M15.955 10.6516C16.2478 10.9445 16.2478 11.4194 15.955 11.7123L11.7123 15.955C11.5291 16.138 11.2748 16.2067 11.0383 16.1607C10.9441 16.1424 10.8527 16.1057 10.7697 16.0509C10.749 16.0372 10.7286 16.0227 10.709 16.0067L10.6517 15.955L8.53033 13.8336C8.23753 13.5408 8.23768 13.0659 8.53033 12.773C8.82322 12.4801 9.2981 12.4801 9.59099 12.773L11.182 14.364L14.8943 10.6516C15.1872 10.3588 15.6621 10.3588 15.955 10.6516Z' fill='white'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+}
+
+.spz_3009_v .spz-step-node.is-done::after {
+  content: none;
+}
+
+.spz_3009_v .spz-step-bar {
+  width: 83px;
+  height: 2px;
+  flex: 0 0 83px;
+  background: #d6dbda;
+}
+
+.spz_3009_v .spz-step-bar.is-done {
+  background: #29b260;
+}
+
+.spz_3009_v .spz-back {
+  position: absolute;
+  top: 37px;
+  left: 32px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #303735;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-back-icon path {
+  fill: #46524f;
+}
+
+.spz_3009_v .spz-back:hover,
+.spz_3009_v .spz-back:focus-visible {
+  color: #9756ff;
+}
+
+.spz_3009_v .spz-back:hover .spz-back-icon path,
+.spz_3009_v .spz-back:focus-visible .spz-back-icon path {
+  fill: #9756ff;
+}
+
+.spz_3009_v .spz-back[hidden] {
+  display: none !important;
+}
+
+.spz_3009_v .spz-back-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+.spz_3009_v .spz-software {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.spz_3009_v .spz-software[hidden] {
+  display: none !important;
+}
+
+.spz_3009_v .spz-software-option {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 134px;
+  margin: 0;
+  padding: 20px 16px;
+  border: 1px solid #d6dbda;
+  border-radius: 12px;
+  background: #fff;
+  color: #89908e;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-software-option:hover,
+.spz_3009_v .spz-software-option:focus-visible {
+  border-color: #9756ff;
+}
+
+.spz_3009_v .spz-software-option.is-selected,
+.spz_3009_v .spz-software-option.is-selected:hover,
+.spz_3009_v .spz-software-option.is-selected:focus-visible {
+  border-color: #9756ff;
+  background: rgba(151, 86, 255, 0.1);
+  color: #050605;
+}
+
+.spz_3009_v .spz-software-option.is-selected .spz-software-icon {
+  color: #9756ff;
+}
+
+.spz_3009_v .spz-software-radio {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #89908e;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.spz_3009_v .spz-software-option.is-selected .spz-software-radio {
+  border: 6px solid #9756ff;
+}
+
+.spz_3009_v .spz-software-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #89908e;
+}
+
+.spz_3009_v .spz-software-icon svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.spz_3009_v .spz-software.is-invalid .spz-software-option:not(:hover):not(.is-selected) {
+  border-color: #f53f3a;
+}
+
+.spz_3009_v .spz-software-error {
+  width: 100%;
+  margin: -8px 0 0;
+  color: #f53f3a;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: center;
+}
+
+.spz_3009_v .spz-software-error[hidden] {
+  display: none !important;
+}
+
+.spz_3009_v .spz-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 16px 20px;
+  border: 0;
+  border-radius: 50px;
+  background: #9756ff;
+  color: #fff;
+  font-family: "proxima-nova", "proxima-fallback", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-next:hover {
+  background: #803ee9;
+}
+
+.spz_3009_v .spz-next[hidden] {
+  display: none !important;
+}
+
+.spz_3009_v .spz-form-section .hs-form-private .dummy-cta {
+  width: 160px;
+  height: 50px;
+  border-radius: 50px;
+  background: #9756FF;
+  border: 0;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.25s ease;
+  margin-top: 8px;
+}
+
+/* ===== Injected HubSpot form ===== */
+.spz_3009_v .spz-form-target {
+  width: 100%;
+}
+
+.spz_3009_v .spz-form-target>.form,
+.spz_3009_v .spz-form-target .form-wrapper,
+.spz_3009_v .spz-form-target .form-wrapper>.form,
+.spz_3009_v .spz-form-target .hbspt-form,
+.spz_3009_v .spz-form-target .hs_cos_wrapper,
+.spz_3009_v .spz-form-target [id^="hs_form_target_"],
+.spz_3009_v .spz-form-target [data-hs-forms-root] {
+  display: contents;
+}
+
+.spz_3009_v .spz-form-target .form-wrapper>.heading,
+.spz_3009_v .spz-form-target .form-wrapper>h2,
+.spz_3009_v .spz-form-target .form-wrapper>h3,
+.spz_3009_v .spz-form-target>.form>.heading,
+.spz_3009_v .spz-form-target>.form>h2,
+.spz_3009_v .spz-form-target>.form>h3 {
+  display: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  font-family: var(--spz-font);
+}
+
+.spz_3009_v .spz-form-target .hs-form-private fieldset {
+  display: contents !important;
+  max-width: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field {
+  display: contents !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field {
+  position: relative;
+  grid-column: span 1;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field label.floating-label {
+  display: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_email,
+.spz_3009_v .spz-form-target .hs-form-private .hs_what_describes_your_organization_best_,
+.spz_3009_v .spz-form-target .hs-form-private .hs_number_of_products_to_market,
+.spz_3009_v .spz-form-target .hs-form-private .hs_what_types_of_products_does_your_pharmaceutical_company_develop_,
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio {
+  grid-column: 1 / -1;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_firstname,
+.spz_3009_v .spz-form-target .hs-form-private .hs_lastname,
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone,
+.spz_3009_v .spz-form-target .hs-form-private .hs_dropdown_country,
+.spz_3009_v .spz-form-target .hs-form-private .hs_us_state,
+.spz_3009_v .spz-form-target .hs-form-private .hs_canadian_province {
+  grid-column: span 1;
+}
+
+/* hidden hubspot fields */
+.spz_3009_v .spz-form-target .hs-form-private .hs_demo_product_dropdown,
+.spz_3009_v .spz-form-target .hs-form-private .hs_demo_request_form_type,
+.spz_3009_v .spz-form-target .hs-form-private .hs_would_you_like_demo_,
+.spz_3009_v .spz-form-target .hs-form-private .hs_cro1,
+.spz_3009_v .spz-form-target .hs-form-private .hs_cro2,
+.spz_3009_v .spz-form-target .hs-form-private .hs_utm_campaign,
+.spz_3009_v .spz-form-target .hs-form-private .hs_utm_content,
+.spz_3009_v .spz-form-target .hs-form-private .hs_utm_medium,
+.spz_3009_v .spz-form-target .hs-form-private .hs_utm_source,
+.spz_3009_v .spz-form-target .hs-form-private .hs_utm_term {
+  display: none !important;
+}
+
+/* ---- 3 steps: inactive fields stay in the form so values survive Back and refresh prefill ---- */
+.spz_3009_v .spz-form-card[data-step="1"] .spz-form-target {
+  display: none;
+}
+
+.spz_3009_v .spz-form-card[data-step="2"] .spz-step3-only,
+.spz_3009_v .spz-form-card[data-step="3"] .spz-step2-only {
+  display: none !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li {
+  width: fit-content;
+  margin-bottom: 4px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label {
+  display: flex;
+  align-items: center;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label span {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  padding-left: 10px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware label.hs-error-msg {
+  padding: 0 !important;
+  background: transparent !important;
+  color: #F53F3A !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 19.2px !important;
+  letter-spacing: 0.25px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field .hs_are_you_planning_a_clinical_study__registry__or_a_survey_ {
+  grid-column: span 2;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field .hs_what_is_your_role_at_your_academic_institution_ {
+  grid-column: span 2;
+}
+
+.spz_3009_v .spz-hero-title span:before,
+.spz_3009_v .spz-hero-title span:after {
+  display: none;
+}
+
+@keyframes spz3009reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* native labels -> screen-reader only */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field>label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-required {
+  display: none !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .input {
+  width: 100%;
+}
+
+/* inputs + selects */
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type="checkbox"]):not([type="radio"]),
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 8px 15px 11px;
+  margin: 0 !important;
+  background: #fff;
+  border: 1px solid var(--spz-border) !important;
+  border-radius: 8px;
+  font-family: var(--spz-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.25px;
+  color: var(--spz-text);
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Beat HubSpot's select.hs-input { width: auto } (sizes to longest option). */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:not(.hs_phone) select.hs-input {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 36px !important;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none"><path d="M5.29361 6C5.20695 5.99964 5.12122 5.98207 5.0414 5.94831C4.96157 5.91455 4.88923 5.86527 4.82857 5.80332L0.191269 1.11583C0.0688016 0.993251 0 0.826996 0 0.65364C0 0.480284 0.0688016 0.314028 0.191269 0.191447C0.313737 0.0688654 0.479839 0 0.653034 0C0.82623 0 0.992332 0.0688654 1.1148 0.191447L5.28706 4.40691L9.38072 0.21767C9.63617 -0.0380109 10.0488 -0.0445669 10.3043 0.204558C10.5597 0.46024 10.5662 0.873263 10.3174 1.12894L5.75865 5.79021C5.69799 5.85216 5.62565 5.90144 5.54582 5.9352C5.466 5.96896 5.38027 5.98653 5.29361 5.98689V6Z" fill="%2346524F"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center !important;
+  background-size: 12px 12px;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input.is-placeholder {
+  color: transparent;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-filled select.hs-input {
+  color: var(--spz-text);
+}
+
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input.is-placeholder option {
+  color: var(--spz-text);
+}
+
+/* .spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type="checkbox"]):not([type="radio"]):hover,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:hover,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:hover {
+    border-color: #b6bdbc !important;
+} */
+
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type="checkbox"]):not([type="radio"]):focus,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:focus,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:focus {
+  border-color: #050605 !important;
+  box-shadow: none;
+}
+
+/* phone (intl-phone) */
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone .hs-fieldtype-intl-phone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone .hs-fieldtype-intl-phone::after {
+  display: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone select.hs-input {
+  width: 90px;
+  flex: 0 0 90px;
+  padding-right: 26px;
+  background-position: right 9px center;
+  text-overflow: ellipsis;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone input[type="tel"].hs-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone input[type="hidden"] {
+  display: none;
+}
+
+/* Country is full width until a state/province field shares its row.
+   Phone stays beside Company on every country. */
+.spz_3009_v .spz-form-target .hs-form-private:not(.US-selected) .hs_dropdown_country {
+  grid-column: 1 / -1;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_company,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone {
+  grid-column: span 1;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_us_state,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_canadian_province {
+  grid-column: span 1;
+}
+
+/* Nested HubSpot dependent field: keep country + region on one row */
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country:has(.hs_us_state),
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country:has(.hs_canadian_province) {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone,
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone select.hs-input,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone select,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone select.hs-input,
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone select,
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone select.hs-input,
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"].US-selected fieldset .hs-fieldtype-intl-phone select,
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form.US-selected .hs-fieldtype-intl-phone select,
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private.US-selected .hs-fieldtype-intl-phone select,
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone select,
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone select,
+.spz_3009_v #hs_cos_wrapper_widget_1764067940942_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected .hs-fieldtype-intl-phone select {
+  width: 90px !important;
+  flex: 0 0 90px !important;
+  min-width: 0 !important;
+  max-width: 90px !important;
+  margin: 0 !important;
+  padding-right: 26px !important;
+  background-position: right 9px center !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone input[type="tel"].hs-input,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"].US-selected fieldset .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+.spz_3009_v #hs_cos_wrapper_widget_1764067940942_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected .hs-fieldtype-intl-phone input[type="tel"] {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* floating labels */
+.spz_3009_v .spz-form-target .hs-form-private .spz-float-label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  padding: 0 4px;
+  background: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.25px;
+  color: var(--spz-ghost);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+  transition: top 0.15s ease, font-size 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .input:has(select)+.spz-float-label {
+  max-width: calc(100% - 48px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-filled>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-focused>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(input:autofill)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(input:-webkit-autofill)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(textarea:autofill)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(textarea:-webkit-autofill)>.spz-float-label {
+  top: -9px;
+  font-size: 12px;
+  line-height: 19.2px;
+  background: #fff;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-focused>.spz-float-label {
+  color: var(--spz-text);
+}
+
+/* Chrome paints the suggestion inside the field on hover. Lift that label into
+   the focus style so it does not sit on the preview text. It drops back when
+   the pointer leaves, because this only matches the preview state. */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:not(.hs_phone):has(input:-internal-autofill-previewed)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:not(.hs_phone):has(textarea:-internal-autofill-previewed)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:not(.hs_phone):has(select:-internal-autofill-previewed)>.spz-float-label {
+  top: -9px;
+  font-size: 12px;
+  line-height: 19.2px;
+  background: #fff;
+  color: var(--spz-text);
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_phone>.spz-float-label {
+  top: -8px;
+  font-size: 12px;
+  line-height: 1;
+  background: #fff;
+}
+
+/* errors — .spz-error / .spz-invalid beat hover + focus until the user types */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid) input.hs-input:not([type="checkbox"]):not([type="radio"]),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid) textarea.hs-input,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid):not(.hs_phone) select.hs-input,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.spz-error-cleared) input.hs-input:not([type="checkbox"]):not([type="radio"]),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone):not(.spz-error-cleared) select.hs-input,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid) input.hs-input:not([type="checkbox"]):not([type="radio"]):is(:hover, :focus, :focus-visible),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid) textarea.hs-input:is(:hover, :focus, :focus-visible),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid):not(.hs_phone) select.hs-input:is(:hover, :focus, :focus-visible),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.spz-error-cleared) input.hs-input:not([type="checkbox"]):not([type="radio"]):is(:hover, :focus, :focus-visible),
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone):not(.spz-error-cleared) select.hs-input:is(:hover, :focus, :focus-visible) {
+  border: 1px solid #f53f3a !important;
+  box-shadow: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid)>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid).spz-focused>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid).spz-filled>.spz-float-label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone):not(.spz-error-cleared) .spz-float-label {
+  color: #f53f3a !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private .hs-error-msgs,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid):not(.hs_phone) .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:is(.spz-error, .spz-invalid):not(.hs_phone) .hs-error-msgs {
+  display: block !important;
+  list-style: none;
+  top: 0;
+  padding: 0;
+  margin: 4px 0 0 !important;
+  color: #f53f3a !important;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-error-cleared>.spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.spz-error-cleared .hs-error-msgs {
+  display: none !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-error-msgs li {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* Phone error sits under the number input — same offsets as true control.
+   Full margin shorthand + error-state specificity so the generic error rule cannot reset left. */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone .hs-error-msgs,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .hs-error-msgs {
+  display: block !important;
+  list-style: none;
+  top: 0;
+  padding: 0;
+  margin: 4px 0 0 106px !important;
+  color: #f53f3a !important;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone .hs-error-msgs,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .spz-error-msg,
+.spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .hs-error-msgs {
+  margin: 4px 0 0 106px !important;
+}
+
+/* disclaimer */
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container {
+  grid-column: 1 / -1;
+  margin-top: 7px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container .hs-richtext,
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container p {
+  margin: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  color: var(--spz-ghost);
+  text-align: left;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container a {
+  color: var(--spz-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .legal-consent-container a:hover {
+  text-decoration: underline;
+}
+
+/* submit — native hidden, dummy CTA drives all steps */
+.spz_3009_v .spz-form-target .hs-form-private .hs_submit {
+  grid-column: 1 / -1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_submit input.hs-button,
+.spz_3009_v .spz-form-target .hs-form-private .hs_submit button {
+  width: 100%;
+  height: 50px;
+  padding: 15px 20px !important;
+  border: none !important;
+  border-radius: 50px !important;
+  background: #9756FF !important;
+  color: #ffffff !important;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_submit input.hs-button:hover,
+.spz_3009_v .spz-form-target .hs-form-private .hs_submit button:hover {
+  background: #803EE9 !important;
+}
+
+/* remaining dependent / error fields span both columns */
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(select[name="number_of_products_to_market"]),
+.spz_3009_v .spz-form-target .hs-form-private .hs_error_rollup {
+  grid-column: span 2;
+}
+
+/* Org-type dependents (#3006 parity): number-of-products select + software checkboxes */
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox>label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio>label,
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware>label {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0 0 8px;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  display: block !important;
+  border: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware>label span,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox>label span {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio>label span {
+  color: var(--spz-ghost);
+  font-family: var(--spz-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label {
+  color: var(--spz-ghost);
+  font-family: var(--spz-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.6px;
+  letter-spacing: 0.25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label span,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label span {
+  color: #303735;
+  font-family: "proxima-nova";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  padding-left: 10px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label input,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 16px !important;
+  height: 16px;
+  margin: 0 !important;
+  padding: 0;
+  border-radius: 4px;
+  border: 1px solid #89908e !important;
+  background: #fff;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 16px !important;
+  height: 16px;
+  margin: 0 !important;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(137, 144, 142, 0.5) !important;
+  background: #fff;
+  cursor: pointer;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label input:checked,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label input:checked {
+  appearance: none;
+  background: #9756ff;
+  border-color: #9756ff !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label input:checked:after,
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label input:checked:after {
+  content: "";
+  position: absolute;
+  left: 4.3px;
+  top: 1.5px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+body.spz_3009_v.os-windows .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label input:checked:after,
+body.spz_3009_v.os-windows .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label input:checked:after {
+  left: 4.9px;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label input:checked {
+  background: #fff;
+  border-color: var(--spz-accent) !important;
+}
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label input:checked:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--spz-accent);
+  transform: translate(-50%, -50%);
+}
+
+/* autofill */
+
+@keyframes spz3009autofill {
+  from {
+    opacity: 0.999;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-webkit-autofill,
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-webkit-autofill:hover,
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-webkit-autofill:focus,
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: var(--spz-text) !important;
+  transition: background-color 99999s ease-in-out 0s;
+  animation: spz3009autofill 0.01s;
+}
+
+/* Suggestion hover matches :-webkit-autofill and would start the autofill
+   animation. Hold it until the suggestion is actually chosen. */
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-internal-autofill-previewed,
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-internal-autofill-previewed:hover,
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:-internal-autofill-previewed:focus,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:-internal-autofill-previewed,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:-internal-autofill-previewed:hover,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:-internal-autofill-previewed:focus,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:-internal-autofill-previewed,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:-internal-autofill-previewed:hover,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:-internal-autofill-previewed:focus {
+  animation: none;
+}
+
+/* ===== Logos strip (marquee) ===== */
+.spz_3009_v .spz-social {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 0px 20px;
+}
+
+.spz-form-section.spz-3009-expanded .spz-social {
+  transform: translateY(-52px);
+  padding-bottom: 9px;
+}
+
+.spz_3009_v .spz-social-heading {
+  margin: 0;
+  font-family: 'proxima-nova';
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 22.4px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #050605;
+  text-align: center;
+}
+
+.spz_3009_v .spz-social-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.spz_3009_v .spz-social-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  opacity: 0.7;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.spz_3009_v .spz-social-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Pixel distance is set in JS. A percentage shift is resolved against whatever
+   width the track has on the first frame, which is wrong until logos decode. */
+.spz_3009_v .spz-social-track.spz-marquee-ready {
+  -webkit-animation: spz-3009-marquee 45s linear infinite;
+  animation: spz-3009-marquee 45s linear infinite;
+}
+
+.spz_3009_v .spz-social-track img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 45px;
+}
+
+.spz_3009_v .spz-social-viewport::before,
+.spz_3009_v .spz-social-viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+
+.spz_3009_v .spz-social-viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 20%, rgba(255, 255, 255, 0));
+}
+
+.spz_3009_v .spz-social-viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 20%, rgba(255, 255, 255, 0));
+}
+
+@-webkit-keyframes spz-3009-marquee {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(var(--spz-marquee-x, 0px), 0, 0);
+    transform: translate3d(var(--spz-marquee-x, 0px), 0, 0);
+  }
+}
+
+@keyframes spz-3009-marquee {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(var(--spz-marquee-x, 0px), 0, 0);
+    transform: translate3d(var(--spz-marquee-x, 0px), 0, 0);
+  }
+}
+
+/* cards can never be clicked */
+
+/* quote cards */
+
+/* stat card (50%) */
+
+/* review badges (Capterra / G2) */
+
+.spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone):not(.spz-error-cleared) .spz-float-label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+.spz_3009_v .spz-form-target .form-wrapper::before,
+.spz_3009_v .spz-form-target .form-wrapper::after {
+  display: none;
+}
+
+/* ===== Footer (kept from #3009) ===== */
+.spz_3009_v .spz-site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  background: #ffffff;
+  border-top: 1px solid #D6DBDA;
+  padding: 12px 64px;
+}
+
+.spz_3009_v .spz-site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.spz_3009_v .spz-site-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.4px;
+  letter-spacing: 0.25px;
+  color: #303735;
+}
+
+.spz_3009_v .spz-site-footer-legal a {
+  color: #303735;
+  text-decoration: none;
+  margin-left: 3px;
+}
+
+.spz_3009_v .spz-site-footer-legal a:hover {
+  text-decoration: underline;
+}
+
+.spz_3009_v .spz-site-footer-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spz_3009_v .spz-site-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.spz_3009_v .spz-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.spz_3009_v .spz-icon-facebook {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15.334 12.625H13.2832V18.75H10.5488V12.625H8.33398V10.082H10.5488V8.16797C10.5488 7.4388 10.6855 6.81901 10.959 6.30859C11.2324 5.79818 11.6152 5.41536 12.1074 5.16016C12.6178 4.88672 13.2012 4.75 13.8574 4.75C14.1491 4.75 14.459 4.76823 14.7871 4.80469C15.1152 4.82292 15.3704 4.85026 15.5527 4.88672L15.8262 4.91406V7.07422H14.7324C14.222 7.07422 13.8483 7.21094 13.6113 7.48438C13.3926 7.73958 13.2832 8.05859 13.2832 8.44141V10.082H15.7168L15.334 12.625Z" fill="%2346524F"/></svg>');
+}
+
+.spz_3009_v .spz-icon-linkedin {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.10938 17H6.56641V8.82422H9.10938V17ZM7.85156 7.70312C7.45052 7.70312 7.10417 7.55729 6.8125 7.26562C6.52083 6.97396 6.375 6.6276 6.375 6.22656C6.375 5.82552 6.52083 5.47917 6.8125 5.1875C7.10417 4.89583 7.45052 4.75 7.85156 4.75C8.10677 4.75 8.34375 4.8138 8.5625 4.94141C8.79948 5.06901 8.98177 5.2513 9.10938 5.48828C9.25521 5.70703 9.32812 5.95312 9.32812 6.22656C9.32812 6.48177 9.25521 6.72786 9.10938 6.96484C8.98177 7.18359 8.79948 7.36589 8.5625 7.51172C8.34375 7.63932 8.10677 7.70312 7.85156 7.70312ZM18.625 17H16.082V13.0078C16.082 12.6979 16.0729 12.4518 16.0547 12.2695C16.0365 12.069 15.9909 11.8503 15.918 11.6133C15.8451 11.3581 15.7083 11.1667 15.5078 11.0391C15.3255 10.9115 15.0794 10.8477 14.7695 10.8477C14.168 10.8477 13.7578 11.0391 13.5391 11.4219C13.3385 11.8047 13.2383 12.3151 13.2383 12.9531V17H10.6953V8.82422H13.1562V9.94531H13.1836C13.3659 9.58073 13.6667 9.27083 14.0859 9.01562C14.5052 8.74219 15.0065 8.60547 15.5898 8.60547C16.2096 8.60547 16.7201 8.70573 17.1211 8.90625C17.5404 9.08854 17.8503 9.37109 18.0508 9.75391C18.2695 10.1185 18.4154 10.5195 18.4883 10.957C18.5794 11.3945 18.625 11.9141 18.625 12.5156V17Z" fill="%2346524F"/></svg>');
+}
+
+.spz_3009_v .spz-icon-twitter {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.5508 8.90625C17.569 8.97917 17.5781 9.09766 17.5781 9.26172C17.5781 10.2279 17.3958 11.194 17.0312 12.1602C16.6667 13.1081 16.1471 13.9831 15.4727 14.7852C14.8164 15.569 13.9596 16.207 12.9023 16.6992C11.8451 17.1914 10.6784 17.4375 9.40234 17.4375C7.79818 17.4375 6.33073 17.0091 5 16.1523C5.20052 16.1706 5.42839 16.1797 5.68359 16.1797C7.01432 16.1797 8.20833 15.7695 9.26562 14.9492C8.6276 14.9492 8.0625 14.7669 7.57031 14.4023C7.09635 14.0195 6.76823 13.5456 6.58594 12.9805C6.76823 12.9987 6.94141 13.0078 7.10547 13.0078C7.36068 13.0078 7.61589 12.9805 7.87109 12.9258C7.43359 12.8346 7.04167 12.6523 6.69531 12.3789C6.34896 12.1055 6.07552 11.7773 5.875 11.3945C5.67448 10.9935 5.57422 10.5651 5.57422 10.1094V10.0547C5.97526 10.2917 6.40365 10.4193 6.85938 10.4375C6.0026 9.85417 5.57422 9.05208 5.57422 8.03125C5.57422 7.52083 5.71094 7.03776 5.98438 6.58203C6.69531 7.47526 7.5612 8.1862 8.58203 8.71484C9.62109 9.24349 10.724 9.53516 11.8906 9.58984C11.8542 9.37109 11.8359 9.15234 11.8359 8.93359C11.8359 8.14974 12.1094 7.47526 12.6562 6.91016C13.2214 6.34505 13.8958 6.0625 14.6797 6.0625C15.5182 6.0625 16.2201 6.36328 16.7852 6.96484C17.4414 6.83724 18.0521 6.60938 18.6172 6.28125C18.3984 6.95573 17.9792 7.48438 17.3594 7.86719C17.9062 7.79427 18.4531 7.63932 19 7.40234C18.599 7.98568 18.1159 8.48698 17.5508 8.90625Z" fill="%2346524F"/></svg>');
+}
+
+.spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type="checkbox"]):not([type="radio"]):hover,
+.spz_3009_v .spz-form-target .hs-form-private select.hs-input:hover,
+.spz_3009_v .spz-form-target .hs-form-private textarea.hs-input:hover {
+  border-color: #6B7270 !important;
+}
+
+
+/* ===== Media queries ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .spz_3009_v .spz-social-track,
+  .spz_3009_v .spz-social-track.spz-marquee-ready {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+
+@media only screen and (min-width: 1600px) and (max-width: 1919.98px) {
+
+  .spz_3009_v .spz-form-card {
+    box-shadow: 0 7px 24px rgba(48, 55, 53, 0.16);
+  }
+}
+
+/* 1920 art (3840×1246) from 1600px until the 2560 art takes over. */
+@media only screen and (min-width: 1600px) {
+  .spz_3009_v .spz-form-hero {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-1920_1.webp");
+  }
+
+  .spz_3009_v .spz-form-hero::before {
+    padding-top: calc(100% * 1246 / 3840);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .spz_3009_v .spz-form-card {
+    gap: 34px;
+    padding: 39px 40px 39px;
+  }
+
+  .spz_3009_v .spz-form-hero {
+    padding-bottom: 24px;
+  }
+
+  /* Floor is the art ratio minus this padding, so the closed hero
+       stays the same height it had with aspect-ratio. */
+  .spz_3009_v .spz-form-hero::before {
+    padding-top: calc(100% * 1246 / 3840 - 24px);
+  }
+
+  .spz_3009_v .spz-form-hero-inner {
+    padding: 32px 20px 58px;
+    gap: 28px;
+  }
+
+  /* Same as 2100+: logo row sits just above the footer, not under the curve. */
+  .spz_3009_v .spz-social,
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-social {
+    transform: none;
+    margin-top: auto;
+    padding: 10px 0 60px;
+    gap: 24px;
+  }
+
+  .spz_3009_v .spz-site-footer {
+    margin-top: 0;
+  }
+
+  .spz-form-section.spz-3009-expanded .spz-form-hero-inner {
+    padding: 40px 20px 88px;
+  }
+
+  .spz_3009_v .spz-social-track img {
+    margin-right: 56px;
+  }
+
+}
+
+/* Above 2100 the 2560 art is shown in full. The hero stays at least as tall as that
+   image when the form is closed, so the curve is not cropped up under the card.
+   Expand grows the hero downward and the logo row follows the card. */
+
+@media only screen and (min-width: 2100px) {
+  .spz_3009_v .spz-form-hero {
+    padding-bottom: 0;
+    flex-shrink: 0;
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-2560_2.webp");
+  }
+
+  .spz_3009_v .spz-form-hero::before {
+    height: 0;
+    padding-top: calc(100% * 1246 / 5120);
+  }
+
+  .spz_3009_v .spz-form-hero-inner,
+  .spz_3009_v.spz_3009_form_reveal .spz-form-hero-inner,
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-form-hero-inner {
+    padding: 40px 20px 60px;
+    gap: 28px;
+  }
+
+  /* Keep the logo row just above the footer. Free space stays under the curve. */
+  .spz_3009_v .spz-social,
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-social {
+    transform: none;
+    margin-top: auto;
+    padding: 16px 0 40px;
+    gap: 24px;
+  }
+
+  .spz_3009_v .spz-site-footer {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+
+  .spz_3009_v .spz-social,
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-social {
+    padding: 16px 0 59px;
+    gap: 25px;
+  }
+
+  .spz_3009_v .spz-social-track img {
+    margin-right: 72px;
+  }
+
+}
+
+@media only screen and (max-width: 1220px) and (min-width: 1025px) {
+
+  .spz_3009_v .spz-form-section img {
+    object-fit: contain;
+  }
+}
+
+/* ===== Tablet (<= 1023.98px) ===== */
+
+@media (max-width: 1024px) {
+  // .spz_3009_v .spz-hero-title {
+  //     font-size: 44px;
+  // }
+
+  .spz_3009_v .spz-form-section img {
+    object-fit: contain;
+  }
+
+  .spz_3009_v .spz-form-hero-inner {
+    padding: 40px 40px 105px;
+    gap: 23px;
+  }
+
+  .spz_3009_v .spz-social {
+    padding: 48px 0 20px;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type=checkbox]):not([type=radio]),
+  .spz_3009_v .spz-form-target .hs-form-private select.hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private textarea.hs-input {
+    padding: 9px 15px 11px;
+  }
+
+  .spz_3009_v .spz-social-heading {
+    max-width: 80%;
+  }
+
+  .spz_3009_v .spz-site-footer {
+    padding: 12px 40px;
+  }
+
+  .spz-form-section.spz-3009-expanded .spz-social {
+    transform: translateY(-52px);
+    padding: 14px 0 8px;
+  }
+
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-form-hero-inner {
+    padding-bottom: 81px;
+  }
+
+}
+
+@media (max-width: 1023.98px) {
+  .spz_3009_v .spz-site-footer {
+    padding: 12px 40px;
+  }
+}
+
+
+@media only screen and (max-width: 991px) {
+  .spz_3009_v .spz-hero-title {
+    margin-top: 0;
+  }
+
+  .spz_3009_v .spz-hero-title span {
+    display: inline;
+  }
+
+  .spz_3009_v .spz-hero-description {
+    margin-bottom: 20px;
+    max-width: 701px;
+  }
+}
+
+
+
+@media (max-width: 800px) {
+  .spz_3009_v .spz-form-hero-inner {
+    padding: 32px 40px 71px;
+    gap: 23px;
+  }
+
+  .spz_3009_v .spz-social {
+    padding: 0px 0 20px;
+  }
+
+  .spz-form-section.spz-3009-expanded .spz-social {
+    transform: translateY(-24px);
+    padding: 14px 0 8px;
+  }
+}
+
+/* ===== Mobile (<= 767.98px) ===== */
+
+@media (max-width: 767.98px) {
+  .spz_3009_v .spz-hero-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    line-height: 38px;
+    text-align: left;
+  }
+
+  .spz_3009_v .spz-hero-description {
+    font-size: 18px;
+    line-height: 29px;
+    text-align: left;
+    margin: 12px auto;
+  }
+
+  .spz_3009_v .spz-form-hero-inner {
+    padding: 32px 20px 32px;
+    gap: 23px;
+    align-items: flex-start;
+  }
+
+  .spz_3009_v .spz-form-section.spz-3009-expanded .spz-form-hero-inner {
+    padding-bottom: 62px;
+  }
+
+  .spz_3009_v .spz-form-card {
+    width: 100%;
+    gap: 34px;
+    padding: 24px;
+    padding-top: 23px;
+    transform: translateX(0px);
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs_submit {
+    margin-top: 7px;
+  }
+
+  .spz_3009_v .spz-form-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .spz_3009_v .spz-social-heading {
+    line-height: 22px;
+  }
+
+  .spz-form-section.spz-3009-expanded .spz-social {
+    transform: translateY(-24px);
+    padding: 14px 0 26px;
+  }
+
+  .spz_3009_v .spz-form-card {
+    min-width: 0;
+    max-width: calc(100% + 12px);
+    margin-left: -6px;
+    margin-right: -6px;
+    width: calc(100% + 12px);
+    border-radius: 14px;
+    padding-bottom: 30px;
+  }
+
+  .spz_3009_v .spz-form-target,
+  .spz_3009_v .spz-form-target .hs-form-private,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field,
+  .spz_3009_v .spz-form-target .hs-form-private .input {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_us_state,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_canadian_province {
+    grid-column: 1 / -1;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country:has(.hs_us_state),
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_dropdown_country:has(.hs_canadian_province) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* HubSpot sets select.hs-input { width: auto }, so State / Country / product
+       dropdowns grow to the longest option and stretch every 100% field. */
+  .spz_3009_v .spz-form-target .hs-form-private input.hs-input:not([type="checkbox"]):not([type="radio"]),
+  .spz_3009_v .spz-form-target .hs-form-private select.hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private textarea.hs-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .spz_3009_v .spz-software {
+    flex-direction: column;
+  }
+
+  .spz_3009_v .spz-back {
+    left: 24px;
+  }
+
+  /* Keep the progress marks clear of the Back control on a narrow card. */
+  .spz_3009_v .spz-form-card:not([data-step="1"]) .spz-stepper {
+    width: auto;
+    margin-left: 88px;
+    margin-right: 8px;
+  }
+
+  .spz_3009_v .spz-form-card:not([data-step="1"]) .spz-step-bar {
+    width: 36px;
+    flex-basis: 36px;
+  }
+
+  /* Phone country code and number stay on one row; the other fields stack. */
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone .hs-fieldtype-intl-phone,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone div.hs-input.hs-fieldtype-intl-phone,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form .hs-fieldtype-intl-phone,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone select.hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone .hs-fieldtype-intl-phone select,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone div.hs-input.hs-fieldtype-intl-phone select.hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone select.hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone select,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone select.hs-input,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form .hs-fieldtype-intl-phone select,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form .hs-fieldtype-intl-phone select.hs-input,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"] fieldset .hs-fieldtype-intl-phone select,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone select,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone select.hs-input,
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"].US-selected fieldset .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form.US-selected .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private.US-selected .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176 fieldset.form-columns-1 .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09 fieldset.form-columns-1 .hs-fieldtype-intl-phone select,
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone select {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    max-width: 90px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone input[type="tel"].hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v .spz-form-target .hs-form-private .hs_phone div.hs-input.hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone input[type="tel"].hs-input,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs_phone div.hs-input.hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"] fieldset .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v [id*="hs_cos_wrapper_widget"] form[class*="hs-form"].US-selected fieldset .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ form.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-private.US-selected .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176 fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-ed3e533e-40c2-419f-ba0d-003c771ea176.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09 fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"],
+  .spz_3009_v #hs_cos_wrapper_widget_1650491352044_ .hs-form-5f1f29b0-b0ab-4892-9de3-ef83dc30cf09.US-selected fieldset.form-columns-1 .hs-fieldtype-intl-phone input[type="tel"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone .spz-error-msg,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone .hs-error-msgs,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .spz-error-msg,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .hs-error-msgs,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone .spz-error-msg,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone .hs-error-msgs,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .spz-error-msg,
+  .spz_3009_v .spz-form-target .hs-form-private.US-selected .hs-form-field.hs_phone:is(.spz-error, .spz-invalid) .hs-error-msgs {
+    margin: 4px 0 0 106px !important;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label {
+    gap: 10px;
+  }
+
+  /* Match control checkbox wrapping: don't shrink-wrap labels on mobile. */
+  .spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li {
+    width: 100%;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field:has(.hs_what_describes_your_organization_best_) .hs_simd_samd_hardware ul li label,
+  .spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label {
+    display: block;
+    width: 100%;
+    align-items: unset;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label input,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label input {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px !important;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs_simd_samd_hardware ul.inputs-list li label span,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-checkbox ul.inputs-list li label span {
+    display: inline;
+    padding-left: 10px;
+    width: auto;
+    flex: none;
+    min-width: 0;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-fieldtype-radio ul.inputs-list li label span {
+    padding: 0;
+    width: calc(100% - 26px);
+  }
+
+  .spz_3009_v .spz-social {
+    padding: 20px 0;
+    gap: 25px;
+  }
+
+  .spz_3009_v #hs_cos_wrapper_widget_1764067940942_ form[id*="hsForm_5f"] .hs-fieldtype-intl-phone select {
+    width: 100% !important;
+  }
+
+  .spz_3009_v .spz-social-track img {
+    margin-right: 45px;
+  }
+
+  .spz_3009_v .hs-form-private select[name="dropdown_country"]+.custom_arrow {
+    background: none !important;
+  }
+
+  /* Keep full-width fields on the explicit column so error-state span 2
+       cannot create an implicit 2nd track and sit fields side-by-side. */
+  .spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field .hs_are_you_planning_a_clinical_study__registry__or_a_survey_,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-dependent-field .hs_what_is_your_role_at_your_academic_institution_,
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(select[name="number_of_products_to_market"]),
+  .spz_3009_v .spz-form-target .hs-form-private .hs_error_rollup {
+    grid-column: 1 / -1;
+  }
+
+  .spz_3009_v .spz-form-target .hs-form-private .hs-form-field:has(.hs-error-msgs):not(.hs_phone):not(.spz-error-cleared) .spz-float-label {
+    max-width: 88%;
+  }
+
+  .spz_3009_v .spz-site-footer {
+    padding: 9px 24px 11px;
+  }
+
+  .spz_3009_v .spz-site-footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .spz_3009_v .spz-site-footer-social {
+    order: -1;
+  }
+
+  .spz_3009_v .spz-site-footer-legal {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* Hero art follows the same breakpoints the picture element used. */
+@media only screen and (max-width: 1024px) {
+  .spz_3009_v .spz-form-hero {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-1024.webp");
+  }
+
+  .spz_3009_v .spz-form-hero::before {
+    padding-top: calc(100% * 1246 / 2048);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .spz_3009_v .spz-form-hero {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-768_1.webp");
+  }
+
+  .spz_3009_v .spz-form-hero::before {
+    padding-top: calc(100% * 1164 / 1536);
+  }
+}
+
+/* 360 art through 521px. From 421–521 the 768 art is shorter than the
+   hero copy, so its white curve cuts through the description. */
+@media only screen and (max-width: 521.98px) {
+  .spz_3009_v .spz-form-hero {
+    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/greenlightguru/3008/bg-360_1.webp");
+  }
+
+  .spz_3009_v .spz-form-hero::before {
+    padding-top: calc(100% * 1148 / 720);
+  }
+}

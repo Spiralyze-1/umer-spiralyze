@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400&display=swap);
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600;700&display=swap");
-#wpadminbar,
 #content-main > div:not(.spz_sections):not(.how-it-works) {
   display: none;
 }
@@ -19,7 +17,7 @@ body .header-main .brand img {
     transform: translateX(-7px) translateY(5px);
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   body .header-main .brand {
     height: 80px;
     transform: translateX(-9px) translateY(0px);
@@ -43,7 +41,6 @@ body .header-main .nav-bar .btn-header button {
 
 .ci_hero {
   padding: 80px 0;
-  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_1.webp");
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
@@ -51,19 +48,43 @@ body .header-main .nav-bar .btn-header button {
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .ci_hero {
     padding: 77px 0 80px;
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp_2.webp");
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_hero {
-    padding: 62.5px 0 60px;
-    background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/hero-wrapp.webp");
+    padding: 62.5px 0 60.5px;
   }
   .ci_hero .container {
     padding: 0 20px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767.98px) {
+  .ci_hero {
+    background-position: right -12vw;
   }
 }
 
+.ci_heroInner {
+  position: relative;
+}
+.ci_heroInner::after {
+  content: "";
+  position: absolute;
+  right: -49%;
+  top: -80px;
+  width: 100%;
+  height: 105%;
+  background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/full_1.png);
+  background-size: 1238px;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1024px) {
+  .ci_heroInner {
+    min-height: 626.8px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .ci_heroInner {
     min-height: 1283px;
@@ -71,13 +92,24 @@ body .header-main .nav-bar .btn-header button {
     flex-direction: column;
     justify-content: space-between;
   }
+  .ci_heroInner::after {
+    display: none;
+  }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_heroInner {
     min-height: 1392px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .ci_heroInner::after {
+    display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 767.98px) {
+  .ci_heroInner {
+    min-height: 1200px;
   }
 }
 
@@ -141,7 +173,12 @@ body .header-main .nav-bar .btn-header button {
   display: contents;
   font-weight: 700;
 }
-@media (min-width: 1024px) and (max-width: 1299px) {
+@media (min-width: 1024px) {
+  .ci_heroData {
+    min-height: 576.8px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1310.98px) {
   .ci_heroData {
     max-width: 500px;
   }
@@ -163,14 +200,16 @@ body .header-main .nav-bar .btn-header button {
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .ci_heroData {
     max-width: 100%;
+    padding-bottom: 10px;
   }
   .ci_heroData ul li p br {
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_heroData {
     max-width: 100%;
+    padding-bottom: 10px;
   }
   .ci_heroData h4 {
     font-size: 14px;
@@ -180,9 +219,11 @@ body .header-main .nav-bar .btn-header button {
     font-size: 36px;
     line-height: 39.6px;
     padding-bottom: 32px;
+    max-width: 380px;
   }
   .ci_heroData ul {
     padding-bottom: 30.5px;
+    max-width: 380px;
   }
   .ci_heroData ul li {
     padding-left: 28px;
@@ -199,6 +240,43 @@ body .header-main .nav-bar .btn-header button {
   }
   .ci_heroData ul li p br {
     display: none;
+  }
+  .ci_heroData .ci_ctaOuter a {
+    max-width: 320px;
+  }
+}
+@media (min-width: 481px) and (max-width: 767.98px) {
+  .ci_heroData h1 {
+    max-width: 100%;
+  }
+  .ci_heroData ul {
+    max-width: 100%;
+  }
+}
+
+.ci_heroImage {
+  margin-top: -112px;
+  margin-right: -40px;
+  margin-left: -40px;
+}
+.ci_heroImage picture {
+  display: block;
+}
+.ci_heroImage picture img {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .ci_heroImage {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .ci_heroImage {
+    margin-top: -52.5px;
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: -55.5px;
   }
 }
 
@@ -221,12 +299,12 @@ body .header-main .nav-bar .btn-header button {
     gap: 32px 64px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_heroLogos {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    transform: translateX(-3.5px);
+    transform: translateY(-3.5px);
   }
 }
 
@@ -239,7 +317,7 @@ body .header-main .nav-bar .btn-header button {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_ctaOuter a {
     height: 48px;
     width: 100%;
@@ -263,6 +341,11 @@ body .how-it-works {
   background-color: #293054;
   background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/2012/1440.webp);
   padding-top: 0;
+}
+@media (max-width: 767.98px) {
+  body .how-it-works {
+    padding: 80.5px 16px 80.5px;
+  }
 }
 
 .ci-ribbon-bg {
@@ -293,7 +376,7 @@ body .ci_ribbon_heading h2 {
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   body .ci_ribbon_heading {
     display: none;
   }
@@ -311,6 +394,11 @@ body .how-it-works > h2 {
     font-size: 48px;
     line-height: 52.8px;
     padding-bottom: 64.5px;
+  }
+}
+@media (max-width: 767.98px) {
+  body .how-it-works > h2 {
+    padding-bottom: 48px;
   }
 }
 body .how-it-works .steps picture {
@@ -353,6 +441,22 @@ body .how-it-works .steps h3 {
     padding-bottom: 19.5px;
   }
 }
+@media (max-width: 767.98px) {
+  body .how-it-works .steps {
+    padding: 0 4px;
+    gap: 41px;
+  }
+  body .how-it-works .steps picture {
+    border-radius: 10px;
+    margin-bottom: 31.5px;
+  }
+  body .how-it-works .steps picture img {
+    border-radius: 10px;
+  }
+  body .how-it-works .steps h3 {
+    padding-bottom: 11.5px;
+  }
+}
 body .how-it-works .demo-button {
   margin-top: 56.5px;
 }
@@ -365,6 +469,16 @@ body .how-it-works .demo-button a {
   }
   body .how-it-works .demo-button a {
     max-width: 222px;
+  }
+}
+@media (max-width: 767.98px) {
+  body .how-it-works .demo-button {
+    margin-top: 48.5px;
+  }
+  body .how-it-works .demo-button a {
+    max-width: 320px;
+    font-size: 14px;
+    line-heght: 18.9px;
   }
 }
 
@@ -596,7 +710,7 @@ body .how-it-works .demo-button a {
     background-image: url(https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/2012/360.webp);
   }
   .ci-ribbon-section {
-    padding: 80px 4px 82px;
+    padding: 0 4px 81px;
   }
   .ci-ribbon-inner {
     max-width: 100%;
@@ -775,6 +889,12 @@ body .spz-features .feature-text {
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.7);
 }
+@media (min-width: 1024px) and (max-width: 1310.98px) {
+  body .spz-features .feature-text {
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+}
 
 body .spz-features .feature-cta {
   display: inline-flex;
@@ -893,15 +1013,15 @@ body:has(.solution-main) #row3.product-tabbed-cont {
     padding: 40px 20px;
   }
   body .spz-features .feature-inner {
-    gap: 30.3px;
+    gap: 31.3px;
   }
   body .spz-features .feature-heading {
     font-size: 36px;
     line-height: 39.6px;
   }
   body .spz-features .feature-text {
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: 16px;
+    line-height: 22.4px;
   }
   body .spz-features .feature-grid {
     grid-template-columns: 1fr;
@@ -918,10 +1038,14 @@ body:has(.solution-main) #row3.product-tabbed-cont {
     height: 48px;
     font-size: 14px;
     line-height: 18.9px;
+    width: 100%;
+    max-width: 320px;
+    margin: 2.5px auto 0;
   }
   body .spz-features .feature-arrows {
-    bottom: 39%;
+    bottom: 39.85%;
     width: auto;
+    height: 664px;
     left: auto;
     right: 0;
   }
@@ -3180,11 +3304,11 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     padding: 80px 0 79px;
   }
   .spz-integrations-inner {
-    gap: 31px;
+    gap: 30px;
   }
   .spz-integrations-title {
-    font-size: 36px;
-    line-height: 39.6px;
+    font-size: 32px;
+    line-height: 35.2px;
   }
   .spz-integrations-logos {
     gap: 16px;
@@ -3208,9 +3332,10 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   .spz-2015-integrations-cta {
     width: calc(100% - 32px);
     height: 48px;
+    max-width: 328px;
     font-size: 14px;
     line-height: 18.9px;
-    margin-top: -12px;
+    margin-top: -10.5px;
   }
 }
 .spz__compass__faq__wrapper {
@@ -3218,10 +3343,6 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_location_bg.webp");
-  background-size: 1903px 1271px;
-  background-position: -130px 0;
-  background-repeat: no-repeat;
   position: relative;
 }
 .spz__compass__faq__wrapper::after {
@@ -3236,7 +3357,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   background-repeat: no-repeat;
   background-position: right;
 }
-@media (min-width: 1024px) and (max-width: 1299px) {
+@media (min-width: 1024px) and (max-width: 1310.98px) {
   .spz__compass__faq__wrapper::after {
     display: none;
   }
@@ -3246,7 +3367,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     display: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .spz__compass__faq__wrapper::after {
     display: none;
   }
@@ -3259,7 +3380,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   left: 0;
   bottom: 4px;
   width: 264px;
-  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_svg/v1791537778/canoeintelligence/4005/group_3753.svg");
+  background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/group_3753_webp.webp");
 }
 .spz__compass__faq__wrapper.technical_questions .spz__compass__faq__list {
   flex-wrap: wrap;
@@ -3271,6 +3392,17 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     padding-bottom: 120.5px;
   }
 }
+@media (max-width: 767.98px) {
+  .spz__compass__faq__wrapper.technical_questions {
+    padding-bottom: 122.5px;
+  }
+  .spz__compass__faq__wrapper.technical_questions .spz__compass__faq__container {
+    padding-top: 18.5px;
+  }
+  .spz__compass__faq__wrapper.technical_questions .spz__compass__faq__container .spz__compass__faq__copy {
+    padding-bottom: 57.5px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .spz__compass__faq__wrapper {
     padding: 120px 40px 121px;
@@ -3278,10 +3410,6 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
 }
 
 .spz__compass__faq__container {
-  background-image: url("<?= get_stylesheet_directory_uri() ?>/assets/img/spz_compass_text_bg_two.svg");
-  background-size: 1220px 130px;
-  background-position: top;
-  background-repeat: no-repeat;
   position: relative;
   z-index: 1;
 }
@@ -3328,6 +3456,12 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   gap: 0 56px;
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
+  .spz__compass__faq__container .spz__compass__faq__list {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767.98px) {
   .spz__compass__faq__container .spz__compass__faq__list {
     flex-wrap: wrap;
     flex-direction: column;
@@ -3406,6 +3540,11 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   max-height: 60rem;
   margin-top: -4px;
 }
+@media (max-width: 767.98px) {
+  .spz__compass__faq__container .spz__compass__faq__list__item.active .spz__compass__faq__list__item__answer {
+    margin-top: 3.5px;
+  }
+}
 
 .spz__compass__faq__container .spz__compass__faq__list__item__answer ul {
   padding: 0 0 30.5px 20px;
@@ -3457,7 +3596,7 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     padding: 66px 0 63px;
   }
   .spz__compass__faq__container {
-    padding: 64.5px 20px 0;
+    padding: 15.5px 20px 0;
   }
   .spz__compass__faq__image img {
     transform: translateX(20px);
@@ -3465,26 +3604,42 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     width: 823px;
   }
   .spz__compass__faq__container__inner {
-    gap: 64px;
+    gap: 0;
   }
   .spz__compass__faq__container .spz__compass__faq__copy h2 {
     font-size: 36px;
-    letter-spacing: -1.08px;
+    line-height: 39.6px;
   }
   .spz__compass__faq__container .spz__compass__faq__list__item__question {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 22.4px;
+    padding: 23.5px 30px 23.5px 0;
   }
   .spz__compass__faq__container .spz__compass__faq__list__item__question:before {
-    margin-right: 20px;
+    margin-right: 0;
+    right: -1px;
+    margin-top: -1px;
   }
   .spz__compass__faq__container .spz__compass__faq__list__item__answer p {
     font-size: 16px;
-    padding: 0px 0px 23.5px 52px;
+    padding: 0px 0px 23.5px;
     line-height: 22px;
   }
 }
 .ci_streamline {
   padding-bottom: 120px;
+}
+@media (max-width: 767.98px) {
+  .ci_streamline {
+    padding-bottom: 64px;
+  }
+  .ci_streamline .container {
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  .ci_streamline .container .ci_ctaOuter {
+    max-width: 280px;
+  }
 }
 
 .ci_streamlineInner {
@@ -3497,6 +3652,14 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/banner_2.webp");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: right;
+}
+@media (min-width: 1024px) and (max-width: 1310.98px) {
+  .ci_streamlineInner {
+    padding: 30px 20px;
+    min-height: 312px;
+    background-size: cover;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .ci_streamlineInner {
@@ -3505,9 +3668,12 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/banner.webp");
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .ci_streamlineInner {
     background-image: url("https://res.cloudinary.com/spiralyze/image/upload/f_auto/canoeintelligence/4005/banner_1.webp");
+    padding: 32.5px 24px 24px;
+    align-items: flex-start;
+    min-height: 556px;
   }
 }
 
@@ -3522,6 +3688,15 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   line-height: 48.4px;
   padding-bottom: 32px;
 }
+@media (min-width: 1024px) and (max-width: 1310.98px) {
+  .ci_streamlineData {
+    max-width: 420px;
+  }
+  .ci_streamlineData h3 {
+    font-size: 42px;
+    line-height: 44.4px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023.98px) {
   .ci_streamlineData {
     max-width: 350px;
@@ -3529,5 +3704,12 @@ body.sgpb-overflow-hidden-body #sgpb-popup-dialog-main-div:has(#sg-popup-content
   .ci_streamlineData h3 {
     font-size: 40px;
     line-height: 44px;
+  }
+}
+@media (max-width: 767.98px) {
+  .ci_streamlineData h3 {
+    font-size: 36px;
+    line-height: 39.6px;
+    padding-bottom: 24.5px;
   }
 }/*# sourceMappingURL=style.css.map */

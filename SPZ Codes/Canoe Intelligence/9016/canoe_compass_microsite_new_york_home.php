@@ -3272,6 +3272,15 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
     .spz__canoe-compass__modal__content {
       padding: 32px 16px;
     }
+    html:has(body.spz__canoe-compass__modal-open),
+    body.spz__canoe-compass__modal-open {
+      overflow: hidden !important;
+      overscroll-behavior: none;
+    }
+
+    .spz__canoe-compass__modal {
+      overscroll-behavior: contain;
+    }
 
     .spz__canoe-compass__modal>h2 {
       max-width: unset !important;
@@ -5612,7 +5621,7 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
             </div>
           </div>
           <a href="https://canoeintelligence.com/canoe-compass-nyc-2026-highlights/"
-            class="spz_agenda__detail-link">watch session</a>
+            class="spz_agenda__detail-link total_portfolio_vision">watch session</a>
         </div>
       </div>
 
@@ -5651,7 +5660,7 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
             </div>
           </div>
           <a href="https://canoeintelligence.com/canoe-compass-nyc-2026-highlights/"
-            class="spz_agenda__detail-link">watch session</a>
+            class="spz_agenda__detail-link product_vision">watch session</a>
         </div>
       </div>
 
@@ -5737,7 +5746,7 @@ $image_url = get_template_directory_uri() . '/assets/img/canoe_compass_microsite
             </div>
           </div>
           <a href="https://canoeintelligence.com/canoe-compass-nyc-2026-highlights/"
-            class="spz_agenda__detail-link">watch session</a>
+            class="spz_agenda__detail-link delta_spotlight">watch session</a>
         </div>
       </div>
     </div>

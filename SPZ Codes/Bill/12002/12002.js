@@ -1,30 +1,30 @@
-localStorage.setItem('bdcAbTest11','12002-v1');
+localStorage.setItem('bdcAbTest14', '12002-v1');
 
 function spz12001() {
-    if (!document.querySelector('body').classList.contains('spz_12002_v')) {
-        document.querySelector('body').classList.add('spz_12002_v');
-        document.querySelector('body').classList.add('spz_12002_v1');
+  if (!document.querySelector('body').classList.contains('spz_12002_v')) {
+    document.querySelector('body').classList.add('spz_12002_v');
+    document.querySelector('body').classList.add('spz_12002_v1');
 
-        // Slider code
-        const loadJS =(url, implementationCode, location)=>{
-            var scriptTag = document.createElement('script');
-            scriptTag.src = url;
-            scriptTag.onload = implementationCode;
-            scriptTag.onreadystatechange = implementationCode;
-            location.appendChild(scriptTag);
-        };
+    // Slider code
+    const loadJS = (url, implementationCode, location) => {
+      var scriptTag = document.createElement('script');
+      scriptTag.src = url;
+      scriptTag.onload = implementationCode;
+      scriptTag.onreadystatechange = implementationCode;
+      location.appendChild(scriptTag);
+    };
 
-        const gb_load_css=(path)=> {
-            let css = document.createElement('link');
-            css.rel = 'stylesheet';
-            css.media = 'all';
-            css.href = path;
-            document.getElementsByTagName('head')[0].appendChild(css);
-        }
+    const gb_load_css = (path) => {
+      let css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.media = 'all';
+      css.href = path;
+      document.getElementsByTagName('head')[0].appendChild(css);
+    }
 
-        gb_load_css("https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css");
+    gb_load_css("https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css");
 
-        document.querySelector('#formjumplink').insertAdjacentHTML('afterend', `
+    document.querySelector('#formjump').insertAdjacentHTML('afterend', `
             <section class="hero_wrapper">
                 <header>
                     <div class="container-large w-container">
@@ -44,9 +44,9 @@ function spz12001() {
                                         <div class="rating-stars">
                                             <img src="https://res.cloudinary.com/spiralyze/image/upload/v1773678432/bill/11007/rating--4-5_1.svg"
                                                 alt="Rating Star Logo" width="80" height="16">
-                                            <span>4.5</span>
+                                            <span>4.4</span>
                                         </div>
-                                        <div class="rating-text">3900+ Reviews</div>
+                                        <div class="rating-text">4,100+ Reviews</div>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,19 @@ function spz12001() {
                             <div class="hero_content">
                                 <div class="hero_left">
                                     <div class="eyeBroText">Online invoicing platform</div>
-                                    <h1>Streamline every step of&nbsp;invoicing</h1>
+                                    <h1>Streamline every step </br> of 
+                                      <div class="orange">
+                                        <section class="splide splide11007-section1-1">
+                                            <div class="splide__track">
+                                                <ul class="splide__list">
+                                                    <li class="splide__slide">invoice <br>creation</li>
+                                                    <li class="splide__slide">payment processing</li>
+                                                    <li class="splide__slide">tracking & reminders</li>
+                                                </ul>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    </h1>
                                     <ul>
                                         <li><strong>Invoice builder.</strong> Generate bulk invoices in minutes. Send via email. Auto-include contracts and customer documents.</li>
                                         <li><strong>Payments.</strong> Let clients pay via ACH, credit, wire, and more. Accept recurring payments. Automated reminders.</li>
@@ -81,7 +93,7 @@ function spz12001() {
             </section>
             <section class="logo-section">
                 <div class="wrapper">
-                    <div class="title">Trusted by 100,000+ businesses</div>
+                    <div class="title">Nearly half a million businesses use BILL<sup>*</sup></div>                    
                     <div class="splide hero-slider">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -125,6 +137,11 @@ function spz12001() {
                         </div>
                     </div>
                 </div>
+                <div class="small-disalcimer">
+                    <p>
+                        <sup>*</sup>As of September 30, 2025.
+                    </p>
+                </div>
             </section>
             <section class="features-section">
                 <div class="vertical-padding-large container-large w-container">
@@ -150,7 +167,7 @@ function spz12001() {
                         <div class="feature-card">
                             <div class="feature-card-header">
                                 <h3>Tracking & visibility</h3>
-                                <p>Track invoices and payment statuses in one dashboard. Filter and monitor&nbsp;receivables.</p>
+                                <p>Track invoices and payment statuses in one dashboard. Filter and monitor receivables.</p>
                             </div>
                             <img src="//res.cloudinary.com/spiralyze/image/upload/f_auto/bill/12001/image-tracking_n_visibility.webp" alt="Tracking & visibility">
                         </div>
@@ -186,7 +203,8 @@ function spz12001() {
             </section>
             <section class="bottom_form">
                 <div class="vertical-padding-large container-large w-container">
-                    <div class="title">Join over 100,000 businesses that trust BILL</div>
+                    <div class="title">Join nearly 500,000 businesses that trust BILL*</div>
+                    <div class="sub_title"><sup>*</sup> As of September 30, 2025.</div>
                     <div class="fake-email-form-wrapper">
                         <input class="fake-email-input spz_12002_footer_email" maxlength="256"  placeholder="Work Email" type="email" required="">
                         <button class="button w-button cta spz_12002_footer_cta">Get Started</button>
@@ -311,226 +329,388 @@ function spz12001() {
             </footer>
         `);
 
-        var formWrapper = document.querySelector('.form-signup').parentElement;
-        document.querySelector('.hero_right').appendChild(formWrapper);
+    var formWrapper = document.querySelector('.form-signup').parentElement;
+    document.querySelector('.hero_right').appendChild(formWrapper);
 
-        document.querySelector('.form-signup form h2').textContent = 'Get started with a risk-free trial';
-        // document.querySelector('.form-signup form h2').insertAdjacentHTML('afterend', '<p class="text-align-center">Create & send invoices in seconds.</p>');
+    document.querySelector('.form-signup form h2').textContent = 'Get started with a risk-free trial';
+    // document.querySelector('.form-signup form h2').insertAdjacentHTML('afterend', '<p class="text-align-center">Create & send invoices in seconds.</p>');
 
-        // slider logic
-        loadJS('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', function(){
-            loadJS('https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js', function(){
-                var logoSection = new Splide('.hero-slider', {
-                    type   : 'loop',
-                    autoWidth: true,
-                    arrows: false,
-                    pagination: false,
-                    drag: false,
-                    autoScroll: {
-                        speed: 0.4, // adjust if needed
-                        pauseOnHover: false,
-                        pauseOnFocus: false,
-                    },
-                });
+    // slider logic
+    loadJS('https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', function () {
+      loadJS('https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js', function () {
 
-                var caseStudySection = new Splide('.case-study-slider', {
-                    type: 'loop',
-                    autoWidth: true,
-                    arrows: false,
-                    pagination: false,
-                    drag: false,
-                    autoScroll: {
-                        speed: 0.4, // 👈 adjust this (0.5 - 2 is ideal)
-                        pauseOnHover: false,
-                        pauseOnFocus: false,
-                    },
-                });
-
-                logoSection.mount(window.splide.Extensions);
-                caseStudySection.mount(window.splide.Extensions);
-            }, document.body);
-        }, document.body);
-
-        // Expand features section
-        document.querySelector('.expand-feature-card').addEventListener('click', function() {
-            const featuresWrapper = document.querySelector('.features-wrapper');
-            featuresWrapper.classList.add('expanded');
-            this.parentElement.style.display = 'none';
+        let updateHeight = () => {
+          let slide = titleSlide.Components.Slides.getAt(
+            typeof newIndex == "number" ? newIndex : titleSlide.index,
+          ).slide;
+          slide.parentElement.parentElement.style.height =
+            slide.offsetHeight + 15 + "px";
+        };
+        var titleSlide = new Splide(".splide11007-section1-1", {
+          type: "loop",
+          autoWidth: true,
+          arrows: false,
+          pagination: false,
+          drag: false,
+          interval: 3000,
+          autoplay: true,
+          pauseOnHover: false,
+          pauseOnFocus: false,
+          direction: "ttb",
+          gap: "56px",
+          autoHeight: true,
+          height: "71px",
         });
 
-        // sticky header logic
-        window.addEventListener('scroll', function () {
-            // header
-            if (window.scrollY > 0) {
-                if (!document.querySelector('header.sticky')) {
-                    document.querySelector('header').classList.add('sticky')
-                }
-            } else {
-                if (document.querySelector('header.sticky')) {
-                    document.querySelector('header').classList.remove('sticky')
-                }
-            }
+        setTimeout(function () {
+          titleSlide.mount();
+          titleSlide.on("move", function (e) {
+            updateHeight();
+          });
+          titleSlide.on("resize", function (e) {
+            updateHeight();
+          });
+          updateHeight();
+          window.dispatchEvent(new Event("resize"));
+        }, 200);
+        var logoSection = new Splide('.hero-slider', {
+          type: 'loop',
+          autoWidth: true,
+          arrows: false,
+          pagination: false,
+          drag: false,
+          autoScroll: {
+            speed: 0.4, // adjust if needed
+            pauseOnHover: false,
+            pauseOnFocus: false,
+          },
         });
 
-        // form logic
-        var getBtn = setInterval(() => {
-            const form = document.querySelector('.form-signup form');
+        var caseStudySection = new Splide('.case-study-slider', {
+          type: 'loop',
+          autoWidth: true,
+          arrows: false,
+          pagination: false,
+          drag: false,
+          autoScroll: {
+            speed: 0.4, // 👈 adjust this (0.5 - 2 is ideal)
+            pauseOnHover: false,
+            pauseOnFocus: false,
+          },
+        });
 
-            if (form && form.querySelector('.submit-button')) {
-                clearInterval(getBtn);
+        logoSection.mount(window.splide.Extensions);
+        caseStudySection.mount(window.splide.Extensions);
+      }, document.body);
+    }, document.body);
 
-                // Button text change
-                form.querySelector('.submit-button').setAttribute('value', 'Get Started');
-                form.querySelector('.submit-button').classList.remove('button-signup-2');
-                form.querySelector('.submit-button').classList.add('button');
+    // Expand features section
+    document.querySelector('.expand-feature-card').addEventListener('click', function () {
+      const featuresWrapper = document.querySelector('.features-wrapper');
+      featuresWrapper.classList.add('expanded');
+      this.parentElement.style.display = 'none';
+    });
 
-                // selectBox labels
-                document.querySelector('select#signupType').insertAdjacentHTML('beforebegin',`<label>Business Type</label>`);
-                document.querySelector('select#accountingSoftware').insertAdjacentHTML('beforebegin',`<label>Which accounting software do you use?</label>`);
-                
-                if(document.querySelector('#businessTypeContainer #signupType').value != 'direct') {
-                    document.querySelector('select#accountingSoftware').parentElement.classList.add('hide');
-                }
+    // sticky header logic
+    window.addEventListener('scroll', function () {
+      // header
+      if (window.scrollY > 0) {
+        if (!document.querySelector('header.sticky')) {
+          document.querySelector('header').classList.add('sticky')
+        }
+      } else {
+        if (document.querySelector('header.sticky')) {
+          document.querySelector('header').classList.remove('sticky')
+        }
+      }
+    });
 
-                // add Wrapper div to "#msDynamicsOption"
-                const msDynamicsOption = document.querySelector('#msDynamicsOption');
-                const wrapperDiv = document.createElement('div');
-                wrapperDiv.classList.add('form-option-fields');
-                wrapperDiv.classList.add('form-dropdown');
-                msDynamicsOption.parentNode.insertBefore(wrapperDiv, msDynamicsOption);
-                wrapperDiv.appendChild(msDynamicsOption);
-                msDynamicsOption.insertAdjacentHTML('beforeBegin', `<label>Select your MS Dynamics solution:</label>`);
+    // form logic
+    var getBtn = setInterval(() => {
+      const form = document.querySelector(".form-signup form");
 
+      if (form && form.querySelector(".submit-button")) {
+        clearInterval(getBtn);
 
+        // Button text change
+        // form.querySelector('.submit-button').setAttribute('value', 'Instant Access');
+        form
+          .querySelector(".submit-button")
+          .classList.remove("button-signup-2");
+        form.querySelector(".submit-button").classList.add("button");
 
-                // Rearrange name and email fields
-                document.querySelector('#email').closest('.form-field-columns').after(document.querySelector('#name').closest('.form-field-columns'));
+        // expanding form logic start
+        document.querySelector(".form-signup form").classList.add("form-wrapper");
+        document.querySelector(".form-wrapper").classList.add("small-form");
+        document.querySelectorAll(".form-wrapper input").forEach((input) => {
+          input.addEventListener("keyup", function () {
+            const firstName = document.querySelector("#firstName").value;
+            const lastName = document.querySelector("#lastName").value;
+            const email = document.querySelector("#email").value;
+            const name = document.querySelector("#name").value;
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            const emailValid = emailPattern.test(email);
 
-                // Focus and blur event for form fields
-                // Run below code on page load as well to accomodate autofill values and labels.
-
-                const fields = form.querySelectorAll('.form-field, .select-field');
-
-                fields.forEach(field => {
-                    const label = field.getAttribute('placeholder');
-                    if (label) {
-                        const labelElement = document.createElement('label');
-                        labelElement.textContent = label;
-                        labelElement.setAttribute('for', field.id);
-
-                        if (labelElement.textContent === 'Phone') {
-                            labelElement.textContent = 'Phone Number';
-                        }
-                        if (labelElement.textContent === 'Number Of Employees') {
-                            labelElement.textContent = 'Number of Employees';
-                        }
-
-                        field.parentNode.insertBefore(labelElement, field);
-                        field.removeAttribute('placeholder');
-                    }
-
-                    function handleFieldState(el) {
-                        const row = el.closest('.form-field-columns, .form-option-fields, .form-dropdown');
-                        const value = el.value?.trim();
-
-                        if (row) {
-                            if (!value) {
-                                row.classList.remove("focused", "typing");
-                            } else {
-                                row.classList.add("focused");
-                                row.classList.remove("typing");
-                            }
-                        }
-                    }
-
-                    // Events
-                    field.addEventListener("focus", function () {
-                        const row = this.closest('.form-field-columns, .form-option-fields, .form-dropdown');
-                        if (row) {
-                            row.classList.add("focused", "typing");
-                        }
-                    });
-
-                    field.addEventListener("blur", function () {
-                        handleFieldState(this);
-                    });
-
-                    // ✅ Run on page load
-                    handleFieldState(field);
-                });
+            // Check if all required fields are filled and email is valid
+            if (
+              firstName !== "" &&
+              lastName !== "" &&
+              email !== "" &&
+              name !== "" &&
+              emailValid
+            ) {
+              removeError(); // Remove error if all conditions are met
+              document
+                .querySelector(".form-wrapper")
+                .classList.remove("small-form");
+            } else if (email.trim() === "") {
+              // Empty field should not keep a previous invalid-email error
+              removeError();
+            } else if (!emailValid && email.includes("@")) {
+              // If email format is incorrect after user has typed "@"
+              showError("Valid email required.");
             }
-        }, 100);
+          });
+        });
 
-        // CTA button logic
-        function scrollToForm() {
-            const ctas = document.querySelectorAll('.cta');
-            const target = document.querySelector('.hero_right');
+        document.querySelector("#email").addEventListener("blur", function () {
+          validateEmail();
+        });
 
-            ctas.forEach(cta => {
-                cta.addEventListener('click', function (e) {
-                    e.preventDefault();
+        function validateEmail() {
+          const email = document.querySelector("#email").value;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          const emailValid = emailPattern.test(email);
 
-                    // 👉 Email handling
-                    const emailInput = document.querySelector('.fake-email-input');
-                    const email = emailInput ? emailInput.value.trim() : '';
+          if (!emailValid && email !== "") {
+            // If the email is invalid, keep showing the error
+            showError("Valid email required.");
+          } else {
+            removeError();
+          }
+        }
 
-                    if (email) {
-                        const mainEmailInput = document.querySelector('.form-signup form #email');
-                        if (mainEmailInput) {
-                            mainEmailInput.value = email;
-                            mainEmailInput.dispatchEvent(new Event('input', { bubbles: true }));
-                            setTimeout(() => {
-                                mainEmailInput.focus();
-                            }, 800);
-                        }
-                    }
+        function showError(message) {
+          let errorMsg = document.querySelector(".error-message");
+          const svgIcon = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_9232_488)">
+                                <path d="M7.99967 5.33334V8.00001M7.99967 10.6667H8.00634M14.6663 8.00001C14.6663 11.6819 11.6816 14.6667 7.99967 14.6667C4.31778 14.6667 1.33301 11.6819 1.33301 8.00001C1.33301 4.31811 4.31778 1.33334 7.99967 1.33334C11.6816 1.33334 14.6663 4.31811 14.6663 8.00001Z" stroke="#FF0F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_9232_488">
+                                    <rect width="16" height="16" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>`;
 
-                    // 👉 Smooth scroll
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const svgShapIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6" fill="none"><path d="M0 6L12 6L7.41421 1.41421C6.63317 0.633165 5.36684 0.633166 4.58579 1.41421L0 6Z" fill="#FFF3ED"></path></svg>`;
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                });
+          if (!errorMsg) {
+            errorMsg = document.createElement("div");
+            errorMsg.className = "error-message";
+            errorMsg.innerHTML = `${svgIcon} <span>${message}</span> ${svgShapIcon}`;
+            document.querySelector("#email").after(errorMsg);
+          }
+        }
+
+        function removeError() {
+          const email = document.querySelector("#email").value;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          const emailValid = emailPattern.test(email);
+
+          // Remove error when the email is valid or the field is empty
+          if (emailValid || email.trim() === "") {
+            const errorMsg = document.querySelector(".error-message");
+            if (errorMsg) {
+              errorMsg.remove();
+            }
+          }
+        }
+        // expanding form logic end
+
+        // selectBox labels
+        document
+          .querySelector("select#signupType")
+          .insertAdjacentHTML("beforebegin", `<label>Business Type</label>`);
+        document
+          .querySelector("select#accountingSoftware")
+          .insertAdjacentHTML(
+            "beforebegin",
+            `<label>Which accounting software do you use?</label>`,
+          );
+
+        if (
+          document.querySelector("#businessTypeContainer #signupType").value !=
+          "direct"
+        ) {
+          document
+            .querySelector("select#accountingSoftware")
+            .parentElement.classList.add("hide");
+        }
+
+        // add Wrapper div to "#msDynamicsOption"
+        const msDynamicsOption = document.querySelector("#msDynamicsOption");
+        const wrapperDiv = document.createElement("div");
+        wrapperDiv.classList.add("form-option-fields");
+        wrapperDiv.classList.add("form-dropdown");
+        msDynamicsOption.parentNode.insertBefore(wrapperDiv, msDynamicsOption);
+        wrapperDiv.appendChild(msDynamicsOption);
+        msDynamicsOption.insertAdjacentHTML(
+          "beforeBegin",
+          `<label>Select your MS Dynamics solution:</label>`,
+        );
+
+        // Rearrange name and email fields
+        document
+          .querySelector("#email")
+          .closest(".form-field-columns")
+          .after(
+            document.querySelector("#name").closest(".form-field-columns"),
+          );
+
+        // Focus and blur event for form fields
+        // Run below code on page load as well to accomodate autofill values and labels.
+
+        const fields = form.querySelectorAll(".form-field, .select-field");
+
+        fields.forEach((field) => {
+          const label = field.getAttribute("placeholder");
+          if (label) {
+            const labelElement = document.createElement("label");
+            labelElement.textContent = label;
+            labelElement.setAttribute("for", field.id);
+
+            if (labelElement.textContent === "Phone") {
+              labelElement.textContent = "Phone Number";
+            }
+            if (labelElement.textContent === "Number Of Employees") {
+              labelElement.textContent = "Number of Employees";
+            }
+
+            field.parentNode.insertBefore(labelElement, field);
+            field.removeAttribute("placeholder");
+          }
+
+          function handleFieldState(el) {
+            const row = el.closest(
+              ".form-field-columns, .form-option-fields, .form-dropdown",
+            );
+            const value = el.value?.trim();
+
+            if (row) {
+              if (!value) {
+                row.classList.remove("focused", "typing");
+              } else {
+                row.classList.add("focused");
+                row.classList.remove("typing");
+              }
+            }
+          }
+
+          // Events
+          field.addEventListener("focus", function () {
+            const row = this.closest(
+              ".form-field-columns, .form-option-fields, .form-dropdown",
+            );
+            if (row) {
+              row.classList.add("focused", "typing");
+            }
+          });
+
+          field.addEventListener("blur", function () {
+            handleFieldState(this);
+          });
+
+          // ✅ Run on page load
+          handleFieldState(field);
+        });
+
+        document
+          .querySelectorAll(
+            ".spz_12002_v .features-section .cta-wrapper .button, .spz_12002_v .bottom_form .cta",
+          )
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              setTimeout(() => {
+                btn.blur();
+              }, 500);
             });
+          });
+      }
+    }, 100);
 
+    // CTA button logic
+    function scrollToForm() {
+      const ctas = document.querySelectorAll('.cta');
+      const target = document.querySelector('.hero_right');
 
-            // fake-email-input should trigger on enter key as well
-            const fakeEmailInput = document.querySelector('.fake-email-input');
-            if (fakeEmailInput) {
-                fakeEmailInput.addEventListener('keypress', function (e) {
-                    if (e.key === 'Enter' && this.value.trim()) {
-                        e.preventDefault();
-                        const ctaButton = document.querySelector('.fake-email-form-wrapper .cta');
-                        if (ctaButton) {
-                            ctaButton.click();
-                        }
-                    }
-                });
+      ctas.forEach(cta => {
+        cta.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // 👉 Email handling
+          const emailInput = document.querySelector('.fake-email-input');
+          const email = emailInput ? emailInput.value.trim() : '';
+
+          if (email) {
+            const mainEmailInput = document.querySelector('.form-signup form #email');
+            if (mainEmailInput) {
+              mainEmailInput.value = email;
+              mainEmailInput.dispatchEvent(new Event('input', { bubbles: true }));
+              setTimeout(() => {
+                mainEmailInput.focus();
+              }, 800);
             }
-        }
+          }
 
-        scrollToForm();
+          // 👉 Smooth scroll
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        // Need to hide all div and section from '.footer_black' to the end of '.footer-minimal' using javascript.
-        const footerBlack = document.querySelector('.footer_black');
-        if (footerBlack) {
-            let nextElement = footerBlack.nextElementSibling;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        });
+      });
 
-            while (nextElement && !nextElement.classList.contains('footer-minimal')) {
-                nextElement.style.display = 'none';
-                nextElement = nextElement.nextElementSibling;
+
+      // fake-email-input should trigger on enter key as well
+      const fakeEmailInput = document.querySelector('.fake-email-input');
+      if (fakeEmailInput) {
+        fakeEmailInput.addEventListener('keypress', function (e) {
+          if (e.key === 'Enter' && this.value.trim()) {
+            e.preventDefault();
+            const ctaButton = document.querySelector('.fake-email-form-wrapper .cta');
+            if (ctaButton) {
+              ctaButton.click();
             }
-
-            // Optional: also hide the .footer-minimal itself
-            if (nextElement && nextElement.classList.contains('footer-minimal')) {
-                nextElement.style.display = 'none';
-            }
-        }
+          }
+        });
+      }
     }
+
+    scrollToForm();
+
+    // Need to hide all div and section from '.footer_black' to the end of '.footer-minimal' using javascript.
+    const footerBlack = document.querySelector('.footer_black');
+    if (footerBlack) {
+      let nextElement = footerBlack.nextElementSibling;
+
+      while (nextElement && !nextElement.classList.contains('footer-minimal')) {
+        nextElement.style.display = 'none';
+        nextElement = nextElement.nextElementSibling;
+      }
+
+      // Optional: also hide the .footer-minimal itself
+      if (nextElement && nextElement.classList.contains('footer-minimal')) {
+        nextElement.style.display = 'none';
+      }
+    }
+  }
 }
 
 spz12001();

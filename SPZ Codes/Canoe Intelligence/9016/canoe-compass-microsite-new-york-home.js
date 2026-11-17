@@ -316,164 +316,174 @@ setupSuccessMessage();
 
 
 
-if (localStorage.getItem('spz_microsite') !== 'canoe_compass_ny_2026') {
-  // window.location.replace('https://canoeintelligence.com/canoe-compass-ny-2026/');
-  localStorage.setItem('spz_microsite', 'canoe_compass_ny_2026');
-}
+// if (localStorage.getItem('spz_microsite') !== 'canoe_compass_ny_2026') {
+//   // window.location.replace('https://canoeintelligence.com/canoe-compass-ny-2026/');
+//   localStorage.setItem('spz_microsite', 'canoe_compass_ny_2026');
+// }
 
 document.querySelector('head').insertAdjacentHTML('beforeend', `
   <script src="https://player.vimeo.com/api/player.js"></script>
   `);
 
+function showModal() {
+  const modal = document.querySelector('.spz__canoe-compass__modal');
+  if (!modal) return;
+  modal.classList.add('show');
+  modal.scrollTop = 0;
+  document.body.classList.add('spz__canoe-compass__modal-open');
+}
 
+function hideModal() {
+  const modal = document.querySelector('.spz__canoe-compass__modal');
+  if (!modal) return;
+  modal.classList.remove('show');
+  document.body.classList.remove('spz__canoe-compass__modal-open');
+}
 
+function modifyForm() {
 
-
-  function showModal() {
-    const modal = document.querySelector('.spz__canoe-compass__modal');
-    if (!modal) return;
-    modal.classList.add('show');
-    modal.scrollTop = 0;
-    document.body.classList.add('spz__canoe-compass__modal-open');
+  function formatLabel(label) {
+    return label.replace('*', '').trim();
   }
 
-  function hideModal() {
-    const modal = document.querySelector('.spz__canoe-compass__modal');
-    if (!modal) return;
-    modal.classList.remove('show');
-    document.body.classList.remove('spz__canoe-compass__modal-open');
+  function restructureFormFields(form) {
+    const fields = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([name="g-recaptcha-response"]), textarea, select');
+    fields.forEach(field => {
+      const formField = field.closest('.hs-form-field');
+      if (formField) {
+        const label = formField.querySelector('label');
+        formField.classList.add('spz__form-field');
+        const inputContainer = formField.querySelector('.input');
+        if (inputContainer && label) {
+          inputContainer.insertAdjacentElement('beforeend', label);
+          label.classList.add('spz__form-field-label');
+          label.textContent = formatLabel(label.textContent);
+        }
+        field.setAttribute('placeholder', ' ');
+      }
+    });
   }
 
-  function modifyForm() {
+  const formInterval = setInterval(function () {
+    const forms = document.querySelectorAll('.spz__canoe-compass__modal form.hs-form');
+    if (forms && forms.length > 0) {
+      clearInterval(formInterval);
 
-    function formatLabel(label) {
-      return label.replace('*', '').trim();
-    }
+      forms.forEach(form => {
+        restructureFormFields(form);
 
-    function restructureFormFields(form) {
-      const fields = form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([name="g-recaptcha-response"]), textarea, select');
-      fields.forEach(field => {
-        const formField = field.closest('.hs-form-field');
-        if (formField) {
-          const label = formField.querySelector('label');
-          formField.classList.add('spz__form-field');
-          const inputContainer = formField.querySelector('.input');
-          if (inputContainer && label) {
-            inputContainer.insertAdjacentElement('beforeend', label);
-            label.classList.add('spz__form-field-label');
-            label.textContent = formatLabel(label.textContent);
+        const companyTypeField = form.querySelector('select[name="company_type"]');
+        if (companyTypeField) {
+          companyTypeField.closest('.spz__form-field').querySelector('label').innerHTML = 'Company Type';
+          companyTypeField.querySelector('option:first-child').textContent = '';
+          companyTypeField.querySelector('option:first-child').setAttribute('hidden', 'hidden');
+          companyTypeField.selectedIndex = -1;
+          setTimeout(() => {
+            companyTypeField.selectedIndex = 0;
+          }, 100);
+        }
+
+        const dietaryRequirementsField = form.querySelector('input[name="dietary_requirements"]');
+        if (dietaryRequirementsField) {
+          dietaryRequirementsField.closest('.spz__form-field').classList.add('full-width');
+          const legend = dietaryRequirementsField.closest('.spz__form-field').querySelector('legend.hs-field-desc');
+          if (legend) {
+            legend.innerHTML = 'Please let us know about any dietary preferences or allergies. If you have no requirements, leave this blank.';
+            dietaryRequirementsField.closest('.spz__form-field').insertAdjacentElement('afterend', legend);
           }
-          field.setAttribute('placeholder', ' ');
+        }
+
+        const submitBtnWrap = form.querySelector('.hs_submit.hs-submit:has(.actions)');
+
+        if (submitBtnWrap) {
+          submitBtnWrap.classList.add('full-width');
+
+          const submitBtn = submitBtnWrap.querySelector('input[type="submit"]');
+
+          if (submitBtn) {
+            submitBtn.value = 'Submit';
+
+            const observer = new MutationObserver(() => {
+              if (submitBtn.value !== 'Submit') {
+                submitBtn.value = 'Submit';
+              }
+            });
+
+            observer.observe(submitBtn, {
+              attributes: true,
+              attributeFilter: ['value']
+            });
+          }
         }
       });
     }
+  }, 100);
 
-    const formInterval = setInterval(function () {
-      const forms = document.querySelectorAll('.spz__canoe-compass__modal form.hs-form');
-      if (forms && forms.length > 0) {
-        clearInterval(formInterval);
+  window.addEventListener('message', (event) => {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+      const formId = event.data.id;
+      console.log('Submitted Form ID:', formId);
 
-        forms.forEach(form => {
-          restructureFormFields(form);
+      hideModal();
 
-          const companyTypeField = form.querySelector('select[name="company_type"]');
-          if (companyTypeField) {
-            companyTypeField.closest('.spz__form-field').querySelector('label').innerHTML = 'Company Type';
-            companyTypeField.querySelector('option:first-child').textContent = '';
-            companyTypeField.querySelector('option:first-child').setAttribute('hidden', 'hidden');
-            companyTypeField.selectedIndex = -1;
-            setTimeout(() => {
-              companyTypeField.selectedIndex = 0;
-            }, 100);
-          }
-
-          const dietaryRequirementsField = form.querySelector('input[name="dietary_requirements"]');
-          if (dietaryRequirementsField) {
-            dietaryRequirementsField.closest('.spz__form-field').classList.add('full-width');
-            const legend = dietaryRequirementsField.closest('.spz__form-field').querySelector('legend.hs-field-desc');
-            if (legend) {
-              legend.innerHTML = 'Please let us know about any dietary preferences or allergies. If you have no requirements, leave this blank.';
-              dietaryRequirementsField.closest('.spz__form-field').insertAdjacentElement('afterend', legend);
-            }
-          }
-
-          const submitBtnWrap = form.querySelector('.hs_submit.hs-submit:has(.actions)');
-
-          if (submitBtnWrap) {
-            submitBtnWrap.classList.add('full-width');
-          
-            const submitBtn = submitBtnWrap.querySelector('input[type="submit"]');
-          
-            if (submitBtn) {
-              submitBtn.value = 'Submit';
-          
-              const observer = new MutationObserver(() => {
-                if (submitBtn.value !== 'Submit') {
-                  submitBtn.value = 'Submit';
-                }
-              });
-          
-              observer.observe(submitBtn, {
-                attributes: true,
-                attributeFilter: ['value']
-              });
-            }
-          }
-        });
+      const spz_microsite = localStorage.getItem('spz_microsite');
+      if (spz_microsite !== 'canoe_compass_ny_2026') {
+        localStorage.setItem('spz_microsite', 'canoe_compass_ny_2026');
       }
-    }, 100);
-
-    window.addEventListener('message', (event) => {
-      if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
-          const formId = event.data.id;
-          console.log('Submitted Form ID:', formId);
-
-          hideModal();
-
-          const spz_microsite = localStorage.getItem('spz_microsite');
-          if(spz_microsite !== 'canoe_compass_ny_2026') {
-            localStorage.setItem('spz_microsite', 'canoe_compass_ny_2026');
-          }
-      }
+      window.location.replace('https://canoeintelligence.com/canoe-compass-nyc-2026-highlights/');
+    }
   });
 
+}
 
+function guardAction() {
+  const spz_microsite = localStorage.getItem('spz_microsite');
+  if (!spz_microsite || spz_microsite !== 'canoe_compass_ny_2026') return false;
+  return true;
+}
 
+function setupModal() {
+  // Guard action for modal
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('.spz_hero__mobile-nav__toggle')) return;
+    if (event.target.closest('#hs-eu-opt-in-buttons')) return;
+    if (event.target.tagName === "A" && event.target.href.includes('mailto:')) return;
 
-  }
-
-  function guardAction() {
-    const spz_microsite = localStorage.getItem('spz_microsite');
-    if (!spz_microsite || spz_microsite !== 'canoe_compass_ny_2026') return false;
-    return true;
-  }
-
-  function setupModal() {
-    // Guard action for modal
-    document.addEventListener('click', function (event) {
-      if (event.target.closest('.spz_hero__mobile-nav__toggle')) return;
-      if(event.target.closest('#hs-eu-opt-in-buttons')) return;
-      if(event.target.tagName === "A" && event.target.href.includes('mailto:')) return;
-
-      if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON') {
-        if (!guardAction()) {
-          event.preventDefault();
-          event.stopPropagation();
-          showModal();
-        }
+    if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON') {
+      if (!guardAction()) {
+        saveLocalStorage();
+        event.preventDefault();
+        event.stopPropagation();
+        showModal();
       }
-    });
-
-    $('.spz__canoe-compass__modal__overlay').on('click', function () {
-      hideModal();
-    });
-
-    $('.spz__canoe-compass__modal__close').on('click', function () {
-      hideModal();
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    modifyForm();
-    setupModal();
+    }
   });
+
+  $('.spz__canoe-compass__modal__overlay').on('click', function () {
+    hideModal();
+  });
+
+  $('.spz__canoe-compass__modal__close').on('click', function () {
+    hideModal();
+  });
+}
+
+window.addEventListener('click', function (event) {
+  saveLocalStorage();
+});
+function saveLocalStorage() {
+  const target = event.target;
+  if (target.classList.contains('total_portfolio_vision')) {
+    localStorage.setItem('spz_video_key', 'total_portfolio_vision');
+  } else if (target.classList.contains('product_vision')) {
+    localStorage.setItem('spz_video_key', 'product_vision');
+  } else if (target.classList.contains('delta_spotlight')) {
+    localStorage.setItem('spz_video_key', 'delta_spotlight');
+  } else {
+    return;
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  modifyForm();
+  setupModal();
+});

@@ -45,9 +45,9 @@
       });
     });
 
-    document.querySelector('.spz_hero__video__placeholder-secondary-button-link').addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
+    // document.querySelector('.spz_hero__video__placeholder-secondary-button-link').addEventListener('click', (e) => {
+    //   e.stopPropagation();
+    // });
   }
 
   function setupMobileNav() {
@@ -99,6 +99,70 @@
     showModal(content.getAttribute('data-content'));
   }
 
+  function withAutoplay(content) {
+    return content.replace(/src="([^"]+)"/, function (match, src) {
+      if (src.indexOf('player.vimeo.com') === -1 || src.indexOf('autoplay=1') !== -1) return match;
+      const joiner = src.indexOf('?') === -1 ? '?' : '&';
+      return 'src="' + src + joiner + 'autoplay=1"';
+    });
+  }
+
+  function startModalPlayback() {
+    const iframe = document.querySelector('#spz__canoe-compass__modal__body iframe');
+    if (!iframe) return;
+
+    function play() {
+      const player = new window.Vimeo.Player(iframe);
+      player.ready().then(function () {
+        return player.play();
+      }).catch(function () {
+        return player.setMuted(true).then(function () {
+          return player.play();
+        });
+      }).catch(function () {});
+    }
+
+    if (window.Vimeo && window.Vimeo.Player) {
+      play();
+      return;
+    }
+
+    let tries = 0;
+    const timer = setInterval(function () {
+      tries += 1;
+      if (window.Vimeo && window.Vimeo.Player) {
+        clearInterval(timer);
+        play();
+      } else if (tries >= 25) {
+        clearInterval(timer);
+      }
+    }, 100);
+  }
+
+  function openAutoplayModal(trigger) {
+    if (!trigger) return;
+    const content = trigger.getAttribute('data-content');
+    if (!content) return;
+    showModal(withAutoplay(content));
+    startModalPlayback();
+  }
+
+  function autoPlayVideo() {
+    const video_key = localStorage.getItem('spz_video_key');
+    if (!video_key) return;
+
+    let trigger = null;
+    if (video_key === 'total_portfolio_vision') {
+      trigger = document.querySelector('.video-main .spz_video_modal_trigger');
+    } else if (video_key === 'product_vision') {
+      trigger = document.querySelector('.spz_session_library__sidebar-body .spz_session_library__video:first-child .spz_video_modal_trigger');
+    } else if (video_key === 'delta_spotlight') {
+      trigger = document.querySelector('.spz_session_library__sidebar-body .spz_session_library__video:last-child .spz_video_modal_trigger');
+    }
+
+    openAutoplayModal(trigger);
+  }
+
   // check if access to the page is allowed
   const isAllowed = localStorage.getItem('spz_microsite') === 'canoe_compass_ny_2026';
   if (!isAllowed) {
@@ -110,10 +174,12 @@
       setupMobileNav();
       setupModal();
       setupModalPopupOnLoad();
+      autoPlayVideo();
     });
   } else {
     setupMobileNav();
     setupModal();
     setupModalPopupOnLoad();
+    autoPlayVideo();
   }
 })();
